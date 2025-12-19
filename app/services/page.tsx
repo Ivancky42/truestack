@@ -12,6 +12,7 @@ import {
   FileCheck,
   Server,
   Layers,
+  Smartphone,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -26,6 +27,12 @@ const coreServices = [
     description:
       "Modern, responsive web applications built with React and Next.js. Fast, accessible, and user-friendly interfaces.",
     icon: Code2,
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Cross-platform mobile apps built with Flutter. Native performance for iOS and Android from a single codebase.",
+    icon: Smartphone,
   },
   {
     title: "Backend Development",

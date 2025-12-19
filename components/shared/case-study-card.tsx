@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,7 @@ interface CaseStudyCardProps {
   href?: string;
   isComingSoon?: boolean;
   className?: string;
+  logo?: string;
 }
 
 export function CaseStudyCard({
@@ -20,18 +22,31 @@ export function CaseStudyCard({
   href,
   isComingSoon = false,
   className,
+  logo,
 }: CaseStudyCardProps) {
-  const isClickable = href && !isComingSoon;
+  const isClickable = href !== undefined;
 
   const cardContent = (
     <Card className="h-full transition-all hover:shadow-md group-hover:border-primary/50">
       <CardHeader>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-lg font-bold text-primary-foreground">
-              {title.charAt(0)}
-            </div>
-            <CardTitle className="text-xl">{title}</CardTitle>
+            {logo ? (
+              <div className="flex h-12 w-28 items-center justify-center">
+                <Image
+                  src={logo}
+                  alt={title}
+                  width={112}
+                  height={48}
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
+            ) : (
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-lg font-bold text-primary-foreground">
+                {title.charAt(0)}
+              </div>
+            )}
+            {!logo && <CardTitle className="text-xl">{title}</CardTitle>}
           </div>
           {isComingSoon ? (
             <Badge variant="secondary">Coming Soon</Badge>

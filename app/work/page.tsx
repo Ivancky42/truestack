@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -23,17 +24,18 @@ const projects = [
   {
     title: "Kredit.my",
     href: "https://kredit.my",
+    logo: "/logos/kredit.png",
     description:
-      "A fully digital lending platform licensed under KPKT Malaysia. Built to meet regulatory requirements from both SC Malaysia and KPKT Malaysia, with complete audit trails and compliance features.",
+      "A fully digital lending platform licensed under KPKT Malaysia. Built to meet regulatory requirements from both SC Malaysia and KPKT Malaysia, with web and mobile apps, complete audit trails, and compliance features.",
     features: [
       "KPKT Malaysia licensed platform",
       "SC Malaysia regulatory compliance",
+      "Web application + Flutter mobile app",
       "On-premise digital signing server",
       "Malaysia data residency (AWS)",
       "Complete audit trail system",
-      "Automated credit scoring",
     ],
-    tags: ["KPKT Licensed", "SC Malaysia Compliant", "On-Prem Digital Signing"],
+    tags: ["KPKT Licensed", "Web + Mobile App", "On-Prem Digital Signing"],
     status: "Live",
     highlights: [
       {
@@ -42,7 +44,7 @@ const projects = [
       },
       {
         icon: Server,
-        label: "On-Prem Signing",
+        label: "Web + Mobile App",
       },
       {
         icon: Database,
@@ -53,17 +55,18 @@ const projects = [
   {
     title: "CreditXpress",
     href: "https://creditxpress.com.my",
+    logo: "/logos/creditxpress.svg",
     description:
-      "KPKT-compliant digital lending platform designed for fast loan processing. Features comprehensive audit trails, Malaysia-based data residency, and on-premise digital signing for regulatory compliance.",
+      "KPKT-compliant digital lending platform with web and mobile apps. Designed for fast loan processing with comprehensive audit trails, Malaysia-based data residency, and on-premise digital signing.",
     features: [
       "KPKT Malaysia licensed platform",
       "SC Malaysia regulatory compliance",
+      "Web application + Flutter mobile app",
       "On-premise digital signing server",
       "Malaysia data residency (AWS)",
-      "Real-time audit trail logging",
       "Integrated KYC verification",
     ],
-    tags: ["KPKT Licensed", "SC Malaysia Compliant", "Audit Trail"],
+    tags: ["KPKT Licensed", "Web + Mobile App", "Audit Trail"],
     status: "Live",
     highlights: [
       {
@@ -72,7 +75,7 @@ const projects = [
       },
       {
         icon: Server,
-        label: "On-Prem Signing",
+        label: "Web + Mobile App",
       },
       {
         icon: Database,
@@ -83,6 +86,7 @@ const projects = [
   {
     title: "CashSouk",
     href: "https://cashsouk.com",
+    logo: "/logos/cashsouk_logo.png",
     description:
       "P2P lending platform connecting borrowers with investors. Modern fintech infrastructure built for scale with full compliance features and Malaysia data residency.",
     features: [
@@ -130,23 +134,46 @@ export default function WorkPage() {
                 <CardHeader className="bg-muted/30">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-xl font-bold text-primary-foreground">
-                        {project.title.charAt(0)}
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl">
-                          {project.title}
-                        </CardTitle>
-                        <div className="mt-1 flex items-center gap-2">
-                          <Badge
-                            variant={
-                              project.status === "Live" ? "default" : "secondary"
-                            }
-                          >
-                            {project.status}
-                          </Badge>
+                      {project.logo ? (
+                        <div className="flex h-14 w-36 items-center justify-center">
+                          <Image
+                            src={project.logo}
+                            alt={project.title}
+                            width={144}
+                            height={56}
+                            className="max-h-14 w-auto object-contain"
+                          />
                         </div>
-                      </div>
+                      ) : (
+                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-xl font-bold text-primary-foreground">
+                          {project.title.charAt(0)}
+                        </div>
+                      )}
+                      {!project.logo && (
+                        <div>
+                          <CardTitle className="text-2xl">
+                            {project.title}
+                          </CardTitle>
+                          <div className="mt-1 flex items-center gap-2">
+                            <Badge
+                              variant={
+                                project.status === "Live" ? "default" : "secondary"
+                              }
+                            >
+                              {project.status}
+                            </Badge>
+                          </div>
+                        </div>
+                      )}
+                      {project.logo && (
+                        <Badge
+                          variant={
+                            project.status === "Live" ? "default" : "secondary"
+                          }
+                        >
+                          {project.status}
+                        </Badge>
+                      )}
                     </div>
                     <div className="flex items-center gap-4">
                       {/* Highlight badges */}
@@ -161,18 +188,16 @@ export default function WorkPage() {
                           </div>
                         ))}
                       </div>
-                      {project.status === "Live" && (
-                        <Button asChild variant="outline" className="gap-2">
-                          <Link
-                            href={project.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Visit Site
-                            <ArrowUpRight className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                      )}
+                      <Button asChild variant="outline" className="gap-2">
+                        <Link
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit Site
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardHeader>

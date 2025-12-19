@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 const technologies = [
   { name: "Next.js", category: "Frontend" },
   { name: "React", category: "Frontend" },
+  { name: "Flutter", category: "Mobile" },
   { name: "Node.js", category: "Backend" },
   { name: "Express", category: "Backend" },
   { name: "PostgreSQL", category: "Database" },

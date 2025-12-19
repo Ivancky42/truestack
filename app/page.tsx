@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { ClientsSection } from "@/components/sections/clients-section";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { TechStack } from "@/components/sections/tech-stack";
@@ -14,6 +15,7 @@ export default function HomePage() {
         secondaryCta={{ label: "View Our Work", href: "/work" }}
         showCodeCard
       />
+      <ClientsSection />
       <ServicesGrid />
       <ComplianceSection />
       <CaseStudies />

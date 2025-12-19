@@ -5,16 +5,18 @@ const caseStudies = [
   {
     title: "Kredit.my",
     description:
-      "A fully digital lending platform licensed under KPKT Malaysia. End-to-end loan management with on-premise digital signing and Malaysia data residency.",
-      tags: ["KPKT Licensed", "On-Prem Digital Signing", "Audit Trail"],
-      href: "https://kredit.my",
+      "A fully digital lending platform licensed under KPKT Malaysia. End-to-end loan management with web and mobile apps, on-premise digital signing, and Malaysia data residency.",
+    tags: ["KPKT Licensed", "Web + Mobile App", "Audit Trail"],
+    href: "https://kredit.my",
+    logo: "/logos/kredit.png",
   },
   {
     title: "CreditXpress",
     description:
-      "KPKT-compliant digital lending platform with regulatory audit trails. Built for fast approvals with Malaysia-based AWS infrastructure.",
-    tags: ["KPKT Licensed", "On-Prem Digital Signing", "Audit Trail"],
+      "KPKT-compliant digital lending platform with web and mobile apps. Built for fast approvals with Malaysia-based AWS infrastructure.",
+    tags: ["KPKT Licensed", "Web + Mobile App", "Audit Trail"],
     href: "https://creditxpress.com.my",
+    logo: "/logos/creditxpress.svg",
   },
   {
     title: "CashSouk",
@@ -23,6 +25,7 @@ const caseStudies = [
     tags: ["P2P Lending", "AWS", "Syariah Compliant", "SC Licensed"],
     href: "https://cashsouk.com",
     isComingSoon: true,
+    logo: "/logos/cashsouk_logo.png",
   },
 ];
 
@@ -44,6 +47,7 @@ export function CaseStudies() {
               tags={study.tags}
               href={study.href}
               isComingSoon={study.isComingSoon}
+              logo={study.logo}
             />
           ))}
         </div>
