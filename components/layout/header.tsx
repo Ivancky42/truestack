@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -12,8 +13,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { FileCheck, Code2, ClipboardCheck } from "lucide-react";
+import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown } from "lucide-react";
 
 const kpktServices = [
   {
@@ -48,6 +56,13 @@ const navLinks = [
 export function Header() {
   const pathname = usePathname();
   const isServicesActive = pathname.startsWith("/services");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setServicesExpanded(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -63,6 +78,7 @@ export function Header() {
           />
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex">
           <NavigationMenu>
             <NavigationMenuList>
@@ -172,11 +188,132 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        {/* Desktop Contact Button */}
+        <div className="hidden items-center gap-4 md:flex">
           <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
         </div>
+
+        {/* Mobile Menu */}
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-full sm:w-[350px] sm:max-w-[350px]">
+            <SheetHeader>
+              <SheetTitle className="text-left">
+                <Image
+                  src="/truestack-logo-transparent.svg"
+                  alt="Truestack"
+                  width={120}
+                  height={28}
+                  className="h-7 w-auto"
+                />
+              </SheetTitle>
+            </SheetHeader>
+            <nav className="mt-8 flex flex-col gap-2">
+              {/* Services Accordion */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setServicesExpanded(!servicesExpanded)}
+                  className={cn(
+                    "flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium transition-colors hover:bg-accent",
+                    isServicesActive ? "text-primary" : "text-foreground"
+                  )}
+                >
+                  Services
+                  <ChevronDown
+                    className={cn(
+                      "h-4 w-4 transition-transform",
+                      servicesExpanded && "rotate-180"
+                    )}
+                  />
+                </button>
+                {servicesExpanded && (
+                  <div className="ml-3 space-y-1 border-l pl-3">
+                    {/* KPKT Services */}
+                    <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-kpkt">
+                      KPKT Services
+                    </p>
+                    {kpktServices.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                        className={cn(
+                          "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-kpkt/10",
+                          pathname === item.href
+                            ? "bg-kpkt/10 text-kpkt"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        <item.icon className="h-4 w-4" />
+                        {item.title}
+                      </Link>
+                    ))}
+                    {/* Software Development */}
+                    <p className="mt-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                      Software
+                    </p>
+                    {softwareServices.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                        className={cn(
+                          "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
+                          pathname === item.href
+                            ? "bg-primary/10 text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        <item.icon className="h-4 w-4" />
+                        {item.title}
+                      </Link>
+                    ))}
+                    {/* View All */}
+                    <Link
+                      href="/services"
+                      onClick={closeMobileMenu}
+                      className="mt-2 flex items-center justify-center rounded-md bg-muted px-3 py-2 text-sm font-medium transition-colors hover:bg-muted/80"
+                    >
+                      View All Services
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Other Nav Links */}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMobileMenu}
+                  className={cn(
+                    "rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent",
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Contact Button */}
+              <div className="mt-4 border-t pt-4 px-3">
+                <Button asChild className="w-full" size="lg">
+                  <Link href="/contact" onClick={closeMobileMenu}>
+                    Contact
+                  </Link>
+                </Button>
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
