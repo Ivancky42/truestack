@@ -82,7 +82,14 @@ const servicesIncluded = [
   },
 ];
 
-const pricingData = {
+interface PricingRow {
+  item: string;
+  payPerRequest: string | boolean | null;
+  subscription: string | boolean | null;
+  isHighlight?: boolean;
+}
+
+const pricingData: { headers: string[]; rows: PricingRow[] } = {
   headers: ["Item", "Pay-Per-Request", "Annual Subscription"],
   rows: [
     {
@@ -233,7 +240,7 @@ export default function AccountManagementPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {pricingData.rows.map((row, index) => (
+                    {pricingData.rows.map((row) => (
                       <tr 
                         key={row.item} 
                         className={`border-b last:border-0 ${row.isHighlight ? 'bg-kpkt/5' : ''}`}
