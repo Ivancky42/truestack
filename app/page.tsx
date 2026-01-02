@@ -9,9 +9,9 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        title="Fintech Software. Built Right."
-        subtitle="We build digital lending platforms, payment systems, and financial applications. Licensed, compliant, and ready for scale."
-        primaryCta={{ label: "Start a Project", href: "/contact" }}
+        title="KPKT Services & Fintech Software"
+        subtitle="From compliance management to digital license conversion and custom platform development — everything you need to run and grow your lending business in Malaysia."
+        primaryCta={{ label: "Explore Services", href: "/services" }}
         secondaryCta={{ label: "View Our Work", href: "/work" }}
         showCodeCard
       />

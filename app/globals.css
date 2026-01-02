@@ -37,6 +37,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* KPKT Services Accent */
+  --color-kpkt: var(--kpkt);
+  --color-kpkt-foreground: var(--kpkt-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -50,6 +53,7 @@
   Brand Color Configuration
   To change the brand color, update --primary and --ring values
   Current: Blue 600 (#2563eb)
+  KPKT Accent: Teal 600 (#0d9488) - Complementary color for KPKT services
 */
 :root {
   --radius: 0.5rem;
@@ -59,9 +63,12 @@
   --card-foreground: oklch(0.145 0.024 264.364);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0.024 264.364);
-  /* Blue 600 - Primary Brand Color */
+  /* Blue 600 - Primary Brand Color (Software Development) */
   --primary: oklch(0.546 0.245 262.881);
   --primary-foreground: oklch(1 0 0);
+  /* Teal 600 - KPKT Services Accent Color */
+  --kpkt: oklch(0.627 0.115 175.031);
+  --kpkt-foreground: oklch(1 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);

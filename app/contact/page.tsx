@@ -36,10 +36,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium">Email</h3>
                     <a
-                      href="mailto:hello@truestack.io"
+                      href="mailto:hello@truestack.my"
                       className="text-muted-foreground transition-colors hover:text-primary"
                     >
-                      hello@truestack.io
+                      hello@truestack.my
                     </a>
                   </div>
                 </div>

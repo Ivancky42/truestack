@@ -8,19 +8,54 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   ArrowUpRight,
+  ArrowRight,
   CheckCircle2,
   Shield,
   Server,
   Database,
+  FileCheck,
+  Code2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Case studies and projects. See the fintech platforms we've built for lending companies across the region.",
+    "Case studies and projects. See the fintech platforms we've built and the KPKT operators we've helped go digital.",
 };
 
 const projects = [
+  {
+    title: "CreditXpress",
+    href: "https://creditxpress.com.my",
+    logo: "/logos/creditxpress.svg",
+    description:
+      "A fully digital, KPKT-licensed money lending platform built through our Digital License Conversion service. From application to deployment, we helped CreditXpress transform into a nationwide digital lender.",
+    features: [
+      "Digital KPKT license approved",
+      "Web application + Flutter mobile app",
+      "On-premise digital signing server",
+      "Malaysia data residency (AWS)",
+      "Complete audit trail system",
+      "Serving customers nationwide",
+    ],
+    tags: ["Digital License Conversion", "Web + Mobile App", "KPKT Licensed"],
+    status: "Live",
+    serviceType: "digital-license",
+    highlights: [
+      {
+        icon: FileCheck,
+        label: "Digital License",
+      },
+      {
+        icon: Server,
+        label: "Web + Mobile App",
+      },
+      {
+        icon: Database,
+        label: "AWS Malaysia",
+      },
+    ],
+  },
   {
     title: "Kredit.my",
     href: "https://kredit.my",
@@ -35,47 +70,17 @@ const projects = [
       "Malaysia data residency (AWS)",
       "Complete audit trail system",
     ],
-    tags: ["KPKT Licensed", "Web + Mobile App", "On-Prem Digital Signing"],
+    tags: ["Custom Software", "KPKT Licensed", "SC Compliant"],
     status: "Live",
+    serviceType: "software-development",
     highlights: [
+      {
+        icon: Code2,
+        label: "Custom Platform",
+      },
       {
         icon: Shield,
         label: "KPKT & SC Licensed",
-      },
-      {
-        icon: Server,
-        label: "Web + Mobile App",
-      },
-      {
-        icon: Database,
-        label: "AWS Malaysia",
-      },
-    ],
-  },
-  {
-    title: "CreditXpress",
-    href: "https://creditxpress.com.my",
-    logo: "/logos/creditxpress.svg",
-    description:
-      "KPKT-compliant digital lending platform with web and mobile apps. Designed for fast loan processing with comprehensive audit trails, Malaysia-based data residency, and on-premise digital signing.",
-    features: [
-      "KPKT Malaysia licensed platform",
-      "SC Malaysia regulatory compliance",
-      "Web application + Flutter mobile app",
-      "On-premise digital signing server",
-      "Malaysia data residency (AWS)",
-      "Integrated KYC verification",
-    ],
-    tags: ["KPKT Licensed", "Web + Mobile App", "Audit Trail"],
-    status: "Live",
-    highlights: [
-      {
-        icon: Shield,
-        label: "KPKT & SC Licensed",
-      },
-      {
-        icon: Server,
-        label: "Web + Mobile App",
       },
       {
         icon: Database,
@@ -97,11 +102,12 @@ const projects = [
       "Multi-product support",
       "Real-time transaction processing",
     ],
-    tags: ["P2P Lending", "Modern Stack", "AWS Malaysia"],
+    tags: ["Custom Software", "P2P Lending", "SC Licensed"],
     status: "Coming Soon",
+    serviceType: "software-development",
     highlights: [
       {
-        icon: Shield,
+        icon: Code2,
         label: "P2P Platform",
       },
       {
@@ -117,14 +123,14 @@ export default function WorkPage() {
     <>
       <Hero
         title="Our Work"
-        subtitle="Real platforms we've built for fintech companies. Fully licensed, compliant, and built for scale."
+        subtitle="See how we've helped KPKT operators go digital and built custom fintech platforms from the ground up."
       />
 
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="Case Studies"
-            subtitle="Explore the fintech platforms we've designed, developed, and deployed — all with Malaysia data residency and full regulatory compliance."
+            subtitle="Real platforms we've built and operators we've helped transform — all with Malaysia data residency and full regulatory compliance."
             centered
           />
 
@@ -235,45 +241,66 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Compliance Section */}
+      {/* Services CTA */}
       <section className="border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
-            title="Built for Compliance"
-            subtitle="Every platform we build adheres to Malaysian regulatory requirements and international security standards."
+            title="How We Can Help You"
+            subtitle="Whether you need help with compliance, want to go digital, or are building a new platform — we have a solution."
             centered
           />
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                <Database className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="mb-2 font-semibold">Malaysia Data Residency</h3>
-              <p className="text-sm text-muted-foreground">
-                All data hosted on AWS Malaysia region for regulatory compliance
-                and data sovereignty.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                <Server className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="mb-2 font-semibold">On-Premise Digital Signing</h3>
-              <p className="text-sm text-muted-foreground">
-                Dedicated on-premise servers for digital signing as required by
-                KPKT regulations.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                <Shield className="h-7 w-7 text-primary" />
-              </div>
-              <h3 className="mb-2 font-semibold">Complete Audit Trails</h3>
-              <p className="text-sm text-muted-foreground">
-                Comprehensive logging for every action, ensuring full
-                traceability and regulatory compliance.
-              </p>
-            </div>
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
+            <Card className="text-center transition-all hover:shadow-md hover:border-primary/50">
+              <CardContent className="pt-6">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <Shield className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="mb-2 font-semibold">Account Management</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  License renewals, annual submissions, and compliance coordination.
+                </p>
+                <Button asChild variant="ghost" className="gap-2">
+                  <Link href="/services/account-management">
+                    Learn More
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="text-center transition-all hover:shadow-md hover:border-primary/50">
+              <CardContent className="pt-6">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <FileCheck className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="mb-2 font-semibold">Digital License</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Transform to a fully digital KPKT-licensed platform in 6 months.
+                </p>
+                <Button asChild variant="ghost" className="gap-2">
+                  <Link href="/services/digital-license">
+                    Learn More
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="text-center transition-all hover:shadow-md hover:border-primary/50">
+              <CardContent className="pt-6">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <Code2 className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="mb-2 font-semibold">Custom Software</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Full-stack fintech development for P2P and digital lending.
+                </p>
+                <Button asChild variant="ghost" className="gap-2">
+                  <Link href="/services/software-development">
+                    Learn More
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

@@ -17,13 +17,22 @@ interface HeroProps {
     href: string;
   };
   showCodeCard?: boolean;
+  variant?: "primary" | "kpkt";
 }
 
-function GridPattern() {
+function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {
+  const colorVar = variant === "kpkt" ? "var(--kpkt)" : "var(--primary)";
+  
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      <div 
+        className={`absolute inset-0 bg-gradient-to-b to-transparent ${
+          variant === "kpkt" 
+            ? "from-kpkt/5 via-transparent" 
+            : "from-primary/5 via-transparent"
+        }`} 
+      />
       
       {/* Grid pattern */}
       <svg
@@ -49,11 +58,20 @@ function GridPattern() {
       </svg>
 
       {/* Gradient overlay for depth */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--primary)_0%,transparent_70%)] opacity-[0.04]" />
+      <div 
+        className="absolute inset-0 opacity-[0.04]" 
+        style={{
+          background: `radial-gradient(ellipse at center, ${colorVar} 0%, transparent 70%)`
+        }}
+      />
       
       {/* Animated gradient orb */}
       <motion.div
-        className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-primary/10 to-primary/5 blur-3xl"
+        className={`absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
+          variant === "kpkt"
+            ? "bg-gradient-to-r from-kpkt/10 to-kpkt/5"
+            : "bg-gradient-to-r from-primary/10 to-primary/5"
+        }`}
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -138,11 +156,14 @@ export function Hero({
   primaryCta,
   secondaryCta,
   showCodeCard = false,
+  variant = "primary",
 }: HeroProps) {
+  const buttonClass = variant === "kpkt" ? "bg-kpkt hover:bg-kpkt/90" : "";
+  
   if (showCodeCard) {
     return (
       <section className="relative min-h-[600px] overflow-hidden">
-        <GridPattern />
+        <GridPattern variant={variant} />
 
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -176,7 +197,7 @@ export function Hero({
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   {primaryCta && (
-                    <Button asChild size="lg" className="gap-2">
+                    <Button asChild size="lg" className={`gap-2 ${buttonClass}`}>
                       <Link href={primaryCta.href}>
                         {primaryCta.label}
                         <ArrowRight className="h-4 w-4" />
@@ -210,7 +231,7 @@ export function Hero({
   // Default centered hero (for other pages)
   return (
     <section className="relative overflow-hidden">
-      <GridPattern />
+      <GridPattern variant={variant} />
 
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:py-32">
         <motion.div
@@ -243,7 +264,7 @@ export function Hero({
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               {primaryCta && (
-                <Button asChild size="lg" className="gap-2">
+                <Button asChild size="lg" className={`gap-2 ${buttonClass}`}>
                   <Link href={primaryCta.href}>
                     {primaryCta.label}
                     <ArrowRight className="h-4 w-4" />
