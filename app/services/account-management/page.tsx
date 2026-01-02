@@ -181,8 +181,106 @@ export default function AccountManagementPage() {
         </div>
       </section>
 
-      {/* Services Covered */}
+      {/* Speed Advantage */}
       <section className="py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Left: Content */}
+            <div>
+              <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Advantage</Badge>
+              <h2 className="mb-4 text-3xl font-bold tracking-tight">
+                Up to <span className="text-kpkt">50% Faster</span> Approvals
+              </h2>
+              <p className="mb-6 text-lg text-muted-foreground">
+                Our deep experience with KPKT processes and established relationships with regulators
+                mean your applications move faster through the system.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+                    <Zap className="h-4 w-4 text-kpkt" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Years of Experience</h4>
+                    <p className="text-sm text-muted-foreground">We know exactly what regulators need, reducing back-and-forth and delays.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+                    <Users className="h-4 w-4 text-kpkt" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Established Network</h4>
+                    <p className="text-sm text-muted-foreground">Direct relationships with key stakeholders expedite the approval process.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+                    <FileCheck className="h-4 w-4 text-kpkt" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">First-Time Right</h4>
+                    <p className="text-sm text-muted-foreground">Accurate documentation from day one means no rejection or resubmission delays.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Visual Comparison */}
+            <div className="relative">
+              <Card className="overflow-hidden">
+                <div className="-mx-px -mt-px rounded-t-xl border-b bg-muted/50 px-6 py-4">
+                  <h3 className="text-center text-lg font-semibold">Average Approval Timeline</h3>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-8">
+                    {/* DIY Bar */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="font-medium text-muted-foreground">DIY / Traditional</span>
+                        <span className="font-semibold">4–6 weeks</span>
+                      </div>
+                      <div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
+                        <div 
+                          className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-muted-foreground/30 pr-3"
+                          style={{ width: '100%' }}
+                        >
+                          <Clock className="h-5 w-5 text-muted-foreground" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Truestack Bar */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="font-semibold text-kpkt">With Truestack</span>
+                        <span className="font-bold text-kpkt">2–3 weeks</span>
+                      </div>
+                      <div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
+                        <div 
+                          className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-gradient-to-r from-kpkt to-kpkt/80 pr-3"
+                          style={{ width: '50%' }}
+                        >
+                          <Zap className="h-5 w-5 text-white" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Savings Highlight */}
+                    <div className="rounded-xl border-2 border-dashed border-kpkt/30 bg-kpkt/5 p-4 text-center">
+                      <div className="mb-1 text-3xl font-bold text-kpkt">~50%</div>
+                      <div className="text-sm font-medium text-muted-foreground">Faster than industry average</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Covered */}
+      <section className="border-t py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="Comprehensive Services Covered"
@@ -204,9 +302,17 @@ export default function AccountManagementPage() {
               </Card>
             ))}
           </div>
-          <p className="mt-8 text-center text-muted-foreground">
-            Plus full CoSec and SSM document coordination to keep everything running smoothly.
-          </p>
+          <div className="mx-auto mt-10 max-w-2xl">
+            <div className="flex items-center gap-4 rounded-xl border bg-gradient-to-r from-kpkt/5 to-transparent p-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+                <CheckCircle2 className="h-6 w-6 text-kpkt" />
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Full CoSec & SSM Coordination</p>
+                <p className="text-sm text-muted-foreground">All document coordination handled seamlessly to keep everything running smoothly.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
