@@ -6,6 +6,7 @@ import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import LogoCloud1 from "@/components/logo-cloud-1";
 import {
   Landmark,
   Users,
@@ -13,10 +14,8 @@ import {
   Smartphone,
   Server,
   Database,
-  Cloud,
   Shield,
   FileCheck,
-  Layers,
   CheckCircle2,
   ArrowUpRight,
   ArrowRight,
@@ -60,46 +59,6 @@ const fintechFocus = [
     icon: CreditCard,
     title: "Payment Solutions",
     description: "Secure payment gateway integrations and transaction processing. Built with Malaysia data residency and complete audit trails.",
-  },
-];
-
-
-const technologyPartners = [
-  {
-    name: "CTOS",
-    category: "Credit Intelligence",
-    description: "Leading credit bureau and risk management solutions for comprehensive financial insights",
-    logo: "/logos/ctos.png",
-  },
-  {
-    name: "Regtank",
-    category: "Onboarding & AML",
-    description: "Customer onboarding, AML checks, KYC verification, and compliance screening",
-    logo: "/logos/regtank.webp",
-  },
-  {
-    name: "Trustgate",
-    category: "e-Signature & e-KYC",
-    description: "On-premise digital identity verification and Malaysia-compliant e-signatures",
-    logo: "/logos/trustgate.png",
-  },
-  {
-    name: "Airwallex",
-    category: "Payments",
-    description: "Payment gateway for international and local payment methods",
-    logo: "/logos/airwallex.png",
-  },
-  {
-    name: "Meta",
-    category: "Notifications",
-    description: "WhatsApp notifications for payments, OTP, and marketing",
-    logo: "/logos/meta.svg",
-  },
-  {
-    name: "Infomina",
-    category: "SSM Reports",
-    description: "SSM company reports and business intelligence for due diligence and verification",
-    logo: "/logos/infomina.png",
   },
 ];
 
@@ -410,88 +369,33 @@ export default function SoftwareDevelopmentPage() {
       </section>
 
       {/* In-house Expertise & Technology Partners */}
-      <section className="py-20">
+      <section className="py-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            title="In-house Expertise Meets World-class Partnerships"
-            subtitle="Our core team of developers, engineers, and designers work seamlessly with industry-leading technology partners to deliver comprehensive, enterprise-grade solutions."
-            centered
-          />
-
-          <div className="grid gap-8 lg:grid-cols-5">
-            {/* Truestack In-House Card */}
-            <Card className="lg:col-span-2 bg-gradient-to-br from-primary/5 via-background to-background border-primary/20">
-              <CardContent className="p-8">
-                <div className="mb-6 flex items-center gap-4">
-                  <Image
-                    src="/truestack-logo-transparent.svg"
-                    alt="Truestack"
-                    width={160}
-                    height={40}
-                    className="h-10 w-auto"
-                  />
-                </div>
+          {/* In-house capabilities card */}
+          <div className="mb-12 rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-background p-8">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div>
                 <Badge className="mb-4">In-House Expertise</Badge>
-                <p className="mb-6 text-muted-foreground">
-                  Our core team brings deep technical expertise across the full stack, from system architecture to user experience design.
+                <h2 className="mb-4 text-2xl font-bold tracking-tight sm:text-3xl">
+                  Full-Service Development Team
+                </h2>
+                <p className="text-muted-foreground">
+                  Our core team of developers, engineers, and designers delivers end-to-end solutions—from concept to deployment and beyond.
                 </p>
-                <ul className="space-y-3">
-                  {inHouseCapabilities.map((capability) => (
-                    <li key={capability} className="flex items-center gap-3 text-sm">
-                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                        <CheckCircle2 className="h-3 w-3 text-primary" />
-                      </div>
-                      <span className="text-foreground">{capability}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Technology Partners Grid */}
-            <div className="lg:col-span-3">
-              <Card className="h-full">
-                <CardContent className="p-8">
-                  <h3 className="mb-2 text-xl font-semibold">Technology Partners</h3>
-                  <p className="mb-6 text-muted-foreground">
-                    We integrate with best-in-class platforms to extend our capabilities and deliver proven, enterprise-ready solutions.
-                  </p>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {technologyPartners.map((partner) => (
-                      <div
-                        key={partner.name}
-                        className="rounded-lg border bg-muted/50 p-4 transition-colors hover:border-primary/50 hover:bg-muted"
-                      >
-                        <div className="mb-2 flex items-center gap-2">
-                          <Image
-                            src={partner.logo}
-                            alt={partner.name}
-                            width={120}
-                            height={32}
-                            className="h-6 w-auto shrink-0 object-contain"
-                          />
-                        </div>
-                        <Badge variant="secondary" className="mb-2 text-xs">
-                          {partner.category}
-                        </Badge>
-                        <p className="text-xs text-muted-foreground leading-relaxed">
-                          {partner.description}
-                        </p>
-                      </div>
-                    ))}
-                    {/* And more indicator */}
-                    <div className="flex items-center justify-center rounded-lg border border-dashed bg-muted/30 p-4">
-                      <div className="text-center">
-                        <div className="mb-1 text-2xl font-semibold text-primary">+</div>
-                        <p className="text-sm font-medium text-muted-foreground">And more</p>
-                        <p className="text-xs text-muted-foreground">We partner with the best to deliver complete solutions</p>
-                      </div>
-                    </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {inHouseCapabilities.map((capability) => (
+                  <div key={capability} className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
+                    <span>{capability}</span>
                   </div>
-                </CardContent>
-              </Card>
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* Technology Partners Logo Cloud */}
+          <LogoCloud1 className="py-0" />
         </div>
       </section>
 

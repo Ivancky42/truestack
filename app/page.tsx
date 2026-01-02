@@ -1,9 +1,9 @@
 import { Hero } from "@/components/sections/hero";
-import { ClientsSection } from "@/components/sections/clients-section";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { TechStack } from "@/components/sections/tech-stack";
 import { ComplianceSection } from "@/components/sections/compliance-section";
+import LogoCloud1 from "@/components/logo-cloud-1";
 
 export default function HomePage() {
   return (
@@ -15,7 +15,13 @@ export default function HomePage() {
         secondaryCta={{ label: "View Our Work", href: "/work" }}
         showCodeCard
       />
-      <ClientsSection />
+      <div className="border-b bg-muted/30">
+        <LogoCloud1 
+          variant="clients" 
+          showCategories={false}
+          className="py-12 md:py-16"
+        />
+      </div>
       <ServicesGrid />
       <ComplianceSection />
       <CaseStudies />
