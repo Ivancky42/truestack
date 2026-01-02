@@ -23,7 +23,13 @@ import {
 export const metadata: Metadata = {
   title: "KPKT Account Management",
   description:
-    "KPKT compliance and account management services. License renewals, annual submissions, and regulatory coordination for licensed money lenders in Malaysia.",
+    "KPKT compliance and account management services. License renewals, annual submissions, and regulatory coordination for licensed money lenders in Malaysia. Up to 50% faster approvals.",
+  openGraph: {
+    title: "KPKT Account Management | Truestack",
+    description:
+      "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
+    images: ["/truestack-favicon.png"],
+  },
 };
 
 const painPoints = [

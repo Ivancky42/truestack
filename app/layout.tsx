@@ -16,37 +16,52 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Truestack | Fintech Software Agency",
+    default: "Truestack | KPKT Services & Fintech Software",
     template: "%s | Truestack",
   },
   description:
-    "We build digital lending platforms, payment systems, and financial applications from the ground up.",
+    "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
   keywords: [
+    "KPKT",
+    "money lender Malaysia",
+    "KPKT license",
+    "digital license conversion",
     "fintech",
     "software development",
     "digital lending",
-    "payment systems",
+    "P2P lending",
     "Malaysia",
-    "software agency",
-    "Next.js",
-    "Node.js",
-    "PostgreSQL",
-    "AWS",
+    "compliance",
+    "account management",
   ],
   authors: [{ name: "Truestack" }],
+  icons: {
+    icon: "/truestack-favicon.png",
+    shortcut: "/truestack-favicon.png",
+    apple: "/truestack-favicon.png",
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_MY",
     siteName: "Truestack",
-    title: "Truestack | Fintech Software Agency",
+    title: "Truestack | KPKT Services & Fintech Software",
     description:
-      "We build digital lending platforms, payment systems, and financial applications from the ground up.",
+      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+    images: [
+      {
+        url: "/truestack-favicon.png",
+        width: 512,
+        height: 512,
+        alt: "Truestack",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Truestack | Fintech Software Agency",
+    card: "summary",
+    title: "Truestack | KPKT Services & Fintech Software",
     description:
-      "We build digital lending platforms, payment systems, and financial applications from the ground up.",
+      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+    images: ["/truestack-favicon.png"],
   },
   robots: {
     index: true,

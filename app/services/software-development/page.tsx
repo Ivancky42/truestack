@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   title: "Custom Software Development",
   description:
     "Full-stack fintech development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape with KPKT and SC compliance.",
+  openGraph: {
+    title: "Custom Fintech Software Development | Truestack",
+    description:
+      "Full-stack development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
+    images: ["/truestack-favicon.png"],
+  },
 };
 
 const fintechFocus = [
@@ -211,7 +217,7 @@ export default function SoftwareDevelopmentPage() {
             <Badge className="mb-4">Built for Compliance</Badge>
             <h2 className="mb-4 text-2xl font-bold">Every Platform We Build Meets Regulatory Requirements</h2>
             <p className="mb-6 text-muted-foreground">
-              We understand Malaysia's regulatory landscape. Every platform includes the compliance features required for KPKT and SC Malaysia licensing.
+              We understand Malaysia&apos;s regulatory landscape. Every platform includes the compliance features required for KPKT and SC Malaysia licensing.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {complianceFeatures.map((feature) => (
@@ -305,7 +311,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="mb-4 text-3xl font-bold">Ready to Build?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Whether you're starting fresh or upgrading an existing system, we'll help you build a fintech platform that meets your business needs and regulatory requirements.
+            Whether you&apos;re starting fresh or upgrading an existing system, we&apos;ll help you build a fintech platform that meets your business needs and regulatory requirements.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg">
