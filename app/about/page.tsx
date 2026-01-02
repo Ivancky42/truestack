@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -83,26 +84,44 @@ export default function AboutPage() {
       {/* Who We Are */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeader title="Who We Are" />
-            <div className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                Truestack is a specialized service provider for KPKT-licensed money lenders 
-                in Malaysia. We offer a complete range of services — from regulatory 
-                compliance management to custom software development — helping operators 
-                run and grow their lending businesses.
-              </p>
-              <p>
-                Our team combines deep expertise in Malaysia's regulatory landscape with 
-                strong technical capabilities. We've helped traditional lenders go digital, 
-                built KPKT-compliant platforms from scratch, and managed ongoing compliance 
-                requirements for operators across the country.
-              </p>
-              <p>
-                We work with trusted partners for specialized services like penetration 
-                testing, KYC verification, and digital signing — allowing us to deliver 
-                complete solutions while focusing on what we do best.
-              </p>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Logo */}
+            <div className="flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 via-kpkt/10 to-transparent blur-2xl" />
+                <Image
+                  src="/truestack-logo-transparent.svg"
+                  alt="Truestack Technologies"
+                  width={320}
+                  height={80}
+                  className="relative h-auto w-64 md:w-80"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div>
+              <SectionHeader title="Who We Are" />
+              <div className="space-y-6 text-lg text-muted-foreground">
+                <p>
+                  Truestack is a specialized service provider for KPKT-licensed money lenders 
+                  in Malaysia. We offer a complete range of services — from regulatory 
+                  compliance management to custom software development — helping operators 
+                  run and grow their lending businesses.
+                </p>
+                <p>
+                  Our team combines deep expertise in Malaysia&apos;s regulatory landscape with 
+                  strong technical capabilities. We&apos;ve helped traditional lenders go digital, 
+                  built KPKT-compliant platforms from scratch, and managed ongoing compliance 
+                  requirements for operators across the country.
+                </p>
+                <p>
+                  We work with trusted partners for specialized services like penetration 
+                  testing, KYC verification, and digital signing — allowing us to deliver 
+                  complete solutions while focusing on what we do best.
+                </p>
+              </div>
             </div>
           </div>
         </div>

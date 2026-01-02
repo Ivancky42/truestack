@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
@@ -11,30 +12,56 @@ const partners = [
     category: "Credit Intelligence",
     description:
       "Leading credit bureau and risk management solutions for comprehensive financial insights",
+    logo: "/logos/ctos.png",
+    showName: false, // Logo includes the name
+  },
+  {
+    name: "Regtank",
+    category: "Onboarding & AML",
+    description:
+      "Customer onboarding, AML checks, KYC verification, and compliance screening",
+    logo: "/logos/regtank.webp",
+    showName: false, // Logo includes the name
   },
   {
     name: "Trustgate",
     category: "e-Signature & e-KYC",
     description:
       "On-premise digital identity verification and Malaysia-compliant e-signatures",
+    logo: "/logos/trustgate.png",
+    showName: false, // Logo includes the name
   },
   {
     name: "Airwallex",
     category: "Payments",
     description:
       "Payment gateway for international and local payment methods",
+    logo: "/logos/airwallex.png",
+    showName: false, // Logo includes the name
   },
   {
     name: "Meta",
     category: "Notifications",
     description:
       "WhatsApp notifications for payments, OTP, and marketing",
+    logo: "/logos/meta.svg",
+    showName: false, // Logo includes the name
   },
   {
     name: "AWS",
     category: "Cloud Hosting",
     description:
       "Cloud hosting on AWS Malaysia for data residency and scalable infrastructure",
+    logo: "/logos/aws.svg",
+    showName: false, // Logo includes the name
+  },
+  {
+    name: "Infomina",
+    category: "SSM Reports",
+    description:
+      "SSM company reports and business intelligence for due diligence and verification",
+    logo: "/logos/infomina.png",
+    showName: false, // Logo includes the name
   },
 ];
 
@@ -89,14 +116,15 @@ export function TechnologyPartners() {
             <Card className="h-full">
               <CardContent className="p-8">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-lg font-bold text-primary-foreground">
-                    T
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">Truestack Team</h3>
-                    <p className="text-sm font-medium text-primary">In-House Expertise</p>
-                  </div>
+                  <Image
+                    src="/truestack-logo-transparent.svg"
+                    alt="Truestack"
+                    width={160}
+                    height={40}
+                    className="h-10 w-auto"
+                  />
                 </div>
+                <p className="mb-2 text-sm font-medium text-primary">In-House Expertise</p>
                 <p className="mb-6 text-muted-foreground">
                   Our core team brings deep technical expertise across the full
                   stack, from system architecture to user experience design.
@@ -141,10 +169,25 @@ export function TechnologyPartners() {
                       variants={itemVariants}
                     >
                       <div className="mb-2 flex items-center gap-2">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
-                          {partner.name.substring(0, 2).toUpperCase()}
-                        </div>
-                        <span className="font-medium text-foreground">{partner.name}</span>
+                        {partner.logo ? (
+                          <Image
+                            src={partner.logo}
+                            alt={partner.name}
+                            width={120}
+                            height={32}
+                            className="h-6 w-auto shrink-0 object-contain"
+                          />
+                        ) : (
+                          <>
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
+                              {partner.name.substring(0, 2).toUpperCase()}
+                            </div>
+                            <span className="font-medium text-foreground">{partner.name}</span>
+                          </>
+                        )}
+                        {partner.logo && partner.showName && (
+                          <span className="font-medium text-foreground">{partner.name}</span>
+                        )}
                       </div>
                       <Badge variant="secondary" className="mb-2 text-xs">
                         {partner.category}
@@ -162,7 +205,7 @@ export function TechnologyPartners() {
                     <div className="text-center">
                       <div className="mb-1 text-2xl font-semibold text-primary">+</div>
                       <p className="text-sm font-medium text-muted-foreground">And more</p>
-                      <p className="text-xs text-muted-foreground">Additional partners for payments, SMS, and more</p>
+                      <p className="text-xs text-muted-foreground">We partner with the best to deliver complete solutions</p>
                     </div>
                   </motion.div>
                 </motion.div>
