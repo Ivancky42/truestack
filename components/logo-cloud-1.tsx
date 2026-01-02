@@ -39,6 +39,16 @@ export const technologyPartners = [
     category: "Cloud Hosting",
     logo: "/logos/aws.svg",
   },
+  {
+    name: "RHB Trustees",
+    category: "Trust Account",
+    logo: "/logos/rhb_trustees.jpg",
+  },
+  {
+    name: "DigitalOcean",
+    category: "Cloud Hosting",
+    logo: "/logos/digitalocean.svg",
+  },
 ] as const
 
 // Client logos (for homepage)
