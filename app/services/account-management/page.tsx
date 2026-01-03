@@ -90,49 +90,51 @@ const servicesIncluded = [
 
 interface PricingRow {
   item: string;
-  payPerRequest: string | boolean | null;
-  subscription: string | boolean | null;
+  noSubscription: string | boolean | null;
+  monthly: string | boolean | null;
+  annual: string | boolean | null;
   isHighlight?: boolean;
 }
 
 const pricingData: { headers: string[]; rows: PricingRow[] } = {
-  headers: ["Item", "Pay-Per-Request", "Annual Subscription"],
+  headers: ["Item", "No Subscription", "Monthly", "Annual"],
   rows: [
     {
-      item: "Annual Fee",
-      payPerRequest: "—",
-      subscription: "RM 1,200 / year",
+      item: "Subscription Fee",
+      noSubscription: "—",
+      monthly: "RM 100 / month",
+      annual: "RM 1,000 / year",
     },
     {
-      item: "Standard Request Fee",
-      payPerRequest: "RM 890",
-      subscription: "RM 690",
-    },
-    {
-      item: "Annual B & B1 Submission",
-      payPerRequest: "—",
-      subscription: "Included (once per year)",
-    },
-    {
-      item: "Expedited Service Fee",
-      payPerRequest: "RM 1,500 / request",
-      subscription: "RM 1,200 / request",
+      item: "Per Request Fee",
+      noSubscription: "RM 1,000",
+      monthly: "RM 500",
+      annual: "RM 500",
     },
     {
       item: "Priority Handling",
-      payPerRequest: null,
-      subscription: true,
+      noSubscription: null,
+      monthly: true,
+      annual: true,
     },
     {
-      item: "Expedited SLA Guarantee",
-      payPerRequest: "Refund if timeline not met",
-      subscription: "Refund if timeline not met",
+      item: "Annual B & B1 Submission",
+      noSubscription: "—",
+      monthly: "—",
+      annual: "Included (once per year)",
+    },
+    {
+      item: "Annual Savings (10 requests)",
+      noSubscription: "—",
+      monthly: "Save RM 3,800",
+      annual: "Save RM 4,500",
+      isHighlight: true,
     },
     {
       item: "Best For",
-      payPerRequest: "Occasional / one-off needs",
-      subscription: "Active & growing operators",
-      isHighlight: true,
+      noSubscription: "Occasional / one-off needs",
+      monthly: "Regular operators",
+      annual: "Active & growing operators",
     },
   ],
 };
@@ -337,17 +339,16 @@ export default function AccountManagementPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b bg-muted/50">
-                      <th className="px-6 py-4 text-left font-semibold">Item</th>
-                      <th className="px-6 py-4 text-center font-semibold">
-                        <div className="flex flex-col">
-                          <span>Pay-Per-Request</span>
-                        </div>
+                      <th className="px-6 py-4 text-left font-semibold align-bottom">Item</th>
+                      <th className="px-6 py-4 text-center font-semibold align-bottom">
+                        No Subscription
                       </th>
-                      <th className="px-6 py-4 text-center font-semibold">
-                        <div className="flex flex-col items-center gap-1">
-                          <Badge variant="default" className="mb-1 bg-kpkt hover:bg-kpkt/90">Recommended</Badge>
-                          <span>Annual Subscription</span>
-                        </div>
+                      <th className="px-6 py-4 text-center font-semibold align-bottom">
+                        Monthly
+                      </th>
+                      <th className="px-6 py-4 text-center font-semibold align-bottom">
+                        <Badge variant="default" className="mb-2 bg-kpkt hover:bg-kpkt/90">Recommended</Badge>
+                        <div>Annual</div>
                       </th>
                     </tr>
                   </thead>
@@ -359,21 +360,30 @@ export default function AccountManagementPage() {
                       >
                         <td className="px-6 py-4 font-medium">{row.item}</td>
                         <td className="px-6 py-4 text-center">
-                          {row.payPerRequest === null ? (
+                          {row.noSubscription === null ? (
                             <X className="mx-auto h-5 w-5 text-muted-foreground" />
-                          ) : row.payPerRequest === true ? (
+                          ) : row.noSubscription === true ? (
                             <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
                           ) : (
-                            <span className={row.isHighlight ? 'text-muted-foreground' : ''}>{row.payPerRequest}</span>
+                            <span className={row.isHighlight ? 'text-muted-foreground' : ''}>{row.noSubscription}</span>
                           )}
                         </td>
                         <td className="px-6 py-4 text-center">
-                          {row.subscription === null ? (
+                          {row.monthly === null ? (
                             <X className="mx-auto h-5 w-5 text-muted-foreground" />
-                          ) : row.subscription === true ? (
+                          ) : row.monthly === true ? (
                             <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
                           ) : (
-                            <span className={row.isHighlight ? 'font-semibold text-kpkt' : 'font-medium'}>{row.subscription}</span>
+                            <span className={row.isHighlight ? 'text-muted-foreground' : ''}>{row.monthly}</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 text-center">
+                          {row.annual === null ? (
+                            <X className="mx-auto h-5 w-5 text-muted-foreground" />
+                          ) : row.annual === true ? (
+                            <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
+                          ) : (
+                            <span className={row.isHighlight ? 'font-semibold text-kpkt' : 'font-medium'}>{row.annual}</span>
                           )}
                         </td>
                       </tr>
@@ -387,15 +397,11 @@ export default function AccountManagementPage() {
             <div className="mt-6 space-y-2 text-sm text-muted-foreground">
               <p className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-kpkt" />
-                No long-term lock-in. Switch between subscription and on-demand as your business evolves.
+                No long-term lock-in. Switch between subscription tiers or on-demand as your business evolves.
               </p>
               <p className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-kpkt" />
-                Expedited service offers significantly faster turnaround times.
-              </p>
-              <p className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-kpkt" />
-                Expedited fee is refunded if SLA timeline is not met.
+                Annual subscribers save 50% on per-request fees compared to no subscription.
               </p>
               <p className="flex items-center gap-2 font-medium text-foreground">
                 <Zap className="h-4 w-4 text-kpkt" />
