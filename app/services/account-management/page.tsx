@@ -108,7 +108,7 @@ const pricingData: { headers: string[]; rows: PricingRow[] } = {
     {
       item: "Per Request Fee",
       noSubscription: "RM 1,000",
-      monthly: "RM 500",
+      monthly: "RM 600",
       annual: "RM 500",
     },
     {
@@ -126,7 +126,7 @@ const pricingData: { headers: string[]; rows: PricingRow[] } = {
     {
       item: "Annual Savings (10 requests)",
       noSubscription: "—",
-      monthly: "Save RM 3,800",
+      monthly: "Save RM 2,800",
       annual: "Save RM 4,500",
       isHighlight: true,
     },
