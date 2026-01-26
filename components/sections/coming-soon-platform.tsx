@@ -132,7 +132,7 @@ export function ComingSoonPlatform() {
         >
           <p className="text-slate-400">
             Launching at{" "}
-            <span className="font-medium text-indigo-400">app.truestack.com.my</span>
+            <span className="font-medium text-indigo-400">app.truestack.my</span>
           </p>
         </motion.div>
       </div>
