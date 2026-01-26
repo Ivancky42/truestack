@@ -32,8 +32,10 @@ function AnimatedServiceCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className={`group h-full transition-all hover:shadow-md ${
-        isKpkt ? "hover:border-kpkt/50" : "hover:border-primary/50"
+      <Card className={`group flex h-full flex-col transition-all hover:shadow-md ${
+        isKpkt 
+          ? "bg-kpkt/[0.03] hover:border-kpkt/50 hover:bg-kpkt/[0.05]" 
+          : "bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05]"
       }`}>
         <CardHeader>
           <motion.div
@@ -47,12 +49,12 @@ function AnimatedServiceCard({
           </motion.div>
           <CardTitle className="text-xl">{title}</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col gap-4">
+        <CardContent className="flex flex-1 flex-col gap-4">
           <p className="flex-1 text-muted-foreground">{description}</p>
           <Button 
             asChild 
             variant="ghost" 
-            className={`w-fit gap-2 px-0 hover:bg-transparent ${
+            className={`mt-auto w-fit gap-2 px-0 hover:bg-transparent ${
               isKpkt ? "hover:text-kpkt" : "hover:text-primary"
             }`}
           >
@@ -101,7 +103,6 @@ export function ServicesGrid() {
         <SectionHeader
           title="Our Services"
           subtitle="From compliance management to custom software development — everything you need to run and grow your lending business."
-          centered
         />
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service, index) => (

@@ -174,7 +174,7 @@ export function Hero({
               transition={{ duration: 0.6 }}
             >
               <motion.h1
-                className="text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl"
+                className="font-display text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -241,7 +241,7 @@ export function Hero({
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className="text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl"
+            className="font-display text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}

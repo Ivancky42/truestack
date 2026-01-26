@@ -89,6 +89,10 @@ export const clientLogos = [
     name: "Terraworld",
     logo: "/logos/terraworld.png",
   },
+  {
+    name: "Andas Capital",
+    logo: "/logos/Andas.svg",
+  },
 ] as const
 
 type LogoItem = {
@@ -107,6 +111,7 @@ interface LogoCloudProps {
   badge?: string
   bottomText?: string
   size?: 'default' | 'large'
+  compact?: boolean
 }
 
 const LogoCloud1 = ({ 
@@ -119,11 +124,12 @@ const LogoCloud1 = ({
   badge,
   bottomText,
   size,
+  compact = false,
 }: LogoCloudProps) => {
   const isClients = variant === 'clients'
   const items = logos || (isClients ? clientLogos : technologyPartners)
-  // Default to large for clients, default for partners
-  const logoSize = size || (isClients ? 'large' : 'default')
+  // Default to large for clients, default for partners (but smaller if compact)
+  const logoSize = size || (compact ? 'default' : (isClients ? 'large' : 'default'))
   
   const defaultTitle = isClients 
     ? 'Trusted by Industry Leaders' 
@@ -137,21 +143,27 @@ const LogoCloud1 = ({
   const Icon = isClients ? Users : Handshake
 
   return (
-    <section className={cn('relative w-full py-12 md:py-16', className)}>
+    <section className={cn('relative w-full', compact ? 'pt-0 pb-10 md:pb-12' : 'py-12 md:py-16', className)}>
       <div className='container mx-auto px-4 md:px-6'>
         <div className='mx-auto max-w-5xl'>
           {/* Header */}
-          <div className='mb-12 space-y-4 text-center'>
-            <div className='flex items-center justify-center gap-2'>
-              <Icon className='text-primary size-5' />
-              <span className='text-primary text-sm font-medium'>{badge || defaultBadge}</span>
-            </div>
-            <h2 className='text-2xl font-bold tracking-tight sm:text-3xl'>
+          <div className={cn('text-center', compact ? 'mb-5' : 'mb-12 space-y-4')}>
+            {!compact && (
+              <div className='flex items-center justify-center gap-2'>
+                <Icon className='text-primary size-5' />
+                <span className='text-primary text-sm font-medium'>{badge || defaultBadge}</span>
+              </div>
+            )}
+            <p className={cn(
+              compact ? 'text-sm text-muted-foreground/70 uppercase tracking-wider' : 'font-display font-medium tracking-tight text-4xl md:text-5xl'
+            )}>
               {title || defaultTitle}
-            </h2>
-            <p className='text-muted-foreground max-w-2xl mx-auto'>
-              {subtitle || defaultSubtitle}
             </p>
+            {!compact && (
+              <p className='text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto'>
+                {subtitle || defaultSubtitle}
+              </p>
+            )}
           </div>
 
           {/* Logo Grid */}
@@ -191,7 +203,7 @@ const LogoCloud1 = ({
           </div>
 
           {/* Bottom Text */}
-          {bottomText !== '' && (
+          {bottomText !== '' && !compact && (
             <div className='mt-10 text-center'>
               <p className='text-muted-foreground text-sm'>
                 {bottomText || (isClients ? 'And many more across Malaysia' : '+ more integrations tailored to your specific requirements')}

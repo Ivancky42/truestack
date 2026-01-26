@@ -1,83 +1,69 @@
 "use client";
 
-import { SectionHeader } from "@/components/shared/section-header";
 import { motion } from "framer-motion";
+import { Server } from "lucide-react";
 
-const technologies = [
-  { name: "Next.js", category: "Frontend" },
-  { name: "React", category: "Frontend" },
-  { name: "Flutter", category: "Mobile" },
-  { name: "Node.js", category: "Backend" },
-  { name: "Express", category: "Backend" },
-  { name: "PostgreSQL", category: "Database" },
-  { name: "AWS", category: "Cloud" },
-  { name: "TypeScript", category: "Language" },
-  { name: "Tailwind CSS", category: "Styling" },
+const techCategories = [
+  {
+    label: "Frontend",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    label: "Mobile",
+    items: ["Flutter", "iOS", "Android"],
+  },
+  {
+    label: "Backend",
+    items: ["Node.js", "Express", "PostgreSQL", "Redis"],
+  },
+  {
+    label: "Cloud",
+    items: ["AWS Malaysia", "DigitalOcean", "Docker"],
+  },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      type: "spring" as const,
-      stiffness: 300,
-      damping: 20,
-    },
-  },
-};
 
 export function TechStack() {
   return (
-    <section className="border-t bg-muted/30 py-20">
+    <section className="border-t bg-muted/30 py-12">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeader
-          title="Modern Tech Stack"
-          subtitle="We use battle-tested technologies to build reliable, scalable fintech applications."
-          centered
-        />
+        {/* Compact header */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {technologies.map((tech) => (
-            <motion.div
-              key={tech.name}
-              className="inline-flex items-center gap-2 rounded-full border bg-background px-5 py-2.5 text-sm font-medium shadow-sm transition-colors hover:bg-primary/5 hover:border-primary/50"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <span>{tech.name}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-        
-        {/* AWS Malaysia callout */}
-        <motion.div
-          className="mt-8 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="mb-8 flex items-center justify-center gap-3"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
         >
-          <p className="text-sm text-muted-foreground">
-            All infrastructure hosted on <span className="font-medium text-primary">AWS Malaysia</span> for data residency compliance
-          </p>
+          <Server className="h-5 w-5 text-primary" />
+          <h2 className="text-lg font-medium">Modern Tech Stack</h2>
+          <span className="text-muted-foreground">—</span>
+          <p className="text-muted-foreground">Battle-tested technologies for reliable fintech applications</p>
+        </motion.div>
+
+        {/* Tech categories in a row */}
+        <motion.div
+          className="grid grid-cols-2 gap-6 md:grid-cols-4"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          {techCategories.map((category) => (
+            <div key={category.label} className="text-center">
+              <div className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                {category.label}
+              </div>
+              <div className="flex flex-wrap justify-center gap-1.5">
+                {category.items.map((item) => (
+                  <span
+                    key={item}
+                    className="inline-block rounded-md bg-background px-2.5 py-1 text-sm border"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

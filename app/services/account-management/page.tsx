@@ -156,7 +156,6 @@ export default function AccountManagementPage() {
           <SectionHeader
             title="Navigate Compliance Without the Hassle"
             subtitle="Running a licensed money lending business means dealing with heavy regulatory requirements. Let us handle it."
-            centered
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {painPoints.map((point) => (
@@ -165,8 +164,8 @@ export default function AccountManagementPage() {
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
                     <point.icon className="h-6 w-6 text-destructive" />
                   </div>
-                  <h3 className="mb-2 font-semibold">{point.title}</h3>
-                  <p className="text-sm text-muted-foreground">{point.description}</p>
+                  <h3 className="mb-2 text-lg font-semibold">{point.title}</h3>
+                  <p className="text-base text-muted-foreground">{point.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -177,10 +176,10 @@ export default function AccountManagementPage() {
       {/* Our Solution */}
       <section className="border-t bg-kpkt/5 py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="max-w-3xl">
             <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Solution</Badge>
-            <h2 className="mb-4 text-2xl font-bold">Your Single, Trusted Partner</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="mb-4 font-display text-3xl font-medium md:text-4xl">Your Single, Trusted Partner</h2>
+            <p className="text-lg text-muted-foreground md:text-xl">
               A dedicated KPKT account management service that handles end-to-end regulatory work. 
               We streamline every compliance touchpoint, saving you time and reducing operational stress 
               so you can focus on what matters most: <span className="font-semibold text-foreground">growing your lending business.</span>
@@ -194,12 +193,12 @@ export default function AccountManagementPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left: Content */}
-            <div>
+            <div className="max-w-xl">
               <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Advantage</Badge>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight">
+              <h2 className="mb-4 font-display text-4xl font-medium tracking-tight md:text-5xl">
                 Up to <span className="text-kpkt">50% Faster</span> Approvals
               </h2>
-              <p className="mb-6 text-lg text-muted-foreground">
+              <p className="mb-6 text-lg text-muted-foreground md:text-xl">
                 Our deep experience with KPKT processes and established relationships with regulators
                 mean your applications move faster through the system.
               </p>
@@ -209,8 +208,8 @@ export default function AccountManagementPage() {
                     <Zap className="h-4 w-4 text-kpkt" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Years of Experience</h4>
-                    <p className="text-sm text-muted-foreground">We know exactly what regulators need, reducing back-and-forth and delays.</p>
+                    <h4 className="text-lg font-semibold">Years of Experience</h4>
+                    <p className="text-base text-muted-foreground">We know exactly what regulators need, reducing back-and-forth and delays.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -218,8 +217,8 @@ export default function AccountManagementPage() {
                     <Users className="h-4 w-4 text-kpkt" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Established Network</h4>
-                    <p className="text-sm text-muted-foreground">Direct relationships with key stakeholders expedite the approval process.</p>
+                    <h4 className="text-lg font-semibold">Established Network</h4>
+                    <p className="text-base text-muted-foreground">Direct relationships with key stakeholders expedite the approval process.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -227,8 +226,8 @@ export default function AccountManagementPage() {
                     <FileCheck className="h-4 w-4 text-kpkt" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">First-Time Right</h4>
-                    <p className="text-sm text-muted-foreground">Accurate documentation from day one means no rejection or resubmission delays.</p>
+                    <h4 className="text-lg font-semibold">First-Time Right</h4>
+                    <p className="text-base text-muted-foreground">Accurate documentation from day one means no rejection or resubmission delays.</p>
                   </div>
                 </div>
               </div>
@@ -293,7 +292,6 @@ export default function AccountManagementPage() {
           <SectionHeader
             title="Comprehensive Services Covered"
             subtitle="Everything you need to stay compliant, handled by our experienced team."
-            centered
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {servicesIncluded.map((service) => (
@@ -302,10 +300,10 @@ export default function AccountManagementPage() {
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-kpkt/10">
                     <service.icon className="h-5 w-5 text-kpkt" />
                   </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                  <p className="text-base text-muted-foreground">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -316,8 +314,8 @@ export default function AccountManagementPage() {
                 <CheckCircle2 className="h-6 w-6 text-kpkt" />
               </div>
               <div>
-                <p className="font-medium text-foreground">Full CoSec & SSM Coordination</p>
-                <p className="text-sm text-muted-foreground">All document coordination handled seamlessly to keep everything running smoothly.</p>
+                <p className="text-lg font-medium text-foreground">Full CoSec & SSM Coordination</p>
+                <p className="text-base text-muted-foreground">All document coordination handled seamlessly to keep everything running smoothly.</p>
               </div>
             </div>
           </div>
@@ -330,7 +328,6 @@ export default function AccountManagementPage() {
           <SectionHeader
             title="Simple, Transparent Pricing"
             subtitle="Flexible options designed for your business needs. Pay only for what you use, with no hidden fees."
-            centered
           />
           
           <div className="mx-auto max-w-4xl">
@@ -414,12 +411,14 @@ export default function AccountManagementPage() {
 
       {/* CTA Section */}
       <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Let Us Handle Compliance</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Focus on growing your lending business while we manage the regulatory complexity. Our team is ready to support your compliance needs.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="max-w-3xl">
+            <h2 className="mb-4 font-display text-4xl font-medium md:text-5xl">Let Us Handle Compliance</h2>
+            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+              Focus on growing your lending business while we manage the regulatory complexity. Our team is ready to support your compliance needs.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg" className="bg-kpkt hover:bg-kpkt/90">
               <Link href="/contact">Get Started Today</Link>
             </Button>
