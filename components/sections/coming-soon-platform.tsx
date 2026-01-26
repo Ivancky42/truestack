@@ -6,18 +6,18 @@ import { motion } from "framer-motion";
 const features = [
   {
     icon: Fingerprint,
-    title: "e-KYC Verification",
-    description: "Seamless identity verification with MyKad OCR, liveness detection, and biometric matching.",
+    title: "TrueIdentity™",
+    description: "Seamless e-KYC identity verification with MyKad OCR, liveness detection, and biometric matching.",
   },
   {
     icon: MessageSquare,
-    title: "WhatsApp Notifications",
-    description: "Automated customer messaging, payment reminders, and transactional notifications via WhatsApp Business API.",
+    title: "TrueSend™",
+    description: "Unified WhatsApp and email customer messaging, payment reminders, and transactional notifications.",
   },
   {
     icon: Mail,
-    title: "Email Service",
-    description: "Reliable transactional emails with templating, tracking, and high deliverability rates.",
+    title: "TrueData™",
+    description: "Secure, compliant data storage and management for your fintech operations.",
   },
 ];
 
@@ -94,10 +94,10 @@ export function ComingSoonPlatform() {
             </span>
           </div>
           <h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
-            Infrastructure as a Service
+            TrueStack Core
           </h2>
           <p className="mt-4 text-lg text-slate-400 md:text-xl">
-            A unified platform for e-KYC verification and customer communication — 
+            A unified infrastructure-as-a-service platform — 
             powering the next generation of Malaysian fintech.
           </p>
         </motion.div>
@@ -132,7 +132,7 @@ export function ComingSoonPlatform() {
         >
           <p className="text-slate-400">
             Launching at{" "}
-            <span className="font-medium text-indigo-400">app.truestack.my</span>
+            <span className="font-medium text-indigo-400">core.truestack.my</span>
           </p>
         </motion.div>
       </div>

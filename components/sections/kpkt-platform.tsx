@@ -94,10 +94,10 @@ export function KpktPlatform() {
             </span>
           </div>
           <h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
-            KPKT Loan Management System
+            TrueStack Kredit
           </h2>
           <p className="mt-4 text-lg text-slate-400 md:text-xl">
-            A purpose-built SaaS platform for offline lenders — 
+            A purpose-built SaaS platform for offline KPKT lenders — 
             streamline operations, ensure compliance, and scale with confidence.
           </p>
         </motion.div>
