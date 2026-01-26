@@ -93,8 +93,8 @@ export function KpktPlatform() {
               Coming Soon
             </span>
           </div>
-          <h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
-            TrueStack Kredit
+          <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+            <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent">TrueStack Kredit</span>
           </h2>
           <p className="mt-4 text-lg text-slate-400 md:text-xl">
             A purpose-built SaaS platform for offline KPKT lenders — 
