@@ -87,7 +87,7 @@ const services = [
     isKpkt: true,
   },
   {
-    title: "Custom Software Development",
+    title: "Software Development",
     description:
       "Full-stack fintech development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
     icon: Code2,
@@ -101,7 +101,7 @@ export function ServicesGrid() {
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
-          title="Our Services"
+          title="Custom Services"
           subtitle="From compliance management to custom software development — everything you need to run and grow your lending business."
         />
         <div className="grid gap-6 md:grid-cols-3">

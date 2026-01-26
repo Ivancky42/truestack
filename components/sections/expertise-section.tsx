@@ -72,7 +72,7 @@ export function ExpertiseSection() {
           <div>
             <SectionBadge icon={Cpu} text="Full-Stack Fintech Team" />
             <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-              Development Expertise
+              Our Expertise
             </h2>
           </div>
           <div>

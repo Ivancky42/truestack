@@ -3,6 +3,7 @@ import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ComplianceSection } from "@/components/sections/compliance-section";
 import { ComingSoonPlatform } from "@/components/sections/coming-soon-platform";
+import { KpktPlatform } from "@/components/sections/kpkt-platform";
 import { WhatWeDo } from "@/components/sections/what-we-do";
 import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { CtaSection } from "@/components/sections/cta-section";
@@ -24,6 +25,7 @@ export default function HomePage() {
       />
       <WhatWeDo />
       <ComingSoonPlatform />
+      <KpktPlatform />
       <ServicesGrid />
       <ExpertiseSection />
       <ComplianceSection />
