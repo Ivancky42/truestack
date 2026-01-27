@@ -21,7 +21,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown } from "lucide-react";
+import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown, Fingerprint } from "lucide-react";
 
 const kpktServices = [
   {
@@ -47,6 +47,16 @@ const softwareServices = [
   },
 ];
 
+const products = [
+  {
+    title: "TrueIdentity™",
+    href: "https://core.truestack.my",
+    description: "e-KYC verification for Malaysian fintechs. Fast, secure, and compliant.",
+    icon: Fingerprint,
+    external: true,
+  },
+];
+
 const navLinks = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
@@ -58,10 +68,12 @@ export function Header() {
   const isServicesActive = pathname.startsWith("/services");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
+  const [productsExpanded, setProductsExpanded] = useState(false);
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setServicesExpanded(false);
+    setProductsExpanded(false);
   };
 
   return (
@@ -166,6 +178,41 @@ export function Header() {
                         </Link>
                       </NavigationMenuLink>
                     </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className="bg-transparent text-sm font-medium text-muted-foreground"
+                >
+                  Products
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[320px] p-4">
+                    <ul className="space-y-1">
+                      {products.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
+                            >
+                              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                <item.icon className="h-4 w-4 text-primary" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-medium">{item.title}</div>
+                                <p className="text-xs text-muted-foreground">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -282,6 +329,39 @@ export function Header() {
                     >
                       View All Services
                     </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Products Accordion */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setProductsExpanded(!productsExpanded)}
+                  className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium transition-colors hover:bg-accent text-foreground"
+                >
+                  Products
+                  <ChevronDown
+                    className={cn(
+                      "h-4 w-4 transition-transform",
+                      productsExpanded && "rotate-180"
+                    )}
+                  />
+                </button>
+                {productsExpanded && (
+                  <div className="ml-3 space-y-1 border-l pl-3">
+                    {products.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMobileMenu}
+                        className="flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent text-muted-foreground"
+                      >
+                        <item.icon className="h-4 w-4" />
+                        {item.title}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>

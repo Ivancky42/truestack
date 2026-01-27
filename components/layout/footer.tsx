@@ -8,6 +8,9 @@ const footerLinks = {
     { href: "/services/digital-license", label: "Digital KPKT License" },
     { href: "/services/software-development", label: "Custom Software" },
   ],
+  products: [
+    { href: "https://core.truestack.my", label: "TrueIdentity™", external: true },
+  ],
   company: [
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
@@ -24,7 +27,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/30">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-5">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
@@ -60,6 +63,25 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h4 className="mb-4 text-sm font-semibold">Products</h4>
+            <ul className="space-y-3">
+              {footerLinks.products.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
