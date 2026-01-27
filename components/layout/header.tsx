@@ -47,7 +47,7 @@ const softwareServices = [
   },
 ];
 
-const products = [
+const corePlatforms = [
   {
     title: "TrueIdentity™",
     href: "https://core.truestack.my",
@@ -68,12 +68,12 @@ export function Header() {
   const isServicesActive = pathname.startsWith("/services");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
-  const [productsExpanded, setProductsExpanded] = useState(false);
+  const [platformsExpanded, setPlatformsExpanded] = useState(false);
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setServicesExpanded(false);
-    setProductsExpanded(false);
+    setPlatformsExpanded(false);
   };
 
   return (
@@ -185,34 +185,41 @@ export function Header() {
                 <NavigationMenuTrigger
                   className="bg-transparent text-sm font-medium text-muted-foreground"
                 >
-                  Products
+                  Platforms
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[320px] p-4">
-                    <ul className="space-y-1">
-                      {products.map((item) => (
-                        <li key={item.title}>
-                          <NavigationMenuLink asChild>
-                            <a
-                              href={item.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
-                            >
-                              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                                <item.icon className="h-4 w-4 text-primary" />
-                              </div>
-                              <div>
-                                <div className="text-sm font-medium">{item.title}</div>
-                                <p className="text-xs text-muted-foreground">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Core Group */}
+                    <div>
+                      <p className="mb-2 flex items-center gap-2 px-2 text-xs font-semibold uppercase tracking-wider text-primary">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        Core
+                      </p>
+                      <ul className="space-y-1">
+                        {corePlatforms.map((item) => (
+                          <li key={item.title}>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
+                              >
+                                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                  <item.icon className="h-4 w-4 text-primary" />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-medium">{item.title}</div>
+                                  <p className="text-xs text-muted-foreground">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -333,23 +340,27 @@ export function Header() {
                 )}
               </div>
 
-              {/* Products Accordion */}
+              {/* Platforms Accordion */}
               <div className="space-y-1">
                 <button
-                  onClick={() => setProductsExpanded(!productsExpanded)}
+                  onClick={() => setPlatformsExpanded(!platformsExpanded)}
                   className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium transition-colors hover:bg-accent text-foreground"
                 >
-                  Products
+                  Platforms
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform",
-                      productsExpanded && "rotate-180"
+                      platformsExpanded && "rotate-180"
                     )}
                   />
                 </button>
-                {productsExpanded && (
+                {platformsExpanded && (
                   <div className="ml-3 space-y-1 border-l pl-3">
-                    {products.map((item) => (
+                    {/* Core */}
+                    <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                      Core
+                    </p>
+                    {corePlatforms.map((item) => (
                       <a
                         key={item.href}
                         href={item.href}

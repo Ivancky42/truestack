@@ -8,7 +8,7 @@ const footerLinks = {
     { href: "/services/digital-license", label: "Digital KPKT License" },
     { href: "/services/software-development", label: "Custom Software" },
   ],
-  products: [
+  platforms: [
     { href: "https://core.truestack.my", label: "TrueIdentity™", external: true },
   ],
   company: [
@@ -68,11 +68,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Products */}
+          {/* Platforms */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold">Products</h4>
+            <h4 className="mb-4 text-sm font-semibold">Platforms</h4>
             <ul className="space-y-3">
-              {footerLinks.products.map((link) => (
+              {footerLinks.platforms.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
