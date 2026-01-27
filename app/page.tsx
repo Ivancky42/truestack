@@ -2,11 +2,10 @@ import { Hero } from "@/components/sections/hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ComplianceSection } from "@/components/sections/compliance-section";
-import { ComingSoonPlatform } from "@/components/sections/coming-soon-platform";
-import { KpktPlatform } from "@/components/sections/kpkt-platform";
 import { WhatWeDo } from "@/components/sections/what-we-do";
 import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import { TrueIdentitySection } from "@/components/sections/true-identity-section";
 import LogoCloud1 from "@/components/logo-cloud-1";
 
 export default function HomePage() {
@@ -24,8 +23,7 @@ export default function HomePage() {
         compact
       />
       <WhatWeDo />
-      <ComingSoonPlatform />
-      <KpktPlatform />
+      <TrueIdentitySection />
       <ServicesGrid />
       <ExpertiseSection />
       <ComplianceSection />

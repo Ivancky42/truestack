@@ -1,8 +1,6 @@
 "use client";
 
-import { SectionHeader } from "@/components/shared/section-header";
 import { Database, Server, Shield, FileCheck, Lock, Eye, Clock, BadgeCheck } from "lucide-react";
-import { SectionBadge } from "@/components/shared/section-badge";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 
@@ -83,6 +81,57 @@ const itemVariants = {
   },
 };
 
+function GridPattern() {
+  return (
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Grid pattern */}
+      <svg
+        className="absolute inset-0 h-full w-full opacity-[0.03]"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="compliance-grid"
+            width="60"
+            height="60"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 60 0 L 0 0 0 60"
+              fill="none"
+              stroke="white"
+              strokeWidth="1"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#compliance-grid)" />
+      </svg>
+
+      {/* Gradient overlay for depth */}
+      <div 
+        className="absolute inset-0 opacity-[0.15]" 
+        style={{
+          background: "radial-gradient(ellipse at center bottom, rgba(99, 102, 241, 0.3) 0%, transparent 70%)"
+        }}
+      />
+      
+      {/* Animated gradient orb */}
+      <motion.div
+        className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-indigo-500/10 to-violet-500/10 blur-3xl"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.2, 0.35, 0.2],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+    </div>
+  );
+}
+
 function ComplianceCard({ feature, index }: { feature: ComplianceFeature; index: number }) {
   const colSpanClass = {
     1: "lg:col-span-1",
@@ -92,31 +141,48 @@ function ComplianceCard({ feature, index }: { feature: ComplianceFeature; index:
 
   return (
     <motion.div
-      className={`group rounded-2xl border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-lg md:col-span-1 ${colSpanClass[feature.colSpan]}`}
+      className={`group rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-indigo-500/50 hover:bg-slate-900 md:col-span-1 ${colSpanClass[feature.colSpan]}`}
       variants={itemVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: index * 0.08 }}
     >
-      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
-        <feature.icon className="h-5 w-5 text-primary" />
+      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/10 transition-colors group-hover:bg-indigo-500/20">
+        <feature.icon className="h-5 w-5 text-indigo-400" />
       </div>
-      <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
-      <p className="text-sm text-muted-foreground">{feature.description}</p>
+      <h3 className="mb-2 text-lg font-semibold text-white">{feature.title}</h3>
+      <p className="text-sm text-slate-400">{feature.description}</p>
     </motion.div>
   );
 }
 
 export function ComplianceSection() {
   return (
-    <section className="bg-muted/30 pb-20 pt-8">
+    <section className="relative overflow-hidden bg-slate-950 py-20">
+      <GridPattern />
       <div className="mx-auto max-w-6xl px-6">
-        <SectionBadge icon={BadgeCheck} text="Built for Compliance" />
-        <SectionHeader
-          title="Enterprise-Grade Infrastructure"
-          subtitle="Modern technology stack with Malaysian regulatory compliance built in from day one."
-        />
+        {/* Header */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="mb-4 inline-flex items-center justify-center gap-2">
+            <BadgeCheck className="h-5 w-5 text-indigo-400" />
+            <span className="text-sm font-semibold uppercase tracking-wide text-indigo-400">
+              Built for Compliance
+            </span>
+          </div>
+          <h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
+            Enterprise-Grade Infrastructure
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-slate-400 md:text-xl">
+            Modern technology stack with Malaysian regulatory compliance built in from day one.
+          </p>
+        </motion.div>
         
         {/* Compliance Features Grid */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
