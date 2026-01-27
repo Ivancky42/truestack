@@ -125,7 +125,7 @@ export function TrueIdentitySection() {
               </p>
             </div>
             <Button asChild className="w-fit gap-2">
-              <Link href="/services/true-identity">
+              <Link href="https://core.truestack.my" target="_blank" rel="noopener noreferrer">
                 Learn More
                 <ArrowRight className="h-4 w-4" />
               </Link>
