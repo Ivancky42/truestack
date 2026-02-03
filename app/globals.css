@@ -34,6 +34,8 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-start: var(--primary-start);
+  --color-primary-end: var(--primary-end);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -53,7 +55,7 @@
 /* 
   Brand Color Configuration
   To change the brand color, update --primary and --ring values
-  Current: Blue 600 (#2563eb)
+  Current: Blue Gradient (#3B82F6 -> #2563EB)
   KPKT Accent: Teal 600 (#0d9488) - Complementary color for KPKT services
 */
 :root {
@@ -64,8 +66,10 @@
   --card-foreground: oklch(0.145 0.024 264.364);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0.024 264.364);
-  /* Blue 600 - Primary Brand Color (Software Development) */
-  --primary: oklch(0.546 0.245 262.881);
+  /* Blue Gradient - Primary Brand Color (Software Development) */
+  --primary: oklch(0.623 0.214 259.815);
+  --primary-start: oklch(0.623 0.214 259.815); /* #3B82F6 */
+  --primary-end: oklch(0.546 0.245 262.881); /* #2563EB */
   --primary-foreground: oklch(1 0 0);
   /* Teal 600 - KPKT Services Accent Color */
   --kpkt: oklch(0.627 0.115 175.031);
@@ -80,20 +84,20 @@
   --border: oklch(0.912 0.013 255.508);
   --input: oklch(0.912 0.013 255.508);
   /* Ring uses primary color */
-  --ring: oklch(0.546 0.245 262.881);
-  --chart-1: oklch(0.546 0.245 262.881);
+  --ring: oklch(0.623 0.214 259.815);
+  --chart-1: oklch(0.623 0.214 259.815);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.145 0.024 264.364);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary: oklch(0.623 0.214 259.815);
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.968 0.007 247.896);
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.912 0.013 255.508);
-  --sidebar-ring: oklch(0.546 0.245 262.881);
+  --sidebar-ring: oklch(0.623 0.214 259.815);
 }
 
 @layer base {

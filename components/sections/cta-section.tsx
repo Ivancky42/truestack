@@ -10,7 +10,7 @@ export function CtaSection() {
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 px-8 py-16 text-center text-primary-foreground md:px-16 md:py-20"
+          className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary-start to-primary-end px-8 py-16 text-center text-primary-foreground md:px-16 md:py-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
