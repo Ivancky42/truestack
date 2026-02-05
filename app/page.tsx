@@ -6,6 +6,7 @@ import { WhatWeDo } from "@/components/sections/what-we-do";
 import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { TrueIdentitySection } from "@/components/sections/true-identity-section";
+import { TrueKreditPromo } from "@/components/sections/truekredit-promo";
 import LogoCloud1 from "@/components/logo-cloud-1";
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
         compact
       />
       <WhatWeDo />
+      <TrueKreditPromo />
       <TrueIdentitySection />
       <ServicesGrid />
       <ExpertiseSection />

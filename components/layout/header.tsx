@@ -21,7 +21,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown, Fingerprint } from "lucide-react";
+import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown, Fingerprint, CreditCard } from "lucide-react";
 
 const kpktServices = [
   {
@@ -48,6 +48,13 @@ const softwareServices = [
 ];
 
 const corePlatforms = [
+  {
+    title: "TrueKredit™",
+    href: "/truekredit",
+    description: "KPKT Loan Management System for licensed money lenders.",
+    icon: CreditCard,
+    external: false,
+  },
   {
     title: "TrueIdentity™",
     href: "https://core.truestack.my",
@@ -199,22 +206,39 @@ export function Header() {
                         {corePlatforms.map((item) => (
                           <li key={item.title}>
                             <NavigationMenuLink asChild>
-                              <a
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
-                              >
-                                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                                  <item.icon className="h-4 w-4 text-primary" />
-                                </div>
-                                <div>
-                                  <div className="text-sm font-medium">{item.title}</div>
-                                  <p className="text-xs text-muted-foreground">
-                                    {item.description}
-                                  </p>
-                                </div>
-                              </a>
+                              {item.external ? (
+                                <a
+                                  href={item.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
+                                >
+                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                    <item.icon className="h-4 w-4 text-primary" />
+                                  </div>
+                                  <div>
+                                    <div className="text-sm font-medium">{item.title}</div>
+                                    <p className="text-xs text-muted-foreground">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </a>
+                              ) : (
+                                <Link
+                                  href={item.href}
+                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
+                                >
+                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                    <item.icon className="h-4 w-4 text-primary" />
+                                  </div>
+                                  <div>
+                                    <div className="text-sm font-medium">{item.title}</div>
+                                    <p className="text-xs text-muted-foreground">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </Link>
+                              )}
                             </NavigationMenuLink>
                           </li>
                         ))}
@@ -360,19 +384,36 @@ export function Header() {
                     <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                       Core
                     </p>
-                    {corePlatforms.map((item) => (
-                      <a
-                        key={item.href}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={closeMobileMenu}
-                        className="flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent text-muted-foreground"
-                      >
-                        <item.icon className="h-4 w-4" />
-                        {item.title}
-                      </a>
-                    ))}
+                    {corePlatforms.map((item) =>
+                      item.external ? (
+                        <a
+                          key={item.href}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={closeMobileMenu}
+                          className="flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent text-muted-foreground"
+                        >
+                          <item.icon className="h-4 w-4" />
+                          {item.title}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className={cn(
+                            "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
+                            pathname === item.href
+                              ? "bg-primary/10 text-primary"
+                              : "text-muted-foreground"
+                          )}
+                        >
+                          <item.icon className="h-4 w-4" />
+                          {item.title}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
