@@ -940,7 +940,7 @@ export default function TrueKreditPage() {
           >
             <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
             <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Simple Pricing That Scales
+              Simple Pricing That Scales With Your Business
             </h2>
           </motion.div>
 
