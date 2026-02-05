@@ -135,14 +135,19 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            {/* Company Registration */}
-            <div className="space-y-1">
+            {/* Company Registration & Address */}
+            <div className="space-y-2">
               <p className="text-sm font-medium text-foreground/80">
                 TRUESTACK TECHNOLOGIES SDN. BHD.
               </p>
               <p className="text-xs text-muted-foreground/70">
                 Registration No. 202501058714 (1660120-X)
               </p>
+              <address className="text-xs not-italic text-muted-foreground/70 leading-relaxed">
+                Lot 12, 12th Floor, Menara K1<br />
+                No. 1 Jalan 3/137C, Off Klang Road<br />
+                58200 Kuala Lumpur
+              </address>
             </div>
 
             {/* Links */}

@@ -14,8 +14,8 @@ export default function HomePage() {
     <>
       <Hero
         title="Build & Scale Your Lending Business"
-        subtitle="Compliance services, digital license conversion, and custom fintech platforms — everything you need to operate and grow in Malaysia's regulated lending space."
-        primaryCta={{ label: "Explore Services", href: "/services" }}
+        subtitle="Lending software, compliance services, infrastructure, and custom software solutions — everything you need to operate and grow in Malaysia's regulated lending space."
+        primaryCta={{ label: "Explore Services", href: "#what-we-do" }}
         secondaryCta={{ label: "View Our Work", href: "/work" }}
       />
       <LogoCloud1 

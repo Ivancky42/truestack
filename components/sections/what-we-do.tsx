@@ -40,7 +40,7 @@ const offerings = [
   },
   {
     icon: CreditCard,
-    title: "KPKT Credit System Whitelabel",
+    title: "KPKT Digital License Conversion",
     description:
       "A fully licensed, ready-to-deploy lending platform you can brand as your own and launch in weeks.",
   },
@@ -48,11 +48,11 @@ const offerings = [
     icon: ClipboardCheck,
     title: "KPKT Services",
     description:
-      "Regulatory compliance, license management, and administrative support for your lending operations.",
+      "Loan management system, regulatory compliance, license management, and administrative support for your lending operations.",
   },
   {
     icon: Code2,
-    title: "Custom Software Development",
+    title: "Fintech Software Development",
     description:
       "Tailored fintech solutions built from scratch to meet your unique business requirements.",
   },
@@ -60,7 +60,7 @@ const offerings = [
 
 export function WhatWeDo() {
   return (
-    <section className="py-20">
+    <section id="what-we-do" className="py-20 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6">
         {/* Side-by-side header */}
         <div className="mb-16 grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
@@ -82,7 +82,7 @@ export function WhatWeDo() {
           >
             <p className="text-lg text-muted-foreground md:text-xl">
               We provide the infrastructure, platforms, and expertise to help
-              Malaysian lenders build, operate, and grow their businesses.
+              Malaysian Fintechs and lenders build, operate, and grow their businesses.
             </p>
           </motion.div>
         </div>

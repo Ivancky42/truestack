@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,86 +47,124 @@ const values = [
   },
 ];
 
-const services = [
-  {
-    title: "KPKT Account Management",
-    description: "License renewals, annual submissions, and regulatory coordination.",
-    icon: ClipboardCheck,
-    href: "/services/account-management",
-    isKpkt: true,
-  },
-  {
-    title: "Digital License Conversion",
-    description: "Transform to a fully digital KPKT-licensed platform in 6 months.",
-    icon: FileCheck,
-    href: "/services/digital-license",
-    isKpkt: true,
-  },
-  {
-    title: "Custom Software Development",
-    description: "Full-stack fintech development for P2P and digital lending platforms.",
-    icon: Code2,
-    href: "/services/software-development",
-    isKpkt: false,
-  },
-];
+// const services = [
+//   {
+//     title: "KPKT Account Management",
+//     description: "License renewals, annual submissions, and regulatory coordination.",
+//     icon: ClipboardCheck,
+//     href: "/services/account-management",
+//     isKpkt: true,
+//   },
+//   {
+//     title: "Digital License Conversion",
+//     description: "Transform to a fully digital KPKT-licensed platform in 6 months.",
+//     icon: FileCheck,
+//     href: "/services/digital-license",
+//     isKpkt: true,
+//   },
+//   {
+//     title: "Custom Software Development",
+//     description: "Full-stack fintech development for P2P and digital lending platforms.",
+//     icon: Code2,
+//     href: "/services/software-development",
+//     isKpkt: false,
+//   },
+// ];
 
 export default function AboutPage() {
   return (
     <>
-      <Hero
-        title="About Truestack"
-        subtitle="KPKT compliance services and fintech software development for licensed money lenders in Malaysia."
-      />
-
-      {/* Who We Are */}
-      <section className="py-20">
+      {/* Combined Hero + Who We Are */}
+      <section className="relative overflow-hidden border-b bg-muted/30 py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            {/* Logo */}
-            <div className="flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 via-kpkt/10 to-transparent blur-2xl" />
-                <Image
-                  src="/truestack-logo-transparent.svg"
-                  alt="Truestack Technologies"
-                  width={320}
-                  height={80}
-                  className="relative h-auto w-64 md:w-80"
-                  priority
-                />
+          {/* Hero header */}
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+              Who We Are
+            </h1>
+            <p className="mt-6 text-xl leading-relaxed text-muted-foreground md:text-2xl">
+              We are building the technology that 
+              powers licensed money lenders and fintechs across Malaysia and beyond.
+            </p>
+          </div>
+          
+          {/* Expanded content */}
+          <div className="mx-auto mt-12 max-w-4xl">
+            <div className="grid gap-6 text-lg text-muted-foreground md:grid-cols-2 md:gap-10">
+              <div className="space-y-4">
+                <p>
+                  We develop <strong className="text-foreground">purpose-built platforms</strong> for 
+                  the lending industry — from loan origination and management to e-KYC verification 
+                  and regulatory reporting. Our technology is designed specifically for Malaysia&apos;s 
+                  regulatory environment.
+                </p>
+                <p>
+                  For traditional lenders looking to modernize, we provide <strong className="text-foreground">end-to-end 
+                  digital transformation</strong> — helping operators transition from paper-based 
+                  processes to fully digital, KPKT-compliant operations.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <p>
+                  Beyond technology, we offer <strong className="text-foreground">ongoing compliance 
+                  services</strong> that handle the regulatory burden — license renewals, annual 
+                  submissions, audits, and coordination with KPKT — so you can focus on growing 
+                  your business.
+                </p>
+                <p>
+                  Whether you&apos;re an established lender seeking to digitize, a new operator 
+                  building from scratch, or a fintech company needing custom development — 
+                  we have the expertise and platforms to support your journey.
+                </p>
               </div>
             </div>
+          </div>
 
-            {/* Content */}
-            <div>
-              <SectionHeader title="Who We Are" />
-              <div className="space-y-6 text-lg text-muted-foreground">
-                <p>
-                  Truestack is a specialized service provider for KPKT-licensed money lenders 
-                  in Malaysia. We offer a complete range of services — from regulatory 
-                  compliance management to custom software development — helping operators 
-                  run and grow their lending businesses.
-                </p>
-                <p>
-                  Our team combines deep expertise in Malaysia&apos;s regulatory landscape with 
-                  strong technical capabilities. We&apos;ve helped traditional lenders go digital, 
-                  built KPKT-compliant platforms from scratch, and managed ongoing compliance 
-                  requirements for operators across the country.
-                </p>
-                <p>
-                  We work with trusted partners for specialized services like penetration 
-                  testing, KYC verification, and digital signing — allowing us to deliver 
-                  complete solutions while focusing on what we do best.
-                </p>
+          {/* Three pillars */}
+          <div className="mt-16 grid gap-8 md:grid-cols-3">
+            {/* Platforms */}
+            <div className="rounded-xl border bg-card p-6 shadow-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <Code2 className="h-6 w-6 text-primary" />
               </div>
+              <h3 className="mb-2 text-xl font-semibold">Our Platforms</h3>
+              <p className="text-muted-foreground">
+                <strong className="text-foreground">TrueKredit™</strong> — a complete loan 
+                management system, and <strong className="text-foreground">TrueIdentity™</strong> — 
+                our e-KYC verification platform — power lending operations across Malaysia.
+              </p>
+            </div>
+
+            {/* Digital Transformation */}
+            <div className="rounded-xl border bg-card p-6 shadow-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/10">
+                <FileCheck className="h-6 w-6 text-kpkt" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Digital Transformation</h3>
+              <p className="text-muted-foreground">
+                For operators looking to go digital, we offer end-to-end KPKT Digital License 
+                Conversion that transforms traditional lenders into compliant digital platforms.
+              </p>
+            </div>
+
+            {/* Compliance & Development */}
+            <div className="rounded-xl border bg-card p-6 shadow-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/10">
+                <ClipboardCheck className="h-6 w-6 text-kpkt" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">Compliance & Development</h3>
+              <p className="text-muted-foreground">
+                We handle ongoing KPKT compliance — license renewals, annual submissions, 
+                and regulatory coordination. We also build custom fintech solutions for P2P 
+                lending, digital lending, and payment systems.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* What We Do */}
-      <section className="border-t bg-muted/30 py-20">
+      {/* <section className="border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="What We Do"
@@ -172,7 +208,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Truestack */}
       <section className="border-t py-20">
@@ -212,7 +248,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Whether you need help with compliance, want to go digital, or are building 
-              a new platform — we're here to help.
+              a new platform — we&apos;re here to help.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="gap-2">
