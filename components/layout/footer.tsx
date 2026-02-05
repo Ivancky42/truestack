@@ -9,6 +9,7 @@ const footerLinks = {
     { href: "/services/software-development", label: "Custom Software" },
   ],
   platforms: [
+    { href: "/truekredit", label: "TrueKredit™", external: false },
     { href: "https://core.truestack.my", label: "TrueIdentity™", external: true },
   ],
   company: [
@@ -74,14 +75,23 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.platforms.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </a>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
