@@ -983,7 +983,7 @@ export default function TrueKreditPage() {
                     <tr>
                       <td className="px-6 py-4">
                         <div className="font-medium">Optional e-KYC</div>
-                        <div className="text-sm text-muted-foreground">TrueIdentity verification</div>
+                        <div className="text-sm text-muted-foreground">TrueIdentity™ verification</div>
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="text-xl font-semibold">RM 4</div>
