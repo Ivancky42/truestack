@@ -43,6 +43,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionBadge } from "@/components/shared/section-badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Grid Pattern Background Component
 function GridPattern() {
@@ -335,7 +343,7 @@ export default function TrueKreditPage() {
       </section>
 
       {/* Cost of Manual Operations Section */}
-      <section id="cost" className="py-20">
+      {/* <section id="cost" className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
             className="mx-auto max-w-3xl text-center"
@@ -391,7 +399,7 @@ export default function TrueKreditPage() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Core Features Section */}
       <section id="features" className="border-t bg-muted/30 py-20">
@@ -948,6 +956,85 @@ export default function TrueKreditPage() {
                       Charged only on completion. Up to 3 retries.
                     </p>
                   </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="w-full gap-2">
+                        Learn More <ChevronRight className="h-4 w-4" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                            <Fingerprint className="h-6 w-6 text-primary" />
+                          </div>
+                          <div>
+                            <DialogTitle className="text-xl">TrueIdentity™ (e-KYC)</DialogTitle>
+                            <DialogDescription>Digital identity verification for borrowers</DialogDescription>
+                          </div>
+                        </div>
+                      </DialogHeader>
+
+                      <div className="space-y-6 pt-2">
+                        <div>
+                          <h4 className="mb-2 font-semibold">What is TrueIdentity?</h4>
+                          <p className="text-sm text-muted-foreground">
+                            TrueIdentity is our integrated e-KYC (electronic Know Your Customer) verification
+                            system. It allows you to verify a borrower&apos;s identity digitally — directly from
+                            TrueKredit — ensuring the person applying for a loan is who they claim to be.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="mb-3 font-semibold">How It Works</h4>
+                          <ol className="space-y-3">
+                            {[
+                              { step: "1", title: "Generate QR Code", desc: "From TrueKredit, generate a unique QR code for the borrower during the application process." },
+                              { step: "2", title: "Borrower Scans & Verifies", desc: "The borrower scans the QR code on their phone, takes a photo of their IC (MyKad), and completes a face liveness check." },
+                              { step: "3", title: "IC OCR Extraction", desc: "The system automatically extracts data from the IC — name, IC number, address — and cross-checks it against the liveness photo." },
+                              { step: "4", title: "Result Saved to Loan File", desc: "The verification result (pass or fail) is automatically saved into the borrower's loan file in TrueKredit for audit and compliance reference." },
+                            ].map((item) => (
+                              <li key={item.step} className="flex gap-3">
+                                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                                  {item.step}
+                                </div>
+                                <div>
+                                  <p className="text-sm font-medium">{item.title}</p>
+                                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                                </div>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+
+                        <div>
+                          <h4 className="mb-2 font-semibold">Why It Matters</h4>
+                          <ul className="space-y-2">
+                            {[
+                              "Prevents identity fraud — ensures the borrower is the IC holder",
+                              "Reduces manual verification effort for your staff",
+                              "Creates a tamper-proof digital record for KPKT inspections",
+                              "Borrowers can verify from anywhere — no physical visit needed",
+                            ].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+                          <h4 className="mb-1 text-sm font-semibold">Pricing</h4>
+                          <p className="text-sm text-muted-foreground">
+                            <span className="font-medium text-foreground">RM 4 per completed verification</span> (pass or fail).
+                            Charged only when the verification is completed. Borrowers get up to 3 retries per session
+                            at no extra cost. No monthly commitment — pay only for what you use.
+                          </p>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>
             </motion.div>
@@ -991,6 +1078,97 @@ export default function TrueKreditPage() {
                       PDFs are still generated even without email service.
                     </p>
                   </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" className="w-full gap-2">
+                        Learn More <ChevronRight className="h-4 w-4" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                            <Mail className="h-6 w-6 text-primary" />
+                          </div>
+                          <div>
+                            <DialogTitle className="text-xl">Automated Emails</DialogTitle>
+                            <DialogDescription>Automated document delivery via email</DialogDescription>
+                          </div>
+                        </div>
+                      </DialogHeader>
+
+                      <div className="space-y-6 pt-2">
+                        <div>
+                          <h4 className="mb-2 font-semibold">What Is the Automated Email Add-on?</h4>
+                          <p className="text-sm text-muted-foreground">
+                            TrueKredit already generates all loan-related PDFs automatically — receipts, reminder
+                            letters, default notices, and discharge letters. The Automated Email add-on takes it
+                            a step further by <span className="font-medium text-foreground">sending these documents directly to borrowers via email</span>,
+                            without any manual effort from your team.
+                          </p>
+                        </div>
+
+                        <div>
+                          <h4 className="mb-3 font-semibold">Documents Sent Automatically</h4>
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            {[
+                              { icon: Receipt, title: "Payment Receipts", desc: "Sent immediately after each repayment is recorded." },
+                              { icon: AlertTriangle, title: "Reminder Letters", desc: "Sent before due dates to reduce late payments." },
+                              { icon: FileText, title: "Default Notices", desc: "Triggered automatically when borrowers miss payments past the grace period." },
+                              { icon: FileCheck, title: "Discharge Letters", desc: "Sent when a loan is fully settled, completing the borrower lifecycle." },
+                            ].map((item) => (
+                              <div key={item.title} className="flex gap-3 rounded-lg border p-3">
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                                  <item.icon className="h-4 w-4 text-primary" />
+                                </div>
+                                <div>
+                                  <p className="text-sm font-medium">{item.title}</p>
+                                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="mb-2 font-semibold">Benefits</h4>
+                          <ul className="space-y-2">
+                            {[
+                              "Eliminates manual emailing — no more downloading PDFs and attaching them",
+                              "Improves borrower communication and professionalism",
+                              "Reminder letters reduce late payments and improve collection rates",
+                              "Creates a verifiable digital trail of all correspondence",
+                              "Frees your staff to focus on higher-value tasks",
+                            ].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <h4 className="mb-2 font-semibold">Do I Still Get PDFs Without This Add-on?</h4>
+                          <p className="text-sm text-muted-foreground">
+                            <span className="font-medium text-foreground">Yes.</span> All PDFs — receipts, reminder letters,
+                            default notices, and discharge letters — are generated automatically in TrueKredit regardless
+                            of whether you subscribe to this add-on. The add-on only automates the <em>sending</em> of
+                            these documents via email.
+                          </p>
+                        </div>
+
+                        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+                          <h4 className="mb-1 text-sm font-semibold">Pricing</h4>
+                          <p className="text-sm text-muted-foreground">
+                            <span className="font-medium text-foreground">RM 50/month per 500 loans.</span>{" "}
+                            Covers all automated email sending for up to 500 active loans. If you have more than
+                            500 loans, simply add another block at the same rate. Scales alongside your TrueKredit subscription.
+                          </p>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>
             </motion.div>
