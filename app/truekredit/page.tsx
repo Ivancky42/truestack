@@ -124,40 +124,6 @@ function ScreenshotDisplay({
   );
 }
 
-// Core features data
-const coreFeatures = [
-  {
-    icon: FileText,
-    title: "Customer Enquiry & Document Capture",
-    description: "Digitize borrower information and documents from first contact.",
-  },
-  {
-    icon: Calculator,
-    title: "Loan Calculation & Approval Workflow",
-    description: "Automated interest and instalment calculations with approval tracking.",
-  },
-  {
-    icon: FileCheck,
-    title: "Offer Letter & Agreement Generation",
-    description: "Auto-generate compliant loan documents ready for signing.",
-  },
-  {
-    icon: Wallet,
-    title: "Disbursement Tracking",
-    description: "Track loan disbursements and maintain complete fund flow records.",
-  },
-  {
-    icon: Receipt,
-    title: "Repayment & Collections",
-    description: "Manage repayments, late charges, and collection workflows.",
-  },
-  {
-    icon: History,
-    title: "Full Loan History (Audit Trail)",
-    description: "Complete transaction history for every loan, always accessible.",
-  },
-];
-
 // Compliance features data
 const complianceFeatures = [
   {
@@ -297,8 +263,8 @@ export default function TrueKreditPage() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <ScreenshotDisplay
-                src="/truekredit/loan_application_screenshot.png"
-                alt="TrueKredit Loan Application Interface"
+                src="/truekredit/loan_summary_screenshot.png"
+                alt="TrueKredit Loan Summary"
               />
             </motion.div>
           </div>
@@ -311,8 +277,8 @@ export default function TrueKreditPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <ScreenshotDisplay
-              src="/truekredit/loan_application_screenshot.png"
-              alt="TrueKredit Loan Application Interface"
+              src="/truekredit/loan_summary_screenshot.png"
+              alt="TrueKredit Loan Summary"
             />
           </motion.div>
         </div>
@@ -431,7 +397,7 @@ export default function TrueKreditPage() {
       <section id="features" className="border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
-            className="mb-12 text-center"
+            className="mb-14 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -441,46 +407,145 @@ export default function TrueKreditPage() {
             <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
               From Enquiry to Final Payment — All in One System
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              Each part of the workflow is supported by clear screens and controls — from capturing
+              borrowers and configuring products to tracking repayments and history.
+            </p>
           </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {coreFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full transition-all hover:border-primary/30 hover:shadow-md">
-                  <CardHeader>
-                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                      <feature.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
-                    <CardDescription>{feature.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Feature Screenshots */}
+          {/* Block 1: Enquiry & calculation — Borrower details screenshot */}
           <motion.div
-            className="mt-16 grid gap-8 md:grid-cols-2"
+            className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5 }}
           >
-            <ScreenshotDisplay
-              src="/truekredit/loan_details_screenshot.png"
-              alt="Loan Details View"
-            />
-            <ScreenshotDisplay
-              src="/truekredit/repayment_schedule_screenshot.png"
-              alt="Repayment Schedule"
-            />
+            <div className="space-y-6">
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <FileText className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Customer Enquiry & Document Capture</CardTitle>
+                  <CardDescription>
+                    Digitize borrower information and documents from first contact.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <Calculator className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Loan Calculation & Approval Workflow</CardTitle>
+                  <CardDescription>
+                    Automated interest and instalment calculations with approval tracking.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <ScreenshotDisplay
+                src="/truekredit/borrower_details_screenshot.png"
+                alt="Borrower Details View"
+                className="max-w-md"
+              />
+            </div>
+          </motion.div>
+
+          {/* Block 2: Products & documents — Edit product screenshot */}
+          <motion.div
+            className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="order-2 lg:order-1 lg:flex lg:justify-end">
+              <ScreenshotDisplay
+                src="/truekredit/edit_product_screenshot.png"
+                alt="Edit Product — Add or edit loan products (Basic Info, interest model, borrower eligibility, Jadual J/K)"
+                className="max-w-md"
+              />
+            </div>
+            <div className="space-y-6 lg:order-2">
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <FilePlusCorner className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Product Configuration</CardTitle>
+                  <CardDescription>
+                    Define loan products with interest model, borrower eligibility, and Jadual J/K
+                    schedule type.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <FileCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Offer Letter & Agreement Generation</CardTitle>
+                  <CardDescription>
+                    Auto-generate compliant loan documents ready for signing.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </motion.div>
+
+          {/* Block 3: Disbursement, repayment & history — Repayment schedule screenshot */}
+          <motion.div
+            className="mt-16 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="space-y-6">
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <Wallet className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Disbursement Tracking</CardTitle>
+                  <CardDescription>
+                    Track loan disbursements and maintain complete fund flow records.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <Receipt className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Repayment & Collections</CardTitle>
+                  <CardDescription>
+                    Manage repayments, late charges, and collection workflows.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <History className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Full Loan History (Audit Trail)</CardTitle>
+                  <CardDescription>
+                    Complete transaction history for every loan, always accessible.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <ScreenshotDisplay
+                src="/truekredit/repayment_schedule_screenshot.png"
+                alt="Repayment Schedule"
+                className="max-w-md"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
