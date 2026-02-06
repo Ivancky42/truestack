@@ -30,6 +30,7 @@ import {
   Lock,
   Server,
   Eye,
+  FilePlusCorner,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -159,6 +160,10 @@ const coreFeatures = [
 
 // Compliance features data
 const complianceFeatures = [
+  {
+    icon: FilePlusCorner,
+    text: "Jadual J and K auto-generated",
+  },
   {
     icon: FileSpreadsheet,
     text: "Lampiran A & B1 auto-generated",
