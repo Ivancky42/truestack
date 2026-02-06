@@ -40,7 +40,7 @@ export function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+            <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
               KPKT compliance services and fintech software development for licensed money lenders in Malaysia.
             </p>
             <a
@@ -48,19 +48,19 @@ export function Footer() {
               className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary group"
             >
               <Mail className="h-4 w-4 transition-transform group-hover:scale-110" />
-              hello@truestack.my
+              <span className="text-[15px]">hello@truestack.my</span>
             </a>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold">Services</h4>
+            <h4 className="mb-4 text-base font-semibold">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Platforms */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold">Platforms</h4>
+            <h4 className="mb-4 text-base font-semibold">Platforms</h4>
             <ul className="space-y-3">
               {footerLinks.platforms.map((link) => (
                 <li key={link.label}>
@@ -80,14 +80,14 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                     >
                       {link.label}
                     </a>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -99,13 +99,13 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold">Company</h4>
+            <h4 className="mb-4 text-base font-semibold">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -116,13 +116,13 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold">Legal</h4>
+            <h4 className="mb-4 text-base font-semibold">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -137,13 +137,13 @@ export function Footer() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             {/* Company Registration & Address */}
             <div className="space-y-2">
-              <p className="text-sm font-medium text-foreground/80">
+              <p className="text-[15px] font-medium text-foreground/80">
                 TRUESTACK TECHNOLOGIES SDN. BHD.
               </p>
-              <p className="text-xs text-muted-foreground/70">
+              <p className="text-sm text-muted-foreground/70">
                 Registration No. 202501058714 (1660120-X)
               </p>
-              <address className="text-xs not-italic text-muted-foreground/70 leading-relaxed">
+              <address className="text-sm not-italic text-muted-foreground/70 leading-relaxed">
                 Lot 12, 12th Floor, Menara K1<br />
                 No. 1 Jalan 3/137C, Off Klang Road<br />
                 58200 Kuala Lumpur
@@ -154,14 +154,14 @@ export function Footer() {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
               >
                 Privacy
               </Link>
               <span className="text-muted-foreground/30">·</span>
               <Link
                 href="/terms"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
               >
                 Terms
               </Link>
@@ -169,7 +169,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="mt-6 text-center text-xs text-muted-foreground/60 sm:text-left">
+          <p className="mt-6 text-center text-sm text-muted-foreground/60 sm:text-left">
             © {new Date().getFullYear()} Truestack. All rights reserved.
           </p>
         </div>

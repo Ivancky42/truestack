@@ -83,7 +83,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-visible">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 overflow-visible">
+      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 overflow-visible">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/truestack-logo-transparent.svg"
@@ -96,13 +96,13 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 md:flex overflow-visible">
+        <nav className="hidden items-center gap-7 md:flex overflow-visible">
           <NavigationMenu className="overflow-visible">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={cn(
-                    "bg-transparent text-sm font-medium",
+                    "bg-transparent text-base font-medium",
                     isSolutionsActive
                       ? "text-primary"
                       : "text-muted-foreground"
@@ -116,7 +116,7 @@ export function Header() {
                     <div className="space-y-4">
                       {/* KPKT Services Group */}
                       <div>
-                        <p className="mb-2 flex items-center gap-2 px-2 text-xs font-semibold uppercase tracking-wider text-kpkt">
+                        <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-kpkt">
                           <span className="h-1.5 w-1.5 rounded-full bg-kpkt" />
                           Services
                         </p>
@@ -132,8 +132,8 @@ export function Header() {
                                     <item.icon className="h-4 w-4 text-kpkt" />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-medium">{item.title}</div>
-                                    <p className="text-xs text-muted-foreground">
+                                    <div className="text-base font-medium">{item.title}</div>
+                                    <p className="text-[15px] text-muted-foreground">
                                       {item.description}
                                     </p>
                                   </div>
@@ -146,7 +146,7 @@ export function Header() {
 
                       {/* KPKT Digital License Conversion Group */}
                       <div className="border-t pt-4">
-                        <p className="mb-2 flex items-center gap-2 px-2 text-xs font-semibold uppercase tracking-wider text-kpkt">
+                        <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-kpkt">
                           <span className="h-1.5 w-1.5 rounded-full bg-kpkt" />
                           Software Development
                         </p>
@@ -162,8 +162,8 @@ export function Header() {
                                     <item.icon className="h-4 w-4 text-kpkt" />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-medium">{item.title}</div>
-                                    <p className="text-xs text-muted-foreground">
+                                    <div className="text-base font-medium">{item.title}</div>
+                                    <p className="text-[15px] text-muted-foreground">
                                       {item.description}
                                     </p>
                                   </div>
@@ -177,7 +177,7 @@ export function Header() {
 
                     {/* Right Column - Platforms */}
                     <div className="border-l pl-4">
-                      <p className="mb-2 flex items-center gap-2 px-2 text-xs font-semibold uppercase tracking-wider text-primary">
+                      <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-primary">
                         <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                         Platforms
                       </p>
@@ -196,8 +196,8 @@ export function Header() {
                                     <item.icon className="h-4 w-4 text-primary" />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-medium">{item.title}</div>
-                                    <p className="text-xs text-muted-foreground">
+                                    <div className="text-base font-medium">{item.title}</div>
+                                    <p className="text-[15px] text-muted-foreground">
                                       {item.description}
                                     </p>
                                   </div>
@@ -211,8 +211,8 @@ export function Header() {
                                     <item.icon className="h-4 w-4 text-primary" />
                                   </div>
                                   <div>
-                                    <div className="text-sm font-medium">{item.title}</div>
-                                    <p className="text-xs text-muted-foreground">
+                                    <div className="text-base font-medium">{item.title}</div>
+                                    <p className="text-[15px] text-muted-foreground">
                                       {item.description}
                                     </p>
                                   </div>
@@ -234,7 +234,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "text-base font-medium transition-colors hover:text-primary",
                 pathname === link.href
                   ? "text-primary"
                   : "text-muted-foreground"
@@ -277,7 +277,7 @@ export function Header() {
                 <button
                   onClick={() => setSolutionsExpanded(!solutionsExpanded)}
                   className={cn(
-                    "flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium transition-colors hover:bg-accent",
+                    "flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-lg font-medium transition-colors hover:bg-accent",
                     isSolutionsActive ? "text-primary" : "text-foreground"
                   )}
                 >
@@ -292,7 +292,7 @@ export function Header() {
                 {solutionsExpanded && (
                   <div className="ml-3 space-y-1 border-l pl-3">
                     {/* KPKT Services */}
-                    <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-kpkt">
+                    <p className="px-3 py-1 text-sm font-semibold uppercase tracking-wider text-kpkt">
                       KPKT Services
                     </p>
                     {kpktServices.map((item) => (
@@ -301,7 +301,7 @@ export function Header() {
                         href={item.href}
                         onClick={closeMobileMenu}
                         className={cn(
-                          "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-kpkt/10",
+                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-kpkt/10",
                           pathname === item.href
                             ? "bg-kpkt/10 text-kpkt"
                             : "text-muted-foreground"
@@ -312,7 +312,7 @@ export function Header() {
                       </Link>
                     ))}
                     {/* KPKT Digital License Conversion */}
-                    <p className="mt-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-kpkt">
+                    <p className="mt-2 px-3 py-1 text-sm font-semibold uppercase tracking-wider text-kpkt">
                       KPKT Digital License Conversion
                     </p>
                     {kpktDigitalLicenseConversion.map((item) => (
@@ -321,7 +321,7 @@ export function Header() {
                         href={item.href}
                         onClick={closeMobileMenu}
                         className={cn(
-                          "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-kpkt/10",
+                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-kpkt/10",
                           pathname === item.href
                             ? "bg-kpkt/10 text-kpkt"
                             : "text-muted-foreground"
@@ -332,7 +332,7 @@ export function Header() {
                       </Link>
                     ))}
                     {/* Platforms */}
-                    <p className="mt-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                    <p className="mt-2 px-3 py-1 text-sm font-semibold uppercase tracking-wider text-primary">
                       Platforms
                     </p>
                     {corePlatforms.map((item) =>
@@ -343,7 +343,7 @@ export function Header() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={closeMobileMenu}
-                          className="flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent text-muted-foreground"
+                          className="flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent text-muted-foreground"
                         >
                           <item.icon className="h-4 w-4" />
                           {item.title}
@@ -354,7 +354,7 @@ export function Header() {
                           href={item.href}
                           onClick={closeMobileMenu}
                           className={cn(
-                            "flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors hover:bg-accent",
+                            "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
                             pathname === item.href
                               ? "bg-primary/10 text-primary"
                               : "text-muted-foreground"
@@ -376,7 +376,7 @@ export function Header() {
                   href={link.href}
                   onClick={closeMobileMenu}
                   className={cn(
-                    "rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent",
+                    "rounded-md px-3 py-2.5 text-lg font-medium transition-colors hover:bg-accent",
                     pathname === link.href
                       ? "text-primary"
                       : "text-foreground"
