@@ -422,8 +422,18 @@ export default function TrueKreditPage() {
           </motion.div>
 
           {/* Block 1: Enquiry & calculation — Borrower details screenshot */}
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Capture Enquiries & Approve Loans Faster
+            </h3>
+            <p className="text-muted-foreground">
+              From the very first enquiry, borrower details and documents are captured
+              digitally. Loan calculations and approval workflows are built in — so your
+              team spends less time on data entry and more time serving customers.
+            </p>
+          </div>
           <motion.div
-            className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
+            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -463,8 +473,18 @@ export default function TrueKreditPage() {
           </motion.div>
 
           {/* Block 2: Products & documents — Edit product screenshot */}
+          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Configure Products & Generate Documents Instantly
+            </h3>
+            <p className="text-muted-foreground">
+              Set up loan products once — interest model, eligibility rules, and Jadual J/K
+              schedule type — and the system does the rest. Offer letters and agreements are
+              generated automatically, ensuring every document is compliant and consistent.
+            </p>
+          </div>
           <motion.div
-            className="mt-16 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
+            className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -477,7 +497,7 @@ export default function TrueKreditPage() {
                 className="max-w-md"
               />
             </div>
-            <div className="space-y-6 lg:order-2">
+            <div className="space-y-6 lg:order-2 lg:pl-6">
               <Card className="transition-all hover:border-primary/30 hover:shadow-md">
                 <CardHeader>
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
@@ -505,8 +525,18 @@ export default function TrueKreditPage() {
           </motion.div>
 
           {/* Block 3: Disbursement, repayment & history — Repayment schedule screenshot */}
+          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Track Every Ringgit — From Disbursement to Final Payment
+            </h3>
+            <p className="text-muted-foreground">
+              Once a loan is approved, TrueKredit tracks the full money trail — disbursements,
+              repayments, and collections — with a complete audit history for every transaction.
+              Your books are always balanced, and auditors get the records they need instantly.
+            </p>
+          </div>
           <motion.div
-            className="mt-16 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
+            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -553,6 +583,69 @@ export default function TrueKreditPage() {
                 alt="Repayment Schedule"
                 className="max-w-md"
               />
+            </div>
+          </motion.div>
+
+          {/* Block 4: Late fees, arrears & default workflow — Late fees screenshot */}
+          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              Late Fees, Arrears & Default — Handled Automatically
+            </h3>
+            <p className="text-muted-foreground">
+              Stop worrying about miscalculated late charges or missed follow-ups.
+              TrueKredit automatically tracks overdue payments, calculates late fees to the
+              sen, and progresses loans through the arrears-to-default workflow — so nothing
+              falls through the cracks.
+            </p>
+          </div>
+          <motion.div
+            className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="order-2 lg:order-1 lg:flex lg:justify-end">
+              <ScreenshotDisplay
+                src="/truekredit/late_fees_screenshot.png"
+                alt="Automated Late Fees, Arrears & Default Management"
+                className="max-w-md"
+              />
+            </div>
+            <div className="space-y-6 lg:order-2 lg:pl-6">
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <Calculator className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Auto-Calculated Late Fees</CardTitle>
+                  <CardDescription>
+                    Late charges computed automatically based on your product rules — no manual work, no errors.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10">
+                    <AlertTriangle className="h-6 w-6 text-amber-500" />
+                  </div>
+                  <CardTitle className="text-lg">Arrears & Default Workflow</CardTitle>
+                  <CardDescription>
+                    Loans automatically flagged and transitioned through arrears to default based on your rules.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <FileText className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Auto-Generated Arrears & Default Letters</CardTitle>
+                  <CardDescription>
+                    Reminder letters and default notices generated automatically — ready to print or email.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
             </div>
           </motion.div>
         </div>
