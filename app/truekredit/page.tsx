@@ -570,9 +570,9 @@ export default function TrueKreditPage() {
                   <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                     <History className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">Full Loan History (Audit Trail)</CardTitle>
+                  <CardTitle className="text-lg">Early Settlement Feature</CardTitle>
                   <CardDescription>
-                    Complete transaction history for every loan, always accessible.
+                    Incentivize early settlements by offering discounts on the remaining interest payable.
                   </CardDescription>
                 </CardHeader>
               </Card>
