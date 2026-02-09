@@ -458,7 +458,7 @@ export default function TrueKreditPage() {
                   </div>
                   <CardTitle className="text-lg">Loan Calculation & Approval Workflow</CardTitle>
                   <CardDescription>
-                    Automated interest and instalment calculations with approval tracking.
+                    Automated interest and instalment calculations with approval tracking. Quote generator with 1 click sharing to Whatsapp.
                   </CardDescription>
                 </CardHeader>
               </Card>
