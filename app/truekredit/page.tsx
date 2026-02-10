@@ -294,9 +294,9 @@ const faqData = [
       "Yes, TrueKredit is specifically designed for KPKT PPW (offline) licensed money lenders in Malaysia. The system is built around KPKT compliance requirements and reporting formats.",
   },
   {
-    question: "Do you support Lampiran A/B1 and iDEAL CSV export?",
+    question: "Do you support Lampiran A and iDEAL CSV export?",
     answer:
-      "Yes, TrueKredit automatically generates Lampiran A and B1 reports, and exports data in the CSV format required for KPKT iDEAL portal submission.",
+      "Yes, TrueKredit automatically generates Lampiran A reports, and exports data in the CSV format required for KPKT iDEAL portal submission.",
   },
   {
     question: "Do I need the email add-on to generate letters/PDFs?",
