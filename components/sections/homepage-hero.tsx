@@ -47,7 +47,7 @@ const METRIC_DEFS = [
   },
   {
     label: "Compliance",
-    min: 82,
+    min: 100,
     max: 100,
     format: (v: number) => `${Math.round(v)}%`,
     suffix: "",
