@@ -1,4 +1,4 @@
-import { Hero } from "@/components/sections/hero";
+import { HomepageHero } from "@/components/sections/homepage-hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ComplianceSection } from "@/components/sections/compliance-section";
@@ -12,12 +12,7 @@ import LogoCloud1 from "@/components/logo-cloud-1";
 export default function HomePage() {
   return (
     <>
-      <Hero
-        title="Build & Scale Your Lending Business"
-        subtitle="Lending software, compliance services, infrastructure, and custom software solutions — everything you need to operate and grow in Malaysia's regulated lending space."
-        primaryCta={{ label: "Explore Services", href: "#what-we-do" }}
-        secondaryCta={{ label: "View Our Work", href: "/work" }}
-      />
+      <HomepageHero />
       <LogoCloud1 
         variant="clients" 
         showCategories={false}
