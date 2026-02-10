@@ -98,7 +98,7 @@ export function TrueKreditPromo() {
             </div>
             {/* Screenshot */}
             <Image
-              src="/truekredit/loan_summary_screenshot.png"
+              src="/truekredit/dashboard_screenshot.png"
               alt="TrueKredit Loan Management System"
               width={600}
               height={400}
