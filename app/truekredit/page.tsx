@@ -257,7 +257,7 @@ const complianceFeatures = [
   },
   {
     icon: FileSpreadsheet,
-    text: "Lampiran A & B1 auto-generated",
+    text: "Lampiran A auto-generated",
   },
   {
     icon: FileText,

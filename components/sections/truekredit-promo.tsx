@@ -120,7 +120,7 @@ export function TrueKreditPromo() {
                 "Customer enquiry & document capture",
                 "Loan calculation & approval workflow",
                 "Repayment tracking & collections",
-                "Lampiran A/B1 & iDEAL CSV export",
+                "Lampiran A & iDEAL CSV export",
               ].map((feature) => (
                 <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary" />
