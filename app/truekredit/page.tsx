@@ -572,15 +572,20 @@ export default function TrueKreditPage() {
                   </div>
                   <CardTitle className="text-lg">Early Settlement Feature</CardTitle>
                   <CardDescription>
-                    Incentivize early settlements by offering discounts on the remaining interest payable.
+                    Incentivize early settlements by offering discounts on the remaining interest payable. Set lock in period, waive late fees, and offer discounts in fixed amount or %.
                   </CardDescription>
                 </CardHeader>
               </Card>
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-8">
               <ScreenshotDisplay
                 src="/truekredit/repayment_schedule_screenshot.png"
                 alt="Repayment Schedule"
+                className="max-w-md"
+              />
+              <ScreenshotDisplay
+                src="/truekredit/early_settlement_screenshot.png"
+                alt="Early Settlement — Progress tracking with paid instalments, on-time rate, and discount summary"
                 className="max-w-md"
               />
             </div>
