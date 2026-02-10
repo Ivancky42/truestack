@@ -21,7 +21,7 @@ const METRIC_DEFS = [
     max: 2847,
     format: (v: number) => Math.round(v).toLocaleString(),
     suffix: "",
-    change: "+12.3%",
+    change: "+120.3%",
     icon: Users,
     delay: 0.3,
   },
@@ -31,7 +31,7 @@ const METRIC_DEFS = [
     max: 48.2,
     format: (v: number) => `RM ${v.toFixed(1)}M`,
     suffix: "",
-    change: "+18.7%",
+    change: "+691.7%",
     icon: Wallet,
     delay: 0.45,
   },
@@ -41,7 +41,7 @@ const METRIC_DEFS = [
     max: 99.4,
     format: (v: number) => `${v.toFixed(1)}%`,
     suffix: "",
-    change: "+2.1%",
+    change: "+10.1%",
     icon: TrendingUp,
     delay: 0.6,
   },
@@ -251,7 +251,7 @@ function GrowthChart({
         </div>
         <div className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium tabular-nums text-emerald-700">
           <TrendingUp className="h-3 w-3" />
-          {chartHovered ? `+${growthPct}%` : "+34.2%"}
+          {chartHovered ? `+${growthPct}%` : "+691.7%"}
         </div>
       </div>
 
