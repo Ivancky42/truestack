@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -26,6 +27,7 @@ import {
   Mail,
   Building2,
   ChevronRight,
+  ChevronLeft,
   Database,
   Lock,
   Server,
@@ -131,6 +133,121 @@ function ScreenshotDisplay({
     </div>
   );
 }
+
+// Document Gallery Modal Component with pagination
+function DocumentGalleryModal() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const doc = documentExamples[currentIndex];
+
+  return (
+    <Dialog onOpenChange={() => setCurrentIndex(0)}>
+      <DialogTrigger asChild>
+        <Button
+          variant="outline"
+          className="mt-6 gap-2 border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+        >
+          <FileText className="h-4 w-4" />
+          View More Auto-Generated Documents
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="text-xl">{doc.title}</DialogTitle>
+          <DialogDescription>{doc.description}</DialogDescription>
+        </DialogHeader>
+
+        {/* Pagination Controls */}
+        <div className="flex items-center justify-between">
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1"
+            onClick={() => setCurrentIndex((prev) => prev - 1)}
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Previous
+          </Button>
+
+          {/* Dot indicators + counter */}
+          <div className="flex flex-col items-center gap-1">
+            <div className="flex items-center gap-2">
+              {documentExamples.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-2 w-2 rounded-full transition-all ${
+                    index === currentIndex
+                      ? "bg-primary w-4"
+                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                />
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {currentIndex + 1} of {documentExamples.length}
+            </p>
+          </div>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1"
+            onClick={() => setCurrentIndex((prev) => prev + 1)}
+            disabled={currentIndex === documentExamples.length - 1}
+          >
+            Next
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+
+        {/* Document Image */}
+        <div className="overflow-hidden rounded-lg border bg-white">
+          <Image
+            src={doc.src}
+            alt={doc.alt}
+            width={800}
+            height={1000}
+            className="w-full"
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+// Auto-generated document examples
+const documentExamples = [
+  {
+    src: "/truekredit/document_example_receipt.png",
+    alt: "Payment Receipt",
+    title: "Payment Receipt",
+    description:
+      "Auto-generated after every repayment. Includes payment details, late fees breakdown, and outstanding balance — ready to print or email to the borrower.",
+  },
+  {
+    src: "/truekredit/document_example_arrears.png",
+    alt: "Notice of Arrears",
+    title: "Notice of Arrears",
+    description:
+      "Triggered automatically when a borrower misses a payment. Details the overdue instalments, accrued late fees, and the deadline to settle before the loan is classified as defaulted.",
+  },
+  {
+    src: "/truekredit/document_example_default.png",
+    alt: "Notice of Default",
+    title: "Notice of Default",
+    description:
+      "Generated when a loan transitions to default status. Formally notifies the borrower of the default classification, total outstanding amount, and potential legal actions.",
+  },
+  {
+    src: "/truekredit/document_example_discharge.png",
+    alt: "Letter of Discharge",
+    title: "Letter of Discharge",
+    description:
+      "Issued upon full settlement of a loan — including early settlements with discounts. Confirms all obligations are fulfilled and the borrower is released from liability.",
+  },
+];
 
 // Compliance features data
 const complianceFeatures = [
@@ -702,6 +819,9 @@ export default function TrueKreditPage() {
                   </motion.li>
                 ))}
               </ul>
+
+              {/* Auto-Generated Documents Gallery Modal */}
+              <DocumentGalleryModal />
             </motion.div>
 
             <motion.div
