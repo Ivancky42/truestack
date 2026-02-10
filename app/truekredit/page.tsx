@@ -247,6 +247,13 @@ const documentExamples = [
     description:
       "Issued upon full settlement of a loan — including early settlements with discounts. Confirms all obligations are fulfilled and the borrower is released from liability.",
   },
+  {
+    src: "/truekredit/lampiran_a_screenshot.png",
+    alt: "Lampiran A",
+    title: "Lampiran A — Lejar Akaun Peminjam",
+    description:
+      "Auto-generated Lampiran A report as required under the Akta Pemberi Pinjam Wang 1951. Includes borrower details, loan terms, and full repayment history — ready for KPKT submission.",
+  },
 ];
 
 // Compliance features data
