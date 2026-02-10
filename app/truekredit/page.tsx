@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import {
   ArrowRight,
   Phone,
@@ -33,6 +33,8 @@ import {
   Server,
   Eye,
   FilePlusCorner,
+  Banknote,
+  BarChart3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -322,6 +324,183 @@ const faqData = [
   },
 ];
 
+// ─── Feature Constellation for Hero ──────────────────────────────────────────
+
+const HERO_FEATURES = [
+  { label: "Jadual J & K", icon: FilePlusCorner, color: "text-blue-600", bg: "bg-blue-50" },
+  { label: "Lampiran A", icon: FileSpreadsheet, color: "text-indigo-600", bg: "bg-indigo-50" },
+  { label: "Arrears & Default", icon: AlertTriangle, color: "text-amber-600", bg: "bg-amber-50" },
+  { label: "Receipt & Letters", icon: Receipt, color: "text-emerald-600", bg: "bg-emerald-50" },
+  { label: "e-KYC", icon: Fingerprint, color: "text-violet-600", bg: "bg-violet-50" },
+  { label: "Late Fees", icon: Clock, color: "text-rose-600", bg: "bg-rose-50" },
+  { label: "Early Settlement", icon: Banknote, color: "text-teal-600", bg: "bg-teal-50" },
+  { label: "Loan Lifecycle", icon: History, color: "text-sky-600", bg: "bg-sky-50" },
+  { label: "iDEAL Export", icon: Database, color: "text-orange-600", bg: "bg-orange-50" },
+  { label: "Audit Trail", icon: Search, color: "text-slate-600", bg: "bg-slate-100" },
+  { label: "Repayment Tracking", icon: BarChart3, color: "text-cyan-600", bg: "bg-cyan-50" },
+  { label: "Auto Documents", icon: FileCheck, color: "text-pink-600", bg: "bg-pink-50" },
+];
+
+function FeatureConstellation() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 80, damping: 20 });
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      // Normalize to -1..1 from center
+      mouseX.set((e.clientX - rect.left - cx) / cx);
+      mouseY.set((e.clientY - rect.top - cy) / cy);
+    },
+    [mouseX, mouseY]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    mouseX.set(0);
+    mouseY.set(0);
+  }, [mouseX, mouseY]);
+
+  // Subscribe to spring for re-render (lightweight)
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const unsubX = springX.on("change", (x) => {
+      setOffset((prev) => ({ ...prev, x }));
+    });
+    const unsubY = springY.on("change", (y) => {
+      setOffset((prev) => ({ ...prev, y }));
+    });
+    return () => { unsubX(); unsubY(); };
+  }, [springX, springY]);
+
+  // Compute positions in an ellipse around the center
+  const count = HERO_FEATURES.length;
+
+  return (
+    <motion.div
+      ref={containerRef}
+      className="relative mx-auto aspect-square w-full max-w-[520px]"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
+      {/* Connection lines (SVG) */}
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 520 520">
+        {HERO_FEATURES.map((_, i) => {
+          const angle = (i / count) * Math.PI * 2 - Math.PI / 2;
+          const radiusX = 200;
+          const radiusY = 200;
+          const nx = Math.round((260 + Math.cos(angle) * radiusX) * 100) / 100;
+          const ny = Math.round((260 + Math.sin(angle) * radiusY) * 100) / 100;
+          return (
+            <motion.line
+              key={i}
+              x1={260}
+              y1={260}
+              x2={nx}
+              y2={ny}
+              stroke="var(--color-primary)"
+              strokeWidth={hoveredIdx === i ? 1.5 : 0.8}
+              strokeDasharray="4 4"
+              initial={{ opacity: 0, pathLength: 0 }}
+              animate={{ opacity: hoveredIdx === i ? 0.4 : 0.12, pathLength: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 + i * 0.06 }}
+            />
+          );
+        })}
+      </svg>
+
+      {/* Center hub */}
+      <motion.div
+        className="absolute left-1/2 top-1/2 z-20 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-primary/20 bg-white shadow-lg"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
+        style={{
+          transform: `translate(calc(-50% + ${offset.x * 3}px), calc(-50% + ${offset.y * 3}px))`,
+        }}
+      >
+        <Shield className="h-7 w-7 text-primary" />
+        <span className="mt-1 text-[10px] font-semibold text-primary leading-tight text-center">
+          TrueKredit
+        </span>
+        {/* Pulse ring */}
+        <motion.div
+          className="absolute inset-0 rounded-full border-2 border-primary/20"
+          animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+        />
+      </motion.div>
+
+      {/* Feature nodes */}
+      {HERO_FEATURES.map((feature, i) => {
+        const Icon = feature.icon;
+        const angle = (i / count) * Math.PI * 2 - Math.PI / 2;
+        const radiusX = 200;
+        const radiusY = 200;
+        // Base position (center of 520x520 viewbox)
+        const baseX = 260 + Math.cos(angle) * radiusX;
+        const baseY = 260 + Math.sin(angle) * radiusY;
+
+        // Parallax: nodes further from center move more with cursor
+        const parallax = 8;
+        const px = baseX + offset.x * parallax * (0.6 + 0.4 * Math.abs(Math.cos(angle)));
+        const py = baseY + offset.y * parallax * (0.6 + 0.4 * Math.abs(Math.sin(angle)));
+
+        // Convert to percentage positioning (rounded to avoid hydration mismatch)
+        const leftPct = Math.round((px / 520) * 10000) / 100;
+        const topPct = Math.round((py / 520) * 10000) / 100;
+
+        const isHovered = hoveredIdx === i;
+
+        return (
+          <motion.div
+            key={feature.label}
+            className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+            style={{ left: `${leftPct}%`, top: `${topPct}%` }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 0.3 + i * 0.07,
+            }}
+            onMouseEnter={() => setHoveredIdx(i)}
+            onMouseLeave={() => setHoveredIdx(null)}
+          >
+            <motion.div
+              className={`flex cursor-default flex-col items-center gap-1.5 rounded-xl border bg-white px-3 py-2.5 shadow-sm transition-shadow ${
+                isHovered ? "shadow-md border-primary/30" : "border-border/60"
+              }`}
+              animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${feature.bg}`}>
+                <Icon className={`h-4.5 w-4.5 ${feature.color}`} />
+              </div>
+              <span className="whitespace-nowrap text-[11px] font-medium text-foreground/80">
+                {feature.label}
+              </span>
+            </motion.div>
+          </motion.div>
+        );
+      })}
+
+      {/* Soft background glow */}
+      <div className="absolute left-1/2 top-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+    </motion.div>
+  );
+}
+
 export default function TrueKreditPage() {
   return (
     <>
@@ -387,32 +566,9 @@ export default function TrueKreditPage() {
               </motion.div>
             </motion.div>
 
-            {/* Right: Screenshot */}
-            <motion.div
-              className="hidden lg:block"
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <ScreenshotDisplay
-                src="/truekredit/loan_summary_screenshot.png"
-                alt="TrueKredit Loan Summary"
-              />
-            </motion.div>
+            {/* Right: Feature Constellation */}
+            <FeatureConstellation />
           </div>
-
-          {/* Mobile Screenshot */}
-          <motion.div
-            className="mt-12 lg:hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <ScreenshotDisplay
-              src="/truekredit/loan_summary_screenshot.png"
-              alt="TrueKredit Loan Summary"
-            />
-          </motion.div>
         </div>
       </section>
 
@@ -589,8 +745,8 @@ export default function TrueKreditPage() {
             </div>
             <div className="flex justify-center">
               <ScreenshotDisplay
-                src="/truekredit/borrower_details_screenshot.png"
-                alt="Borrower Details View"
+                src="/truekredit/loan_summary_screenshot.png"
+                alt="Loan Summary View"
                 className="max-w-md"
               />
             </div>
@@ -1615,11 +1771,11 @@ export default function TrueKreditPage() {
               <div className="mt-8">
                 <div className="rounded-xl border bg-background p-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                    <div className="flex h-14 w-14 items-center justif  y-center rounded-full bg-primary/10">
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-lg font-semibold">Mr. Lim</div>
+                      <div className="text-lg font-semibold">Tyler Lim</div>
                       <a
                         href="tel:+60164614919"
                         className="text-primary hover:underline"
