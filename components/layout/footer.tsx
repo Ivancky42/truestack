@@ -10,7 +10,7 @@ const footerLinks = {
   ],
   platforms: [
     { href: "/truekredit", label: "TrueKredit™", external: false },
-    { href: "https://core.truestack.my", label: "TrueIdentity™", external: true },
+    { href: "/trueidentity", label: "TrueIdentity™", external: false },
   ],
   company: [
     { href: "/about", label: "About" },

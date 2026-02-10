@@ -1775,7 +1775,7 @@ export default function TrueKreditPage() {
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-lg font-semibold">Tyler Lim</div>
+                      <div className="text-lg font-semibold">Chat With Us</div>
                       <a
                         href="tel:+60164614919"
                         className="text-primary hover:underline"

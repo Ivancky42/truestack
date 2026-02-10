@@ -57,10 +57,10 @@ const corePlatforms = [
   },
   {
     title: "TrueIdentity™",
-    href: "https://core.truestack.my",
+    href: "/trueidentity",
     description: "e-KYC verification for Malaysian fintechs. Fast, secure, and compliant.",
     icon: Fingerprint,
-    external: true,
+    external: false,
   },
 ];
 
@@ -72,7 +72,7 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
-  const isSolutionsActive = pathname.startsWith("/services") || pathname.startsWith("/truekredit");
+  const isSolutionsActive = pathname.startsWith("/services") || pathname.startsWith("/truekredit") || pathname.startsWith("/trueidentity");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsExpanded, setSolutionsExpanded] = useState(false);
 
