@@ -81,7 +81,7 @@ export function WhatWeDo() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className="text-lg text-muted-foreground md:text-xl">
-              We provide the infrastructure, platforms, and expertise to help
+              We are a tech-driven company providing infrastructure, platforms, and expertise to help
               Malaysian Fintechs and lenders build, operate, and grow their businesses.
             </p>
           </motion.div>
