@@ -610,10 +610,15 @@ export default function TrueKreditPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="order-2 lg:order-1 lg:flex lg:justify-end">
+            <div className="order-2 lg:order-1 flex flex-col items-end gap-8">
               <ScreenshotDisplay
                 src="/truekredit/late_fees_screenshot.png"
                 alt="Automated Late Fees, Arrears & Default Management"
+                className="max-w-md"
+              />
+              <ScreenshotDisplay
+                src="/truekredit/late_summary_screenshot.png"
+                alt="Late Payment Summary — Progress tracking with overdue instalments, late fees, and on-time rate"
                 className="max-w-md"
               />
             </div>
