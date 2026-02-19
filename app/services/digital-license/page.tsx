@@ -374,7 +374,7 @@ export default function DigitalLicensePage() {
       </section>
 
       {/* What You Get */}
-      <section className="border-t bg-slate-950 py-20 text-white">
+      <section data-nav-theme="dark" className="border-t bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -494,7 +494,7 @@ export default function DigitalLicensePage() {
       </section>
 
       {/* Compliance & Data Residency Section */}
-      <section className="border-t border-slate-800 bg-slate-950 py-20 text-white">
+      <section data-nav-theme="dark" className="border-t border-slate-800 bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           {/* Header */}
           <div className="mb-12">

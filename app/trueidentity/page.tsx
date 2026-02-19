@@ -824,7 +824,7 @@ export default function TrueIdentityPage() {
       </section>
 
       {/* Developer Section — Dark */}
-      <section id="developers" className="bg-slate-950 py-20 text-white">
+      <section id="developers" data-nav-theme="dark" className="bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
             className="mb-16 text-center"

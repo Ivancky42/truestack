@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -70,23 +70,66 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
+function useIsDarkSection() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      // Sample point: center of viewport, just below header (~90px from top)
+      const el = document.elementFromPoint(window.innerWidth / 2, 90);
+      const inDarkSection = el?.closest('[data-nav-theme="dark"]');
+      setIsDark(!!inDarkSection);
+    };
+
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
+  }, []);
+
+  return isDark;
+}
+
 export function Header() {
   const pathname = usePathname();
   const isSolutionsActive = pathname.startsWith("/services") || pathname.startsWith("/truekredit") || pathname.startsWith("/trueidentity");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsExpanded, setSolutionsExpanded] = useState(false);
+  const isDarkSection = useIsDarkSection();
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setSolutionsExpanded(false);
   };
 
+  const headerClasses = cn(
+    "sticky top-0 z-50 w-full border-b overflow-visible transition-colors duration-200",
+    isDarkSection
+      ? "bg-slate-950 border-slate-800 backdrop-blur"
+      : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-border"
+  );
+
+  const navLinkClasses = (active: boolean) =>
+    cn(
+      "text-base font-medium transition-colors",
+      isDarkSection
+        ? active
+          ? "text-white"
+          : "text-slate-300 hover:text-white"
+        : active
+          ? "text-primary"
+          : "text-muted-foreground hover:text-primary"
+    );
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-visible">
+    <header className={headerClasses}>
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 overflow-visible">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/truestack-logo-transparent.svg"
+            src={isDarkSection ? "/truestack-logo-transparent-dark.svg" : "/truestack-logo-transparent.svg"}
             alt="Truestack"
             width={140}
             height={32}
@@ -103,9 +146,7 @@ export function Header() {
                 <NavigationMenuTrigger
                   className={cn(
                     "bg-transparent text-base font-medium",
-                    isSolutionsActive
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                    navLinkClasses(isSolutionsActive)
                   )}
                 >
                   Solutions
@@ -233,12 +274,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "text-base font-medium transition-colors hover:text-primary",
-                pathname === link.href
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              )}
+              className={navLinkClasses(pathname === link.href)}
             >
               {link.label}
             </Link>
@@ -247,7 +283,11 @@ export function Header() {
 
         {/* Desktop Contact Button */}
         <div className="hidden items-center gap-4 md:flex">
-          <Button asChild>
+          <Button
+            asChild
+            variant={isDarkSection ? "outline" : "default"}
+            className={isDarkSection ? "border-slate-400 bg-transparent text-white hover:bg-slate-800 hover:text-white hover:border-slate-300" : ""}
+          >
             <Link href="/contact">Contact</Link>
           </Button>
         </div>
@@ -255,7 +295,7 @@ export function Header() {
         {/* Mobile Menu */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Open menu">
+            <Button variant="ghost" size="icon" aria-label="Open menu" className={isDarkSection ? "text-slate-300 hover:text-white hover:bg-slate-800" : ""}>
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
@@ -263,7 +303,7 @@ export function Header() {
             <SheetHeader>
               <SheetTitle className="text-left">
                 <Image
-                  src="/truestack-logo-transparent.svg"
+                  src={isDarkSection ? "/truestack-logo-transparent-dark.svg" : "/truestack-logo-transparent.svg"}
                   alt="Truestack"
                   width={120}
                   height={28}

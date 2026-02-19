@@ -942,7 +942,7 @@ export default function TrueKreditPage() {
       </section>
 
       {/* Compliance Section */}
-      <section id="compliance" className="bg-slate-950 py-20 text-white">
+      <section id="compliance" data-nav-theme="dark" className="bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             <motion.div
@@ -1017,7 +1017,7 @@ export default function TrueKreditPage() {
       </section>
 
       {/* Enterprise-Grade Infrastructure Section */}
-      <section id="infrastructure" className="border-t border-slate-800 bg-slate-950 py-20 text-white">
+      <section id="infrastructure" data-nav-theme="dark" className="border-t border-slate-800 bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           {/* Header */}
           <motion.div

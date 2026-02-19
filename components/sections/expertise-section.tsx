@@ -109,7 +109,7 @@ function GridPattern() {
 
 export function ExpertiseSection() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-20">
+    <section data-nav-theme="dark" className="relative overflow-hidden bg-slate-950 py-20">
       <GridPattern />
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
