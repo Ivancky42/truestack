@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "Terms of Use for Truestack website. Read our terms and conditions for using our website and services.",
+  keywords: ["terms of use", "Truestack", "terms and conditions"],
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Use - Truestack",
+    description:
+      "Terms of Use for Truestack website. Read our terms and conditions for using our website and services.",
+  },
 };
 
 export default function TermsOfUsePage() {

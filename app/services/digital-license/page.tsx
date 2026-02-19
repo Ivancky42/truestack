@@ -33,8 +33,14 @@ export const metadata: Metadata = {
   title: "Digital KPKT License Conversion",
   description:
     "Transform your money lending business to operate fully online. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
+  keywords: [
+    "digital KPKT license",
+    "license conversion Malaysia",
+    "digital money lender",
+  ],
+  alternates: { canonical: "/services/digital-license" },
   openGraph: {
-    title: "Digital KPKT License Conversion | Truestack",
+    title: "Digital KPKT License Conversion - Truestack",
     description:
       "Go digital and expand nationwide. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
     images: ["/truestack-favicon.png"],

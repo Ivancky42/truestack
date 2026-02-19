@@ -36,8 +36,14 @@ export const metadata: Metadata = {
   title: "Custom Software Development",
   description:
     "Full-stack fintech development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape with KPKT and SC compliance.",
+  keywords: [
+    "custom fintech software",
+    "P2P lending platform",
+    "digital lending Malaysia",
+  ],
+  alternates: { canonical: "/services/software-development" },
   openGraph: {
-    title: "Custom Fintech Software Development | Truestack",
+    title: "Custom Software Development - Truestack",
     description:
       "Full-stack development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
     images: ["/truestack-favicon.png"],

@@ -21,6 +21,19 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Case studies and projects. See the fintech platforms we've built and the KPKT operators we've helped go digital.",
+  keywords: [
+    "Truestack case studies",
+    "fintech projects Malaysia",
+    "KPKT digital license",
+    "CreditXpress",
+    "money lending platform",
+  ],
+  alternates: { canonical: "/work" },
+  openGraph: {
+    title: "Work - Truestack",
+    description:
+      "Case studies and projects. See the fintech platforms we've built and the KPKT operators we've helped go digital.",
+  },
 };
 
 const projects = [

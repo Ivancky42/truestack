@@ -18,6 +18,20 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
+  keywords: [
+    "Truestack",
+    "KPKT compliance Malaysia",
+    "fintech software Malaysia",
+    "licensed money lender",
+    "digital license conversion",
+    "e-KYC Malaysia",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About - Truestack",
+    description:
+      "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
+  },
 };
 
 const values = [

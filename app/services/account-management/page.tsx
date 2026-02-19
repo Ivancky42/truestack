@@ -24,8 +24,15 @@ export const metadata: Metadata = {
   title: "KPKT Account Management",
   description:
     "KPKT compliance and account management services. License renewals, annual submissions, and regulatory coordination for licensed money lenders in Malaysia. Up to 50% faster approvals.",
+  keywords: [
+    "KPKT account management",
+    "license renewals Malaysia",
+    "money lender compliance",
+    "annual submissions KPKT",
+  ],
+  alternates: { canonical: "/services/account-management" },
   openGraph: {
-    title: "KPKT Account Management | Truestack",
+    title: "KPKT Account Management - Truestack",
     description:
       "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
     images: ["/truestack-favicon.png"],

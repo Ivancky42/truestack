@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TrueKredit™ — KPKT Loan Management System",
+  title: "TrueKredit™ — KPKT Loan Management System - Truestack",
   description:
     "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia. Manage borrowers, loans, compliance, and audits — all in one secure system.",
   keywords: [
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
     "loan software",
     "lending platform",
   ],
+  alternates: { canonical: "/truekredit" },
   openGraph: {
-    title: "TrueKredit™ — KPKT Loan Management System",
+    title: "TrueKredit™ — KPKT Loan Management System - Truestack",
     description:
       "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia. Manage borrowers, loans, compliance, and audits — all in one secure system.",
     type: "website",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrueKredit™ — KPKT Loan Management System",
+    title: "TrueKredit™ — KPKT Loan Management System - Truestack",
     description:
       "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia.",
     images: ["/truekredit/loan_application_screenshot.png"],

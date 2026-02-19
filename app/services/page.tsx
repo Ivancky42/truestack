@@ -17,8 +17,16 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "KPKT compliance services and fintech software development. Account management, digital license conversion, and custom software solutions for licensed money lenders in Malaysia.",
+  keywords: [
+    "KPKT services Malaysia",
+    "account management KPKT",
+    "digital license conversion",
+    "fintech software development",
+    "money lender compliance",
+  ],
+  alternates: { canonical: "/services" },
   openGraph: {
-    title: "Our Services | Truestack",
+    title: "Services - Truestack",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
     images: ["/truestack-favicon.png"],

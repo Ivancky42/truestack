@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+  keywords: ["privacy policy", "Truestack", "data protection", "PDPA Malaysia"],
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy - Truestack",
+    description:
+      "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

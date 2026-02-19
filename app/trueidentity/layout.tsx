@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TrueIdentity™ — e-KYC Verification for Malaysia",
+  title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
   description:
     "Programmatic e-KYC verification for Malaysian fintechs. MyKad OCR, liveness detection, biometric matching — verify customers in seconds, not days.",
   keywords: [
@@ -15,8 +15,9 @@ export const metadata: Metadata = {
     "fintech Malaysia",
     "PDPA compliant",
   ],
+  alternates: { canonical: "/trueidentity" },
   openGraph: {
-    title: "TrueIdentity™ — e-KYC Verification for Malaysia",
+    title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
     description:
       "Programmatic e-KYC verification for Malaysian fintechs. Verify customers in seconds, not days.",
     type: "website",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrueIdentity™ — e-KYC Verification for Malaysia",
+    title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
     description:
       "Programmatic e-KYC verification for Malaysian fintechs. Verify customers in seconds, not days.",
   },

@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   title: "Careers",
   description:
     "Join Truestack and build fintech platforms that make a real impact. View open positions and learn about our culture.",
+  keywords: [
+    "Truestack careers",
+    "fintech jobs Malaysia",
+    "software developer Malaysia",
+    "full-stack developer",
+  ],
+  alternates: { canonical: "/careers" },
+  openGraph: {
+    title: "Careers - Truestack",
+    description:
+      "Join Truestack and build fintech platforms that make a real impact. View open positions and learn about our culture.",
+  },
 };
 
 const openRoles = [

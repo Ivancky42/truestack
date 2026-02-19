@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Truestack. Tell us about your fintech project and we'll get back to you.",
+  keywords: [
+    "contact Truestack",
+    "fintech consulting Malaysia",
+    "KPKT services inquiry",
+    "money lender software quote",
+  ],
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact - Truestack",
+    description:
+      "Get in touch with Truestack. Tell us about your fintech project and we'll get back to you.",
+  },
 };
 
 export default function ContactPage() {
