@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
+  title: "TrueIdentity™ — e-KYC Verification for Malaysia",
   description:
     "Programmatic e-KYC verification for Malaysian fintechs. MyKad OCR, liveness detection, biometric matching — verify customers in seconds, not days.",
   keywords: [

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "TrueKredit™ — KPKT Loan Management System - Truestack",
+  title: "TrueKredit™ — KPKT Loan Management System",
   description:
     "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia. Manage borrowers, loans, compliance, and audits — all in one secure system.",
   keywords: [
