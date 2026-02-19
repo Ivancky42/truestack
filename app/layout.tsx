@@ -52,9 +52,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Truestack" }],
   icons: {
-    icon: "/truestack-favicon.svg",
-    shortcut: "/truestack-favicon.svg",
-    apple: "/truestack-favicon.svg",
+    icon: "/truestack-favicon.png",
+    shortcut: "/truestack-favicon.png",
+    apple: "/truestack-favicon.png",
   },
   openGraph: {
     type: "website",
