@@ -65,19 +65,19 @@ export const metadata: Metadata = {
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
     images: [
       {
-        url: "/truestack-logo-transparent.png",
-        width: 1243,
-        height: 303,
+        url: "/truestack-favicon.png",
+        width: 250,
+        height: 250,
         alt: "Truestack - KPKT Services & Fintech Software",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Truestack - KPKT Services & Fintech Software",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
-    images: ["/truestack-logo-transparent.png"],
+    images: ["/truestack-favicon.png"],
   },
   robots: {
     index: true,

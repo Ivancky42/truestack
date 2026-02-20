@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Services - Truestack",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
-    images: ["/truestack-logo-transparent.png"],
+    images: ["/truestack-favicon.png"],
   },
 };
 

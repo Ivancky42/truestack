@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "KPKT Account Management - Truestack",
     description:
       "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
-    images: ["/truestack-logo-transparent.png"],
+    images: ["/truestack-favicon.png"],
   },
 };
 

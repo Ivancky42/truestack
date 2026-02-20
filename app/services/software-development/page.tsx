@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Custom Software Development - Truestack",
     description:
       "Full-stack development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
-    images: ["/truestack-logo-transparent.png"],
+    images: ["/truestack-favicon.png"],
   },
 };
 
