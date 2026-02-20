@@ -18,7 +18,7 @@ export function OrganizationSchema() {
     name: "Truestack",
     alternateName: "True Stack",
     url: baseUrl,
-    logo: `${baseUrl}/truestack-logo-transparent.svg`,
+    logo: `${baseUrl}/truestack-logo-transparent.png`,
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
     foundingDate: "2020",

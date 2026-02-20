@@ -33,7 +33,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/truestack-logo-transparent.svg"
+                src="/truestack-logo-transparent.png"
                 alt="Truestack"
                 width={140}
                 height={32}

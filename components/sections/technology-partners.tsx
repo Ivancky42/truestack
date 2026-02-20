@@ -117,7 +117,7 @@ export function TechnologyPartners() {
               <CardContent className="p-8">
                 <div className="mb-6 flex items-center gap-4">
                   <Image
-                    src="/truestack-logo-transparent.svg"
+                    src="/truestack-logo-transparent.png"
                     alt="Truestack"
                     width={160}
                     height={40}

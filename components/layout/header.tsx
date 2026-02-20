@@ -129,7 +129,7 @@ export function Header() {
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 overflow-visible">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src={isDarkSection ? "/truestack-logo-transparent-dark.svg" : "/truestack-logo-transparent.svg"}
+            src={isDarkSection ? "/truestack-logo-transparent-dark.png" : "/truestack-logo-transparent.png"}
             alt="Truestack"
             width={140}
             height={32}
@@ -303,7 +303,7 @@ export function Header() {
             <SheetHeader>
               <SheetTitle className="text-left">
                 <Image
-                  src={isDarkSection ? "/truestack-logo-transparent-dark.svg" : "/truestack-logo-transparent.svg"}
+                  src={isDarkSection ? "/truestack-logo-transparent-dark.png" : "/truestack-logo-transparent.png"}
                   alt="Truestack"
                   width={120}
                   height={28}
