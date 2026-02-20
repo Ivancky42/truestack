@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Digital KPKT License Conversion - Truestack",
     description:
       "Go digital and expand nationwide. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
-    images: ["/truestack-favicon.png"],
+    images: ["/truestack-logo-transparent.png"],
   },
 };
 
