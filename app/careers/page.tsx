@@ -186,7 +186,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="Open Roles"
-            subtitle="We're looking for talented individuals to join our growing team."
+            subtitle="All positions are currently filled. Check back later for new opportunities."
             centered
           />
 
@@ -208,10 +208,13 @@ export default function CareersPage() {
                         </Badge>
                       </div>
                     </div>
-                    <Button className="gap-2">
-                      Apply Now
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <Badge
+                      variant="secondary"
+                      className="gap-1.5 bg-muted px-4 py-2 font-medium"
+                    >
+                      <CheckCircle2 className="h-4 w-4" />
+                      Position Filled
+                    </Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-6">
