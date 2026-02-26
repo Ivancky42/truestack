@@ -21,9 +21,24 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown, Fingerprint, CreditCard } from "lucide-react";
+import { FileCheck, Code2, ClipboardCheck, Menu, ChevronDown, Fingerprint, CreditCard, Network, TrendingUp } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-const kpktServices = [
+const kpktSolutions = [
+  {
+    title: "TrueKredit™",
+    href: "/truekredit",
+    description: "KPKT Loan Management System for licensed money lenders.",
+    icon: CreditCard,
+    badge: "Popular",
+    badgeIcon: TrendingUp,
+  },
+  {
+    title: "KPKT Digital License Conversion",
+    href: "/services/digital-license",
+    description: "Transform to a fully digital KPKT-licensed platform in 6 months.",
+    icon: FileCheck,
+  },
   {
     title: "KPKT Account Management",
     href: "/services/account-management",
@@ -32,35 +47,24 @@ const kpktServices = [
   },
 ];
 
-const kpktDigitalLicenseConversion = [
-  {
-    title: "KPKT Digital License Conversion",
-    href: "/services/digital-license",
-    description: "Transform to a fully digital KPKT-licensed platform in 6 months.",
-    icon: FileCheck,
-  },
-  {
-    title: "Custom Fintech Solutions",
-    href: "/services/software-development",
-    description: "P2P lending, digital lending platforms, and payment systems.",
-    icon: Code2,
-  },
-];
-
-const corePlatforms = [
-  {
-    title: "TrueKredit™",
-    href: "/truekredit",
-    description: "KPKT Loan Management System for licensed money lenders.",
-    icon: CreditCard,
-    external: false,
-  },
+const otherSolutions = [
   {
     title: "TrueIdentity™",
     href: "/trueidentity",
     description: "e-KYC verification for Malaysian fintechs. Fast, secure, and compliant.",
     icon: Fingerprint,
-    external: false,
+  },
+  {
+    title: "P2P Lending Platform Development",
+    href: "/services/software-development",
+    description: "Build peer-to-peer lending platforms from the ground up.",
+    icon: Network,
+  },
+  {
+    title: "Custom Fintech Solutions",
+    href: "/services/software-development",
+    description: "Digital lending platforms, payment systems, and bespoke fintech software.",
+    icon: Code2,
   },
 ];
 
@@ -153,27 +157,34 @@ export function Header() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[800px] grid-cols-2 gap-6 p-6">
-                    {/* Left Column - Services */}
+                    {/* Left Column - KPKT Solutions */}
                     <div className="space-y-4">
-                      {/* KPKT Services Group */}
                       <div>
-                        <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-kpkt">
-                          <span className="h-1.5 w-1.5 rounded-full bg-kpkt" />
-                          Services
+                        <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-foreground">
+                          <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+                          KPKT Solutions
                         </p>
                         <ul className="space-y-1">
-                          {kpktServices.map((item) => (
+                          {kpktSolutions.map((item) => (
                             <li key={item.title}>
                               <NavigationMenuLink asChild>
                                 <Link
                                   href={item.href}
-                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-kpkt/10"
+                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
                                 >
-                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-kpkt/10">
-                                    <item.icon className="h-4 w-4 text-kpkt" />
+                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                    <item.icon className="h-4 w-4 text-primary" />
                                   </div>
-                                  <div>
-                                    <div className="text-base font-medium">{item.title}</div>
+                                  <div className="min-w-0 flex-1">
+                                    <div className="flex items-center gap-2">
+                                      <span className="text-base font-medium">{item.title}</span>
+                                      {"badge" in item && item.badge && (
+                                        <Badge variant="secondary" className="shrink-0 gap-1 bg-emerald-100 px-1.5 py-0 text-[10px] font-medium text-emerald-800">
+                                          {"badgeIcon" in item && item.badgeIcon && <item.badgeIcon className="h-2.5 w-2.5" />}
+                                          {item.badge}
+                                        </Badge>
+                                      )}
+                                    </div>
                                     <p className="text-[15px] text-muted-foreground">
                                       {item.description}
                                     </p>
@@ -185,80 +196,32 @@ export function Header() {
                         </ul>
                       </div>
 
-                      {/* KPKT Digital License Conversion Group */}
-                      <div className="border-t pt-4">
-                        <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-kpkt">
-                          <span className="h-1.5 w-1.5 rounded-full bg-kpkt" />
-                          Software Development
-                        </p>
-                        <ul className="space-y-1">
-                          {kpktDigitalLicenseConversion.map((item) => (
-                            <li key={item.title}>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  href={item.href}
-                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-kpkt/10"
-                                >
-                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-kpkt/10">
-                                    <item.icon className="h-4 w-4 text-kpkt" />
-                                  </div>
-                                  <div>
-                                    <div className="text-base font-medium">{item.title}</div>
-                                    <p className="text-[15px] text-muted-foreground">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </Link>
-                              </NavigationMenuLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
                     </div>
 
-                    {/* Right Column - Platforms */}
+                    {/* Right Column - Other Fintech Solutions */}
                     <div className="border-l pl-4">
-                      <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-primary">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        Platforms
+                      <p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-foreground">
+                        <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+                        Other Solutions
                       </p>
                       <ul className="space-y-1">
-                        {corePlatforms.map((item) => (
+                        {otherSolutions.map((item) => (
                           <li key={item.title}>
                             <NavigationMenuLink asChild>
-                              {item.external ? (
-                                <a
-                                  href={item.href}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
-                                >
-                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                                    <item.icon className="h-4 w-4 text-primary" />
-                                  </div>
-                                  <div>
-                                    <div className="text-base font-medium">{item.title}</div>
-                                    <p className="text-[15px] text-muted-foreground">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </a>
-                              ) : (
-                                <Link
-                                  href={item.href}
-                                  className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
-                                >
-                                  <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                                    <item.icon className="h-4 w-4 text-primary" />
-                                  </div>
-                                  <div>
-                                    <div className="text-base font-medium">{item.title}</div>
-                                    <p className="text-[15px] text-muted-foreground">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </Link>
-                              )}
+                              <Link
+                                href={item.href}
+                                className="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent"
+                              >
+                                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10">
+                                  <item.icon className="h-4 w-4 text-primary" />
+                                </div>
+                                <div>
+                                  <div className="text-base font-medium">{item.title}</div>
+                                  <p className="text-[15px] text-muted-foreground">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </Link>
                             </NavigationMenuLink>
                           </li>
                         ))}
@@ -331,19 +294,45 @@ export function Header() {
                 </button>
                 {solutionsExpanded && (
                   <div className="ml-3 space-y-1 border-l pl-3">
-                    {/* KPKT Services */}
-                    <p className="px-3 py-1 text-sm font-semibold uppercase tracking-wider text-kpkt">
-                      KPKT Services
+                    {/* KPKT Solutions */}
+                    <p className="px-3 py-1 text-sm font-semibold uppercase tracking-wider text-foreground">
+                      KPKT Solutions
                     </p>
-                    {kpktServices.map((item) => (
+                    {kpktSolutions.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={closeMobileMenu}
                         className={cn(
-                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-kpkt/10",
+                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
                           pathname === item.href
-                            ? "bg-kpkt/10 text-kpkt"
+                            ? "bg-primary/10 text-primary"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        <item.icon className="h-4 w-4 shrink-0" />
+                        <span className="flex-1">{item.title}</span>
+                        {"badge" in item && item.badge && (
+                          <Badge variant="secondary" className="shrink-0 gap-1 bg-emerald-100 px-1.5 py-0 text-[10px] font-medium text-emerald-800">
+                            {"badgeIcon" in item && item.badgeIcon && <item.badgeIcon className="h-2.5 w-2.5" />}
+                            {item.badge}
+                          </Badge>
+                        )}
+                      </Link>
+                    ))}
+                    {/* Other Fintech Solutions */}
+                    <p className="mt-2 px-3 py-1 text-sm font-semibold uppercase tracking-wider text-foreground">
+                      Other Solutions
+                    </p>
+                    {otherSolutions.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                        className={cn(
+                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
+                          pathname === item.href
+                            ? "bg-primary/10 text-primary"
                             : "text-muted-foreground"
                         )}
                       >
@@ -351,60 +340,6 @@ export function Header() {
                         {item.title}
                       </Link>
                     ))}
-                    {/* KPKT Digital License Conversion */}
-                    <p className="mt-2 px-3 py-1 text-sm font-semibold uppercase tracking-wider text-kpkt">
-                      KPKT Digital License Conversion
-                    </p>
-                    {kpktDigitalLicenseConversion.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={closeMobileMenu}
-                        className={cn(
-                          "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-kpkt/10",
-                          pathname === item.href
-                            ? "bg-kpkt/10 text-kpkt"
-                            : "text-muted-foreground"
-                        )}
-                      >
-                        <item.icon className="h-4 w-4" />
-                        {item.title}
-                      </Link>
-                    ))}
-                    {/* Platforms */}
-                    <p className="mt-2 px-3 py-1 text-sm font-semibold uppercase tracking-wider text-primary">
-                      Platforms
-                    </p>
-                    {corePlatforms.map((item) =>
-                      item.external ? (
-                        <a
-                          key={item.href}
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={closeMobileMenu}
-                          className="flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent text-muted-foreground"
-                        >
-                          <item.icon className="h-4 w-4" />
-                          {item.title}
-                        </a>
-                      ) : (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={closeMobileMenu}
-                          className={cn(
-                            "flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
-                            pathname === item.href
-                              ? "bg-primary/10 text-primary"
-                              : "text-muted-foreground"
-                          )}
-                        >
-                          <item.icon className="h-4 w-4" />
-                          {item.title}
-                        </Link>
-                      )
-                    )}
                   </div>
                 )}
               </div>

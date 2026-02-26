@@ -6,8 +6,6 @@ import Link from "next/link";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import {
   ArrowRight,
-  Phone,
-  MessageCircle,
   Check,
   X,
   FileText,
@@ -38,8 +36,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Accordion,
   AccordionContent,
@@ -1749,137 +1745,29 @@ export default function TrueKreditPage() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section id="demo" className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-                Run Your Loan Business with Confidence
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Focus on growth, not paperwork. Let TrueKredit handle the operational complexity
-                so you can focus on what matters — serving your customers and growing your
-                business.
-              </p>
-
-              <div className="mt-8">
-                <div className="rounded-xl border bg-background p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justif  y-center rounded-full bg-primary/10">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-lg font-semibold">Chat With Us</div>
-                      <a
-                        href="tel:+60164614919"
-                        className="text-primary hover:underline"
-                      >
-                        016-4614919
-                      </a>
-                    </div>
-                  </div>
-                  <div className="mt-4 pt-4 border-t">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="w-full gap-2 bg-green-600 hover:bg-green-700"
-                    >
-                      <a
-                        href="https://wa.me/60164614919?text=Hi%2C%20I%27m%20interested%20in%20TrueKredit"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MessageCircle className="h-5 w-5" />
-                        Chat on WhatsApp
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Request a Demo</CardTitle>
-                  <CardDescription>
-                    Fill in your details and we&apos;ll get back to you shortly.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
-                          Name
-                        </label>
-                        <Input id="name" name="name" placeholder="Your name" required />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-medium">
-                          Phone
-                        </label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          placeholder="012-345 6789"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="you@company.com"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-medium">
-                        Company
-                      </label>
-                      <Input
-                        id="company"
-                        name="company"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell us about your lending business..."
-                        rows={3}
-                      />
-                    </div>
-                    <Button type="submit" className="w-full gap-2 bg-primary hover:bg-primary/90">
-                      Book a Demo
-                      <ChevronRight className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
+      {/* CTA Section */}
+      <section id="demo" className="border-t py-20">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+            Ready to Run Your Loan Business with Confidence?
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            Focus on growth, not paperwork. Let TrueKredit handle the operational complexity
+            so you can focus on what matters — serving your customers and growing your business.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+              <Link href="/contact">
+                Get in Touch
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="gap-2">
+              <Link href="/services/digital-license">
+                Explore Digital KPKT License
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

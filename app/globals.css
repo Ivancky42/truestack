@@ -71,8 +71,8 @@
   --primary-start: oklch(0.623 0.214 259.815); /* #3B82F6 */
   --primary-end: oklch(0.546 0.245 262.881); /* #2563EB */
   --primary-foreground: oklch(1 0 0);
-  /* Teal 600 - KPKT Services Accent Color */
-  --kpkt: oklch(0.627 0.115 175.031);
+  /* Blue - KPKT Services Accent Color */
+  --kpkt: oklch(0.55 0.2 260);
   --kpkt-foreground: oklch(1 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);

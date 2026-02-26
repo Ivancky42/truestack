@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Hero } from "@/components/sections/hero";
+import { DigitalLicenseHero } from "@/components/sections/digital-license-hero";
 import { SectionHeader } from "@/components/shared/section-header";
 import { SectionBadge } from "@/components/shared/section-badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Stepper } from "@/components/ui/stepper";
 import {
   Presentation,
-  Code2,
   ShieldCheck,
   ArrowRight,
   CheckCircle2,
@@ -18,10 +18,7 @@ import {
   Clock,
   ArrowUpRight,
   Server,
-  TestTube,
-  Award,
   Building2,
-  Zap,
   Layers,
   Database,
   Lock,
@@ -35,11 +32,32 @@ export const metadata: Metadata = {
     "Transform your money lending business to operate fully online. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
   keywords: [
     "digital KPKT license",
+    "KPKT digital license conversion",
     "license conversion Malaysia",
-    "digital money lender",
+    "digital money lender Malaysia",
+    "online lending platform Malaysia",
+    "KPKT PPW to digital",
+    "fully digital money lender",
   ],
   alternates: { canonical: "/services/digital-license" },
   openGraph: {
+    title: "Digital KPKT License Conversion - Truestack",
+    description:
+      "Go digital and expand nationwide. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
+    type: "website",
+    locale: "en_MY",
+    siteName: "Truestack",
+    images: [
+      {
+        url: "/truestack-favicon.png",
+        width: 250,
+        height: 250,
+        alt: "Digital KPKT License Conversion - Truestack",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
     title: "Digital KPKT License Conversion - Truestack",
     description:
       "Go digital and expand nationwide. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
@@ -86,109 +104,81 @@ const platformFeatures = [
 export default function DigitalLicensePage() {
   return (
     <>
-      <Hero
-        title="Digital KPKT License Conversion"
-        subtitle="Operate online. Expand nationwide. Go live in ~3 months."
-        primaryCta={{ label: "Contact Us", href: "/contact" }}
-        secondaryCta={{ label: "See Timeline", href: "#timeline" }}
-        variant="kpkt"
-      />
+      <DigitalLicenseHero />
 
       {/* Value Proposition */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
-          {/* Side-by-side header */}
-          <div className="mb-12 grid gap-6 md:grid-cols-2 md:items-end md:gap-12">
-            <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-              Transform Your Lending Business
-            </h2>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Go from traditional branch-based operations to a fully digital, KPKT-licensed platform.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit) => (
-              <Card key={benefit.title} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-kpkt/10">
-                    <benefit.icon className="h-6 w-6 text-kpkt" />
+          <SectionHeader
+            title="Transform Your Lending Business"
+            subtitle="Go from traditional branch-based operations to a fully digital, KPKT-licensed platform."
+            centered
+          />
+
+          {/* Bento grid */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {/* Before → After: spans full width on lg */}
+            <div className="overflow-hidden rounded-2xl border bg-card lg:col-span-2">
+              <div className="grid sm:grid-cols-2">
+                {/* Before */}
+                <div className="relative p-6">
+                  <p className="mb-4 text-xs font-medium uppercase tracking-widest text-muted-foreground">Before</p>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-muted">
+                    <Building2 className="h-6 w-6 text-muted-foreground" />
                   </div>
-                  <h3 className="mb-2 font-semibold">{benefit.title}</h3>
+                  <p className="text-2xl font-semibold">1 Location</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Branch-based only, limited to your local area</p>
+                  {/* Coverage bar */}
+                  <div className="mt-4">
+                    <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground">
+                      <span>Customer Reach</span>
+                      <span>Local</span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-muted">
+                      <div className="h-2 w-[8%] rounded-full bg-muted-foreground/40" />
+                    </div>
+                  </div>
+                </div>
+                {/* After */}
+                <div className="relative border-t bg-primary/5 p-6 sm:border-l sm:border-t-0">
+                  <p className="mb-4 text-xs font-medium uppercase tracking-widest text-primary">After</p>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
+                    <Globe className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <p className="text-2xl font-semibold text-primary">All of Malaysia</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Web &amp; mobile platform serving customers nationwide</p>
+                  {/* Coverage bar */}
+                  <div className="mt-4">
+                    <div className="mb-1 flex items-center justify-between text-xs">
+                      <span className="text-primary">Customer Reach</span>
+                      <span className="font-medium text-primary">Nationwide</span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-primary/20">
+                      <div className="h-2 w-full rounded-full bg-primary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 benefit cards */}
+            {benefits.map((benefit) => (
+              <Card key={benefit.title} className="flex flex-col justify-between rounded-2xl">
+                <CardContent className="pt-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                    <benefit.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="mb-1 font-semibold">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
-          </div>
 
-          {/* License Transformation - Compact Horizontal */}
-          <div className="mt-12">
-            <Card className="overflow-hidden">
-              <CardContent className="p-0">
-                {/* Horizontal comparison */}
-                <div className="grid md:grid-cols-[1fr,auto,1fr]">
-                  {/* Before */}
-                  <div className="flex items-center gap-4 bg-muted/30 p-6">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted">
-                      <Building2 className="h-7 w-7 text-muted-foreground" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Traditional License</p>
-                      <p className="font-semibold">1 Location</p>
-                      <p className="text-sm text-muted-foreground">Branch-based only</p>
-                    </div>
-                  </div>
-
-                  {/* Arrow */}
-                  <div className="flex items-center justify-center bg-gradient-to-r from-muted/30 to-kpkt/10 px-4 py-3 md:py-0">
-                    <div className="flex items-center gap-2">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-kpkt">
-                        <Zap className="h-5 w-5 text-kpkt-foreground" />
-                      </div>
-                      <ArrowRight className="hidden h-5 w-5 text-kpkt md:block" />
-                    </div>
-                  </div>
-
-                  {/* After */}
-                  <div className="flex items-center gap-4 bg-kpkt/10 p-6">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-kpkt">
-                      <Globe className="h-7 w-7 text-kpkt-foreground" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-kpkt">Digital License</p>
-                      <p className="font-semibold text-kpkt">All of Malaysia</p>
-                      <p className="text-sm text-muted-foreground">Web &amp; mobile platform</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Coverage comparison bar */}
-                <div className="border-t bg-card px-6 py-4">
-                  <p className="mb-3 text-center text-sm font-medium text-muted-foreground">Customer Reach</p>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span className="w-24 shrink-0 text-xs text-muted-foreground">Traditional</span>
-                      <div className="h-3 w-full rounded-full bg-muted">
-                        <div className="h-3 w-[8%] rounded-full bg-muted-foreground/50" />
-                      </div>
-                      <span className="w-16 shrink-0 text-right text-xs text-muted-foreground">Local</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="w-24 shrink-0 text-xs font-medium text-kpkt">Digital</span>
-                      <div className="h-3 w-full rounded-full bg-muted">
-                        <div className="h-3 w-full rounded-full bg-kpkt" />
-                      </div>
-                      <span className="w-16 shrink-0 text-right text-xs font-medium text-kpkt">Nationwide</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Don't have a license - inline callout */}
-            <div className="mt-4 flex flex-col items-center justify-between gap-4 rounded-lg border bg-muted/30 px-6 py-4 sm:flex-row">
+            {/* Don't have a license callout — spans 2 cols */}
+            <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-dashed border-primary/30 bg-primary/5 px-6 py-5 sm:flex-row lg:col-span-2">
               <div className="text-center sm:text-left">
-                <p className="font-medium">Don&apos;t have an existing KPKT traditional license?</p>
-                <p className="text-muted-foreground">We can help you obtain or acquire one.</p>
+                <p className="font-medium">Don&apos;t have a KPKT traditional license yet?</p>
+                <p className="text-sm text-muted-foreground">We can help you obtain or acquire one to get started.</p>
               </div>
               <Button asChild variant="outline" size="lg" className="shrink-0 gap-2">
                 <Link href="/contact">
@@ -201,7 +191,7 @@ export default function DigitalLicensePage() {
         </div>
       </section>
 
-      {/* Timeline Section - Combined Process & Timeline */}
+      {/* Timeline Section */}
       <section id="timeline" className="scroll-mt-20 border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
@@ -209,166 +199,86 @@ export default function DigitalLicensePage() {
             subtitle="End-to-end digital transformation, from license application to platform launch."
             centered
           />
-          
-          <div className="mx-auto max-w-4xl">
-            {/* Timeline Items */}
-            <div className="relative space-y-8">
-              {/* Vertical Timeline Line - stops at top of last circle */}
-              <div className="absolute left-8 top-0 hidden w-0.5 bg-gradient-to-b from-kpkt via-kpkt/50 to-kpkt md:block" style={{ height: 'calc(100% - 8rem)' }} />
-              {/* Week 1-2: Preparation & Presentation */}
-              <div className="relative flex gap-6">
-                <div className="hidden md:flex md:flex-col md:items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-background bg-kpkt text-lg font-bold text-kpkt-foreground shadow-lg">
-                    1–2
-                  </div>
-                </div>
-                <Card className="flex-1">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-kpkt/10 md:hidden">
-                        <span className="text-sm font-bold text-kpkt">1–2</span>
-                      </div>
-                      <div>
-                        <Badge variant="secondary" className="mb-1">Weeks 1–2</Badge>
-                        <CardTitle className="text-lg">Preparation & Provisional License</CardTitle>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start gap-3">
-                      <Presentation className="mt-0.5 h-5 w-5 shrink-0 text-kpkt" />
-                      <div>
-                        <p className="text-muted-foreground">
-                          Complete documentation preparation and presentation to KPKT for provisional license approval. We handle all regulatory correspondence and requirements.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
 
-              {/* Weeks 3-8: Infrastructure + Software Development (Parallel) */}
-              <div className="relative flex gap-6">
-                <div className="hidden md:flex md:flex-col md:items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-background bg-kpkt text-lg font-bold text-kpkt-foreground shadow-lg">
-                    3–8
-                  </div>
-                </div>
-                <Card className="flex-1 border-kpkt/30 bg-gradient-to-r from-kpkt/5 to-transparent">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-kpkt/10 md:hidden">
-                        <span className="text-sm font-bold text-kpkt">3–8</span>
-                      </div>
-                      <div>
-                        <Badge className="mb-1 bg-kpkt hover:bg-kpkt/90">Weeks 3–8</Badge>
-                        <CardTitle className="text-lg">Infrastructure & Software Development</CardTitle>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {/* Infrastructure */}
-                      <div className="flex items-start gap-3">
-                        <Server className="mt-0.5 h-5 w-5 shrink-0 text-kpkt" />
-                        <div>
-                          <p className="font-medium">Infrastructure Setup</p>
-                          <p className="text-muted-foreground">
-                            AWS Malaysia cloud hosting and on-premise digital signing server deployment.
-                          </p>
-                        </div>
-                      </div>
-                      {/* Software */}
-                      <div className="flex items-start gap-3">
-                        <Code2 className="mt-0.5 h-5 w-5 shrink-0 text-kpkt" />
-                        <div>
-                          <p className="font-medium">Software Development</p>
-                          <p className="mb-2 text-muted-foreground">
-                            Full development of your branded web platform and mobile apps. Regular demos and iterative refinement.
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            <Badge variant="outline" className="text-xs">Web Application</Badge>
-                            <Badge variant="outline" className="text-xs">iOS App</Badge>
-                            <Badge variant="outline" className="text-xs">Android App</Badge>
-                            <Badge variant="outline" className="text-xs">Admin Dashboard</Badge>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+          {/* Stepper (md+) */}
+          <Stepper
+            steps={[
+              { title: "Weeks 1–2", description: "Preparation" },
+              { title: "Weeks 3–8", description: "Build" },
+              { title: "Weeks 9–10", description: "Testing" },
+              { title: "Weeks 11–12", description: "Go Live" },
+            ]}
+            className="mx-auto mb-10 hidden max-w-2xl md:block"
+          />
 
-              {/* Weeks 9-10: UAT & Pentest */}
-              <div className="relative flex gap-6">
-                <div className="hidden md:flex md:flex-col md:items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-background bg-kpkt text-lg font-bold text-kpkt-foreground shadow-lg">
-                    9–10
-                  </div>
+          {/* Phase cards — 4-column grid */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {/* Phase 1 */}
+            <div className="group relative rounded-2xl border bg-card p-5 transition-colors hover:border-primary/40">
+              <div className="mb-3 flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+                  <FileCheck className="h-5 w-5 text-primary" />
                 </div>
-                <Card className="flex-1">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-kpkt/10 md:hidden">
-                        <span className="text-sm font-bold text-kpkt">9–10</span>
-                      </div>
-                      <div>
-                        <Badge variant="secondary" className="mb-1">Weeks 9–10</Badge>
-                        <CardTitle className="text-lg">UAT & Penetration Testing</CardTitle>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start gap-3">
-                      <TestTube className="mt-0.5 h-5 w-5 shrink-0 text-kpkt" />
-                      <div>
-                        <p className="text-muted-foreground">
-                          User acceptance testing with your team. Third-party penetration testing to ensure security compliance. Bug fixes and final refinements.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <Badge variant="secondary" className="text-xs">Weeks 1–2</Badge>
               </div>
+              <h3 className="mb-1.5 font-semibold leading-snug">Preparation & Provisional License</h3>
+              <p className="text-sm text-muted-foreground">
+                Documentation prep and KPKT presentation for provisional license approval.
+              </p>
+            </div>
 
-              {/* Weeks 11-12: Final Approval */}
-              <div className="relative flex gap-6">
-                <div className="hidden md:flex md:flex-col md:items-center">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-background bg-kpkt text-lg font-bold text-kpkt-foreground shadow-lg">
-                    11–12
-                  </div>
+            {/* Phase 2 — highlighted as longest phase */}
+            <div className="group relative rounded-2xl border border-primary/30 bg-primary/5 p-5 transition-colors hover:border-primary/50">
+              <div className="mb-3 flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+                  <Layers className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <Card className="flex-1 border-kpkt/50">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-kpkt/10 md:hidden">
-                        <span className="text-sm font-bold text-kpkt">11–12</span>
-                      </div>
-                      <div>
-                        <Badge variant="secondary" className="mb-1">Weeks 11–12</Badge>
-                        <CardTitle className="text-lg">Final Approval & Go Live</CardTitle>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-start gap-3">
-                      <Award className="mt-0.5 h-5 w-5 shrink-0 text-kpkt" />
-                      <div>
-                        <p className="text-muted-foreground">
-                          Final KPKT inspection and approval. Platform launch and go-live support. Your digital lending business is now operational nationwide.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <Badge className="bg-primary text-xs hover:bg-primary/90">Weeks 3–8</Badge>
+              </div>
+              <h3 className="mb-1.5 font-semibold leading-snug">Build & Infrastructure</h3>
+              <p className="mb-3 text-sm text-muted-foreground">
+                AWS hosting, digital signing server, and full development of your branded platform.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                <Badge variant="outline" className="text-[11px]">Web App</Badge>
+                <Badge variant="outline" className="text-[11px]">iOS</Badge>
+                <Badge variant="outline" className="text-[11px]">Android</Badge>
+                <Badge variant="outline" className="text-[11px]">Dashboard</Badge>
               </div>
             </div>
 
-            {/* Summary */}
-            <div className="mt-10 rounded-xl border-2 border-dashed border-kpkt/30 bg-kpkt/5 p-6 text-center">
-              <div className="mb-2 font-display text-4xl font-medium tracking-tight text-kpkt md:text-5xl">~3 Months</div>
-              <div className="text-lg text-muted-foreground">From initial application to serving customers nationwide</div>
+            {/* Phase 3 */}
+            <div className="group relative rounded-2xl border bg-card p-5 transition-colors hover:border-primary/40">
+              <div className="mb-3 flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+                  <ShieldCheck className="h-5 w-5 text-primary" />
+                </div>
+                <Badge variant="secondary" className="text-xs">Weeks 9–10</Badge>
+              </div>
+              <h3 className="mb-1.5 font-semibold leading-snug">UAT & Pen Testing</h3>
+              <p className="text-sm text-muted-foreground">
+                User acceptance testing with your team and third-party security penetration testing.
+              </p>
             </div>
+
+            {/* Phase 4 */}
+            <div className="group relative rounded-2xl border bg-card p-5 transition-colors hover:border-primary/40">
+              <div className="mb-3 flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                </div>
+                <Badge variant="secondary" className="text-xs">Weeks 11–12</Badge>
+              </div>
+              <h3 className="mb-1.5 font-semibold leading-snug">Final Approval & Go Live</h3>
+              <p className="text-sm text-muted-foreground">
+                KPKT final inspection, approval, platform launch, and go-live support.
+              </p>
+            </div>
+          </div>
+
+          {/* Summary */}
+          <div className="mt-6 rounded-2xl border border-dashed border-primary/30 bg-primary/5 px-6 py-4 text-center text-sm text-muted-foreground">
+            <span className="font-medium text-primary">~3 months</span> from initial application to serving customers nationwide
           </div>
         </div>
       </section>
@@ -378,7 +288,7 @@ export default function DigitalLicensePage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <SectionBadge icon={Layers} text="Your Digital Platform" className="[&>svg]:text-kpkt [&>span]:text-kpkt" />
+              <SectionBadge icon={Layers} text="Your Digital Platform" className="[&>svg]:text-primary [&>span]:text-primary" />
               <h2 className="mb-4 font-display text-4xl font-medium tracking-tight md:text-5xl">A Complete Digital Lending Platform</h2>
               <p className="mb-6 text-lg text-slate-400 md:text-xl">
                 We build a fully branded web platform and mobile app tailored to your business. 
@@ -388,7 +298,7 @@ export default function DigitalLicensePage() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {platformFeatures.map((feature) => (
                   <div key={feature} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-kpkt" />
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-slate-200">{feature}</span>
                   </div>
                 ))}
@@ -400,7 +310,7 @@ export default function DigitalLicensePage() {
                 {/* Web Application - Desktop mockup */}
                 <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                   <div className="mb-3 flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-kpkt" />
+                    <Globe className="h-5 w-5 text-primary" />
                     <span className="text-sm font-medium text-white">Web Application</span>
                     <span className="ml-auto text-xs text-slate-500">Desktop & Tablet</span>
                   </div>
@@ -419,7 +329,7 @@ export default function DigitalLicensePage() {
                     </div>
                     {/* Screen content */}
                     <div className="p-4">
-                      <div className="mb-3 h-3 w-32 rounded bg-kpkt/30" />
+                      <div className="mb-3 h-3 w-32 rounded bg-primary/30" />
                       <div className="mb-2 h-2 w-full rounded bg-slate-700" />
                       <div className="mb-2 h-2 w-3/4 rounded bg-slate-700" />
                       <div className="mt-4 grid grid-cols-3 gap-2">
@@ -436,7 +346,7 @@ export default function DigitalLicensePage() {
                   {/* Mobile App */}
                   <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                     <div className="mb-3 flex items-center gap-2">
-                      <Smartphone className="h-5 w-5 text-kpkt" />
+                      <Smartphone className="h-5 w-5 text-primary" />
                       <span className="text-sm font-medium text-white">Mobile App</span>
                     </div>
                     {/* Phone mockup */}
@@ -446,10 +356,10 @@ export default function DigitalLicensePage() {
                         <div className="mx-auto h-4 w-12 rounded-b-lg bg-slate-900" />
                         {/* Screen content */}
                         <div className="p-3">
-                          <div className="mb-2 h-2 w-12 rounded bg-kpkt/30" />
+                          <div className="mb-2 h-2 w-12 rounded bg-primary/30" />
                           <div className="mb-1.5 h-1.5 w-full rounded bg-slate-700" />
                           <div className="mb-1.5 h-1.5 w-3/4 rounded bg-slate-700" />
-                          <div className="mt-3 h-8 rounded bg-kpkt/20" />
+                          <div className="mt-3 h-8 rounded bg-primary/20" />
                           <div className="mt-2 h-8 rounded bg-slate-700/50" />
                           <div className="mt-2 h-8 rounded bg-slate-700/50" />
                         </div>
@@ -461,7 +371,7 @@ export default function DigitalLicensePage() {
                   {/* Admin Dashboard */}
                   <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                     <div className="mb-3 flex items-center gap-2">
-                      <Presentation className="h-5 w-5 text-kpkt" />
+                      <Presentation className="h-5 w-5 text-primary" />
                       <span className="text-sm font-medium text-white">Admin</span>
                     </div>
                     {/* Dashboard mockup */}
@@ -469,7 +379,7 @@ export default function DigitalLicensePage() {
                       <div className="flex">
                         {/* Sidebar */}
                         <div className="w-8 border-r border-slate-700 bg-slate-900 p-1.5">
-                          <div className="mb-2 h-2 w-full rounded bg-kpkt/50" />
+                          <div className="mb-2 h-2 w-full rounded bg-primary/50" />
                           <div className="mb-1.5 h-1.5 w-full rounded bg-slate-700" />
                           <div className="mb-1.5 h-1.5 w-full rounded bg-slate-700" />
                           <div className="mb-1.5 h-1.5 w-full rounded bg-slate-700" />
@@ -477,7 +387,7 @@ export default function DigitalLicensePage() {
                         {/* Main content */}
                         <div className="flex-1 p-2">
                           <div className="mb-2 grid grid-cols-2 gap-1">
-                            <div className="h-6 rounded bg-kpkt/20" />
+                            <div className="h-6 rounded bg-primary/20" />
                             <div className="h-6 rounded bg-slate-700/50" />
                           </div>
                           <div className="h-12 rounded bg-slate-700/30" />
@@ -493,12 +403,119 @@ export default function DigitalLicensePage() {
         </div>
       </section>
 
+      {/* Built on TrueKredit */}
+      <section data-nav-theme="dark" className="border-t border-slate-800 bg-slate-950 py-20 text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Left — copy */}
+            <div>
+              <SectionBadge icon={Layers} text="Proven Foundation" className="[&>svg]:text-primary [&>span]:text-primary" />
+              <h2 className="mb-4 font-display text-4xl font-medium tracking-tight md:text-5xl">
+                Built on TrueKredit™.{" "}
+                <span className="text-primary">Evolved for Digital.</span>
+              </h2>
+              <p className="mb-6 text-lg text-slate-400">
+                Your digital lending platform runs on <strong className="text-white">TrueKredit™ Plus</strong> — an
+                evolved edition of our{" "}
+                <Link href="/truekredit" className="text-primary underline underline-offset-4 hover:text-primary/80">
+                  battle-tested TrueKredit™ system
+                </Link>{" "}
+                already powering KPKT-licensed money lenders across Malaysia.
+              </p>
+              <p className="mb-4 text-slate-400">
+                TrueKredit™ Plus takes the same rock-solid loan management engine — borrower lifecycle,
+                compliance automation, repayment tracking, and audit-ready reporting — and layers on
+                the capabilities required for a fully digital operation.
+              </p>
+              <p className="mb-8 text-slate-400">
+                Every digital license gets its own <strong className="text-white">fully isolated TrueKredit™ Plus instance</strong> — separate
+                infrastructure, separate database, separate environment. Your data is never shared or
+                co-mingled with any other operator.
+              </p>
+
+              {/* What TrueKredit+ adds */}
+              <div className="space-y-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">What TrueKredit+ adds</p>
+                {[
+                  {
+                    icon: Smartphone,
+                    title: "Borrower App & Web Portal",
+                    desc: "Customers apply, upload documents, track loans, and make payments from their phone or browser.",
+                  },
+                  {
+                    icon: FileCheck,
+                    title: "On-Premise Digital Signing",
+                    desc: "Legally compliant e-signatures via an on-premise HSM server — no wet-ink required.",
+                  },
+                  {
+                    icon: Globe,
+                    title: "Nationwide Online Operations",
+                    desc: "Serve borrowers across all 16 states from a single digital platform.",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">{item.title}</p>
+                      <p className="text-sm text-slate-400">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — layer diagram */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-sm space-y-3">
+                {/* Top layer — TrueKredit+ additions */}
+                <div className="rounded-2xl border border-primary/40 bg-primary/10 p-5">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">TrueKredit™+ Layer</p>
+                  <div className="space-y-2">
+                    {["Borrower Web Portal", "Borrower Mobile App (iOS + Android)", "On-Premise Digital Signing (HSM)", "Digital Attestation", "Online Repayments", "e-KYC Verification", "Online Loan Application Flow"].map((f) => (
+                      <div key={f} className="flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
+                        <span className="text-sm text-slate-200">{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Divider with arrow */}
+                <div className="flex items-center justify-center">
+                  <div className="h-6 w-px bg-slate-700" />
+                </div>
+
+                {/* Bottom layer — TrueKredit core */}
+                <div className="rounded-2xl border border-slate-700 bg-slate-900/80 p-5">
+                  <div className="mb-3 flex items-center justify-between">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">TrueKredit™ Core</p>
+                    <Link href="/truekredit" className="flex items-center gap-1 text-xs text-primary hover:underline">
+                      Learn more <ArrowUpRight className="h-3 w-3" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["Loan Management", "Borrower Lifecycle", "Compliance & Audit", "Auto Documents", "Late Fees Engine", "Repayment Tracking"].map((f) => (
+                      <div key={f} className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-3 py-2">
+                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-slate-500" />
+                        <span className="text-xs text-slate-400">{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Compliance & Data Residency Section */}
       <section data-nav-theme="dark" className="border-t border-slate-800 bg-slate-950 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
           {/* Header */}
           <div className="mb-12">
-            <SectionBadge icon={ShieldCheck} text="Built for Compliance" className="[&>svg]:text-kpkt [&>span]:text-kpkt" />
+            <SectionBadge icon={ShieldCheck} text="Built for Compliance" className="[&>svg]:text-primary [&>span]:text-primary" />
             <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
               Enterprise-Grade Infrastructure
             </h2>
@@ -513,8 +530,8 @@ export default function DigitalLicensePage() {
             <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 lg:col-span-2">
               <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
                 <div>
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kpkt/10">
-                    <Database className="h-5 w-5 text-kpkt" />
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                    <Database className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="mb-2 text-xl font-semibold text-white">Malaysia Data Residency</h3>
                   <p className="text-slate-400">
@@ -534,7 +551,7 @@ export default function DigitalLicensePage() {
                         </div>
                         <span className="text-xs font-medium text-slate-300">Amazon Web Services</span>
                       </div>
-                      <span className="rounded bg-kpkt/20 px-2 py-0.5 text-xs font-medium text-kpkt">ap-southeast-5</span>
+                      <span className="rounded bg-primary/20 px-2 py-0.5 text-xs font-medium text-primary">ap-southeast-5</span>
                     </div>
                     
                     {/* Data center visualization */}
@@ -546,10 +563,10 @@ export default function DigitalLicensePage() {
                           {[1, 2, 3].map((rack) => (
                             <div key={rack} className="flex h-20 w-8 flex-col items-center justify-between rounded border border-slate-600 bg-slate-800 p-1">
                               <div className="w-full space-y-0.5">
-                                <div className="h-1 w-full rounded-sm bg-kpkt/60" />
-                                <div className="h-1 w-full rounded-sm bg-kpkt/40" />
+                                <div className="h-1 w-full rounded-sm bg-primary/60" />
+                                <div className="h-1 w-full rounded-sm bg-primary/40" />
                                 <div className="h-1 w-full rounded-sm bg-slate-600" />
-                                <div className="h-1 w-full rounded-sm bg-kpkt/50" />
+                                <div className="h-1 w-full rounded-sm bg-primary/50" />
                               </div>
                               <div className="flex w-full justify-center gap-0.5">
                                 <div className="h-1 w-1 rounded-full bg-green-500" />
@@ -561,17 +578,17 @@ export default function DigitalLicensePage() {
                         
                         {/* Connection lines */}
                         <div className="flex flex-col items-center gap-1">
-                          <div className="h-0.5 w-8 bg-gradient-to-r from-kpkt/60 to-kpkt" />
-                          <div className="h-0.5 w-8 bg-gradient-to-r from-kpkt/60 to-kpkt" />
-                          <div className="h-0.5 w-8 bg-gradient-to-r from-kpkt/60 to-kpkt" />
+                          <div className="h-0.5 w-8 bg-gradient-to-r from-primary/60 to-primary" />
+                          <div className="h-0.5 w-8 bg-gradient-to-r from-primary/60 to-primary" />
+                          <div className="h-0.5 w-8 bg-gradient-to-r from-primary/60 to-primary" />
                         </div>
                         
                         {/* Malaysia indicator */}
                         <div className="flex flex-col items-center">
-                          <div className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-kpkt/30 bg-slate-800">
-                            <div className="absolute inset-2 animate-pulse rounded-full bg-kpkt/10" />
+                          <div className="relative flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary/30 bg-slate-800">
+                            <div className="absolute inset-2 animate-pulse rounded-full bg-primary/10" />
                             <div className="text-center">
-                              <div className="text-lg font-bold text-kpkt">MY</div>
+                              <div className="text-lg font-bold text-primary">MY</div>
                             </div>
                           </div>
                           <span className="mt-1 text-[10px] font-medium text-slate-400">Malaysia</span>
@@ -586,7 +603,7 @@ export default function DigitalLicensePage() {
                         </div>
                         <div className="flex items-center gap-3 text-[10px] text-slate-500">
                           <span>Latency: <span className="text-green-400">12ms</span></span>
-                          <span>Uptime: <span className="text-kpkt">99.9%</span></span>
+                          <span>Uptime: <span className="text-primary">99.9%</span></span>
                         </div>
                       </div>
                     </div>
@@ -597,8 +614,8 @@ export default function DigitalLicensePage() {
 
             {/* On-Premise Digital Signing */}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kpkt/10">
-                <Server className="h-5 w-5 text-kpkt" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <Server className="h-5 w-5 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-white">On-Premise Digital Signing</h3>
               <p className="mb-4 text-sm text-slate-400">
@@ -608,7 +625,7 @@ export default function DigitalLicensePage() {
               <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-10 flex-col items-center justify-center rounded border border-slate-600 bg-slate-900">
-                    <div className="mb-1 h-1 w-6 rounded bg-kpkt" />
+                    <div className="mb-1 h-1 w-6 rounded bg-primary" />
                     <div className="mb-1 h-1 w-6 rounded bg-slate-600" />
                     <div className="h-1 w-6 rounded bg-slate-600" />
                   </div>
@@ -625,8 +642,8 @@ export default function DigitalLicensePage() {
 
             {/* Enterprise Security */}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kpkt/10">
-                <Lock className="h-5 w-5 text-kpkt" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <Lock className="h-5 w-5 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-white">Enterprise Security</h3>
               <p className="mb-4 text-sm text-slate-400">
@@ -635,15 +652,15 @@ export default function DigitalLicensePage() {
               {/* Security layers illustration */}
               <div className="space-y-2">
                 <div className="flex items-center gap-2 rounded border border-slate-700 bg-slate-800/50 px-3 py-2">
-                  <div className="h-2 w-2 rounded-full bg-kpkt" />
+                  <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-xs text-slate-300">256-bit AES Encryption</span>
                 </div>
                 <div className="flex items-center gap-2 rounded border border-slate-700 bg-slate-800/50 px-3 py-2">
-                  <div className="h-2 w-2 rounded-full bg-kpkt" />
+                  <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-xs text-slate-300">TLS 1.3 Protocol</span>
                 </div>
                 <div className="flex items-center gap-2 rounded border border-slate-700 bg-slate-800/50 px-3 py-2">
-                  <div className="h-2 w-2 rounded-full bg-kpkt" />
+                  <div className="h-2 w-2 rounded-full bg-primary" />
                   <span className="text-xs text-slate-300">RBAC Controls</span>
                 </div>
               </div>
@@ -651,8 +668,8 @@ export default function DigitalLicensePage() {
 
             {/* Complete Audit Trails */}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kpkt/10">
-                <FileCheck className="h-5 w-5 text-kpkt" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <FileCheck className="h-5 w-5 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-white">Complete Audit Trails</h3>
               <p className="mb-4 text-sm text-slate-400">
@@ -663,7 +680,7 @@ export default function DigitalLicensePage() {
                 <div className="space-y-2 font-mono text-[10px]">
                   <div className="flex items-center gap-2">
                     <span className="text-slate-500">10:42:15</span>
-                    <span className="text-kpkt">LOAN_APPROVED</span>
+                    <span className="text-primary">LOAN_APPROVED</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-slate-500">10:41:02</span>
@@ -679,8 +696,8 @@ export default function DigitalLicensePage() {
 
             {/* Real-time Monitoring */}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kpkt/10">
-                <Eye className="h-5 w-5 text-kpkt" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <Eye className="h-5 w-5 text-primary" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-white">24/7 Monitoring</h3>
               <p className="mb-4 text-sm text-slate-400">
@@ -699,7 +716,7 @@ export default function DigitalLicensePage() {
                   {[40, 65, 45, 80, 55, 70, 60, 75, 50, 85, 65, 70].map((h, i) => (
                     <div
                       key={i}
-                      className="flex-1 rounded-t bg-kpkt/50"
+                      className="flex-1 rounded-t bg-primary/50"
                       style={{ height: `${h}%` }}
                     />
                   ))}
@@ -721,7 +738,7 @@ export default function DigitalLicensePage() {
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {/* CreditXpress Card */}
             <Card className="overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-kpkt/10 to-transparent">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-transparent">
                 <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
                   <div className="flex items-center gap-4">
                     <Image
@@ -731,7 +748,7 @@ export default function DigitalLicensePage() {
                       height={60}
                       className="h-12 w-auto"
                     />
-                    <Badge variant="default" className="bg-kpkt hover:bg-kpkt/90">Live</Badge>
+                    <Badge variant="default" className="bg-primary hover:bg-primary/90">Live</Badge>
                   </div>
                   <Button asChild variant="outline" size="lg" className="gap-2">
                     <Link href="https://creditxpress.com.my" target="_blank" rel="noopener noreferrer">
@@ -748,27 +765,27 @@ export default function DigitalLicensePage() {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     KPKT digital license approved
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Web + Flutter mobile app
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     On-premise digital signing
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Malaysia data residency (AWS)
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Complete audit trail system
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Serving customers nationwide
                   </div>
                 </div>
@@ -777,7 +794,7 @@ export default function DigitalLicensePage() {
 
             {/* Andas Capital Card */}
             <Card className="overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-kpkt/10 to-transparent">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-transparent">
                 <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
                   <div className="flex items-center gap-4">
                     <Image
@@ -787,7 +804,7 @@ export default function DigitalLicensePage() {
                       height={60}
                       className="h-12 w-auto"
                     />
-                    <Badge variant="default" className="bg-kpkt hover:bg-kpkt/90">Live</Badge>
+                    <Badge variant="default" className="bg-primary hover:bg-primary/90">Live</Badge>
                   </div>
                   <Button asChild variant="outline" size="lg" className="gap-2">
                     <Link href="https://andascapital.com.my" target="_blank" rel="noopener noreferrer">
@@ -804,27 +821,27 @@ export default function DigitalLicensePage() {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     KPKT digital license approved
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Web + Flutter mobile app
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     On-premise digital signing
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Malaysia data residency (AWS)
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Complete audit trail system
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-kpkt" />
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     Serving customers nationwide
                   </div>
                 </div>
@@ -843,15 +860,15 @@ export default function DigitalLicensePage() {
             We&apos;ll guide you through every step of the process.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="gap-2 bg-kpkt hover:bg-kpkt/90">
+            <Button asChild size="lg" className="gap-2 bg-primary hover:bg-primary/90">
               <Link href="/contact">
                 Start Your Transformation
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
-              <Link href="/services/account-management">
-                Need Account Management Instead?
+              <Link href="/truekredit">
+                Explore TrueKredit™ for Traditional Licenses
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
