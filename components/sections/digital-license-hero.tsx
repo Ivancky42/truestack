@@ -107,9 +107,9 @@ function CoverageIllustration({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Card className="relative overflow-hidden border-border/60 bg-card/80 p-5 shadow-sm backdrop-blur-sm">
+          <Card className="relative overflow-hidden border-border/60 bg-card/80 p-4 shadow-sm backdrop-blur-sm">
             {/* Header */}
-            <div className="mb-5 flex items-center justify-between">
+            <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <motion.div
                   className="flex h-8 w-8 items-center justify-center rounded-lg"
@@ -173,8 +173,8 @@ function CoverageIllustration({
             </div>
 
             {/* Radial coverage visualization */}
-            <div className="relative flex items-center justify-center py-6">
-              <svg viewBox="0 0 240 240" className="h-48 w-48 sm:h-56 sm:w-56">
+            <div className="relative flex items-center justify-center py-4">
+              <svg viewBox="0 0 240 240" className="h-40 w-40 sm:h-44 sm:w-44">
                 <defs>
                   <radialGradient id="coverageFill" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.15" />
@@ -256,7 +256,7 @@ function CoverageIllustration({
                           key={i}
                           cx={cx}
                           cy={cy}
-                          r="3"
+                          r="6"
                           fill="var(--color-primary)"
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{ scale: 1, opacity: 0.8 }}
@@ -319,7 +319,7 @@ function CoverageIllustration({
             </div>
 
             {/* State badges grid */}
-            <div className="flex flex-wrap justify-center gap-1.5">
+            <div className="flex flex-wrap justify-center gap-1">
               {STATES.map((state, i) => (
                 <motion.span
                   key={state}
