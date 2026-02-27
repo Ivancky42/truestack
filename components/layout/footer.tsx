@@ -144,9 +144,9 @@ export function Footer() {
                 Registration No. 202501058714 (1660120-X)
               </p>
               <address className="text-sm not-italic text-muted-foreground/70 leading-relaxed">
-                Lot 12, 12th Floor, Menara K1<br />
-                No. 1 Jalan 3/137C, Off Klang Road<br />
-                58200 Kuala Lumpur
+                Lot C-13-3, KL Trillion<br />
+                No 338 Jalan Tun Razak<br />
+                50400 Kuala Lumpur
               </address>
             </div>
 
