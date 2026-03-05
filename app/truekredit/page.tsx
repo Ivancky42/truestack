@@ -33,6 +33,7 @@ import {
   FilePlusCorner,
   Banknote,
   BarChart3,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -980,6 +981,89 @@ export default function TrueKreditPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
+            </div>
+          </motion.div>
+
+          {/* Block 5: TrueSight™ — Cross-Tenant Borrower Insights */}
+          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
+            <h3 className="text-2xl font-semibold tracking-tight">
+              TrueSight™ — Cross-Lender Borrower Insights
+            </h3>
+            <p className="text-muted-foreground">
+              Make informed lending decisions with aggregated borrower intelligence across the
+              TrueKredit platform. See how a borrower performs with other lenders — and track
+              detailed payment performance on your own platform. Included for free with core plan subscription.
+            </p>
+          </div>
+          <motion.div
+            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                <Sparkles className="h-3.5 w-3.5" />
+                Included with Core Plan
+              </div>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10">
+                    <Sparkles className="h-6 w-6 text-violet-600" />
+                  </div>
+                  <CardTitle className="text-lg">Cross-Lender Borrower Profile</CardTitle>
+                  <CardDescription>
+                    See if a borrower has loans with other lenders on the platform, including how
+                    many active, completed, or defaulted loans they carry — without revealing
+                    lender identities.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <ShieldCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Data Consistency Check</CardTitle>
+                  <CardDescription>
+                    Instantly verify whether a borrower&apos;s name and phone number match records
+                    from other lenders — helping you spot inconsistencies early.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <BarChart3 className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Borrowed Range & Payment Performance</CardTitle>
+                  <CardDescription>
+                    View the borrower&apos;s total borrowed amount as a range and their on-time
+                    payment rate across the platform — giving you a clearer picture of risk.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
+                <CardHeader>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10">
+                    <Receipt className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <CardTitle className="text-lg">Your Own Platform Performance</CardTitle>
+                  <CardDescription>
+                    Beyond cross-lender insights, see each borrower&apos;s detailed payment
+                    performance on your own platform — on-time, late, and overdue
+                    breakdowns with risk profiling.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <ScreenshotDisplay
+                src="/truekredit/truesight_screenshot.png"
+                alt="TrueSight™ — Cross-Tenant Borrower Insights showing data consistency, borrowed range, and payment performance"
+                className="max-w-md"
+              />
             </div>
           </motion.div>
         </div>
