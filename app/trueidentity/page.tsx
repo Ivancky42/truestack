@@ -26,8 +26,10 @@ import {
   Check,
   DollarSign,
   Settings,
+  Receipt,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { SectionBadge } from "@/components/shared/section-badge";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -402,7 +404,7 @@ export default function TrueIdentityPage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#how-it-works">See How It Works</Link>
+                  <Link href="#pricing">View Pricing</Link>
                 </Button>
               </motion.div>
 
@@ -820,6 +822,103 @@ export default function TrueIdentityPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="border-t py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
+            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+              Simple, Predictable Pricing
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              A one-time setup, pay-per-use transactions, and an annual platform fee. No hidden costs.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Card className="w-full">
+              <CardContent className="p-0">
+                <table className="w-full">
+                  <tbody className="divide-y">
+                    <tr className="bg-primary/5">
+                      <td className="px-6 py-4">
+                        <div className="font-semibold">Setup Fee</div>
+                        <div className="text-sm text-muted-foreground">One-time integration & onboarding — includes 100 free verifications</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-2xl font-bold text-primary">RM 8,000</div>
+                        <div className="text-sm text-muted-foreground">one-time</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        <div className="font-medium">Per Verification</div>
+                        <div className="text-sm text-muted-foreground">Each completed e-KYC transaction</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-2xl font-bold">RM 3.50</div>
+                        <div className="text-sm text-muted-foreground">/ transaction</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        <div className="font-medium">Annual Platform Fee</div>
+                        <div className="text-sm text-muted-foreground">Ongoing access, hosting & support</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-2xl font-bold">RM 4,000</div>
+                        <div className="text-sm text-muted-foreground">/ year</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </CardContent>
+            </Card>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {[
+                { label: "No minimum volume", desc: "Pay only for verifications you use" },
+                { label: "Includes hosted UI", desc: "No frontend development needed" },
+                { label: "Malaysia data residency", desc: "PDPA-compliant infrastructure" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-start gap-3 rounded-xl border bg-background p-4"
+                >
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium">{item.label}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="mt-8 flex items-center justify-center gap-2 text-center text-sm text-muted-foreground"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Shield className="h-4 w-4" />
+            All verification data is encrypted and stored securely in Malaysia.
+          </motion.div>
         </div>
       </section>
 
