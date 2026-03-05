@@ -3,14 +3,15 @@ import Image from "next/image";
 import { Mail } from "lucide-react";
 
 const footerLinks = {
-  services: [
-    { href: "/services/account-management", label: "KPKT Account Management" },
+  kpktSolutions: [
+    { href: "/truekredit", label: "TrueKredit™" },
     { href: "/services/digital-license", label: "Digital KPKT License" },
-    { href: "/services/software-development", label: "Custom Software" },
+    { href: "/services/account-management", label: "KPKT Account Management" },
   ],
-  platforms: [
-    { href: "/truekredit", label: "TrueKredit™", external: false },
-    { href: "/trueidentity", label: "TrueIdentity™", external: false },
+  otherSolutions: [
+    { href: "/trueidentity", label: "TrueIdentity™" },
+    { href: "/services/software-development", label: "P2P Platforms" },
+    { href: "/services/software-development", label: "Custom Fintech Solutions" },
   ],
   company: [
     { href: "/about", label: "About" },
@@ -53,11 +54,11 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Services */}
+          {/* KPKT Solutions */}
           <div>
-            <h4 className="mb-4 text-base font-semibold">Services</h4>
+            <h4 className="mb-4 text-base font-semibold">KPKT Solutions</h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
+              {footerLinks.kpktSolutions.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -70,29 +71,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Platforms */}
+          {/* Other Solutions */}
           <div>
-            <h4 className="mb-4 text-base font-semibold">Platforms</h4>
+            <h4 className="mb-4 text-base font-semibold">Other Solutions</h4>
             <ul className="space-y-3">
-              {footerLinks.platforms.map((link) => (
+              {footerLinks.otherSolutions.map((link) => (
                 <li key={link.label}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
