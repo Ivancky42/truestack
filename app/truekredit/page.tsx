@@ -304,14 +304,14 @@ const faqData = [
       "Yes, TrueKredit automatically generates Lampiran A reports, and exports data in the CSV format required for KPKT iDEAL portal submission.",
   },
   {
-    question: "Do I need the email add-on to generate letters/PDFs?",
+    question: "Do I need Truesend™ to generate letters/PDFs?",
     answer:
-      "No. All PDFs (receipts, reminder letters, default notices, discharge letters) are generated automatically regardless of whether you subscribe to the email add-on. The email add-on only automates the sending of these documents.",
+      "No. All PDFs (receipts, reminder letters, default notices, discharge letters) are generated automatically regardless of whether you subscribe to Truesend™. Truesend™ only automates the sending of these documents.",
   },
   {
     question: "How does the 500-loan pricing block work?",
     answer:
-      "Your base subscription includes up to 500 loans. If you exceed 500, you simply add another block of 500 loans for RM 200/month. This scales efficiently as your business grows.",
+      "The Core Plan includes up to 500 loans. If you exceed 500, you simply add another block of 500 loans for RM 200/month. This scales efficiently as your business grows.",
   },
   {
     question: "Is our data safe and preserved if we subscribe long-term?",
@@ -589,6 +589,54 @@ export default function TrueKreditPage() {
                 compliance with regulatory requirements. TrueKredit gives you the tools to manage
                 it all efficiently.
               </p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="mt-6 gap-2 border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
+                  >
+                    Without TrueKredit vs With TrueKredit
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-xl">
+                      Without TrueKredit vs With TrueKredit
+                    </DialogTitle>
+                    <DialogDescription>
+                      See how TrueKredit transforms your loan management operations.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid grid-cols-2 gap-4 border-t pt-6 md:gap-8">
+                    <div className="text-center">
+                      <div className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm font-semibold text-red-600">
+                        Without TrueKredit
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="mb-4 rounded-lg bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                        With TrueKredit
+                      </div>
+                    </div>
+                  </div>
+                  {comparisonData.map((row) => (
+                    <div
+                      key={row.without}
+                      className="grid grid-cols-2 gap-4 border-b py-4 md:gap-8"
+                    >
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <X className="h-4 w-4 shrink-0 text-red-400" />
+                        {row.without}
+                      </div>
+                      <div className="flex items-center gap-2 text-sm font-medium">
+                        <Check className="h-4 w-4 shrink-0 text-primary" />
+                        {row.with}
+                      </div>
+                    </div>
+                  ))}
+                </DialogContent>
+              </Dialog>
             </div>
             <div>
               <h3 className="mb-4 text-xl font-semibold">Current Challenges</h3>
@@ -1277,8 +1325,8 @@ export default function TrueKreditPage() {
         </div>
       </section>
 
-      {/* Add-ons Section */}
-      <section id="addons" className="py-20">
+      {/* Pricing & Add-on Modules Section */}
+      <section id="pricing" className="border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
             className="mb-12 text-center"
@@ -1287,16 +1335,193 @@ export default function TrueKreditPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={Users} text="Optional Add-ons" className="justify-center" />
+            <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
             <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Optional Add-ons
+              Simple Pricing That Scales With Your Business
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Enhance your TrueKredit experience with optional features.
+              Pay for what you need. Add optional modules to enhance your TrueKredit experience.
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          {/* Unified Pricing — Core then Add-on Modules */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-4"
+          >
+            <Card className="w-full">
+              <CardContent className="p-0">
+                <table className="w-full">
+                  <tbody className="divide-y">
+                    {/* Core Plan */}
+                    <tr className="bg-primary/5">
+                      <td className="px-6 py-4">
+                        <div className="font-semibold">Core Plan</div>
+                        <div className="text-sm text-muted-foreground">First 500 loans</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="flex items-center justify-end gap-2">
+                          <span className="text-lg text-muted-foreground line-through">RM 899</span>
+                          <span className="text-2xl font-bold text-primary">RM 499</span>
+                        </div>
+                        <div className="flex items-center justify-end gap-2">
+                          <span className="rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">PROMO</span>
+                          <span className="text-sm text-muted-foreground">/ month</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        <div className="font-medium">Additional 500 Loans</div>
+                        <div className="text-sm text-muted-foreground">Per additional block</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-xl font-semibold">RM 200</div>
+                        <div className="text-sm text-muted-foreground">/ month</div>
+                      </td>
+                    </tr>
+                    {/* Add-on Modules */}
+                    <tr>
+                      <td className="px-6 py-4">
+                        <div className="font-medium">TrueIdentity™ (e-KYC)</div>
+                        <div className="text-sm text-muted-foreground">Digital identity verification per borrower</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-xl font-semibold">RM 4</div>
+                        <div className="text-sm text-muted-foreground">/ verification</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4">
+                        <div className="font-medium">Truesend™</div>
+                        <div className="text-sm text-muted-foreground">Auto-send receipts, reminders, default notices</div>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <div className="text-xl font-semibold">RM 50</div>
+                        <div className="text-sm text-muted-foreground">/ month per 500 loans</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </CardContent>
+            </Card>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  className="mx-auto block text-sm text-primary underline-offset-4 hover:underline"
+                >
+                  See example calculation
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Example Monthly Cost</DialogTitle>
+                  <DialogDescription>
+                    Two scenarios. Add-ons are optional — you only pay for what you use.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6 pt-2">
+                  {/* Scenario 1: ~200 loans */}
+                  <div>
+                    <h4 className="mb-3 text-sm font-semibold">~200 loans (first 500 block)</h4>
+
+                    <div className="mb-3">
+                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Core</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span>Core Plan</span>
+                          <span>RM 499</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Add-ons (optional)</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span>TrueIdentity™ — per verification (25 × RM 4)</span>
+                          <span>RM 100</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span>Truesend™</span>
+                          <span>RM 50</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-3 flex justify-between text-sm font-semibold">
+                      <span>Total</span>
+                      <span className="text-primary">RM 649 / month</span>
+                    </div>
+                  </div>
+
+                  {/* Scenario 2: 800 loans */}
+                  <div>
+                    <h4 className="mb-3 text-sm font-semibold">800 loans (2nd block)</h4>
+
+                    <div className="mb-3">
+                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Core</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span>Core Plan</span>
+                          <span>RM 499</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span>Additional 500 Loans</span>
+                          <span>RM 200</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Add-ons (optional)</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between text-sm">
+                          <span>TrueIdentity™ — per verification (40 × RM 4)</span>
+                          <span>RM 160</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span>Truesend™ (2 × 500 loans)</span>
+                          <span>RM 100</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-3 flex justify-between text-sm font-semibold">
+                      <span>Total</span>
+                      <span className="text-primary">RM 959 / month</span>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </motion.div>
+
+          {/* Add-on Modules — Learn More */}
+          <motion.div
+            id="addons"
+            className="mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="mb-8 text-center">
+              <SectionBadge icon={Users} text="Add-on Modules" className="justify-center" />
+              <h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+                Optional Modules to Enhance Your Workflow
+              </h3>
+              <p className="mt-2 text-muted-foreground">
+                Add only what you need — no long-term commitment for usage-based modules.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
             {/* TrueIdentity e-KYC */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1312,7 +1537,7 @@ export default function TrueKreditPage() {
                     </div>
                     <div>
                       <CardTitle>TrueIdentity™ (e-KYC)</CardTitle>
-                      <span className="text-sm text-muted-foreground">Optional</span>
+                      <span className="text-sm text-muted-foreground">Add-on</span>
                     </div>
                   </div>
                 </CardHeader>
@@ -1332,7 +1557,7 @@ export default function TrueKreditPage() {
                   </ul>
                   <div className="rounded-lg bg-muted p-4">
                     <p className="text-sm font-medium">
-                      RM 4 per completed verification (pass or fail)
+                      RM 4 per completed verification
                     </p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Charged only on completion. Up to 3 retries.
@@ -1421,7 +1646,7 @@ export default function TrueKreditPage() {
               </Card>
             </motion.div>
 
-            {/* Automated Emails */}
+            {/* Truesend™ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1435,8 +1660,8 @@ export default function TrueKreditPage() {
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <CardTitle>Automated Emails</CardTitle>
-                      <span className="text-sm text-muted-foreground">Optional</span>
+                      <CardTitle>Truesend™</CardTitle>
+                      <span className="text-sm text-muted-foreground">Add-on</span>
                     </div>
                   </div>
                 </CardHeader>
@@ -1473,7 +1698,7 @@ export default function TrueKreditPage() {
                             <Mail className="h-6 w-6 text-primary" />
                           </div>
                           <div>
-                            <DialogTitle className="text-xl">Automated Emails</DialogTitle>
+                            <DialogTitle className="text-xl">Truesend™</DialogTitle>
                             <DialogDescription>Automated document delivery via email</DialogDescription>
                           </div>
                         </div>
@@ -1481,10 +1706,10 @@ export default function TrueKreditPage() {
 
                       <div className="space-y-6 pt-2">
                         <div>
-                          <h4 className="mb-2 font-semibold">What Is the Automated Email Add-on?</h4>
+                          <h4 className="mb-2 font-semibold">What Is the Truesend™ Add-on?</h4>
                           <p className="text-sm text-muted-foreground">
                             TrueKredit already generates all loan-related PDFs automatically — receipts, reminder
-                            letters, default notices, and discharge letters. The Automated Email add-on takes it
+                            letters, default notices, and discharge letters. The Truesend™ add-on takes it
                             a step further by <span className="font-medium text-foreground">sending these documents directly to borrowers via email</span>,
                             without any manual effort from your team.
                           </p>
@@ -1544,7 +1769,7 @@ export default function TrueKreditPage() {
                           <h4 className="mb-1 text-sm font-semibold">Pricing</h4>
                           <p className="text-sm text-muted-foreground">
                             <span className="font-medium text-foreground">RM 50/month per 500 loans.</span>{" "}
-                            Covers all automated email sending for up to 500 active loans. If you have more than
+                            Covers all Truesend™ email sending for up to 500 active loans. If you have more than
                             500 loans, simply add another block at the same rate. Scales alongside your TrueKredit subscription.
                           </p>
                         </div>
@@ -1555,85 +1780,6 @@ export default function TrueKreditPage() {
               </Card>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="border-t bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div
-            className="mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Simple Pricing That Scales With Your Business
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Card className="mx-auto max-w-2xl">
-              <CardContent className="p-0">
-                <table className="w-full">
-                  <tbody className="divide-y">
-                    <tr className="bg-primary/5">
-                      <td className="px-6 py-4">
-                        <div className="font-semibold">Base Subscription</div>
-                        <div className="text-sm text-muted-foreground">First 500 loans</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="flex items-center justify-end gap-2">
-                          <span className="text-lg text-muted-foreground line-through">RM 899</span>
-                          <span className="text-2xl font-bold text-primary">RM 499</span>
-                        </div>
-                        <div className="flex items-center justify-end gap-2">
-                          <span className="rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">PROMO</span>
-                          <span className="text-sm text-muted-foreground">/ month</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">Additional 500 Loans</div>
-                        <div className="text-sm text-muted-foreground">Per additional block</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 200</div>
-                        <div className="text-sm text-muted-foreground">/ month</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">Optional e-KYC</div>
-                        <div className="text-sm text-muted-foreground">TrueIdentity™ verification</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 4</div>
-                        <div className="text-sm text-muted-foreground">/ verification</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">Optional Email Automation</div>
-                        <div className="text-sm text-muted-foreground">Per 500 loans</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 50</div>
-                        <div className="text-sm text-muted-foreground">/ month</div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </CardContent>
-            </Card>
           </motion.div>
 
           <motion.div
@@ -1645,64 +1791,6 @@ export default function TrueKreditPage() {
           >
             <Shield className="h-4 w-4" />
             All loan data is preserved securely with encryption and regular backups.
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section id="comparison" className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div
-            className="mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Without TrueKredit vs With TrueKredit
-            </h2>
-          </motion.div>
-
-          <motion.div
-            className="mx-auto max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="grid grid-cols-2 gap-4 md:gap-8">
-              <div className="text-center">
-                <div className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm font-semibold text-red-600">
-                  Without TrueKredit
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="mb-4 rounded-lg bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                  With TrueKredit
-                </div>
-              </div>
-            </div>
-
-            {comparisonData.map((row, index) => (
-              <motion.div
-                key={row.without}
-                className="grid grid-cols-2 gap-4 border-b py-4 md:gap-8"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <X className="h-4 w-4 shrink-0 text-red-400" />
-                  {row.without}
-                </div>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <Check className="h-4 w-4 shrink-0 text-primary" />
-                  {row.with}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
@@ -1732,10 +1820,10 @@ export default function TrueKreditPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqData.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger className="text-left text-base font-medium md:text-lg">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground text-base md:text-lg">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
