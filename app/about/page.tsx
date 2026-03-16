@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionHeader } from "@/components/shared/section-header";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
+import { CoreInfrastructure } from "@/components/sections/core-infrastructure";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -176,6 +177,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Core Infrastructure */}
+      <CoreInfrastructure />
 
       {/* What We Do */}
       {/* <section className="border-t bg-muted/30 py-20">
