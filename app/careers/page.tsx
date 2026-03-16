@@ -34,35 +34,73 @@ export const metadata: Metadata = {
   },
 };
 
+const companyDescription = [
+  "Truestack Technologies is a tech-driven fintech software company building the infrastructure, platforms, and tools that help Malaysian lenders and fintech operators launch, run, and scale their businesses.",
+  "Our work spans loan management systems, e-KYC infrastructure, custom fintech software, and digital transformation for regulated lending businesses in Malaysia. Our flagship platforms include TrueKredit™, a loan management system for KPKT-licensed money lenders, and TrueIdentity™, our e-KYC verification platform.",
+  "We work at the intersection of product, engineering, compliance, and operations, building systems that are not only modern and scalable, but also practical for real-world fintech use cases in Malaysia's regulatory environment.",
+];
+
+const whyJoinTruestack = [
+  "Work on real-world fintech products with direct business impact",
+  "Be part of a team building software for a fast-growing and underserved market",
+  "Gain exposure to both product engineering and fintech operations",
+  "Contribute to platforms that support digital transformation in Malaysia's lending industry",
+  "Join a company working across software, infrastructure, and compliance services rather than just a single product line",
+];
+
+const howToApply =
+  "Send us your CV, portfolio, GitHub, or any relevant project links. We'd love to hear about products you've built, systems you've scaled, and how you approach development in production environments.";
+
 const openRoles = [
   {
     title: "Full-Stack Web Developer",
+    open: true,
     description:
-      "Build modern web applications and APIs using our core technology stack. Work on customer-facing platforms and backend systems that scale.",
-    location: "Remote (Malaysia)",
+      "We are looking for a Full-Stack Web Developer to help us build and scale modern web applications, APIs, internal systems, and customer-facing fintech platforms. You'll work on products used by lenders and fintech businesses, contributing across both frontend and backend while collaborating closely with product, design, and operations. This role is ideal for someone who enjoys building real products end-to-end, cares about code quality and usability, and wants to work on meaningful systems in the fintech and lending space.",
+    location: "Malaysia (KL / Penang / Hybrid / Remote)",
     type: "Full-time",
+    whatYouWorkOn: [
+      "Customer-facing web platforms for lending and fintech operations",
+      "Internal admin systems and operational dashboards",
+      "Backend APIs and integrations",
+      "Fintech infrastructure such as e-KYC, notifications, and third-party service integrations",
+      "Scalable systems that support compliance, reporting, and business workflows in regulated environments",
+    ],
     requirements: [
       "3+ years of full-stack web development experience",
-      "Strong proficiency in React/Next.js and TypeScript",
-      "Experience with Node.js and Express for backend development",
-      "Database experience with PostgreSQL",
-      "Understanding of REST/GraphQL API design",
-      "Familiarity with cloud platforms (AWS, Vercel)",
-      "Experience with Docker and CI/CD pipelines",
-      "Malaysian citizen or permanent resident",
+      "Strong proficiency in React / Next.js and TypeScript",
+      "Solid experience building backend services with Node.js and Express",
+      "Experience working with PostgreSQL or other relational databases",
+      "Good understanding of REST API design; GraphQL experience is a plus",
+      "Familiarity with AWS, cloud deployment, and modern DevOps workflows",
+      "Experience with Docker, CI/CD, and version control best practices",
+      "Strong problem-solving skills and the ability to work independently",
+      "Good communication skills and ability to collaborate in a distributed team environment",
+      "Malaysian citizen or permanent resident preferred",
     ],
     responsibilities: [
-      "Develop responsive web applications using React/Next.js",
-      "Build and maintain scalable APIs and backend services",
-      "Implement data pipelines and integrations",
-      "Write comprehensive tests and maintain code quality",
-      "Collaborate on DevOps and deployment automation",
-      "Optimize application performance and monitoring",
-      "Work closely with design and product teams",
+      "Build and maintain responsive web applications using React, Next.js, and TypeScript",
+      "Develop scalable backend services and APIs using Node.js and Express",
+      "Design and implement integrations with internal and third-party systems",
+      "Work with PostgreSQL and related data models to support business-critical workflows",
+      "Collaborate with cross-functional teams to define, design, build, and ship new features",
+      "Troubleshoot issues across the stack and improve system reliability",
+      "Write clean, maintainable, and well-tested code",
+      "Contribute to deployment workflows, CI/CD pipelines, and cloud infrastructure",
+      "Optimize application performance, observability, and developer efficiency",
+      "Support ongoing improvement of engineering standards, architecture, and product quality",
+    ],
+    niceToHave: [
+      "Experience building or maintaining fintech, lending, SaaS, or compliance-related software",
+      "Familiarity with payment systems, identity verification, or workflow-heavy business applications",
+      "Experience working in regulated environments or with audit/compliance-sensitive systems",
+      "Exposure to monitoring, logging, and production support practices",
+      "Experience with mobile-friendly product development and performance optimization",
     ],
   },
   {
     title: "Backend Developer",
+    open: false,
     description:
       "Design and build robust backend systems for fintech applications. Focus on API development, database design, and system architecture.",
     location: "Remote (Malaysia)",
@@ -89,6 +127,7 @@ const openRoles = [
   },
   {
     title: "QA Engineer",
+    open: false,
     description:
       "Ensure software quality through comprehensive testing while contributing to development and deployment processes.",
     location: "Remote (Malaysia)",
@@ -181,12 +220,28 @@ export default function CareersPage() {
         subtitle="Join a team of engineers building platforms that make a real impact for fintech companies across the region."
       />
 
+      {/* Company Description */}
+      <section className="border-t py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeader title="About Truestack" centered />
+          <div className="mx-auto mt-4 max-w-3xl space-y-4 text-center text-lg text-muted-foreground">
+            {companyDescription.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Open Roles */}
-      <section className="py-20">
+      <section className="border-t py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="Open Roles"
-            subtitle="All positions are currently filled. Check back later for new opportunities."
+            subtitle={
+              openRoles.some((r) => r.open)
+                ? "Join our team and help build fintech infrastructure that powers Malaysian lenders and fintech operators."
+                : "All positions are currently filled. Check back later for new opportunities."
+            }
             centered
           />
 
@@ -209,11 +264,13 @@ export default function CareersPage() {
                       </div>
                     </div>
                     <Badge
-                      variant="secondary"
-                      className="gap-1.5 bg-muted px-4 py-2 font-medium"
+                      variant={role.open ? "default" : "secondary"}
+                      className={`gap-1.5 px-4 py-2 font-medium ${
+                        role.open ? "" : "bg-muted"
+                      }`}
                     >
                       <CheckCircle2 className="h-4 w-4" />
-                      Position Filled
+                      {role.open ? "Open" : "Position Filled"}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -221,6 +278,23 @@ export default function CareersPage() {
                   <p className="mb-6 text-lg text-muted-foreground">
                     {role.description}
                   </p>
+
+                  {"whatYouWorkOn" in role && role.whatYouWorkOn && (
+                    <div className="mb-8">
+                      <h4 className="mb-4 font-semibold">What You&apos;ll Work On</h4>
+                      <ul className="space-y-2">
+                        {role.whatYouWorkOn.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   <div className="grid gap-8 md:grid-cols-2">
                     <div>
@@ -236,6 +310,22 @@ export default function CareersPage() {
                           </li>
                         ))}
                       </ul>
+                      {"niceToHave" in role && role.niceToHave && (
+                        <>
+                          <h4 className="mb-4 mt-6 font-semibold">Nice to Have</h4>
+                          <ul className="space-y-2">
+                            {role.niceToHave.map((item) => (
+                              <li
+                                key={item}
+                                className="flex items-start gap-2 text-sm text-muted-foreground"
+                              >
+                                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
                     </div>
                     <div>
                       <h4 className="mb-4 font-semibold">Responsibilities</h4>
@@ -307,6 +397,23 @@ export default function CareersPage() {
                 </p>
               </div>
             </div>
+
+            <div className="mt-12 border-t pt-8">
+              <h3 className="mb-6 text-center text-xl font-semibold">
+                Why Join Truestack
+              </h3>
+              <ul className="mx-auto max-w-2xl space-y-3">
+                {whyJoinTruestack.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -355,8 +462,11 @@ export default function CareersPage() {
               Ready to join us?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Whether you're interested in a specific role or just want to
-              connect, we'd love to hear from you.
+              {howToApply}
+            </p>
+            <p className="mt-2 text-muted-foreground">
+              Whether you&apos;re interested in a specific role or just want to
+              connect, we&apos;d love to hear from you.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="gap-2">
