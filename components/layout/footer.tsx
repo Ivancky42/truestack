@@ -20,6 +20,7 @@ const footerLinks = {
     { href: "/contact", label: "Contact" },
   ],
   legal: [
+    { href: "/cybersecurity", label: "Cybersecurity Policy" },
     { href: "/pdpa", label: "PDPA Notice" },
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Use" },
@@ -143,6 +144,13 @@ export function Footer() {
 
             {/* Links */}
             <div className="flex items-center gap-6">
+              <Link
+                href="/cybersecurity"
+                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
+              >
+                Security
+              </Link>
+              <span className="text-muted-foreground/30">·</span>
               <Link
                 href="/pdpa"
                 className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
