@@ -545,13 +545,22 @@ export function HomepageHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <motion.p
+              className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              KPKT · Digital license · Software development · Lending &amp; fintech · Malaysia
+            </motion.p>
+
             <motion.h1
               className="font-display text-4xl font-medium tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              KPKT Services &amp; Lending Software for Malaysia
+              Build &amp; Scale Your Lending Business
             </motion.h1>
 
             <motion.p
@@ -560,8 +569,8 @@ export function HomepageHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              End-to-end fintech platforms, digital license conversion, and compliance support—built
-              for licensed money lenders operating in Malaysia&apos;s regulated lending space.
+              KPKT account management, digital license conversion, and lending software—plus the
+              compliance and infrastructure licensed money lenders need to grow in Malaysia.
             </motion.p>
 
             {/* CTAs — hidden on mobile, shown on desktop alongside text */}
