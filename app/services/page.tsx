@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -29,7 +30,14 @@ export const metadata: Metadata = {
     title: "Services - Truestack",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
-    images: ["/truestack-favicon.png"],
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services - Truestack",
+    description:
+      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+    images: [defaultOgImage.url],
   },
 };
 

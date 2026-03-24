@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -31,6 +32,14 @@ export const metadata: Metadata = {
     title: "Careers - Truestack",
     description:
       "Join Truestack and build fintech platforms that make a real impact. View open positions and learn about our culture.",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers - Truestack",
+    description:
+      "Join Truestack and build fintech platforms that make a real impact. View open positions and learn about our culture.",
+    images: [defaultOgImage.url],
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { DigitalLicenseHero } from "@/components/sections/digital-license-hero";
@@ -47,21 +48,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_MY",
     siteName: "Truestack",
-    images: [
-      {
-        url: "/truestack-favicon.png",
-        width: 250,
-        height: 250,
-        alt: "Digital KPKT License Conversion - Truestack",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Digital KPKT License Conversion - Truestack",
     description:
       "Go digital and expand nationwide. Complete digital KPKT license conversion in ~3 months with custom web and mobile platforms.",
-    images: ["/truestack-favicon.png"],
+    images: [defaultOgImage.url],
   },
 };
 

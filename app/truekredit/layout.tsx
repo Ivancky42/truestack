@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TrueKreditFaqSchema } from "@/components/seo/truekredit-faq-schema";
 
 export const metadata: Metadata = {
   title: "TrueKredit™ — KPKT Loan Management System",
@@ -49,5 +50,10 @@ export default function TrueKreditLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <TrueKreditFaqSchema />
+      {children}
+    </>
+  );
 }

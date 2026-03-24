@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
@@ -39,6 +40,9 @@ export const metadata: Metadata = {
   keywords: [
     "custom fintech software",
     "P2P lending platform",
+    "P2P software development Malaysia",
+    "lending software Malaysia",
+    "fintech software development Malaysia",
     "digital lending Malaysia",
   ],
   alternates: { canonical: "/services/software-development" },
@@ -46,7 +50,14 @@ export const metadata: Metadata = {
     title: "Custom Software Development - Truestack",
     description:
       "Full-stack development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
-    images: ["/truestack-favicon.png"],
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Software Development - Truestack",
+    description:
+      "Full-stack development for P2P lending, digital lending platforms, and payment systems. Built for Malaysia's regulatory landscape.",
+    images: [defaultOgImage.url],
   },
 };
 
@@ -104,7 +115,12 @@ export default function SoftwareDevelopmentPage() {
             subtitle="We specialize in fintech software that powers digital lending and payment solutions."
             centered
           />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
+            P2P software development, lending stack engineering, and bespoke fintech builds for
+            Malaysia—aligned with KPKT, Securities Commission, and PDPA-aware architecture where it
+            matters.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {fintechFocus.map((item) => (
               <Card key={item.title} className="transition-all hover:shadow-md hover:border-primary/50">
                 <CardHeader>

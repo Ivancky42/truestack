@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/organization-schema";
 import { WebSiteSchema } from "@/components/seo/website-schema";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import "./globals.css";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
@@ -63,21 +64,14 @@ export const metadata: Metadata = {
     title: "Truestack - KPKT Services & Fintech Software",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
-    images: [
-      {
-        url: "/truestack-favicon.png",
-        width: 250,
-        height: 250,
-        alt: "Truestack - KPKT Services & Fintech Software",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Truestack - KPKT Services & Fintech Software",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
-    images: ["/truestack-favicon.png"],
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,

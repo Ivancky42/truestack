@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import { Hero } from "@/components/sections/hero";
 import { ContactCards } from "@/components/sections/contact-cards";
 
@@ -17,6 +18,14 @@ export const metadata: Metadata = {
     title: "Contact - Truestack",
     description:
       "Get in touch with Truestack. Tell us about your project and we'll get back to you.",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact - Truestack",
+    description:
+      "Get in touch with Truestack. Tell us about your project and we'll get back to you.",
+    images: [defaultOgImage.url],
   },
 };
 

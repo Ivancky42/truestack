@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 
 export const metadata: Metadata = {
   title: "TrueIdentity™ — e-KYC Verification for Malaysia",
@@ -23,12 +24,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_MY",
     siteName: "Truestack",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
     description:
       "Programmatic e-KYC verification for Malaysian fintechs. Verify customers in seconds, not days.",
+    images: [defaultOgImage.url],
   },
 };
 

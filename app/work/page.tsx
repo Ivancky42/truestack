@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
@@ -33,6 +34,14 @@ export const metadata: Metadata = {
     title: "Work - Truestack",
     description:
       "Case studies and projects. See the fintech platforms we've built and the KPKT operators we've helped go digital.",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work - Truestack",
+    description:
+      "Case studies and projects. See the fintech platforms we've built and the KPKT operators we've helped go digital.",
+    images: [defaultOgImage.url],
   },
 };
 

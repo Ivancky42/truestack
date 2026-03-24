@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,14 @@ export const metadata: Metadata = {
     title: "Terms of Use - Truestack",
     description:
       "Terms of Use for Truestack website. Read our terms and conditions for using our website and services.",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Use - Truestack",
+    description:
+      "Terms of Use for Truestack website. Read our terms and conditions for using our website and services.",
+    images: [defaultOgImage.url],
   },
 };
 

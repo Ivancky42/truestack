@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { SectionHeader } from "@/components/shared/section-header";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
@@ -32,6 +33,14 @@ export const metadata: Metadata = {
     title: "About - Truestack",
     description:
       "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About - Truestack",
+    description:
+      "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
+    images: [defaultOgImage.url],
   },
 };
 

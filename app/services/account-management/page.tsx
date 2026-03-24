@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -35,7 +36,14 @@ export const metadata: Metadata = {
     title: "KPKT Account Management - Truestack",
     description:
       "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
-    images: ["/truestack-favicon.png"],
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KPKT Account Management - Truestack",
+    description:
+      "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
+    images: [defaultOgImage.url],
   },
 };
 

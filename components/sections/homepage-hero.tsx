@@ -551,7 +551,7 @@ export function HomepageHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Build &amp; Scale Your Lending Business
+              KPKT Services &amp; Lending Software for Malaysia
             </motion.h1>
 
             <motion.p
@@ -560,8 +560,8 @@ export function HomepageHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              End-to-end lending software, compliance services, and infrastructure
-              to operate and grow in Malaysia&apos;s regulated lending space.
+              End-to-end fintech platforms, digital license conversion, and compliance support—built
+              for licensed money lenders operating in Malaysia&apos;s regulated lending space.
             </motion.p>
 
             {/* CTAs — hidden on mobile, shown on desktop alongside text */}
