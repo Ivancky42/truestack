@@ -3,29 +3,33 @@ import { defaultOgImage } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
 
 export const metadata: Metadata = {
-  title: "Selected work & case studies",
+  title: "Work",
   description:
-    "Live lending and fintech platforms we’ve delivered in Malaysia — digital KPKT conversions, enterprise loan systems, and marketplace infrastructure with in-region hosting and audit-ready operations.",
+    "Explore Truestack's work: digital KPKT license conversion, enterprise loan management systems, and P2P fintech platforms built for Malaysia with in-region hosting and audit-ready operations.",
   keywords: [
     "Truestack case studies",
+    "Truestack work",
     "fintech projects Malaysia",
+    "KPKT case studies",
     "KPKT digital license",
+    "digital lending software Malaysia",
+    "P2P lending platform Malaysia",
     "CreditXpress",
     "Andas Capital",
     "money lending platform",
   ],
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Selected work & case studies - Truestack",
+    title: "Work - Truestack",
     description:
-      "Live lending and fintech platforms we’ve delivered in Malaysia — digital KPKT conversions, enterprise stacks, and regulated marketplaces.",
+      "Digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered by Truestack in Malaysia.",
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Selected work & case studies - Truestack",
+    title: "Work - Truestack",
     description:
-      "Live lending and fintech platforms we’ve delivered in Malaysia — digital KPKT conversions, enterprise stacks, and regulated marketplaces.",
+      "Digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered by Truestack in Malaysia.",
     images: [defaultOgImage.url],
   },
 };

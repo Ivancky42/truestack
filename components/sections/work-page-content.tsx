@@ -237,7 +237,7 @@ function WorkHero() {
               compact
               dense
               className="[&_.container]:max-w-none [&_.container]:px-0 [&_.max-w-5xl]:max-w-none"
-              title="Operators we build with"
+              title="Trusted by Industry Leaders"
             />
           </motion.div>
         </div>
