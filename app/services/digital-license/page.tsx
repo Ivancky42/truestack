@@ -409,7 +409,7 @@ export default function DigitalLicensePage() {
                 <span className="text-primary">Evolved for Digital.</span>
               </h2>
               <p className="mb-6 text-lg text-slate-400">
-                Your digital lending platform runs on <strong className="text-white">TrueKredit™ Plus</strong> — an
+                Your digital lending platform runs on <strong className="text-white">TrueKredit™ Pro</strong> — an
                 evolved edition of our{" "}
                 <Link href="/truekredit" className="text-primary underline underline-offset-4 hover:text-primary/80">
                   battle-tested TrueKredit™ system
@@ -417,12 +417,12 @@ export default function DigitalLicensePage() {
                 already powering KPKT-licensed money lenders across Malaysia.
               </p>
               <p className="mb-4 text-slate-400">
-                TrueKredit™ Plus takes the same rock-solid loan management engine — borrower lifecycle,
+                TrueKredit™ Pro takes the same rock-solid loan management engine — borrower lifecycle,
                 compliance automation, repayment tracking, and audit-ready reporting — and layers on
                 the capabilities required for a fully digital operation.
               </p>
               <p className="mb-8 text-slate-400">
-                Every digital license gets its own <strong className="text-white">fully isolated TrueKredit™ Plus instance</strong> — separate
+                Every digital license gets its own <strong className="text-white">fully isolated TrueKredit™ Pro instance</strong> — separate
                 infrastructure, separate database, separate environment. Your data is never shared or
                 co-mingled with any other operator.
               </p>

@@ -36,7 +36,7 @@ const kpktSolutions = [
   {
     title: "KPKT Digital License Conversion",
     href: "/services/digital-license",
-    description: "Transform to a fully digital KPKT-licensed platform in 6 months.",
+    description: "Transform to a fully digital KPKT-licensed platform in 3 months.",
     icon: FileCheck,
   },
   {
