@@ -48,7 +48,7 @@ function CtaLink({ href, children, className }: { href: string; children: React.
   );
 }
 
-function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {
+export function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {
   const colorVar = variant === "kpkt" ? "var(--kpkt)" : "var(--primary)";
   
   return (

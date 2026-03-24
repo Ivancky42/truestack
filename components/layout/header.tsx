@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -74,10 +74,10 @@ const navLinks = [
   { href: "/careers", label: "Careers" },
 ];
 
-function useIsDarkSection() {
+function useIsDarkSection(pathname: string) {
   const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const check = () => {
       // Sample point: center of viewport, just below header (~90px from top)
       const el = document.elementFromPoint(window.innerWidth / 2, 90);
@@ -92,7 +92,7 @@ function useIsDarkSection() {
       window.removeEventListener("scroll", check);
       window.removeEventListener("resize", check);
     };
-  }, []);
+  }, [pathname]);
 
   return isDark;
 }
@@ -102,7 +102,7 @@ export function Header() {
   const isSolutionsActive = pathname.startsWith("/services") || pathname.startsWith("/truekredit") || pathname.startsWith("/trueidentity");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsExpanded, setSolutionsExpanded] = useState(false);
-  const isDarkSection = useIsDarkSection();
+  const isDarkSection = useIsDarkSection(pathname);
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);

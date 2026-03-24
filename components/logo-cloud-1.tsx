@@ -112,6 +112,10 @@ interface LogoCloudProps {
   bottomText?: string
   size?: 'default' | 'large'
   compact?: boolean
+  /** Use `div` when embedding inside another landmark (e.g. page hero). */
+  asContainer?: 'section' | 'div'
+  /** Tighter logo grid and padding (e.g. embedded in a hero card). */
+  dense?: boolean
 }
 
 const LogoCloud1 = ({ 
@@ -125,6 +129,8 @@ const LogoCloud1 = ({
   bottomText,
   size,
   compact = false,
+  asContainer = 'section',
+  dense = false,
 }: LogoCloudProps) => {
   const isClients = variant === 'clients'
   const items = logos || (isClients ? clientLogos : technologyPartners)
@@ -141,13 +147,22 @@ const LogoCloud1 = ({
   
   const defaultBadge = isClients ? 'Our Clients' : 'Partner Ecosystem'
   const Icon = isClients ? Users : Handshake
+  const Container = asContainer === 'div' ? 'div' : 'section'
 
   return (
-    <section className={cn('relative w-full', compact ? 'pt-0 pb-10 md:pb-12' : 'py-12 md:py-16', className)}>
+    <Container className={cn(
+      'relative w-full',
+      compact
+        ? dense
+          ? 'pt-0 pb-4 md:pb-5'
+          : 'pt-0 pb-10 md:pb-12'
+        : 'py-12 md:py-16',
+      className
+    )}>
       <div className='container mx-auto px-4 md:px-6'>
         <div className='mx-auto max-w-5xl'>
           {/* Header */}
-          <div className={cn('text-center', compact ? 'mb-5' : 'mb-12 space-y-4')}>
+          <div className={cn('text-center', compact ? (dense ? 'mb-3' : 'mb-5') : 'mb-12 space-y-4')}>
             {!compact && (
               <div className='flex items-center justify-center gap-2'>
                 <Icon className='text-primary size-5' />
@@ -170,7 +185,11 @@ const LogoCloud1 = ({
           <div className='relative overflow-hidden'>
             <div className={cn(
               'flex flex-wrap items-center justify-center',
-              logoSize === 'large' ? 'gap-x-12 gap-y-8 md:gap-x-16' : 'gap-x-10 gap-y-8 md:gap-x-14'
+              dense
+                ? 'gap-x-5 gap-y-3 sm:gap-x-6 sm:gap-y-3.5'
+                : logoSize === 'large'
+                  ? 'gap-x-12 gap-y-8 md:gap-x-16'
+                  : 'gap-x-10 gap-y-8 md:gap-x-14'
             )}>
               {items.map(item => (
                 <div 
@@ -179,16 +198,24 @@ const LogoCloud1 = ({
                 >
                   <div className={cn(
                     'flex items-center justify-center',
-                    logoSize === 'large' ? 'h-16 w-36 p-2' : 'h-12 w-28 p-2'
+                    dense
+                      ? 'h-9 w-[5.5rem] p-1 sm:h-10 sm:w-24 sm:p-1.5'
+                      : logoSize === 'large'
+                        ? 'h-16 w-36 p-2'
+                        : 'h-12 w-28 p-2'
                   )}>
                     <Image
                       src={item.logo}
                       alt={item.name}
-                      width={logoSize === 'large' ? 140 : 100}
-                      height={logoSize === 'large' ? 56 : 40}
+                      width={dense ? 88 : logoSize === 'large' ? 140 : 100}
+                      height={dense ? 36 : logoSize === 'large' ? 56 : 40}
                       className={cn(
                         'w-auto object-contain opacity-70 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0',
-                        logoSize === 'large' ? 'h-12' : 'h-8'
+                        dense
+                          ? 'h-6 sm:h-7'
+                          : logoSize === 'large'
+                            ? 'h-12'
+                            : 'h-8'
                       )}
                     />
                   </div>
@@ -212,7 +239,7 @@ const LogoCloud1 = ({
           )}
         </div>
       </div>
-    </section>
+    </Container>
   )
 }
 

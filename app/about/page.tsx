@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/shared/section-header";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { CoreInfrastructure } from "@/components/sections/core-infrastructure";
+import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -99,14 +100,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Combined Hero + Who We Are */}
-      <section className="relative overflow-hidden border-b bg-muted/30 py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+      <section
+        data-nav-theme="dark"
+        className="relative overflow-hidden border-b border-zinc-800 py-20 text-zinc-100 md:py-28"
+      >
+        <AboutHeroBackdrop />
+        <div className="relative mx-auto max-w-6xl px-6">
           {/* Hero header */}
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-medium tracking-tight text-zinc-50 md:text-5xl lg:text-6xl">
               Who We Are
             </h1>
-            <p className="mt-6 text-xl leading-relaxed text-muted-foreground md:text-2xl">
+            <p className="mt-6 text-xl leading-relaxed text-zinc-400 md:text-2xl">
               We are building the technology that 
               powers licensed money lenders and fintechs across Malaysia and beyond.
             </p>
@@ -114,23 +119,23 @@ export default function AboutPage() {
           
           {/* Expanded content */}
           <div className="mx-auto mt-12 max-w-4xl">
-            <div className="grid gap-6 text-lg text-muted-foreground md:grid-cols-2 md:gap-10">
+            <div className="grid gap-6 text-lg text-zinc-400 md:grid-cols-2 md:gap-10">
               <div className="space-y-4">
                 <p>
-                  We develop <strong className="text-foreground">purpose-built platforms</strong> for 
+                  We develop <strong className="font-semibold text-zinc-100">purpose-built platforms</strong> for 
                   the lending industry — from loan origination and management to e-KYC verification 
                   and regulatory reporting. Our technology is designed specifically for Malaysia&apos;s 
                   regulatory environment.
                 </p>
                 <p>
-                  For traditional lenders looking to modernize, we provide <strong className="text-foreground">end-to-end 
+                  For traditional lenders looking to modernize, we provide <strong className="font-semibold text-zinc-100">end-to-end 
                   digital transformation</strong> — helping operators transition from paper-based 
                   processes to fully digital, KPKT-compliant operations.
                 </p>
               </div>
               <div className="space-y-4">
                 <p>
-                  Beyond technology, we offer <strong className="text-foreground">ongoing compliance 
+                  Beyond technology, we offer <strong className="font-semibold text-zinc-100">ongoing compliance 
                   services</strong> that handle the regulatory burden — license renewals, annual 
                   submissions, audits, and coordination with KPKT — so you can focus on growing 
                   your business.
@@ -147,37 +152,37 @@ export default function AboutPage() {
           {/* Three pillars */}
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {/* Platforms */}
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
                 <Code2 className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Our Platforms</h3>
-              <p className="text-muted-foreground">
-                <strong className="text-foreground">TrueKredit™</strong> — a complete loan 
-                management system, and <strong className="text-foreground">TrueIdentity™</strong> — 
+              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Our Platforms</h3>
+              <p className="text-zinc-400">
+                <strong className="font-semibold text-zinc-100">TrueKredit™</strong> — a complete loan 
+                management system, and <strong className="font-semibold text-zinc-100">TrueIdentity™</strong> — 
                 our e-KYC verification platform — power lending operations across Malaysia.
               </p>
             </div>
 
             {/* Digital Transformation */}
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/10">
+            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/15">
                 <FileCheck className="h-6 w-6 text-kpkt" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Digital Transformation</h3>
-              <p className="text-muted-foreground">
+              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Digital Transformation</h3>
+              <p className="text-zinc-400">
                 For operators looking to go digital, we offer end-to-end KPKT Digital License 
                 Conversion that transforms traditional lenders into compliant digital platforms.
               </p>
             </div>
 
             {/* Compliance & Development */}
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/10">
+            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/15">
                 <ClipboardCheck className="h-6 w-6 text-kpkt" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Compliance & Development</h3>
-              <p className="text-muted-foreground">
+              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Compliance & Development</h3>
+              <p className="text-zinc-400">
                 We handle ongoing KPKT compliance — license renewals, annual submissions, 
                 and regulatory coordination. We also build custom fintech solutions for P2P 
                 lending, digital lending, and payment systems.
