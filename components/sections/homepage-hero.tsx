@@ -546,12 +546,12 @@ export function HomepageHero() {
             transition={{ duration: 0.6 }}
           >
             <motion.p
-              className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+              className="mb-4 text-sm font-medium tracking-wide text-muted-foreground"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
             >
-              KPKT · Digital license · Software development · Lending &amp; fintech · Malaysia
+              Compliant fintech software, built for Malaysia
             </motion.p>
 
             <motion.h1
