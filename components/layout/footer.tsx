@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
   kpktSolutions: [
@@ -52,6 +52,16 @@ export function Footer() {
             >
               <Mail className="h-4 w-4 transition-transform group-hover:scale-110" />
               <span className="text-[15px]">hello@truestack.my</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/truestack-technologies/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Truestack Technologies on LinkedIn"
+              className="mt-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/60 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            >
+              <Linkedin className="h-4 w-4 shrink-0" aria-hidden />
+              <span className="text-[15px] font-medium">LinkedIn</span>
             </a>
           </div>
 
