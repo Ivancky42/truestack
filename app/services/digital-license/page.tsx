@@ -182,6 +182,34 @@ export default function DigitalLicensePage() {
               </Button>
             </div>
           </div>
+
+          <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 px-6 py-10 text-center md:px-10">
+            <p className="font-display text-xl font-medium tracking-tight md:text-2xl">
+              See the lending experience in action
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground md:text-lg">
+              Explore our live borrower-facing demo, or{" "}
+              <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                contact us
+              </Link>{" "}
+              for a walkthrough of the full end-to-end digital lending system—borrower origination,
+              the admin portal, and on-premise signing with Certificate Authority integration.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild size="lg" className="gap-2">
+                <Link href="https://demo.truestack.my" target="_blank" rel="noopener noreferrer">
+                  Explore the lending demo
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="gap-2">
+                <Link href="/contact">
+                  Request a full system demo
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -849,15 +877,34 @@ export default function DigitalLicensePage() {
       <section className="border-t py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">Ready to Go Digital?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Join operators who have successfully transitioned to digital lending. 
+          <p className="mx-auto mb-4 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            Join operators who have successfully transitioned to digital lending.
             We&apos;ll guide you through every step of the process.
+          </p>
+          <p className="mx-auto mb-8 max-w-2xl text-sm text-muted-foreground md:text-base">
+            Try the{" "}
+            <Link
+              href="https://demo.truestack.my"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
+              public lending demo
+            </Link>{" "}
+            anytime, or reach out for a tailored session covering origination, operations, and
+            on-prem signing with CA integration.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="gap-2 bg-primary hover:bg-primary/90">
               <Link href="/contact">
                 Start Your Transformation
                 <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="gap-2">
+              <Link href="https://demo.truestack.my" target="_blank" rel="noopener noreferrer">
+                Open lending demo
+                <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  ArrowRight,
+  ArrowUpRight,
   Building2,
   Globe,
   MapPin,
@@ -13,6 +13,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+
+const DEMO_URL = "https://demo.truestack.my";
 
 function CtaLink({
   href,
@@ -24,6 +26,7 @@ function CtaLink({
   className?: string;
 }) {
   const isHashLink = href.startsWith("#");
+  const isExternal = /^https?:\/\//.test(href);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isHashLink) {
@@ -38,6 +41,14 @@ function CtaLink({
   if (isHashLink) {
     return (
       <a href={href} onClick={handleClick} className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  if (isExternal) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
       </a>
     );
@@ -497,25 +508,35 @@ export function DigitalLicenseHero() {
 
             {/* Desktop CTAs */}
             <motion.div
-              className="mt-10 hidden flex-col gap-4 sm:flex-row sm:items-center lg:flex"
+              className="mt-10 hidden flex-col gap-4 lg:flex"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button asChild size="lg" className="gap-2">
-                <CtaLink href="/contact">
-                  Start Your Conversion
-                  <ArrowRight className="h-4 w-4" />
-                </CtaLink>
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="text-muted-foreground"
-              >
-                <CtaLink href="#timeline">See the 3-Month Plan</CtaLink>
-              </Button>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button asChild size="lg" className="gap-2">
+                  <CtaLink href={DEMO_URL}>
+                    Explore the lending demo
+                    <ArrowUpRight className="h-4 w-4" />
+                  </CtaLink>
+                </Button>
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="lg"
+                  className="text-muted-foreground"
+                >
+                  <CtaLink href="#timeline">See the 3-Month Plan</CtaLink>
+                </Button>
+              </div>
+              <p className="max-w-xl text-sm text-muted-foreground sm:text-[15px]">
+                Prefer a guided tour?{" "}
+                <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                  Contact us
+                </Link>{" "}
+                for a demo of the end-to-end digital lending system—borrower origination, admin
+                portal, and on-premise signing with Certificate Authority integration.
+              </p>
             </motion.div>
           </motion.div>
 
@@ -526,25 +547,35 @@ export function DigitalLicenseHero() {
 
           {/* Mobile CTAs */}
           <motion.div
-            className="flex flex-col gap-4 sm:flex-row sm:items-center lg:hidden"
+            className="flex flex-col gap-4 lg:hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Button asChild size="lg" className="gap-2">
-              <CtaLink href="/contact">
-                Start Your Conversion
-                <ArrowRight className="h-4 w-4" />
-              </CtaLink>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              size="lg"
-              className="text-muted-foreground"
-            >
-              <CtaLink href="#timeline">See the 3-Month Plan</CtaLink>
-            </Button>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button asChild size="lg" className="gap-2">
+                <CtaLink href={DEMO_URL}>
+                  Explore the lending demo
+                  <ArrowUpRight className="h-4 w-4" />
+                </CtaLink>
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                size="lg"
+                className="text-muted-foreground"
+              >
+                <CtaLink href="#timeline">See the 3-Month Plan</CtaLink>
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Prefer a guided tour?{" "}
+              <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                Contact us
+              </Link>{" "}
+              for a demo of the end-to-end digital lending system—borrower origination, admin
+              portal, and on-premise signing with Certificate Authority integration.
+            </p>
           </motion.div>
         </div>
       </div>
