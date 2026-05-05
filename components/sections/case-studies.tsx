@@ -4,7 +4,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import {
+	ArrowUpRight,
+	ChevronLeft,
+	ChevronRight,
+	Ellipsis,
+	Quote,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import {
 	type CaseStudy,
@@ -87,6 +93,42 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
 	);
 }
 
+/** Trailing carousel tile — not linked; invitation to become a featured story. */
+function SuccessStoriesAndMoreCard() {
+	return (
+		<div
+			data-carousel-item
+			className="block w-[340px] shrink-0 snap-start sm:w-[440px] md:w-[500px] lg:w-[540px]"
+			aria-label="Your story could appear here next"
+		>
+			<div className="relative flex h-full min-h-88 flex-col overflow-hidden rounded-2xl border border-dashed border-muted-foreground/25 bg-muted/10 md:min-h-96">
+				<div className="flex items-center justify-center border-b border-dashed border-muted-foreground/20 bg-muted/10 px-8 py-5">
+					<div className="flex h-12 items-center gap-3 text-muted-foreground">
+						<Ellipsis
+							strokeWidth={1.75}
+							className="size-12 shrink-0 sm:size-14"
+							aria-hidden
+						/>
+					</div>
+				</div>
+				<div className="flex flex-1 flex-col items-center justify-center p-8 text-center">
+					<h3 className="font-display text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+						And More
+					</h3>
+					<p className="mx-auto mt-4 max-w-sm text-base text-muted-foreground">
+						<span className="font-medium text-foreground">
+							Your story could be here next.
+						</span>{" "}
+						If you&apos;re building or scaling a lending or fintech
+						operation in Malaysia, we&apos;d love to hear what
+						you&apos;re working toward.
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+}
+
 interface CaseStudiesProps {
 	/** Optional subset/ordering of case studies to display. Defaults to all. */
 	studies?: CaseStudy[];
@@ -96,6 +138,8 @@ interface CaseStudiesProps {
 	subtitle?: string;
 	/** Optional className for the outer <section>. */
 	className?: string;
+	/** When true (e.g. home page carousel), renders a trailing non-clickable teaser card. */
+	showAndMoreCard?: boolean;
 }
 
 export function CaseStudies({
@@ -103,6 +147,7 @@ export function CaseStudies({
 	title = "Success Stories",
 	subtitle = "See how we've helped Malaysian Fintech operators go digital and scale their businesses.",
 	className = "border-t py-20",
+	showAndMoreCard = false,
 }: CaseStudiesProps = {}) {
 	const scrollerRef = useRef<HTMLDivElement>(null);
 	const [canPrev, setCanPrev] = useState(false);
@@ -189,6 +234,7 @@ export function CaseStudies({
 				{studies.map((study) => (
 					<CaseStudyCard key={study.title} study={study} />
 				))}
+				{showAndMoreCard ? <SuccessStoriesAndMoreCard /> : null}
 			</div>
 		</section>
 	);

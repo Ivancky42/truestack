@@ -25,7 +25,7 @@ export default function HomePage() {
 			<ServicesGrid />
 			<ExpertiseSection />
 			{/* <ComplianceSection /> */}
-			<CaseStudies />
+			<CaseStudies showAndMoreCard />
 			<CtaSection />
 		</>
 	);

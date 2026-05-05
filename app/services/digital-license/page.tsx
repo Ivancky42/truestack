@@ -1131,6 +1131,7 @@ export default function DigitalLicensePage() {
 				className="scroll-mt-20 border-t bg-muted/30"
 			>
 				<CaseStudies
+					showAndMoreCard
 					studies={digitalLicenseStudies}
 					title="Operators we've taken digital"
 					subtitle="Real KPKT-licensed lenders launched on TrueKredit™ Pro — built, reviewed, and approved with our end-to-end licensing team."
