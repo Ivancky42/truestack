@@ -83,16 +83,16 @@ export function TrueKreditPromo() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {/* Screenshot */}
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          {/* Screenshot — dark chrome to match the admin dashboard */}
+          <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950 shadow-lg">
             {/* Browser header */}
-            <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
+            <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-900 px-4 py-3">
               <div className="flex gap-1.5">
-                <div className="h-3 w-3 rounded-full bg-red-400" />
-                <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                <div className="h-3 w-3 rounded-full bg-green-400" />
+                <div className="h-3 w-3 rounded-full bg-red-500/80" />
+                <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                <div className="h-3 w-3 rounded-full bg-green-500/80" />
               </div>
-              <div className="ml-4 flex-1 rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-400">
+              <div className="ml-4 flex-1 rounded-md bg-slate-800 px-3 py-1 text-xs text-slate-400">
                 app.truekredit.my
               </div>
             </div>
