@@ -54,6 +54,10 @@ export const technologyPartners = [
 // Client logos (for homepage)
 export const clientLogos = [
   {
+    name: "PinjoCep",
+    logo: "/logos/pinjocep-logo.png",
+  },
+  {
     name: "Kapital",
     logo: "/logos/kapital.svg",
   },

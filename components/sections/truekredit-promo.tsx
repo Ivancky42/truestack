@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Shield, FileText, Calculator, CreditCard } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Calculator,
+  CreditCard,
+  FileText,
+  Shield,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionBadge } from "@/components/shared/section-badge";
@@ -19,40 +26,32 @@ export function TrueKreditPromo() {
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
         <motion.div
-          className="mb-12 grid gap-6 md:grid-cols-2 md:items-end md:gap-12"
+          className="mb-12 max-w-3xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
         >
-          <div>
-            <SectionBadge icon={CreditCard} text="Loan Management" />
-            <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-              TrueKredit™
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground md:text-xl">
-              Purpose-built loan management system for KPKT PPW (offline) licensed money lenders.
-              Manage borrowers, loans, compliance, and audits — all in one secure system.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 md:items-end">
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">100%</div>
-                <div className="text-sm text-muted-foreground">KPKT Compliant</div>
-              </div>
-              <div className="h-12 w-px bg-border" />
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-lg text-muted-foreground line-through">RM 899</span>
-                  <span className="text-3xl font-bold text-primary">RM 499</span>
-                </div>
-                <div className="flex items-center justify-center gap-1">
-                  <span className="rounded bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700">PROMO</span>
-                  <span className="text-sm text-muted-foreground">/ month</span>
-                </div>
-              </div>
-            </div>
+          <SectionBadge icon={CreditCard} text="Loan Management" />
+          <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+            TrueKredit™
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+            Purpose-built loan management system for Malaysian KPKT-licensed
+            money lenders. Manage borrowers, loans, compliance and audits — with
+            optional borrower web, mobile apps, and on-premises digital signing
+            in <span className="font-medium text-foreground">TrueKredit Pro</span>.
+          </p>
+          {/* Two editions */}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+              <Shield className="h-4 w-4" />
+              TrueKredit — Multi-tenant SaaS
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-4 py-1.5 text-sm font-medium text-violet-700">
+              <Award className="h-4 w-4" />
+              TrueKredit Pro — Dedicated AWS
+            </span>
           </div>
         </motion.div>
 
@@ -128,12 +127,34 @@ export function TrueKreditPromo() {
                 </li>
               ))}
             </ul>
-            <Button asChild className="mt-4 w-fit gap-2">
-              <Link href="/truekredit">
-                Learn More
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            {/* Pro callout */}
+            <div className="mt-2 rounded-xl border border-violet-500/20 bg-violet-500/5 p-4">
+              <div className="flex items-start gap-3">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-violet-500/15">
+                  <Award className="h-4 w-4 text-violet-700" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    Need a Digital KPKT Licence?
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    TrueKredit Pro adds borrower web, native mobile apps, and
+                    on-prem digital signing on a dedicated AWS deployment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-3">
+              <Button asChild className="gap-2">
+                <Link href="/truekredit">
+                  Explore TrueKredit
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/truekredit#pro">See TrueKredit Pro</Link>
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>

@@ -11,26 +11,22 @@ import { TrueKreditPromo } from "@/components/sections/truekredit-promo";
 import LogoCloud1 from "@/components/logo-cloud-1";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+	alternates: { canonical: "/" },
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <HomepageHero />
-      <LogoCloud1 
-        variant="clients" 
-        showCategories={false}
-        compact
-      />
-      <WhatWeDo />
-      <TrueKreditPromo />
-      <TrueIdentitySection />
-      <ServicesGrid />
-      <ExpertiseSection />
-      <ComplianceSection />
-      <CaseStudies />
-      <CtaSection />
-    </>
-  );
+	return (
+		<>
+			<HomepageHero />
+			<LogoCloud1 variant="clients" showCategories={false} compact />
+			<WhatWeDo />
+			<TrueKreditPromo />
+			<TrueIdentitySection />
+			<ServicesGrid />
+			<ExpertiseSection />
+			{/* <ComplianceSection /> */}
+			<CaseStudies />
+			<CtaSection />
+		</>
+	);
 }
