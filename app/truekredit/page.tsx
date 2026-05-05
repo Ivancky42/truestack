@@ -51,6 +51,9 @@ import {
 	PenLine,
 	Briefcase,
 	Award,
+	Store,
+	MapPin,
+	UserPlus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -723,6 +726,232 @@ function DigitalSigningVisual() {
 				</div>
 			</div>
 		</VisualShell>
+	);
+}
+
+// ── Origination channel visuals (light) ─────────────────────────────────────
+// These three mocks live in the borrower-origination section and intentionally
+// share a soft, "paper" look so the section feels like a calm light breather
+// between the dense modules carousel and the dark infrastructure section.
+
+function ChannelShell({
+	tint,
+	glow,
+	children,
+}: {
+	tint: string;
+	glow: string;
+	children: ReactNode;
+}) {
+	return (
+		<div
+			className={`relative flex h-full w-full items-end justify-center overflow-hidden bg-linear-to-br ${tint} px-6 pb-0 pt-8`}
+		>
+			<div
+				className={`absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full ${glow} blur-3xl`}
+			/>
+			{children}
+		</div>
+	);
+}
+
+function WalkInVisual() {
+	const queue = [
+		{
+			initials: "AH",
+			name: "Ahmad Hisham",
+			meta: "MyKad scanned • Officer Lim",
+			status: "Approved",
+			statusBg: "bg-emerald-100 text-emerald-700",
+		},
+		{
+			initials: "SY",
+			name: "Siti Yasmin",
+			meta: "e-KYC in progress",
+			status: "In review",
+			statusBg: "bg-amber-100 text-amber-700",
+		},
+		{
+			initials: "RK",
+			name: "Raj Kumar",
+			meta: "Walked in 09:42",
+			status: "New",
+			statusBg: "bg-sky-100 text-sky-700",
+		},
+	];
+	return (
+		<ChannelShell
+			tint="from-primary/8 via-primary/4 to-background"
+			glow="bg-primary/15"
+		>
+			<div className="relative w-[88%] max-w-[360px] translate-y-3 overflow-hidden rounded-t-2xl border border-b-0 border-border/70 bg-white shadow-xl">
+				<div className="flex items-center justify-between border-b bg-slate-50 px-4 py-2.5">
+					<div className="flex items-center gap-2">
+						<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+							<Store className="h-3.5 w-3.5 text-primary" />
+						</div>
+						<div>
+							<p className="text-[10px] font-semibold leading-tight">
+								Counter — KL Branch
+							</p>
+							<p className="text-[8px] leading-tight text-muted-foreground">
+								Walk-in queue
+							</p>
+						</div>
+					</div>
+					<span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[8px] font-semibold text-primary">
+						<MapPin className="h-2.5 w-2.5" />
+						Branch
+					</span>
+				</div>
+				<div className="space-y-1.5 px-3 py-3">
+					{queue.map((q) => (
+						<div
+							key={q.name}
+							className="flex items-center gap-2 rounded-md border border-border/60 bg-white px-2 py-1.5"
+						>
+							<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-primary/80 to-indigo-500 text-[9px] font-bold text-white">
+								{q.initials}
+							</div>
+							<div className="min-w-0 flex-1">
+								<p className="truncate text-[10px] font-medium leading-tight">
+									{q.name}
+								</p>
+								<p className="truncate text-[8px] leading-tight text-muted-foreground">
+									{q.meta}
+								</p>
+							</div>
+							<span
+								className={`shrink-0 rounded-full px-1.5 py-0.5 text-[8px] font-semibold ${q.statusBg}`}
+							>
+								{q.status}
+							</span>
+						</div>
+					))}
+					<div className="mt-2 flex items-center justify-between rounded-md border border-dashed border-primary/30 bg-primary/5 px-2.5 py-1.5">
+						<div className="flex items-center gap-1.5">
+							<UserPlus className="h-3 w-3 text-primary" />
+							<span className="text-[9px] font-semibold text-primary">
+								Add walk-in customer
+							</span>
+						</div>
+						<ChevronRight className="h-3 w-3 text-primary" />
+					</div>
+				</div>
+			</div>
+		</ChannelShell>
+	);
+}
+
+function WebOriginationVisual() {
+	return (
+		<ChannelShell
+			tint="from-sky-500/12 via-blue-500/4 to-background"
+			glow="bg-sky-500/20"
+		>
+			<div className="relative w-[88%] max-w-[360px] translate-y-3 overflow-hidden rounded-t-2xl border border-b-0 border-border/70 bg-white shadow-xl">
+				<div className="flex items-center gap-1.5 border-b bg-slate-50 px-3 py-2">
+					<div className="h-2 w-2 rounded-full bg-rose-400" />
+					<div className="h-2 w-2 rounded-full bg-amber-400" />
+					<div className="h-2 w-2 rounded-full bg-emerald-400" />
+					<div className="ml-2 flex flex-1 items-center gap-1.5 rounded bg-white px-2 py-1 text-[9px] text-muted-foreground">
+						<Lock className="h-2.5 w-2.5 text-emerald-500" />
+						<span className="truncate">
+							kredit.yourcompany.com.my
+						</span>
+					</div>
+				</div>
+				<div className="bg-slate-50/60 px-4 py-4">
+					<div className="rounded-xl bg-linear-to-br from-sky-500 to-blue-600 px-4 py-3 shadow-sm">
+						<p className="text-[11px] font-semibold text-white">
+							Apply for a loan
+						</p>
+						<p className="mt-0.5 text-[8px] text-white/70">
+							Quick. Secure. Fully digital.
+						</p>
+					</div>
+					<div className="mt-2.5 space-y-1.5">
+						{["Full name", "MyKad number", "Loan amount"].map(
+							(label) => (
+								<div
+									key={label}
+									className="flex items-center justify-between rounded-md border border-border/60 bg-white px-2.5 py-1.5"
+								>
+									<span className="text-[9px] text-muted-foreground">
+										{label}
+									</span>
+									<div className="h-1.5 w-12 rounded-full bg-slate-100" />
+								</div>
+							),
+						)}
+						<div className="mt-2 flex items-center justify-center gap-1.5 rounded-md bg-linear-to-r from-sky-500 to-blue-600 px-3 py-1.5 text-[9px] font-semibold text-white shadow-sm">
+							Submit application
+							<ArrowRight className="h-2.5 w-2.5" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</ChannelShell>
+	);
+}
+
+function MobileAppVisual() {
+	return (
+		<ChannelShell
+			tint="from-violet-500/12 via-fuchsia-500/4 to-background"
+			glow="bg-violet-500/20"
+		>
+			<div className="relative w-[58%] max-w-[200px] translate-y-3 overflow-hidden rounded-t-[2rem] border border-b-0 border-slate-900/80 bg-slate-900 px-1.5 pt-2 shadow-2xl">
+				<div className="overflow-hidden rounded-t-[1.5rem] bg-linear-to-b from-indigo-950 via-slate-950 to-slate-950 px-3 pb-0 pt-3">
+					<div className="mb-2 flex items-center justify-between text-[8px] text-white/50">
+						<span>9:41</span>
+						<span>●●●</span>
+					</div>
+					<p className="text-[10px] font-semibold text-white">
+						My Loans
+					</p>
+					<p className="text-[7px] text-white/40">
+						Welcome back, Ahmad
+					</p>
+					<div className="mt-2.5 rounded-lg border border-violet-400/30 bg-violet-500/15 p-2.5">
+						<p className="text-[7px] text-white/40">
+							TK-2401 • Active
+						</p>
+						<p className="font-display text-base font-bold text-white">
+							RM 11,200
+						</p>
+						<p className="text-[7px] text-white/40">outstanding</p>
+						<div className="mt-1.5 h-1 overflow-hidden rounded-full bg-white/10">
+							<div className="h-full w-[65%] rounded-full bg-violet-400" />
+						</div>
+					</div>
+					<div className="mt-1.5 rounded-lg border border-emerald-400/20 bg-emerald-500/10 p-2">
+						<p className="text-[7px] text-white/40">Next payment</p>
+						<p className="text-[10px] font-semibold text-emerald-300">
+							RM 1,275 • 12 Jun
+						</p>
+					</div>
+					<div className="mt-1.5 grid grid-cols-3 gap-1">
+						{[
+							{ label: "Pay", icon: Wallet },
+							{ label: "KYC", icon: Fingerprint },
+							{ label: "Sign", icon: PenLine },
+						].map((a) => (
+							<div
+								key={a.label}
+								className="flex flex-col items-center gap-0.5 rounded-md border border-white/10 bg-white/5 py-1.5"
+							>
+								<a.icon className="h-2.5 w-2.5 text-violet-300" />
+								<span className="text-[7px] text-white/70">
+									{a.label}
+								</span>
+							</div>
+						))}
+					</div>
+					<div className="h-3" />
+				</div>
+			</div>
+		</ChannelShell>
 	);
 }
 
@@ -1703,6 +1932,199 @@ export default function TrueKreditPage() {
 							},
 						]}
 					/>
+				</div>
+			</section>
+
+			{/* Borrower Origination — light section sitting between modules and
+          the dark infrastructure block. Contrasts how each edition reaches
+          borrowers: TrueKredit is walk-in only; Pro adds branded web and
+          native mobile apps so customers come to you 24/7. */}
+			<section id="origination" className="border-t bg-background py-20 md:py-24">
+				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+					<motion.div
+						className="mx-auto max-w-3xl text-center"
+						initial={{ opacity: 0, y: 16 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 0.5 }}
+					>
+						<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+							Borrower origination
+						</p>
+						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+							Three ways to bring borrowers in.
+						</h2>
+						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+							TrueKredit ships with everything you need at the
+							counter.{" "}
+							<span className="font-medium text-foreground/90">
+								TrueKredit Pro
+							</span>{" "}
+							adds branded web and native mobile apps — so
+							borrowers can apply, KYC, sign and track their loan
+							24/7, on any device.
+						</p>
+					</motion.div>
+
+					{/* Channels — three cards, each with a custom mock on top
+              and copy + edition badge below. */}
+					<motion.div
+						className="mt-12 grid gap-5 lg:grid-cols-3 lg:gap-6"
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 0.5, delay: 0.1 }}
+					>
+						{/* Walk-in — both editions */}
+						<div className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
+								<WalkInVisual />
+							</div>
+							<div className="flex flex-col gap-3 p-6 sm:p-7">
+								<div className="flex flex-wrap gap-1.5">
+									<span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+										<Shield className="h-3 w-3" />
+										TrueKredit
+									</span>
+									<span className="inline-flex items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+										<Award className="h-3 w-3" />
+										Pro
+									</span>
+								</div>
+								<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+									Walk-in counter
+								</h3>
+								<p className="text-[15px] leading-relaxed text-muted-foreground">
+									Officers add new customers at the branch in
+									minutes — MyKad scan, e-KYC and CTOS pull
+									all happen in one screen, with the loan
+									file ready to go.
+								</p>
+								<ul className="mt-1 space-y-1.5 text-sm text-foreground/80">
+									{[
+										"Counter-friendly customer creation flow",
+										"e-KYC + CTOS inline with the application",
+										"Same-day approval and disbursement",
+									].map((line) => (
+										<li
+											key={line}
+											className="flex items-start gap-2"
+										>
+											<Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+											<span>{line}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+
+						{/* Web — Pro only */}
+						<div className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-md">
+							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
+								<WebOriginationVisual />
+							</div>
+							<div className="flex flex-col gap-3 p-6 sm:p-7">
+								<span className="inline-flex w-fit items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+									<Award className="h-3 w-3" />
+									Pro only
+								</span>
+								<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+									Branded web portal
+								</h3>
+								<p className="text-[15px] leading-relaxed text-muted-foreground">
+									A fully branded origination site at your
+									own domain. Borrowers self-onboard, upload
+									documents, complete e-KYC and sign — every
+									submission lands inside TrueKredit.
+								</p>
+								<ul className="mt-1 space-y-1.5 text-sm text-foreground/80">
+									{[
+										"Your domain, your colours, your logo",
+										"Application + e-KYC + e-sign in one flow",
+										"Leads land directly in the loan pipeline",
+									].map((line) => (
+										<li
+											key={line}
+											className="flex items-start gap-2"
+										>
+											<Check className="mt-0.5 h-4 w-4 shrink-0 text-violet-600" />
+											<span>{line}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+
+						{/* Mobile — Pro only */}
+						<div className="group flex flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-md">
+							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
+								<MobileAppVisual />
+							</div>
+							<div className="flex flex-col gap-3 p-6 sm:p-7">
+								<span className="inline-flex w-fit items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+									<Award className="h-3 w-3" />
+									Pro only
+								</span>
+								<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+									Native iOS &amp; Android apps
+								</h3>
+								<p className="text-[15px] leading-relaxed text-muted-foreground">
+									A borrower app published under your brand.
+									Customers track their loan, pay
+									instalments, complete e-KYC and sign
+									documents — all from their pocket.
+								</p>
+								<ul className="mt-1 space-y-1.5 text-sm text-foreground/80">
+									{[
+										"Live balances and repayment schedule",
+										"In-app e-KYC, e-sign and payments",
+										"Push notifications for due dates",
+									].map((line) => (
+										<li
+											key={line}
+											className="flex items-start gap-2"
+										>
+											<Check className="mt-0.5 h-4 w-4 shrink-0 text-violet-600" />
+											<span>{line}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</motion.div>
+
+					{/* Bottom ribbon — quick edition contrast */}
+					<motion.div
+						className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:p-6"
+						initial={{ opacity: 0, y: 14 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 0.45, delay: 0.15 }}
+					>
+						<div className="flex items-start gap-4">
+							<div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+								<Users className="h-5 w-5 text-primary" />
+							</div>
+							<div>
+								<p className="font-display text-base font-semibold tracking-tight md:text-lg">
+									Pick the channels that match your borrowers.
+								</p>
+								<p className="mt-1 text-sm text-muted-foreground md:text-[15px]">
+									Run a counter-only operation on TrueKredit,
+									or unlock branded web + mobile origination
+									with TrueKredit Pro — same core platform,
+									same loan file, more ways in.
+								</p>
+							</div>
+						</div>
+						<Link
+							href="#pro"
+							className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-700 transition-colors hover:bg-violet-500/15"
+						>
+							Explore Pro origination
+							<ArrowRight className="h-3.5 w-3.5" />
+						</Link>
+					</motion.div>
 				</div>
 			</section>
 

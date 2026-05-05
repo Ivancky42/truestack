@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HomepageHero } from "@/components/sections/homepage-hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { CaseStudies } from "@/components/sections/case-studies";
-import { ComplianceSection } from "@/components/sections/compliance-section";
+// import { ComplianceSection } from "@/components/sections/compliance-section";
 import { WhatWeDo } from "@/components/sections/what-we-do";
 import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { CtaSection } from "@/components/sections/cta-section";
