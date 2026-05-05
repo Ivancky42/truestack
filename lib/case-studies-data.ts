@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
 		quote:
 			"Implementation was completely stress-free — TrueStack handled everything end-to-end, from KPKT licensing to a fully live platform in 3 months. We just focused on our borrowers.",
 		tags: ["TrueKredit", "KPKT Licensed", "Loan Management"],
-		href: "https://proficientpremium.com.my",
+		href: "https://ppsb-eloan.com.my",
 		logo: "/logos/proficient-premium-logo.png",
 		stats: [
 			{ label: "Time to Launch", value: "3 mo" },
