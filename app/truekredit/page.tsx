@@ -44,6 +44,7 @@ import {
 	Banknote,
 	BarChart3,
 	Sparkles,
+	LineChart,
 	Layers,
 	Link2,
 	Smartphone,
@@ -54,6 +55,9 @@ import {
 	Store,
 	MapPin,
 	UserPlus,
+	CalendarDays,
+	Video,
+	HelpCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -123,7 +127,7 @@ type FeatureCardData = {
 	// Choose ONE of four visual modes: custom node, image, images (grid),
 	// or fall back to a designed icon header.
 	visual?: ReactNode;
-	image?: { src: string; alt: string };
+	image?: { src: string; alt: string; width: number; height: number };
 	images?: { src: string; alt: string; label?: string }[];
 	accent?: string;
 	iconColor?: string;
@@ -729,6 +733,149 @@ function DigitalSigningVisual() {
 	);
 }
 
+// ── Digital Attestation (live + scheduled video-call) ──────────────────────
+function AttestationVisual() {
+	const weekLetters = ["S", "M", "T", "W", "T", "F", "S"];
+	// May 2026 starts on Friday → 5 leading blanks, 31 days
+	const cells: (number | null)[] = [
+		...Array.from({ length: 5 }, () => null),
+		...Array.from({ length: 31 }, (_, i) => i + 1),
+	];
+	while (cells.length % 7 !== 0) cells.push(null);
+
+	const dueDays = new Set([7, 14, 21, 28]);
+	const highlighted = new Set([12, 13]);
+
+	const upcoming = [
+		{
+			title: "Live digital attestation",
+			meta: "Counter • Officer Patel — desk",
+			icon: ShieldCheck,
+			iconBg: "bg-emerald-100 text-emerald-600",
+			chip: "Live",
+			chipCls: "bg-emerald-100 text-emerald-700",
+		},
+		{
+			title: "Video-call digital attestation",
+			meta: "Borrower Ahmad • Hosted link • 14:30",
+			icon: Video,
+			iconBg: "bg-violet-100 text-violet-600",
+			chip: "Video",
+			chipCls: "bg-violet-100 text-violet-700",
+		},
+	];
+
+	return (
+		<VisualShell
+			tint="from-rose-500/14 via-orange-500/6 to-rose-500/10"
+			glow="bg-rose-500/22"
+			badges={[
+				{
+					label: "Walk-in live",
+					sub: "Attest now",
+					pos: "left-3 top-4",
+					emphasis: "text-emerald-700",
+				},
+				{
+					label: "Video slots",
+					sub: "Hosted calls",
+					pos: "bottom-4 right-3",
+					emphasis: "text-violet-700",
+				},
+			]}
+		>
+			<div className="relative w-[82%] max-w-[286px] overflow-hidden rounded-2xl border border-border/70 bg-white shadow-xl">
+				<div className="flex items-center justify-between border-b bg-slate-50 px-3.5 py-2">
+					<div className="flex min-w-0 items-center gap-2">
+						<div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-rose-100">
+							<CalendarDays className="h-3 w-3 text-rose-600" />
+						</div>
+						<div className="min-w-0">
+							<p className="truncate text-[10px] font-semibold">
+								Digital Attestation
+							</p>
+							<p className="truncate text-[7px] leading-tight text-muted-foreground">
+								Live + video-call schedule • TK-2401
+							</p>
+						</div>
+					</div>
+					<span className="rounded-full bg-rose-100 px-1.5 py-0.5 text-[8px] font-semibold text-rose-700">
+						May 2026
+					</span>
+				</div>
+				<div className="px-3 py-2.5">
+					<div className="grid grid-cols-7 gap-0.5 text-center">
+						{weekLetters.map((d, i) => (
+							<span
+								key={`${d}-${i}`}
+								className="text-[6.5px] font-semibold uppercase tracking-wide text-muted-foreground"
+							>
+								{d}
+							</span>
+						))}
+						{cells.map((day, idx) =>
+							day === null ? (
+								<span key={`empty-${idx}`} className="h-6" />
+							) : (
+								<span
+									key={day}
+									className={`relative flex h-6 flex-col items-center justify-center rounded text-[9px] font-medium ${
+										highlighted.has(day)
+											? "bg-rose-50 text-rose-800 ring-1 ring-inset ring-rose-200"
+											: dueDays.has(day)
+												? "text-slate-800"
+												: "text-slate-500"
+									}`}
+								>
+									{day}
+									{dueDays.has(day) ? (
+										<span className="absolute bottom-0.5 left-1/2 size-1 -translate-x-1/2 rounded-full bg-amber-400" />
+									) : null}
+								</span>
+							),
+						)}
+					</div>
+				</div>
+				<div className="space-y-1 border-t bg-slate-50/70 px-3 py-2.5">
+					<p className="text-[8px] font-semibold uppercase tracking-wide text-muted-foreground">
+						Scheduled
+					</p>
+					<div className="space-y-1">
+						{upcoming.map((u) => {
+							const RowIcon = u.icon;
+							return (
+								<div
+									key={u.title}
+									className="flex items-center gap-2 rounded-md border border-slate-200/90 bg-white px-2 py-1.5"
+								>
+									<div
+										className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${u.iconBg}`}
+									>
+										<RowIcon className="h-3 w-3" />
+									</div>
+									<div className="min-w-0 flex-1">
+										<p className="truncate text-[9px] font-medium leading-tight">
+											{u.title}
+										</p>
+										<p className="truncate text-[7px] text-muted-foreground">
+											{u.meta}
+										</p>
+									</div>
+									<span
+										className={`shrink-0 rounded-full px-1.5 py-px text-[6px] font-semibold uppercase tracking-wide ${u.chipCls}`}
+									>
+										{u.chip}
+									</span>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			</div>
+		</VisualShell>
+	);
+}
+
 // ── Origination channel visuals (light) ─────────────────────────────────────
 // These three mocks live in the borrower-origination section and intentionally
 // share a soft, "paper" look so the section feels like a calm light breather
@@ -1072,7 +1219,13 @@ function FeatureCard({ item }: { item: FeatureCardData }) {
 			className="group flex w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:w-[440px] md:w-[500px] lg:w-[540px]"
 		>
 			{/* Visual area — squarish, ~62% of card */}
-			<div className="relative aspect-5/4 w-full shrink-0 overflow-hidden bg-muted/40">
+			<div
+				className={
+					item.image
+						? "relative aspect-5/4 w-full shrink-0 overflow-hidden"
+						: "relative aspect-5/4 w-full shrink-0 overflow-hidden bg-muted/40"
+				}
+			>
 				{item.visual ? (
 					<div className="h-full w-full">{item.visual}</div>
 				) : item.images ? (
@@ -1098,13 +1251,20 @@ function FeatureCard({ item }: { item: FeatureCardData }) {
 						))}
 					</div>
 				) : item.image ? (
-					<Image
-						src={item.image.src}
-						alt={item.image.alt}
-						fill
-						sizes="(min-width: 1024px) 540px, (min-width: 768px) 500px, (min-width: 640px) 440px, 340px"
-						className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-					/>
+					<div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-linear-to-br from-primary/10 via-primary/5 to-violet-500/10">
+						<div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-3xl md:h-56 md:w-56" />
+						<div className="relative z-1 flex h-full max-h-full w-full max-w-full items-center justify-center px-6 py-8 sm:px-7 sm:py-10">
+							<Image
+								src={item.image.src}
+								alt={item.image.alt}
+								width={item.image.width}
+								height={item.image.height}
+								sizes="(min-width: 1024px) 480px, (min-width: 768px) 420px, (min-width: 640px) 360px, 300px"
+								className="h-auto max-h-full w-auto max-w-full rounded-3xl object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+								style={{ width: "auto", height: "auto" }}
+							/>
+						</div>
+					</div>
 				) : (
 					<div
 						className={`flex h-full w-full items-center justify-center ${iconBg}`}
@@ -1487,8 +1647,12 @@ export default function TrueKreditPage() {
 								transition={{ duration: 0.6, delay: 0.25 }}
 							>
 								<Button asChild size="lg" className="gap-2">
-									<Link href="#demo">
-										Book a Demo
+									<Link
+										href="https://kredit.truestack.my/"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Get started with TrueKredit
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -1498,8 +1662,8 @@ export default function TrueKreditPage() {
 									size="lg"
 									className="gap-2 border-violet-300 bg-violet-500/5 text-violet-700 hover:bg-violet-500/10 hover:text-violet-800"
 								>
-									<Link href="#pro">
-										Explore TrueKredit Pro
+									<Link href="/contact?subject=TrueKredit%20Pro">
+										Talk to us about Pro
 										<ChevronRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -1704,10 +1868,10 @@ export default function TrueKreditPage() {
 								packaging.
 							</p>
 							<Link
-								href="#pro"
+								href="/contact?subject=TrueKredit%20Pro"
 								className="inline-flex items-center gap-1 text-sm font-medium text-violet-700 hover:underline"
 							>
-								Explore Pro{" "}
+								Talk to us about Pro{" "}
 								<ArrowRight className="h-3.5 w-3.5" />
 							</Link>
 						</div>
@@ -1791,6 +1955,8 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/borrower_details_screenshot.png",
 									alt: "Borrower details",
+									width: 2120,
+									height: 1322,
 								},
 							},
 							{
@@ -1800,6 +1966,8 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/loan_summary_screenshot.png",
 									alt: "Loan summary",
+									width: 2360,
+									height: 2362,
 								},
 							},
 							{
@@ -1809,6 +1977,8 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/edit_product_screenshot.png",
 									alt: "Edit product",
+									width: 2360,
+									height: 2362,
 								},
 							},
 							{
@@ -1818,15 +1988,19 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/repayment_schedule_screenshot.png",
 									alt: "Repayment schedule",
+									width: 1806,
+									height: 1288,
 								},
 							},
 							{
 								icon: History,
-								title: "Early settlement engine",
-								desc: "Reward early payoff with discounts on remaining interest. Configure lock-in periods and waive late fees.",
+								title: "Settlement engine",
+								desc: "Early-settlement quotes with discounted interest, lock-ins and late-fee rules — record settlement payments, optional approval, then post with a full audit trail.",
 								image: {
 									src: "/truekredit/early_settlement_screenshot.png",
 									alt: "Early settlement",
+									width: 2360,
+									height: 2362,
 								},
 							},
 							{
@@ -1839,6 +2013,8 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/late_summary_screenshot.png",
 									alt: "Late payment summary",
+									width: 1778,
+									height: 1220,
 								},
 							},
 							{
@@ -1851,6 +2027,19 @@ export default function TrueKreditPage() {
 								image: {
 									src: "/truekredit/rba_screenshot.png",
 									alt: "Role-based access controls",
+									width: 2360,
+									height: 2362,
+								},
+							},
+							{
+								icon: LineChart,
+								title: "Borrower & book analytics",
+								desc: "See each borrower’s repayments versus what’s due, balances and arrears risk next to disbursement trends, loan-status mix and PAR — one concise dashboard.",
+								image: {
+									src: "/truekredit/analytics_screenshot.png",
+									alt: "TrueKredit analytics dashboard",
+									width: 2126,
+									height: 1566,
 								},
 							},
 							{
@@ -1886,7 +2075,7 @@ export default function TrueKreditPage() {
 					<FeatureCarousel
 						eyebrow="Connected Modules"
 						title="Modules that make everything work as one"
-						description="Identity, credit, company checks, comms, and intelligence — first-party modules and pre-wired partners that live inside the loan file, not across five portals."
+						description="Identity, credit, company checks, digital attestation and video-call scheduling, comms, and intelligence — first-party modules and pre-wired partners that live inside the loan file, not across five portals."
 						items={[
 							{
 								icon: Fingerprint,
@@ -1894,6 +2083,13 @@ export default function TrueKreditPage() {
 								desc: "QR-based borrower verification with IC OCR and face-liveness. Pass or fail saved straight into the loan file.",
 								tag: "First-party",
 								visual: <TrueIdentityVisual />,
+							},
+							{
+								icon: CalendarDays,
+								title: "Digital Attestation — live & video",
+								desc: "Live at the counter or on scheduled video calls — shared calendar, borrower invites and reminders, all recorded on the loan file.",
+								tag: "First-party",
+								visual: <AttestationVisual />,
 							},
 							{
 								icon: Mail,
@@ -1939,7 +2135,10 @@ export default function TrueKreditPage() {
           the dark infrastructure block. Contrasts how each edition reaches
           borrowers: TrueKredit is walk-in only; Pro adds branded web and
           native mobile apps so customers come to you 24/7. */}
-			<section id="origination" className="border-t bg-background py-20 md:py-24">
+			<section
+				id="origination"
+				className="border-t bg-background py-20 md:py-24"
+			>
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 					<motion.div
 						className="mx-auto max-w-3xl text-center"
@@ -1997,8 +2196,8 @@ export default function TrueKreditPage() {
 								<p className="text-[15px] leading-relaxed text-muted-foreground">
 									Officers add new customers at the branch in
 									minutes — MyKad scan, e-KYC and CTOS pull
-									all happen in one screen, with the loan
-									file ready to go.
+									all happen in one screen, with the loan file
+									ready to go.
 								</p>
 								<ul className="mt-1 space-y-1.5 text-sm text-foreground/80">
 									{[
@@ -2032,8 +2231,8 @@ export default function TrueKreditPage() {
 									Branded web portal
 								</h3>
 								<p className="text-[15px] leading-relaxed text-muted-foreground">
-									A fully branded origination site at your
-									own domain. Borrowers self-onboard, upload
+									A fully branded origination site at your own
+									domain. Borrowers self-onboard, upload
 									documents, complete e-KYC and sign — every
 									submission lands inside TrueKredit.
 								</p>
@@ -2070,9 +2269,9 @@ export default function TrueKreditPage() {
 								</h3>
 								<p className="text-[15px] leading-relaxed text-muted-foreground">
 									A borrower app published under your brand.
-									Customers track their loan, pay
-									instalments, complete e-KYC and sign
-									documents — all from their pocket.
+									Customers track their loan, pay instalments,
+									complete e-KYC and sign documents — all from
+									their pocket.
 								</p>
 								<ul className="mt-1 space-y-1.5 text-sm text-foreground/80">
 									{[
@@ -2118,10 +2317,10 @@ export default function TrueKreditPage() {
 							</div>
 						</div>
 						<Link
-							href="#pro"
+							href="/contact?subject=TrueKredit%20Pro"
 							className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-700 transition-colors hover:bg-violet-500/15"
 						>
-							Explore Pro origination
+							Talk to us about Pro origination
 							<ArrowRight className="h-3.5 w-3.5" />
 						</Link>
 					</motion.div>
@@ -2145,7 +2344,7 @@ export default function TrueKreditPage() {
 					>
 						<SectionBadge
 							icon={ShieldCheck}
-							text="Your Data is Safe"
+							text="Lend with confidence"
 							className="[&>svg]:text-primary [&>span]:text-primary"
 						/>
 						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
@@ -2455,7 +2654,7 @@ export default function TrueKreditPage() {
 					</div>
 
 					{/* Data Preservation Promise */}
-					<motion.div
+					{/* <motion.div
 						className="mt-12 rounded-2xl border border-primary/30 bg-primary/10 p-8 text-center"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -2467,7 +2666,7 @@ export default function TrueKreditPage() {
 							subscribe. Access your complete loan history
 							anytime.
 						</p>
-					</motion.div>
+					</motion.div> */}
 				</div>
 			</section>
 
@@ -2755,8 +2954,8 @@ export default function TrueKreditPage() {
 						</h2>
 						<p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
 							Both editions share the full KPKT-aligned core. Pro
-							adds borrower channels, on-prem signing, and a
-							dedicated environment.
+							adds borrower channels, digital attestation, on-prem
+							signing, and a dedicated environment.
 						</p>
 					</motion.div>
 
@@ -2819,6 +3018,7 @@ export default function TrueKreditPage() {
 												"iDeaL system export for KPKT submissions",
 												"Walk-in borrower origination (counter / branch)",
 												"Daily automated backups",
+												"Borrower & portfolio analytics — dues, trends & PAR",
 											].map((row) => (
 												<tr
 													key={row}
@@ -2845,6 +3045,7 @@ export default function TrueKreditPage() {
 											</tr>
 											{[
 												"Digital signing — on-prem Trustgate server",
+												"Digital Attestation — live & video scheduling",
 												"Borrower web origination portal (branded)",
 												"Borrower mobile app — iOS & Android (native)",
 												"Branded marketing website",
@@ -2906,25 +3107,63 @@ export default function TrueKreditPage() {
 					>
 						<div className="grid divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
 							{[
-								{ name: "CTOS", desc: "Credit reporting" },
+								{
+									name: "CTOS",
+									desc: "Credit reporting",
+									logoSrc:
+										"/truekredit/integrations/ctos-logo.png",
+									// Official PNG is white-on-transparent (for dark headers); darken for light UI.
+									logoClassName:
+										"[filter:brightness(0)] dark:[filter:none]",
+								},
 								{
 									name: "Trustgate",
-									desc: "PKI signing (MTSA)",
+									desc: "PKI signing",
+									logoSrc:
+										"/truekredit/integrations/trustgate-logo.png",
 								},
 								{
 									name: "Infomina",
 									desc: "SSM company checks",
+									logoSrc:
+										"/truekredit/integrations/ssmsearch-logo.webp",
 								},
-								{ name: "e-KYC", desc: "MyKad + biometric" },
 								{
-									name: "Payment",
-									desc: "Gateway integration",
+									name: "TrueIdentity™",
+									desc: "e-KYC",
+									logoSrc: "/truestack-logo-transparent.svg",
+								},
+								{
+									name: "GKash",
+									desc: "Payment gateway",
+									logoSrc:
+										"/truekredit/integrations/gkash-logo.png",
 								},
 							].map((p) => (
 								<div
 									key={p.name}
-									className="px-6 py-6 text-center"
+									className="flex flex-col items-center px-6 py-6 text-center"
 								>
+									<div className="relative mb-4 h-10 w-38">
+										<Image
+											src={p.logoSrc}
+											alt={
+												p.name === "e-KYC"
+													? "TrueStack e-KYC"
+													: p.name === "Infomina"
+														? "SSM Search logo"
+														: `${p.name} logo`
+											}
+											fill
+											className={`object-contain${
+												"logoClassName" in p &&
+												p.logoClassName
+													? ` ${p.logoClassName}`
+													: ""
+											}`}
+											sizes="152px"
+										/>
+									</div>
 									<div className="font-display text-xl font-semibold tracking-tight text-foreground">
 										{p.name}
 									</div>
@@ -2946,7 +3185,7 @@ export default function TrueKreditPage() {
 							{
 								icon: BarChart3,
 								title: "Better partner rates",
-								desc: "Our volume and partnerships unlock pricing you can't reach by going direct — especially on payment and e-KYC.",
+								desc: "Our volume and partnerships unlock pricing you can't reach by going direct.",
 							},
 							{
 								icon: Briefcase,
@@ -3065,26 +3304,36 @@ export default function TrueKreditPage() {
 			</section>
 
 			{/* FAQ Section */}
-			<section id="faq" className="border-t bg-muted/30 py-20">
-				<div className="mx-auto max-w-6xl px-6">
+			<section id="faq" className="border-t bg-muted/30 py-20 md:py-24">
+				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 					<motion.div
-						className="mb-12 text-center"
+						className="mx-auto mb-10 max-w-3xl text-center sm:mb-12"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, margin: "-50px" }}
 						transition={{ duration: 0.5 }}
 					>
+						<SectionBadge
+							icon={HelpCircle}
+							text="FAQ"
+							className="justify-center"
+						/>
 						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-							Frequently Asked Questions
+							Frequently asked questions
 						</h2>
+						<p className="mx-auto mt-3 text-base text-muted-foreground md:text-lg">
+							Quick answers on what you get on either plan—and
+							what Pro unlocks—plus pointers back to the
+							comparison table above when you want the checklist.
+						</p>
 					</motion.div>
 
 					<motion.div
-						className="mx-auto max-w-2xl"
+						className="w-full max-w-none"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5, delay: 0.2 }}
+						transition={{ duration: 0.5, delay: 0.08 }}
 					>
 						<Accordion type="single" collapsible className="w-full">
 							{truekreditFaq.map((faq, index) => (
@@ -3092,10 +3341,10 @@ export default function TrueKreditPage() {
 									key={index}
 									value={`item-${index}`}
 								>
-									<AccordionTrigger className="text-left text-base font-medium md:text-lg">
+									<AccordionTrigger className="py-5 text-left text-base font-medium md:text-lg data-[state=open]:text-foreground">
 										{faq.question}
 									</AccordionTrigger>
-									<AccordionContent className="text-muted-foreground text-base md:text-lg">
+									<AccordionContent className="text-base leading-relaxed text-muted-foreground md:text-lg">
 										{faq.answer}
 									</AccordionContent>
 								</AccordionItem>
@@ -3105,9 +3354,9 @@ export default function TrueKreditPage() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
+			{/* Bottom CTA band */}
 			<section
-				id="demo"
+				id="cta"
 				data-nav-theme="dark"
 				className="relative overflow-hidden border-t border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 py-24 text-white"
 			>
@@ -3118,13 +3367,13 @@ export default function TrueKreditPage() {
 				<div className="relative mx-auto max-w-6xl px-6 text-center">
 					<h2 className="mx-auto mb-4 max-w-3xl font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
 						<span className="bg-linear-to-r from-indigo-200 via-violet-200 to-purple-200 bg-clip-text text-transparent">
-							Ready to consolidate your stack?
+							Ready to supercharge your lending?
 						</span>
 					</h2>
 					<p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 md:text-xl">
-						We&apos;ll show you TrueKredit in action — and walk you
-						through whether SaaS or Pro fits your licence, your
-						borrowers, and your roadmap.
+						Get started with TrueKredit on Core when you&apos;re
+						ready—or reach out if you want to discuss TrueKredit Pro
+						for your licence, borrowers, and roadmap.
 					</p>
 					<div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
 						<Button
@@ -3132,8 +3381,12 @@ export default function TrueKreditPage() {
 							size="lg"
 							className="gap-2 bg-linear-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600"
 						>
-							<Link href="/contact">
-								Book a demo
+							<Link
+								href="https://kredit.truestack.my/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Get started with TrueKredit
 								<ArrowRight className="h-4 w-4" />
 							</Link>
 						</Button>
@@ -3141,10 +3394,11 @@ export default function TrueKreditPage() {
 							asChild
 							variant="outline"
 							size="lg"
-							className="gap-2 border-violet-400/30 bg-white/4 text-white hover:bg-white/8 hover:text-white"
+							className="gap-2 border-violet-300 bg-violet-500/5 text-violet-200 hover:bg-violet-500/10 hover:text-white"
 						>
-							<Link href="#compare">
-								Compare TrueKredit vs Pro
+							<Link href="/contact?subject=TrueKredit%20Pro">
+								Talk to us about Pro
+								<ChevronRight className="h-4 w-4" />
 							</Link>
 						</Button>
 						<Button
