@@ -15,9 +15,9 @@ export const truekreditFaq = [
       "No. All PDFs (receipts, reminder letters, default notices, discharge letters) are generated automatically regardless of whether you subscribe to Truesend™. Truesend™ only automates the sending of these documents.",
   },
   {
-    question: "How does the 500-loan pricing block work?",
+    question: "What integrations come pre-built?",
     answer:
-      "The Core Plan includes up to 500 loans. If you exceed 500, you simply add another block of 500 loans for RM 200/month. This scales efficiently as your business grows.",
+      "TrueKredit ships with CTOS credit reports, MSC Trustgate digital signing, Infomina SSM company lookups, TrueIdentity e-KYC, Truesend automated comms, and Malaysian payment gateways pre-wired into the loan workflow. You don't pay separate integration fees, and our partner volume unlocks better rates than going direct.",
   },
   {
     question: "Is our data safe and preserved if we subscribe long-term?",

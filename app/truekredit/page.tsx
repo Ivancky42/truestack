@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { truekreditFaq } from "@/lib/truekredit-faq";
+import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
   Check,
@@ -23,6 +24,8 @@ import {
   AlertTriangle,
   Users,
   Fingerprint,
+  ScanFace,
+  CheckCircle2,
   Mail,
   Building2,
   ChevronRight,
@@ -35,6 +38,13 @@ import {
   Banknote,
   BarChart3,
   Sparkles,
+  Layers,
+  Link2,
+  Smartphone,
+  Globe,
+  PenLine,
+  Briefcase,
+  Award,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -45,15 +55,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionBadge } from "@/components/shared/section-badge";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
 // Grid Pattern Background Component
 function GridPattern() {
   return (
@@ -96,202 +97,638 @@ function GridPattern() {
   );
 }
 
-// Screenshot Display Component with browser mockup frame
-function ScreenshotDisplay({
-  src,
-  alt,
-  className,
+// Apple-style horizontal feature carousel with peek-overflow + snap scroll.
+// Each card pairs a visual (screenshot, image grid, or designed icon header)
+// with title + description copy below. Cards are large with a near-square
+// visual area on top. Includes prev/next controls (md+) plus native swipe.
+type FeatureCardData = {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  // Choose ONE of four visual modes: custom node, image, images (grid),
+  // or fall back to a designed icon header.
+  visual?: ReactNode;
+  image?: { src: string; alt: string };
+  images?: { src: string; alt: string; label?: string }[];
+  accent?: string;
+  iconColor?: string;
+  iconBg?: string;
+  tag?: string;
+};
+
+// Shared shell for all in-card module visuals: tinted gradient bg with a
+// soft glow blob behind the mock, plus optional floating stat badges.
+type ShellBadge = {
+  label: string;
+  sub: string;
+  pos: string; // tailwind position classes, e.g. "left-3 top-4"
+  emphasis?: string; // text color class for the headline label
+};
+
+function VisualShell({
+  tint,
+  glow,
+  badges,
+  children,
 }: {
-  src: string;
-  alt: string;
-  className?: string;
+  tint: string;
+  glow: string;
+  badges?: ShellBadge[];
+  children: ReactNode;
 }) {
   return (
-    <div className={`relative ${className}`}>
-      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">
-        {/* Browser header */}
-        <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
-          <div className="flex gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-400" />
-            <div className="h-3 w-3 rounded-full bg-yellow-400" />
-            <div className="h-3 w-3 rounded-full bg-green-400" />
+    <div
+      className={`relative flex h-full w-full items-center justify-center overflow-hidden bg-linear-to-br ${tint} px-6 py-5`}
+    >
+      <div
+        className={`absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full ${glow} blur-3xl`}
+      />
+      {children}
+      {badges?.map((b) => (
+        <div
+          key={b.label + b.pos}
+          className={`absolute ${b.pos} hidden rounded-md border bg-white px-2 py-1 shadow-sm sm:block`}
+        >
+          <p
+            className={`text-[9px] font-semibold leading-tight ${b.emphasis ?? "text-foreground"}`}
+          >
+            {b.label}
+          </p>
+          <p className="text-[7px] leading-tight text-muted-foreground">{b.sub}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Phone-frame chrome reused by phone-style mocks.
+function PhoneChrome({ children }: { children: ReactNode }) {
+  return (
+    <div className="relative w-[78%] max-w-[260px] overflow-hidden rounded-[1.4rem] border border-border/70 bg-white shadow-xl">
+      <div className="flex items-center justify-between bg-slate-50 px-4 py-1.5">
+        <span className="text-[9px] font-medium text-slate-400">9:41</span>
+        <div className="mx-auto h-3.5 w-14 rounded-full bg-slate-900" />
+        <div className="flex gap-1">
+          <div className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+          <div className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+        </div>
+      </div>
+      <div className="px-3 pb-3 pt-3">{children}</div>
+    </div>
+  );
+}
+
+// ── TrueIdentity ────────────────────────────────────────────────────────────
+function TrueIdentityVisual() {
+  const steps: {
+    icon: LucideIcon;
+    label: string;
+    sub: string;
+    color: string;
+    bg: string;
+    border: string;
+  }[] = [
+    { icon: FileCheck, label: "Scan MyKad", sub: "OCR extraction", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200" },
+    { icon: ScanFace, label: "Selfie + liveness", sub: "Face capture", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-200" },
+    { icon: Fingerprint, label: "Biometric match", sub: "Compared to IC", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-200" },
+    { icon: CheckCircle2, label: "Verified", sub: "Saved to loan file", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
+  ];
+
+  return (
+    <VisualShell
+      tint="from-primary/10 via-primary/5 to-violet-500/10"
+      glow="bg-primary/15"
+      badges={[
+        { label: "<3s", sub: "Verification", pos: "left-3 top-4" },
+        { label: "PDPA", sub: "Compliant", pos: "bottom-4 right-3", emphasis: "text-primary" },
+      ]}
+    >
+      <PhoneChrome>
+        <div className="mb-3 text-center">
+          <div className="mx-auto mb-1.5 flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+            <Fingerprint className="h-3.5 w-3.5 text-primary" />
           </div>
-          <div className="ml-4 flex-1 rounded-md bg-slate-100 px-3 py-1 text-xs text-slate-400">
-            kredit.truestack.my
+          <p className="text-[10px] font-semibold text-foreground">Identity Verification</p>
+          <p className="text-[8px] text-muted-foreground">Powered by TrueIdentity™</p>
+        </div>
+        <div className="space-y-1.5">
+          {steps.map((s, i) => {
+            const Icon = s.icon;
+            const isLast = i === steps.length - 1;
+            return (
+              <div
+                key={s.label}
+                className={`flex items-center gap-2 rounded-md border ${s.border} bg-white px-2 py-1.5`}
+              >
+                <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded ${s.bg}`}>
+                  <Icon className={`h-3 w-3 ${s.color}`} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-[10px] font-medium leading-tight text-foreground">{s.label}</p>
+                  <p className="truncate text-[8px] leading-tight text-muted-foreground">{s.sub}</p>
+                </div>
+                {isLast ? (
+                  <CheckCircle2 className="h-3 w-3 text-emerald-500" />
+                ) : (
+                  <Check className="h-2.5 w-2.5 text-primary" />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </PhoneChrome>
+    </VisualShell>
+  );
+}
+
+// ── Truesend ────────────────────────────────────────────────────────────────
+function TruesendVisual() {
+  const messages = [
+    {
+      tag: "Receipt",
+      meta: "Email • 09:14",
+      text: "Payment of RM 750 received",
+      icon: Receipt,
+      border: "border-emerald-200",
+      chip: "bg-emerald-100 text-emerald-700",
+      iconBg: "bg-emerald-50",
+      iconColor: "text-emerald-600",
+    },
+    {
+      tag: "Reminder",
+      meta: "WhatsApp • 08:00",
+      text: "Instalment due in 3 days",
+      icon: Clock,
+      border: "border-sky-200",
+      chip: "bg-sky-100 text-sky-700",
+      iconBg: "bg-sky-50",
+      iconColor: "text-sky-600",
+    },
+    {
+      tag: "Default notice",
+      meta: "Email • 07:45",
+      text: "Account in arrears since 12 Apr",
+      icon: AlertTriangle,
+      border: "border-amber-200",
+      chip: "bg-amber-100 text-amber-700",
+      iconBg: "bg-amber-50",
+      iconColor: "text-amber-600",
+    },
+  ];
+
+  return (
+    <VisualShell
+      tint="from-sky-500/15 via-cyan-500/5 to-sky-500/10"
+      glow="bg-sky-500/20"
+      badges={[
+        { label: "12 today", sub: "Auto-sent", pos: "left-3 top-4" },
+        { label: "18", sub: "Templates", pos: "bottom-4 right-3", emphasis: "text-sky-600" },
+      ]}
+    >
+      <PhoneChrome>
+        <div className="mb-2.5 flex items-center gap-2">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-100">
+            <Mail className="h-3.5 w-3.5 text-sky-600" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-[10px] font-semibold leading-tight">Truesend™ Outbox</p>
+            <p className="text-[8px] leading-tight text-muted-foreground">Auto-sent today</p>
+          </div>
+          <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[8px] font-semibold text-emerald-700">
+            Live
+          </span>
+        </div>
+        <div className="space-y-1.5">
+          {messages.map((m) => {
+            const Icon = m.icon;
+            return (
+              <div
+                key={m.tag}
+                className={`flex items-center gap-2 rounded-md border ${m.border} bg-white px-2 py-1.5`}
+              >
+                <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded ${m.iconBg}`}>
+                  <Icon className={`h-3 w-3 ${m.iconColor}`} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1">
+                    <span className={`rounded px-1 py-px text-[7px] font-semibold uppercase tracking-wide ${m.chip}`}>
+                      {m.tag}
+                    </span>
+                    <p className="truncate text-[7px] text-muted-foreground">{m.meta}</p>
+                  </div>
+                  <p className="mt-0.5 truncate text-[9px] leading-tight text-foreground">{m.text}</p>
+                </div>
+                <Check className="h-3 w-3 text-emerald-500" />
+              </div>
+            );
+          })}
+        </div>
+      </PhoneChrome>
+    </VisualShell>
+  );
+}
+
+// ── CTOS ────────────────────────────────────────────────────────────────────
+function CTOSVisual() {
+  return (
+    <VisualShell
+      tint="from-amber-500/15 via-orange-500/5 to-amber-500/10"
+      glow="bg-amber-500/20"
+      badges={[
+        { label: "Pulled 09:14", sub: "In loan file", pos: "left-3 top-4" },
+        { label: "Audit ✓", sub: "Logged", pos: "bottom-4 right-3", emphasis: "text-emerald-600" },
+      ]}
+    >
+      <div className="relative w-[80%] max-w-[280px] overflow-hidden rounded-2xl border border-border/70 bg-white shadow-xl">
+        <div className="flex items-center justify-between border-b bg-slate-50 px-4 py-2.5">
+          <div className="flex items-center gap-2">
+            <div className="flex h-6 w-6 items-center justify-center rounded bg-amber-100">
+              <BarChart3 className="h-3 w-3 text-amber-600" />
+            </div>
+            <p className="text-[10px] font-semibold">Credit Report</p>
+          </div>
+          <span className="text-[8px] font-semibold uppercase tracking-wide text-amber-700">CTOS</span>
+        </div>
+        <div className="px-4 py-3">
+          <p className="text-[8px] uppercase tracking-wide text-muted-foreground">Credit Score</p>
+          <div className="mt-0.5 flex items-baseline gap-2">
+            <span className="font-display text-3xl font-bold text-amber-600">720</span>
+            <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[9px] font-semibold text-emerald-700">
+              Good
+            </span>
+          </div>
+          <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100">
+            <div className="h-full w-[72%] rounded-full bg-linear-to-r from-amber-400 to-emerald-400" />
+          </div>
+          <div className="mt-0.5 flex justify-between text-[7px] text-muted-foreground">
+            <span>300</span>
+            <span>850</span>
           </div>
         </div>
-        {/* Screenshot */}
-        <Image
-          src={src}
-          alt={alt}
-          width={800}
-          height={600}
-          className="w-full"
-          priority
-        />
+        <div className="grid grid-cols-3 gap-1.5 border-t bg-slate-50/60 px-3 py-2.5">
+          {[
+            { value: "3", label: "Active", color: "text-sky-600" },
+            { value: "96%", label: "On-time", color: "text-emerald-600" },
+            { value: "0", label: "Defaulted", color: "text-rose-600" },
+          ].map((s) => (
+            <div key={s.label} className="rounded-md bg-white p-1.5 text-center">
+              <p className={`text-[11px] font-bold ${s.color}`}>{s.value}</p>
+              <p className="text-[7px] uppercase tracking-wide text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </VisualShell>
+  );
+}
+
+// ── SSM (Infomina) ──────────────────────────────────────────────────────────
+function SSMVisual() {
+  const directors = [
+    { name: "Lim Wei Ming", role: "Director • 51%", initials: "LW" },
+    { name: "Tan Siew Ling", role: "Director • 49%", initials: "TS" },
+  ];
+  return (
+    <VisualShell
+      tint="from-emerald-500/15 via-teal-500/5 to-emerald-500/10"
+      glow="bg-emerald-500/20"
+      badges={[
+        { label: "via Infomina", sub: "SSM lookup", pos: "left-3 top-4", emphasis: "text-emerald-700" },
+        { label: "Active", sub: "Status", pos: "bottom-4 right-3", emphasis: "text-emerald-600" },
+      ]}
+    >
+      <div className="relative w-[80%] max-w-[280px] overflow-hidden rounded-2xl border border-border/70 bg-white shadow-xl">
+        <div className="border-b bg-slate-50 px-4 py-2.5">
+          <div className="flex items-center gap-2">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
+              <Building2 className="h-3.5 w-3.5 text-emerald-600" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-[10px] font-semibold uppercase tracking-tight">
+                Acme Enterprise Sdn Bhd
+              </p>
+              <p className="text-[7px] text-muted-foreground">202401012345 (1234567-X)</p>
+            </div>
+            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+          </div>
+        </div>
+        <div className="px-4 py-3">
+          <p className="mb-1.5 text-[8px] font-semibold uppercase tracking-wide text-muted-foreground">
+            Directors & shareholders
+          </p>
+          <div className="space-y-1.5">
+            {directors.map((d) => (
+              <div
+                key={d.name}
+                className="flex items-center gap-2 rounded-md border border-emerald-100 bg-emerald-50/50 px-2 py-1.5"
+              >
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-emerald-400 to-teal-500 text-[8px] font-bold text-white">
+                  {d.initials}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-[9px] font-medium leading-tight">{d.name}</p>
+                  <p className="text-[7px] leading-tight text-muted-foreground">{d.role}</p>
+                </div>
+                <Check className="h-3 w-3 text-emerald-500" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </VisualShell>
+  );
+}
+
+// ── TrueSight ───────────────────────────────────────────────────────────────
+function TrueSightVisual() {
+  return (
+    <VisualShell
+      tint="from-violet-500/15 via-fuchsia-500/5 to-indigo-500/10"
+      glow="bg-violet-500/20"
+      badges={[
+        { label: "6 lenders", sub: "Network match", pos: "left-3 top-4", emphasis: "text-violet-700" },
+        { label: "On-time 96%", sub: "Performance", pos: "bottom-4 right-3", emphasis: "text-emerald-600" },
+      ]}
+    >
+      <div className="relative w-[82%] max-w-[290px] overflow-hidden rounded-2xl border border-border/70 bg-white shadow-xl">
+        <div className="flex items-center justify-between border-b bg-slate-50 px-4 py-2.5">
+          <div className="flex items-center gap-2">
+            <div className="flex h-6 w-6 items-center justify-center rounded bg-violet-100">
+              <Sparkles className="h-3 w-3 text-violet-600" />
+            </div>
+            <p className="text-[10px] font-semibold">Borrower 360°</p>
+          </div>
+          <span className="rounded-full bg-violet-100 px-1.5 py-0.5 text-[8px] font-semibold text-violet-700">
+            TrueSight™
+          </span>
+        </div>
+        <div className="grid grid-cols-3 gap-1.5 px-3 py-3">
+          {[
+            { value: "3", label: "Active", color: "text-sky-600" },
+            { value: "8", label: "Completed", color: "text-emerald-600" },
+            { value: "0", label: "Defaulted", color: "text-rose-600" },
+          ].map((s) => (
+            <div
+              key={s.label}
+              className="rounded-lg border border-slate-100 bg-slate-50/70 p-2 text-center"
+            >
+              <p className={`text-base font-bold ${s.color}`}>{s.value}</p>
+              <p className="text-[7px] uppercase tracking-wide text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="border-t bg-slate-50/50 px-4 py-2.5">
+          <div className="flex items-center justify-between">
+            <p className="text-[8px] font-semibold uppercase tracking-wide text-muted-foreground">
+              On-time payments
+            </p>
+            <p className="text-[9px] font-bold text-emerald-600">96%</p>
+          </div>
+          <div className="mt-1 flex gap-0.5">
+            {Array.from({ length: 18 }).map((_, i) => (
+              <div
+                key={i}
+                className={`h-3 flex-1 rounded-sm ${
+                  i === 4 || i === 11 ? "bg-amber-300" : "bg-emerald-400"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </VisualShell>
+  );
+}
+
+// ── On-prem digital signing (Trustgate) ─────────────────────────────────────
+function DigitalSigningVisual() {
+  return (
+    <VisualShell
+      tint="from-indigo-500/15 via-blue-500/5 to-indigo-500/10"
+      glow="bg-indigo-500/20"
+      badges={[
+        { label: "PKI", sub: "Trustgate", pos: "left-3 top-4", emphasis: "text-indigo-600" },
+        { label: "On-prem", sub: "Your servers", pos: "bottom-4 right-3", emphasis: "text-indigo-700" },
+      ]}
+    >
+      <div className="relative w-[72%] max-w-[240px] overflow-hidden rounded-lg border border-border/70 bg-white shadow-xl">
+        <div className="flex items-center gap-1.5 border-b bg-slate-50 px-3 py-1.5">
+          <FileText className="h-3 w-3 text-indigo-600" />
+          <p className="text-[9px] font-semibold">Loan Agreement.pdf</p>
+        </div>
+        <div className="px-4 py-3">
+          <p className="text-center text-[10px] font-bold uppercase tracking-wide">
+            Loan Agreement
+          </p>
+          <p className="mt-0.5 text-center text-[7px] text-muted-foreground">
+            Akta Pemberi Pinjam Wang 1951
+          </p>
+          <div className="mt-2.5 space-y-1">
+            {[100, 92, 88, 95, 70].map((w, i) => (
+              <div
+                key={i}
+                className="h-1 rounded-full bg-slate-100"
+                style={{ width: `${w}%` }}
+              />
+            ))}
+          </div>
+          <div className="mt-3 rounded-md border-2 border-dashed border-indigo-200 bg-indigo-50/50 p-2">
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-100">
+                <PenLine className="h-3.5 w-3.5 text-indigo-600" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-[9px] font-semibold leading-tight">Digitally signed</p>
+                <p className="text-[7px] leading-tight text-muted-foreground">
+                  by Borrower • 12 May 2026
+                </p>
+              </div>
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+            </div>
+          </div>
+          <div className="mt-2 flex items-center justify-end gap-1">
+            <ShieldCheck className="h-3 w-3 text-indigo-600" />
+            <p className="text-[7px] font-semibold uppercase tracking-wide text-indigo-700">
+              MSC Trustgate verified
+            </p>
+          </div>
+        </div>
+      </div>
+    </VisualShell>
+  );
+}
+
+function FeatureCarousel({
+  eyebrow,
+  title,
+  description,
+  items,
+}: {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: FeatureCardData[];
+}) {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const updateButtons = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 8);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 8);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateButtons();
+    el.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons);
+    return () => {
+      el.removeEventListener("scroll", updateButtons);
+      window.removeEventListener("resize", updateButtons);
+    };
+  }, [updateButtons]);
+
+  const scrollByPage = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-carousel-item]");
+    const cardWidth = card?.offsetWidth ?? 320;
+    const gap = 16;
+    el.scrollBy({ left: dir * (cardWidth + gap), behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      {/* Section-style centered header. Title is centered and stays
+          perfectly centered; the prev/next buttons live at the bottom-right
+          of the same header block on md+. */}
+      <div className="relative mx-auto mb-8 max-w-6xl px-5 sm:mb-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          {eyebrow && (
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+              {eyebrow}
+            </p>
+          )}
+          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+          {description && (
+            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+              {description}
+            </p>
+          )}
+        </div>
+
+        {/* Prev/Next pinned to the right side (md+) */}
+        <div className="absolute bottom-0 right-5 hidden gap-2 sm:right-6 md:flex lg:right-8">
+          <button
+            type="button"
+            onClick={() => scrollByPage(-1)}
+            disabled={!canPrev}
+            className="flex h-10 w-10 items-center justify-center rounded-full border bg-background text-foreground transition-all hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByPage(1)}
+            disabled={!canNext}
+            className="flex h-10 w-10 items-center justify-center rounded-full border bg-background text-foreground transition-all hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Scroller — scroll-pl ensures snap respects the left padding so the
+          first card stays inset (doesn't snap back to the edge after
+          interaction). pr keeps matching breathing room after the last card. */}
+      <div
+        ref={scrollerRef}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-6 pl-5 pr-5 scroll-pl-5 sm:gap-5 sm:pl-6 sm:pr-6 sm:scroll-pl-6 lg:pl-8 lg:pr-8 lg:scroll-pl-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {items.map((item, i) => (
+          <FeatureCard key={i} item={item} />
+        ))}
       </div>
     </div>
   );
 }
 
-// Document Gallery Modal Component with pagination
-function DocumentGalleryModal() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const doc = documentExamples[currentIndex];
+function FeatureCard({ item }: { item: FeatureCardData }) {
+  const Icon = item.icon;
+  const accent = item.accent ?? "bg-primary/10";
+  const iconColor = item.iconColor ?? "text-primary";
+  const iconBg = item.iconBg ?? "bg-linear-to-br from-primary/10 via-primary/5 to-background";
 
   return (
-    <Dialog onOpenChange={() => setCurrentIndex(0)}>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          className="mt-6 gap-2 border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
-        >
-          <FileText className="h-4 w-4" />
-          View More Auto-Generated Documents
-          <ChevronRight className="h-4 w-4" />
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-xl">{doc.title}</DialogTitle>
-          <DialogDescription>{doc.description}</DialogDescription>
-        </DialogHeader>
-
-        {/* Pagination Controls */}
-        <div className="flex items-center justify-between">
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-1"
-            onClick={() => setCurrentIndex((prev) => prev - 1)}
-            disabled={currentIndex === 0}
-          >
-            <ChevronLeft className="h-4 w-4" />
-            Previous
-          </Button>
-
-          {/* Dot indicators + counter */}
-          <div className="flex flex-col items-center gap-1">
-            <div className="flex items-center gap-2">
-              {documentExamples.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 w-2 rounded-full transition-all ${
-                    index === currentIndex
-                      ? "bg-primary w-4"
-                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                  }`}
+    <div
+      data-carousel-item
+      className="group flex w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-3xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:w-[440px] md:w-[500px] lg:w-[540px]"
+    >
+      {/* Visual area — squarish, ~62% of card */}
+      <div className="relative aspect-5/4 w-full shrink-0 overflow-hidden bg-muted/40">
+        {item.visual ? (
+          <div className="h-full w-full">{item.visual}</div>
+        ) : item.images ? (
+          <div className="grid h-full w-full grid-cols-2 gap-1 bg-muted">
+            {item.images.slice(0, 4).map((img) => (
+              <div key={img.src} className="relative overflow-hidden bg-white">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 1024px) 270px, (min-width: 768px) 250px, (min-width: 640px) 220px, 170px"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-              ))}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              {currentIndex + 1} of {documentExamples.length}
-            </p>
+                {img.label && (
+                  <span className="absolute bottom-1.5 left-1.5 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm">
+                    {img.label}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
-
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-1"
-            onClick={() => setCurrentIndex((prev) => prev + 1)}
-            disabled={currentIndex === documentExamples.length - 1}
-          >
-            Next
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-
-        {/* Document Image */}
-        <div className="overflow-hidden rounded-lg border bg-white">
+        ) : item.image ? (
           <Image
-            src={doc.src}
-            alt={doc.alt}
-            width={800}
-            height={1000}
-            className="w-full"
+            src={item.image.src}
+            alt={item.image.alt}
+            fill
+            sizes="(min-width: 1024px) 540px, (min-width: 768px) 500px, (min-width: 640px) 440px, 340px"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           />
-        </div>
-      </DialogContent>
-    </Dialog>
+        ) : (
+          <div className={`flex h-full w-full items-center justify-center ${iconBg}`}>
+            <div className={`flex h-24 w-24 items-center justify-center rounded-2xl ${accent} shadow-sm`}>
+              <Icon className={`h-12 w-12 ${iconColor}`} />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Copy area — compact bottom whitespace */}
+      <div className="flex flex-col gap-2 p-6 sm:p-7">
+        {item.tag && (
+          <span className="inline-flex w-fit items-center gap-1 rounded-full bg-violet-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-violet-700">
+            {item.tag}
+          </span>
+        )}
+        <h4 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+          {item.title}
+        </h4>
+        <p className="text-[15px] leading-relaxed text-muted-foreground md:text-base">
+          {item.desc}
+        </p>
+      </div>
+    </div>
   );
 }
-
-// Auto-generated document examples
-const documentExamples = [
-  {
-    src: "/truekredit/document_example_receipt.png",
-    alt: "Payment Receipt",
-    title: "Payment Receipt",
-    description:
-      "Auto-generated after every repayment. Includes payment details, late fees breakdown, and outstanding balance — ready to print or email to the borrower.",
-  },
-  {
-    src: "/truekredit/document_example_arrears.png",
-    alt: "Notice of Arrears",
-    title: "Notice of Arrears",
-    description:
-      "Triggered automatically when a borrower misses a payment. Details the overdue instalments, accrued late fees, and the deadline to settle before the loan is classified as defaulted.",
-  },
-  {
-    src: "/truekredit/document_example_default.png",
-    alt: "Notice of Default",
-    title: "Notice of Default",
-    description:
-      "Generated when a loan transitions to default status. Formally notifies the borrower of the default classification, total outstanding amount, and potential legal actions.",
-  },
-  {
-    src: "/truekredit/document_example_discharge.png",
-    alt: "Letter of Discharge",
-    title: "Letter of Discharge",
-    description:
-      "Issued upon full settlement of a loan — including early settlements with discounts. Confirms all obligations are fulfilled and the borrower is released from liability.",
-  },
-  {
-    src: "/truekredit/lampiran_a_screenshot.png",
-    alt: "Lampiran A",
-    title: "Lampiran A — Lejar Akaun Peminjam",
-    description:
-      "Auto-generated Lampiran A report as required under the Akta Pemberi Pinjam Wang 1951. Includes borrower details, loan terms, and full repayment history — ready for KPKT submission.",
-  },
-];
-
-// Compliance features data
-const complianceFeatures = [
-  {
-    icon: FilePlusCorner,
-    text: "Jadual J and K auto-generated",
-  },
-  {
-    icon: FileSpreadsheet,
-    text: "Lampiran A auto-generated",
-  },
-  {
-    icon: FileText,
-    text: "CSV export for KPKT iDEAL submission",
-  },
-  {
-    icon: History,
-    text: "Full transaction history per loan",
-  },
-  {
-    icon: Clock,
-    text: "Timestamped, traceable records",
-  },
-  {
-    icon: Search,
-    text: "Inspection-ready: instant lookup & reports",
-  },
-];
-
-// Comparison data
-const comparisonData = [
-  { without: "Manual records", with: "Centralised cloud system" },
-  { without: "Human errors", with: "Automated accuracy" },
-  { without: "Stressful audits", with: "Confident inspections" },
-  { without: "Reactive management", with: "Real-time visibility" },
-  { without: "Limited scaling", with: "Efficient scaling" },
-];
 
 // ─── Feature Constellation for Hero ──────────────────────────────────────────
 
@@ -485,13 +922,19 @@ export default function TrueKreditPage() {
               transition={{ duration: 0.6 }}
             >
               <motion.div
-                className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+                className="mb-5 flex flex-wrap gap-2 text-sm font-medium"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <Shield className="h-4 w-4" />
-                Designed for KPKT operations. Audit-ready by default.
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-primary">
+                  <Shield className="h-4 w-4 shrink-0" />
+                  TrueKredit™ — Multi-tenant SaaS
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-3.5 py-1.5 text-violet-700">
+                  <Award className="h-4 w-4 shrink-0" />
+                  TrueKredit™ Pro — Dedicated AWS
+                </span>
               </motion.div>
               <motion.h1
                 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
@@ -499,15 +942,18 @@ export default function TrueKreditPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                TrueKredit™ — KPKT Loan Management System
+                Run your entire lending business from{" "}
+                <span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
+                  one platform.
+                </span>
               </motion.h1>
               <motion.p
-                className="mt-4 text-lg font-medium text-primary md:text-xl"
+                className="mt-5 text-lg font-medium text-primary md:text-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
               >
-                Tailor-made for KPKT Licensed Money Lenders
+                Built for Malaysian KPKT-licensed money lenders.
               </motion.p>
               <motion.p
                 className="mt-4 text-lg text-muted-foreground md:text-xl"
@@ -515,13 +961,15 @@ export default function TrueKreditPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Manage borrowers, loans, compliance, and audits — all in one secure system.
+                One integrated loan management system — borrowers, products, schedules, collections,
+                and KPKT compliance — with optional borrower web, native mobile apps, and on-premises
+                digital signing in <span className="font-medium text-foreground/90">TrueKredit Pro</span>.
               </motion.p>
               <motion.div
-                className="mt-8 flex flex-col gap-4 sm:flex-row"
+                className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
               >
                 <Button asChild size="lg" className="gap-2">
                   <Link href="#demo">
@@ -529,8 +977,16 @@ export default function TrueKreditPage() {
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="#pricing">View Pricing</Link>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="gap-2 border-violet-300 bg-violet-500/5 text-violet-700 hover:bg-violet-500/10 hover:text-violet-800"
+                >
+                  <Link href="#pro">
+                    Explore TrueKredit Pro
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -541,99 +997,187 @@ export default function TrueKreditPage() {
         </div>
       </section>
 
-      {/* Designed for Owners Section */}
-      <section id="owners" className="border-t bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      {/* Problem → Answer Narrative — compact before/after contrast */}
+      <section id="story" className="border-t bg-muted/30 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+          {/* Centered header (matches the carousel section style) */}
           <motion.div
-            className="grid gap-12 md:grid-cols-2"
-            initial={{ opacity: 0, y: 20 }}
+            className="mx-auto max-w-3xl text-center"
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <div>
-              <SectionBadge icon={Building2} text="For Business Owners" />
-              <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-                Designed for KPKT Loan Business Owners
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                As a director or owner of a KPKT-licensed money lending business, you oversee the
-                entire borrower lifecycle — from enquiry to final payment — while ensuring full
-                compliance with regulatory requirements. TrueKredit gives you the tools to manage
-                it all efficiently.
-              </p>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="mt-6 gap-2 border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
-                  >
-                    Without TrueKredit vs With TrueKredit
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-2xl">
-                  <DialogHeader>
-                    <DialogTitle className="text-xl">
-                      Without TrueKredit vs With TrueKredit
-                    </DialogTitle>
-                    <DialogDescription>
-                      See how TrueKredit transforms your loan management operations.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid grid-cols-2 gap-4 border-t pt-6 md:gap-8">
-                    <div className="text-center">
-                      <div className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm font-semibold text-red-600">
-                        Without TrueKredit
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="mb-4 rounded-lg bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-                        With TrueKredit
-                      </div>
-                    </div>
-                  </div>
-                  {comparisonData.map((row) => (
-                    <div
-                      key={row.without}
-                      className="grid grid-cols-2 gap-4 border-b py-4 md:gap-8"
-                    >
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <X className="h-4 w-4 shrink-0 text-red-400" />
-                        {row.without}
-                      </div>
-                      <div className="flex items-center gap-2 text-sm font-medium">
-                        <Check className="h-4 w-4 shrink-0 text-primary" />
-                        {row.with}
-                      </div>
-                    </div>
-                  ))}
-                </DialogContent>
-              </Dialog>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xl font-semibold">Current Challenges</h3>
-              <ul className="space-y-3">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+              The challenge
+            </p>
+            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+              Lending shouldn&apos;t mean stitching eight vendors together.
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+              Separate tools, separate contracts, separate bills — and manual gaps that creep
+              back into your compliance.
+            </p>
+          </motion.div>
+
+          {/* Before / After visual contrast */}
+          <motion.div
+            className="mt-12 grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:items-stretch lg:gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {/* BEFORE — scattered stack */}
+            <div className="rounded-2xl border border-red-200/70 bg-linear-to-br from-red-50/70 via-background to-background p-6 sm:p-8">
+              <div className="mb-5 flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
+                  <X className="h-3.5 w-3.5" />
+                  Without TrueKredit
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  8+ tools
+                </span>
+              </div>
+              <h3 className="mb-5 font-display text-lg font-medium leading-snug md:text-xl">
+                Eight vendor logins. Eight bills. Months of integration.
+              </h3>
+              {/* Scattered vendor pills */}
+              <div className="mb-6 flex flex-wrap gap-2">
                 {[
-                  "Excel spreadsheets and paper files",
-                  "Manual calculations for instalments and late charges",
-                  "Manual document preparation",
-                  "Compliance reporting pressure",
-                  "Audit stress",
-                ].map((challenge, index) => (
-                  <motion.li
-                    key={challenge}
-                    className="flex items-start gap-3 rounded-lg border bg-background p-4"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  "Excel",
+                  "Paper files",
+                  "CTOS",
+                  "e-KYC",
+                  "Trustgate",
+                  "SSM",
+                  "Email",
+                  "Payments",
+                ].map((v) => (
+                  <span
+                    key={v}
+                    className="rounded-full border border-red-200/70 bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground sm:text-sm"
                   >
-                    <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
-                    <span className="text-muted-foreground">{challenge}</span>
-                  </motion.li>
+                    {v}
+                  </span>
+                ))}
+              </div>
+              <ul className="space-y-2.5 text-sm text-muted-foreground">
+                {[
+                  "Manual instalment, interest, and late-fee maths",
+                  "Months of integration before the first disbursement",
+                  "Compliance reporting pressure and audit stress",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
+                    <span>{line}</span>
+                  </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Arrow / divider */}
+            <div className="flex items-center justify-center py-2 lg:py-0">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 ring-1 ring-primary/20 lg:h-14 lg:w-14">
+                <ArrowRight className="h-5 w-5 text-primary lg:h-6 lg:w-6" />
+              </div>
+            </div>
+
+            {/* AFTER — TrueKredit unified */}
+            <div className="rounded-2xl border border-primary/30 bg-linear-to-br from-primary/5 via-background to-background p-6 sm:p-8">
+              <div className="mb-5 flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  <Check className="h-3.5 w-3.5" />
+                  With TrueKredit
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wider text-primary/70">
+                  1 platform
+                </span>
+              </div>
+              <h3 className="mb-5 font-display text-lg font-medium leading-snug md:text-xl">
+                One platform. Everything connected. KPKT-aligned by design.
+              </h3>
+              {/* Unified pillars */}
+              <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {[
+                  { label: "Borrowers", icon: Users },
+                  { label: "Loans", icon: Wallet },
+                  { label: "Payments", icon: Receipt },
+                  { label: "Compliance", icon: Shield },
+                ].map((p) => (
+                  <div
+                    key={p.label}
+                    className="flex flex-col items-center gap-1.5 rounded-lg border border-primary/15 bg-background px-2 py-3 text-center"
+                  >
+                    <p.icon className="h-4 w-4 text-primary" />
+                    <span className="text-xs font-medium">{p.label}</span>
+                  </div>
+                ))}
+              </div>
+              <ul className="space-y-2.5 text-sm text-foreground/80">
+                {[
+                  "CTOS, Trustgate, Infomina, e-KYC, payments — already integrated",
+                  "Live in weeks — no integration project required",
+                  "Built around KPKT requirements from day one",
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Two-edition selector ribbon */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.45, delay: 0.15 }}
+            className="mt-10 grid gap-4 rounded-2xl border bg-background p-5 shadow-sm md:grid-cols-2 md:p-6"
+          >
+            <div className="flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/5 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  <Shield className="h-4 w-4" />
+                  TrueKredit
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wider text-primary/80">
+                  SaaS
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Multi-tenant on TrueStack&apos;s AWS Malaysia. Predictable subscription, fully
+                managed, shared core for licensed money lenders.
+              </p>
+              <Link
+                href="#features"
+                className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+              >
+                See connected modules <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="flex flex-col gap-3 rounded-xl border border-violet-300/60 bg-violet-500/5 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-violet-700">
+                  <Award className="h-4 w-4" />
+                  TrueKredit Pro
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wider text-violet-700/80">
+                  Dedicated AWS
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Same platform on a dedicated, isolated AWS environment — adds borrower web,
+                native mobile apps, on-prem PKI signing, and pen-test packaging.
+              </p>
+              <Link
+                href="#pro"
+                className="inline-flex items-center gap-1 text-sm font-medium text-violet-700 hover:underline"
+              >
+                Explore Pro <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -698,421 +1242,166 @@ export default function TrueKreditPage() {
         </div>
       </section> */}
 
-      {/* Core Features Section */}
+      {/* Core Features Section — full bleed Apple-style carousels.
+          The section title is dropped; each carousel's title is promoted to a
+          centered section-style header. */}
       <section id="features" className="border-t bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div
-            className="mb-14 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionBadge icon={Shield} text="End-to-End Solution" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              From Enquiry to Final Payment — All in One System
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Each part of the workflow is supported by clear screens and controls — from capturing
-              borrowers and configuring products to tracking repayments and history.
-            </p>
-          </motion.div>
+        <div className="space-y-20">
+          <FeatureCarousel
+            eyebrow="Core Platform"
+            title="The full lending lifecycle in one place"
+            description="From customer enquiry through disbursement, repayment, late fees, default, and KPKT-ready compliance — every screen ships in TrueKredit."
+            items={[
+              {
+                icon: FileText,
+                title: "Customer enquiry & document capture",
+                desc: "Digitise borrower information and supporting documents from the very first contact.",
+                image: {
+                  src: "/truekredit/borrower_details_screenshot.png",
+                  alt: "Borrower details",
+                },
+              },
+              {
+                icon: Calculator,
+                title: "Loan calculation & approval",
+                desc: "Automated interest and instalment maths with approval tracking and one-click WhatsApp quote sharing.",
+                image: {
+                  src: "/truekredit/loan_summary_screenshot.png",
+                  alt: "Loan summary",
+                },
+              },
+              {
+                icon: FilePlusCorner,
+                title: "Product configuration",
+                desc: "Define products once — interest model, eligibility, Jadual J or K schedule — and reuse across every loan.",
+                image: {
+                  src: "/truekredit/edit_product_screenshot.png",
+                  alt: "Edit product",
+                },
+              },
+              {
+                icon: Wallet,
+                title: "Disbursement & repayment tracking",
+                desc: "Track every disbursement and repayment with full fund-flow records and a live, sen-accurate schedule.",
+                image: {
+                  src: "/truekredit/repayment_schedule_screenshot.png",
+                  alt: "Repayment schedule",
+                },
+              },
+              {
+                icon: History,
+                title: "Early settlement engine",
+                desc: "Reward early payoff with discounts on remaining interest. Configure lock-in periods and waive late fees.",
+                image: {
+                  src: "/truekredit/early_settlement_screenshot.png",
+                  alt: "Early settlement",
+                },
+              },
+              {
+                icon: AlertTriangle,
+                title: "Late fees, arrears & default",
+                desc: "Auto-calculated late charges, automatic arrears-to-default progression, and the right letters generated for you.",
+                accent: "bg-amber-500/10",
+                iconColor: "text-amber-500",
+                iconBg:
+                  "bg-linear-to-br from-amber-500/10 via-amber-500/5 to-background",
+                image: {
+                  src: "/truekredit/late_summary_screenshot.png",
+                  alt: "Late payment summary",
+                },
+              },
+              {
+                icon: Lock,
+                title: "Role-based access for your whole team",
+                desc: "Default presets for Owner, Super Admin, Approval L1/L2, Attestor, Auditor and Collections — or build custom roles with granular per-permission controls.",
+                accent: "bg-indigo-500/10",
+                iconColor: "text-indigo-600",
+                iconBg:
+                  "bg-linear-to-br from-indigo-500/10 via-indigo-500/5 to-background",
+                image: {
+                  src: "/truekredit/rba_screenshot.png",
+                  alt: "Role-based access controls",
+                },
+              },
+              {
+                icon: ShieldCheck,
+                title: "KPKT-ready, audit-ready, every day",
+                desc: "Jadual J & K, Lampiran A, receipts, default notices and discharge letters — all auto-generated and inspection-ready.",
+                images: [
+                  {
+                    src: "/truekredit/jadual_j_screenshot.png",
+                    alt: "Jadual J",
+                    label: "Jadual J",
+                  },
+                  {
+                    src: "/truekredit/lampiran_a_screenshot.png",
+                    alt: "Lampiran A",
+                    label: "Lampiran A",
+                  },
+                  {
+                    src: "/truekredit/document_example_receipt.png",
+                    alt: "Payment receipt",
+                    label: "Receipt",
+                  },
+                  {
+                    src: "/truekredit/document_example_default.png",
+                    alt: "Default notice",
+                    label: "Default notice",
+                  },
+                ],
+              },
+            ]}
+          />
 
-          {/* Block 1: Enquiry & calculation — Borrower details screenshot */}
-          <div className="grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
-            <h3 className="text-2xl font-semibold tracking-tight">
-              Capture Enquiries & Approve Loans Faster
-            </h3>
-            <p className="text-muted-foreground">
-              From the very first enquiry, borrower details and documents are captured
-              digitally. Loan calculations and approval workflows are built in — so your
-              team spends less time on data entry and more time serving customers.
-            </p>
-          </div>
-          <motion.div
-            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="space-y-6">
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <FileText className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Customer Enquiry & Document Capture</CardTitle>
-                  <CardDescription>
-                    Digitize borrower information and documents from first contact.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <Calculator className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Loan Calculation & Approval Workflow</CardTitle>
-                  <CardDescription>
-                    Automated interest and instalment calculations with approval tracking. Quote generator with 1 click sharing to Whatsapp.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="flex justify-center">
-              <ScreenshotDisplay
-                src="/truekredit/loan_summary_screenshot.png"
-                alt="Loan Summary View"
-                className="max-w-md"
-              />
-            </div>
-          </motion.div>
-
-          {/* Block 2: Products & documents — Edit product screenshot */}
-          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
-            <h3 className="text-2xl font-semibold tracking-tight">
-              Configure Products & Generate Documents Instantly
-            </h3>
-            <p className="text-muted-foreground">
-              Set up loan products once — interest model, eligibility rules, and Jadual J/K
-              schedule type — and the system does the rest. Offer letters and agreements are
-              generated automatically, ensuring every document is compliant and consistent.
-            </p>
-          </div>
-          <motion.div
-            className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="order-2 lg:order-1 lg:flex lg:justify-end">
-              <ScreenshotDisplay
-                src="/truekredit/edit_product_screenshot.png"
-                alt="Edit Product — Add or edit loan products (Basic Info, interest model, borrower eligibility, Jadual J/K)"
-                className="max-w-md"
-              />
-            </div>
-            <div className="space-y-6 lg:order-2 lg:pl-6">
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <FilePlusCorner className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Product Configuration</CardTitle>
-                  <CardDescription>
-                    Define loan products with interest model, borrower eligibility, and Jadual J/K
-                    schedule type.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <FileCheck className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Offer Letter & Agreement Generation</CardTitle>
-                  <CardDescription>
-                    Auto-generate compliant loan documents ready for signing.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </motion.div>
-
-          {/* Block 3: Disbursement, repayment & history — Repayment schedule screenshot */}
-          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
-            <h3 className="text-2xl font-semibold tracking-tight">
-              Track Every Ringgit — From Disbursement to Final Payment
-            </h3>
-            <p className="text-muted-foreground">
-              Once a loan is approved, TrueKredit tracks the full money trail — disbursements,
-              repayments, and collections — with a complete audit history for every transaction.
-              Your books are always balanced, and auditors get the records they need instantly.
-            </p>
-          </div>
-          <motion.div
-            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="space-y-6">
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <Wallet className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Disbursement Tracking</CardTitle>
-                  <CardDescription>
-                    Track loan disbursements and maintain complete fund flow records.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <Receipt className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Repayment & Collections</CardTitle>
-                  <CardDescription>
-                    Manage repayments, late charges, and collection workflows.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <History className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Early Settlement Feature</CardTitle>
-                  <CardDescription>
-                    Incentivize early settlements by offering discounts on the remaining interest payable. Set lock in period, waive late fees, and offer discounts in fixed amount or %.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="flex flex-col items-center gap-8">
-              <ScreenshotDisplay
-                src="/truekredit/repayment_schedule_screenshot.png"
-                alt="Repayment Schedule"
-                className="max-w-md"
-              />
-              <ScreenshotDisplay
-                src="/truekredit/early_settlement_screenshot.png"
-                alt="Early Settlement — Progress tracking with paid instalments, on-time rate, and discount summary"
-                className="max-w-md"
-              />
-            </div>
-          </motion.div>
-
-          {/* Block 4: Late fees, arrears & default workflow — Late fees screenshot */}
-          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
-            <h3 className="text-2xl font-semibold tracking-tight">
-              Late Fees, Arrears & Default — Handled Automatically
-            </h3>
-            <p className="text-muted-foreground">
-              Stop worrying about miscalculated late charges or missed follow-ups.
-              TrueKredit automatically tracks overdue payments, calculates late fees to the
-              sen, and progresses loans through the arrears-to-default workflow — so nothing
-              falls through the cracks.
-            </p>
-          </div>
-          <motion.div
-            className="mt-6 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className="order-2 lg:order-1 flex flex-col items-end gap-8">
-              <ScreenshotDisplay
-                src="/truekredit/late_fees_screenshot.png"
-                alt="Automated Late Fees, Arrears & Default Management"
-                className="max-w-md"
-              />
-              <ScreenshotDisplay
-                src="/truekredit/late_summary_screenshot.png"
-                alt="Late Payment Summary — Progress tracking with overdue instalments, late fees, and on-time rate"
-                className="max-w-md"
-              />
-            </div>
-            <div className="space-y-6 lg:order-2 lg:pl-6">
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <Calculator className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Auto-Calculated Late Fees</CardTitle>
-                  <CardDescription>
-                    Late charges computed automatically based on your product rules — no manual work, no errors.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10">
-                    <AlertTriangle className="h-6 w-6 text-amber-500" />
-                  </div>
-                  <CardTitle className="text-lg">Arrears & Default Workflow</CardTitle>
-                  <CardDescription>
-                    Loans automatically flagged and transitioned through arrears to default based on your rules.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <FileText className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Auto-Generated Arrears & Default Letters</CardTitle>
-                  <CardDescription>
-                    Reminder letters and default notices generated automatically — ready to print or email.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </motion.div>
-
-          {/* Block 5: TrueSight™ — Cross-Tenant Borrower Insights */}
-          <div className="mt-24 grid items-center gap-8 md:grid-cols-[1fr_1.5fr]">
-            <h3 className="text-2xl font-semibold tracking-tight">
-              TrueSight™ — Cross-Lender Borrower Insights
-            </h3>
-            <p className="text-muted-foreground">
-              Make informed lending decisions with aggregated borrower intelligence across the
-              TrueKredit platform. See how a borrower performs with other lenders — and track
-              detailed payment performance on your own platform. Included for free with core plan subscription.
-            </p>
-          </div>
-          <motion.div
-            className="mt-6 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                <Sparkles className="h-3.5 w-3.5" />
-                Included with Core Plan
-              </div>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10">
-                    <Sparkles className="h-6 w-6 text-violet-600" />
-                  </div>
-                  <CardTitle className="text-lg">Cross-Lender Borrower Profile</CardTitle>
-                  <CardDescription>
-                    See if a borrower has loans with other lenders on the platform, including how
-                    many active, completed, or defaulted loans they carry — without revealing
-                    lender identities.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <ShieldCheck className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Data Consistency Check</CardTitle>
-                  <CardDescription>
-                    Instantly verify whether a borrower&apos;s name and phone number match records
-                    from other lenders — helping you spot inconsistencies early.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                    <BarChart3 className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">Borrowed Range & Payment Performance</CardTitle>
-                  <CardDescription>
-                    View the borrower&apos;s total borrowed amount as a range and their on-time
-                    payment rate across the platform — giving you a clearer picture of risk.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="transition-all hover:border-primary/30 hover:shadow-md">
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10">
-                    <Receipt className="h-6 w-6 text-emerald-600" />
-                  </div>
-                  <CardTitle className="text-lg">Your Own Platform Performance</CardTitle>
-                  <CardDescription>
-                    Beyond cross-lender insights, see each borrower&apos;s detailed payment
-                    performance on your own platform — on-time, late, and overdue
-                    breakdowns with risk profiling.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="flex justify-center">
-              <ScreenshotDisplay
-                src="/truekredit/truesight_screenshot.png"
-                alt="TrueSight™ — Cross-Tenant Borrower Insights showing data consistency, borrowed range, and payment performance"
-                className="max-w-md"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Compliance Section */}
-      <section id="compliance" data-nav-theme="dark" className="bg-slate-950 py-20 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="mb-4 flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary" />
-                <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  Compliance First
-                </span>
-              </div>
-              <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-                Stay KPKT Audit-Ready — All the Time
-              </h2>
-              <p className="mt-4 text-lg text-slate-300">
-                Every feature is designed with KPKT compliance in mind. Generate reports, track
-                every transaction, and be inspection-ready at a moment&apos;s notice.
-              </p>
-
-              <ul className="mt-8 space-y-4">
-                {complianceFeatures.map((feature, index) => (
-                  <motion.li
-                    key={feature.text}
-                    className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20">
-                      <feature.icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <span className="text-slate-200">{feature.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-
-              {/* Auto-Generated Documents Gallery Modal */}
-              <DocumentGalleryModal />
-            </motion.div>
-
-            <motion.div
-              className="flex flex-col justify-center"
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <ScreenshotDisplay
-                src="/truekredit/jadual_j_screenshot.png"
-                alt="Compliance Report Generation"
-              />
-            </motion.div>
-          </div>
-
-          <motion.div
-            className="mt-12 rounded-2xl border border-primary/30 bg-primary/10 p-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <p className="text-center text-lg font-medium text-primary md:text-xl">
-              Respond to audits with confidence, not panic. Everything auditors need is already
-              organised.
-            </p>
-          </motion.div>
+          <FeatureCarousel
+            eyebrow="Connected Modules"
+            title="Modules that make everything work as one"
+            description="Identity, credit, company checks, comms, and intelligence — first-party modules and pre-wired partners that live inside the loan file, not across five portals."
+            items={[
+              {
+                icon: Fingerprint,
+                title: "TrueIdentity™ — e-KYC & liveness",
+                desc: "QR-based borrower verification with IC OCR and face-liveness. Pass or fail saved straight into the loan file.",
+                tag: "First-party",
+                visual: <TrueIdentityVisual />,
+              },
+              {
+                icon: Mail,
+                title: "Truesend™ — automated comms",
+                desc: "Receipts, reminders, default notices and discharge letters delivered automatically — no more manual emails.",
+                tag: "First-party",
+                visual: <TruesendVisual />,
+              },
+              {
+                icon: BarChart3,
+                title: "CTOS credit reports",
+                desc: "Pull credit reports right inside the loan workflow. Risk indicators surface next to underwriting decisions, with a full audit trail.",
+                tag: "Powered by CTOS",
+                visual: <CTOSVisual />,
+              },
+              {
+                icon: Building2,
+                title: "SSM company lookups",
+                desc: "Company info, director and shareholder checks for corporate borrowers — pulled inside the loan file via Infomina.",
+                tag: "Powered by Infomina",
+                visual: <SSMVisual />,
+              },
+              {
+                icon: Sparkles,
+                title: "TrueSight™ cross-lender intelligence",
+                desc: "See how a borrower performs across the TrueKredit network — active, completed, defaulted loans, plus on-time payment rate.",
+                tag: "Network",
+                visual: <TrueSightVisual />,
+              },
+              {
+                icon: PenLine,
+                title: "On-prem digital signing",
+                desc: "Trustgate-backed PKI signing on infrastructure you control. Borrowers sign from web or mobile.",
+                tag: "Pro only",
+                visual: <DigitalSigningVisual />,
+              },
+            ]}
+          />
         </div>
       </section>
 
@@ -1381,472 +1670,474 @@ export default function TrueKreditPage() {
         </div>
       </section>
 
-      {/* Pricing & Add-on Modules Section */}
-      <section id="pricing" className="border-t bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div
-            className="mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Simple Pricing That Scales With Your Business
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Pay for what you need. Add optional modules to enhance your TrueKredit experience.
-            </p>
-          </motion.div>
+      {/* TrueKredit Pro Section */}
+      <section
+        id="pro"
+        data-nav-theme="dark"
+        className="relative overflow-hidden border-t border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 py-24 text-white"
+      >
+        {/* Decorative background */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute -top-32 right-[-10%] h-[600px] w-[600px] rounded-full bg-violet-500/10 blur-3xl" />
+          <div className="absolute -bottom-32 left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-500/15 blur-3xl" />
+          <svg className="absolute inset-0 h-full w-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="pro-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#pro-grid)" />
+          </svg>
+        </div>
 
-          {/* Unified Pricing — Core then Add-on Modules */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-4"
-          >
-            <Card className="w-full">
-              <CardContent className="p-0">
-                <table className="w-full">
-                  <tbody className="divide-y">
-                    {/* Core Plan */}
-                    <tr className="bg-primary/5">
-                      <td className="px-6 py-4">
-                        <div className="font-semibold">Core Plan</div>
-                        <div className="text-sm text-muted-foreground">First 500 loans</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="flex items-center justify-end gap-2">
-                          <span className="text-lg text-muted-foreground line-through">RM 899</span>
-                          <span className="text-2xl font-bold text-primary">RM 499</span>
-                        </div>
-                        <div className="flex items-center justify-end gap-2">
-                          <span className="rounded bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">PROMO</span>
-                          <span className="text-sm text-muted-foreground">/ month</span>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">Additional 500 Loans</div>
-                        <div className="text-sm text-muted-foreground">Per additional block</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 200</div>
-                        <div className="text-sm text-muted-foreground">/ month</div>
-                      </td>
-                    </tr>
-                    {/* Add-on Modules */}
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">TrueIdentity™ (e-KYC)</div>
-                        <div className="text-sm text-muted-foreground">Digital identity verification per borrower</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 4</div>
-                        <div className="text-sm text-muted-foreground">/ verification</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4">
-                        <div className="font-medium">Truesend™</div>
-                        <div className="text-sm text-muted-foreground">Auto-send receipts, reminders, default notices</div>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <div className="text-xl font-semibold">RM 50</div>
-                        <div className="text-sm text-muted-foreground">/ month per 500 loans</div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </CardContent>
-            </Card>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  type="button"
-                  className="mx-auto block text-sm text-primary underline-offset-4 hover:underline"
-                >
-                  See example calculation
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Example Monthly Cost</DialogTitle>
-                  <DialogDescription>
-                    Two scenarios. Add-ons are optional — you only pay for what you use.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="space-y-6 pt-2">
-                  {/* Scenario 1: ~200 loans */}
-                  <div>
-                    <h4 className="mb-3 text-sm font-semibold">~200 loans (first 500 block)</h4>
-
-                    <div className="mb-3">
-                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Core</p>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>Core Plan</span>
-                          <span>RM 499</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Add-ons (optional)</p>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>TrueIdentity™ — per verification (25 × RM 4)</span>
-                          <span>RM 100</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span>Truesend™</span>
-                          <span>RM 50</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-3 flex justify-between text-sm font-semibold">
-                      <span>Total</span>
-                      <span className="text-primary">RM 649 / month</span>
-                    </div>
-                  </div>
-
-                  {/* Scenario 2: 800 loans */}
-                  <div>
-                    <h4 className="mb-3 text-sm font-semibold">800 loans (2nd block)</h4>
-
-                    <div className="mb-3">
-                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Core</p>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>Core Plan</span>
-                          <span>RM 499</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span>Additional 500 Loans</span>
-                          <span>RM 200</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">Add-ons (optional)</p>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span>TrueIdentity™ — per verification (40 × RM 4)</span>
-                          <span>RM 160</span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span>Truesend™ (2 × 500 loans)</span>
-                          <span>RM 100</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-3 flex justify-between text-sm font-semibold">
-                      <span>Total</span>
-                      <span className="text-primary">RM 959 / month</span>
-                    </div>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </motion.div>
-
-          {/* Add-on Modules — Learn More */}
-          <motion.div
-            id="addons"
-            className="mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="mb-8 text-center">
-              <SectionBadge icon={Users} text="Add-on Modules" className="justify-center" />
-              <h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
-                Optional Modules to Enhance Your Workflow
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                Add only what you need — no long-term commitment for usage-based modules.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-            {/* TrueIdentity e-KYC */}
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Left intro */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="mb-2 flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                      <Fingerprint className="h-6 w-6 text-primary" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-indigo-500 to-violet-500 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg shadow-violet-500/30">
+                <Award className="h-3.5 w-3.5" />
+                TrueKredit Pro
+              </span>
+              <h2 className="mt-5 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+                <span className="bg-linear-to-r from-indigo-200 via-violet-200 to-purple-200 bg-clip-text text-transparent">
+                  For lenders who go further.
+                </span>
+              </h2>
+              <p className="mt-5 text-lg text-slate-300">
+                Everything in TrueKredit, plus borrower-facing web and mobile apps, on-premises
+                digital signing, and a dedicated AWS deployment in your own account — designed for
+                <span className="font-medium text-white"> KPKT Online Money Lending License</span> workloads.
+              </p>
+
+              <ul className="mt-6 space-y-3">
+                {[
+                  {
+                    icon: Check,
+                    title: "Includes everything in TrueKredit",
+                    desc: "Same platform — deployed on your own AWS account.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    title: "Designed for digital licence compliance",
+                    desc: "Tenant isolation, dedicated DB & secrets, pinned semver releases.",
+                  },
+                  {
+                    icon: Server,
+                    title: "On-premises signing where you need it",
+                    desc: "PKI signing stack lives at your site; cloud talks to it via Cloudflare Tunnel.",
+                  },
+                ].map((item) => (
+                  <li
+                    key={item.title}
+                    className="flex items-start gap-3 rounded-xl border border-violet-400/20 bg-white/4 p-4 backdrop-blur-sm"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-500/20">
+                      <item.icon className="h-5 w-5 text-violet-300" />
                     </div>
                     <div>
-                      <CardTitle>TrueIdentity™ (e-KYC)</CardTitle>
-                      <span className="text-sm text-muted-foreground">Add-on</span>
+                      <p className="font-medium text-white">{item.title}</p>
+                      <p className="text-sm text-slate-400">{item.desc}</p>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-2">
-                    {[
-                      "QR code flow for borrower verification",
-                      "IC OCR extraction + face liveness check",
-                      "Result (pass/fail) saved into loan file",
-                      "Prevents misuse of someone else's IC",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="rounded-lg bg-muted p-4">
-                    <p className="text-sm font-medium">
-                      RM 4 per completed verification
-                    </p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Charged only on completion. Up to 3 retries.
-                    </p>
-                  </div>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full gap-2">
-                        Learn More <ChevronRight className="h-4 w-4" />
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                            <Fingerprint className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <DialogTitle className="text-xl">TrueIdentity™ (e-KYC)</DialogTitle>
-                            <DialogDescription>Digital identity verification for borrowers</DialogDescription>
-                          </div>
-                        </div>
-                      </DialogHeader>
-
-                      <div className="space-y-6 pt-2">
-                        <div>
-                          <h4 className="mb-2 font-semibold">What is TrueIdentity?</h4>
-                          <p className="text-sm text-muted-foreground">
-                            TrueIdentity is our integrated e-KYC (electronic Know Your Customer) verification
-                            system. It allows you to verify a borrower&apos;s identity digitally — directly from
-                            TrueKredit — ensuring the person applying for a loan is who they claim to be.
-                          </p>
-                        </div>
-
-                        <div>
-                          <h4 className="mb-3 font-semibold">How It Works</h4>
-                          <ol className="space-y-3">
-                            {[
-                              { step: "1", title: "Generate QR Code", desc: "From TrueKredit, generate a unique QR code for the borrower during the application process." },
-                              { step: "2", title: "Borrower Scans & Verifies", desc: "The borrower scans the QR code on their phone, takes a photo of their IC (MyKad), and completes a face liveness check." },
-                              { step: "3", title: "IC OCR Extraction", desc: "The system automatically extracts data from the IC — name, IC number, address — and cross-checks it against the liveness photo." },
-                              { step: "4", title: "Result Saved to Loan File", desc: "The verification result (pass or fail) is automatically saved into the borrower's loan file in TrueKredit for audit and compliance reference." },
-                            ].map((item) => (
-                              <li key={item.step} className="flex gap-3">
-                                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                                  {item.step}
-                                </div>
-                                <div>
-                                  <p className="text-sm font-medium">{item.title}</p>
-                                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                                </div>
-                              </li>
-                            ))}
-                          </ol>
-                        </div>
-
-                        <div>
-                          <h4 className="mb-2 font-semibold">Why It Matters</h4>
-                          <ul className="space-y-2">
-                            {[
-                              "Prevents identity fraud — ensures the borrower is the IC holder",
-                              "Reduces manual verification effort for your staff",
-                              "Creates a tamper-proof digital record for KPKT inspections",
-                              "Borrowers can verify from anywhere — no physical visit needed",
-                            ].map((item) => (
-                              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
-                          <h4 className="mb-1 text-sm font-semibold">Pricing</h4>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium text-foreground">RM 4 per completed verification</span> (pass or fail).
-                            Charged only when the verification is completed. Borrowers get up to 3 retries per session
-                            at no extra cost. No monthly commitment — pay only for what you use.
-                          </p>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </CardContent>
-              </Card>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
 
-            {/* Truesend™ */}
+            {/* Right: 4 spotlight cards */}
             <motion.div
+              className="grid gap-4 sm:grid-cols-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
             >
-              <Card className="h-full">
-                <CardHeader>
-                  <div className="mb-2 flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle>Truesend™</CardTitle>
-                      <span className="text-sm text-muted-foreground">Add-on</span>
-                    </div>
+              {[
+                {
+                  icon: PenLine,
+                  title: "On-Premise Digital Signing",
+                  desc: "Powered by MSC Trustgate. Your keys, your control — Malaysian Digital Signature Act–aligned.",
+                  tag: "Trustgate",
+                },
+                {
+                  icon: Globe,
+                  title: "Borrower Web Origination",
+                  desc: "Fully branded portal — borrowers self-onboard, apply, and sign 24/7.",
+                  tag: "Branded",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Mobile App — iOS & Android",
+                  desc: "Native borrower app with e-KYC, e-sign, and live loan tracking. Included in Pro.",
+                  tag: "Native",
+                },
+                {
+                  icon: Building2,
+                  title: "Branded Marketing Website",
+                  desc: "Your own front door — capture leads before they ever pick up the phone.",
+                  tag: "Lead Gen",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
+                  className="group relative overflow-hidden rounded-2xl border border-violet-400/20 bg-linear-to-br from-white/6 to-white/3 p-5 backdrop-blur-sm transition-colors hover:border-violet-300/40"
+                >
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-indigo-500/30 to-violet-500/30">
+                    <card.icon className="h-5 w-5 text-violet-200" />
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-2">
-                    {[
-                      "Auto email: receipts, reminders, default notices",
-                      "Discharge letters sent automatically",
-                      "Reduces admin workload significantly",
-                      "Improves collection consistency",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="rounded-lg bg-muted p-4">
-                    <p className="text-sm font-medium">RM 50/month per 500 loans</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      PDFs are still generated even without email service.
-                    </p>
-                  </div>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full gap-2">
-                        Learn More <ChevronRight className="h-4 w-4" />
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                            <Mail className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <DialogTitle className="text-xl">Truesend™</DialogTitle>
-                            <DialogDescription>Automated document delivery via email</DialogDescription>
-                          </div>
-                        </div>
-                      </DialogHeader>
-
-                      <div className="space-y-6 pt-2">
-                        <div>
-                          <h4 className="mb-2 font-semibold">What Is the Truesend™ Add-on?</h4>
-                          <p className="text-sm text-muted-foreground">
-                            TrueKredit already generates all loan-related PDFs automatically — receipts, reminder
-                            letters, default notices, and discharge letters. The Truesend™ add-on takes it
-                            a step further by <span className="font-medium text-foreground">sending these documents directly to borrowers via email</span>,
-                            without any manual effort from your team.
-                          </p>
-                        </div>
-
-                        <div>
-                          <h4 className="mb-3 font-semibold">Documents Sent Automatically</h4>
-                          <div className="grid gap-3 sm:grid-cols-2">
-                            {[
-                              { icon: Receipt, title: "Payment Receipts", desc: "Sent immediately after each repayment is recorded." },
-                              { icon: AlertTriangle, title: "Reminder Letters", desc: "Sent before due dates to reduce late payments." },
-                              { icon: FileText, title: "Default Notices", desc: "Triggered automatically when borrowers miss payments past the grace period." },
-                              { icon: FileCheck, title: "Discharge Letters", desc: "Sent when a loan is fully settled, completing the borrower lifecycle." },
-                            ].map((item) => (
-                              <div key={item.title} className="flex gap-3 rounded-lg border p-3">
-                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                                  <item.icon className="h-4 w-4 text-primary" />
-                                </div>
-                                <div>
-                                  <p className="text-sm font-medium">{item.title}</p>
-                                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <h4 className="mb-2 font-semibold">Benefits</h4>
-                          <ul className="space-y-2">
-                            {[
-                              "Eliminates manual emailing — no more downloading PDFs and attaching them",
-                              "Improves borrower communication and professionalism",
-                              "Reminder letters reduce late payments and improve collection rates",
-                              "Creates a verifiable digital trail of all correspondence",
-                              "Frees your staff to focus on higher-value tasks",
-                            ].map((item) => (
-                              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="mb-2 font-semibold">Do I Still Get PDFs Without This Add-on?</h4>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium text-foreground">Yes.</span> All PDFs — receipts, reminder letters,
-                            default notices, and discharge letters — are generated automatically in TrueKredit regardless
-                            of whether you subscribe to this add-on. The add-on only automates the <em>sending</em> of
-                            these documents via email.
-                          </p>
-                        </div>
-
-                        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
-                          <h4 className="mb-1 text-sm font-semibold">Pricing</h4>
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-medium text-foreground">RM 50/month per 500 loans.</span>{" "}
-                            Covers all Truesend™ email sending for up to 500 active loans. If you have more than
-                            500 loans, simply add another block at the same rate. Scales alongside your TrueKredit subscription.
-                          </p>
-                        </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </CardContent>
-              </Card>
+                  <h3 className="text-base font-semibold text-white">{card.title}</h3>
+                  <p className="mt-1.5 text-sm text-slate-400">{card.desc}</p>
+                  <span className="mt-3 inline-flex rounded-full bg-violet-500/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-violet-300">
+                    {card.tag}
+                  </span>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
+
+          {/* Signing flow */}
+          <motion.div
+            className="mt-20 rounded-3xl border border-violet-400/15 bg-white/4 p-8 backdrop-blur-sm md:p-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-center lg:gap-14">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-violet-300">Pro Spotlight</span>
+                <h3 className="mt-3 font-display text-2xl font-medium tracking-tight text-white md:text-3xl">
+                  Loan agreements signed digitally — on your own server.
+                </h3>
+                <p className="mt-4 text-slate-400">
+                  Trustgate-backed PKI signing runs on infrastructure you control. Borrowers sign
+                  remotely from web or mobile; signed documents land back in TrueKredit, audit-ready.
+                </p>
+              </div>
+              <ol className="space-y-4">
+                {[
+                  {
+                    step: "1",
+                    title: "Agreement generated",
+                    desc: "TrueKredit Pro auto-generates the loan agreement from approved terms.",
+                  },
+                  {
+                    step: "2",
+                    title: "Borrower receives signing link",
+                    desc: "Sent via email or in the borrower mobile app — sign from any device.",
+                  },
+                  {
+                    step: "3",
+                    title: "Signed. Stored. Compliant.",
+                    desc: "Trustgate-signed document stored securely — legally binding, audit-ready.",
+                  },
+                ].map((s, i) => (
+                  <motion.li
+                    key={s.step}
+                    className="flex gap-4 rounded-xl border border-violet-400/15 bg-white/4 p-5"
+                    initial={{ opacity: 0, x: 12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-indigo-500 to-violet-500 text-sm font-semibold text-white shadow-lg shadow-violet-500/40">
+                      {s.step}
+                    </div>
+                    <div>
+                      <p className="font-medium text-white">{s.title}</p>
+                      <p className="mt-1 text-sm text-slate-400">{s.desc}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ol>
+            </div>
+          </motion.div>
+
+          <div className="mt-10 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center">
+            <Button asChild size="lg" className="gap-2 bg-linear-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600">
+              <Link href="/contact?subject=TrueKredit%20Pro">
+                Talk to us about Pro
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="gap-2 border-violet-400/30 bg-white/4 text-white hover:bg-white/8 hover:text-white">
+              <Link href="#compare">
+                Compare TrueKredit vs Pro
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* SaaS vs Pro Comparison */}
+      <section id="compare" className="border-t bg-muted/20 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-10 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <SectionBadge icon={Layers} text="Feature Comparison" className="justify-center" />
+            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+              TrueKredit vs TrueKredit Pro
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
+              Both editions share the full KPKT-aligned core. Pro adds borrower channels, on-prem
+              signing, and a dedicated environment.
+            </p>
           </motion.div>
 
           <motion.div
-            className="mt-8 flex items-center justify-center gap-2 text-center text-sm text-muted-foreground"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Shield className="h-4 w-4" />
-            All loan data is preserved securely with encryption and regular backups.
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm">
+                    <thead className="bg-muted/50 text-xs uppercase tracking-wider text-muted-foreground">
+                      <tr>
+                        <th className="w-1/2 px-5 py-4 font-semibold">Capability</th>
+                        <th className="w-1/4 px-5 py-4 text-center font-semibold text-primary">
+                          <div className="flex flex-col items-center gap-0.5">
+                            <span>TrueKredit</span>
+                            <span className="text-[10px] font-normal text-muted-foreground normal-case">TrueStack-hosted SaaS</span>
+                          </div>
+                        </th>
+                        <th className="w-1/4 px-5 py-4 text-center font-semibold text-violet-700">
+                          <div className="flex flex-col items-center gap-0.5">
+                            <span>TrueKredit Pro</span>
+                            <span className="text-[10px] font-normal text-muted-foreground normal-case">Dedicated AWS</span>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y">
+                      <tr className="bg-muted/40">
+                        <td colSpan={3} className="px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                          Core platform
+                        </td>
+                      </tr>
+                      {[
+                        "Loan lifecycle management",
+                        "Book A / Book B management",
+                        "e-KYC — MyKad OCR, liveness, biometric match",
+                        "CTOS reports — built in",
+                        "SSM reports via Infomina — built in",
+                        "Auto document generation — Lampiran A, Jadual J & K, default letters",
+                        "Auto emails & WhatsApp notifications",
+                        "Payment gateway integration",
+                        "Audit trail & KPKT-compliant reporting",
+                        "AWS Malaysia data residency",
+                        "iDeaL system export for KPKT submissions",
+                        "Walk-in borrower origination (counter / branch)",
+                        "Daily automated backups",
+                      ].map((row) => (
+                        <tr key={row} className="text-foreground">
+                          <td className="px-5 py-3">{row}</td>
+                          <td className="px-5 py-3 text-center text-primary">
+                            <Check className="mx-auto h-5 w-5" />
+                          </td>
+                          <td className="bg-violet-500/5 px-5 py-3 text-center text-violet-700">
+                            <Check className="mx-auto h-5 w-5" />
+                          </td>
+                        </tr>
+                      ))}
+                      <tr className="bg-violet-500/5">
+                        <td colSpan={3} className="px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-violet-700">
+                          Pro exclusive
+                        </td>
+                      </tr>
+                      {[
+                        "Digital signing — on-prem Trustgate server",
+                        "Borrower web origination portal (branded)",
+                        "Borrower mobile app — iOS & Android (native)",
+                        "Branded marketing website",
+                        "Penetration test report & security compliance",
+                        "Dedicated AWS account, DB, and secrets",
+                      ].map((row) => (
+                        <tr key={row} className="text-foreground">
+                          <td className="px-5 py-3">{row}</td>
+                          <td className="px-5 py-3 text-center text-muted-foreground/50">—</td>
+                          <td className="bg-violet-500/5 px-5 py-3 text-center text-violet-700">
+                            <Check className="mx-auto h-5 w-5" />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Integration Advantage */}
+      <section id="integrations" className="border-t py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-10 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <SectionBadge icon={Link2} text="Integration Advantage" className="justify-center" />
+            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+              Integrations included. We negotiate better rates for you.
+            </h2>
+          </motion.div>
+
+          {/* Partner strip */}
+          <motion.div
+            className="overflow-hidden rounded-2xl border bg-card shadow-sm"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+          >
+            <div className="grid divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
+              {[
+                { name: "CTOS", desc: "Credit reporting" },
+                { name: "Trustgate", desc: "PKI signing (MTSA)" },
+                { name: "Infomina", desc: "SSM company checks" },
+                { name: "e-KYC", desc: "MyKad + biometric" },
+                { name: "Payment", desc: "Gateway integration" },
+              ].map((p) => (
+                <div key={p.name} className="px-6 py-6 text-center">
+                  <div className="font-display text-xl font-semibold tracking-tight text-foreground">
+                    {p.name}
+                  </div>
+                  <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                    {p.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: Check,
+                title: "No integration fees",
+                desc: "You'd otherwise pay each vendor separately to integrate. With TrueKredit, it's already done and included.",
+              },
+              {
+                icon: BarChart3,
+                title: "Better partner rates",
+                desc: "Our volume and partnerships unlock pricing you can't reach by going direct — especially on payment and e-KYC.",
+              },
+              {
+                icon: Briefcase,
+                title: "One vendor, one contract",
+                desc: "We manage the partner relationships so you can focus on lending. Especially valuable for SaaS operators.",
+              },
+            ].map((c, i) => (
+              <motion.div
+                key={c.title}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+              >
+                <Card className="h-full transition-all hover:border-primary/30 hover:shadow-md">
+                  <CardHeader>
+                    <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                      <c.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-base">{c.title}</CardTitle>
+                    <CardDescription>{c.desc}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Zero to Licensed — services bridge */}
+      <section id="zero-to-license" className="border-t bg-muted/30 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-14"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div>
+              <SectionBadge icon={Building2} text="Full-Service Partnership" />
+              <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+                We take you from zero to licensed and lending.
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Don&apos;t have a KPKT licence yet? TrueStack covers the full journey — licence work,
+                compliance setup, and the digital infrastructure that makes you operational fast.
+              </p>
+              <Button asChild size="lg" className="mt-6 gap-2">
+                <Link href="/services/digital-license">
+                  Explore Digital KPKT Licence
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <ol className="space-y-3">
+              {[
+                {
+                  step: "1",
+                  title: "Licence acquisition",
+                  desc: "KPKT licence trading, new applications & renewals — we handle paperwork and liaison.",
+                },
+                {
+                  step: "2",
+                  title: "Compliance & consultancy",
+                  desc: "KPKT account management, regulatory advisory, annual submissions, audit readiness.",
+                },
+                {
+                  step: "3",
+                  title: "Digital licence conversion",
+                  desc: "Transform a physical KPKT lender into a fully digital, cloud-ready operation.",
+                },
+                {
+                  step: "4",
+                  title: "TrueKredit goes live",
+                  desc: "Platform onboarded, staff trained, first loan disbursed — compliant from day one.",
+                  highlight: true,
+                },
+              ].map((s) => (
+                <li
+                  key={s.step}
+                  className={`flex gap-4 rounded-xl border bg-background p-5 ${s.highlight ? "border-primary/30 bg-primary/5" : ""}`}
+                >
+                  <div
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${s.highlight ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`}
+                  >
+                    {s.step}
+                  </div>
+                  <div>
+                    <p className={`font-medium ${s.highlight ? "text-primary" : "text-foreground"}`}>
+                      {s.title}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </motion.div>
         </div>
       </section>
@@ -1890,26 +2181,41 @@ export default function TrueKreditPage() {
       </section>
 
       {/* CTA Section */}
-      <section id="demo" className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-            Ready to Run Your Loan Business with Confidence?
+      <section
+        id="demo"
+        data-nav-theme="dark"
+        className="relative overflow-hidden border-t border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 py-24 text-white"
+      >
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
+          <div className="absolute -bottom-32 right-0 h-[400px] w-[400px] rounded-full bg-violet-500/15 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-6 text-center">
+          <h2 className="mx-auto mb-4 max-w-3xl font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+            <span className="bg-linear-to-r from-indigo-200 via-violet-200 to-purple-200 bg-clip-text text-transparent">
+              Ready to consolidate your stack?
+            </span>
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Focus on growth, not paperwork. Let TrueKredit handle the operational complexity
-            so you can focus on what matters — serving your customers and growing your business.
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 md:text-xl">
+            We&apos;ll show you TrueKredit in action — and walk you through whether SaaS or Pro fits
+            your licence, your borrowers, and your roadmap.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <Button asChild size="lg" className="gap-2 bg-linear-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600">
               <Link href="/contact">
-                Get in Touch
+                Book a demo
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2">
+            <Button asChild variant="outline" size="lg" className="gap-2 border-violet-400/30 bg-white/4 text-white hover:bg-white/8 hover:text-white">
+              <Link href="#compare">
+                Compare TrueKredit vs Pro
+              </Link>
+            </Button>
+            <Button asChild variant="ghost" size="lg" className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white">
               <Link href="/services/digital-license">
-                Explore Digital KPKT License
-                <ArrowRight className="h-4 w-4" />
+                Need a KPKT licence?
+                <ChevronRight className="h-4 w-4" />
               </Link>
             </Button>
           </div>
