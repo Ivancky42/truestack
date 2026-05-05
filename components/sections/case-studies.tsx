@@ -6,86 +6,16 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+	type CaseStudy,
+	caseStudies,
+} from "@/lib/case-studies-data";
 
-interface CaseStudy {
-	title: string;
-	description: string;
-	quote?: string;
-	tags: string[];
-	href: string;
-	logo: string;
-	isComingSoon?: boolean;
-	stats?: { label: string; value: string }[];
-}
-
-const caseStudies: CaseStudy[] = [
-	{
-		title: "PinjoCep",
-		description:
-			"Fast personal loans for Malaysian borrowers — built on TrueKredit and TrueIdentity for instant e-KYC, automated approvals, and KPKT-compliant disbursement.",
-		quote: "TrueStack got us KPKT-licensed and live in 3 months. The TrueKredit and TrueIdentity stack just works out of the box.",
-		tags: ["TrueKredit", "TrueIdentity", "KPKT Licensed"],
-		href: "https://pinjocep.com.my",
-		logo: "/logos/pinjocep-logo.png",
-    stats: [
-      { label: "Time to Launch", value: "3 mo" },
-      { label: "License", value: "KPKT" },
-    ],
-  },
-  {
-    title: "Proficient Premium",
-    description:
-      "Premium money lending operation modernised end-to-end with TrueKredit — borrower onboarding, loan origination, and KPKT reporting on a single platform.",
-    quote:
-      "Implementation was completely stress-free — TrueStack handled everything end-to-end, from KPKT licensing to a fully live platform in 3 months. We just focused on our borrowers.",
-    tags: ["TrueKredit", "KPKT Licensed", "Loan Management"],
-    href: "https://proficientpremium.com.my",
-    logo: "/logos/proficient-premium-logo.png",
-    stats: [
-      { label: "Time to Launch", value: "3 mo" },
-      { label: "License", value: "KPKT" },
-    ],
-  },
-  {
-    title: "Andas Capital",
-		description:
-			"Enterprise lending platform with comprehensive loan management, automated workflows, and regulatory reporting.",
-		quote: "The fastest turnaround we've seen. From kickoff to live platform in just 3 months.",
-		tags: ["Custom Software", "KPKT Licensed", "Enterprise"],
-		href: "https://andas.com.my",
-		logo: "/logos/Andas.svg",
-		stats: [
-			{ label: "Time to Launch", value: "3 mo" },
-			{ label: "License", value: "KPKT" },
-		],
-	},
-	{
-		title: "CashSouk",
-		description:
-			"P2P lending marketplace connecting borrowers with investors. Built for scale with full compliance features.",
-		tags: ["P2P Lending", "SC Licensed", "Marketplace"],
-		href: "https://cashsouk.com",
-		isComingSoon: true,
-		logo: "/logos/cashsouk_logo.png",
-		stats: [
-			{ label: "Type", value: "P2P Platform" },
-			{ label: "Regulator", value: "SC Malaysia" },
-		],
-	},
-	{
-		title: "CreditXpress",
-		description:
-			"Transformed from traditional lending to a fully digital, KPKT-licensed nationwide platform with web and mobile apps.",
-		quote: "TrueStack transformed our entire operation. We went from paper-based to fully digital in under 6 months.",
-		tags: ["Digital License", "Web + Mobile", "KPKT Licensed"],
-		href: "https://creditxpress.com.my",
-		logo: "/logos/creditxpress.svg",
-    stats: [
-      { label: "Time to Launch", value: "6 mo" },
-      { label: "License", value: "KPKT" },
-    ],
-	},
-];
+// Re-export the type so existing imports of `CaseStudy` from this module
+// keep working. The `caseStudies` data lives in `lib/case-studies-data` so
+// it can be safely imported by Server Components too (a "use client" file
+// turns its exports into client references when imported from RSC).
+export type { CaseStudy };
 
 function CaseStudyCard({ study }: { study: CaseStudy }) {
 	const isComingSoon = study.isComingSoon;
@@ -157,7 +87,23 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
 	);
 }
 
-export function CaseStudies() {
+interface CaseStudiesProps {
+	/** Optional subset/ordering of case studies to display. Defaults to all. */
+	studies?: CaseStudy[];
+	/** Optional heading override. */
+	title?: string;
+	/** Optional subtitle override. */
+	subtitle?: string;
+	/** Optional className for the outer <section>. */
+	className?: string;
+}
+
+export function CaseStudies({
+	studies = caseStudies,
+	title = "Success Stories",
+	subtitle = "See how we've helped Malaysian Fintech operators go digital and scale their businesses.",
+	className = "border-t py-20",
+}: CaseStudiesProps = {}) {
 	const scrollerRef = useRef<HTMLDivElement>(null);
 	const [canPrev, setCanPrev] = useState(false);
 	const [canNext, setCanNext] = useState(true);
@@ -191,7 +137,7 @@ export function CaseStudies() {
 	};
 
 	return (
-		<section className="border-t py-20">
+		<section className={className}>
 			{/* Section-style centered header. Title is centered; the prev/next
           buttons live at the bottom-right of the same header block on md+. */}
 			<motion.div
@@ -203,11 +149,10 @@ export function CaseStudies() {
 			>
 				<div className="mx-auto max-w-3xl text-center">
 					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-						Success Stories
+						{title}
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-						See how we&apos;ve helped Malaysian Fintech operators go
-						digital and scale their businesses.
+						{subtitle}
 					</p>
 				</div>
 
@@ -241,7 +186,7 @@ export function CaseStudies() {
 				ref={scrollerRef}
 				className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-6 pl-5 pr-5 scroll-pl-5 sm:gap-5 sm:pl-6 sm:pr-6 sm:scroll-pl-6 lg:pl-8 lg:pr-8 lg:scroll-pl-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 			>
-				{caseStudies.map((study) => (
+				{studies.map((study) => (
 					<CaseStudyCard key={study.title} study={study} />
 				))}
 			</div>
