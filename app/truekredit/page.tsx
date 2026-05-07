@@ -1804,7 +1804,7 @@ export default function TrueKreditPage() {
 							</div>
 							<ul className="space-y-2.5 text-sm text-foreground/80">
 								{[
-									"CTOS, Trustgate, Infomina, e-KYC, payments — already integrated",
+									"CTOS, Trustgate, SSM Search, e-KYC, payments — already integrated",
 									"Live in weeks — no integration project required",
 									"Built around KPKT requirements from day one",
 								].map((line) => (
@@ -3123,8 +3123,8 @@ export default function TrueKreditPage() {
 										"/truekredit/integrations/trustgate-logo.png",
 								},
 								{
-									name: "Infomina",
-									desc: "TrueSSM™ company checks",
+									name: "TrueSSM™",
+									desc: "SSM Search company checks",
 									logoSrc:
 										"/truekredit/integrations/ssmsearch-logo.webp",
 								},
