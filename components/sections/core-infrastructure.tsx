@@ -24,7 +24,7 @@ interface BuildingBlock {
 const buildingBlocks: BuildingBlock[] = [
   { label: "e-KYC", icon: Fingerprint },
   { label: "Credit\nReporting", icon: CreditCard },
-  { label: "SSM Business\nData", icon: Building2 },
+  { label: "TrueSSM™ Business\nData", icon: Building2 },
   { label: "Attestation", icon: Stamp },
   { label: "Compliance", icon: ShieldCheck },
   { label: "Notifications", icon: Bell },

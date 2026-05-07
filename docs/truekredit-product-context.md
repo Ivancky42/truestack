@@ -7,7 +7,7 @@ This document summarizes **TrueKredit™** and **TrueKredit™ Pro** for marketi
 ## Positioning
 
 - **Headline narrative:** Run the entire lending business from **one integrated platform**, built for **Malaysian KPKT-licensed money lenders** (and aligned fintech operators).
-- **Problem:** Operators often stitch **many vendors** (e-KYC, signing, CTOS, SSM, payments, docs, mobile, email) → multiple contracts, long integration timelines, manual compliance gaps.
+- **Problem:** Operators often stitch **many vendors** (e-KYC, signing, CTOS, TrueSSM™, payments, docs, mobile, email) → multiple contracts, long integration timelines, manual compliance gaps.
 - **Solution:** **One platform**, **pre-integrated** partners where it matters, **KPKT / PPW–aligned** design, **live in weeks** (pitch positioning), not bespoke integration projects.
 
 ## Two editions
@@ -33,7 +33,7 @@ Use when: you need **isolation**, **borrower-facing web/mobile**, **on-prem PKI 
 3. **Auto schedules — Jadual J & K** — repayment schedules computed and generated **KPKT-aligned**, “to the sen”.
 4. **e-KYC** — MyKad OCR + **liveness** / biometric framing (commercially **TrueIdentity™** style in product).
 5. **Late fees, arrears & default** — automated workflows, escalation, correspondence.
-6. **CTOS & SSM** — credit / company intelligence **within the workflow** (deck: Infomina for SSM).
+6. **CTOS & TrueSSM™** — credit / company intelligence **within the workflow** (deck: Infomina for Malaysian registry).
 7. **Auto document generation** — agreements, schedules, Lampiran/iDEAL class outputs, arrears/default letters.
 8. **RBAC** — role-based controls for directors, officers, admins.
 
@@ -94,7 +94,7 @@ Links naturally to **`/services/digital-license`** style pages on TrueStack mark
 
 Shared **core**:
 
-- Loan lifecycle, Book A/B, e-KYC, CTOS, SSM (Infomina), Lampiran/Jadual/auto docs compliance pack, notifications (deck: email/WhatsApp), payment gateway integration, audit + KPKT reporting, AU **Malaysia residency**, walk-in counter path, backups, **iDeaL** export.
+- Loan lifecycle, Book A/B, e-KYC, CTOS, TrueSSM™ (Infomina), Lampiran/Jadual/auto docs compliance pack, notifications (deck: email/WhatsApp), payment gateway integration, audit + KPKT reporting, AU **Malaysia residency**, walk-in counter path, backups, **iDeaL** export.
 
 **Pro-only (deck):**
 
@@ -138,7 +138,7 @@ Open `TrueKredit Pitch Deck.html` in a browser for the authoritative visual and 
 Titles and core lines only; verbatim marketing copy lives in the HTML.
 
 1. **Cover** — “Run your entire lending business from one platform.” Sub: TrueKredit™ & TrueKredit™ Pro — integrated LMS for Malaysian licensed money lenders. Pills: KPKT licensed lenders, Fintech operators, Malaysia.
-2. **The problem** — “Lending shouldn't be this complicated.” Pain of many tools, integrations, contracts, manual compliance. Listed pains: vendor contracts; months before go-live; manual compliance risk. Diagram motif: fragmented vendors (e-KYC, signing, CTOS, SSM, payment, docs, mobile, email).
+2. **The problem** — “Lending shouldn't be this complicated.” Pain of many tools, integrations, contracts, manual compliance. Listed pains: vendor contracts; months before go-live; manual compliance risk. Diagram motif: fragmented vendors (e-KYC, signing, CTOS, TrueSSM™, payment, docs, mobile, email).
 3. **The answer** — “One platform. Everything integrated. Fully KPKT-compliant.” Pillars: pre-integrated partners (CTOS · Trustgate · Infomina · e-KYC · payment gateway); live in weeks / no integration-project framing; KPKT PPW compliant by design.
 4. **Core features** (eight tiles) — See “Core platform capabilities” above (borrower & loan mgmt through RBAC).
 5. **Compliance** — “Auditors get what they need. Instantly.” Bullets: Lampiran A auto; iDeaL export; audit trail; late fees to the sen; arrears-default workflow; backups + MY residency.
@@ -167,7 +167,7 @@ Deck column subtitles: **TrueKredit™ — Truestack-hosted SaaS** | **TrueKredi
 - Book A / Book B management  
 - e-KYC — MyKad OCR, liveness, biometric match  
 - CTOS reports — built in  
-- SSM reports via Infomina — built in  
+- TrueSSM™ reports via Infomina — built in  
 - Auto document generation — Lampiran A, Jadual J & K, default letters, compliance  
 - Auto emails & WhatsApp notifications  
 - Payment gateway integration  

@@ -31,7 +31,7 @@ export const technologyPartners = [
 	},
 	{
 		name: "Infomina",
-		category: "SSM Reports",
+		category: "TrueSSM™",
 		logo: "/logos/infomina.png",
 	},
 	{

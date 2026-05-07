@@ -57,9 +57,9 @@ const partners = [
   },
   {
     name: "Infomina",
-    category: "SSM Reports",
+    category: "TrueSSM™",
     description:
-      "SSM company reports and business intelligence for due diligence and verification",
+      "TrueSSM™: Malaysian company registry reports for due diligence and verification",
     logo: "/logos/infomina.png",
     showName: false, // Logo includes the name
   },

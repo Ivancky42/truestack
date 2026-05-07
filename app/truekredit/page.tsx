@@ -499,7 +499,7 @@ function CTOSVisual() {
 	);
 }
 
-// ── SSM (Infomina) ──────────────────────────────────────────────────────────
+// ── TrueSSM™ (Infomina) ──────────────────────────────────────────────────────────
 function SSMVisual() {
 	const directors = [
 		{ name: "Lim Wei Ming", role: "Director • 51%", initials: "LW" },
@@ -512,7 +512,7 @@ function SSMVisual() {
 			badges={[
 				{
 					label: "via Infomina",
-					sub: "SSM lookup",
+					sub: "TrueSSM™ lookup",
 					pos: "left-3 top-4",
 					emphasis: "text-emerald-700",
 				},
@@ -1732,7 +1732,7 @@ export default function TrueKreditPage() {
 									"CTOS",
 									"e-KYC",
 									"Trustgate",
-									"SSM",
+									"TrueSSM™",
 									"Email",
 									"Payments",
 								].map((v) => (
@@ -2107,7 +2107,7 @@ export default function TrueKreditPage() {
 							},
 							{
 								icon: Building2,
-								title: "SSM company lookups",
+								title: "TrueSSM™ company lookups",
 								desc: "Company info, director and shareholder checks for corporate borrowers — pulled inside the loan file via Infomina.",
 								tag: "Powered by Infomina",
 								visual: <SSMVisual />,
@@ -3009,7 +3009,7 @@ export default function TrueKreditPage() {
 												"Book A / Book B management",
 												"e-KYC — MyKad OCR, liveness, biometric match",
 												"CTOS reports — built in",
-												"SSM reports via Infomina — built in",
+												"TrueSSM™ reports via Infomina — built in",
 												"Auto document generation — Lampiran A, Jadual J & K, default letters",
 												"Auto emails & WhatsApp notifications",
 												"Payment gateway integration",
@@ -3124,7 +3124,7 @@ export default function TrueKreditPage() {
 								},
 								{
 									name: "Infomina",
-									desc: "SSM company checks",
+									desc: "TrueSSM™ company checks",
 									logoSrc:
 										"/truekredit/integrations/ssmsearch-logo.webp",
 								},

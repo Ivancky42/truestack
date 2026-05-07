@@ -7,12 +7,12 @@ export const truekreditFaq = [
   {
     question: "What is included in the shared core on TrueKredit and TrueKredit Pro?",
     answer:
-      "Either plan covers what's in the comparison table Core row: lifecycle plus Books A/B, e‑KYC, CTOS and SSM, Lampiran/Jadual letters, repayments, analytics, gateways, audits, walk-in origination and daily backups—all in Malaysia AWS. Pro doesn't shrink Standard; it layers borrower channels and separation online licensees get asked for.",
+      "Either plan covers what's in the comparison table Core row: lifecycle plus Books A/B, e‑KYC, CTOS and TrueSSM™, Lampiran/Jadual letters, repayments, analytics, gateways, audits, walk-in origination and daily backups—all in Malaysia AWS. Pro doesn't shrink Standard; it layers borrower channels and separation online licensees get asked for.",
   },
   {
     question: "What connected modules ship on Standard and Pro?",
     answer:
-      "You wire CTOS, Infomina SSM, TrueIdentity™, Truesend™ (if you subscribe), Malaysian gateways and Trustgate-backed signing the same way on both plans. TrueSight™ works the same where you opt in. Pro adds the hardened on-prem Trustgate path, tighter tenancy and examiner-ready packs we shaped for online KPKT reviews.",
+      "You wire CTOS, TrueSSM™ (Infomina), TrueIdentity™, Truesend™ (if you subscribe), Malaysian gateways and Trustgate-backed signing the same way on both plans. TrueSight™ works the same where you opt in. Pro adds the hardened on-prem Trustgate path, tighter tenancy and examiner-ready packs we shaped for online KPKT reviews.",
   },
   {
     question: "What is exclusive to TrueKredit Pro?",
