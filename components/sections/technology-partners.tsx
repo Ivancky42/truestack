@@ -122,6 +122,7 @@ export function TechnologyPartners() {
                     width={160}
                     height={40}
                     className="h-10 w-auto"
+                    style={{ width: "auto" }}
                   />
                 </div>
                 <p className="mb-2 text-sm font-medium text-primary">In-House Expertise</p>
@@ -176,6 +177,7 @@ export function TechnologyPartners() {
                             width={120}
                             height={32}
                             className="h-6 w-auto shrink-0 object-contain"
+                            style={{ width: "auto" }}
                           />
                         ) : (
                           <>

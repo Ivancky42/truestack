@@ -80,6 +80,7 @@ function ClientLogo({
           width={96}
           height={40}
           className="max-h-10 w-auto object-contain grayscale opacity-60 transition-all group-hover:grayscale-0 group-hover:opacity-100"
+          style={{ width: "auto" }}
           onError={(e) => {
             // Hide image on error, fallback will show
             e.currentTarget.style.display = 'none';

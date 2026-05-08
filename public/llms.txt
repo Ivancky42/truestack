@@ -4,7 +4,7 @@
 
 ## Summary
 
-Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending/P2P platform development, TrueKredit (loan management), and TrueIdentity (e-KYC).
+Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending and P2P platform development (both conventional and Shariah-aligned, including Gharamah and Ta'widh accounting for Islamic peer-to-peer financing), TrueKredit (loan management), and TrueIdentity (e-KYC).
 
 ## Main pages
 
@@ -20,6 +20,7 @@ Truestack provides KPKT-related compliance services and fintech software for lic
 - https://truestack.my/services/digital-license — Digital KPKT license conversion
 - https://truestack.my/services/account-management — KPKT account management
 - https://truestack.my/services/software-development — Custom fintech & P2P platform development
+- https://truestack.my/services/p2p-software-development — TrueP2P™: P2P platform engineering for Malaysia (SC-aligned peer-to-peer platforms; conventional and Shariah-aligned, with Gharamah & Ta'widh accounting; optional SC RMO registration consultancy)
 
 ## Products
 

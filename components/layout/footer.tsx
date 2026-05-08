@@ -2,17 +2,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Mail } from "lucide-react";
 
+/** Same grouping and labels as the Solutions menu in `header.tsx`. */
+const solutionsColumns = [
+  {
+    heading: "Platforms",
+    links: [
+      { href: "/truekredit", label: "TrueKredit™" },
+      { href: "/services/p2p-software-development", label: "TrueP2P™" },
+    ],
+  },
+  {
+    heading: "APIs",
+    links: [
+      { href: "/trueidentity", label: "TrueIdentity™" },
+      { href: "/truessm", label: "TrueSSM™" },
+    ],
+  },
+  {
+    heading: "Services",
+    links: [
+      { href: "/services/digital-license", label: "KPKT Digital License" },
+      { href: "/services/account-management", label: "KPKT Account Management" },
+      { href: "/services/software-development", label: "Custom Software Development" },
+    ],
+  },
+] as const;
+
 const footerLinks = {
-  kpktSolutions: [
-    { href: "/truekredit", label: "TrueKredit™" },
-    { href: "/services/digital-license", label: "Digital KPKT License" },
-    { href: "/services/account-management", label: "KPKT Account Management" },
-  ],
-  otherSolutions: [
-    { href: "/trueidentity", label: "TrueIdentity™" },
-    { href: "/services/software-development", label: "P2P Platforms" },
-    { href: "/services/software-development", label: "Custom Fintech Solutions" },
-  ],
   company: [
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
@@ -27,13 +43,39 @@ const footerLinks = {
   ],
 };
 
+function LinkColumn({
+  heading,
+  links,
+}: {
+  heading: string;
+  links: readonly { href: string; label: string }[];
+}) {
+  return (
+    <div>
+      <h4 className="mb-4 text-base font-semibold">{heading}</h4>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="border-t bg-muted/30">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 xl:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/truestack-logo-transparent.png"
@@ -41,6 +83,7 @@ export function Footer() {
                 width={140}
                 height={32}
                 className="h-8 w-auto"
+                style={{ width: "auto" }}
               />
             </Link>
             <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
@@ -65,73 +108,16 @@ export function Footer() {
             </a>
           </div>
 
-          {/* KPKT Solutions */}
-          <div>
-            <h4 className="mb-4 text-base font-semibold">KPKT Solutions</h4>
-            <ul className="space-y-3">
-              {footerLinks.kpktSolutions.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {solutionsColumns.map((column) => (
+            <LinkColumn
+              key={column.heading}
+              heading={column.heading}
+              links={column.links}
+            />
+          ))}
 
-          {/* Other Solutions */}
-          <div>
-            <h4 className="mb-4 text-base font-semibold">Other Solutions</h4>
-            <ul className="space-y-3">
-              {footerLinks.otherSolutions.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="mb-4 text-base font-semibold">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="mb-4 text-base font-semibold">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <LinkColumn heading="Company" links={footerLinks.company} />
+          <LinkColumn heading="Legal" links={footerLinks.legal} />
         </div>
 
         {/* Bottom Bar */}

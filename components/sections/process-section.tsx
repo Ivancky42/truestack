@@ -14,7 +14,6 @@ import {
   Plug,
   HeadphonesIcon,
   CheckCircle2,
-  Timer,
   TrendingUp,
 } from "lucide-react";
 
@@ -134,7 +133,7 @@ export function ProcessSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Card className="overflow-hidden border-primary/20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
+          <Card className="overflow-hidden border-primary/20 bg-linear-to-r from-primary/5 via-primary/10 to-primary/5">
             <CardContent className="p-0">
               <div className="grid items-center gap-8 md:grid-cols-2">
                 {/* Speed Visual */}
@@ -205,7 +204,7 @@ export function ProcessSection() {
                   </h3>
                   <p className="mb-6 text-muted-foreground">
                     Our extensive experience in fintech and agile team structure allows us to move fast without 
-                    compromising quality. We've built the same systems multiple times — we know what works.
+                    compromising quality. We&apos;ve built the same systems multiple times — we know what works.
                   </p>
                   <ul className="space-y-3">
                     {[
@@ -284,7 +283,7 @@ export function ProcessSection() {
                   <div className="relative flex shrink-0 flex-col items-center">
                     {/* Timeline line above */}
                     {index > 0 && (
-                      <div className="absolute -top-8 hidden h-8 w-0.5 bg-gradient-to-b from-primary/20 to-primary md:block" />
+                      <div className="absolute -top-8 hidden h-8 w-0.5 bg-linear-to-b from-primary/20 to-primary md:block" />
                     )}
                     {/* Step circle */}
                     <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary text-2xl font-bold text-primary-foreground shadow-lg">
@@ -292,7 +291,7 @@ export function ProcessSection() {
                     </div>
                     {/* Timeline line below */}
                     {index < processSteps.length - 1 && (
-                      <div className="hidden flex-1 w-0.5 bg-gradient-to-b from-primary to-primary/20 md:block" style={{ minHeight: "calc(100% - 5rem)" }} />
+                      <div className="hidden flex-1 w-0.5 bg-linear-to-b from-primary to-primary/20 md:block" style={{ minHeight: "calc(100% - 5rem)" }} />
                     )}
                   </div>
 

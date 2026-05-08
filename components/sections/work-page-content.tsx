@@ -63,7 +63,7 @@ const projects: WorkProject[] = [
       "Complete audit trail system",
       "Serving customers nationwide",
     ],
-    tags: ["Digital License Conversion", "Web + Mobile App", "KPKT Licensed"],
+    tags: ["TrueKredit™", "Digital License Conversion", "Web + Mobile App"],
     status: "Live",
     highlights: [
       { icon: FileCheck, label: "Digital license" },
@@ -72,7 +72,7 @@ const projects: WorkProject[] = [
     ],
     stats: [
       { label: "Time to launch", value: "3 mo" },
-      { label: "License", value: "KPKT" },
+      { label: "Platform", value: "TrueKredit™" },
     ],
     accent: "kpkt",
   },
@@ -95,16 +95,16 @@ const projects: WorkProject[] = [
       "Malaysia data residency (AWS)",
       "Comprehensive audit trail and controls",
     ],
-    tags: ["Custom Software", "KPKT Licensed", "Enterprise"],
+    tags: ["TrueKredit™", "Custom Software", "Enterprise"],
     status: "Live",
     highlights: [
       { icon: Code2, label: "Enterprise platform" },
-      { icon: Shield, label: "KPKT" },
+      { icon: Shield, label: "TrueKredit™" },
       { icon: Database, label: "AWS Malaysia" },
     ],
     stats: [
       { label: "Time to launch", value: "3 mo" },
-      { label: "License", value: "KPKT" },
+      { label: "Platform", value: "TrueKredit™" },
     ],
     accent: "primary",
   },
@@ -127,14 +127,14 @@ const projects: WorkProject[] = [
       "Multi-product support",
       "Real-time transaction processing",
     ],
-    tags: ["Custom Software", "P2P Lending", "SC Licensed"],
+    tags: ["TrueP2P™", "Custom Software", "SC Licensed"],
     status: "Coming Soon",
     highlights: [
-      { icon: Code2, label: "P2P platform" },
+      { icon: Code2, label: "TrueP2P™" },
       { icon: Database, label: "AWS Malaysia" },
     ],
     stats: [
-      { label: "Model", value: "Marketplace" },
+      { label: "Platform", value: "TrueP2P™" },
       { label: "Regulator", value: "SC Malaysia" },
     ],
     accent: "primary",
@@ -307,6 +307,7 @@ function ProjectStory({ project, index }: { project: WorkProject; index: number 
               width={200}
               height={56}
               className="max-h-12 w-auto object-contain object-left md:max-h-14"
+              style={{ width: "auto" }}
             />
           </div>
           <div className="min-w-0 pt-0.5">

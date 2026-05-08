@@ -35,8 +35,8 @@ function AnimatedServiceCard({
 			<Card
 				className={`group flex h-full flex-col transition-all hover:shadow-md ${
 					isKpkt
-						? "bg-kpkt/[0.03] hover:border-kpkt/50 hover:bg-kpkt/[0.05]"
-						: "bg-primary/[0.03] hover:border-primary/50 hover:bg-primary/[0.05]"
+						? "bg-kpkt/3 hover:border-kpkt/50 hover:bg-kpkt/5"
+						: "bg-primary/3 hover:border-primary/50 hover:bg-primary/5"
 				}`}
 			>
 				<CardHeader>

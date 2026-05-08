@@ -255,6 +255,7 @@ const LogoCloud1 = ({
 														? "h-12"
 														: "h-8",
 											)}
+											style={{ width: "auto" }}
 										/>
 									</div>
 									{showCategories &&

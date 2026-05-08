@@ -153,7 +153,7 @@ export default function SoftwareDevelopmentPage() {
       </section>
 
       {/* Architecture Diagram */}
-      <section className="border-t bg-gradient-to-b from-muted/50 to-background py-20 overflow-hidden">
+      <section className="border-t bg-linear-to-b from-muted/50 to-background py-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="Typical Deployment Architecture"
@@ -188,7 +188,7 @@ export default function SoftwareDevelopmentPage() {
             {/* Arrow down */}
             <div className="flex justify-center my-3">
               <div className="flex flex-col items-center">
-                <div className="w-0.5 h-6 bg-gradient-to-b from-muted-foreground/40 to-muted-foreground/20" />
+                <div className="w-0.5 h-6 bg-linear-to-b from-muted-foreground/40 to-muted-foreground/20" />
                 <ArrowRight className="h-4 w-4 text-muted-foreground/40 rotate-90" />
               </div>
             </div>
@@ -262,12 +262,12 @@ export default function SoftwareDevelopmentPage() {
             <div className="flex justify-center gap-20 my-3">
               <div className="flex flex-col items-center">
                 <ArrowRight className="h-4 w-4 text-muted-foreground/40 -rotate-90" />
-                <div className="w-0.5 h-4 bg-gradient-to-b from-muted-foreground/20 to-muted-foreground/40" />
+                <div className="w-0.5 h-4 bg-linear-to-b from-muted-foreground/20 to-muted-foreground/40" />
                 <ArrowRight className="h-4 w-4 text-muted-foreground/40 rotate-90" />
               </div>
               <div className="flex flex-col items-center">
                 <ArrowRight className="h-4 w-4 text-muted-foreground/40 -rotate-90" />
-                <div className="w-0.5 h-4 bg-gradient-to-b from-muted-foreground/20 to-muted-foreground/40" />
+                <div className="w-0.5 h-4 bg-linear-to-b from-muted-foreground/20 to-muted-foreground/40" />
                 <ArrowRight className="h-4 w-4 text-muted-foreground/40 rotate-90" />
               </div>
             </div>
@@ -325,12 +325,12 @@ export default function SoftwareDevelopmentPage() {
 
             {/* Legend / Summary */}
             <div className="mt-10 flex items-center justify-center gap-4">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="h-px flex-1 bg-linear-to-r from-transparent via-primary/30 to-transparent" />
               <span className="flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-muted-foreground">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
                 Malaysia Data Residency Compliant
               </span>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="h-px flex-1 bg-linear-to-r from-transparent via-primary/30 to-transparent" />
             </div>
 
             {/* Frameworks & Technologies */}
@@ -394,7 +394,7 @@ export default function SoftwareDevelopmentPage() {
       <section className="py-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-6">
           {/* In-house capabilities card */}
-          <div className="mb-12 rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-background p-8">
+          <div className="mb-12 rounded-2xl border bg-linear-to-br from-primary/5 via-background to-background p-8">
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
                 <Badge className="mb-4">In-House Expertise</Badge>
@@ -426,7 +426,7 @@ export default function SoftwareDevelopmentPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 lg:grid-cols-2">
             {/* Built for Compliance */}
-            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-background to-background">
+            <Card className="border-primary/20 bg-linear-to-br from-primary/5 via-background to-background">
               <CardContent className="p-8">
                 <Badge className="mb-4">Built for Compliance</Badge>
                 <h3 className="mb-3 text-2xl font-bold">Every Platform Meets Regulatory Requirements</h3>
@@ -464,6 +464,7 @@ export default function SoftwareDevelopmentPage() {
                         width={140}
                         height={45}
                         className="h-9 w-auto"
+                        style={{ width: "auto" }}
                       />
                       <Badge className="bg-primary text-xs">Live</Badge>
                     </div>
@@ -495,6 +496,7 @@ export default function SoftwareDevelopmentPage() {
                       width={120}
                       height={40}
                       className="h-9 w-auto"
+                      style={{ width: "auto" }}
                     />
                     <Button asChild variant="outline" size="sm" className="gap-2 w-fit">
                       <Link href="https://cashsouk.com" target="_blank" rel="noopener noreferrer">

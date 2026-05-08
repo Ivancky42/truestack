@@ -457,7 +457,7 @@ export default function CareersPage() {
 
           <p className="mt-8 text-center text-sm text-muted-foreground">
             <strong>Note:</strong> The practical task (step 3) is optional and
-            only for senior roles. It's a paid engagement where we work together
+            only for senior roles. It&apos;s a paid engagement where we work together
             on a real project.
           </p>
         </div>

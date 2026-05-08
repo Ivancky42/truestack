@@ -39,6 +39,7 @@ export function CaseStudyCard({
                   width={112}
                   height={48}
                   className="max-h-12 w-auto object-contain"
+                  style={{ width: "auto" }}
                 />
               </div>
             ) : (
