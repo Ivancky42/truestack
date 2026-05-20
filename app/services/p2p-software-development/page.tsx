@@ -180,7 +180,7 @@ const stackHighlights = [
 	"MyKad e-KYC, AML/CFT and CTOS connectors",
 	"AWS Malaysia data residency, encrypted by default",
 	"Audit-ready logs, exports and reporting",
-	"White-labelled brand, web and native mobile",
+	"Branded web and native mobile experiences",
 	"Long-term managed engineering retainer",
 ];
 

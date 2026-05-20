@@ -32,7 +32,7 @@ export const p2pFaq = [
   {
     question: "Can the P2P platform be customised to our asset class and investor strategy?",
     answer:
-      "Yes. We design the listings engine, scoring model, fee structure, and investor experience around your specific asset class — invoice financing, SME working capital, supply-chain financing, asset-backed notes, or project financing. We tune the investor accreditation logic and per-investor concentration limits to your SC submission, and we white-label the entire platform with your brand.",
+      "Yes. We design the listings engine, scoring model, fee structure, and investor experience around your specific asset class — invoice financing, SME working capital, supply-chain financing, asset-backed notes, or project financing. We tune the investor accreditation logic and per-investor concentration limits to your SC submission, with branding and workflows shaped for your operator.",
   },
   {
     question: "Do you handle integrations with Malaysian fintech vendors?",

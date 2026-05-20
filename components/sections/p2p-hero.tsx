@@ -238,7 +238,7 @@ export function P2PHero() {
               <span className="font-medium text-foreground/90">
                 Securities Commission Malaysia
               </span>{" "}
-              requirements and white-labelled to your brand. Our consultancy
+              requirements. Our consultancy
               team can also guide SC Malaysia Recognised Market Operator (RMO)
               registration end-to-end alongside the build.
             </motion.p>

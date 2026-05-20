@@ -26,7 +26,7 @@ export const P2P_METADATA = {
 		"Gharamah Ta'widh accounting",
 		"Tawarruq P2P Malaysia",
 		"Bursa Suq Al-Sila integration",
-		"white-label P2P platform",
+		"custom P2P platform Malaysia",
 		"invoice financing platform Malaysia",
 	],
 	openGraphTitle:

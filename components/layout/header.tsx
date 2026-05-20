@@ -73,7 +73,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				icon: Network,
 			},
 			{
-				title: "TrueAmanah™",
+        title: "TrueSyariah™",
 				description:
 					"Shariah-compliant digital financing platform powered by transparent financing principles.",
 				icon: Scale,

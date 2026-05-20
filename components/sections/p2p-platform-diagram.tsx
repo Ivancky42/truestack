@@ -250,7 +250,7 @@ export function P2PPlatformDiagram() {
                   </p>
                   <p className="mt-4 max-w-md text-base leading-7 text-primary-foreground/90 md:text-lg md:leading-8">
                     SC-aligned investor onboarding, listings, escrow, payments, e-signing
-                    and reporting — delivered as a production-ready, white-labelled product.
+                    and reporting — delivered as a production-ready platform for your operator.
                   </p>
                 </div>
                 <ul className="mt-10 flex flex-col gap-3.5 md:gap-4" role="list">
