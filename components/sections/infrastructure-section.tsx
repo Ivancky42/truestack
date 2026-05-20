@@ -35,7 +35,6 @@ import {
 	Shield,
 	ShieldAlert,
 	Sparkles,
-	Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -297,14 +296,14 @@ const services: Service[] = [
 		comingSoon: true,
 	},
 	{
-		id: "truesyariah",
-		name: "TrueSyariah™",
-		tagline: "Shariah Compliance Toolkit",
+		id: "truecommodity",
+		name: "TrueCommodity™",
+		tagline: "Shariah Trading",
 		description:
 			"Shariah-compliant disbursement and accounting for Malaysian operators: Tawarruq commodity trading via Bursa Suq Al-Sila', plus Gharamah and Ta'widh ledgers and Shariah committee-ready exports.",
-		href: "/truesyariah",
+		href: "/truecommodity",
 		badgeIcon: Moon,
-		badgeText: "Shariah Toolkit",
+		badgeText: "Shariah Trading",
 		stats: [
 			{ value: "Tawarruq", label: "Disbursement" },
 			{ value: "Soon", label: "Availability" },
@@ -356,48 +355,48 @@ const services: Service[] = [
 	{
 		id: "truesight",
 		name: "TrueSight™",
-		tagline: "Cross-Lender Intelligence",
+		tagline: "AI Risk & Borrower Intelligence",
 		description:
-			"Pooled, privacy-preserving borrower intelligence across the TrueStack network. See repayment history and performance signals beyond your own book.",
+			"AI-powered analysis for borrower risk scoring and intelligence — model-driven creditworthiness signals, default risk, and explainable insights beyond your own portfolio.",
 		href: "/truesight",
 		badgeIcon: Sparkles,
-		badgeText: "Borrower Intelligence",
+		badgeText: "AI Risk Analysis",
 		stats: [
-			{ value: "Network", label: "Pooled data" },
+			{ value: "AI", label: "Powered scoring" },
 			{ value: "Soon", label: "Availability" },
 		],
 		flowSteps: [
 			{
 				icon: Database,
-				label: "Aggregate",
+				label: "Ingest",
 				color: "text-indigo-600",
 				bg: "bg-indigo-100",
 			},
 			{
-				icon: Users,
-				label: "Network Match",
+				icon: Sparkles,
+				label: "Analyse",
 				color: "text-violet-600",
 				bg: "bg-violet-100",
 			},
 			{
 				icon: BarChart3,
-				label: "Score",
+				label: "Risk Score",
 				color: "text-fuchsia-600",
 				bg: "bg-fuchsia-100",
 			},
 			{
-				icon: Sparkles,
-				label: "Insights",
+				icon: Shield,
+				label: "Decision",
 				color: "text-emerald-600",
 				bg: "bg-emerald-100",
 			},
 		],
-		flowResultLabel: "Borrower 360° in seconds",
+		flowResultLabel: "Risk intelligence in seconds",
 		capabilities: [
-			{ label: "Cross-lender repayment history", icon: Network },
-			{ label: "Network match across operators", icon: Users },
-			{ label: "Performance & default signals", icon: BarChart3 },
-			{ label: "Privacy-preserving aggregates", icon: Shield },
+			{ label: "AI borrower risk scoring", icon: Sparkles },
+			{ label: "Creditworthiness & default signals", icon: BarChart3 },
+			{ label: "Cross-portfolio intelligence", icon: Network },
+			{ label: "Explainable model insights", icon: Shield },
 		],
 		ctaLabel: "Coming soon",
 		comingSoon: true,
