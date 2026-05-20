@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { p2pFaq } from "@/lib/p2p-faq";
+import { P2P_METADATA, P2P_PAGE_PATH } from "@/lib/p2p-seo";
 import { P2PHero } from "@/components/sections/p2p-hero";
 import { SectionHeader } from "@/components/shared/section-header";
 import { SectionBadge } from "@/components/shared/section-badge";
@@ -11,7 +12,7 @@ import {
 	CaseStudies,
 	type CaseStudy,
 } from "@/components/sections/case-studies";
-import { P2PFaqSchema } from "@/components/seo/p2p-faq-schema";
+import { P2PSchema } from "@/components/seo/p2p-schema";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -55,53 +56,15 @@ import {
 	Zap,
 } from "lucide-react";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
-const pageUrl = `${baseUrl}/services/p2p-software-development`;
-
-const TITLE =
-	"TrueP2P™ — Malaysian P2P Platform Engineering | Conventional & Shariah-Aligned";
-const DESCRIPTION =
-	"TrueP2P™ is Truestack's peer-to-peer (P2P) financing platform engineering for Malaysia — conventional and Shariah-aligned (syariah-compliant). Built for Securities Commission Malaysia (SC) requirements, with investor onboarding, listings, escrow, payments, e-signing, Tawarruq disbursement via Bursa Suq Al-Sila', Gharamah and Ta'widh accounting, and reporting — plus optional consultancy for SC Recognised Market Operator (RMO) registration preparation.";
-
 export const metadata: Metadata = {
-	title: "TrueP2P™ | P2P Platforms Malaysia",
-	description: DESCRIPTION,
-	keywords: [
-		"P2P software development",
-		"P2P platform development",
-		"P2P platform development Malaysia",
-		"P2P lending platform Malaysia",
-		"peer-to-peer financing platform Malaysia",
-		"P2P software service",
-		"build P2P lending platform",
-		"SC Malaysia P2P platform",
-		"Recognised Market Operator P2P",
-		"P2P fintech development Malaysia",
-		"white-label P2P platform",
-		"invoice financing platform Malaysia",
-		"SME crowdfunding platform Malaysia",
-		"Shariah-compliant P2P platform Malaysia",
-		"syariah-compliant P2P financing",
-		"Islamic P2P platform development",
-		"Islamic peer-to-peer financing Malaysia",
-		"Shariah-aligned P2P software",
-		"Gharamah and Ta'widh accounting platform",
-		"Shariah P2P fintech Malaysia",
-		"Tawarruq P2P financing Malaysia",
-		"Tawarruq disbursement platform",
-		"Bursa Suq Al-Sila' integration",
-		"Bursa Suq Al-Sila Tawarruq platform",
-		"commodity Murabaha P2P Malaysia",
-		"Shariah-compliant disbursement Malaysia",
-		"SC Malaysia RMO registration",
-		"SC RMO consultancy Malaysia",
-		"Recognised Market Operator registration support",
-	],
-	alternates: { canonical: "/services/p2p-software-development" },
+	title: { absolute: P2P_METADATA.title },
+	description: P2P_METADATA.description,
+	keywords: [...P2P_METADATA.keywords],
+	alternates: { canonical: P2P_PAGE_PATH },
 	openGraph: {
-		title: TITLE,
-		description: DESCRIPTION,
-		url: pageUrl,
+		title: P2P_METADATA.openGraphTitle,
+		description: P2P_METADATA.openGraphDescription,
+		url: P2P_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
 		siteName: "Truestack",
@@ -109,11 +72,20 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: TITLE,
-		description: DESCRIPTION,
+		title: P2P_METADATA.openGraphTitle,
+		description: P2P_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],
 	},
-	robots: { index: true, follow: true },
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const platformModules = [
@@ -339,106 +311,10 @@ const complianceItems = [
 	"AWS Malaysia data residency, encrypted at rest & in transit",
 ];
 
-const serviceJsonLd = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"@id": `${pageUrl}#service`,
-	name: "TrueP2P™",
-	alternateName: [
-		"P2P Software Development",
-		"Peer-to-Peer Platform Development",
-		"P2P Lending Platform Development Malaysia",
-		"Shariah-Aligned P2P Platform Development",
-		"Islamic Peer-to-Peer Financing Platform Development",
-		"Tawarruq P2P Disbursement Platform",
-		"Bursa Suq Al-Sila' Tawarruq Integration",
-	],
-	serviceType:
-		"Custom P2P platform engineering — conventional and Shariah-aligned",
-	url: pageUrl,
-	description: DESCRIPTION,
-	provider: {
-		"@id": `${baseUrl}/#organization`,
-	},
-	areaServed: {
-		"@type": "Country",
-		name: "Malaysia",
-	},
-	audience: {
-		"@type": "BusinessAudience",
-		audienceType:
-			"Recognised Market Operators, Islamic finance operators, fintech founders, licensed financial intermediaries",
-	},
-	keywords: [
-		"P2P software development",
-		"Shariah-compliant P2P platform Malaysia",
-		"syariah-compliant peer-to-peer financing",
-		"Tawarruq",
-		"Tawarruq disbursement",
-		"Bursa Suq Al-Sila'",
-		"commodity Murabaha",
-		"Gharamah",
-		"Ta'widh",
-		"Islamic P2P platform development",
-		"SC Malaysia Recognised Market Operator",
-		"SC RMO registration consultancy Malaysia",
-	].join(", "),
-	hasOfferCatalog: {
-		"@type": "OfferCatalog",
-		name: "P2P platform modules",
-		itemListElement: [
-			...platformModules.map((mod) => ({
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: mod.title,
-					description: mod.description,
-				},
-			})),
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Tawarruq disbursement via Bursa Suq Al-Sila'",
-					description:
-						"Shariah-compliant cash disbursement structured as a Tawarruq (commodity Murabaha) trade — buying and onward-selling a Shariah-permissible commodity on Bursa Suq Al-Sila', Bursa Malaysia's Shariah commodity trading platform. Trade legs, contracts, and audit trail are orchestrated automatically inside the P2P platform's disbursement flow.",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "Shariah-aligned accounting (Gharamah & Ta'widh)",
-					description:
-						"Segregated Gharamah (charity-bound late-payment penalty) and Ta'widh (cost-of-recovery compensation) ledgers, Shariah-screened asset onboarding, and Shariah committee-ready exports for Islamic peer-to-peer financing platforms.",
-				},
-			},
-			{
-				"@type": "Offer",
-				itemOffered: {
-					"@type": "Service",
-					name: "SC Malaysia RMO registration preparation",
-					description:
-						"Consultancy alongside TrueP2P™ engineering: end-to-end guidance on developing your peer-to-peer platform and preparing for Securities Commission Malaysia Recognised Market Operator approval, using in-house expertise and a network of specialist consultants. Coordinated with your legal counsel.",
-				},
-			},
-		],
-	},
-};
-
 export default function P2PSoftwareDevelopmentPage() {
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(serviceJsonLd).replace(
-						/</g,
-						"\\u003c",
-					),
-				}}
-			/>
-			<P2PFaqSchema />
+			<P2PSchema />
 
 			<P2PHero />
 

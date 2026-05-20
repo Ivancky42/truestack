@@ -1,75 +1,83 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
+import { ABOUT_METADATA, ABOUT_PAGE_PATH } from "@/lib/about-seo";
 import Link from "next/link";
 import { SectionHeader } from "@/components/shared/section-header";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { CoreInfrastructure } from "@/components/sections/core-infrastructure";
+import { AboutHero } from "@/components/sections/about-hero";
 import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
+import { AboutFaq } from "@/components/sections/about-faq";
+import { AboutSchema } from "@/components/seo/about-schema";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  Shield,
-  Code2,
-  Users,
-  ArrowRight,
-  ClipboardCheck,
-  FileCheck,
-  Landmark,
+	Shield,
+	Code2,
+	Users,
+	ArrowRight,
+	Landmark,
+	Smartphone,
+	Cloud,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
-  keywords: [
-    "Truestack",
-    "KPKT compliance Malaysia",
-    "fintech software Malaysia",
-    "licensed money lender",
-    "digital license conversion",
-    "e-KYC Malaysia",
-  ],
-  alternates: { canonical: "/about" },
-  openGraph: {
-    title: "About - Truestack",
-    description:
-      "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
-    images: [defaultOgImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About - Truestack",
-    description:
-      "Learn about Truestack — KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
-    images: [defaultOgImage.url],
-  },
+	title: { absolute: ABOUT_METADATA.title },
+	description: ABOUT_METADATA.description,
+	keywords: [...ABOUT_METADATA.keywords],
+	alternates: { canonical: ABOUT_PAGE_PATH },
+	openGraph: {
+		title: ABOUT_METADATA.openGraphTitle,
+		description: ABOUT_METADATA.openGraphDescription,
+		url: ABOUT_PAGE_PATH,
+		type: "website",
+		locale: "en_MY",
+		siteName: "Truestack",
+		images: [defaultOgImage],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: ABOUT_METADATA.openGraphTitle,
+		description: ABOUT_METADATA.openGraphDescription,
+		images: [defaultOgImage.url],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const values = [
-  {
-    title: "KPKT Expertise",
-    description:
-      "Deep understanding of Malaysia's KPKT regulatory landscape. We've helped operators navigate compliance and go digital.",
-    icon: Shield,
-  },
-  {
-    title: "Modern Tech Stack",
-    description:
-      "We use battle-tested technologies like Next.js, Flutter, Node.js, and PostgreSQL. Built for performance and maintainability.",
-    icon: Code2,
-  },
-  {
-    title: "End-to-End Delivery",
-    description:
-      "From compliance management to software development and deployment, we handle everything so you can focus on your business.",
-    icon: Landmark,
-  },
-  {
-    title: "Collaborative Approach",
-    description:
-      "We work closely with your team, providing regular updates and adapting to your needs throughout our engagement.",
-    icon: Users,
-  },
+	{
+		title: "KPKT Expertise",
+		description:
+			"Deep understanding of Malaysia's KPKT regulatory landscape. We've helped operators navigate compliance and go digital.",
+		icon: Shield,
+	},
+	{
+		title: "Modern Tech Stack",
+		description:
+			"We use battle-tested technologies like Next.js, Flutter, Node.js, and PostgreSQL. Built for performance and maintainability.",
+		icon: Code2,
+	},
+	{
+		title: "End-to-End Delivery",
+		description:
+			"From compliance management to software development and deployment, we handle everything so you can focus on your business.",
+		icon: Landmark,
+	},
+	{
+		title: "Collaborative Approach",
+		description:
+			"We work closely with your team, providing regular updates and adapting to your needs throughout our engagement.",
+		icon: Users,
+	},
 ];
 
 // const services = [
@@ -97,106 +105,110 @@ const values = [
 // ];
 
 export default function AboutPage() {
-  return (
-    <>
-      {/* Combined Hero + Who We Are */}
-      <section
-        data-nav-theme="dark"
-        className="relative overflow-hidden border-b border-zinc-800 py-20 text-zinc-100 md:py-28"
-      >
-        <AboutHeroBackdrop />
-        <div className="relative mx-auto max-w-6xl px-6">
-          {/* Hero header */}
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="font-display text-4xl font-medium tracking-tight text-zinc-50 md:text-5xl lg:text-6xl">
-              Who We Are
-            </h1>
-            <p className="mt-6 text-xl leading-relaxed text-zinc-400 md:text-2xl">
-              We are building the technology that 
-              powers licensed money lenders and fintechs across Malaysia and beyond.
-            </p>
-          </div>
-          
-          {/* Expanded content */}
-          <div className="mx-auto mt-12 max-w-4xl">
-            <div className="grid gap-6 text-lg text-zinc-400 md:grid-cols-2 md:gap-10">
-              <div className="space-y-4">
-                <p>
-                  We develop <strong className="font-semibold text-zinc-100">purpose-built platforms</strong> for 
-                  the lending industry — from loan origination and management to e-KYC verification 
-                  and regulatory reporting. Our technology is designed specifically for Malaysia&apos;s 
-                  regulatory environment.
-                </p>
-                <p>
-                  For traditional lenders looking to modernize, we provide <strong className="font-semibold text-zinc-100">end-to-end 
-                  digital transformation</strong> — helping operators transition from paper-based 
-                  processes to fully digital, KPKT-compliant operations.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <p>
-                  Beyond technology, we offer <strong className="font-semibold text-zinc-100">ongoing compliance 
-                  services</strong> that handle the regulatory burden — license renewals, annual 
-                  submissions, audits, and coordination with KPKT — so you can focus on growing 
-                  your business.
-                </p>
-                <p>
-                  Whether you&apos;re an established lender seeking to digitize, a new operator 
-                  building from scratch, or a fintech company needing custom development — 
-                  we have the expertise and platforms to support your journey.
-                </p>
-              </div>
-            </div>
-          </div>
+	return (
+		<>
+			<AboutSchema />
 
-          {/* Three pillars */}
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {/* Platforms */}
-            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
-                <Code2 className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Our Platforms</h3>
-              <p className="text-zinc-400">
-                <strong className="font-semibold text-zinc-100">TrueKredit™</strong> — a complete loan 
-                management system, and <strong className="font-semibold text-zinc-100">TrueIdentity™</strong> — 
-                our e-KYC verification platform — power lending operations across Malaysia.
-              </p>
-            </div>
+			{/* Combined Hero + Who We Are */}
+			<section
+				data-nav-theme="dark"
+				className="relative overflow-hidden border-b border-zinc-800 py-14 text-zinc-100 md:py-20 lg:py-24"
+			>
+				<AboutHeroBackdrop />
+				<div className="relative mx-auto max-w-6xl px-6">
+					<AboutHero />
 
-            {/* Digital Transformation */}
-            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/15">
-                <FileCheck className="h-6 w-6 text-kpkt" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Digital Transformation</h3>
-              <p className="text-zinc-400">
-                For operators looking to go digital, we offer end-to-end KPKT Digital License 
-                Conversion that transforms traditional lenders into compliant digital platforms.
-              </p>
-            </div>
+					<h2 className="mt-16 text-center text-sm font-semibold uppercase tracking-wide text-zinc-500">
+						Our technology
+					</h2>
+					<div className="mt-8 grid gap-8 md:grid-cols-3">
+						<div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
+								<Code2 className="h-6 w-6 text-primary" />
+							</div>
+							<h3 className="mb-2 text-xl font-semibold text-zinc-100">
+								Our Platforms
+							</h3>
+							<p className="text-zinc-400">
+								<strong className="font-semibold text-zinc-100">
+									TrueKredit™
+								</strong>{" "}
+								— loan management systems, and{" "}
+								<strong className="font-semibold text-zinc-100">
+									Truestack Core™
+								</strong>{" "}
+								— shared infrastructure for e-KYC, payments,
+								notifications, and compliance APIs.
+							</p>
+						</div>
 
-            {/* Compliance & Development */}
-            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-kpkt/15">
-                <ClipboardCheck className="h-6 w-6 text-kpkt" />
-              </div>
-              <h3 className="mb-2 text-xl font-semibold text-zinc-100">Compliance & Development</h3>
-              <p className="text-zinc-400">
-                We handle ongoing KPKT compliance — license renewals, annual submissions, 
-                and regulatory coordination. We also build custom fintech solutions for P2P 
-                lending, digital lending, and payment systems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+						<div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
+								<Smartphone className="h-6 w-6 text-primary" />
+							</div>
+							<h3 className="mb-2 text-xl font-semibold text-zinc-100">
+								Web & Mobile
+							</h3>
+							<p className="mb-4 text-zinc-400">
+								Modern interfaces and cross-platform apps built
+								for performance, maintainability, and scale.
+							</p>
+							<div className="flex flex-wrap gap-1.5">
+								{[
+									"Next.js",
+									"React",
+									"TypeScript",
+									"Tailwind CSS",
+									"Flutter",
+								].map((tech) => (
+									<span
+										key={tech}
+										className="rounded-md border border-zinc-800 bg-zinc-950/60 px-2 py-0.5 text-xs text-zinc-400"
+									>
+										{tech}
+									</span>
+								))}
+							</div>
+						</div>
 
-      {/* Core Infrastructure */}
-      <CoreInfrastructure />
+						<div className="rounded-xl border border-zinc-800/80 bg-zinc-900/45 p-6 shadow-lg shadow-black/20 backdrop-blur-md">
+							<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
+								<Cloud className="h-6 w-6 text-primary" />
+							</div>
+							<h3 className="mb-2 text-xl font-semibold text-zinc-100">
+								Backend & Cloud
+							</h3>
+							<p className="mb-4 text-zinc-400">
+								Battle-tested backend and cloud infrastructure
+								for reliable, audit-ready fintech applications.
+							</p>
+							<div className="flex flex-wrap gap-1.5">
+								{[
+									"Node.js",
+									"Express",
+									"PostgreSQL",
+									"Redis",
+									"AWS Malaysia",
+									"Docker",
+								].map((tech) => (
+									<span
+										key={tech}
+										className="rounded-md border border-zinc-800 bg-zinc-950/60 px-2 py-0.5 text-xs text-zinc-400"
+									>
+										{tech}
+									</span>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      {/* What We Do */}
-      {/* <section className="border-t bg-muted/30 py-20">
+			{/* Core Infrastructure */}
+			<CoreInfrastructure />
+
+			{/* What We Do */}
+			{/* <section className="border-t bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
             title="What We Do"
@@ -242,60 +254,67 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      {/* Why Truestack */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            title="Why Truestack"
-            subtitle="What sets us apart as your compliance and development partner."
-            centered
-          />
-          <div className="grid gap-6 md:grid-cols-2">
-            {values.map((value) => (
-              <Card key={value.title}>
-                <CardHeader>
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <value.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+			{/* Why Truestack */}
+			<section className="border-t py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeader
+						title="Why Truestack"
+						subtitle="What sets us apart as your compliance and development partner."
+						centered
+					/>
+					<div className="grid gap-6 md:grid-cols-2">
+						{values.map((value) => (
+							<Card key={value.title}>
+								<CardHeader>
+									<div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+										<value.icon className="h-6 w-6 text-primary" />
+									</div>
+									<CardTitle className="text-xl">
+										{value.title}
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<p className="text-muted-foreground">
+										{value.description}
+									</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
 
-      {/* Technology Partners */}
-      <TechnologyPartners />
+			{/* Technology Partners */}
+			<TechnologyPartners />
 
-      {/* CTA */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight">
-              Ready to get started?
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Whether you need help with compliance, want to go digital, or are building 
-              a new platform — we&apos;re here to help.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="gap-2">
-                <Link href="/contact">
-                  Get in Touch
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/services">View Services</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+			<AboutFaq />
+
+			{/* CTA */}
+			<section className="border-t py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="mx-auto max-w-2xl text-center">
+						<h2 className="text-3xl font-semibold tracking-tight">
+							Ready to get started?
+						</h2>
+						<p className="mt-4 text-lg text-muted-foreground">
+							Whether you need help with compliance, want to go
+							digital, or are building a new platform — we&apos;re
+							here to help.
+						</p>
+						<div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+							<Button asChild size="lg" className="gap-2">
+								<Link href="/contact">
+									Get in Touch
+									<ArrowRight className="h-4 w-4" />
+								</Link>
+							</Button>
+							<Button asChild variant="outline" size="lg">
+								<Link href="/services">View Services</Link>
+							</Button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</>
+	);
 }

@@ -1,44 +1,52 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
+import { TrueIdentitySchema } from "@/components/seo/trueidentity-schema";
+import {
+	TRUEIDENTITY_METADATA,
+	TRUEIDENTITY_PAGE_PATH,
+} from "@/lib/trueidentity-seo";
 
 export const metadata: Metadata = {
-  title: "TrueIdentity™ — e-KYC Verification for Malaysia",
-  description:
-    "Programmatic e-KYC verification for Malaysian fintechs. MyKad OCR, liveness detection, biometric matching — verify customers in seconds, not days.",
-  keywords: [
-    "e-KYC Malaysia",
-    "identity verification",
-    "MyKad OCR",
-    "liveness detection",
-    "biometric matching",
-    "TrueIdentity",
-    "KYC API",
-    "fintech Malaysia",
-    "PDPA compliant",
-  ],
-  alternates: { canonical: "/trueidentity" },
-  openGraph: {
-    title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
-    description:
-      "Programmatic e-KYC verification for Malaysian fintechs. Verify customers in seconds, not days.",
-    type: "website",
-    locale: "en_MY",
-    siteName: "Truestack",
-    images: [defaultOgImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TrueIdentity™ — e-KYC Verification for Malaysia - Truestack",
-    description:
-      "Programmatic e-KYC verification for Malaysian fintechs. Verify customers in seconds, not days.",
-    images: [defaultOgImage.url],
-  },
+	title: { absolute: TRUEIDENTITY_METADATA.title },
+	description: TRUEIDENTITY_METADATA.description,
+	keywords: [...TRUEIDENTITY_METADATA.keywords],
+	alternates: { canonical: TRUEIDENTITY_PAGE_PATH },
+	openGraph: {
+		title: TRUEIDENTITY_METADATA.openGraphTitle,
+		description: TRUEIDENTITY_METADATA.openGraphDescription,
+		url: TRUEIDENTITY_PAGE_PATH,
+		type: "website",
+		locale: "en_MY",
+		siteName: "Truestack",
+		images: [defaultOgImage],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: TRUEIDENTITY_METADATA.openGraphTitle,
+		description: TRUEIDENTITY_METADATA.openGraphDescription,
+		images: [defaultOgImage.url],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default function TrueIdentityLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return children;
+	return (
+		<>
+			<TrueIdentitySchema />
+			{children}
+		</>
+	);
 }

@@ -1,59 +1,58 @@
 import type { Metadata } from "next";
-import { TrueKreditFaqSchema } from "@/components/seo/truekredit-faq-schema";
+import { TrueKreditSchema } from "@/components/seo/truekredit-schema";
+import {
+	TRUEKREDIT_METADATA,
+	TRUEKREDIT_PAGE_PATH,
+} from "@/lib/truekredit-seo";
 
 export const metadata: Metadata = {
-  title: "TrueKredit™ — KPKT Loan Management System",
-  description:
-    "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia. Manage borrowers, loans, compliance, and audits — all in one secure system.",
-  keywords: [
-    "KPKT",
-    "PPW",
-    "money lender Malaysia",
-    "loan management system",
-    "KPKT compliance",
-    "Lampiran A",
-    "Lampiran B1",
-    "iDEAL",
-    "licensed money lender",
-    "TrueKredit",
-    "loan software",
-    "lending platform",
-  ],
-  alternates: { canonical: "/truekredit" },
-  openGraph: {
-    title: "TrueKredit™ — KPKT Loan Management System - Truestack",
-    description:
-      "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia. Manage borrowers, loans, compliance, and audits — all in one secure system.",
-    type: "website",
-    locale: "en_MY",
-    siteName: "Truestack",
-    images: [
-      {
-        url: "/truekredit/loan_application_screenshot.png",
-        width: 1200,
-        height: 630,
-        alt: "TrueKredit Loan Management System",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TrueKredit™ — KPKT Loan Management System - Truestack",
-    description:
-      "Loan management system built specifically for KPKT PPW (offline) licensed money lenders in Malaysia.",
-    images: ["/truekredit/loan_application_screenshot.png"],
-  },
+	title: { absolute: TRUEKREDIT_METADATA.title },
+	description: TRUEKREDIT_METADATA.description,
+	keywords: [...TRUEKREDIT_METADATA.keywords],
+	alternates: { canonical: TRUEKREDIT_PAGE_PATH },
+	openGraph: {
+		title: TRUEKREDIT_METADATA.openGraphTitle,
+		description: TRUEKREDIT_METADATA.openGraphDescription,
+		url: TRUEKREDIT_PAGE_PATH,
+		type: "website",
+		locale: "en_MY",
+		siteName: "Truestack",
+		images: [
+			{
+				url: TRUEKREDIT_METADATA.ogImagePath,
+				width: 1200,
+				height: 630,
+				alt: TRUEKREDIT_METADATA.ogImageAlt,
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: TRUEKREDIT_METADATA.openGraphTitle,
+		description: TRUEKREDIT_METADATA.openGraphDescription,
+		images: [TRUEKREDIT_METADATA.ogImagePath],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default function TrueKreditLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <>
-      <TrueKreditFaqSchema />
-      {children}
-    </>
-  );
+	return (
+		<>
+			<TrueKreditSchema />
+			{children}
+		</>
+	);
 }

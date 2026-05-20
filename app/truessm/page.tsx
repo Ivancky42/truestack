@@ -27,6 +27,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionBadge } from "@/components/shared/section-badge";
+import { TrueSsmFaq } from "@/components/sections/truessm-faq";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -1102,8 +1103,10 @@ export default function TrueSsmPage() {
         </div>
       </section>
 
+      <TrueSsmFaq />
+
       {/* CTA */}
-      <section className="border-t bg-muted/30 py-20">
+      <section className="border-t py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
+import {
+	DIGITAL_LICENSE_METADATA,
+	DIGITAL_LICENSE_PAGE_PATH,
+} from "@/lib/digital-license-seo";
 import Link from "next/link";
 import { DigitalLicenseHero } from "@/components/sections/digital-license-hero";
+import { DigitalLicenseFaq } from "@/components/sections/digital-license-faq";
+import { DigitalLicenseSchema } from "@/components/seo/digital-license-schema";
 import { SectionHeader } from "@/components/shared/section-header";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { CaseStudies } from "@/components/sections/case-studies";
@@ -35,25 +41,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-	title: "Digital KPKT License — End-to-End Service on TrueKredit™ Pro",
-	description:
-		"From provisional licence to first digital loan, we run the full KPKT digital lending licence journey on TrueKredit™ Pro — consultancy, build, KPKT review, and final approval, in ~3 months.",
-	keywords: [
-		"digital KPKT license",
-		"KPKT digital license conversion",
-		"KPKT digital lending license",
-		"KPKT license consultancy",
-		"TrueKredit Pro",
-		"digital money lender Malaysia",
-		"online lending platform Malaysia",
-		"KPKT PPW to digital",
-		"fully digital money lender",
-	],
-	alternates: { canonical: "/services/digital-license" },
+	title: { absolute: DIGITAL_LICENSE_METADATA.title },
+	description: DIGITAL_LICENSE_METADATA.description,
+	keywords: [...DIGITAL_LICENSE_METADATA.keywords],
+	alternates: { canonical: DIGITAL_LICENSE_PAGE_PATH },
 	openGraph: {
-		title: "Digital KPKT License — End-to-End on TrueKredit™ Pro",
-		description:
-			"Full-service digital KPKT lending licence — consultancy, TrueKredit™ Pro build on dedicated AWS, KPKT review, and final approval, in ~3 months.",
+		title: DIGITAL_LICENSE_METADATA.openGraphTitle,
+		description: DIGITAL_LICENSE_METADATA.openGraphDescription,
+		url: DIGITAL_LICENSE_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
 		siteName: "Truestack",
@@ -61,10 +56,19 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Digital KPKT License — End-to-End on TrueKredit™ Pro",
-		description:
-			"Full-service digital KPKT lending licence — consultancy, TrueKredit™ Pro build on dedicated AWS, KPKT review, and final approval, in ~3 months.",
+		title: DIGITAL_LICENSE_METADATA.openGraphTitle,
+		description: DIGITAL_LICENSE_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
 	},
 };
 
@@ -155,6 +159,7 @@ const digitalLicenseStudies = digitalLicenseStudyTitles
 export default function DigitalLicensePage() {
 	return (
 		<>
+			<DigitalLicenseSchema />
 			<DigitalLicenseHero />
 
 			{/* Value Proposition — bento grid that frames the "why" of going
@@ -1138,6 +1143,8 @@ export default function DigitalLicensePage() {
 					className="py-20"
 				/>
 			</section>
+
+			<DigitalLicenseFaq />
 
 			{/* CTA Section */}
 			<section className="border-t py-20">

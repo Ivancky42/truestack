@@ -7,6 +7,8 @@ export interface CaseStudy {
 	logo: string;
 	isComingSoon?: boolean;
 	stats?: { label: string; value: string }[];
+	/** Visual accent on work page grid (e.g. digital KPKT conversions). */
+	accent?: "primary" | "kpkt";
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -75,5 +77,12 @@ export const caseStudies: CaseStudy[] = [
 			{ label: "Time to Launch", value: "6 mo" },
 			{ label: "Platform", value: "TrueKredit™" },
 		],
+		accent: "kpkt",
 	},
+];
+
+/** Work page: digital conversion story first, then remaining homepage stories. */
+export const workCaseStudies: CaseStudy[] = [
+	...caseStudies.filter((c) => c.title === "CreditXpress"),
+	...caseStudies.filter((c) => c.title !== "CreditXpress"),
 ];

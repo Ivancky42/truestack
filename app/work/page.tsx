@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description:
     "Explore Truestack's work: digital KPKT license conversion, enterprise loan management systems, and P2P fintech platforms built for Malaysia with in-region hosting and audit-ready operations.",
   keywords: [
-    "Truestack case studies",
+    "Truestack success stories",
     "Truestack work",
     "fintech projects Malaysia",
-    "KPKT case studies",
+    "KPKT success stories",
     "KPKT digital license",
     "digital lending software Malaysia",
     "P2P lending platform Malaysia",
