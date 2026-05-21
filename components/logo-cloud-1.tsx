@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { Handshake, Users } from "lucide-react";
+import { AdaptiveLogoImage } from "@/components/logo-cloud-image";
+import {
+	type LogoDisplaySize,
+	toLogoDisplaySize,
+} from "@/lib/logo-display-size";
 
 // Technology partners data (for software development page)
 export const technologyPartners = [
@@ -78,6 +82,10 @@ export const clientLogos = [
 		logo: "/logos/credibly.png",
 	},
 	{
+		name: "JomDana",
+		logo: "/logos/JomDana.png",
+	},
+	{
 		name: "AMS OSRAM",
 		logo: "/logos/ams-osram.png",
 	},
@@ -120,6 +128,90 @@ interface LogoCloudProps {
 	asContainer?: "section" | "div";
 	/** Tighter logo grid and padding (e.g. embedded in a hero card). */
 	dense?: boolean;
+	/** Full-width auto-scrolling logo strip (homepage client cloud). */
+	layout?: "grid" | "marquee";
+}
+
+/** Repeated sets; keep in sync with globals.css (-25% = one loop). */
+const MARQUEE_COPIES = 4;
+
+function buildMarqueeItems(items: readonly LogoItem[]) {
+	return Array.from({ length: MARQUEE_COPIES }, () => [...items]).flat();
+}
+
+function LogoMarqueeRow({
+	items,
+	displaySize,
+	reverse = false,
+	rowKey,
+}: {
+	items: readonly LogoItem[];
+	displaySize: LogoDisplaySize;
+	reverse?: boolean;
+	rowKey: string;
+}) {
+	const marqueeItems = buildMarqueeItems(items);
+
+	return (
+		<div
+			className={cn(
+				"flex w-max items-center",
+				reverse ? "logo-marquee-track-reverse" : "logo-marquee-track",
+			)}
+		>
+			{marqueeItems.map((item, index) => (
+				<div
+					key={`${rowKey}-${item.name}-${index}`}
+					className="group flex shrink-0 items-center justify-center px-5 sm:px-7 md:px-9"
+					aria-hidden={index >= items.length}
+				>
+					<AdaptiveLogoImage
+						src={item.logo}
+						alt={index < items.length ? item.name : ""}
+						displaySize={displaySize}
+					/>
+				</div>
+			))}
+		</div>
+	);
+}
+
+function LogoMarquee({
+	items,
+	displaySize,
+}: {
+	items: readonly LogoItem[];
+	displaySize: LogoDisplaySize;
+}) {
+	const midpoint = Math.ceil(items.length / 2);
+	const topRow = items.slice(0, midpoint);
+	const bottomRow = items.slice(midpoint);
+
+	return (
+		<div className="relative w-full overflow-hidden">
+			<div
+				className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-background to-transparent sm:w-20 md:w-28"
+				aria-hidden
+			/>
+			<div
+				className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-background to-transparent sm:w-20 md:w-28"
+				aria-hidden
+			/>
+			<div className="logo-marquee-rows flex flex-col gap-3 md:gap-4">
+				<LogoMarqueeRow
+					items={topRow}
+					displaySize={displaySize}
+					rowKey="top"
+				/>
+				<LogoMarqueeRow
+					items={bottomRow}
+					displaySize={displaySize}
+					reverse
+					rowKey="bottom"
+				/>
+			</div>
+		</div>
+	);
 }
 
 const LogoCloud1 = ({
@@ -135,12 +227,21 @@ const LogoCloud1 = ({
 	compact = false,
 	asContainer = "section",
 	dense = false,
+	layout = "grid",
 }: LogoCloudProps) => {
 	const isClients = variant === "clients";
 	const items = logos || (isClients ? clientLogos : technologyPartners);
+	const isMarquee = layout === "marquee";
 	// Default to large for clients, default for partners (but smaller if compact)
 	const logoSize =
-		size || (compact ? "default" : isClients ? "large" : "default");
+		size ||
+		(isMarquee && isClients
+			? "large"
+			: compact
+				? "default"
+				: isClients
+					? "large"
+					: "default");
 
 	const defaultTitle = isClients
 		? "Trusted by Industry Leaders"
@@ -153,6 +254,7 @@ const LogoCloud1 = ({
 	const defaultBadge = isClients ? "Our Clients" : "Partner Ecosystem";
 	const Icon = isClients ? Users : Handshake;
 	const Container = asContainer === "div" ? "div" : "section";
+	const displaySize = toLogoDisplaySize(logoSize, dense);
 
 	return (
 		<Container
@@ -166,16 +268,18 @@ const LogoCloud1 = ({
 				className,
 			)}
 		>
+			{/* Header */}
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="mx-auto max-w-5xl">
-					{/* Header */}
 					<div
 						className={cn(
 							"text-center",
 							compact
 								? dense
 									? "mb-3"
-									: "mb-5"
+									: isMarquee
+										? "mb-6 md:mb-8"
+										: "mb-5"
 								: "mb-12 space-y-4",
 						)}
 					>
@@ -203,75 +307,44 @@ const LogoCloud1 = ({
 						)}
 					</div>
 
-					{/* Logo Grid */}
-					<div className="relative overflow-hidden">
-						<div
-							className={cn(
-								"flex flex-wrap items-center justify-center",
-								dense
-									? "gap-x-5 gap-y-3 sm:gap-x-6 sm:gap-y-3.5"
-									: logoSize === "large"
-										? "gap-x-12 gap-y-8 md:gap-x-16"
-										: "gap-x-10 gap-y-8 md:gap-x-14",
-							)}
-						>
-							{items.map((item) => (
-								<div
-									key={item.name}
-									className="group flex flex-col items-center gap-2 transition-all hover:scale-105"
-								>
+					{/* Logo grid (non-marquee) */}
+					{!isMarquee && (
+						<div className="relative overflow-hidden">
+							<div
+								className={cn(
+									"flex flex-wrap items-center justify-center",
+									dense
+										? "gap-x-5 gap-y-3 sm:gap-x-6 sm:gap-y-3.5"
+										: logoSize === "large"
+											? "gap-x-12 gap-y-8 md:gap-x-16"
+											: "gap-x-10 gap-y-8 md:gap-x-14",
+								)}
+							>
+								{items.map((item) => (
 									<div
-										className={cn(
-											"flex items-center justify-center",
-											dense
-												? "h-9 w-22 p-1 sm:h-10 sm:w-24 sm:p-1.5"
-												: logoSize === "large"
-													? "h-16 w-36 p-2"
-													: "h-12 w-28 p-2",
-										)}
+										key={item.name}
+										className="group flex flex-col items-center gap-2 transition-all hover:scale-105"
 									>
-										<Image
+										<AdaptiveLogoImage
 											src={item.logo}
 											alt={item.name}
-											width={
-												dense
-													? 88
-													: logoSize === "large"
-														? 140
-														: 100
-											}
-											height={
-												dense
-													? 36
-													: logoSize === "large"
-														? 56
-														: 40
-											}
-											className={cn(
-												"w-auto object-contain opacity-70 transition-all group-hover:opacity-100",
-												dense
-													? "h-6 sm:h-7"
-													: logoSize === "large"
-														? "h-12"
-														: "h-8",
-											)}
-											style={{ width: "auto" }}
+											displaySize={displaySize}
 										/>
+										{showCategories &&
+											"category" in item &&
+											item.category && (
+												<span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+													{item.category}
+												</span>
+											)}
 									</div>
-									{showCategories &&
-										"category" in item &&
-										item.category && (
-											<span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
-												{item.category}
-											</span>
-										)}
-								</div>
-							))}
+								))}
+							</div>
 						</div>
-					</div>
+					)}
 
-					{/* Bottom Text */}
-					{bottomText !== "" && !compact && (
+					{/* Bottom text (grid layout only) */}
+					{bottomText !== "" && !compact && !isMarquee && (
 						<div className="mt-10 text-center">
 							<p className="text-muted-foreground text-sm">
 								{bottomText ||
@@ -283,6 +356,11 @@ const LogoCloud1 = ({
 					)}
 				</div>
 			</div>
+
+			{/* Full-width marquee */}
+			{isMarquee && (
+				<LogoMarquee items={items} displaySize={displaySize} />
+			)}
 		</Container>
 	);
 };

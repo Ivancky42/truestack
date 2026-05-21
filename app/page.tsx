@@ -18,7 +18,12 @@ export default function HomePage() {
 	return (
 		<>
 			<HomepageHero />
-			<LogoCloud1 variant="clients" showCategories={false} compact />
+			<LogoCloud1
+				variant="clients"
+				showCategories={false}
+				compact
+				layout="marquee"
+			/>
 			<WhatWeDo />
 			<TrueKreditPromo />
 			<InfrastructureSection />

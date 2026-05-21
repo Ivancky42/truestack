@@ -134,3 +134,38 @@
   
   Nav & Footer: text-[15px] for links, text-base for headings
 */
+
+/* One loop = 1/4 of track width (four repeated logo sets). */
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee 50s linear infinite;
+  will-change: transform;
+}
+
+/* Same duration as top row; reverse direction = scroll right. */
+.logo-marquee-track-reverse {
+  animation: logo-marquee 50s linear infinite reverse;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-rows {
+    gap: 1.5rem;
+  }
+
+  .logo-marquee-track,
+  .logo-marquee-track-reverse {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+}
