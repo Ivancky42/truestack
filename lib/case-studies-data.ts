@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
 		quote: "TrueStack transformed our entire operation. We went from paper-based to fully digital in under 6 months.",
 		tags: ["TrueKredit™", "Digital License", "Web + Mobile"],
 		href: "https://creditxpress.com.my",
-		logo: "/logos/creditxpress.svg",
+		logo: "/logos/creditxpress.png",
 		stats: [
 			{ label: "Time to Launch", value: "6 mo" },
 			{ label: "Platform", value: "TrueKredit™" },

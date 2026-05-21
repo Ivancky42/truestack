@@ -25,7 +25,7 @@ const clients = [
   { 
     name: "CreditXpress", 
     abbr: "CX",
-    logo: "/logos/creditxpress.svg", // Upload to: public/logos/andas-capital.png
+    logo: "/logos/creditxpress.png",
   },
   { 
     name: "AMS OSRAM", 

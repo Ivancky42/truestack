@@ -71,7 +71,7 @@ export const clientLogos = [
 	},
 	{
 		name: "CreditXpress",
-		logo: "/logos/creditxpress.svg",
+		logo: "/logos/creditxpress.png",
 	},
 	{
 		name: "Credibly",
@@ -80,10 +80,6 @@ export const clientLogos = [
 	{
 		name: "AMS OSRAM",
 		logo: "/logos/ams-osram.png",
-	},
-	{
-		name: "OPG Capital",
-		logo: "/logos/opg-capital.png",
 	},
 	{
 		name: "Malcan",
@@ -252,7 +248,7 @@ const LogoCloud1 = ({
 														: 40
 											}
 											className={cn(
-												"w-auto object-contain opacity-70 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0",
+												"w-auto object-contain opacity-70 transition-all group-hover:opacity-100",
 												dense
 													? "h-6 sm:h-7"
 													: logoSize === "large"

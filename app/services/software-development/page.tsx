@@ -459,7 +459,7 @@ export default function SoftwareDevelopmentPage() {
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <Image
-                        src="/logos/creditxpress.svg"
+                        src="/logos/creditxpress.png"
                         alt="CreditXpress"
                         width={140}
                         height={45}
