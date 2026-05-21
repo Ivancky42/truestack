@@ -74,6 +74,10 @@ export const clientLogos = [
 		logo: "/logos/creditxpress.svg",
 	},
 	{
+		name: "Credibly",
+		logo: "/logos/credibly.png",
+	},
+	{
 		name: "AMS OSRAM",
 		logo: "/logos/ams-osram.png",
 	},
