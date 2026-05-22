@@ -112,6 +112,62 @@ function GridPattern() {
 	);
 }
 
+function SeoIntroSection() {
+	return (
+		<section className="border-t bg-muted/30 py-12">
+			<div className="mx-auto max-w-4xl px-6">
+				<p className="text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">
+					<strong className="text-foreground">
+						TrueKredit™ is Truestack&apos;s loan management system
+						for KPKT-licensed money lenders in Malaysia.
+					</strong>{" "}
+					One integrated platform covers borrowers, loan products,
+					repayment schedules, collections,{" "}
+					<span className="font-medium text-foreground">
+						Lampiran A / B1 and iDEAL exports
+					</span>
+					, e-KYC, CTOS credit checks, audit trails, and KPKT
+					compliance workflows — available as{" "}
+					<span className="font-medium text-primary">
+						TrueKredit Standard
+					</span>{" "}
+					on multi-tenant SaaS or{" "}
+					<span className="font-medium text-violet-700">
+						TrueKredit Pro
+					</span>{" "}
+					with borrower web and native mobile apps, on-prem PKI
+					digital signing, and a dedicated AWS Malaysia environment
+					for nationwide digital lending.
+					<strong className="font-semibold text-foreground">
+						{" "}
+						Whether you run branch-led PPW operations or are
+						converting to a KPKT Online Money Lending Licence,
+						Truestack ships the full stack and operates it
+						alongside your team.
+					</strong>
+				</p>
+				<p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
+					Need Shariah-compliant KPKT lending instead? See{" "}
+					<Link
+						href="/truesyariah"
+						className="font-medium text-emerald-700 hover:underline"
+					>
+						TrueSyariah™
+					</Link>
+					. Pursuing SC-regulated peer-to-peer financing? See{" "}
+					<Link
+						href="/services/p2p-software-development"
+						className="font-medium text-primary hover:underline"
+					>
+						TrueP2P™
+					</Link>
+					.
+				</p>
+			</div>
+		</section>
+	);
+}
+
 export default function TrueKreditPage() {
 	return (
 		<>
@@ -240,6 +296,8 @@ export default function TrueKreditPage() {
 					</div>
 				</div>
 			</section>
+
+			<SeoIntroSection />
 
 			{/* Problem → Answer Narrative — compact before/after contrast */}
 			<section id="story" className="border-t bg-muted/30 py-16 md:py-20">
@@ -1522,6 +1580,32 @@ export default function TrueKreditPage() {
 							adds borrower channels, digital attestation, on-prem
 							signing, and a dedicated environment.
 						</p>
+						<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
+							Need Shariah-compliant financing instead?{" "}
+							<Link
+								href="/truesyariah"
+								className="font-medium text-emerald-700 hover:underline"
+							>
+								Explore TrueSyariah™
+							</Link>
+							{" "}
+							— built for the KPKT Syariah Digital Lending
+							Licence on a separate entity and AWS deployment.
+						</p>
+						<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
+							Pursuing SC-regulated peer-to-peer financing
+							instead?{" "}
+							<Link
+								href="/services/p2p-software-development"
+								className="font-medium text-primary hover:underline"
+							>
+								Explore TrueP2P™
+							</Link>
+							{" "}
+							— investor and issuer portals for the Securities
+							Commission Malaysia Recognised Market Operator
+							framework.
+						</p>
 					</motion.div>
 
 					<motion.div
@@ -1974,6 +2058,28 @@ export default function TrueKreditPage() {
 						>
 							<Link href="/services/digital-license">
 								Need a KPKT licence?
+								<ChevronRight className="h-4 w-4" />
+							</Link>
+						</Button>
+						<Button
+							asChild
+							variant="ghost"
+							size="lg"
+							className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
+						>
+							<Link href="/truesyariah">
+								Compare with TrueSyariah
+								<ChevronRight className="h-4 w-4" />
+							</Link>
+						</Button>
+						<Button
+							asChild
+							variant="ghost"
+							size="lg"
+							className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
+						>
+							<Link href="/services/p2p-software-development">
+								Compare with TrueP2P
 								<ChevronRight className="h-4 w-4" />
 							</Link>
 						</Button>

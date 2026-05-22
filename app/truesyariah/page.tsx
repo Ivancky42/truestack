@@ -719,7 +719,8 @@ function HeroSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.1 }}
 						>
-							The digital financing platform built for{" "}
+							TrueSyariah™ — the digital financing platform
+							built for{" "}
 							<span className="bg-linear-to-r from-emerald-600 via-teal-600 to-amber-500 bg-clip-text text-transparent">
 								Syariah lenders.
 							</span>
@@ -739,13 +740,10 @@ function HeroSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
-							One end-to-end Shariah-compliant stack — Tawarruq
-							commodity trading via Bursa Suq Al-Sila&apos;,
-							segregated Ta&apos;widh and Gharamah ledgers,
-							on-prem digital signing, e-KYC, branded web
-							portal, and native iOS &amp; Android customer
-							apps — on a dedicated AWS Malaysia deployment
-							ring-fenced from any conventional lending book.
+							Tawarruq via Bursa Suq Al-Sila&apos;, Ta&apos;widh
+							and Gharamah ledgers, e-KYC, signing, and branded
+							borrower channels — on dedicated AWS Malaysia,
+							ring-fenced from conventional lending.
 						</motion.p>
 						<motion.div
 							className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
@@ -809,6 +807,62 @@ function HeroSection() {
 						</div>
 					</motion.div>
 				</div>
+			</div>
+		</section>
+	);
+}
+
+// ─── SEO intro (crawler-friendly product summary) ────────────────────────────
+function SeoIntroSection() {
+	return (
+		<section className="border-b bg-muted/30 py-12">
+			<div className="mx-auto max-w-4xl px-6">
+				<p className="text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">
+					<strong className="text-foreground">
+						TrueSyariah™ is Truestack&apos;s Shariah-compliant
+						digital financing platform for the KPKT Syariah Digital
+						Lending Licence in Malaysia.
+					</strong>{" "}
+					We deliver one end-to-end stack —{" "}
+					<span className="font-medium text-foreground">
+						Tawarruq commodity trades via Bursa Suq Al-Sila&apos;
+					</span>
+					, segregated{" "}
+					<span className="font-medium text-emerald-700">
+						Ta&apos;widh and Gharamah
+					</span>{" "}
+					ledgers with charity disbursement, on-prem PKI digital
+					signing, e-KYC, and branded web and native iOS &amp;
+					Android customer apps — on a{" "}
+					<span className="font-medium text-foreground">
+						dedicated AWS Malaysia deployment
+					</span>{" "}
+					ring-fenced from any conventional lending book.
+					<strong className="font-semibold text-foreground">
+						{" "}
+						Whether you already hold the KPKT Syariah licence or are
+						still incorporating your Shariah entity, Truestack
+						covers licensing support, AWS build, UAT, Shariah
+						committee sign-off, and live operations on TrueSyariah.
+					</strong>
+				</p>
+				<p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
+					Pursuing SC-regulated peer-to-peer financing instead? See{" "}
+					<Link
+						href="/services/p2p-software-development"
+						className="font-medium text-primary hover:underline"
+					>
+						TrueP2P™
+					</Link>
+					. For conventional KPKT money lending, see{" "}
+					<Link
+						href="/truekredit"
+						className="font-medium text-blue-700 hover:underline"
+					>
+						TrueKredit™
+					</Link>
+					.
+				</p>
 			</div>
 		</section>
 	);
@@ -1755,6 +1809,33 @@ function ComparisonSection() {
 						capabilities — different financing engine, different
 						licence, different entity.
 					</p>
+					<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
+						Running a conventional KPKT money-lending licence
+						instead?{" "}
+						<Link
+							href="/truekredit"
+							className="font-medium text-blue-700 hover:underline"
+						>
+							Explore TrueKredit™
+						</Link>
+						{" "}
+						— SaaS and Pro editions for the KPKT Online Money
+						Lending Licence.
+					</p>
+					<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
+						Pursuing SC-regulated peer-to-peer financing
+						instead?{" "}
+						<Link
+							href="/services/p2p-software-development"
+							className="font-medium text-primary hover:underline"
+						>
+							Explore TrueP2P™
+						</Link>
+						{" "}
+						— investor and issuer portals for the Securities
+						Commission Malaysia Recognised Market Operator
+						framework.
+					</p>
 				</motion.div>
 
 				<motion.div
@@ -2208,6 +2289,17 @@ function TrueSyariahCtaSection() {
 							<ChevronRight className="h-4 w-4" />
 						</Link>
 					</Button>
+					<Button
+						asChild
+						variant="ghost"
+						size="lg"
+						className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
+					>
+						<Link href="/services/p2p-software-development">
+							Compare with TrueP2P
+							<ChevronRight className="h-4 w-4" />
+						</Link>
+					</Button>
 				</div>
 			</div>
 		</section>
@@ -2219,6 +2311,7 @@ export default function TrueSyariahPage() {
 	return (
 		<>
 			<HeroSection />
+			<SeoIntroSection />
 			<LicenceRealitySection />
 			<ShariahEngineSection />
 			<ConnectedModulesSection />

@@ -39,7 +39,7 @@ export const TRUESYARIAH_METADATA = {
 		"TrueSyariah™ — KPKT Syariah Digital Lending Platform for Malaysia",
 	openGraphDescription:
 		"Shariah-compliant digital lending stack — Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, mobile apps, and a dedicated AWS deployment for the KPKT Syariah Digital Lending Licence.",
-	ogImagePath: "/truesyariah/og.png",
+	ogImagePath: "/truesyariah/hero.png",
 	ogImageAlt:
 		"TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules",
 } as const;

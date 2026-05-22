@@ -30,8 +30,9 @@ export const TRUEKREDIT_METADATA = {
 		"TrueKredit™ — KPKT Loan Management System | Standard & Pro",
 	openGraphDescription:
 		"Purpose-built KPKT loan operations — lifecycle, compliance exports, e-KYC, and TrueKredit Pro for nationwide digital lending with borrower apps and audit-ready infrastructure.",
-	ogImagePath: "/truekredit/loan_application_screenshot.png",
-	ogImageAlt: "TrueKredit loan management system dashboard",
+	ogImagePath: "/truekredit/hero.png",
+	ogImageAlt:
+		"TrueKredit KPKT-aligned loan management platform — lifecycle, signing, dashboards and compliance modules",
 } as const;
 
 export function buildTrueKreditJsonLd() {

@@ -33,6 +33,9 @@ export const P2P_METADATA = {
 		"TrueP2P™ — Malaysian P2P Platform Engineering | Conventional & Shariah-Aligned",
 	openGraphDescription:
 		"Production-ready P2P platforms for Malaysia — SC-aligned investor and issuer portals, escrow, Shariah-aligned Gharamah & Ta'widh ledgers, Tawarruq via Bursa Suq Al-Sila', and optional RMO registration support.",
+	ogImagePath: "/p2p/hero.png",
+	ogImageAlt:
+		"TrueP2P peer-to-peer financing platform — investor portal, marketplace listings, escrow, e-signing and SC Malaysia compliance modules",
 } as const;
 
 const P2P_OFFER_CATALOG = [

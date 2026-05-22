@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { defaultOgImage } from "@/lib/seo-defaults";
 import { p2pFaq } from "@/lib/p2p-faq";
 import { P2P_METADATA, P2P_PAGE_PATH } from "@/lib/p2p-seo";
 import { P2PHero } from "@/components/sections/p2p-hero";
@@ -68,13 +67,20 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "en_MY",
 		siteName: "Truestack",
-		images: [defaultOgImage],
+		images: [
+			{
+				url: P2P_METADATA.ogImagePath,
+				width: 1536,
+				height: 1024,
+				alt: P2P_METADATA.ogImageAlt,
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title: P2P_METADATA.openGraphTitle,
 		description: P2P_METADATA.openGraphDescription,
-		images: [defaultOgImage.url],
+		images: [P2P_METADATA.ogImagePath],
 	},
 	robots: {
 		index: true,
@@ -355,6 +361,23 @@ export default function P2PSoftwareDevelopmentPage() {
 							the A–Z of SC Malaysia RMO registration alongside
 							your build.
 						</strong>
+					</p>
+					<p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
+						Looking for KPKT-licensed money lending instead? See{" "}
+						<Link
+							href="/truekredit"
+							className="font-medium text-primary hover:underline"
+						>
+							TrueKredit™
+						</Link>{" "}
+						for conventional KPKT digital lending or{" "}
+						<Link
+							href="/truesyariah"
+							className="font-medium text-emerald-700 hover:underline"
+						>
+							TrueSyariah™
+						</Link>{" "}
+						for the KPKT Syariah Digital Lending Licence.
 					</p>
 				</div>
 			</section>
@@ -853,6 +876,19 @@ export default function P2PSoftwareDevelopmentPage() {
 							— so the ledger your auditors see matches the
 							rulings your committee has approved.
 						</p>
+						<p className="mt-4 text-sm text-slate-400 md:text-base">
+							Need KPKT Syariah digital lending instead of SC
+							peer-to-peer?{" "}
+							<Link
+								href="/truesyariah"
+								className="font-medium text-emerald-400 hover:text-emerald-300 hover:underline"
+							>
+								Explore TrueSyariah™
+							</Link>
+							{" "}
+							— built for the KPKT Syariah Digital Lending Licence
+							on a separate entity and AWS deployment.
+						</p>
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row">
 							<Button asChild size="lg">
 								<Link href="/contact">
@@ -1043,7 +1079,7 @@ export default function P2PSoftwareDevelopmentPage() {
 						team can take you from scope to live platform — without
 						the usual fintech build pain.
 					</p>
-					<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+					<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
 						<Button asChild size="lg">
 							<Link href="/contact">
 								Start a conversation
@@ -1052,6 +1088,18 @@ export default function P2PSoftwareDevelopmentPage() {
 						</Button>
 						<Button asChild size="lg" variant="outline">
 							<Link href="/work">See our work</Link>
+						</Button>
+						<Button asChild size="lg" variant="ghost">
+							<Link href="/truekredit">
+								Compare with TrueKredit
+								<ArrowRight className="ml-1 h-4 w-4" />
+							</Link>
+						</Button>
+						<Button asChild size="lg" variant="ghost">
+							<Link href="/truesyariah">
+								Compare with TrueSyariah
+								<ArrowRight className="ml-1 h-4 w-4" />
+							</Link>
 						</Button>
 					</div>
 				</div>

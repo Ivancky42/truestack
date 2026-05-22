@@ -143,19 +143,9 @@ export function P2PHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              We design and engineer end-to-end P2P platforms for Malaysian
-              operators — investor onboarding, listings, escrow, payments,
-              e-signing,{" "}
-              <span className="font-medium text-foreground/90">
-                Gharamah and Ta&apos;widh
-              </span>{" "}
-              accounting, and reporting — built for{" "}
-              <span className="font-medium text-foreground/90">
-                Securities Commission Malaysia
-              </span>{" "}
-              requirements. Our consultancy
-              team can also guide SC Malaysia Recognised Market Operator (RMO)
-              registration end-to-end alongside the build.
+              Investor and issuer portals, escrow, payments, e-signing, and
+              Gharamah/Ta&apos;widh accounting — built for SC Malaysia, with
+              RMO registration support alongside the build.
             </motion.p>
 
             <motion.div

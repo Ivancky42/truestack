@@ -8,6 +8,7 @@ import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { InfrastructureSection } from "@/components/sections/infrastructure-section";
 import { TrueKreditPromo } from "@/components/sections/truekredit-promo";
+import { TrueSyariahPromo } from "@/components/sections/truesyariah-promo";
 import LogoCloud1 from "@/components/logo-cloud-1";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function HomePage() {
 			/>
 			<WhatWeDo />
 			<TrueKreditPromo />
+			<TrueSyariahPromo />
 			<InfrastructureSection />
 			<P2PPromo />
 			<ExpertiseSection />
