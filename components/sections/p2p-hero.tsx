@@ -1,23 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
   Banknote,
-  BarChart3,
-  Building2,
-  Coins,
-  FileSignature,
   Layers,
-  Network,
   Receipt,
-  ScanFace,
   ShieldCheck,
   Sparkles,
-  Users,
-  Wallet,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -56,115 +49,37 @@ function GridPattern() {
   );
 }
 
-const ORBIT_FEATURES = [
-  { label: "Investor portal", icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
-  { label: "Issuer onboarding", icon: Building2, color: "text-violet-600", bg: "bg-violet-50" },
-  { label: "Listings engine", icon: Layers, color: "text-fuchsia-600", bg: "bg-fuchsia-50" },
-  { label: "Escrow & FPX", icon: Wallet, color: "text-emerald-600", bg: "bg-emerald-50" },
-  { label: "e-KYC & AML", icon: ScanFace, color: "text-indigo-600", bg: "bg-indigo-50" },
-  { label: "e-Signing vault", icon: FileSignature, color: "text-rose-600", bg: "bg-rose-50" },
-  { label: "Reporting & audit", icon: BarChart3, color: "text-amber-600", bg: "bg-amber-50" },
-  { label: "Gharamah / Ta'widh", icon: Coins, color: "text-teal-600", bg: "bg-teal-50" },
-];
-
 function P2PHeroVisual() {
   return (
     <motion.div
-      className="relative mx-auto aspect-square w-full max-w-[520px]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      aria-hidden
+      className="relative mx-auto w-full max-w-[560px]"
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7, delay: 0.15 }}
     >
-      {/* Connection lines */}
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 520 520"
-      >
-        {ORBIT_FEATURES.map((_, i) => {
-          const angle = (i / ORBIT_FEATURES.length) * Math.PI * 2 - Math.PI / 2;
-          const radius = 200;
-          const nx = 260 + Math.cos(angle) * radius;
-          const ny = 260 + Math.sin(angle) * radius;
-          return (
-            <motion.line
-              key={i}
-              x1={260}
-              y1={260}
-              x2={Math.round(nx * 100) / 100}
-              y2={Math.round(ny * 100) / 100}
-              stroke="var(--color-primary)"
-              strokeWidth={0.8}
-              strokeDasharray="4 4"
-              initial={{ opacity: 0, pathLength: 0 }}
-              animate={{ opacity: 0.18, pathLength: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 + i * 0.06 }}
-            />
-          );
-        })}
-      </svg>
-
-      {/* Center hub — the Platform */}
-      <motion.div
-        className="absolute left-1/2 top-1/2 z-20 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-2xl border-2 border-primary/25 bg-white shadow-xl"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.1 }}
-      >
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <Network className="h-6 w-6" />
-        </div>
-        <p className="mt-2 text-center text-[11px] font-semibold leading-tight text-foreground">
-          TrueP2P™
-        </p>
-        <p className="text-[10px] text-muted-foreground">SC-aligned</p>
-        <motion.div
-          className="absolute inset-0 rounded-2xl border-2 border-primary/20"
-          animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+      <div className="relative aspect-square overflow-hidden rounded-3xl border border-primary/15 bg-linear-to-br from-primary/5 via-white to-violet-500/5 shadow-xl">
+        <Image
+          src="/p2p/hero.png"
+          alt="TrueP2P peer-to-peer financing platform — investor portal, marketplace listings, escrow, e-signing and SC Malaysia compliance modules"
+          fill
+          priority
+          sizes="(min-width: 1024px) 560px, (min-width: 640px) 480px, 100vw"
+          className="object-cover"
         />
-      </motion.div>
-
-      {/* Orbiting feature nodes */}
-      {ORBIT_FEATURES.map((feature, i) => {
-        const Icon = feature.icon;
-        const angle = (i / ORBIT_FEATURES.length) * Math.PI * 2 - Math.PI / 2;
-        const radius = 200;
-        const baseX = 260 + Math.cos(angle) * radius;
-        const baseY = 260 + Math.sin(angle) * radius;
-        const leftPct = Math.round((baseX / 520) * 10000) / 100;
-        const topPct = Math.round((baseY / 520) * 10000) / 100;
-
-        return (
-          <motion.div
-            key={feature.label}
-            className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-            style={{ left: `${leftPct}%`, top: `${topPct}%` }}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 15,
-              delay: 0.3 + i * 0.07,
-            }}
-          >
-            <div className="flex flex-col items-center gap-1.5 rounded-xl border border-border/60 bg-white px-3 py-2.5 shadow-sm">
-              <div
-                className={`flex h-9 w-9 items-center justify-center rounded-lg ${feature.bg}`}
-              >
-                <Icon className={`h-4.5 w-4.5 ${feature.color}`} />
-              </div>
-              <span className="whitespace-nowrap text-[11px] font-medium text-foreground/80">
-                {feature.label}
-              </span>
-            </div>
-          </motion.div>
-        );
-      })}
-
-      {/* Soft background glow */}
-      <div className="absolute left-1/2 top-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+      </div>
+      {/* Floating credibility chips */}
+      <div className="absolute -bottom-4 left-6 hidden items-center gap-2 rounded-full border border-primary/20 bg-white px-3 py-1.5 shadow-md sm:inline-flex">
+        <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+        <span className="text-[11px] font-semibold text-primary">
+          SC RMO-aligned
+        </span>
+      </div>
+      <div className="absolute -top-4 right-6 hidden items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1.5 shadow-md sm:inline-flex">
+        <Sparkles className="h-3.5 w-3.5 text-emerald-700" />
+        <span className="text-[11px] font-semibold text-emerald-800">
+          Conventional &amp; Shariah
+        </span>
+      </div>
     </motion.div>
   );
 }

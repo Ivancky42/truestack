@@ -73,11 +73,13 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				icon: Network,
 			},
 			{
-        title: "TrueSyariah™",
+				title: "TrueSyariah™",
+				href: "/truesyariah",
 				description:
-					"Shariah-compliant digital financing platform powered by transparent financing principles.",
+					"KPKT Syariah Digital Lending platform — Tawarruq via BSAS, Ta'widh & Gharamah ledgers.",
 				icon: Scale,
-				comingSoon: true,
+				badge: "New",
+				badgeIcon: Sparkles,
 			},
 		],
 	},
@@ -328,6 +330,7 @@ export function Header() {
 	const isSolutionsActive =
 		pathname.startsWith("/services") ||
 		pathname.startsWith("/truekredit") ||
+		pathname.startsWith("/truesyariah") ||
 		pathname.startsWith("/trueidentity") ||
 		pathname.startsWith("/truessm");
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -4,7 +4,7 @@
 
 ## Summary
 
-Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending and P2P platform development (both conventional and Shariah-aligned, including Gharamah and Ta'widh accounting for Islamic peer-to-peer financing), TrueKredit™ (loan management), TrueIdentity™ (e-KYC API), TrueSSM™ (SSM registry API), and Truestack Core™ (shared infrastructure: e-KYC, payments, notifications, compliance APIs). Technology stack: Next.js, React, TypeScript, Tailwind CSS, Flutter, Node.js, Express, PostgreSQL, Redis, AWS Malaysia, Docker.
+Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending and P2P platform development (both conventional and Shariah-aligned, including Gharamah and Ta'widh accounting for Islamic peer-to-peer financing), TrueKredit™ (loan management for the KPKT Online Money Lending Licence), TrueSyariah™ (Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence — Tawarruq via Bursa Suq Al-Sila', Ta'widh and Gharamah ledgers, on-prem signing), TrueIdentity™ (e-KYC API), TrueSSM™ (SSM registry API), and Truestack Core™ (shared infrastructure: e-KYC, payments, notifications, compliance APIs). Technology stack: Next.js, React, TypeScript, Tailwind CSS, Flutter, Node.js, Express, PostgreSQL, Redis, AWS Malaysia, Docker.
 
 ## Main pages
 
@@ -25,6 +25,7 @@ Truestack provides KPKT-related compliance services and fintech software for lic
 ## Products
 
 - https://truestack.my/truekredit — TrueKredit™ & TrueKredit Pro: KPKT loan management (Lampiran A/B1, iDEAL, e-KYC, CTOS, borrower apps for digital licence); FAQ
+- https://truestack.my/truesyariah — TrueSyariah™: Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence — Tawarruq commodity trading via Bursa Suq Al-Sila' (BSAS) through TrueCommodity™, segregated Ta'widh and Gharamah ledgers with charity disbursement, on-prem MSC Trustgate digital signing, e-KYC, branded web and native iOS/Android customer apps, dedicated AWS Malaysia ring-fenced from any conventional lending entity. Note: Syariah lending requires its own KPKT licence and a separate legal entity from the conventional KPKT digital lending licence holder. FAQ.
 - https://truestack.my/trueidentity — TrueIdentity™ e-KYC API: MyKad OCR, liveness, biometrics, PDPA-aligned, Malaysia-hosted; part of Truestack Core™; FAQ
 - https://truestack.my/truessm — TrueSSM™ SSM registry API: free entity search, ROC/ROB/LLP profiles, officers, shareholders, scanned documents, RM pricing, idempotent pulls; FAQ
 

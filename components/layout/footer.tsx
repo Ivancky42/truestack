@@ -8,6 +8,7 @@ const solutionsColumns = [
     heading: "Platforms",
     links: [
       { href: "/truekredit", label: "TrueKredit™" },
+      { href: "/truesyariah", label: "TrueSyariah™" },
       { href: "/services/p2p-software-development", label: "TrueP2P™" },
     ],
   },
