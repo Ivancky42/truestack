@@ -3,25 +3,25 @@ export const truesyariahFaq = [
 		question:
 			"What is TrueSyariah™ and how does it differ from TrueKredit™?",
 		answer:
-			"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform — purpose-built for operators pursuing the KPKT Syariah Digital Lending Licence in Malaysia. It shares the same end-to-end lending lifecycle, KPKT-aligned compliance core and dedicated AWS deployment as TrueKredit™ Pro, but the financing engine is rebuilt around Shariah contracts: Tawarruq commodity trades flow through a real Bursa Suq Al-Sila' (BSAS) integration, late charges are split into segregated Ta'widh (تعويض) and Gharamah (غرامة) ledger accounts, and every document, journal and report is shaped to satisfy a Shariah committee — not a conventional money-lender audit. If you are running a conventional KPKT money-lending licence, you want TrueKredit. If you are licensed (or applying) for Shariah-based digital lending under KPKT, you want TrueSyariah.",
+			"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform — purpose-built for operators pursuing Shariah digital lending in Malaysia. It shares the same end-to-end lending lifecycle, regulatory compliance core and dedicated AWS deployment as TrueKredit™ Pro, but the financing engine is rebuilt around Shariah contracts: Tawarruq commodity trades flow through a real Bursa Suq Al-Sila' (BSAS) integration, late charges are split into segregated Ta'widh (تعويض) and Gharamah (غرامة) ledger accounts, and every document, journal and report is shaped to satisfy a Shariah committee — not a conventional money-lender audit. If you are running a conventional money-lending licence, you want TrueKredit. If you are licensed (or applying) for Shariah-based digital lending, you want TrueSyariah.",
 	},
 	{
 		question:
 			"Do I need a separate licence and entity to operate Shariah digital lending in Malaysia?",
 		answer:
-			"Yes. Under Malaysia's lending licence framework, Shariah-based money lending requires its own approval pathway and — in practice — a separate legal entity from the holder of a conventional KPKT digital lending licence. The two licences cannot share the same operating company because the Shariah entity must keep its books, late-fee accounts (Ta'widh / Gharamah), Shariah committee oversight and complaint handling fully ring-fenced from any riba-based lending activity. Truestack helps you stand up the Shariah entity, scope its KPKT submission alongside your existing group, and deploy TrueSyariah on a dedicated AWS environment that is isolated from any TrueKredit production tenancy you may already operate.",
+			"Yes. Under Malaysia's lending licence framework, Shariah-based money lending requires its own approval pathway and — in practice — a separate legal entity from the holder of a conventional digital lending licence. The two licences cannot share the same operating company because the Shariah entity must keep its books, late-fee accounts (Ta'widh / Gharamah), Shariah committee oversight and complaint handling fully ring-fenced from any riba-based lending activity. Truestack helps you stand up the Shariah entity, scope its licence application alongside your existing group, and deploy TrueSyariah on a dedicated AWS environment that is isolated from any TrueKredit production tenancy you may already operate.",
 	},
 	{
 		question:
 			"How does Tawarruq work inside TrueSyariah, and which commodity exchange do you connect to?",
 		answer:
-			"Every disbursement is structured as a Tawarruq (مرابحة via commodity sale). When the customer's financing is approved, TrueSyariah books a real commodity transaction through TrueCommodity™ — our Shariah trading infrastructure — which routes the trade to Bursa Suq Al-Sila' (BSAS), the Bursa Malaysia-operated, Shariah-compliant commodity platform. The platform handles the full sequence — financier purchase, sale to customer at deferred profit, customer's onward sale to a third-party broker — and writes a tamper-evident audit log of every contract leg, time-stamped and committee-ready. The customer receives clean financing proceeds (in MYR), the operator books a deferred receivable at the agreed profit rate, and the underlying commodity contracts are archived as evidence for both KPKT and your Shariah committee.",
+			"Every disbursement is structured as a Tawarruq (مرابحة via commodity sale). When the customer's financing is approved, TrueSyariah books a real commodity transaction through TrueCommodity™ — our Shariah trading infrastructure — which routes the trade to Bursa Suq Al-Sila' (BSAS), the Bursa Malaysia-operated, Shariah-compliant commodity platform. The platform handles the full sequence — financier purchase, sale to customer at deferred profit, customer's onward sale to a third-party broker — and writes a tamper-evident audit log of every contract leg, time-stamped and committee-ready. The customer receives clean financing proceeds (in MYR), the operator books a deferred receivable at the agreed profit rate, and the underlying commodity contracts are archived as evidence for both regulators and your Shariah committee.",
 	},
 	{
 		question:
 			"How are late fees handled — what is the difference between Ta'widh and Gharamah?",
 		answer:
-			"Shariah does not allow a financier to enrich itself from a customer's lateness, so TrueSyariah splits every late charge into two segregated accounting buckets at the journal level. Ta'widh (تعويض) is the portion that represents the operator's actual, evidenced cost of recovery — collection labour, dunning, administrative overhead — and may legitimately be retained by the financier within Shariah-approved caps. Gharamah (غرامة) is the residual penalty above that cost; it is posted to a separate ledger account and disbursed to approved charities on a documented, committee-signed schedule. The platform enforces the cap-aware accumulation rules, generates the Ta'widh/Gharamah trial balance, prepares the charity disbursement workflow and produces the audit pack your Shariah committee and KPKT will both ask for.",
+			"Shariah does not allow a financier to enrich itself from a customer's lateness, so TrueSyariah splits every late charge into two segregated accounting buckets at the journal level. Ta'widh (تعويض) is the portion that represents the operator's actual, evidenced cost of recovery — collection labour, dunning, administrative overhead — and may legitimately be retained by the financier within Shariah-approved caps. Gharamah (غرامة) is the residual penalty above that cost; it is posted to a separate ledger account and disbursed to approved charities on a documented, committee-signed schedule. The platform enforces the cap-aware accumulation rules, generates the Ta'widh/Gharamah trial balance, prepares the charity disbursement workflow and produces the audit pack your Shariah committee and regulators will both ask for.",
 	},
 	{
 		question:
@@ -43,9 +43,9 @@ export const truesyariahFaq = [
 	},
 	{
 		question:
-			"Is TrueSyariah suitable for operators who do not yet hold a KPKT Syariah licence?",
+			"Is TrueSyariah suitable for operators who do not yet hold a Shariah digital lending licence?",
 		answer:
-			"Yes. Truestack covers the full journey end-to-end — Shariah-entity incorporation, KPKT submission for the Syariah digital lending licence, Shariah committee onboarding, AWS Malaysia build, UAT, penetration testing, KPKT inspection support and live operations on TrueSyariah. We are not a Shariah authority and we do not issue fatwa; we work alongside your appointed Shariah advisors and legal counsel so the platform reflects exactly the rulings they have approved.",
+			"Yes. Truestack covers the full journey end-to-end — Shariah-entity incorporation, licence application support, Shariah committee onboarding, AWS Malaysia build, UAT, penetration testing, supervisory review support and live operations on TrueSyariah. We are not a Shariah authority and we do not issue fatwa; we work alongside your appointed Shariah advisors and legal counsel so the platform reflects exactly the rulings they have approved.",
 	},
 	{
 		question:
@@ -57,12 +57,12 @@ export const truesyariahFaq = [
 		question:
 			"How is data residency and PDPA handled for a Shariah operator?",
 		answer:
-			"All customer data — PII, MyKad scans, e-KYC liveness frames, signed contracts, Tawarruq commodity logs and the Ta'widh/Gharamah ledger — lives in AWS Malaysia (ap-southeast-5) with encryption at rest and in transit, daily automated backups, role-based access control and a complete, tamper-evident audit trail. The platform is engineered to PDPA Malaysia requirements (consent management, retention policies, data subject access workflows) and ships with a documented incident-response runbook and pen-test packaging suitable for a KPKT Syariah inspection.",
+			"All customer data — PII, MyKad scans, e-KYC liveness frames, signed contracts, Tawarruq commodity logs and the Ta'widh/Gharamah ledger — lives in AWS Malaysia (ap-southeast-5) with encryption at rest and in transit, daily automated backups, role-based access control and a complete, tamper-evident audit trail. The platform is engineered to PDPA Malaysia requirements (consent management, retention policies, data subject access workflows) and ships with a documented incident-response runbook and pen-test packaging suitable for a Shariah supervisory review.",
 	},
 	{
 		question:
 			"What does a TrueSyariah engagement look like in practice?",
 		answer:
-			"A typical engagement runs in four stages. (1) Licensing & entity setup: Truestack helps incorporate the Shariah operating company, drafts the KPKT Syariah digital lending licence submission, and onboards your Shariah committee. (2) Build: dedicated AWS Malaysia account stood up, TrueSyariah deployed, BSAS / Trustgate / e-KYC / payment gateways wired in, financing products and Ta'widh/Gharamah caps configured to your Shariah rulings. (3) UAT & inspection: end-to-end testing, penetration test, KPKT examiner walkthrough, Shariah committee sign-off. (4) Go-live & managed engineering: first disbursement, branded web and mobile apps in market, ongoing platform engineering and KPKT/Shariah reporting support. Talk to us early — we like to align engineering milestones with your supervisory timeline.",
+			"A typical engagement runs in four stages. (1) Licensing & entity setup: Truestack helps incorporate the Shariah operating company, drafts the Shariah digital lending licence submission, and onboards your Shariah committee. (2) Build: dedicated AWS Malaysia account stood up, TrueSyariah deployed, BSAS / Trustgate / e-KYC / payment gateways wired in, financing products and Ta'widh/Gharamah caps configured to your Shariah rulings. (3) UAT & inspection: end-to-end testing, penetration test, supervisory examiner walkthrough, Shariah committee sign-off. (4) Go-live & managed engineering: first disbursement, branded web and mobile apps in market, ongoing platform engineering and regulatory / Shariah reporting support. Talk to us early — we like to align engineering milestones with your supervisory timeline.",
 	},
 ] as const;

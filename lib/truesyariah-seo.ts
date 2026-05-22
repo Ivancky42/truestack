@@ -7,15 +7,15 @@ export const TRUESYARIAH_PAGE_URL = `${baseUrl}${TRUESYARIAH_PAGE_PATH}`;
 
 export const TRUESYARIAH_METADATA = {
 	title:
-		"TrueSyariah™ — KPKT Syariah Digital Lending Platform | Tawarruq, Ta'widh & Gharamah for Malaysia",
+		"TrueSyariah™ — Shariah Digital Lending Platform | Tawarruq, Ta'widh & Gharamah for Malaysia",
 	description:
-		"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence in Malaysia — Tawarruq commodity trades via Bursa Suq Al-Sila', segregated Ta'widh and Gharamah ledgers, on-prem digital signing, e-KYC, native mobile apps, and a dedicated AWS deployment ring-fenced from conventional lending.",
+		"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform for Malaysian operators — Tawarruq commodity trades via Bursa Suq Al-Sila', segregated Ta'widh and Gharamah ledgers, on-prem digital signing, e-KYC, native mobile apps, and a dedicated AWS deployment ring-fenced from conventional lending.",
 	keywords: [
 		"TrueSyariah",
-		"KPKT Syariah digital lending licence",
-		"KPKT Syariah digital lending license",
-		"KPKT Shariah digital lending Malaysia",
-		"lesen pinjaman digital syariah KPKT",
+		"Shariah digital lending licence Malaysia",
+		"Shariah digital lending license Malaysia",
+		"Shariah digital lending Malaysia",
+		"lesen pinjaman digital syariah",
 		"Shariah-compliant lending platform Malaysia",
 		"Islamic digital lending Malaysia",
 		"Tawarruq financing platform",
@@ -26,7 +26,7 @@ export const TRUESYARIAH_METADATA = {
 		"Islamic loan management system Malaysia",
 		"Syariah loan management system",
 		"Shariah money lender Malaysia software",
-		"KPKT Akta Pemberi Pinjam Wang Syariah",
+		"Akta Pemberi Pinjam Wang Syariah",
 		"on-prem digital signing Trustgate Syariah",
 		"PKI digital signing Malaysia Islamic finance",
 		"e-KYC Shariah lender Malaysia",
@@ -36,9 +36,9 @@ export const TRUESYARIAH_METADATA = {
 		"riba-free digital lending Malaysia",
 	],
 	openGraphTitle:
-		"TrueSyariah™ — KPKT Syariah Digital Lending Platform for Malaysia",
+		"TrueSyariah™ — Shariah Digital Lending Platform for Malaysia",
 	openGraphDescription:
-		"Shariah-compliant digital lending stack — Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, mobile apps, and a dedicated AWS deployment for the KPKT Syariah Digital Lending Licence.",
+		"Shariah-compliant digital lending stack — Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, mobile apps, and a dedicated AWS deployment for Shariah digital lending operators.",
 	ogImagePath: "/truesyariah/hero.png",
 	ogImageAlt:
 		"TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules",
@@ -83,7 +83,7 @@ export function buildTrueSyariahJsonLd() {
 				name: "TrueSyariah™",
 				alternateName: [
 					"TrueSyariah",
-					"KPKT Syariah Digital Lending Platform",
+					"Shariah Digital Lending Platform",
 					"Shariah Digital Lending Malaysia",
 				],
 				url: TRUESYARIAH_PAGE_URL,
@@ -95,7 +95,7 @@ export function buildTrueSyariahJsonLd() {
 					"@type": "Offer",
 					name: "TrueSyariah Dedicated Deployment",
 					description:
-						"Dedicated AWS Malaysia deployment for the KPKT Syariah Digital Lending Licence — Tawarruq commodity trading via Bursa Suq Al-Sila', Ta'widh / Gharamah segregated ledgers, on-prem PKI signing, e-KYC, web & native mobile origination.",
+						"Dedicated AWS Malaysia deployment for Shariah digital lending — Tawarruq commodity trading via Bursa Suq Al-Sila', Ta'widh / Gharamah segregated ledgers, on-prem PKI signing, e-KYC, web & native mobile origination.",
 				},
 				featureList: [
 					"Tawarruq commodity financing via Bursa Suq Al-Sila'",
@@ -105,7 +105,7 @@ export function buildTrueSyariahJsonLd() {
 					"e-KYC with MyKad OCR, liveness and biometric match",
 					"Branded web and native iOS & Android customer apps",
 					"Dedicated AWS Malaysia account, database and secrets",
-					"KPKT Syariah Digital Lending Licence-aligned compliance",
+					"Shariah digital lending regulatory compliance",
 					"Shariah committee audit pack and reporting",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },

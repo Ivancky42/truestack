@@ -40,10 +40,10 @@ export function TrueSyariahPromo() {
 						TrueSyariah™
 					</h2>
 					<p className="mt-4 text-lg text-muted-foreground md:text-xl">
-						Shariah-compliant digital financing platform for the
-						KPKT Syariah Digital Lending Licence — Tawarruq via
-						BSAS, Ta&apos;widh and Gharamah ledgers, e-KYC,
-						signing, and branded borrower channels on{" "}
+						Shariah-compliant digital financing platform for
+						Malaysian operators — Tawarruq via BSAS,
+						Ta&apos;widh and Gharamah ledgers, e-KYC, signing, and
+						branded borrower channels on{" "}
 						<span className="font-medium text-foreground">
 							dedicated AWS Malaysia
 						</span>
@@ -56,7 +56,7 @@ export function TrueSyariahPromo() {
 						</span>
 						<span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-800">
 							<Award className="h-4 w-4" />
-							KPKT Syariah Digital Lending
+							Shariah digital lending
 						</span>
 					</div>
 				</motion.div>
@@ -105,7 +105,7 @@ export function TrueSyariahPromo() {
 								From Tawarruq commodity trades and Ta&apos;widh
 								/ Gharamah accounting to e-KYC, on-prem signing,
 								and borrower web &amp; mobile — built for your
-								Shariah committee and KPKT examiners.
+								Shariah committee and regulatory review.
 							</p>
 						</div>
 						<ul className="space-y-2">
@@ -134,10 +134,10 @@ export function TrueSyariahPromo() {
 										Separate licence, separate entity
 									</p>
 									<p className="text-sm text-muted-foreground">
-										The KPKT Syariah Digital Lending Licence
-										requires its own Sdn. Bhd. and AWS
-										deployment — ring-fenced from any
-										TrueKredit conventional book.
+										Shariah digital lending requires its own
+										Sdn. Bhd. and AWS deployment —
+										ring-fenced from any TrueKredit
+										conventional book.
 									</p>
 								</div>
 							</div>

@@ -710,7 +710,7 @@ function HeroSection() {
 							</span>
 							<span className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-3.5 py-1.5 text-amber-800">
 								<Award className="h-4 w-4 shrink-0" />
-								KPKT Syariah Digital Lending
+								Shariah digital lending
 							</span>
 						</motion.div>
 						<motion.h1
@@ -731,8 +731,8 @@ function HeroSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.15 }}
 						>
-							Built for the Malaysian KPKT Syariah Digital
-							Lending Licence.
+							Built for Malaysian Shariah digital lending
+							operators.
 						</motion.p>
 						<motion.p
 							className="mt-4 text-lg text-muted-foreground md:text-xl"
@@ -820,8 +820,7 @@ function SeoIntroSection() {
 				<p className="text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">
 					<strong className="text-foreground">
 						TrueSyariah™ is Truestack&apos;s Shariah-compliant
-						digital financing platform for the KPKT Syariah Digital
-						Lending Licence in Malaysia.
+						digital financing platform for Malaysian operators.
 					</strong>{" "}
 					We deliver one end-to-end stack —{" "}
 					<span className="font-medium text-foreground">
@@ -840,10 +839,11 @@ function SeoIntroSection() {
 					ring-fenced from any conventional lending book.
 					<strong className="font-semibold text-foreground">
 						{" "}
-						Whether you already hold the KPKT Syariah licence or are
-						still incorporating your Shariah entity, Truestack
-						covers licensing support, AWS build, UAT, Shariah
-						committee sign-off, and live operations on TrueSyariah.
+						Whether you already hold a Shariah digital lending
+						licence or are still incorporating your Shariah entity,
+						Truestack covers licensing support, AWS build, UAT,
+						Shariah committee sign-off, and live operations on
+						TrueSyariah.
 					</strong>
 				</p>
 				<p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
@@ -854,7 +854,7 @@ function SeoIntroSection() {
 					>
 						TrueP2P™
 					</Link>
-					. For conventional KPKT money lending, see{" "}
+					. For conventional money lending, see{" "}
 					<Link
 						href="/truekredit"
 						className="font-medium text-blue-700 hover:underline"
@@ -893,10 +893,10 @@ function LicenceRealitySection() {
 						</span>
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-						Under Malaysia&apos;s lending framework, the KPKT
-						Syariah Digital Lending Licence cannot be issued to —
-						or operated under — the same legal entity that holds a
-						conventional KPKT money-lending licence. The two
+						Under Malaysia&apos;s lending framework, Shariah
+						digital lending requires its own approval pathway and
+						cannot be operated under the same legal entity that
+						holds a conventional money-lending licence. The two
 						books, the two complaints registers, and the two
 						supervisory pathways have to stay ring-fenced.
 					</p>
@@ -909,7 +909,7 @@ function LicenceRealitySection() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5, delay: 0.1 }}
 				>
-					{/* Conventional KPKT side */}
+					{/* Conventional side */}
 					<div className="rounded-2xl border border-blue-200/70 bg-linear-to-br from-blue-50/70 via-background to-background p-6 sm:p-8">
 						<div className="mb-5 flex items-center justify-between gap-2">
 							<span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
@@ -917,18 +917,18 @@ function LicenceRealitySection() {
 								Conventional Entity
 							</span>
 							<span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-								KPKT Digital Lending
+								Conventional digital lending
 							</span>
 						</div>
 						<h3 className="mb-3 font-display text-lg font-medium leading-snug md:text-xl">
-							Holds your existing KPKT online money-lending
-							licence.
+							Holds your existing conventional online
+							money-lending licence.
 						</h3>
 						<ul className="space-y-2.5 text-sm text-muted-foreground">
 							{[
 								"Riba-based (interest) financing",
 								"Runs on TrueKredit Pro on its own AWS account",
-								"Reports to KPKT under the conventional rules",
+								"Reports under conventional supervisory rules",
 								"Separate books, separate complaint pathway",
 							].map((line) => (
 								<li
@@ -964,18 +964,18 @@ function LicenceRealitySection() {
 								Shariah Entity
 							</span>
 							<span className="text-xs font-medium uppercase tracking-wider text-emerald-800/70">
-								KPKT Syariah Licence
+								Shariah digital lending
 							</span>
 						</div>
 						<h3 className="mb-3 font-display text-lg font-medium leading-snug md:text-xl">
-							A separate Sdn. Bhd. — its own KPKT Syariah
-							digital licence.
+							A separate Sdn. Bhd. — its own Shariah digital
+							lending licence.
 						</h3>
 						<ul className="space-y-2.5 text-sm text-foreground/80">
 							{[
 								"Tawarruq-based financing (no riba, no gharar)",
 								"Runs on TrueSyariah on its own AWS account",
-								"Shariah committee oversight in addition to KPKT",
+								"Shariah committee oversight alongside regulatory reporting",
 								"Ring-fenced books — Ta'widh / Gharamah ledgers",
 							].map((line) => (
 								<li
@@ -1070,10 +1070,10 @@ function ShariahEngineSection() {
 			tagBg: "bg-emerald-500/10 text-emerald-700",
 			icon: BookOpen,
 			title: "Audit packs your committee will actually want to read.",
-			desc: "Every quarter TrueSyariah auto-generates the evidence pack your Shariah committee needs to issue a clean opinion — Tawarruq trade log, Ta'widh / Gharamah trial balance, charity disbursement schedule, and any contract-template variances flagged for review. KPKT examiners get the same dossier, in their format.",
+			desc: "Every quarter TrueSyariah auto-generates the evidence pack your Shariah committee needs to issue a clean opinion — Tawarruq trade log, Ta'widh / Gharamah trial balance, charity disbursement schedule, and any contract-template variances flagged for review. Regulators get the same dossier, in examiner-ready format.",
 			bullets: [
 				"Auto-generated quarterly committee dossier",
-				"KPKT inspection pack — same evidence, examiner format",
+				"Supervisory inspection pack — same evidence, examiner format",
 				"Contract-template variance detector with sign-off",
 				"Full trade audit drill-down — every leg, every signature",
 			],
@@ -1296,7 +1296,7 @@ function ConnectedModulesSection() {
 						tag: "Bureau",
 						icon: BarChart3,
 						title: "CTOS — credit reports in-file",
-						desc: "Pull CTOS credit reports directly inside TrueSyariah and attach them to the financing file. Every pull is timestamped and audit-logged for KPKT and Shariah committee review.",
+						desc: "Pull CTOS credit reports directly inside TrueSyariah and attach them to the financing file. Every pull is timestamped and audit-logged for supervisory and Shariah committee review.",
 						visual: <CTOSVisual />,
 					},
 					{
@@ -1765,14 +1765,14 @@ function ComparisonSection() {
 		"Branded web portal + native iOS & Android apps",
 		"Dedicated AWS Malaysia account, DB and secrets",
 		"Daily automated backups & 24/7 uptime",
-		"Audit trail & KPKT-aligned reporting",
+		"Audit trail & regulatory reporting",
 		"Pen-test pack & inspection-ready dossiers",
 	];
 	const conventionalOnly = [
 		"Riba (interest) calculation engine",
 		"Lampiran A / Jadual J & K conventional letters",
 		"CTOS / TrueSSM™ inline credit checks",
-		"KPKT Online Money Lending Licence reporting",
+		"Conventional digital lending licence reporting",
 	];
 	const syariahOnly = [
 		"Tawarruq commodity trading via Bursa Suq Al-Sila' (BSAS)",
@@ -1780,7 +1780,7 @@ function ComparisonSection() {
 		"Charity disbursement workflow with sign-off",
 		"Quarterly Shariah committee audit pack",
 		"Shariah-aligned contract templates & variance detector",
-		"KPKT Syariah Digital Lending Licence reporting",
+		"Shariah digital lending licence reporting",
 	];
 
 	return (
@@ -1810,7 +1810,7 @@ function ComparisonSection() {
 						licence, different entity.
 					</p>
 					<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
-						Running a conventional KPKT money-lending licence
+						Running a conventional money-lending licence
 						instead?{" "}
 						<Link
 							href="/truekredit"
@@ -1819,8 +1819,8 @@ function ComparisonSection() {
 							Explore TrueKredit™
 						</Link>
 						{" "}
-						— SaaS and Pro editions for the KPKT Online Money
-						Lending Licence.
+						— SaaS and Pro editions for conventional digital
+						lending.
 					</p>
 					<p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
 						Pursuing SC-regulated peer-to-peer financing
@@ -1857,7 +1857,7 @@ function ComparisonSection() {
 												<div className="flex flex-col items-center gap-0.5">
 													<span>TrueKredit Pro</span>
 													<span className="text-[10px] font-normal text-muted-foreground normal-case">
-														KPKT Digital Lending
+														Conventional digital lending
 													</span>
 												</div>
 											</th>
@@ -1865,7 +1865,7 @@ function ComparisonSection() {
 												<div className="flex flex-col items-center gap-0.5">
 													<span>TrueSyariah</span>
 													<span className="text-[10px] font-normal text-muted-foreground normal-case">
-														KPKT Syariah Digital Lending
+														Shariah digital lending
 													</span>
 												</div>
 											</th>
@@ -2097,11 +2097,11 @@ function ZeroToLicensedSection() {
 							From zero to licensed Shariah lending — end to end.
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground">
-							Don&apos;t have a KPKT Syariah Digital Lending
-							Licence yet? Truestack covers the full journey
-							— Shariah entity setup, KPKT submission,
-							Shariah committee onboarding, AWS Malaysia
-							build, UAT, pen-test, KPKT inspection support
+							Don&apos;t have a Shariah digital lending
+							licence yet? Truestack covers the full journey
+							— Shariah entity setup, licence application
+							support, Shariah committee onboarding, AWS Malaysia
+							build, UAT, pen-test, supervisory review support
 							and live operations.
 						</p>
 						<Button
@@ -2109,8 +2109,8 @@ function ZeroToLicensedSection() {
 							size="lg"
 							className="mt-6 gap-2 bg-emerald-600 text-white hover:bg-emerald-700"
 						>
-							<Link href="/contact?subject=KPKT%20Syariah%20licence">
-								Talk to us about your Syariah licence
+							<Link href="/contact?subject=TrueSyariah%20licence">
+								Talk to us about your Shariah licence
 								<ArrowRight className="h-4 w-4" />
 							</Link>
 						</Button>
@@ -2120,12 +2120,12 @@ function ZeroToLicensedSection() {
 							{
 								step: "1",
 								title: "Shariah entity setup",
-								desc: "Incorporate the standalone Sdn. Bhd. that will hold the KPKT Syariah Digital Lending Licence — separate from any existing TrueKredit / conventional lender entity.",
+								desc: "Incorporate the standalone Sdn. Bhd. that will hold the Shariah digital lending licence — separate from any existing TrueKredit / conventional lender entity.",
 							},
 							{
 								step: "2",
-								title: "KPKT Syariah submission & committee",
-								desc: "Draft and submit the KPKT Syariah digital lending licence application; onboard your appointed Shariah committee and align Tawarruq / Ta'widh / Gharamah rulings to the platform.",
+								title: "Licence application & committee",
+								desc: "Draft and submit the Shariah digital lending licence application; onboard your appointed Shariah committee and align Tawarruq / Ta'widh / Gharamah rulings to the platform.",
 							},
 							{
 								step: "3",
@@ -2135,7 +2135,7 @@ function ZeroToLicensedSection() {
 							{
 								step: "4",
 								title: "TrueSyariah goes live",
-								desc: "UAT, pen-test, KPKT inspection walkthrough, Shariah committee sign-off — first Tawarruq trade booked, branded apps in market.",
+								desc: "UAT, pen-test, supervisory review walkthrough, Shariah committee sign-off — first Tawarruq trade booked, branded apps in market.",
 								highlight: true,
 							},
 						].map((s) => (
@@ -2200,10 +2200,9 @@ function FaqSection() {
 						Frequently asked questions
 					</h2>
 					<p className="mx-auto mt-3 text-base text-muted-foreground md:text-lg">
-						How TrueSyariah differs from TrueKredit, what the
-						KPKT Syariah Digital Lending Licence requires, and
-						how Tawarruq, Ta&apos;widh and Gharamah work on the
-						platform.
+						How TrueSyariah differs from TrueKredit, what Shariah
+						digital lending requires, and how Tawarruq,
+						Ta&apos;widh and Gharamah work on the platform.
 					</p>
 				</motion.div>
 
@@ -2251,8 +2250,8 @@ function TrueSyariahCtaSection() {
 					</span>
 				</h2>
 				<p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 md:text-xl">
-					Whether you already hold a KPKT Syariah Digital Lending
-					Licence or are still scoping your Shariah entity,
+					Whether you already hold a Shariah digital lending
+					licence or are still scoping your Shariah entity,
 					Truestack will take you from kick-off to first Tawarruq
 					trade.
 				</p>
@@ -2274,7 +2273,7 @@ function TrueSyariahCtaSection() {
 						className="gap-2 border-emerald-300 bg-emerald-500/5 text-emerald-100 hover:bg-emerald-500/10 hover:text-white"
 					>
 						<Link href="/services/digital-license">
-							Need a KPKT licence?
+							Need licensing support?
 							<ChevronRight className="h-4 w-4" />
 						</Link>
 					</Button>
