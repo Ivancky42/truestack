@@ -56,7 +56,7 @@ export const trueidentityFaq = [
 	{
 		question: "How is TrueIdentity™ priced?",
 		answer:
-			"TrueIdentity uses pay-per-verification pricing that scales with your volume — no large minimum commitments. Contact Truestack for a demo and pricing aligned to your expected verification throughput.",
+			"TrueIdentity uses pay-per-verification pricing that scales with your volume — no large minimum commitments. Book a free consultation with Truestack for a walkthrough and pricing aligned to your expected verification throughput.",
 	},
 ] as const;
 

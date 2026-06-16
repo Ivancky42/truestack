@@ -7,6 +7,7 @@ import {
 import Link from "next/link";
 import { DigitalLicenseHero } from "@/components/sections/digital-license-hero";
 import { DigitalLicenseFaq } from "@/components/sections/digital-license-faq";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { DigitalLicenseSchema } from "@/components/seo/digital-license-schema";
 import { SectionHeader } from "@/components/shared/section-header";
 import { SectionBadge } from "@/components/shared/section-badge";
@@ -35,7 +36,6 @@ import {
 	HandshakeIcon,
 	Sparkles,
 	UserCheck,
-	Briefcase,
 	Headphones,
 	Award,
 } from "lucide-react";
@@ -1146,74 +1146,22 @@ export default function DigitalLicensePage() {
 
 			<DigitalLicenseFaq />
 
-			{/* CTA Section */}
-			<section className="border-t py-20">
-				<div className="mx-auto max-w-6xl px-6 text-center">
-					<div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3.5 py-1.5 text-xs font-medium text-primary">
-						<Briefcase className="h-3.5 w-3.5" />
-						Full-service KPKT digital licensing
-					</div>
-					<h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-						Ready to go digital?
-					</h2>
-					<p className="mx-auto mb-4 max-w-2xl text-lg text-muted-foreground md:text-xl">
-						Talk to our licensing team. We&apos;ll map your route to
-						a KPKT digital licence — provisional, build, review,
-						approval — and stay with you through go-live.
-					</p>
-					<p className="mx-auto mb-8 max-w-2xl text-sm text-muted-foreground md:text-base">
-						Want to look around first? Try the{" "}
-						<Link
-							href="https://demo.truestack.my"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="font-medium text-primary underline-offset-4 hover:underline"
-						>
-							public lending demo
-						</Link>{" "}
-						— borrower origination, admin portal, and on-prem
-						signing all live.
-					</p>
-					<div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-						<Button
-							asChild
-							size="lg"
-							className="gap-2 bg-primary hover:bg-primary/90"
-						>
-							<Link href="/contact">
-								Start your transformation
-								<ArrowRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="outline"
-							size="lg"
-							className="gap-2"
-						>
-							<Link
-								href="https://demo.truestack.my"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Open lending demo
-								<ArrowUpRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="outline"
-							size="lg"
-							className="gap-2"
-						>
-							<Link href="/truekredit">
-								Explore TrueKredit™ for traditional licences
-								<ArrowRight className="h-4 w-4" />
-							</Link>
-						</Button>
-					</div>
-				</div>
-			</section>
+			<ConsultationCta
+				accent="kpkt"
+				eyebrow="Full-service KPKT digital licensing"
+				heading="Ready to go digital?"
+				body="Book a free consultation with our licensing team. We'll map your route to a KPKT digital licence—provisional, build, review, approval—and stay with you through go-live."
+				secondary={{
+					href: "https://demo.truestack.my",
+					label: "Open lending demo",
+				}}
+				extraLinks={[
+					{
+						href: "/truekredit",
+						label: "Explore TrueKredit™ for traditional licences",
+					},
+				]}
+			/>
 		</>
 	);
 }

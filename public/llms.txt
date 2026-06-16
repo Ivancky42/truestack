@@ -4,13 +4,13 @@
 
 ## Summary
 
-Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending and P2P platform development (both conventional and Shariah-aligned, including Gharamah and Ta'widh accounting for Islamic peer-to-peer financing), TrueKredit™ (loan management for the KPKT Online Money Lending Licence), TrueSyariah™ (Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence — Tawarruq via Bursa Suq Al-Sila', Ta'widh and Gharamah ledgers, on-prem signing), TrueIdentity™ (e-KYC API), TrueSSM™ (SSM registry API), and Truestack Core™ (shared infrastructure: e-KYC, payments, notifications, compliance APIs). Technology stack: Next.js, React, TypeScript, Tailwind CSS, Flutter, Node.js, Express, PostgreSQL, Redis, AWS Malaysia, Docker.
+Truestack provides KPKT-related compliance services and fintech software for licensed money lenders in Malaysia, including digital KPKT license conversion, account management, custom lending and P2P platform development (both conventional and Shariah-aligned, including Gharamah and Ta'widh accounting for Islamic peer-to-peer financing), TrueKredit™ (loan management for the KPKT Online Money Lending Licence), TrueSyariah™ (Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence — Tawarruq via Bursa Suq Al-Sila', Ta'widh and Gharamah ledgers, on-prem signing), TrueIdentity™ (e-KYC API), TrueSSM™ (SSM registry API), and Truestack Core™ (shared infrastructure: e-KYC, payments, notifications, compliance APIs). Technology stack: Next.js, React, TypeScript, Tailwind CSS, Flutter, Node.js, Express, PostgreSQL, Redis, AWS Malaysia, Docker. Truestack offers a free, no-obligation consultation — book one at https://truestack.my/contact.
 
 ## Main pages
 
 - https://truestack.my/
 - https://truestack.my/about — Company overview: TrueKredit™, Truestack Core™, web/mobile/cloud stack, KPKT expertise, technology partners, FAQ
-- https://truestack.my/contact
+- https://truestack.my/contact — Book a free, no-obligation consultation (KPKT licensing, compliance, lending and fintech software); contact via email and WhatsApp
 - https://truestack.my/work
 - https://truestack.my/careers
 

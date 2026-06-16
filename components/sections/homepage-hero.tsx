@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef, useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, TrendingUp, Wallet, Users, ShieldCheck } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { CtaLink } from "@/components/shared/cta-link";
 
 // ─── Mock data ────────────────────────────────────────────────────────────────
 
@@ -399,44 +399,6 @@ function GrowthChart({
   );
 }
 
-// ─── CTA helper ───────────────────────────────────────────────────────────────
-
-function CtaLink({
-  href,
-  children,
-  className,
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const isHashLink = href.startsWith("#");
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isHashLink) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  if (isHashLink) {
-    return (
-      <a href={href} onClick={handleClick} className={className}>
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <Link href={href} className={className}>
-      {children}
-    </Link>
-  );
-}
-
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export function HomepageHero() {
@@ -582,7 +544,7 @@ export function HomepageHero() {
             >
               <Button asChild size="lg" className="gap-2">
                 <CtaLink href="/contact">
-                  Request Demo
+                  Book a Free Consultation
                   <ArrowRight className="h-4 w-4" />
                 </CtaLink>
               </Button>
@@ -636,7 +598,7 @@ export function HomepageHero() {
           >
             <Button asChild size="lg" className="gap-2">
               <CtaLink href="/contact">
-                Request Demo
+                Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </CtaLink>
             </Button>

@@ -70,6 +70,7 @@ import {
 	DigitalSigningVisual,
 	AttestationVisual,
 } from "@/components/sections/module-visuals";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 // Grid Pattern Background Component
 function GridPattern() {
 	return (
@@ -255,7 +256,7 @@ export default function TrueKreditPage() {
 									className="gap-2 border-violet-300 bg-violet-500/5 text-violet-700 hover:bg-violet-500/10 hover:text-violet-800"
 								>
 									<Link href="/contact?subject=TrueKredit%20Pro">
-										Talk to us about Pro
+										Book a Free Consultation
 										<ChevronRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -2003,89 +2004,30 @@ export default function TrueKreditPage() {
 				</div>
 			</section>
 
-			{/* Bottom CTA band */}
-			<section
-				id="cta"
-				data-nav-theme="dark"
-				className="relative overflow-hidden border-t border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 py-24 text-white"
-			>
-				<div className="pointer-events-none absolute inset-0 z-0">
-					<div className="absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
-					<div className="absolute -bottom-32 right-0 h-[400px] w-[400px] rounded-full bg-violet-500/15 blur-3xl" />
-				</div>
-				<div className="relative mx-auto max-w-6xl px-6 text-center">
-					<h2 className="mx-auto mb-4 max-w-3xl font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-						<span className="bg-linear-to-r from-indigo-200 via-violet-200 to-purple-200 bg-clip-text text-transparent">
-							Ready to supercharge your lending?
-						</span>
-					</h2>
-					<p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 md:text-xl">
-						Get started with TrueKredit on Core when you&apos;re
-						ready—or reach out if you want to discuss TrueKredit Pro
-						for your licence, borrowers, and roadmap.
-					</p>
-					<div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-						<Button
-							asChild
-							size="lg"
-							className="gap-2 bg-linear-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600"
-						>
-							<Link
-								href="https://kredit.truestack.my/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Get started with TrueKredit
-								<ArrowRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="outline"
-							size="lg"
-							className="gap-2 border-violet-300 bg-violet-500/5 text-violet-200 hover:bg-violet-500/10 hover:text-white"
-						>
-							<Link href="/contact?subject=TrueKredit%20Pro">
-								Talk to us about Pro
-								<ChevronRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="ghost"
-							size="lg"
-							className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
-						>
-							<Link href="/services/digital-license">
-								Need a KPKT licence?
-								<ChevronRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="ghost"
-							size="lg"
-							className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
-						>
-							<Link href="/truesyariah">
-								Compare with TrueSyariah
-								<ChevronRight className="h-4 w-4" />
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant="ghost"
-							size="lg"
-							className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
-						>
-							<Link href="/services/p2p-software-development">
-								Compare with TrueP2P
-								<ChevronRight className="h-4 w-4" />
-							</Link>
-						</Button>
-					</div>
-				</div>
-			</section>
+			<ConsultationCta
+				accent="truekredit"
+				heading="Ready to supercharge your lending?"
+				body="Book a free consultation to discuss TrueKredit Pro for your licence, borrowers, and roadmap—or get started with TrueKredit on Core whenever you're ready."
+				primary={{
+					href: "/contact?subject=TrueKredit%20Pro",
+					label: "Book a Free Consultation",
+				}}
+				secondary={{
+					href: "https://kredit.truestack.my/",
+					label: "Get started with TrueKredit",
+				}}
+				extraLinks={[
+					{
+						href: "/services/digital-license",
+						label: "Need a KPKT licence?",
+					},
+					{ href: "/truesyariah", label: "Compare with TrueSyariah" },
+					{
+						href: "/services/p2p-software-development",
+						label: "Compare with TrueP2P",
+					},
+				]}
+			/>
 		</>
 	);
 }

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Building2,
@@ -160,7 +160,7 @@ export default function AccountManagementPage() {
       <Hero
         title="KPKT Account Management, Simplified"
         subtitle="We handle regulatory and administrative work so you can focus on growth and serving your customers."
-        primaryCta={{ label: "Get Started", href: "/contact" }}
+        primaryCta={{ label: "Book a Free Consultation", href: "/contact" }}
         secondaryCta={{ label: "View Pricing", href: "#pricing" }}
         variant="kpkt"
       />
@@ -424,25 +424,12 @@ export default function AccountManagementPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl">
-            <h2 className="mb-4 font-display text-4xl font-medium md:text-5xl">Let Us Handle Compliance</h2>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Focus on growing your lending business while we manage the regulatory complexity. Our team is ready to support your compliance needs.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-kpkt hover:bg-kpkt/90">
-              <Link href="/contact">Get Started Today</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/services">View All Services</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ConsultationCta
+        accent="kpkt"
+        heading="Let Us Handle Compliance"
+        body="Focus on growing your lending business while we manage the regulatory complexity. Book a free consultation and our team will scope your compliance needs."
+        secondary={{ href: "/services", label: "View All Services" }}
+      />
     </>
   );
 }

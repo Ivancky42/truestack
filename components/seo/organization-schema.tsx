@@ -38,8 +38,9 @@ export function OrganizationSchema() {
 
   const contactPoint: Record<string, unknown> = {
     "@type": "ContactPoint",
+    name: "Free consultation",
     email: "hello@truestack.my",
-    contactType: "customer service",
+    contactType: "sales",
     url: `${baseUrl}/contact`,
     areaServed: "MY",
     availableLanguage: "English",
@@ -82,7 +83,17 @@ export function OrganizationSchema() {
       "@type": "Country",
       name: "Malaysia",
     },
-    slogan: "KPKT Services & Fintech Software for Licensed Money Lenders",
+    makesOffer: {
+      "@type": "Offer",
+      name: "Free Consultation",
+      description:
+        "A free, no-obligation consultation on KPKT licensing, compliance, and fintech software for licensed money lenders and fintech operators in Malaysia.",
+      price: "0",
+      priceCurrency: "MYR",
+      availability: "https://schema.org/InStock",
+      url: `${baseUrl}/contact`,
+    },
+    slogan: "KPKT Services & Fintech Software — Book a Free Consultation",
   };
 
   return (

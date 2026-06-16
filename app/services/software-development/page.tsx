@@ -3,6 +3,7 @@ import { defaultOgImage } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -103,7 +104,7 @@ export default function SoftwareDevelopmentPage() {
       <Hero
         title="Custom Fintech Software Development"
         subtitle="Full-stack development for digital lending and payment platforms. Built for Malaysia's regulatory landscape."
-        primaryCta={{ label: "Start a Project", href: "/contact" }}
+        primaryCta={{ label: "Book a Free Consultation", href: "/contact" }}
         secondaryCta={{ label: "View Our Work", href: "/work" }}
       />
 
@@ -531,26 +532,11 @@ export default function SoftwareDevelopmentPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Ready to Build?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Whether you&apos;re starting fresh or upgrading an existing system, we&apos;ll help you build a fintech platform that meets your business needs and regulatory requirements.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/contact">Start a Project</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/services">
-                View All Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ConsultationCta
+        heading="Ready to Build?"
+        body="Whether you're starting fresh or upgrading an existing system, book a free consultation and we'll help you build a fintech platform that meets your business and regulatory needs."
+        secondary={{ href: "/services", label: "View All Services" }}
+      />
     </>
   );
 }

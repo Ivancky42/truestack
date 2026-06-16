@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 /** Same grouping and labels as the Solutions menu in `header.tsx`. */
 const solutionsColumns = [
@@ -107,6 +108,12 @@ export function Footer() {
               <Linkedin className="h-4 w-4 shrink-0" aria-hidden />
               <span className="text-[15px] font-medium">LinkedIn</span>
             </a>
+            <Button asChild size="lg" className="mt-5 w-full gap-2 sm:w-auto">
+              <Link href="/contact">
+                <MessageSquare className="h-4 w-4" />
+                Book a Free Consultation
+              </Link>
+            </Button>
           </div>
 
           {solutionsColumns.map((column) => (

@@ -41,6 +41,21 @@ export async function GET() {
         </div>
         <div
           style={{
+            marginTop: 28,
+            display: "flex",
+            alignSelf: "flex-start",
+            padding: "10px 22px",
+            borderRadius: 999,
+            background: "rgba(255,255,255,0.16)",
+            fontSize: 26,
+            color: "white",
+            fontWeight: 600,
+          }}
+        >
+          Book a free consultation
+        </div>
+        <div
+          style={{
             marginTop: "auto",
             paddingTop: 48,
             fontSize: 24,

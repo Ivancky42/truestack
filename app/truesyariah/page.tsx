@@ -72,6 +72,7 @@ import {
 	TrueSightVisual,
 	TruesendVisual,
 } from "@/components/sections/module-visuals";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 
 // Hero backdrop — soft girih-inspired pattern with emerald glow
 function GirihPattern() {
@@ -757,7 +758,7 @@ function HeroSection() {
 								className="gap-2 bg-emerald-600 text-white hover:bg-emerald-700"
 							>
 								<Link href="/contact?subject=TrueSyariah">
-									Talk to us about TrueSyariah
+									Book a Free Consultation
 									<ArrowRight className="h-4 w-4" />
 								</Link>
 							</Button>
@@ -2234,74 +2235,26 @@ function FaqSection() {
 // ─── Bottom CTA band ────────────────────────────────────────────────────────
 function TrueSyariahCtaSection() {
 	return (
-		<section
-			id="cta"
-			data-nav-theme="dark"
-			className="relative overflow-hidden border-t border-slate-800 bg-linear-to-br from-emerald-950 via-slate-950 to-emerald-950 py-24 text-white"
-		>
-			<div className="pointer-events-none absolute inset-0 z-0">
-				<div className="absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-500/15 blur-3xl" />
-				<div className="absolute -bottom-32 right-0 h-[400px] w-[400px] rounded-full bg-amber-400/10 blur-3xl" />
-			</div>
-			<div className="relative mx-auto max-w-6xl px-6 text-center">
-				<h2 className="mx-auto mb-4 max-w-3xl font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-					<span className="bg-linear-to-r from-emerald-200 via-teal-200 to-amber-200 bg-clip-text text-transparent">
-						Ready to launch Shariah-compliant lending?
-					</span>
-				</h2>
-				<p className="mx-auto mb-8 max-w-2xl text-lg text-slate-300 md:text-xl">
-					Whether you already hold a Shariah digital lending
-					licence or are still scoping your Shariah entity,
-					Truestack will take you from kick-off to first Tawarruq
-					trade.
-				</p>
-				<div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-					<Button
-						asChild
-						size="lg"
-						className="gap-2 bg-linear-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600"
-					>
-						<Link href="/contact?subject=TrueSyariah">
-							Talk to us about TrueSyariah
-							<ArrowRight className="h-4 w-4" />
-						</Link>
-					</Button>
-					<Button
-						asChild
-						variant="outline"
-						size="lg"
-						className="gap-2 border-emerald-300 bg-emerald-500/5 text-emerald-100 hover:bg-emerald-500/10 hover:text-white"
-					>
-						<Link href="/services/digital-license">
-							Need licensing support?
-							<ChevronRight className="h-4 w-4" />
-						</Link>
-					</Button>
-					<Button
-						asChild
-						variant="ghost"
-						size="lg"
-						className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
-					>
-						<Link href="/truekredit">
-							Compare with TrueKredit
-							<ChevronRight className="h-4 w-4" />
-						</Link>
-					</Button>
-					<Button
-						asChild
-						variant="ghost"
-						size="lg"
-						className="gap-2 text-slate-300 hover:bg-white/6 hover:text-white"
-					>
-						<Link href="/services/p2p-software-development">
-							Compare with TrueP2P
-							<ChevronRight className="h-4 w-4" />
-						</Link>
-					</Button>
-				</div>
-			</div>
-		</section>
+		<ConsultationCta
+			accent="truesyariah"
+			heading="Ready to launch Shariah-compliant lending?"
+			body="Whether you already hold a Shariah digital lending licence or are still scoping your Shariah entity, book a free consultation and Truestack will take you from kick-off to first Tawarruq trade."
+			primary={{
+				href: "/contact?subject=TrueSyariah",
+				label: "Book a Free Consultation",
+			}}
+			secondary={{
+				href: "/services/digital-license",
+				label: "Need licensing support?",
+			}}
+			extraLinks={[
+				{ href: "/truekredit", label: "Compare with TrueKredit" },
+				{
+					href: "/services/p2p-software-development",
+					label: "Compare with TrueP2P",
+				},
+			]}
+		/>
 	);
 }
 

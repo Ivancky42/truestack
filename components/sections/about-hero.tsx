@@ -67,7 +67,7 @@ export function AboutHero() {
 						size="lg"
 						className="border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800/80 hover:text-zinc-50"
 					>
-						<Link href="/contact">Get in Touch</Link>
+						<Link href="/contact">Book a Free Consultation</Link>
 					</Button>
 				</div>
 			</motion.div>

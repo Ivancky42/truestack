@@ -32,6 +32,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { TrueIdentityFaq } from "@/components/sections/trueidentity-faq";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -400,7 +401,7 @@ export default function TrueIdentityPage() {
               >
                 <Button asChild size="lg" className="gap-2">
                   <Link href="/contact">
-                    Request a Demo
+                    Book a Free Consultation
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
@@ -1073,35 +1074,11 @@ export default function TrueIdentityPage() {
 
       <TrueIdentityFaq />
 
-      {/* CTA Section */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Ready to Transform Your KYC Process?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Join leading Malaysian businesses using TrueIdentity. Get started with a demo today.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="gap-2">
-                <Link href="/contact">
-                  Request a Demo
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/">Back to truestack.my</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <ConsultationCta
+        heading="Ready to Transform Your KYC Process?"
+        body="Join leading Malaysian businesses using TrueIdentity. Book a free consultation and we'll walk you through e-KYC, pricing, and integration."
+        secondary={{ href: "/", label: "Back to truestack.my" }}
+      />
     </>
   );
 }

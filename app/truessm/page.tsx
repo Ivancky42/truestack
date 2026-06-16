@@ -28,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { TrueSsmFaq } from "@/components/sections/truessm-faq";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -520,7 +521,7 @@ export default function TrueSsmPage() {
               >
                 <Button asChild size="lg" className="gap-2">
                   <Link href="/contact">
-                    Request Access
+                    Book a Free Consultation
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
@@ -1105,36 +1106,11 @@ export default function TrueSsmPage() {
 
       <TrueSsmFaq />
 
-      {/* CTA */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-              Ready to wire SSM into your product?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Get an API key, add funds in RM, and pull your first profile
-              today. We&apos;ll help you integrate.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="gap-2">
-                <Link href="/contact">
-                  Request Access
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/">Back to truestack.my</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <ConsultationCta
+        heading="Ready to wire SSM into your product?"
+        body="Get an API key, add funds in RM, and pull your first profile. Book a free consultation and we'll help you integrate SSM registry data into your product."
+        secondary={{ href: "/", label: "Back to truestack.my" }}
+      />
     </>
   );
 }

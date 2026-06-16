@@ -1,9 +1,10 @@
 "use client";
 
-import type { ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { GridPattern } from "@/components/sections/hero";
+import { CtaLink } from "@/components/shared/cta-link";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { WorkCaseStudyGrid } from "@/components/sections/work-case-study-grid";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -52,36 +53,6 @@ const workWithUsOffers: {
 		accent: "kpkt",
 	},
 ];
-
-function CtaLink({
-	href,
-	children,
-	className,
-}: {
-	href: string;
-	children: ReactNode;
-	className?: string;
-}) {
-	if (href.startsWith("#")) {
-		return (
-			<a
-				href={href}
-				className={className}
-				onClick={(e) => {
-					e.preventDefault();
-					document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-				}}
-			>
-				{children}
-			</a>
-		);
-	}
-	return (
-		<Link href={href} className={className}>
-			{children}
-		</Link>
-	);
-}
 
 function WorkHero() {
 	return (
@@ -137,7 +108,7 @@ function WorkHero() {
 							</CtaLink>
 						</Button>
 						<Button asChild variant="outline" size="lg">
-							<Link href="/contact">Talk to us about your build</Link>
+							<Link href="/contact">Book a Free Consultation</Link>
 						</Button>
 					</div>
 				</motion.div>
@@ -236,16 +207,14 @@ export function WorkPageContent() {
 							);
 						})}
 					</div>
-					<div className="mt-10 flex justify-center">
-						<Button asChild size="lg" className="gap-2">
-							<Link href="/contact">
-								Get in touch
-								<ArrowRight className="h-4 w-4" />
-							</Link>
-						</Button>
-					</div>
 				</div>
 			</section>
+
+			<ConsultationCta
+				heading="Have a build in mind?"
+				body="Whether you're going digital, replatforming, or starting fresh, book a free consultation and one senior team will take you from discovery through go-live."
+				secondary={{ href: "/services", label: "Explore Services" }}
+			/>
 		</>
 	);
 }

@@ -336,7 +336,7 @@ export function P2PPromo() {
 							<Button asChild variant="outline" className="gap-2">
 								<Link href="/contact?subject=TrueP2P">
 									<Banknote className="h-4 w-4" />
-									Talk to our TrueP2P™ team
+									Book a Free Consultation
 								</Link>
 							</Button>
 						</div>

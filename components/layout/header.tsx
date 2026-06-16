@@ -102,10 +102,10 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 			},
 			{
 				title: "TruePay™",
+				href: "/contact?subject=TruePay",
 				description:
 					"Unified payments API — FPX, DuitNow, cards, recurring billing, and reconciliation.",
 				icon: Banknote,
-				comingSoon: true,
 			},
 			{
 				title: "TrueScore™",
@@ -117,7 +117,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 			{
 				title: "TrueCommodity™",
 				description:
-					"Shariah trading infrastructure — Tawarruq via Bursa Suq Al-Sila' and committee-ready ledgers.",
+					"Shariah trading infrastructure — Tawarruq commodity trading and committee-ready ledgers.",
 				icon: Moon,
 				comingSoon: true,
 			},
@@ -462,7 +462,7 @@ export function Header() {
 								: ""
 						}
 					>
-						<Link href="/contact">Contact</Link>
+						<Link href="/contact">Free Consultation</Link>
 					</Button>
 				</div>
 
@@ -576,14 +576,14 @@ export function Header() {
 								</Link>
 							))}
 
-							{/* Contact Button */}
+							{/* Consultation Button */}
 							<div className="mt-4 border-t pt-4 px-3">
 								<Button asChild className="w-full" size="lg">
 									<Link
 										href="/contact"
 										onClick={closeMobileMenu}
 									>
-										Contact
+										Book a Free Consultation
 									</Link>
 								</Button>
 							</div>

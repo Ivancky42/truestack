@@ -10,7 +10,7 @@ import { CAREERS_METADATA, CAREERS_PAGE_PATH } from "@/lib/careers-seo";
 import { Target, Clock, Gem, BookOpen, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
-	title: CAREERS_METADATA.title,
+	title: { absolute: CAREERS_METADATA.title },
 	description: CAREERS_METADATA.description,
 	keywords: [...CAREERS_METADATA.keywords],
 	alternates: { canonical: CAREERS_PAGE_PATH },

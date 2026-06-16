@@ -156,7 +156,7 @@ export function P2PHero() {
             >
               <Button asChild size="lg" className="gap-2">
                 <Link href="/contact?subject=TrueP2P">
-                  Talk to our TrueP2P™ team
+                  Book a Free Consultation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

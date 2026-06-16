@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { CtaLink } from "@/components/shared/cta-link";
 
 interface HeroProps {
   title: string;
@@ -18,34 +18,6 @@ interface HeroProps {
   };
   showCodeCard?: boolean;
   variant?: "primary" | "kpkt";
-}
-
-function CtaLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
-  const isHashLink = href.startsWith("#");
-  
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isHashLink) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  if (isHashLink) {
-    return (
-      <a href={href} onClick={handleClick} className={className}>
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <Link href={href} className={className}>
-      {children}
-    </Link>
-  );
 }
 
 export function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {

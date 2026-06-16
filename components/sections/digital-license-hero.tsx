@@ -4,6 +4,7 @@ import { useRef, useCallback, useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { CtaLink } from "@/components/shared/cta-link";
 import {
   ArrowUpRight,
   Building2,
@@ -16,50 +17,6 @@ import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from
 
 const DEMO_URL = "https://demo.truestack.my";
 
-function CtaLink({
-  href,
-  children,
-  className,
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const isHashLink = href.startsWith("#");
-  const isExternal = /^https?:\/\//.test(href);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isHashLink) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  if (isHashLink) {
-    return (
-      <a href={href} onClick={handleClick} className={className}>
-        {children}
-      </a>
-    );
-  }
-
-  if (isExternal) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <Link href={href} className={className}>
-      {children}
-    </Link>
-  );
-}
 
 const STATES = [
   "Johor", "Kedah", "Kelantan", "Melaka", "N. Sembilan",
@@ -532,9 +489,9 @@ export function DigitalLicenseHero() {
               <p className="max-w-xl text-sm text-muted-foreground sm:text-[15px]">
                 Prefer a guided tour?{" "}
                 <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
-                  Contact us
+                  Book a free consultation
                 </Link>{" "}
-                for a demo of the end-to-end digital lending system—borrower origination, admin
+                for a walkthrough of the end-to-end digital lending system—borrower origination, admin
                 portal, and on-premise signing with Certificate Authority integration.
               </p>
             </motion.div>
@@ -571,9 +528,9 @@ export function DigitalLicenseHero() {
             <p className="text-sm text-muted-foreground">
               Prefer a guided tour?{" "}
               <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
-                Contact us
+                Book a free consultation
               </Link>{" "}
-              for a demo of the end-to-end digital lending system—borrower origination, admin
+              for a walkthrough of the end-to-end digital lending system—borrower origination, admin
               portal, and on-premise signing with Certificate Authority integration.
             </p>
           </motion.div>

@@ -12,6 +12,7 @@ import {
 	type CaseStudy,
 } from "@/components/sections/case-studies";
 import { P2PSchema } from "@/components/seo/p2p-schema";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +25,6 @@ import {
 import {
 	ArrowRight,
 	BadgeCheck,
-	Banknote,
 	BarChart3,
 	Boxes,
 	Building2,
@@ -1066,44 +1066,19 @@ export default function P2PSoftwareDevelopmentPage() {
 				</div>
 			</section>
 
-			{/* CTA */}
-			<section className="border-t py-20">
-				<div className="mx-auto max-w-4xl px-6 text-center">
-					<Banknote className="mx-auto mb-4 h-10 w-10 text-primary" />
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-						Ready to build TrueP2P™?
-					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-						Whether you&apos;re preparing your SC RMO submission or
-						replatforming an existing P2P operation, our engineering
-						team can take you from scope to live platform — without
-						the usual fintech build pain.
-					</p>
-					<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-						<Button asChild size="lg">
-							<Link href="/contact">
-								Start a conversation
-								<ArrowRight className="ml-1 h-4 w-4" />
-							</Link>
-						</Button>
-						<Button asChild size="lg" variant="outline">
-							<Link href="/work">See our work</Link>
-						</Button>
-						<Button asChild size="lg" variant="ghost">
-							<Link href="/truekredit">
-								Compare with TrueKredit
-								<ArrowRight className="ml-1 h-4 w-4" />
-							</Link>
-						</Button>
-						<Button asChild size="lg" variant="ghost">
-							<Link href="/truesyariah">
-								Compare with TrueSyariah
-								<ArrowRight className="ml-1 h-4 w-4" />
-							</Link>
-						</Button>
-					</div>
-				</div>
-			</section>
+			<ConsultationCta
+				heading="Ready to build TrueP2P™?"
+				body="Whether you're preparing your SC RMO submission or replatforming an existing P2P operation, book a free consultation and our engineering team will take you from scope to live platform."
+				primary={{
+					href: "/contact?subject=TrueP2P",
+					label: "Book a Free Consultation",
+				}}
+				secondary={{ href: "/work", label: "See our work" }}
+				extraLinks={[
+					{ href: "/truekredit", label: "Compare with TrueKredit" },
+					{ href: "/truesyariah", label: "Compare with TrueSyariah" },
+				]}
+			/>
 		</>
 	);
 }

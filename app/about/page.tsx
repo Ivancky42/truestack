@@ -8,6 +8,7 @@ import { CoreInfrastructure } from "@/components/sections/core-infrastructure";
 import { AboutHero } from "@/components/sections/about-hero";
 import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import { AboutFaq } from "@/components/sections/about-faq";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { AboutSchema } from "@/components/seo/about-schema";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -289,32 +290,11 @@ export default function AboutPage() {
 
 			<AboutFaq />
 
-			{/* CTA */}
-			<section className="border-t py-20">
-				<div className="mx-auto max-w-6xl px-6">
-					<div className="mx-auto max-w-2xl text-center">
-						<h2 className="text-3xl font-semibold tracking-tight">
-							Ready to get started?
-						</h2>
-						<p className="mt-4 text-lg text-muted-foreground">
-							Whether you need help with compliance, want to go
-							digital, or are building a new platform — we&apos;re
-							here to help.
-						</p>
-						<div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-							<Button asChild size="lg" className="gap-2">
-								<Link href="/contact">
-									Get in Touch
-									<ArrowRight className="h-4 w-4" />
-								</Link>
-							</Button>
-							<Button asChild variant="outline" size="lg">
-								<Link href="/services">View Services</Link>
-							</Button>
-						</div>
-					</div>
-				</div>
-			</section>
+			<ConsultationCta
+				heading="Ready to get started?"
+				body="Whether you need help with compliance, want to go digital, or are building a new platform—book a free consultation and we'll help you map the path."
+				secondary={{ href: "/services", label: "View Services" }}
+			/>
 		</>
 	);
 }

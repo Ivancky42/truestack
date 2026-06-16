@@ -193,12 +193,12 @@ const services: Service[] = [
 		tagline: "Payments & Disbursement API",
 		description:
 			"Unified payments for Malaysian fintechs: FPX, DuitNow, card payments, recurring billing, and automated reconciliation — all behind one REST API.",
-		href: "/truepay",
+		href: "/contact?subject=TruePay",
 		badgeIcon: CreditCard,
 		badgeText: "Payments API",
 		stats: [
 			{ value: "FPX & DuitNow", label: "Rails" },
-			{ value: "Soon", label: "Availability" },
+			{ value: "Live", label: "Availability" },
 		],
 		flowSteps: [
 			{
@@ -238,8 +238,7 @@ const services: Service[] = [
 			logoSrc: "/truekredit/integrations/gkash-logo.png",
 			logoAlt: "GKash logo",
 		},
-		ctaLabel: "Coming soon",
-		comingSoon: true,
+		ctaLabel: "Enquire now",
 	},
 	{
 		id: "truescore",
@@ -300,7 +299,7 @@ const services: Service[] = [
 		name: "TrueCommodity™",
 		tagline: "Shariah Trading",
 		description:
-			"Shariah-compliant disbursement and accounting for Malaysian operators: Tawarruq commodity trading via Bursa Suq Al-Sila', plus Gharamah and Ta'widh ledgers and Shariah committee-ready exports.",
+			"Shariah-compliant disbursement and accounting for Malaysian operators: Tawarruq commodity trading, plus Gharamah and Ta'widh ledgers and Shariah committee-ready exports.",
 		href: "/truecommodity",
 		badgeIcon: Moon,
 		badgeText: "Shariah Trading",
@@ -336,19 +335,11 @@ const services: Service[] = [
 		],
 		flowResultLabel: "Shariah committee-ready",
 		capabilities: [
-			{
-				label: "Tawarruq via Bursa Suq Al-Sila'",
-				icon: Repeat,
-			},
+			{ label: "Tawarruq commodity trading", icon: Repeat },
 			{ label: "Gharamah charity ledger", icon: HeartHandshake },
 			{ label: "Ta'widh recovery accounting", icon: Coins },
 			{ label: "Committee review exports", icon: FileText },
 		],
-		poweredBy: {
-			label: "In partnership with Bursa Malaysia",
-			logoSrc: "/truekredit/integrations/bursa-malaysia-logo.png",
-			logoAlt: "Bursa Malaysia logo",
-		},
 		ctaLabel: "Coming soon",
 		comingSoon: true,
 	},

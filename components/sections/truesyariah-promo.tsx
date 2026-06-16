@@ -158,7 +158,7 @@ export function TrueSyariahPromo() {
 								className="gap-2 border-emerald-300 text-emerald-800 hover:bg-emerald-500/5 hover:text-emerald-900"
 							>
 								<Link href="/contact?subject=TrueSyariah">
-									Talk to us about TrueSyariah
+									Book a Free Consultation
 								</Link>
 							</Button>
 						</div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -218,18 +219,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold">Ready to Get Started?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Whether you need help with compliance, want to go digital, or are building a new fintech platform — we&apos;re here to help.
-          </p>
-          <Button asChild size="lg">
-            <Link href="/contact">Contact Us</Link>
-          </Button>
-        </div>
-      </section>
+      <ConsultationCta
+        heading="Ready to Get Started?"
+        body="Whether you need help with compliance, want to go digital, or are building a new fintech platform—book a free consultation and we'll help you find the right path."
+        secondary={{ href: "/work", label: "See Our Work" }}
+      />
     </>
   );
 }

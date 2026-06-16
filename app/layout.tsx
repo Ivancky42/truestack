@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s - Truestack",
   },
   description:
-    "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+    "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
   keywords: [
     "KPKT license Malaysia",
     "KPKT account management",
@@ -50,6 +50,8 @@ export const metadata: Metadata = {
     "money lender compliance Malaysia",
     "Lampiran A Lampiran B1",
     "PDPA compliant KYC",
+    "free fintech consultation Malaysia",
+    "free KPKT consultation",
   ],
   authors: [{ name: "Truestack" }],
   icons: {
@@ -63,14 +65,14 @@ export const metadata: Metadata = {
     siteName: "Truestack",
     title: "Truestack - KPKT Services & Fintech Software",
     description:
-      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Truestack - KPKT Services & Fintech Software",
     description:
-      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
     images: [defaultOgImage.url],
   },
   robots: {
