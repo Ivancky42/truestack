@@ -105,6 +105,14 @@ export const clientLogos = [
 		name: "Andas Capital",
 		logo: "/logos/Andas.svg",
 	},
+	{
+		name: "Fundle",
+		logo: "/logos/fundle.png",
+	},
+	{
+		name: "ezdana",
+		logo: "/logos/ezdana.png",
+	},
 ] as const;
 
 type LogoItem = {

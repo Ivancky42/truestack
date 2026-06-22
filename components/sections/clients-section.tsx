@@ -20,7 +20,7 @@ const clients = [
   { 
     name: "Fundle", 
     abbr: "FDL",
-    logo: "/logos/kredit.png", // Upload to: public/logos/fundle.png
+    logo: "/logos/fundle.png",
   },
   { 
     name: "CreditXpress", 
