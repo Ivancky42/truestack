@@ -143,13 +143,13 @@
 }
 
 .logo-marquee-track {
-  animation: logo-marquee 50s linear infinite;
+  animation: logo-marquee var(--marquee-duration, 50s) linear infinite;
   will-change: transform;
 }
 
-/* Same duration as top row; reverse direction = scroll right. */
+/* Same speed as forward row; reverse direction = scroll right. */
 .logo-marquee-track-reverse {
-  animation: logo-marquee 50s linear infinite reverse;
+  animation: logo-marquee var(--marquee-duration, 50s) linear infinite reverse;
   will-change: transform;
 }
 

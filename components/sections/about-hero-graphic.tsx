@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const stack = ["Next.js", "Flutter", "PostgreSQL", "AWS Malaysia"];
+const stack = ["Next.js", "React Native", "PostgreSQL", "AWS Malaysia"];
 
 export function AboutHeroGraphic() {
 	return (

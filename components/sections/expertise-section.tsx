@@ -44,7 +44,7 @@ const techCategories = [
   },
   {
     label: "Mobile",
-    items: ["Flutter", "iOS", "Android"],
+    items: ["React Native", "iOS", "Android"],
   },
   {
     label: "Backend",

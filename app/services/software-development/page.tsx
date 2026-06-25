@@ -354,7 +354,7 @@ export default function SoftwareDevelopmentPage() {
                 <div>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Mobile</p>
                   <div className="flex flex-wrap gap-2">
-                    {["Flutter", "iOS", "Android", "Dart"].map((tech) => (
+                    {["React Native", "iOS", "Android"].map((tech) => (
                       <span key={tech} className="inline-flex items-center rounded-md bg-purple-500/10 px-2.5 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-500/20">
                         {tech}
                       </span>

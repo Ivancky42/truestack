@@ -6,7 +6,7 @@ export const ABOUT_PAGE_URL = `${baseUrl}${ABOUT_PAGE_PATH}`;
 export const ABOUT_METADATA = {
 	title: "About Truestack | Malaysian Fintech Software & Lending Technology",
 	description:
-		"Truestack builds purpose-built lending technology in Malaysia — TrueKredit™ loan systems, Truestack Core™ shared infrastructure, and a modern stack with Next.js, Flutter, Node.js, PostgreSQL, and AWS Malaysia for licensed money lenders and fintechs.",
+		"Truestack builds purpose-built lending technology in Malaysia — TrueKredit™ loan systems, Truestack Core™ shared infrastructure, and a modern stack with Next.js, React Native, Node.js, PostgreSQL, and AWS Malaysia for licensed money lenders and fintechs.",
 	keywords: [
 		"Truestack",
 		"about Truestack",
@@ -19,7 +19,7 @@ export const ABOUT_METADATA = {
 		"loan management system Malaysia",
 		"e-KYC Malaysia",
 		"Next.js fintech",
-		"Flutter lending app",
+		"React Native lending app",
 		"AWS Malaysia fintech",
 		"full-stack fintech development",
 		"digital lending platform Malaysia",
@@ -44,7 +44,7 @@ export const aboutFaq = [
 	{
 		question: "What technology stack does Truestack use?",
 		answer:
-			"We use a modern, battle-tested stack: Next.js, React, TypeScript, and Tailwind CSS for web; Flutter for cross-platform mobile; Node.js, Express, PostgreSQL, and Redis on the backend; and AWS Malaysia, Docker, and DigitalOcean for cloud deployment — designed for performance, maintainability, and audit-ready fintech workloads.",
+			"We use a modern, battle-tested stack: Next.js, React, TypeScript, and Tailwind CSS for web; React Native for cross-platform mobile; Node.js, Express, PostgreSQL, and Redis on the backend; and AWS Malaysia, Docker, and DigitalOcean for cloud deployment — designed for performance, maintainability, and audit-ready fintech workloads.",
 	},
 	{
 		question: "Who does Truestack work with?",
@@ -107,7 +107,7 @@ export function buildAboutJsonLd() {
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Web & Mobile — Next.js, React, TypeScript, Tailwind CSS, Flutter",
+						name: "Web & Mobile — Next.js, React, TypeScript, Tailwind CSS, React Native",
 					},
 					{
 						"@type": "ListItem",

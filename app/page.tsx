@@ -9,7 +9,7 @@ import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { InfrastructureSection } from "@/components/sections/infrastructure-section";
 import { TrueKreditPromo } from "@/components/sections/truekredit-promo";
 import { TrueSyariahPromo } from "@/components/sections/truesyariah-promo";
-import LogoCloud1 from "@/components/logo-cloud-1";
+import { HomepageLogoCloud } from "@/components/sections/homepage-logo-cloud";
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/" },
@@ -19,12 +19,7 @@ export default function HomePage() {
 	return (
 		<>
 			<HomepageHero />
-			<LogoCloud1
-				variant="clients"
-				showCategories={false}
-				compact
-				layout="marquee"
-			/>
+			<HomepageLogoCloud />
 			<WhatWeDo />
 			<TrueKreditPromo />
 			<TrueSyariahPromo />

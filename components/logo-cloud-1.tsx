@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Handshake, Users } from "lucide-react";
+import { LogoMarqueeRow } from "@/components/logo-marquee-row";
 import { AdaptiveLogoImage } from "@/components/logo-cloud-image";
 import {
 	type LogoDisplaySize,
@@ -62,16 +63,8 @@ export const clientLogos = [
 		logo: "/logos/pinjocep-logo.png",
 	},
 	{
-		name: "Kapital",
-		logo: "/logos/kapital.svg",
-	},
-	{
 		name: "Shoraka Digital",
 		logo: "/logos/shoraka-digital.png",
-	},
-	{
-		name: "Kredit",
-		logo: "/logos/kredit.png",
 	},
 	{
 		name: "CreditXpress",
@@ -115,6 +108,38 @@ export const clientLogos = [
 	},
 ] as const;
 
+// Strategic partners (homepage marquee — separate from technology integration partners)
+export const homepagePartners = [
+	{
+		name: "GKash",
+		logo: "/logos/gkash.png",
+	},
+	{
+		name: "MSC Trustgate",
+		logo: "/logos/trustgate.png",
+	},
+	{
+		name: "SSM Search",
+		logo: "/truekredit/integrations/ssmsearch-logo.webp",
+	},
+	{
+		name: "Innov8tif",
+		logo: "/logos/innov8tif.png",
+	},
+	{
+		name: "EC-Council",
+		logo: "/logos/ec-council.png",
+	},
+	{
+		name: "CTOS",
+		logo: "/logos/ctos.png",
+	},
+	{
+		name: "AWS",
+		logo: "/logos/aws.svg",
+	},
+] as const;
+
 type LogoItem = {
 	name: string;
 	logo: string;
@@ -143,11 +168,7 @@ interface LogoCloudProps {
 /** Repeated sets; keep in sync with globals.css (-25% = one loop). */
 const MARQUEE_COPIES = 4;
 
-function buildMarqueeItems(items: readonly LogoItem[]) {
-	return Array.from({ length: MARQUEE_COPIES }, () => [...items]).flat();
-}
-
-function LogoMarqueeRow({
+function LogoMarqueeRowWrapper({
 	items,
 	displaySize,
 	reverse = false,
@@ -158,39 +179,51 @@ function LogoMarqueeRow({
 	reverse?: boolean;
 	rowKey: string;
 }) {
-	const marqueeItems = buildMarqueeItems(items);
-
 	return (
-		<div
-			className={cn(
-				"flex w-max items-center",
-				reverse ? "logo-marquee-track-reverse" : "logo-marquee-track",
-			)}
-		>
-			{marqueeItems.map((item, index) => (
-				<div
-					key={`${rowKey}-${item.name}-${index}`}
-					className="group flex shrink-0 items-center justify-center px-5 sm:px-7 md:px-9"
-					aria-hidden={index >= items.length}
-				>
-					<AdaptiveLogoImage
-						src={item.logo}
-						alt={index < items.length ? item.name : ""}
-						displaySize={displaySize}
-					/>
-				</div>
-			))}
-		</div>
+		<LogoMarqueeRow
+			items={items}
+			displaySize={displaySize}
+			reverse={reverse}
+			rowKey={rowKey}
+			copies={MARQUEE_COPIES}
+		/>
 	);
 }
 
-function LogoMarquee({
+export function LogoMarquee({
 	items,
 	displaySize,
+	rows = 2,
+	reverse = false,
 }: {
 	items: readonly LogoItem[];
 	displaySize: LogoDisplaySize;
+	/** Single strip or split into two opposing rows. */
+	rows?: 1 | 2;
+	/** Scroll direction for a single row (false = left, true = right). */
+	reverse?: boolean;
 }) {
+	if (rows === 1) {
+		return (
+			<div className="relative w-full overflow-hidden">
+				<div
+					className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-background to-transparent sm:w-20 md:w-28"
+					aria-hidden
+				/>
+				<div
+					className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-background to-transparent sm:w-20 md:w-28"
+					aria-hidden
+				/>
+				<LogoMarqueeRowWrapper
+					items={items}
+					displaySize={displaySize}
+					reverse={reverse}
+					rowKey="single"
+				/>
+			</div>
+		);
+	}
+
 	const midpoint = Math.ceil(items.length / 2);
 	const topRow = items.slice(0, midpoint);
 	const bottomRow = items.slice(midpoint);
@@ -206,12 +239,12 @@ function LogoMarquee({
 				aria-hidden
 			/>
 			<div className="logo-marquee-rows flex flex-col gap-3 md:gap-4">
-				<LogoMarqueeRow
+				<LogoMarqueeRowWrapper
 					items={topRow}
 					displaySize={displaySize}
 					rowKey="top"
 				/>
-				<LogoMarqueeRow
+				<LogoMarqueeRowWrapper
 					items={bottomRow}
 					displaySize={displaySize}
 					reverse

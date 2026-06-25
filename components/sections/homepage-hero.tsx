@@ -496,7 +496,7 @@ export function HomepageHero() {
         />
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-12 md:py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-6 pt-12 pb-8 md:pt-24 md:pb-14 lg:pt-32 lg:pb-16">
         <div
           ref={containerRef}
           className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"

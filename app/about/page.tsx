@@ -56,15 +56,15 @@ export const metadata: Metadata = {
 
 const values = [
 	{
-		title: "KPKT Expertise",
+		title: "Malaysian Fintech Expertise",
 		description:
-			"Deep understanding of Malaysia's KPKT regulatory landscape. We've helped operators navigate compliance and go digital.",
+			"Deep understanding of Malaysia's fintech regulatory landscape. We've helped operators navigate compliance and go digital.",
 		icon: Shield,
 	},
 	{
 		title: "Modern Tech Stack",
 		description:
-			"We use battle-tested technologies like Next.js, Flutter, Node.js, and PostgreSQL. Built for performance and maintainability.",
+			"We use battle-tested technologies like Next.js, React Native, Node.js, and PostgreSQL. Built for performance and maintainability.",
 		icon: Code2,
 	},
 	{
@@ -160,7 +160,7 @@ export default function AboutPage() {
 									"React",
 									"TypeScript",
 									"Tailwind CSS",
-									"Flutter",
+									"React Native",
 								].map((tech) => (
 									<span
 										key={tech}

@@ -47,6 +47,8 @@ interface AdaptiveLogoImageProps {
 	alt: string;
 	displaySize?: LogoDisplaySize;
 	className?: string;
+	/** Show logo in full color instead of muted grayscale. */
+	color?: boolean;
 }
 
 export function AdaptiveLogoImage({
@@ -54,6 +56,7 @@ export function AdaptiveLogoImage({
 	alt,
 	displaySize = "default",
 	className,
+	color = false,
 }: AdaptiveLogoImageProps) {
 	const [shape, setShape] = useState<LogoShape>("medium");
 
@@ -83,7 +86,12 @@ export function AdaptiveLogoImage({
 				width={width}
 				height={height}
 				onLoad={onLoad}
-				className="max-h-full max-w-full object-contain opacity-70 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0"
+				className={cn(
+					"max-h-full max-w-full object-contain transition-all",
+					color
+						? "opacity-100"
+						: "opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0",
+				)}
 				style={{ width: "auto", height: "auto" }}
 			/>
 		</div>
