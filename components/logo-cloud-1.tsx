@@ -106,6 +106,14 @@ export const clientLogos = [
 		name: "ezdana",
 		logo: "/logos/ezdana.png",
 	},
+	{
+		name: "Proficient Premium",
+		logo: "/logos/proficient-premium-logo.png",
+	},
+	{
+		name: "AI Express",
+		logo: "/logos/ai-express-logo.svg",
+	},
 ] as const;
 
 // Strategic partners (homepage marquee — separate from technology integration partners)

@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -7,7 +8,7 @@ import { CtaLink } from "@/components/shared/cta-link";
 
 interface HeroProps {
   title: string;
-  subtitle: string;
+  subtitle: ReactNode;
   primaryCta?: {
     label: string;
     href: string;
@@ -18,6 +19,8 @@ interface HeroProps {
   };
   showCodeCard?: boolean;
   variant?: "primary" | "kpkt";
+  compact?: boolean;
+  showBackground?: boolean;
 }
 
 export function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {
@@ -157,15 +160,20 @@ export function Hero({
   secondaryCta,
   showCodeCard = false,
   variant = "primary",
+  compact = false,
+  showBackground = true,
 }: HeroProps) {
   const buttonClass = variant === "kpkt" ? "bg-kpkt hover:bg-kpkt/90" : "";
+  const sectionPadding = compact
+    ? "pt-20 pb-8 md:pt-28 md:pb-10 lg:pt-32 lg:pb-12"
+    : "py-20 md:py-28 lg:py-32";
   
   if (showCodeCard) {
     return (
       <section className="relative min-h-[600px] overflow-hidden">
-        <GridPattern variant={variant} />
+        {showBackground && <GridPattern variant={variant} />}
 
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:py-32">
+        <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: Text Content */}
             <motion.div
@@ -231,9 +239,9 @@ export function Hero({
   // Default centered hero (for other pages)
   return (
     <section className="relative overflow-hidden">
-      <GridPattern variant={variant} />
+      {showBackground && <GridPattern variant={variant} />}
 
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28 lg:py-32">
+      <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>
         <motion.div
           className="mx-auto max-w-3xl text-center"
           initial={{ opacity: 0, y: 20 }}
