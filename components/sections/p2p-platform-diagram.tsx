@@ -233,7 +233,7 @@ export function P2PPlatformDiagram() {
                 className="pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden h-[min(40rem,135%)] w-[min(28rem,100%)] -translate-x-1/2 -translate-y-1/2 rounded-[3rem] bg-primary/35 blur-3xl lg:block"
                 aria-hidden
               />
-              <article className="relative flex h-full min-h-0 flex-col rounded-2xl border border-primary/30 bg-primary p-6 text-primary-foreground shadow-[0_24px_55px_-18px_rgba(37,99,235,0.55)] md:p-8 lg:min-h-144 lg:px-10 lg:py-12">
+              <article className="relative flex h-full min-h-0 flex-col rounded-2xl border border-primary/30 bg-primary p-6 text-primary-foreground shadow-[0_24px_55px_-18px_rgba(124,58,237,0.55)] md:p-8 lg:min-h-144 lg:px-10 lg:py-12">
                 <div className="flex flex-col items-center text-center">
                   <div className="flex items-center gap-3">
                     <Image

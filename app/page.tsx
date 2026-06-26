@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { HomepageHero } from "@/components/sections/homepage-hero";
-import { P2PPromo } from "@/components/sections/p2p-promo";
 import { CaseStudies } from "@/components/sections/case-studies";
 // import { ComplianceSection } from "@/components/sections/compliance-section";
 import { WhatWeDo } from "@/components/sections/what-we-do";
 import { ExpertiseSection } from "@/components/sections/expertise-section";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { InfrastructureSection } from "@/components/sections/infrastructure-section";
-import { TrueKreditPromo } from "@/components/sections/truekredit-promo";
-import { TrueSyariahPromo } from "@/components/sections/truesyariah-promo";
+import { LendingPlatforms } from "@/components/sections/lending-platforms";
 import { HomepageLogoCloud } from "@/components/sections/homepage-logo-cloud";
 
 export const metadata: Metadata = {
@@ -21,10 +19,8 @@ export default function HomePage() {
 			<HomepageHero />
 			<HomepageLogoCloud />
 			<WhatWeDo />
-			<TrueKreditPromo />
-			<TrueSyariahPromo />
+			<LendingPlatforms />
 			<InfrastructureSection />
-			<P2PPromo />
 			<ExpertiseSection />
 			{/* <ComplianceSection /> */}
 			<CaseStudies showAndMoreCard />

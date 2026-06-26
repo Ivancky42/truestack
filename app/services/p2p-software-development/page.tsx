@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { p2pFaq } from "@/lib/p2p-faq";
 import { P2P_METADATA, P2P_PAGE_PATH } from "@/lib/p2p-seo";
@@ -317,9 +318,18 @@ const complianceItems = [
 	"AWS Malaysia data residency, encrypted at rest & in transit",
 ];
 
+// Re-brand this page (and all its sections) from the global blue `primary`
+// to TrueP2P violet by overriding the brand CSS variables for this subtree.
+const p2pBrandVars = {
+	"--primary": "oklch(0.541 0.281 293.009)" /* violet-600 */,
+	"--primary-start": "oklch(0.606 0.25 292.717)" /* violet-500 */,
+	"--primary-end": "oklch(0.541 0.281 293.009)" /* violet-600 */,
+	"--ring": "oklch(0.541 0.281 293.009)" /* violet-600 */,
+} as CSSProperties;
+
 export default function P2PSoftwareDevelopmentPage() {
 	return (
-		<>
+		<div style={p2pBrandVars}>
 			<P2PSchema />
 
 			<P2PHero />
@@ -641,7 +651,7 @@ export default function P2PSoftwareDevelopmentPage() {
 						</article>
 
 						{/* For investors — highlighted center card */}
-						<article className="flex h-full min-h-0 flex-col rounded-2xl border border-primary/25 bg-primary p-6 text-primary-foreground shadow-[0_24px_55px_-18px_rgba(37,99,235,0.45)] md:p-8 lg:p-10">
+						<article className="flex h-full min-h-0 flex-col rounded-2xl border border-primary/25 bg-primary p-6 text-primary-foreground shadow-[0_24px_55px_-18px_rgba(124,58,237,0.45)] md:p-8 lg:p-10">
 							<div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-foreground/15">
 								<Users className="h-6 w-6" aria-hidden />
 							</div>
@@ -1079,6 +1089,6 @@ export default function P2PSoftwareDevelopmentPage() {
 					{ href: "/truesyariah", label: "Compare with TrueSyariah" },
 				]}
 			/>
-		</>
+		</div>
 	);
 }

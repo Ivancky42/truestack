@@ -91,7 +91,7 @@ const services: Service[] = [
 		name: "TrueIdentity™",
 		tagline: "e-KYC Service",
 		description:
-			"Programmatic e-KYC verification for Malaysian fintechs. MyKad OCR, liveness, and biometric matching in one API.",
+			"Onboard customers in seconds while meeting BNM e-KYC expectations — automated MyKad verification, liveness, and biometric matching that cut fraud and manual review for Malaysian fintechs.",
 		href: "/trueidentity",
 		badgeIcon: Fingerprint,
 		badgeText: "e-KYC Service",
@@ -139,7 +139,7 @@ const services: Service[] = [
 		name: "TrueSSM™",
 		tagline: "Malaysian Registry API",
 		description:
-			"Programmatic SSM registry search, ROC/ROB/LLP profiles, particulars, and scanned documents — one REST API.",
+			"Verify any Malaysian business in seconds — SSM-sourced company profiles, ROC/ROB/LLP particulars, and official documents for faster, audit-ready onboarding and due diligence.",
 		href: "/truessm",
 		badgeIcon: Building2,
 		badgeText: "SSM Registry API",
@@ -192,7 +192,7 @@ const services: Service[] = [
 		name: "TruePay™",
 		tagline: "Payments & Disbursement API",
 		description:
-			"Unified payments for Malaysian fintechs: FPX, DuitNow, card payments, recurring billing, and automated reconciliation — all behind one REST API.",
+			"Collect and disburse money across Malaysia from day one — FPX, DuitNow, cards, recurring billing, and automated reconciliation through one partner, so finance stops chasing settlements.",
 		href: "/contact?subject=TruePay",
 		badgeIcon: CreditCard,
 		badgeText: "Payments API",
@@ -245,7 +245,7 @@ const services: Service[] = [
 		name: "TrueScore™",
 		tagline: "Credit Reports API",
 		description:
-			"CTOS-backed credit reports for Malaysian borrowers. CCRIS, CTOS scores, litigation and trade reference checks via one API.",
+			"Make faster, defensible lending decisions with CTOS-backed credit reports — CCRIS data, scores, litigation and trade reference checks that strengthen credit risk and approvals for Malaysian borrowers.",
 		href: "/truescore",
 		badgeIcon: Gauge,
 		badgeText: "Credit Reports",
@@ -299,7 +299,7 @@ const services: Service[] = [
 		name: "TrueCommodity™",
 		tagline: "Shariah Trading",
 		description:
-			"Shariah-compliant disbursement and accounting for Malaysian operators: Tawarruq commodity trading, plus Gharamah and Ta'widh ledgers and Shariah committee-ready exports.",
+			"Launch Shariah-compliant financing with confidence — Tawarruq commodity trading, Gharamah and Ta'widh ledgers, and committee-ready exports that keep your Shariah board and regulators satisfied.",
 		href: "/truecommodity",
 		badgeIcon: Moon,
 		badgeText: "Shariah Trading",
@@ -348,7 +348,7 @@ const services: Service[] = [
 		name: "TrueSight™",
 		tagline: "AI Risk & Borrower Intelligence",
 		description:
-			"AI-powered analysis for borrower risk scoring and intelligence — model-driven creditworthiness signals, default risk, and explainable insights beyond your own portfolio.",
+			"Reduce defaults and approve with confidence — AI borrower risk scoring and explainable creditworthiness signals that surface default risk beyond your own portfolio for Malaysian lenders.",
 		href: "/truesight",
 		badgeIcon: Sparkles,
 		badgeText: "AI Risk Analysis",
@@ -672,12 +672,13 @@ export function InfrastructureSection() {
 						className="justify-center"
 					/>
 					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-						APIs that move Malaysian fintech forward
+						The fintech infrastructure Malaysian operators launch on
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-						Production-ready building blocks for identity, registry
-						data, and more — designed for Malaysian operators and
-						integrated in days.
+						Go to market faster with production-ready APIs for
+						identity, company data, payments, and credit — already
+						built for Malaysian regulations and rails, so you launch
+						in days instead of standing up each integration in-house.
 					</p>
 				</div>
 

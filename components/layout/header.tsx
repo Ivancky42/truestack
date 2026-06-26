@@ -41,6 +41,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
+type ProductAccent = "primary" | "violet" | "emerald";
+
 type SolutionMenuItem = {
 	title: string;
 	href?: string;
@@ -49,6 +51,32 @@ type SolutionMenuItem = {
 	badge?: string;
 	badgeIcon?: LucideIcon;
 	comingSoon?: boolean;
+	/** Brand accent for the icon — matches each product's own page. Defaults to primary. */
+	accent?: ProductAccent;
+};
+
+const accentClasses: Record<
+	ProductAccent,
+	{ tile: string; icon: string; activeBg: string; activeText: string }
+> = {
+	primary: {
+		tile: "bg-primary/10",
+		icon: "text-primary",
+		activeBg: "bg-primary/10",
+		activeText: "text-primary",
+	},
+	violet: {
+		tile: "bg-violet-500/10",
+		icon: "text-violet-600",
+		activeBg: "bg-violet-500/10",
+		activeText: "text-violet-700",
+	},
+	emerald: {
+		tile: "bg-emerald-500/10",
+		icon: "text-emerald-600",
+		activeBg: "bg-emerald-500/10",
+		activeText: "text-emerald-700",
+	},
 };
 
 /** Desktop Solutions dropdown + mobile accordion (three columns: Platforms, APIs, Services). */
@@ -71,6 +99,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				description:
 					"SC-aligned peer-to-peer financing platforms, built end-to-end for Malaysia.",
 				icon: Network,
+				accent: "violet",
 			},
 			{
 				title: "TrueSyariah™",
@@ -80,6 +109,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				icon: Scale,
 				badge: "New",
 				badgeIcon: Sparkles,
+				accent: "emerald",
 			},
 		],
 	},
@@ -194,6 +224,7 @@ function SolutionItemBadges({ item }: { item: SolutionMenuItem }) {
 
 function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
 	const muted = item.comingSoon;
+	const accent = accentClasses[item.accent ?? "primary"];
 
 	return (
 		<div className="min-w-0 space-y-1">
@@ -201,13 +232,13 @@ function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
 				<div
 					className={cn(
 						"flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
-						muted ? "bg-muted" : "bg-primary/10",
+						muted ? "bg-muted" : accent.tile,
 					)}
 				>
 					<item.icon
 						className={cn(
 							"h-3.5 w-3.5",
-							muted ? "text-muted-foreground" : "text-primary",
+							muted ? "text-muted-foreground" : accent.icon,
 						)}
 					/>
 				</div>
@@ -282,6 +313,8 @@ function MobileSolutionMenuItem({
 		);
 	}
 
+	const accent = accentClasses[item.accent ?? "primary"];
+
 	return (
 		<Link
 			href={item.href}
@@ -289,11 +322,11 @@ function MobileSolutionMenuItem({
 			className={cn(
 				"flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
 				pathname === item.href
-					? "bg-primary/10 text-primary"
+					? cn(accent.activeBg, accent.activeText)
 					: "text-muted-foreground",
 			)}
 		>
-			<item.icon className="h-4 w-4 shrink-0 text-primary" />
+			<item.icon className={cn("h-4 w-4 shrink-0", accent.icon)} />
 			<span className="flex-1 font-medium text-foreground">
 				{item.title}
 			</span>
