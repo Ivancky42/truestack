@@ -20,7 +20,7 @@ const tabs: {
 	{
 		id: "truekredit",
 		label: "TrueKredit™",
-		sublabel: "Conventional loan management",
+		sublabel: "KPKT loan management",
 		icon: CreditCard,
 		activeClass:
 			"border-primary/40 bg-primary/5 text-primary [&_svg]:text-primary",

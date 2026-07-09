@@ -9,7 +9,7 @@ export const TRUEKREDIT_METADATA = {
 	title:
 		"TrueKredit™ — KPKT Loan Management System | Standard & Pro for Malaysia",
 	description:
-		"TrueKredit™ is Truestack's loan management system for KPKT-licensed money lenders in Malaysia — borrowers, loans, Lampiran A/B1, iDEAL exports, e-KYC, CTOS, audits, and compliance. TrueKredit Pro adds borrower web/mobile apps and examiner-ready digital lending rails.",
+		"TrueKredit™ is Truestack's loan management system for KPKT-licensed money lenders in Malaysia. Standard helps your branch team run the full loan book with customer data kept separate on your own secure cloud. TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending — your data stays with you.",
 	keywords: [
 		"TrueKredit",
 		"KPKT loan management system",
@@ -22,6 +22,7 @@ export const TRUEKREDIT_METADATA = {
 		"iDEAL KPKT",
 		"licensed money lender platform",
 		"TrueKredit Pro",
+		"TrueKredit Standard",
 		"KPKT online lending",
 		"digital money lender Malaysia",
 		"lending platform Malaysia",
@@ -29,10 +30,10 @@ export const TRUEKREDIT_METADATA = {
 	openGraphTitle:
 		"TrueKredit™ — KPKT Loan Management System | Standard & Pro",
 	openGraphDescription:
-		"Purpose-built KPKT loan operations — lifecycle, compliance exports, e-KYC, and TrueKredit Pro for nationwide digital lending with borrower apps and audit-ready infrastructure.",
+		"KPKT loan operations for Malaysian money lenders — from application to repayment, compliance documents, e-KYC. TrueKredit Pro adds nationwide customer apps and digital licence readiness.",
 	ogImagePath: "/truekredit/hero.png",
 	ogImageAlt:
-		"TrueKredit KPKT-aligned loan management platform — lifecycle, signing, dashboards and compliance modules",
+		"TrueKredit KPKT-aligned loan management platform — applications, signing, dashboards and compliance modules",
 } as const;
 
 export function buildTrueKreditJsonLd() {
@@ -83,21 +84,22 @@ export function buildTrueKreditJsonLd() {
 						"@type": "Offer",
 						name: "TrueKredit Standard",
 						description:
-							"Lean SaaS loan management for KPKT PPW and branch-led operations.",
+							"Loan management for KPKT PPW and branch-led operations, with customer data kept separate on your own secure cloud in Malaysia.",
 					},
 					{
 						"@type": "Offer",
 						name: "TrueKredit Pro",
 						description:
-							"Digital KPKT lending stack with borrower web/mobile apps, on-prem signing, and examiner-ready infrastructure.",
+							"Extends Standard with customer website and mobile apps, digital signing, and KPKT Online licence readiness — same system, your data stays.",
 					},
 				],
 				featureList: [
-					"Loan lifecycle & Books A/B",
-					"Lampiran A and iDEAL CSV exports",
-					"e-KYC and CTOS integrations",
-					"Malaysia AWS hosting",
-					"Audit trails and compliance workflows",
+					"Loan journey from application to repayment",
+					"Lampiran A and iDeaL CSV exports",
+					"e-KYC and TrueSSM™ integrations",
+					"Secure cloud hosting in Malaysia",
+					"Audit trails and KPKT compliance workflows",
+					"Pro: customer website, phone apps, digital signing",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },
 			},

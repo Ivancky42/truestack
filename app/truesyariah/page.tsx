@@ -1,7 +1,6 @@
 "use client";
 
 import { type ReactNode } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { truesyariahFaq } from "@/lib/truesyariah-faq";
@@ -73,6 +72,7 @@ import {
 	TruesendVisual,
 } from "@/components/sections/module-visuals";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { TrueSyariahHeroVisual } from "@/components/sections/truesyariah-hero-visual";
 
 // Hero backdrop — soft girih-inspired pattern with emerald glow
 function GirihPattern() {
@@ -777,36 +777,7 @@ function HeroSection() {
 					</motion.div>
 
 					{/* Right: Hero illustration */}
-					<motion.div
-						className="relative mx-auto w-full max-w-[560px]"
-						initial={{ opacity: 0, scale: 0.96 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.7, delay: 0.15 }}
-					>
-						<div className="relative aspect-square overflow-hidden rounded-3xl border border-emerald-200/60 bg-linear-to-br from-emerald-50 via-white to-amber-50 shadow-xl">
-							<Image
-								src="/truesyariah/hero.png"
-								alt="TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules"
-								fill
-								priority
-								sizes="(min-width: 1024px) 560px, (min-width: 640px) 480px, 100vw"
-								className="object-cover"
-							/>
-						</div>
-						{/* Floating credibility chip */}
-						<div className="absolute -bottom-4 left-6 hidden items-center gap-2 rounded-full border border-emerald-200 bg-white px-3 py-1.5 shadow-md sm:inline-flex">
-							<Moon className="h-3.5 w-3.5 text-emerald-700" />
-							<span className="text-[11px] font-semibold text-emerald-800">
-								Tawarruq via BSAS
-							</span>
-						</div>
-						<div className="absolute -top-3 right-6 hidden items-center gap-2 rounded-full border border-amber-200 bg-white px-3 py-1.5 shadow-md sm:inline-flex">
-							<HeartHandshake className="h-3.5 w-3.5 text-amber-700" />
-							<span className="text-[11px] font-semibold text-amber-800">
-								Ta&apos;widh / Gharamah ledgers
-							</span>
-						</div>
-					</motion.div>
+					<TrueSyariahHeroVisual animateOnMount />
 				</div>
 			</div>
 		</section>

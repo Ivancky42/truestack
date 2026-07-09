@@ -370,7 +370,7 @@ export default function DigitalLicensePage() {
 									variant="outline"
 									className="gap-2"
 								>
-									<Link href="/truekredit#pro">
+									<Link href="/truekredit#compare">
 										Explore TrueKredit™ Pro
 										<ArrowRight className="h-4 w-4" />
 									</Link>

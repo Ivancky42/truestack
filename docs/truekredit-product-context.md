@@ -1,230 +1,308 @@
-# TrueKredit — product context
+# TrueKredit — product context (from codebase)
 
-This document summarizes **TrueKredit™** and **TrueKredit™ Pro** for marketing and product alignment. Sources: sales deck bundled as `TrueKredit.zip` (HTML pitch deck `TrueKredit Pitch Deck.html`) and the [truestack_kredit](https://github.com/Malcan-Technologies/truestack_kredit) monorepo README (engineering / delivery model).
+**Purpose:** Durable marketing/product understanding for `/truekredit` and related copy.  
+**Primary source:** [`/Users/ivan/Documents/truestack_kredit`](file:///Users/ivan/Documents/truestack_kredit) (engineering monorepo).  
+**Commercial brochure:** PPW LMS summary (`docs/generate_truekredit_ppw_summary.py` in that repo).  
+**Last researched:** Jul 2026.
 
-> **Note:** The PDF export (`TrueKredit.pdf`) is image-based — text was sourced from the deck HTML in the ZIP instead.
-
-## Positioning
-
-- **Headline narrative:** Run the entire lending business from **one integrated platform**, built for **Malaysian KPKT-licensed money lenders** (and aligned fintech operators).
-- **Problem:** Operators often stitch **many vendors** (e-KYC, signing, CTOS, TrueSSM™, payments, docs, mobile, email) → multiple contracts, long integration timelines, manual compliance gaps.
-- **Solution:** **One platform**, **pre-integrated** partners where it matters, **KPKT / PPW–aligned** design, **live in weeks** (pitch positioning), not bespoke integration projects.
-
-## Two editions
-
-### TrueKredit™ (TrueStack-hosted SaaS)
-
-- **Pitch deck label:** Multi-tenant **TrueStack-hosted SaaS** (`kredit.truestack.my` pattern).
-- **Engineering README:** **Pooled** multi-tenant admin + API, **shared database** with strict **tenant isolation**; origination, servicing, billing, compliance for many lenders on one deployment.
-
-Use when: you want predictable subscription SaaS on TrueStack’s cloud (Malaysia region).
-
-### TrueKredit™ Pro (dedicated deployment)
-
-- **Pitch deck:** Everything in TrueKredit™ **plus** digital origination, signing, borrower apps — on **your own dedicated AWS environment**; pitched for **KPKT Online Money Lending Licence** alignment.
-- **Engineering README:** **Dedicated stack per licensed client**: `admin_pro`, `backend_pro`, **per-client** borrower web and mobile (`borrower_pro/*`, `borrower_pro_mobile/*`); **isolated AWS account**, DB, secrets; semver-tagged releases; optional **on-prem Signing Gateway** + **Trustgate (MTSA)**; **Cloudflare Tunnel** patterns for cloud ↔ on‑prem signing.
-
-Use when: you need **isolation**, **borrower-facing web/mobile**, **on-prem PKI signing**, pinned releases, and **pentest/compliance packaging** pitched in the deck (e.g. pen test deliverable).
-
-## Core platform capabilities (pitch deck → both editions where applicable)
-
-1. **Borrower & loan management** — enquiry through approval, disbursement, collections; counter and/or online workflows.
-2. **Book A / Book B** — regulated book separation; audit-ready framing.
-3. **Auto schedules — Jadual J & K** — repayment schedules computed and generated **KPKT-aligned**, “to the sen”.
-4. **e-KYC** — MyKad OCR + **liveness** / biometric framing (commercially **TrueIdentity™** style in product).
-5. **Late fees, arrears & default** — automated workflows, escalation, correspondence.
-6. **CTOS & TrueSSM™** — credit / company intelligence **within the workflow** (deck: Infomina for Malaysian registry).
-7. **Auto document generation** — agreements, schedules, Lampiran/iDEAL class outputs, arrears/default letters.
-8. **RBAC** — role-based controls for directors, officers, admins.
-
-Additional items called out consistently on the SaaS-facing site and repo (where applicable):
-
-- **TrueSight™** — cross-lender borrower intelligence on the pooled SaaS narrative (privacy-preserving aggregates).
-- **Payment gateway**, **notifications** (email / WhatsApp in deck comparison row), audit trail, Malaysian **AWS residency**, **automated backups**, **iDEAL-compatible export** wording in deck (**iDeaL** spelling in deck HTML).
-
-## Compliance & audit narrative
-
-- Lampiran **A** auto-produced per approval path (deck).
-- **iDeaL**-style submission export framing.
-- Timestamped audit trail (“who did what, when”).
-- Late fees computation emphasised as regulator-aligned.
-- Arrears-to-default workflow automated.
-- **Malaysia AWS** residency + daily backups messaging.
-
-## TrueKredit Pro — exclusive themes (pitch + repo)
-
-| Theme | Pitch deck | Repo / engineering detail |
-|--------|------------|---------------------------|
-| Digital signing | On-prem **Trustgate** server; Malaysian **Digital Signature Act** framing | **Signing Gateway**, MTSA images, MSC Trustgate, CA-backed signing |
-| Borrower portal | Fully branded web; apply 24/7 | Next.js **`borrower_pro/<client>`** |
-| Mobile | Native **iOS & Android** incl. onboarding, signing, tracking | Expo **React Native** `borrower_pro_mobile` |
-| Marketing site | Brand front-door for leads | Per-client deployments / branding |
-| Security package | Pentest deliverable cited in comparison | `docs/pro_client_pentest_access.md`, included pentest narrative |
-
-**Suggested signing journey (marketing):**
-
-1. Agreement generated from approved terms.
-2. Borrower receives link (email / app).
-3. Trustgate-signed document stored — legally binding / audit-ready.
-
-## Integration story (commercial)
-
-Partners called out together: **CTOS**, **Trustgate**, **Infomina**, **e-KYC**, **payment gateway**.
-
-Pitch benefits:
-
-- **No separate integration fees** to TrueKredit vs lining up vendors yourself.
-- **Aggregated negotiation** positioning on gateway / e‑KYC economics.
-- **Single vendor relationship** through TrueStack for SaaS operators.
-
-*(Exact commercial terms are sales artifacts — engineering implements integrations per tenant / Pro client YAML + secrets.)*
-
-## “Zero → licensed → lending” (services bridge)
-
-Partnership storyline (not purely software SKU):
-
-1. Licence acquisition paths (applications, renewals, liaison).
-2. Compliance & consultancy / KPKT account management framing.
-3. **Digital licence conversion** — incumbent physical licences → compliant digital infra.
-4. **TrueKredit live** — training, first disbursement.
-
-Links naturally to **`/services/digital-license`** style pages on TrueStack marketing.
-
-## TrueKredit vs TrueKredit Pro — comparison matrix (pitch deck table)
-
-Shared **core**:
-
-- Loan lifecycle, Book A/B, e-KYC, CTOS, TrueSSM™ (Infomina), Lampiran/Jadual/auto docs compliance pack, notifications (deck: email/WhatsApp), payment gateway integration, audit + KPKT reporting, AU **Malaysia residency**, walk-in counter path, backups, **iDeaL** export.
-
-**Pro-only (deck):**
-
-- Digital signing (**on‑prem Trustgate**).
-- **Borrower web** origination portal.
-- Borrower mobile **iOS + Android**.
-- **Branded marketing** website line item.
-- **Penetration testing / compliance report** framing.
-
-## Canonical links
-
-- **Product monorepo:** [github.com/Malcan-Technologies/truestack_kredit](https://github.com/Malcan-Technologies/truestack_kredit)
-- **Pitch deck artifact:** unpack `TrueKredit.zip` → open `TrueKredit Pitch Deck.html` in browser for full slide copy.
-
-## Copy consistency notes for the website
-
-1. Prefer **edition labels**: “TrueKredit” (SaaS) vs **“TrueKredit Pro”** (dedicated) so visitors immediately see **two lanes**.
-2. **Pro is not “more features only”** — it is **deployment + borrower channels + signing architecture** differentiated for digital licence workloads.
-3. Where engineering disagrees subtly with slides (e.g. “self-hosted” vs **isolated AWS on client account managed by Terraform**), use **neutral phrasing**: “Dedicated environment on AWS (Malaysia), isolated from other lenders.”
+> Prefer this document over older “multi-tenant SaaS” pitch language. Standard is **self-hosted on the client’s AWS account**.
 
 ---
 
-## Source: `TrueKredit.zip`
+## 1. One-line positioning
 
-Archive is a **standalone HTML/React pitch deck**, not application source code. Typical contents:
-
-| File | Role |
-|------|------|
-| `TrueKredit Pitch Deck.html` | Interactive deck (`<deck-stage>`, slides as `<section>`) |
-| `TrueKredit Pitch Deck-print.html` | Print-oriented variant |
-| `deck-stage.js` | Slide stage navigation |
-| `tweaks-panel.jsx` | Dev overlay (accent colour, watermark, slide numbers) |
-| `assets/truestack-logo-*.svg` / `.png` | Logos |
-
-Open `TrueKredit Pitch Deck.html` in a browser for the authoritative visual and wording.
+**TrueKredit** helps Malaysian **KPKT-licensed money lenders** run the full loan book from one admin platform — origination through repayments, compliance documents, and audit — deployed on **the lender’s own AWS account**. **Standard** is the branch/PPW admin LMS. **Pro** extends the same deployment with borrower web/mobile, attestation, and on-prem Trustgate signing for nationwide / Online-licence readiness.
 
 ---
 
-## Slide-by-slide (from deck HTML — May 2026)
+## 2. Apps (what exists)
 
-Titles and core lines only; verbatim marketing copy lives in the HTML.
+| App | Path | Audience | Role |
+|-----|------|----------|------|
+| **admin_pro** | `apps/admin_pro` | Lender staff | Main ops console |
+| **backend_pro** | `apps/backend_pro` | API | Business logic, PDFs, schedules, notifications, integrations |
+| **borrower_pro** | `apps/borrower_pro/<Client>` | Borrowers | Branded web portal (Pro) |
+| **borrower_pro_mobile** | `apps/borrower_pro_mobile/<Client>` | Borrowers | Native iOS/Android (Pro) |
+| **signing-gateway** | `apps/signing-gateway` | On-prem | PKI bridge to MSC Trustgate MTSA |
+| **admin** / **backend** | `apps/admin`, `apps/backend` | Legacy | Multi-tenant SaaS — **being retired** (`docs/unification_plan.md`) |
 
-1. **Cover** — “Run your entire lending business from one platform.” Sub: TrueKredit™ & TrueKredit™ Pro — integrated LMS for Malaysian licensed money lenders. Pills: KPKT licensed lenders, Fintech operators, Malaysia.
-2. **The problem** — “Lending shouldn't be this complicated.” Pain of many tools, integrations, contracts, manual compliance. Listed pains: vendor contracts; months before go-live; manual compliance risk. Diagram motif: fragmented vendors (e-KYC, signing, CTOS, TrueSSM™, payment, docs, mobile, email).
-3. **The answer** — “One platform. Everything integrated. Fully KPKT-compliant.” Pillars: pre-integrated partners (CTOS · Trustgate · Infomina · e-KYC · payment gateway); live in weeks / no integration-project framing; KPKT PPW compliant by design.
-4. **Core features** (eight tiles) — See “Core platform capabilities” above (borrower & loan mgmt through RBAC).
-5. **Compliance** — “Auditors get what they need. Instantly.” Bullets: Lampiran A auto; iDeaL export; audit trail; late fees to the sen; arrears-default workflow; backups + MY residency.
-6. **Intro Pro** — “TrueKredit™ Pro — for lenders who go further.” Sub: everything in TrueKredit™ plus digital origination, signing, borrower apps — **dedicated AWS**. Badges: all of TrueKredit™ on **your AWS**; **100% KPKT Online Money Lending License** framing. Four spotlight cards:
-   - On-premise digital signing (Trustgate; your keys/control)
-   - Borrower web origination (branded 24/7)
-   - Mobile iOS/Android (native; e-KYC, e-sign, tracking)
-   - Branded marketing website
-7. **Pro: signing** — “Loan agreements, signed digitally. On your own server.” Trustgate legal framing; Digital Signature Act; remote signing steps (generate → link → signed/stored compliant).
-8. **Pro: origination** — “Borrowers come to you — 24/7.” Branded web + native apps + marketing site bullets.
-9. **Comparison table** — See next section for full capability rows from the deck.
-10. **Zero to license** — “We take you from zero to licensed and lending.” Timeline claim: **3–6 months**. Steps: licence acquisition (& renewals liaison); compliance & consultancy; digital licence conversion; TrueKredit live / first disbursement.
-11. **Integration advantage** — “Integrations included. We negotiate better rates for you.” Partner strip: CTOS, Trustgate, Infomina, e-KYC, Payment Gateway. Columns: no integration fees; better partner rates; one vendor/contract (SaaS angle).
-12. **About TrueStack** — “We don't just resell software — we build it.” Tenets: Speed, Quality (bank-grade MY AWS audit-ready), Satisfaction (beyond go-live). “Beyond TrueKredit” strip: TrueIdentity™, digital signing stack, loan origination web/mobile, P2P platforms.
-13. **CTA** — “Ready to consolidate your stack?” + truestack.my, hello@truestack.my, Book a Demo.
+**Deployment:** One isolated AWS account per client (`config/clients/*.yaml`). Demo auto-deploys from `main`; production clients pin semver.
+
+**Live / configured clients (examples):** demo-client, pinjocep, danacredit, credibly, ezdana, fundle, ai-express, proficient-premium.
 
 ---
 
-## TrueKredit™ vs TrueKredit™ Pro — full capability rows (deck table)
+## 3. Module model (Standard vs Pro vs add-ons)
 
-Deck column subtitles: **TrueKredit™ — Truestack-hosted SaaS** | **TrueKredit™ Pro — Self-hosted on dedicated AWS**
+Runtime (`docs/module_enablement.md`, `packages/shared/src/modules.ts`):
 
-**Core platform** (deck marks both ✓):
+```
+effectiveModules = licensedModules ∩ deployCeiling ∩ infraReady
+```
 
-- Loan lifecycle management  
-- Book A / Book B management  
-- e-KYC — MyKad OCR, liveness, biometric match  
-- CTOS reports — built in  
-- TrueSSM™ reports via Infomina — built in  
-- Auto document generation — Lampiran A, Jadual J & K, default letters, compliance  
-- Auto emails & WhatsApp notifications  
-- Payment gateway integration  
-- Audit trail & KPKT-compliant reporting  
-- AWS Malaysia data residency  
-- iDeaL system export for KPKT submissions  
-- Walk-in borrower origination (counter / branch)  
-- Daily automated backups  
+Clients **cannot** self-toggle modules. TrueStack ops controls entitlements.
 
-**Pro exclusive** (SaaS “—”, Pro ✓ in deck):
+### Core (every license)
 
-- Digital signing — on-prem Trustgate server  
-- Borrower web origination portal  
-- Borrower mobile app — iOS & Android  
-- Branded marketing website  
-- Pen test report and security compliance  
+| Key | Label | What lenders get |
+|-----|-------|------------------|
+| `origination` | Loan origination | Borrowers, applications, L1/L2, products, docs, agreements, disbursement prep |
+| `repayments` | Loan servicing & payments | Schedules, record payment, lifecycle, early settlement |
+
+Rich borrower profiles and payment verify live **inside** these cores — not separate keys.
+
+### Optional admin add-ons
+
+| Key | Label | Intent |
+|-----|-------|--------|
+| `lead_gen` | Sales leads | Leads queue → convert to borrower |
+| `referral_agents` | Referral agents & commission | Agent directories, attribution, commission |
+| `collections_ops` | Collections & LPS | Dashboard, calendar, PTP, contra/top-up/reschedule, escalation |
+
+### Optional online (Pro-shaped)
+
+| Key | Requires | Intent |
+|-----|----------|--------|
+| `borrower_portal` | Borrower ECS | Web/mobile self-serve |
+| `attestation` | `borrower_portal` | Live / video attestation (Meet/Calendar) |
+| `signing` | Signing stack | Trustgate digital signing |
+| `gateway_payments` | Gkash | Borrower online repayments |
+
+### Deploy presets (ceiling templates)
+
+| Preset | Shape |
+|--------|--------|
+| `standard_core` | origination + repayments; no borrower app / signing |
+| `admin_only_deploy` | core + lead_gen, referral_agents, collections_ops |
+| `pro_full` | core + online modules (+ optional admin add-ons) |
+
+**Marketing shorthand:**
+
+| Edition | Decision-maker story |
+|---------|----------------------|
+| **Standard** | Branch/counter LMS on **your AWS** — walk-in origination, servicing, KPKT docs |
+| **Pro** | Same deployment + nationwide borrower channels, attestation, on-prem signing |
+| **Add-ons** | Collections ops; Lead gen / Referral (commercial brochure; see §8 for build status) |
+
+**Site rule:** No public prices. Consultation CTAs only.
 
 ---
 
-## Engineering monorepo (README) — lanes & apps
+## 4. Capability inventory (decision-maker English)
 
-| Lane | Purpose | Primary apps |
-|------|---------|----------------|
-| **SaaS** | Pooled MT; shared DB; tenant isolation | `apps/admin`, `apps/backend` |
-| **Pro** | Dedicated per client | `apps/admin_pro`, `apps/backend_pro`, `apps/borrower_pro/<client>` |
-| **Mobile (Pro)** | Native borrower apps | `apps/borrower_pro_mobile/<client>` |
+### 4.1 Built today — core admin
 
-Design principle (README): **share code, not production runtime** — SaaS one deployment; each Pro client isolated infra, same codebase.
+**Borrower profiles**
 
-**Pro product areas (abbrev. from README):**
+- Individual & corporate borrowers; directors / company members
+- Rich profile: employment, family/spouse, commitments/DSR, nationality, marital status, notes, documents
+- Registration channel: admin (**PHYSICAL**) vs portal (**ONLINE**); profile claim/link on same IC
+- Activity timeline on the borrower file
 
-- **Staff admin:** dashboard/KPIs, borrower CRM, origination pipeline (Book A/B, L1/L2, counter-offer), attestation (Google Meet/Calendar), on-prem signing (Jadual J/K automation, CA, witness flows), servicing/collections, product & compliance (**iDeal** CSV, Lampiran A PDF), comms, tools, governance RBAC/logs.  
-- **Borrower web:** auth & 2FA/passkeys, wizard & multi-profile corp, applications & docs, servicing & payments & early settlement, attestation/scheduling, on-prem PKI signing path, notices & legal PDPA banners.  
-- **Infra / security:** AWS Malaysia, on-prem signing + Cloudflare Tunnel, encryption, backups, pentest runbook (`docs/pro_client_pentest_access.md`), integrations **MSC Trustgate**, **TrueIdentity**, workspace email, transactional email.
+**Origination (L1 / L2)**
+
+- Product catalogue: Jadual J / K, interest models, fees, term limits, required doc categories
+- Application wizard; guarantors & references
+- L1 field visits with photos; L2 director packs / export; reject / amend / counter-offer
+- CTOS/CBM: **document upload slots** today — **no automated bureau API pull** yet
+
+**Agreement & disbursement**
+
+- Generate Jadual J/K agreement PDF; guarantor agreement
+- Walk-in path: print / upload signed agreement + LHDN stamp + proof of disbursement
+- Pro path: attestation → e-KYC → Trustgate signing (borrower / admin / witness) → disburse
+- Agreement date drives schedule; legal/stamping fees; net disbursement
+
+**Schedules & repayments**
+
+- Sen-accurate amortising schedules; spillover allocation (late → interest → principal)
+- Admin record payment + bank slip; early settlement quote/confirm
+- Borrower manual payment → Payment Approvals queue (when portal on)
+- Loan completion + discharge letter
+
+**Arrears / default (under repayments today)**
+
+- Late fees, arrears period, default-ready, mark default
+- Auto **arrears** and **default notice** letters (regenerate with cooldown)
+
+**Compliance**
+
+- Lampiran A PDF (per loan + bulk ZIP by year)
+- KPKT iDeaL CSV export
+- Overdue/NPL / collection summary style reports
+- Exports audit-logged
+
+**Audit & RBAC**
+
+- Admin Logs — tamper-resistant across applications, loans, borrowers, signing, team, compliance
+- Entity timelines on borrower / application / loan
+- Default roles include Owner, Super Admin, Credit L1, Approval L2, Finance, Attestor, Collections, Compliance, Auditor, etc. + custom roles (`packages/shared/src/rbac.ts`)
+
+**Risk signals**
+
+- Application affordability risk score (DSR, commitments, exposure) — built
+- Borrower payment-performance badges (Good / Watch / High Risk / Defaulted)
+- **TrueSight™ AI** — commercial / coming-soon narrative; not a shipped AI product in-repo
+
+### 4.2 Auto documents & email (TrueSend / Resend)
+
+| Document | Typical trigger | Emailed? |
+|----------|-----------------|----------|
+| Loan agreement (Jadual J/K) | Generate on demand | No (signing flow delivers signed copy later) |
+| Guarantor agreement | On demand | No |
+| Repayment schedule | On disburse | No |
+| **Payment receipt PDF** | Payment recorded | **Yes** (`payment_receipt`) |
+| **Arrears letter** | Enter arrears / regen | **Yes** (`arrears_notice`) |
+| **Default letter** | Mark default / regen | **Yes** (`default_notice`) |
+| **Discharge letter** | Completed / early settled | **Yes** (`loan_completed`) |
+| Lampiran A | On-demand download | No |
+| iDeaL CSV | Compliance export | No |
+| **Signed agreement PDF** | Full digital signing | **Yes** (`signed_agreement_ready`, etc.) |
+
+Also automated: payment reminders, late notices, application status, attestation reminders, KYC/signing milestones, disbursement confirmation. Per-event toggles in notification catalog (`apps/backend_pro/src/modules/notifications/catalog.ts`).
+
+WhatsApp: config hooks exist; **not** a primary channel in the catalog.
+
+### 4.3 Integrations
+
+| Integration | Status |
+|-------------|--------|
+| **TrueIdentity™ e-KYC** | Built (MyKad OCR, liveness, webhook on borrower) |
+| **TrueSSM™** | Built (company registry pull; billable per use) |
+| **MSC Trustgate / MTSA** | Built (on-prem signing-gateway) |
+| **Google Meet / Calendar** | Built (attestation) |
+| **Gkash** | Built under `gateway_payments` |
+| **CTOS / CBM** | Upload categories only — no live pull |
+| **Resend (TrueSend)** | Built transactional email |
+
+### 4.4 Pro online surfaces
+
+- Branded borrower web + native apps: apply, KYC, track loan, pay, sign
+- Digital attestation (live / scheduled video)
+- On-prem PKI signing
+- Online payments when Gkash licensed + configured
+
+### 4.5 Add-ons — commercial story vs build status
+
+| Capability | Brochure / module key | Codebase reality (Jul 2026) |
+|------------|----------------------|-----------------------------|
+| **Collections ops** | Dashboard, calendar, PTP, LPS (contra/top-up/reschedule), escalation | Module key + RBAC permissions exist; **dedicated collections dashboard / PTP / LPS UI largely planned** (`docs/collections_lps_servicing_plan.md`). Arrears/default **letters and late-fee servicing are built** under repayments. |
+| **Lead gen** | Sales leads queue → convert to borrower | Module key exists; **no full Leads queue UI/API** yet. Partial bridge: borrower `leadDisposition*` fields. Spec in `docs/client_origination_collections_plan.md`. |
+| **Referral agents** | Agents, attribution, commission | Planned; **not implemented** as product surface. |
 
 ---
 
-## Contact / company lines (deck CTA footer)
+## 5. End-to-end workflows
 
-Use only if you intentionally mirror sales collateral:
+### Counter / Standard (admin-only)
+
+```
+Create borrower → Application (docs, field visits) → L1 → L2
+  → Generate / upload agreement + stamp → Disburse → ACTIVE schedule
+  → Record payments → (arrears letters) → Default → Complete / discharge
+```
+
+LMS-only path can skip attestation/signing and go **PENDING_DISBURSEMENT** after L2 approve.
+
+### Online / Pro
+
+Same L1/L2 queues after borrower submits (`loanChannel = ONLINE`), plus:
+
+```
+Attestation → e-KYC → Signing certificate → Borrower / admin / witness sign → Disburse
+```
+
+### Collections / LPS (planned add-on)
+
+Collection officer submits contra / top-up / reschedule → LPS approval queue → may spawn new application or schedule change. **Design docs exist; full UI not shipped.**
+
+---
+
+## 6. Standard vs Pro (marketing matrix)
+
+**Shared (both):**
+
+- Loan lifecycle, products, L1/L2, risk scoring signals
+- Rich borrower profiles
+- Schedules, repayments, early settlement, arrears/default letters
+- Auto docs + email receipts / notices
+- KPKT exports (Lampiran, iDeaL)
+- Analytics, RBAC, full audit trail
+- **Client’s own AWS account · Malaysia residency · isolated book**
+- Walk-in / counter origination
+- Pre-wired integrations (usage-based)
+
+**Pro unlocks:**
+
+- Branded borrower web portal
+- Native iOS & Android apps
+- On-prem Trustgate digital signing
+- Digital attestation (live & video)
+- Online payments (Gkash), when licensed
+- KPKT Online / pen-test packaging narrative
+
+**Do not** describe Standard as multi-tenant SaaS or TrueStack-hosted SaaS on the marketing site.
+
+---
+
+## 7. Marketing site implications (`/truekredit`)
+
+### Current structure (post-rework)
+
+Hero → problem/editions → **device feature scroll** → connected modules carousel → origination channels → AWS trust block → Pro upgrade → compare → integrations → licence bridge → FAQ → CTA.
+
+### Feature scroll guidance
+
+- Tone: **decision makers** — outcomes, not developer jargon.
+- Structure: **full lending lifecycle order** (lead → profile → approve → docs/email → service → collect → audit → Pro nationwide).
+- Visuals: **large laptop** as section focus (admin pseudo-UI); phone only for Pro borrower app. Responsive: stacked on mobile with device still prominent.
+- **Do not** put AWS isolation in the feature scroll — dedicated infrastructure section covers it.
+- Market **Collections** and **Lead gen** as available (brochure / commercial story).
+- Modules carousel = **integrations that amplify the lifecycle** (e-KYC, TrueSSM, CTOS, TrueSend, TrueSight soon, Pro attestation/signing). Keep existing illustrations.
+- Origination = **entry channels into the same loan file**. Keep existing illustrations.
+- Soften TrueSight to **coming soon**; no guaranteed default-rate claims.
+- **No public pricing.**
+
+---
+
+## 8. Gaps & ambiguities (engineering)
+
+| Topic | Notes |
+|-------|--------|
+| Lead gen / referral UI | Keys only; full CRM not shipped |
+| Collections ops / LPS UI | Planned; letters + late fees exist under repayments |
+| Finance maker/checker disbursement | Planned; not confirmed in schema |
+| Payment voucher PDF | Planned in client workflow docs |
+| Book A / Book B | Mentioned in README; no clear code definition found |
+| CTOS live pull | Upload only |
+| TrueScore / TrueSight AI | Commercial / coming soon |
+| Standard public price | Brochure has figures; **site keeps prices off** |
+| WhatsApp as primary channel | Not in notification catalog |
+
+---
+
+## 9. Key evidence paths (kredit monorepo)
+
+| Topic | Path |
+|-------|------|
+| Overview | `README.md` |
+| Modules | `docs/module_enablement.md`, `packages/shared/src/modules.ts` |
+| Client workflow / gaps | `docs/client_origination_collections_plan.md` |
+| Collections / LPS design | `docs/collections_lps_servicing_plan.md` |
+| Unification / retire SaaS | `docs/unification_plan.md` |
+| Commercial | `docs/truekredit_business_plan.md` |
+| Pro user docs | `docs/user-guide-pro/` |
+| Documents | `docs/user-guide-pro/loans/loan-documents-reports.md` |
+| Email catalog | `apps/backend_pro/src/modules/notifications/catalog.ts` |
+| PDFs | `apps/backend_pro/src/lib/pdfService.ts`, `letterService.ts` |
+| RBAC | `packages/shared/src/rbac.ts` |
+| Client config | `config/clients/*.yaml` |
+| PPW brochure generator | `docs/generate_truekredit_ppw_summary.py` |
+
+---
+
+## 10. Contact framing (sales collateral)
 
 - **Email:** hello@truestack.my  
 - **Company:** Truestack Technologies Sdn. Bhd.  
-- **Address (deck):** Lot C-13-3, KL Trillion, No 338 Jalan Tun Razak, 50400 Kuala Lumpur  
-- **Reg (deck):** 202501058714 (1660120-X)
-
----
-
-## Future website rework — ideas parked for review *(not implemented)*
-
-Potential structure after you approve:
-
-- Lead with dual product (SaaS vs Pro); hero copy aligned with **slide 1** / cover.
-- Dedicated **challenge → answer → integration strip** before deep feature grids.
-- **TrueKredit Pro** block (gold/dark motif as in deck) + **comparison table** responsive card/table.
-- Services bridge to **`/services/digital-license`** for “zero to licence” positioning.
-- **Pricing:** label current table explicitly as SaaS subscription; separate “Pro — contact / bespoke” path.
-- Optionally sync hero **constellation chips** with deck’s eight core tiles vs current twelve-item marketing mix.
-
-`app/truekredit/page.tsx` is **restored** to its pre-edit state; iterate from this markdown when you are ready to implement.
+- Site CTAs: Book consultation — not `kredit.truestack.my` SaaS signup.

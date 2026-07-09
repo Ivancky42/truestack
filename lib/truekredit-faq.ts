@@ -1,58 +1,62 @@
 export const truekreditFaq = [
-  {
-    question: "Is TrueKredit only for KPKT PPW (offline) licensees?",
-    answer:
-      "No. If you're licensed to lend money, you can run the day-to-day stack—we ship Lampiran, Jadual, iDEaL-ready exports and the rest tuned for Malaysian KPKT PPW rules. Choose Standard when counters lead. Choose TrueKredit Pro when auditors expect borrower apps, video attestation and on-prem Trustgate evidence—we built those rails for KPKT online money lending compliance, not generic bolt-ons.",
-  },
-  {
-    question: "What is included in the shared core on TrueKredit and TrueKredit Pro?",
-    answer:
-      "Either plan covers what's in the comparison table Core row: lifecycle plus Books A/B, e‑KYC, CTOS and TrueSSM™, Lampiran/Jadual letters, repayments, analytics, gateways, audits, walk-in origination and daily backups—all in Malaysia AWS. Pro doesn't shrink Standard; it layers borrower channels and separation online licensees get asked for.",
-  },
-  {
-    question: "What connected modules ship on Standard and Pro?",
-    answer:
-      "You wire CTOS, TrueSSM™ (Infomina), TrueIdentity™, Truesend™ (if you subscribe), Malaysian gateways and Trustgate-backed signing the same way on both plans. TrueSight™ works the same where you opt in. Pro adds the hardened on-prem Trustgate path, tighter tenancy and examiner-ready packs we shaped for online KPKT reviews.",
-  },
-  {
-    question: "What is exclusive to TrueKredit Pro?",
-    answer:
-      "Everything under Pro-exclusive matches what examiners usually want from Malaysian online licensees: Trustgate in your infrastructure, Digital Attestation with desk oversight and hosted video, borrower web and native apps, marketing sites, pen-test dossier templates, plus isolated databases and secrets. We bundled it so you're not stitching five vendors together.",
-  },
-  {
-    question: "How does TrueKredit Standard differ from Pro in practice?",
-    answer:
-      "Standard is lean SaaS when you're mostly offline PPW and branch-led. Step up to Pro when you need the artifacts for KPKT online lending—borrower self-serve, PKI separation, examiner dossiers—while keeping the same core workflows underneath.",
-  },
-  {
-    question: "How do borrower channels compare across editions?",
-    answer:
-      "Standard keeps origination officer-led at the counter. Pro adds branded portals and apps so borrowers finish KYC and signing online—handy when KPKT wants a clear line between digital disbursements and clerk-led flows.",
-  },
-  {
-    question: "How do hosting and data isolation differ?",
-    answer:
-      "Both run in Malaysian AWS with encryption and rolling backups. Standard uses shared tenancy with strict isolation—great for offline-first workloads. Pro gives you dedicated accounts plus separate databases and secrets vaults—the layout examiners ping when they dig into online portfolios.",
-  },
-  {
-    question: "Can we start on Standard and upgrade to TrueKredit Pro?",
-    answer:
-      "Yes. Start on Standard, then move to Pro when your permit or examiner steers you online—without throwing away workflows. Talk to us early so migration lines up with your supervisory timeline.",
-  },
-  {
-    question: "Do you support Lampiran A and iDEAL CSV exports on both editions?",
-    answer:
-      "Yes. Lampiran A and CSV tuned for KPKT iDEaL ingestion ship on Standard and Pro.",
-  },
-  {
-    question:
-      "Do I need Truesend™ just to produce PDF receipts and letters?",
-    answer:
-      "No. PDFs land in the system either way. Truesend™ only handles automated delivery if you want it.",
-  },
-  {
-    question: "Is historical loan data safeguarded whichever edition we choose?",
-    answer:
-      "Yes—encrypted storage, backups (including Standard's daily snapshots) and your history stays reachable for audits while your subscription is active.",
-  },
+	{
+		question: "What is TrueKredit™?",
+		answer:
+			"TrueKredit™ is Truestack's loan management system for KPKT-licensed money lenders in Malaysia. It runs your full loan book — applications, repayments, KPKT paperwork and audit trails — with customer data kept separate on your own secure cloud in Malaysia. Standard covers branch and counter operations; TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending. Looking for Shariah-compliant financing? See TrueSyariah™. For SC-regulated P2P, see TrueP2P™.",
+	},
+	{
+		question: "Is TrueKredit only for KPKT PPW (offline) licence holders?",
+		answer:
+			"No. If you are licensed to lend money in Malaysia, you can run day-to-day operations on TrueKredit — including the KPKT documents and exports your team needs. Choose Standard for branch and counter work. Choose TrueKredit Pro when you need customer apps, video attestation and digital signing for KPKT Online Money Lending readiness.",
+	},
+	{
+		question: "What do Standard and Pro both include?",
+		answer:
+			"Both share the same core: the full loan journey, flexible products, risk scoring, approvals, e-KYC, company lookups, repayments, KPKT documents, reports, staff roles, audit trails and walk-in applications — all on your own secure cloud in Malaysia. Pro does not take anything away from Standard; it unlocks nationwide customer channels on the same system.",
+	},
+	{
+		question: "Which partner checks come with Standard and Pro?",
+		answer:
+			"TrueIdentity™ e-KYC, TrueSSM™, CTOS (where available), payment gateway and related partners are already connected on both plans — you pay only when you use them, not a separate fee to connect each provider. Pro adds digital signing on your premises and digital attestation with live and video scheduling.",
+	},
+	{
+		question: "What is exclusive to TrueKredit Pro?",
+		answer:
+			"A branded customer website, native iOS and Android apps, digital signing on your premises, digital attestation, and packaging aligned with KPKT Online / digital licence reviews. Your team keeps the same admin workflows; new channels feed the same loan file.",
+	},
+	{
+		question: "How does TrueKredit Standard differ from Pro in practice?",
+		answer:
+			"Standard is the admin system for PPW and branch-led lending, with your loan data kept separate on your own secure cloud. Pro extends that same system with nationwide digital channels and signing — without moving to a new platform.",
+	},
+	{
+		question: "How do customers apply on each plan?",
+		answer:
+			"Standard keeps applications officer-led at the counter. Pro adds a branded website and mobile apps so customers can apply, complete identity checks, sign and repay online — while every file still lands in the same admin system.",
+	},
+	{
+		question: "Where is our data kept, and is it shared with other lenders?",
+		answer:
+			"Both Standard and Pro run on your own secure cloud account in Malaysia, with protection, backups and a full audit trail. Your loan book is never mixed with other lenders. Upgrading to Pro keeps that same environment — your data stays with you.",
+	},
+	{
+		question: "Can we start on Standard and upgrade to TrueKredit Pro?",
+		answer:
+			"Yes. Start on Standard for your branch today. When you are ready for a KPKT Online licence path, upgrade to Pro without starting over — borrowers, loans, schedules and history remain where they are. Talk to us early so the upgrade lines up with your licence timeline.",
+	},
+	{
+		question: "Do you support Lampiran A and iDEAL CSV exports on both plans?",
+		answer:
+			"Yes. Lampiran A and CSV files tuned for KPKT iDeaL submissions ship on Standard and Pro.",
+	},
+	{
+		question: "Do I need Truesend™ just to produce PDF receipts and letters?",
+		answer:
+			"No. PDFs are created in the system either way. Truesend™ only handles automated email delivery if you want it.",
+	},
+	{
+		question: "Is historical loan data safeguarded whichever plan we choose?",
+		answer:
+			"Yes — protected storage, backups and a full audit trail. Your history stays on your secure cloud and remains reachable for audits while you operate the platform.",
+	},
 ] as const;
