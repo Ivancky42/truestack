@@ -297,6 +297,9 @@ const cashsoukStudy: CaseStudy = {
 	title: "CashSouk",
 	description:
 		"Peer-to-peer financing marketplace connecting Malaysian SMEs with investors. Truestack engineered the full stack — investor portal, issuer onboarding, listings engine, escrow integration and reporting — and continues to operate it as the platform scales.",
+	blurb:
+		"P2P marketplace connecting borrowers and investors — SC-ready.",
+	product: "CustomSoftware",
 	tags: ["TrueP2P™", "Investor + Issuer Portals", "SC-Aligned Architecture"],
 	href: "https://cashsouk.com",
 	logo: "/logos/cashsouk_logo.png",
