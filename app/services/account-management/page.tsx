@@ -428,7 +428,10 @@ export default function AccountManagementPage() {
         accent="kpkt"
         heading="Let Us Handle Compliance"
         body="Focus on growing your lending business while we manage the regulatory complexity. Book a free consultation and our team will scope your compliance needs."
-        secondary={{ href: "/services", label: "View All Services" }}
+        secondary={{
+          href: "/services/digital-license",
+          label: "Explore Digital License",
+        }}
       />
     </>
   );

@@ -10,7 +10,7 @@ import { ArrowRight, Building2, Code2, MapPin, Shield } from "lucide-react";
 const statPills = [
 	{ icon: MapPin, label: "Malaysia-first" },
 	{ icon: Shield, label: "KPKT-native" },
-	{ icon: Code2, label: "Purpose-built platforms" },
+	{ icon: Code2, label: "Licence to live" },
 ];
 
 export function AboutHero() {
@@ -30,16 +30,17 @@ export function AboutHero() {
 				</Badge>
 
 				<h1 className="font-display text-4xl font-medium tracking-tight text-zinc-50 md:text-5xl lg:text-6xl">
-					We build the technology behind{" "}
+					The partner behind{" "}
 					<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-						Malaysia&apos;s fintech.
-					</span>
+						compliant digital lending
+					</span>{" "}
+					in Malaysia.
 				</h1>
 
 				<p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400 md:text-lg">
-					Purpose-built lending platforms, end-to-end digital
-					transformation, and KPKT compliance — for licensed money
-					lenders and fintechs across Malaysia and beyond.
+					Lending platforms, fintech infrastructure, and KPKT
+					services — delivered by one team so you can go from licence
+					to live portfolio without juggling vendors.
 				</p>
 
 				<div className="mt-6 flex flex-wrap gap-2">
@@ -56,8 +57,8 @@ export function AboutHero() {
 
 				<div className="mt-8 flex flex-col gap-3 sm:flex-row">
 					<Button asChild size="lg" className="gap-2">
-						<Link href="/services">
-							View Services
+						<Link href="/contact">
+							Book a Free Consultation
 							<ArrowRight className="h-4 w-4" />
 						</Link>
 					</Button>
@@ -67,7 +68,9 @@ export function AboutHero() {
 						size="lg"
 						className="border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800/80 hover:text-zinc-50"
 					>
-						<Link href="/contact">Book a Free Consultation</Link>
+						<Link href="/services/digital-license">
+							Explore Digital License
+						</Link>
 					</Button>
 				</div>
 			</motion.div>

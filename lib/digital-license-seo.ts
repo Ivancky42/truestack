@@ -5,9 +5,9 @@ export const DIGITAL_LICENSE_PAGE_URL = `${baseUrl}${DIGITAL_LICENSE_PAGE_PATH}`
 
 export const DIGITAL_LICENSE_METADATA = {
 	title:
-		"Digital KPKT License Conversion | End-to-End on TrueKredit™ Pro — ~3 Months",
+		"KPKT Digital Licence | Nationwide Lending on TrueKredit™ Pro — ~3 Months",
 	description:
-		"Truestack runs your full KPKT digital lending licence journey — licensing strategy, provisional licence prep, TrueKredit™ Pro on AWS Malaysia, UAT, pen-test, KPKT review, and approval. Go from PPW to nationwide digital money lending in about three months.",
+		"Go from a traditional KPKT licence to nationwide digital lending. TrueStack handles licensing, TrueKredit™ Pro, review prep, and go-live — about three months.",
 	keywords: [
 		"digital KPKT license",
 		"KPKT digital license conversion",
@@ -22,36 +22,36 @@ export const DIGITAL_LICENSE_METADATA = {
 		"nationwide money lending Malaysia",
 	],
 	openGraphTitle:
-		"Digital KPKT License Conversion | End-to-End on TrueKredit™ Pro",
+		"KPKT Digital Licence | Nationwide on TrueKredit™ Pro",
 	openGraphDescription:
-		"Full-service digital KPKT licence — consultancy, TrueKredit™ Pro build on dedicated AWS Malaysia, borrower web and mobile apps, KPKT review prep, and approval in ~3 months.",
+		"End-to-end KPKT Online Money Lending Licence — advisory, TrueKredit™ Pro, review prep, and go-live in about three months.",
 } as const;
 
 export const digitalLicenseFaq = [
 	{
-		question: "What is KPKT digital license conversion?",
+		question: "What is a KPKT digital licence?",
 		answer:
-			"Digital license conversion is the process for a KPKT-licensed money lender (often PPW / offline) to obtain approval to operate as a fully digital lender — serving customers nationwide via web and mobile apps with examiner-ready controls. Truestack guides the licensing strategy, documentation, platform build, and KPKT review alongside your team.",
+			"It is approval for a KPKT-licensed money lender to operate fully online — serving customers nationwide through web and mobile apps, with the controls examiners expect. TrueStack guides the licensing path, documentation, platform build, and KPKT review with your team.",
 	},
 	{
-		question: "How long does the digital KPKT licence process take?",
+		question: "How long does it take?",
 		answer:
-			"With Truestack's end-to-end programme, most operators target go-live in about three months from kickoff — covering provisional licence preparation, TrueKredit™ Pro deployment on AWS Malaysia, UAT, independent penetration testing, KPKT review, and final approval. Timelines depend on your readiness and KPKT scheduling.",
+			"Most operators target about three months from kickoff to go-live — provisional licence prep, TrueKredit™ Pro setup, testing, security review, KPKT review, and final approval. Timelines depend on your readiness and KPKT scheduling.",
 	},
 	{
-		question: "What is TrueKredit™ Pro and why is it used for digital licensing?",
+		question: "What is TrueKredit™ Pro?",
 		answer:
-			"TrueKredit™ Pro is our edition built for KPKT online / digital money lending — borrower web and native apps, marketing sites, on-prem Trustgate digital signing, dedicated AWS tenancy, examiner-ready dossiers, and the separation auditors expect between digital and branch-led flows. It is the platform we deploy for digital licence conversions.",
+			"TrueKredit™ Pro is our lending platform built for KPKT online / digital money lending — branded borrower web and apps, signing under your control, your own secure cloud in Malaysia, and the audit trail examiners look for. It is the platform we deploy for digital licence conversions. Learn more on the TrueKredit page.",
 	},
 	{
-		question: "What does Truestack handle end-to-end?",
+		question: "What does TrueStack handle end-to-end?",
 		answer:
-			"We cover licensing strategy and advisory, provisional licence dossier and KPKT presentation support, TrueKredit™ Pro build (branded web, mobile, signing, integrations), UAT and third-party pen-test coordination, KPKT review pack preparation, and support through approval and go-live — so you are not stitching consultants, vendors, and engineers separately.",
+			"Licensing strategy and advisory, provisional dossier and KPKT presentation support, TrueKredit™ Pro build (branded web, mobile, signing), testing and security review coordination, KPKT review pack preparation, and support through approval and go-live — so you are not stitching consultants and vendors yourself.",
 	},
 	{
-		question: "Who is the digital KPKT licence service for?",
+		question: "Who is this for?",
 		answer:
-			"Established KPKT money lenders ready to go digital — operators with PPW or traditional footprints who want nationwide reach, compliant borrower self-serve, and a production platform auditors can follow. We also support groups planning their first digital lending entity with a clear KPKT pathway.",
+			"Established KPKT money lenders ready to go digital — operators with traditional or PPW footprints who want nationwide reach and a platform auditors can follow. We also support groups planning their first digital lending entity with a clear KPKT pathway.",
 	},
 ] as const;
 
@@ -83,12 +83,6 @@ export function buildDigitalLicenseJsonLd() {
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Services",
-						item: `${baseUrl}/services`,
-					},
-					{
-						"@type": "ListItem",
-						position: 3,
 						name: "Digital KPKT License",
 						item: DIGITAL_LICENSE_PAGE_URL,
 					},

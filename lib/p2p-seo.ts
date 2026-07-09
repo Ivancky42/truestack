@@ -119,12 +119,6 @@ export function buildP2PJsonLd() {
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Services",
-						item: `${baseUrl}/services`,
-					},
-					{
-						"@type": "ListItem",
-						position: 3,
 						name: "TrueP2P™",
 						item: P2P_PAGE_URL,
 					},

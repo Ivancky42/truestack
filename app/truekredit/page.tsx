@@ -865,6 +865,15 @@ export default function TrueKreditPage() {
 						</Card>
 					</motion.div>
 					<p className="mx-auto mt-4 max-w-2xl text-center text-sm text-muted-foreground">
+						Going digital with Pro? We also run the{" "}
+						<Link
+							href="/services/digital-license"
+							className="font-medium text-violet-700 hover:underline"
+						>
+							KPKT digital licence
+						</Link>{" "}
+						end-to-end.
+						{" · "}
 						Shariah-compliant?{" "}
 						<Link
 							href="/truesyariah"
@@ -908,7 +917,7 @@ export default function TrueKreditPage() {
 								setup, testing and go-live — so you can lend
 								nationwide on the same platform.
 							</p>
-							<div className="mt-6 flex flex-wrap gap-3">
+							<div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
 								<Button
 									asChild
 									size="lg"
@@ -919,17 +928,13 @@ export default function TrueKreditPage() {
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
-								<Button
-									asChild
-									variant="outline"
-									size="lg"
-									className="gap-2 border-violet-300 text-violet-800 hover:bg-violet-500/5"
+								<Link
+									href="/services/digital-license"
+									className="inline-flex items-center gap-1 text-sm font-medium text-violet-700 hover:underline"
 								>
-									<Link href="/services/digital-license">
-										Explore Digital KPKT Licence
-										<ChevronRight className="h-4 w-4" />
-									</Link>
-								</Button>
+									Need the digital licence too?
+									<ChevronRight className="h-3.5 w-3.5" />
+								</Link>
 							</div>
 						</div>
 						<ol className="space-y-2.5">

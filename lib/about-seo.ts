@@ -4,59 +4,30 @@ export const ABOUT_PAGE_PATH = "/about";
 export const ABOUT_PAGE_URL = `${baseUrl}${ABOUT_PAGE_PATH}`;
 
 export const ABOUT_METADATA = {
-	title: "About Truestack | Malaysian Fintech Software & Lending Technology",
+	title: "About Truestack | Malaysian Fintech Platforms, APIs & KPKT Services",
 	description:
-		"Truestack builds purpose-built lending technology in Malaysia — TrueKredit™ loan systems, Truestack Core™ shared infrastructure, and a modern stack with Next.js, React Native, Node.js, PostgreSQL, and AWS Malaysia for licensed money lenders and fintechs.",
+		"Truestack helps Malaysian licensed money lenders and fintechs go from licence to live portfolio — TrueKredit™ lending platforms, infrastructure APIs (e-KYC, SSM, payments), and KPKT digital licence & compliance services from one accountable team.",
 	keywords: [
 		"Truestack",
 		"about Truestack",
 		"fintech software Malaysia",
 		"lending technology Malaysia",
 		"TrueKredit",
-		"Truestack Core",
+		"TrueIdentity",
+		"TrueSSM",
+		"KPKT digital licence",
 		"KPKT fintech Malaysia",
 		"licensed money lender software",
 		"loan management system Malaysia",
 		"e-KYC Malaysia",
-		"Next.js fintech",
-		"React Native lending app",
-		"AWS Malaysia fintech",
-		"full-stack fintech development",
 		"digital lending platform Malaysia",
+		"fintech infrastructure Malaysia",
 	],
 	openGraphTitle:
-		"About Truestack | Malaysian Fintech Software & Lending Technology",
+		"About Truestack | Malaysian Fintech Platforms, APIs & KPKT Services",
 	openGraphDescription:
-		"Meet Truestack — Malaysian fintech engineers behind TrueKredit™, Truestack Core™, and production-grade web, mobile, and cloud infrastructure for regulated lending.",
+		"Meet Truestack — the partner behind compliant digital lending in Malaysia. Platforms, infrastructure APIs, and KPKT services that work as one.",
 } as const;
-
-export const aboutFaq = [
-	{
-		question: "What is Truestack?",
-		answer:
-			"Truestack is a Malaysian technology company that builds fintech platforms and infrastructure for licensed money lenders and fintech operators. We deliver loan management systems, shared APIs (e-KYC, payments, notifications, compliance), custom software, and KPKT-related services from our team in Malaysia.",
-	},
-	{
-		question: "What products does Truestack build?",
-		answer:
-			"TrueKredit™ is our loan management system for lending operations. Truestack Core™ is shared fintech infrastructure — e-KYC, payments, notifications, compliance APIs, and reusable building blocks that accelerate new products. We also build custom P2P, digital lending, and enterprise platforms on this stack.",
-	},
-	{
-		question: "What technology stack does Truestack use?",
-		answer:
-			"We use a modern, battle-tested stack: Next.js, React, TypeScript, and Tailwind CSS for web; React Native for cross-platform mobile; Node.js, Express, PostgreSQL, and Redis on the backend; and AWS Malaysia, Docker, and DigitalOcean for cloud deployment — designed for performance, maintainability, and audit-ready fintech workloads.",
-	},
-	{
-		question: "Who does Truestack work with?",
-		answer:
-			"We partner with KPKT-licensed money lenders, digital lending operators, P2P platforms, and fintech companies in Malaysia (and select regional projects) — from established lenders going digital to new operators building compliant platforms from scratch.",
-	},
-	{
-		question: "Where is Truestack based?",
-		answer:
-			"Truestack is headquartered in Malaysia. Our team builds and supports production fintech systems with Malaysia data residency (AWS Malaysia) and deep familiarity with local regulatory requirements including KPKT.",
-	},
-] as const;
 
 export function buildAboutJsonLd() {
 	return {
@@ -94,39 +65,27 @@ export function buildAboutJsonLd() {
 			},
 			{
 				"@type": "ItemList",
-				"@id": `${ABOUT_PAGE_URL}#technology`,
-				name: "Truestack technology",
+				"@id": `${ABOUT_PAGE_URL}#offerings`,
+				name: "Truestack offerings",
 				description:
-					"Platforms, web and mobile stack, and cloud infrastructure used by Truestack.",
+					"Lending platforms, fintech infrastructure APIs, and professional services for Malaysian operators.",
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Platforms — TrueKredit™ and Truestack Core™",
+						name: "Lending platforms — TrueKredit™, TrueSyariah™, TrueP2P™",
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Web & Mobile — Next.js, React, TypeScript, Tailwind CSS, React Native",
+						name: "Fintech infrastructure — TrueIdentity™, TrueSSM™, TruePay™, TrueScore™",
 					},
 					{
 						"@type": "ListItem",
 						position: 3,
-						name: "Backend & Cloud — Node.js, Express, PostgreSQL, Redis, AWS Malaysia, Docker",
+						name: "Professional services — Digital KPKT licence, account management, custom software",
 					},
 				],
-			},
-			{
-				"@type": "FAQPage",
-				"@id": `${ABOUT_PAGE_URL}#faq`,
-				mainEntity: aboutFaq.map((item) => ({
-					"@type": "Question",
-					name: item.question,
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: item.answer,
-					},
-				})),
 			},
 		],
 	};

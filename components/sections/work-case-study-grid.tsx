@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, ArrowUpRight, Ellipsis, Quote } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Ellipsis } from "lucide-react";
 import {
 	type CaseStudy,
 	workCaseStudies,
@@ -75,27 +75,6 @@ function WorkCaseStudyCard({
 								{tag}
 							</Badge>
 						))}
-					</div>
-				) : null}
-
-				{study.quote ? (
-					<div
-						className={cn(
-							"mt-3 flex items-start gap-2 rounded-lg border p-3",
-							study.accent === "kpkt"
-								? "border-kpkt/15 bg-kpkt/5"
-								: "border-primary/10 bg-primary/4",
-						)}
-					>
-						<Quote
-							className={cn(
-								"mt-0.5 h-3.5 w-3.5 shrink-0",
-								study.accent === "kpkt" ? "text-kpkt" : "text-primary",
-							)}
-						/>
-						<p className="line-clamp-2 text-xs italic leading-snug text-foreground sm:text-sm">
-							{study.quote}
-						</p>
 					</div>
 				) : null}
 
@@ -179,7 +158,8 @@ function WorkCaseStudyMoreCard({ index }: { index: number }) {
 						<span className="font-medium text-foreground">
 							Your story could be here next.
 						</span>{" "}
-						Building or scaling a lending or fintech operation in Malaysia?
+						Building or scaling a lending or fintech operation in
+						Malaysia? Let&apos;s talk.
 					</p>
 					<Button asChild className="mt-5 gap-2" size="sm">
 						<Link href="/contact">

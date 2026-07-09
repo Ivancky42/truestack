@@ -2,63 +2,29 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { GridPattern } from "@/components/sections/hero";
+import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import { CtaLink } from "@/components/shared/cta-link";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { WorkCaseStudyGrid } from "@/components/sections/work-case-study-grid";
-import { SectionHeader } from "@/components/shared/section-header";
-import { Card, CardContent } from "@/components/ui/card";
+import { SectionBadge } from "@/components/shared/section-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	ArrowRight,
-	CreditCard,
+	Briefcase,
 	Database,
 	FileCheck,
-	Network,
 	Shield,
-	Sparkles,
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-
-const workWithUsOffers: {
-	title: string;
-	description: string;
-	href: string;
-	icon: LucideIcon;
-	accent: "primary" | "kpkt";
-}[] = [
-	{
-		title: "TrueKredit™",
-		description:
-			"Purpose-built loan management for KPKT-licensed money lenders — borrowers, loans, compliance, and optional web and mobile in TrueKredit Pro.",
-		href: "/truekredit",
-		icon: CreditCard,
-		accent: "primary",
-	},
-	{
-		title: "TrueP2P™",
-		description:
-			"Peer-to-peer financing platforms for SC Malaysia — conventional and Shariah-aligned, with investor portals, escrow, and examiner-ready reporting.",
-		href: "/services/p2p-software-development",
-		icon: Network,
-		accent: "primary",
-	},
-	{
-		title: "KPKT digital license conversion",
-		description:
-			"Transform into a fully digital KPKT-licensed platform on a defined timeline — product, engineering, signing, and audit trails included.",
-		href: "/services/digital-license",
-		icon: FileCheck,
-		accent: "kpkt",
-	},
-];
 
 function WorkHero() {
 	return (
-		<section className="relative overflow-hidden border-b">
-			<GridPattern />
-			<div className="relative mx-auto max-w-3xl px-6 py-14 text-center md:py-20 lg:py-24">
+		<section
+			data-nav-theme="dark"
+			className="relative overflow-hidden border-b border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 py-14 text-white md:py-20 lg:py-24"
+		>
+			<AboutHeroBackdrop />
+			<div className="relative mx-auto max-w-3xl px-6 text-center">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -66,22 +32,23 @@ function WorkHero() {
 				>
 					<Badge
 						variant="outline"
-						className="mb-5 gap-1.5 border-primary/30 bg-primary/5 px-3 py-1 text-primary"
+						className="mb-5 gap-1.5 border-primary/30 bg-primary/10 px-3 py-1 text-primary"
 					>
-						<Sparkles className="h-3.5 w-3.5" />
-						Selected work
+						<Briefcase className="h-3.5 w-3.5" />
+						Our work
 					</Badge>
 
-					<h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
-						Production fintech for{" "}
+					<h1 className="font-display text-4xl font-medium tracking-tight text-zinc-50 md:text-5xl lg:text-6xl">
+						See what{" "}
 						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-							Malaysia&apos;s regulated market
-						</span>
+							live
+						</span>{" "}
+						looks like.
 					</h1>
 
-					<p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-						Live platforms we&apos;ve shaped end-to-end — license journeys,
-						architecture, hosting, signing, and audit trails behind the UI.
+					<p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-lg">
+						Real platforms we&apos;ve taken from idea to go-live —
+						so you can see the outcome before you commit.
 					</p>
 
 					<div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -92,7 +59,7 @@ function WorkHero() {
 						].map((pill) => (
 							<span
 								key={pill.label}
-								className="inline-flex items-center gap-1.5 rounded-full border bg-background/80 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm"
+								className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800/80 bg-zinc-900/50 px-3 py-1.5 text-xs font-medium text-zinc-400 backdrop-blur-sm"
 							>
 								<pill.icon className="h-3.5 w-3.5 text-primary" />
 								{pill.label}
@@ -107,7 +74,12 @@ function WorkHero() {
 								<ArrowRight className="h-4 w-4" />
 							</CtaLink>
 						</Button>
-						<Button asChild variant="outline" size="lg">
+						<Button
+							asChild
+							variant="outline"
+							size="lg"
+							className="border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800/80 hover:text-zinc-50"
+						>
 							<Link href="/contact">Book a Free Consultation</Link>
 						</Button>
 					</div>
@@ -124,96 +96,39 @@ export function WorkPageContent() {
 
 			<section
 				id="success-stories"
-				className="scroll-mt-24 border-t bg-muted/10 py-12 md:py-16"
+				aria-labelledby="success-stories-heading"
+				className="scroll-mt-24 border-t bg-muted/10 py-16 md:py-24"
 			>
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeader
-						title="Success stories"
-						subtitle="Operators we've helped go digital and scale — from fast personal lending to enterprise cores and SC-facing marketplaces."
-						className="mb-8 md:mb-10"
-					/>
+					<div className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
+						<SectionBadge
+							icon={Briefcase}
+							text="Selected work"
+							className="justify-center"
+						/>
+						<h2
+							id="success-stories-heading"
+							className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+						>
+							Success stories
+						</h2>
+						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+							See how teams like yours went live — from digital
+							KPKT conversions to enterprise lending cores and
+							SC-facing marketplaces.
+						</p>
+					</div>
 					<WorkCaseStudyGrid />
 				</div>
 			</section>
 
-			<section
-				data-nav-theme="dark"
-				className="border-t border-slate-800 bg-slate-950 py-14 text-white md:py-16"
-			>
-				<div className="mx-auto max-w-6xl px-6">
-					<div className="mx-auto mb-8 max-w-3xl text-center md:mb-10">
-						<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl lg:text-5xl">
-							Work with us
-						</h2>
-						<p className="mt-4 text-base text-slate-400 md:text-lg">
-							TrueKredit for lending, TrueP2P for marketplaces, or a full
-							digital KPKT conversion — one senior team from discovery through
-							go-live.
-						</p>
-					</div>
-					<div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-3 md:gap-6">
-						{workWithUsOffers.map((offer) => {
-							const isKpkt = offer.accent === "kpkt";
-							return (
-								<Card
-									key={offer.title}
-									className={
-										isKpkt
-											? "h-full border-kpkt/30 bg-zinc-900/80 transition-all hover:border-kpkt/55 hover:shadow-lg hover:shadow-kpkt/5"
-											: "h-full border-zinc-800 bg-zinc-900/80 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
-									}
-								>
-									<CardContent className="flex h-full flex-col pt-7">
-										<div
-											className={
-												isKpkt
-													? "mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-kpkt/15"
-													: "mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/15"
-											}
-										>
-											<offer.icon
-												className={
-													isKpkt
-														? "h-6 w-6 text-kpkt"
-														: "h-6 w-6 text-primary"
-												}
-											/>
-										</div>
-										<h3 className="text-center text-base font-semibold text-white">
-											{offer.title}
-										</h3>
-										<p className="mt-2 text-center text-sm leading-relaxed text-slate-400">
-											{offer.description}
-										</p>
-										<div className="mt-auto flex justify-center pt-5">
-											<Button
-												asChild
-												variant="outline"
-												size="sm"
-												className={
-													isKpkt
-														? "gap-2 border-kpkt/40 bg-transparent text-zinc-100 hover:border-kpkt/60 hover:bg-kpkt/10 hover:text-white"
-														: "gap-2 border-zinc-700 bg-transparent text-zinc-100 hover:border-primary/50 hover:bg-primary/10 hover:text-white"
-												}
-											>
-												<Link href={offer.href}>
-													Learn more
-													<ArrowRight className="h-4 w-4" />
-												</Link>
-											</Button>
-										</div>
-									</CardContent>
-								</Card>
-							);
-						})}
-					</div>
-				</div>
-			</section>
-
 			<ConsultationCta
-				heading="Have a build in mind?"
-				body="Whether you're going digital, replatforming, or starting fresh, book a free consultation and one senior team will take you from discovery through go-live."
-				secondary={{ href: "/services", label: "Explore Services" }}
+				heading="Ready for your story to be next?"
+				body="Whether you are going digital, replatforming, or starting fresh — book a free consultation and we will map the path from where you are to go-live."
+				secondary={{
+					href: "/services/digital-license",
+					label: "Explore Digital License",
+				}}
 			/>
 		</>
 	);
