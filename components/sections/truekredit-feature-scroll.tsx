@@ -107,15 +107,13 @@ function LaptopFrame({
 }) {
 	return (
 		<div
-			className={`mx-auto w-full ${
-				compact
-					? "max-w-[300px] sm:max-w-[360px] lg:max-w-3xl xl:max-w-4xl"
-					: "max-w-xl lg:max-w-3xl xl:max-w-4xl"
+			className={`mx-auto flex h-full w-full flex-col ${
+				compact ? "lg:h-auto lg:max-w-xl xl:max-w-2xl" : "max-w-xl lg:max-w-3xl xl:max-w-4xl"
 			}`}
 		>
-			<div className="overflow-hidden rounded-t-xl border border-slate-300/90 bg-slate-800 shadow-2xl shadow-slate-900/20 ring-1 ring-black/5">
+			<div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-t-xl border border-slate-300/90 bg-slate-800 shadow-2xl shadow-slate-900/20 ring-1 ring-black/5">
 				<div
-					className={`flex items-center gap-2 border-b border-slate-700 bg-slate-900 ${
+					className={`flex shrink-0 items-center gap-2 border-b border-slate-700 bg-slate-900 ${
 						compact
 							? "px-2.5 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-2.5"
 							: "px-3 py-2 sm:px-4 sm:py-2.5"
@@ -126,29 +124,39 @@ function LaptopFrame({
 						<span className="h-2 w-2 rounded-full bg-amber-400/80 sm:h-2.5 sm:w-2.5" />
 						<span className="h-2 w-2 rounded-full bg-emerald-400/80 sm:h-2.5 sm:w-2.5" />
 					</div>
-					<div className="ml-2 flex-1 rounded-md bg-slate-800 px-3 py-1 text-center text-[10px] text-slate-400 sm:text-[11px]">
+					<div className="ml-2 flex-1 rounded-md bg-slate-800 px-2.5 py-0.5 text-center text-[9px] text-slate-400 sm:px-3 sm:py-1 sm:text-[11px]">
 						admin.truekredit
 					</div>
 				</div>
-				<div
-					className={`aspect-16/10 bg-slate-100 ${
-						compact
-							? "p-2 sm:p-3 lg:p-5 xl:p-6"
-							: "p-2.5 sm:p-4 md:p-5 lg:p-6"
-					}`}
-				>
-					{children}
-				</div>
+				{/*
+				  Mobile compact: fill shared stage box.
+				  Desktop: padding-bottom ratio locks 16/10 inside flex layouts.
+				*/}
+				{compact ? (
+					<div className="relative min-h-0 flex-1 bg-slate-100 lg:flex-none lg:pb-[62.5%]">
+						<div className="absolute inset-0 overflow-hidden p-2 sm:p-3 lg:p-5 xl:p-6">
+							<div className="h-full w-full max-lg:origin-top-left max-lg:scale-[0.9] max-lg:[height:111%] max-lg:[width:111%]">
+								{children}
+							</div>
+						</div>
+					</div>
+				) : (
+					<div className="relative w-full bg-slate-100 pb-[62.5%]">
+						<div className="absolute inset-0 overflow-hidden p-2.5 sm:p-4 md:p-5 lg:p-6">
+							<div className="h-full w-full">{children}</div>
+						</div>
+					</div>
+				)}
 			</div>
 			<div
-				className={`relative mx-auto w-[102%] max-w-none -translate-x-[1%] rounded-b-xl bg-slate-300 ${
+				className={`relative mx-auto w-[102%] max-w-none shrink-0 -translate-x-[1%] rounded-b-xl bg-slate-300 ${
 					compact ? "h-2 sm:h-2.5 lg:h-3.5" : "h-2.5 sm:h-3.5"
 				}`}
 			>
-				<div className="absolute left-1/2 top-0 h-1 w-16 -translate-x-1/2 rounded-b-md bg-slate-400/50 sm:h-1.5 sm:w-20" />
+				<div className="absolute left-1/2 top-0 h-1 w-14 -translate-x-1/2 rounded-b-md bg-slate-400/50 sm:h-1.5 sm:w-20" />
 			</div>
 			<div
-				className={`mx-auto w-[112%] max-w-none -translate-x-[5.5%] rounded-b-2xl bg-slate-200 ${
+				className={`mx-auto w-[112%] max-w-none shrink-0 -translate-x-[5.5%] rounded-b-2xl bg-slate-200 ${
 					compact ? "h-1 sm:h-1.5 lg:h-2" : "h-1.5 sm:h-2"
 				}`}
 			/>
@@ -168,62 +176,62 @@ function FeaturePhoneFrame({
 		<div
 			className={`relative mx-auto ${
 				compact
-					? "w-[min(100%,200px)] sm:w-[240px] lg:w-[300px]"
-					: "w-[min(100%,240px)] sm:w-[280px] lg:w-[300px]"
+					? "h-full aspect-[9/18.5] lg:h-auto lg:w-[280px]"
+					: "aspect-[9/18.5] w-[min(100%,200px)] sm:w-[260px] lg:w-[300px]"
 			}`}
 		>
 			<div
-				className="absolute -left-[3px] top-[18%] h-7 w-[3px] rounded-l-sm bg-slate-700 sm:h-8"
+				className="absolute -left-[2px] top-[18%] h-5 w-[2px] rounded-l-sm bg-slate-700 sm:h-7 sm:w-[3px] lg:-left-[3px] lg:h-8"
 				aria-hidden
 			/>
 			<div
-				className="absolute -left-[3px] top-[28%] h-10 w-[3px] rounded-l-sm bg-slate-700 sm:h-12"
+				className="absolute -left-[2px] top-[28%] h-7 w-[2px] rounded-l-sm bg-slate-700 sm:h-10 sm:w-[3px] lg:-left-[3px] lg:h-12"
 				aria-hidden
 			/>
 			<div
-				className="absolute -right-[3px] top-[24%] h-14 w-[3px] rounded-r-sm bg-slate-700 sm:h-16"
+				className="absolute -right-[2px] top-[24%] h-9 w-[2px] rounded-r-sm bg-slate-700 sm:h-12 sm:w-[3px] lg:-right-[3px] lg:h-16"
 				aria-hidden
 			/>
 
 			<div
-				className={`relative overflow-hidden bg-slate-900 shadow-2xl shadow-violet-950/30 ring-1 ring-slate-700/80 ${
+				className={`relative h-full bg-slate-900 shadow-2xl shadow-violet-950/30 ring-1 ring-slate-700/80 ${
 					compact
-						? "rounded-[1.6rem] p-[6px] sm:rounded-[2rem] sm:p-[8px] lg:rounded-[2.4rem] lg:p-[10px]"
-						: "rounded-[2rem] p-[8px] sm:rounded-[2.4rem] sm:p-[10px]"
+						? "rounded-[1.5rem] p-[5px] sm:rounded-[1.75rem] sm:p-[7px] lg:rounded-[2.2rem] lg:p-[9px]"
+						: "rounded-[1.75rem] p-[7px] sm:rounded-[2.2rem] sm:p-[9px]"
 				}`}
 			>
 				<div
-					className={`relative overflow-hidden bg-white ${
+					className={`flex h-full flex-col overflow-hidden bg-white ${
 						compact
-							? "rounded-[1.25rem] sm:rounded-[1.55rem] lg:rounded-[1.85rem]"
-							: "rounded-[1.55rem] sm:rounded-[1.85rem]"
+							? "rounded-[1.2rem] sm:rounded-[1.4rem] lg:rounded-[1.7rem]"
+							: "rounded-[1.4rem] sm:rounded-[1.7rem]"
 					}`}
 				>
 					<div
-						className={`relative flex items-end justify-between ${
+						className={`relative flex shrink-0 items-end justify-between ${
 							compact
-								? "h-7 px-3 pb-0.5 sm:h-9 sm:px-4 sm:pb-1 lg:h-11 lg:px-5 lg:pb-1.5"
-								: "h-9 px-4 pb-1 sm:h-11 sm:px-5 sm:pb-1.5"
+								? "h-6 px-2.5 pb-0.5 sm:h-8 sm:px-3.5 sm:pb-1 lg:h-10 lg:px-4 lg:pb-1.5"
+								: "h-8 px-3.5 pb-1 sm:h-10 sm:px-4 sm:pb-1.5"
 						}`}
 					>
-						<span className="text-[10px] font-semibold tabular-nums text-slate-900 sm:text-[11px]">
+						<span className="text-[8px] font-semibold tabular-nums text-slate-900 sm:text-[10px] lg:text-[11px]">
 							9:41
 						</span>
 						<div
 							className={`absolute left-1/2 -translate-x-1/2 rounded-full bg-slate-950 shadow-inner ${
 								compact
-									? "top-1.5 h-[14px] w-[56px] sm:top-2 sm:h-[18px] sm:w-[72px] lg:top-2.5 lg:h-[22px] lg:w-[90px]"
-									: "top-2 h-[18px] w-[72px] sm:top-2.5 sm:h-[22px] sm:w-[90px]"
+									? "top-1 h-[12px] w-[48px] sm:top-1.5 sm:h-[16px] sm:w-[64px] lg:top-2 lg:h-[20px] lg:w-[84px]"
+									: "top-1.5 h-[16px] w-[64px] sm:top-2 sm:h-[20px] sm:w-[84px]"
 							}`}
 						/>
-						<div className="flex items-center gap-1 text-slate-900">
+						<div className="flex items-center gap-0.5 text-slate-900 sm:gap-1">
 							<svg
 								width="15"
 								height="11"
 								viewBox="0 0 15 11"
 								fill="currentColor"
 								aria-hidden
-								className="scale-90 sm:scale-100"
+								className="scale-[0.65] sm:scale-90 lg:scale-100"
 							>
 								<path d="M1.5 7.5h1.2v2H1.5zm2.5-2h1.2v4H4zm2.5-2h1.2v6H6.5zm2.5-2.5h1.2v8.5H9z" />
 							</svg>
@@ -233,7 +241,7 @@ function FeaturePhoneFrame({
 								viewBox="0 0 22 11"
 								fill="none"
 								aria-hidden
-								className="scale-90 sm:scale-100"
+								className="scale-[0.65] sm:scale-90 lg:scale-100"
 							>
 								<rect
 									x="0.5"
@@ -260,17 +268,17 @@ function FeaturePhoneFrame({
 					</div>
 
 					<div
-						className={
+						className={`min-h-0 flex-1 overflow-hidden ${
 							compact
-								? "min-h-[220px] px-2.5 pb-1.5 pt-0.5 sm:min-h-[280px] sm:px-3.5 sm:pb-2 sm:pt-1 lg:min-h-[460px] lg:px-4"
-								: "min-h-[340px] px-3.5 pb-2 pt-1 sm:min-h-[420px] sm:px-4 lg:min-h-[460px]"
-						}
+								? "px-2 pb-0.5 pt-0.5 sm:px-3 sm:pb-1.5 sm:pt-1 lg:px-3.5"
+								: "px-3 pb-1.5 pt-1 sm:px-3.5"
+						}`}
 					>
 						{children}
 					</div>
 
 					<div
-						className={`flex justify-center ${
+						className={`flex shrink-0 justify-center ${
 							compact
 								? "pb-1.5 pt-0.5 sm:pb-2 sm:pt-1 lg:pb-2.5"
 								: "pb-2 pt-1 sm:pb-2.5"
@@ -279,8 +287,8 @@ function FeaturePhoneFrame({
 						<div
 							className={`rounded-full bg-slate-900/90 ${
 								compact
-									? "h-0.5 w-[64px] sm:h-1 sm:w-[88px] lg:w-[108px]"
-									: "h-1 w-[88px] sm:w-[108px]"
+									? "h-0.5 w-[48px] sm:h-1 sm:w-[72px] lg:w-[100px]"
+									: "h-1 w-[72px] sm:w-[100px]"
 							}`}
 						/>
 					</div>
@@ -325,59 +333,44 @@ function DeviceStage({
 		</div>
 	);
 
+	/*
+	  Mobile shared stage: width-driven 4/3 box so ratio stays correct when
+	  the viewport is narrow. Laptop fills the box; phone uses the same height.
+	  ~262–300px tall on phones — fits with sticky copy in one screen.
+	*/
+	if (compact) {
+		return (
+			<div className="mx-auto w-full max-w-[min(100%,420px)] lg:max-w-none">
+				<div className="relative mx-auto aspect-[4/3] w-full lg:aspect-auto">
+					{device === "phone" ? (
+						<div className="absolute inset-0 flex items-center justify-center lg:static">
+							<div className="h-full lg:h-auto">
+								<FeaturePhoneFrame compact>
+									{screen}
+								</FeaturePhoneFrame>
+							</div>
+						</div>
+					) : (
+						<div className="absolute inset-0 lg:static">
+							<LaptopFrame compact>{screen}</LaptopFrame>
+						</div>
+					)}
+				</div>
+			</div>
+		);
+	}
+
 	if (device === "phone") {
 		return (
-			<div
-				className={`flex items-center justify-center ${
-					compact
-						? "min-h-0 py-1"
-						: "min-h-[280px] p-2 sm:min-h-[420px] sm:p-4 md:min-h-[520px] lg:min-h-[560px]"
-				}`}
-			>
-				<FeaturePhoneFrame compact={compact}>{screen}</FeaturePhoneFrame>
+			<div className="flex min-h-[280px] items-center justify-center p-2 sm:min-h-[420px] sm:p-4 md:min-h-[520px] lg:min-h-[560px]">
+				<FeaturePhoneFrame>{screen}</FeaturePhoneFrame>
 			</div>
 		);
 	}
 
 	return (
-		<div
-			className={`flex items-center justify-center ${
-				compact
-					? "min-h-0 py-0.5"
-					: "min-h-[200px] p-1 sm:min-h-[320px] sm:p-2 md:min-h-[400px] lg:min-h-[460px]"
-			}`}
-		>
-			<LaptopFrame compact={compact}>{screen}</LaptopFrame>
-		</div>
-	);
-}
-
-function StepDots({
-	active,
-	onSelect,
-}: {
-	active: number;
-	onSelect: (i: number) => void;
-}) {
-	return (
-		<div className="flex flex-wrap items-center justify-center gap-1.5">
-			{STEPS.map((s, i) => (
-				<button
-					key={s.id}
-					type="button"
-					aria-label={`Show ${s.title}`}
-					aria-current={active === i}
-					title={s.phase}
-					onClick={() => onSelect(i)}
-					className={`h-1.5 rounded-full transition-all ${
-						active === i
-							? s.device === "phone"
-								? "w-7 bg-violet-600"
-								: "w-7 bg-primary"
-							: "w-1.5 bg-slate-300 hover:bg-slate-400"
-					}`}
-				/>
-			))}
+		<div className="flex min-h-[200px] items-center justify-center p-1 sm:min-h-[320px] sm:p-2 md:min-h-[400px] lg:min-h-[460px]">
+			<LaptopFrame>{screen}</LaptopFrame>
 		</div>
 	);
 }
@@ -398,17 +391,6 @@ export function TrueKreditFeatureScroll() {
 		activeRef.current = i;
 		setActive(i);
 	}, []);
-
-	const scrollToStep = useCallback(
-		(i: number) => {
-			goToStep(i);
-			stepRefs.current[i]?.scrollIntoView({
-				behavior: "smooth",
-				block: "center",
-			});
-		},
-		[goToStep],
-	);
 
 	useEffect(() => {
 		const nodes = stepRefs.current.filter(Boolean) as HTMLElement[];
@@ -432,8 +414,9 @@ export function TrueKreditFeatureScroll() {
 			},
 			{
 				root: null,
+				// Center band — works with full-viewport sticky stage + 100dvh spacers
 				rootMargin: "-40% 0px -40% 0px",
-				threshold: [0, 0.25, 0.5],
+				threshold: [0, 0.25, 0.5, 0.75],
 			},
 		);
 
@@ -447,6 +430,7 @@ export function TrueKreditFeatureScroll() {
 	return (
 		<section id="features" className="border-t bg-muted/30 py-14 md:py-24">
 			<div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+				{/* Section title — scrolls into view before the sticky journey starts */}
 				<div className="mx-auto max-w-3xl text-center">
 					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
 						End to end
@@ -462,15 +446,16 @@ export function TrueKreditFeatureScroll() {
 
 				{/*
 				  Unified scroll experience:
-				  - Mobile: sticky device on top, copy steps scroll underneath
+				  - Mobile: full-viewport sticky stage (copy + device centered),
+				    invisible step spacers drive the journey
 				  - Desktop: copy rail left, sticky device right
 				*/}
 				<div className="mt-10 lg:mt-12 lg:grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:items-start lg:gap-8 xl:gap-12">
-					{/* Sticky device — top on mobile, right column on desktop */}
-					<div className="sticky top-16 z-10 -mx-5 border-b border-border/60 bg-muted/95 px-5 py-4 backdrop-blur-md sm:top-20 sm:py-5 lg:order-2 lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none lg:top-0 lg:flex lg:h-dvh lg:flex-col lg:items-center lg:justify-center lg:self-start">
-						<div className="mx-auto w-full max-w-[340px] sm:max-w-md lg:max-w-none">
-							{/* Mobile: phase, title + subtitle above device so copy stays visible */}
-							<div className="relative mb-4 min-h-[5.5rem] text-center lg:hidden">
+					{/* Sticky stage — full viewport on mobile, right column on desktop */}
+					<div className="sticky top-16 z-10 -mx-5 flex h-[calc(100dvh-4rem)] flex-col justify-center bg-muted/95 px-3 backdrop-blur-md sm:top-20 sm:h-[calc(100dvh-5rem)] sm:px-5 lg:order-2 lg:mx-0 lg:h-dvh lg:bg-transparent lg:px-0 lg:backdrop-blur-none lg:top-0 lg:self-start">
+						<div className="mx-auto flex w-full max-w-none flex-col justify-center">
+							{/* Mobile: phase, title + subtitle above device — match module card type */}
+							<div className="relative mb-3 min-h-[5.5rem] shrink-0 px-2 text-center sm:mb-4 sm:min-h-24 lg:hidden">
 								<AnimatePresence mode="wait" initial={false}>
 									<motion.div
 										key={step.id}
@@ -489,7 +474,7 @@ export function TrueKreditFeatureScroll() {
 										}}
 									>
 										<p
-											className={`text-[10px] font-semibold uppercase tracking-wider ${
+											className={`text-xs font-semibold uppercase tracking-wider ${
 												step.device === "phone"
 													? "text-violet-600"
 													: "text-primary"
@@ -497,10 +482,10 @@ export function TrueKreditFeatureScroll() {
 										>
 											{step.phase}
 										</p>
-										<h3 className="mt-1 font-display text-lg font-medium tracking-tight sm:text-xl">
+										<h3 className="mt-1.5 font-display text-xl font-semibold leading-snug tracking-tight">
 											{step.title}
 										</h3>
-										<p className="mx-auto mt-2 max-w-sm text-[13px] leading-relaxed text-muted-foreground">
+										<p className="mx-auto mt-2 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
 											{step.desc}
 										</p>
 									</motion.div>
@@ -543,57 +528,55 @@ export function TrueKreditFeatureScroll() {
 								</AnimatePresence>
 							</div>
 
-							<div className="mt-4 lg:mt-5">
-								<StepDots
-									active={active}
-									onSelect={scrollToStep}
-								/>
-								<div className="relative mt-2 hidden min-h-[1rem] lg:block">
-									<AnimatePresence
-										mode="wait"
-										initial={false}
+							<div className="relative mt-4 hidden min-h-4 lg:mt-5 lg:block">
+								<AnimatePresence mode="wait" initial={false}>
+									<motion.p
+										key={step.id}
+										className="absolute inset-x-0 text-center text-[11px] text-muted-foreground"
+										initial={{
+											opacity: 0,
+											y: slideOffset * 0.35,
+										}}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{
+											opacity: 0,
+											y: -slideOffset * 0.35,
+										}}
+										transition={{
+											duration: 0.25,
+											ease: [0.22, 1, 0.36, 1],
+										}}
 									>
-										<motion.p
-											key={step.id}
-											className="absolute inset-x-0 text-center text-[11px] text-muted-foreground"
-											initial={{
-												opacity: 0,
-												y: slideOffset * 0.35,
-											}}
-											animate={{ opacity: 1, y: 0 }}
-											exit={{
-												opacity: 0,
-												y: -slideOffset * 0.35,
-											}}
-											transition={{
-												duration: 0.25,
-												ease: [0.22, 1, 0.36, 1],
-											}}
-										>
-											{step.phase} — {step.title}
-										</motion.p>
-									</AnimatePresence>
-								</div>
+										{step.phase} — {step.title}
+									</motion.p>
+								</AnimatePresence>
 							</div>
 						</div>
 					</div>
 
-					{/* Scroll steps — drive the sticky device */}
-					<div className="mt-2 lg:order-1 lg:mt-0">
+					{/* Scroll steps — drive the sticky device.
+					    Mobile: full-viewport spacers (one screen per step).
+					    Desktop: full copy rail. */}
+					<div className="relative z-0 lg:order-1 lg:mt-0">
 						{STEPS.map((s, i) => (
 							<article
 								key={s.id}
 								ref={(el) => setStepRef(el, i)}
 								data-step-index={i}
-								className={`flex min-h-[50vh] scroll-mt-[min(58vh,420px)] flex-col justify-center border-l-2 py-16 pl-4 transition-colors sm:min-h-[55vh] sm:scroll-mt-[min(52vh,480px)] sm:py-20 sm:pl-5 lg:min-h-dvh lg:scroll-mt-0 lg:py-8 lg:pl-5 xl:pl-6 ${
+								aria-label={`${s.phase} — ${s.title}`}
+								className={`flex flex-col justify-center transition-colors lg:min-h-dvh lg:border-l-2 lg:py-8 lg:pl-5 xl:pl-6 ${
 									active === i
 										? s.device === "phone"
-											? "border-violet-500"
-											: "border-primary"
-										: "border-transparent opacity-30 lg:opacity-35"
+											? "lg:border-violet-500"
+											: "lg:border-primary"
+										: "lg:border-transparent lg:opacity-35"
 								}`}
 							>
-								{/* Desktop: full copy. Mobile: spacer labels (sticky shows active copy) */}
+								{/* One viewport of scroll per step on mobile */}
+								<div
+									className="h-dvh w-full shrink-0 lg:hidden"
+									aria-hidden
+								/>
 								<div className="hidden lg:block">
 									<p
 										className={`mb-2 text-[11px] font-semibold uppercase tracking-wider ${
@@ -608,27 +591,6 @@ export function TrueKreditFeatureScroll() {
 										{s.title}
 									</h3>
 									<p className="mt-3 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
-										{s.desc}
-									</p>
-								</div>
-
-								{/* Mobile: light step marker so scroll height still works */}
-								<div className="lg:hidden">
-									<p
-										className={`text-[11px] font-semibold uppercase tracking-wider ${
-											active === i
-												? s.device === "phone"
-													? "text-violet-600"
-													: "text-primary"
-												: "text-muted-foreground"
-										}`}
-									>
-										{s.phase}
-									</p>
-									<p className="mt-1.5 font-display text-xl font-medium tracking-tight text-foreground/80">
-										{s.title}
-									</p>
-									<p className="mt-2 max-w-sm text-[13px] leading-relaxed text-muted-foreground">
 										{s.desc}
 									</p>
 								</div>

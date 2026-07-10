@@ -214,7 +214,7 @@ export function TrueP2PHeroVisual({
 				</motion.div>
 
 				<motion.div
-					className="absolute bottom-[8%] right-[4%] z-20 w-[38%] max-w-[150px] sm:right-[6%] sm:w-[36%] sm:max-w-[168px]"
+					className="absolute bottom-[12%] right-[4%] z-20 w-[30%] max-w-[128px] sm:right-[6%] sm:w-[28%] sm:max-w-[140px]"
 					animate={{ y: [0, -8, 0] }}
 					transition={{
 						duration: 5.2,
@@ -223,7 +223,7 @@ export function TrueP2PHeroVisual({
 						delay: 0.4,
 					}}
 				>
-					<div className="relative overflow-hidden rounded-[1.35rem] bg-slate-900 p-[5px] shadow-2xl shadow-violet-950/35 ring-1 ring-slate-700/80">
+					<div className="relative aspect-[9/18.5] rounded-[1.35rem] bg-slate-900 p-[5px] shadow-2xl shadow-violet-950/35 ring-1 ring-slate-700/80">
 						<div
 							className="absolute -left-[2px] top-[18%] h-5 w-[2px] rounded-l-sm bg-slate-700"
 							aria-hidden
@@ -232,18 +232,18 @@ export function TrueP2PHeroVisual({
 							className="absolute -right-[2px] top-[24%] h-8 w-[2px] rounded-r-sm bg-slate-700"
 							aria-hidden
 						/>
-						<div className="relative overflow-hidden rounded-[1.1rem] bg-white">
-							<div className="relative flex h-7 items-end justify-between px-3 pb-0.5">
+						<div className="flex h-full flex-col overflow-hidden rounded-[1.1rem] bg-white">
+							<div className="relative flex h-7 shrink-0 items-end justify-between px-3 pb-0.5">
 								<span className="text-[8px] font-semibold tabular-nums text-slate-900">
 									9:41
 								</span>
 								<div className="absolute left-1/2 top-1.5 h-3 w-12 -translate-x-1/2 rounded-full bg-slate-950" />
 								<div className="h-2 w-4 rounded-sm bg-slate-900/80" />
 							</div>
-							<div className="min-h-[148px]">
+							<div className="min-h-0 flex-1 overflow-hidden">
 								<P2PPhoneMock />
 							</div>
-							<div className="flex justify-center pb-1.5">
+							<div className="flex shrink-0 justify-center pb-2 pt-1">
 								<div className="h-0.5 w-10 rounded-full bg-slate-900/90" />
 							</div>
 						</div>
@@ -251,7 +251,7 @@ export function TrueP2PHeroVisual({
 				</motion.div>
 
 				<div
-					className="pointer-events-none absolute bottom-[6%] left-1/2 h-8 w-[70%] -translate-x-1/2 rounded-full bg-violet-400/20 blur-xl"
+					className="pointer-events-none absolute bottom-[2%] left-1/2 h-8 w-[70%] -translate-x-1/2 rounded-full bg-violet-400/20 blur-xl"
 					aria-hidden
 				/>
 			</div>
