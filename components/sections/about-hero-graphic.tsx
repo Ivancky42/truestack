@@ -15,10 +15,10 @@ type CodeLine = {
 const lines: CodeLine[] = [
 	{
 		tokens: [
-			{ text: "export const ", className: "text-purple-400" },
+			{ text: "export const ", className: "text-violet-400" },
 			{ text: "platform", className: "text-blue-400" },
 			{ text: " = ", className: "text-slate-500" },
-			{ text: "{", className: "text-orange-400" },
+			{ text: "{", className: "text-cyan-400" },
 		],
 	},
 	{
@@ -80,7 +80,7 @@ const lines: CodeLine[] = [
 	},
 	{
 		tokens: [
-			{ text: "}", className: "text-orange-400" },
+			{ text: "}", className: "text-cyan-400" },
 			{ text: ";", className: "text-slate-500" },
 		],
 	},

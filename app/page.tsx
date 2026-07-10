@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOgImage } from "@/lib/seo-defaults";
 import { HomepageHero } from "@/components/sections/homepage-hero";
 // import { ComplianceSection } from "@/components/sections/compliance-section";
 import { WhatWeDo } from "@/components/sections/what-we-do";
@@ -11,7 +12,29 @@ import { SuccessStoriesProof } from "@/components/sections/success-stories-proof
 import { pickProofStudies } from "@/lib/case-studies-data";
 
 export const metadata: Metadata = {
+	title: {
+		absolute: "Truestack — KPKT Services & Fintech Software for Malaysia",
+	},
+	description:
+		"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
 	alternates: { canonical: "/" },
+	openGraph: {
+		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
+		description:
+			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+		url: "/",
+		type: "website",
+		locale: "en_MY",
+		siteName: "Truestack",
+		images: [defaultOgImage],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
+		description:
+			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+		images: [defaultOgImage.url],
+	},
 };
 
 export default function HomePage() {
@@ -37,6 +60,14 @@ export default function HomePage() {
 					href: "/services/digital-license",
 					label: "Explore Digital License",
 				}}
+				extraLinks={[
+					{ href: "/truekredit", label: "TrueKredit™" },
+					{ href: "/truesyariah", label: "TrueSyariah™" },
+					{
+						href: "/services/p2p-software-development",
+						label: "TrueP2P™",
+					},
+				]}
 			/>
 		</>
 	);

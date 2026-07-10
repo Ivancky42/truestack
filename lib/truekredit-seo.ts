@@ -1,5 +1,3 @@
-import { truekreditFaq } from "@/lib/truekredit-faq";
-
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
 
 export const TRUEKREDIT_PAGE_PATH = "/truekredit";
@@ -7,30 +5,35 @@ export const TRUEKREDIT_PAGE_URL = `${baseUrl}${TRUEKREDIT_PAGE_PATH}`;
 
 export const TRUEKREDIT_METADATA = {
 	title:
-		"TrueKredit™ — KPKT Loan Management System | Standard & Pro for Malaysia",
+		"TrueKredit™ | Money Lender Software & Loan Platform Malaysia",
 	description:
-		"TrueKredit™ is Truestack's loan management system for KPKT-licensed money lenders in Malaysia. Standard helps your branch team run the full loan book with customer data kept separate on your own secure cloud. TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending — your data stays with you.",
+		"Money lender software for Malaysia — TrueKredit™ is the KPKT loan management platform for licensed lenders. Branch Standard or nationwide Pro apps.",
 	keywords: [
 		"TrueKredit",
-		"KPKT loan management system",
-		"KPKT PPW software",
-		"money lender Malaysia software",
+		"money lender software Malaysia",
 		"loan management system Malaysia",
+		"lending platform Malaysia",
+		"KPKT loan management system",
+		"KPKT software Malaysia",
+		"KPKT PPW software",
+		"licensed money lender platform",
+		"digital lending platform Malaysia",
+		"fintech lending software Malaysia",
+		"money lender Malaysia software",
 		"KPKT compliance software",
 		"Lampiran A",
 		"Lampiran B1",
 		"iDEAL KPKT",
-		"licensed money lender platform",
 		"TrueKredit Pro",
 		"TrueKredit Standard",
 		"KPKT online lending",
 		"digital money lender Malaysia",
-		"lending platform Malaysia",
+		"loan book software Malaysia",
 	],
 	openGraphTitle:
-		"TrueKredit™ — KPKT Loan Management System | Standard & Pro",
+		"TrueKredit™ | Money Lender Software & Loan Platform Malaysia",
 	openGraphDescription:
-		"KPKT loan operations for Malaysian money lenders — from application to repayment, compliance documents, e-KYC. TrueKredit Pro adds nationwide customer apps and digital licence readiness.",
+		"KPKT loan management platform for Malaysian money lenders — applications to repayment, compliance docs, e-KYC. Pro adds nationwide apps and digital licence readiness.",
 	ogImagePath: "/truekredit/hero.png",
 	ogImageAlt:
 		"TrueKredit KPKT-aligned loan management platform — applications, signing, dashboards and compliance modules",
@@ -73,9 +76,16 @@ export function buildTrueKreditJsonLd() {
 				"@type": "SoftwareApplication",
 				"@id": `${TRUEKREDIT_PAGE_URL}#software`,
 				name: "TrueKredit™",
-				alternateName: ["TrueKredit Pro", "TrueKredit Standard"],
+				alternateName: [
+					"TrueKredit Pro",
+					"TrueKredit Standard",
+					"KPKT loan management system Malaysia",
+					"Money lender software Malaysia",
+					"Digital lending platform Malaysia",
+				],
 				url: TRUEKREDIT_PAGE_URL,
 				applicationCategory: "BusinessApplication",
+				applicationSubCategory: "Loan Management System",
 				operatingSystem: "Web, iOS, Android",
 				description: TRUEKREDIT_METADATA.description,
 				provider: { "@id": `${baseUrl}/#organization` },
@@ -84,13 +94,13 @@ export function buildTrueKreditJsonLd() {
 						"@type": "Offer",
 						name: "TrueKredit Standard",
 						description:
-							"Loan management for KPKT PPW and branch-led operations, with customer data kept separate on your own secure cloud in Malaysia.",
+							"Loan management software for KPKT PPW and branch-led money lenders in Malaysia, with customer data on your own secure cloud.",
 					},
 					{
 						"@type": "Offer",
 						name: "TrueKredit Pro",
 						description:
-							"Extends Standard with customer website and mobile apps, digital signing, and KPKT Online licence readiness — same system, your data stays.",
+							"Nationwide digital lending platform for Malaysia — customer website, mobile apps, digital signing, and KPKT Online licence readiness.",
 					},
 				],
 				featureList: [
@@ -102,18 +112,6 @@ export function buildTrueKreditJsonLd() {
 					"Pro: customer website, phone apps, digital signing",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },
-			},
-			{
-				"@type": "FAQPage",
-				"@id": `${TRUEKREDIT_PAGE_URL}#faq`,
-				mainEntity: truekreditFaq.map((item) => ({
-					"@type": "Question",
-					name: item.question,
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: item.answer,
-					},
-				})),
 			},
 		],
 	};

@@ -7,7 +7,7 @@ const features = [
   {
     icon: Fingerprint,
     title: "TrueIdentity™",
-    description: "Seamless e-KYC identity verification with MyKad OCR, liveness detection, and biometric matching.",
+    description: "e-KYC identity verification with MyKad OCR, liveness detection, and biometric matching.",
   },
   {
     icon: MessageSquare,
@@ -93,7 +93,7 @@ export function ComingSoonPlatform() {
               Coming Soon
             </span>
           </div>
-          <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">TrueStack Core</span>
           </h2>
           <p className="mt-4 text-lg text-slate-400 md:text-xl">

@@ -1,44 +1,36 @@
-import { truesyariahFaq } from "@/lib/truesyariah-faq";
-
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
 
 export const TRUESYARIAH_PAGE_PATH = "/truesyariah";
 export const TRUESYARIAH_PAGE_URL = `${baseUrl}${TRUESYARIAH_PAGE_PATH}`;
 
 export const TRUESYARIAH_METADATA = {
-	title:
-		"TrueSyariah™ — Shariah Digital Lending Platform | Tawarruq, Ta'widh & Gharamah for Malaysia",
+	title: "TrueSyariah™ | Shariah Lending Platform Malaysia",
 	description:
-		"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform for Malaysian operators — Tawarruq commodity trades via Bursa Suq Al-Sila', segregated Ta'widh and Gharamah ledgers, on-prem digital signing, e-KYC, native mobile apps, and a dedicated AWS deployment ring-fenced from conventional lending.",
+		"Shariah lending platform for Malaysia — TrueSyariah™ with Tawarruq via Bursa Suq Al-Sila', Ta'widh & Gharamah ledgers, on-prem signing, and dedicated AWS.",
 	keywords: [
 		"TrueSyariah",
+		"Shariah lending platform Malaysia",
 		"Shariah digital lending licence Malaysia",
 		"Shariah digital lending license Malaysia",
-		"Shariah digital lending Malaysia",
-		"lesen pinjaman digital syariah",
+		"Islamic lending software Malaysia",
+		"Islamic loan management system Malaysia",
 		"Shariah-compliant lending platform Malaysia",
 		"Islamic digital lending Malaysia",
+		"lesen pinjaman digital syariah",
 		"Tawarruq financing platform",
 		"Bursa Suq Al-Sila",
 		"BSAS Tawarruq integration",
 		"Ta'widh Gharamah accounting",
-		"Tawidh Gharamah ledger",
-		"Islamic loan management system Malaysia",
 		"Syariah loan management system",
 		"Shariah money lender Malaysia software",
-		"Akta Pemberi Pinjam Wang Syariah",
-		"on-prem digital signing Trustgate Syariah",
-		"PKI digital signing Malaysia Islamic finance",
-		"e-KYC Shariah lender Malaysia",
-		"Islamic fintech platform Malaysia",
+		"fintech platform Malaysia Shariah",
 		"digital Islamic finance Malaysia",
 		"licensed Shariah money lender platform",
-		"riba-free digital lending Malaysia",
 	],
 	openGraphTitle:
-		"TrueSyariah™ — Shariah Digital Lending Platform for Malaysia",
+		"TrueSyariah™ | Shariah Lending Platform Malaysia",
 	openGraphDescription:
-		"Shariah-compliant digital lending stack — Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, mobile apps, and a dedicated AWS deployment for Shariah digital lending operators.",
+		"Shariah-compliant digital lending platform for Malaysia — Tawarruq via Bursa Suq Al-Sila', Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, and dedicated AWS.",
 	ogImagePath: "/truesyariah/hero.png",
 	ogImageAlt:
 		"TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules",
@@ -84,10 +76,13 @@ export function buildTrueSyariahJsonLd() {
 				alternateName: [
 					"TrueSyariah",
 					"Shariah Digital Lending Platform",
+					"Shariah lending platform Malaysia",
+					"Islamic loan management system Malaysia",
 					"Shariah Digital Lending Malaysia",
 				],
 				url: TRUESYARIAH_PAGE_URL,
 				applicationCategory: "BusinessApplication",
+				applicationSubCategory: "Shariah Digital Lending Platform",
 				operatingSystem: "Web, iOS, Android",
 				description: TRUESYARIAH_METADATA.description,
 				provider: { "@id": `${baseUrl}/#organization` },
@@ -109,18 +104,6 @@ export function buildTrueSyariahJsonLd() {
 					"Shariah committee audit pack and reporting",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },
-			},
-			{
-				"@type": "FAQPage",
-				"@id": `${TRUESYARIAH_PAGE_URL}#faq`,
-				mainEntity: truesyariahFaq.map((item) => ({
-					"@type": "Question",
-					name: item.question,
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: item.answer,
-					},
-				})),
 			},
 		],
 	};

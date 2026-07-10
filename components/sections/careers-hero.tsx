@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -23,10 +24,8 @@ const statPills = (openCount: number) => [
 
 export function CareersHero({
   openCount,
-  roles,
 }: {
   openCount: number;
-  roles: { title: string; department: string }[];
 }) {
   return (
     <section className="relative overflow-hidden">
@@ -86,48 +85,21 @@ export function CareersHero({
             </div>
           </motion.div>
 
-          {/* Right — open roles preview card */}
+          {/* Right — team photo */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="relative"
+            className="relative aspect-3/4 overflow-hidden rounded-3xl border shadow-sm"
           >
-            <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-primary/10 to-primary/5 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border bg-card shadow-lg">
-              <div className="border-b bg-linear-to-r from-primary-start to-primary-end px-5 py-4 text-primary-foreground">
-                <p className="text-sm font-medium opacity-90">Open Positions</p>
-                <p className="font-display text-3xl font-medium">{openCount}</p>
-              </div>
-              <div className="space-y-2 p-4">
-                {roles.map((role, i) => (
-                  <motion.div
-                    key={role.title}
-                    initial={{ opacity: 0, x: 12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.25 + i * 0.07 }}
-                    className="flex items-center justify-between gap-2 rounded-lg border bg-muted/30 px-3 py-2.5 text-sm"
-                  >
-                    <span className="truncate font-medium">{role.title}</span>
-                    <Badge
-                      variant="outline"
-                      className="shrink-0 border-primary/20 bg-primary/5 text-[10px] text-primary"
-                    >
-                      {role.department}
-                    </Badge>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="border-t px-4 py-3">
-                <Link
-                  href="#open-roles"
-                  className="flex items-center justify-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                >
-                  See all roles
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            </div>
+            <Image
+              src="/photos/careers-pairing-laptops.jpg"
+              alt="Two developers pairing on laptops at a shared desk"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+              priority
+            />
           </motion.div>
         </div>
       </div>

@@ -1,0 +1,42 @@
+---
+description: Truestack brand, design-system, tone-of-voice, and SEO rules. Apply to any frontend code or marketing copy change (pages, sections, components, headlines, CTAs, metadata).
+globs: app/**/*.ts,app/**/*.tsx,components/**/*.ts,components/**/*.tsx,lib/**/*.ts
+alwaysApply: false
+---
+
+# Truestack frontend rules
+
+Act as Truestack's lead frontend developer. Before writing or editing any frontend code
+or marketing copy, read `docs/BRAND_GUIDE.md` — it is the single source of truth. When
+existing code conflicts with it, the guide wins. `app/truekredit/page.tsx` is the
+canonical reference for tone and section patterns; mirror it when unsure.
+
+Hard rules (details in the guide):
+
+- **Tone**: concise, friendly, written for decision makers (lender owners, compliance
+  managers), never developers. Benefit-first headlines ending with a period, second
+  person ("your loan book"), zero dev jargon (no API/SDK/database talk on marketing
+  pages), no hype words (seamless, cutting-edge, world-class…). Primary CTA is always
+  "Book a Free Consultation". Malaysian/British spelling in copy ("licence"); URLs keep
+  existing American slugs.
+- **Colors**: CSS tokens only (`bg-background`, `text-muted-foreground`, `primary`…)
+  plus the page's sanctioned accent: blue = Truestack/TrueKredit, violet-600/700 =
+  TrueKredit Pro, emerald-600/700 = TrueSyariah, `kpkt` token = KPKT services. Never
+  hardcode hex in JSX. Dark sections: `bg-slate-950` + `data-nav-theme="dark"`.
+- **Type**: headings are `font-display font-medium tracking-tight` (Rethink Sans);
+  section h2 = `text-3xl md:text-4xl`; eyebrow = `text-xs font-semibold uppercase
+  tracking-widest text-primary`.
+- **Sections**: `border-t` + `py-16 md:py-20` + `mx-auto max-w-6xl px-6`, alternating
+  `bg-background` / `bg-muted/30`. Reuse `components/shared/*`, `components/ui/*`, and
+  `ConsultationCta` (with its `accent` prop) instead of building new variants.
+- **Motion**: framer-motion scroll reveals only (`whileInView`, `once: true`,
+  `margin: "-50px"`, duration 0.5). Subtle, vertical, reduced-motion safe.
+- **Photos**: sparing and human — About/Careers/Contact/case studies only, never product
+  feature sections. Malaysian-plausible, no stock clichés, `next/image`, `rounded-3xl
+  border overflow-hidden`, credited in `docs/IMAGE_CREDITS.md`. Guide §8.
+- **SEO/AI-SEO (every page change)**: unique metadata + canonical, OG image, JSON-LD in
+  `components/seo/`, entry in `app/sitemap.ts`, update `public/llms.txt`, FAQ with
+  FAQPage schema and quotable 2–4 sentence answers, cross-link sibling products.
+  Guide §9.
+- **Before finishing**: run the pre-merge checklist in guide §10, then `npm run lint`
+  and `npm run build`.

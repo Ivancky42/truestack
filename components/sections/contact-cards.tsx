@@ -56,7 +56,7 @@ function CopyButton({
 
 export function ContactCards() {
   return (
-    <div className="mx-auto grid max-w-2xl gap-6 sm:grid-cols-2">
+    <div className="grid h-full gap-6 sm:grid-cols-2 lg:grid-cols-1">
       {/* Phone / WhatsApp Card */}
       <Card className="flex flex-col transition-all hover:shadow-md hover:border-primary/50">
         <CardHeader className="gap-1">

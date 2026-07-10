@@ -151,8 +151,8 @@ const services: Service[] = [
 			{
 				icon: Search,
 				label: "Search",
-				color: "text-sky-600",
-				bg: "bg-sky-100",
+				color: "text-blue-600",
+				bg: "bg-blue-100",
 			},
 			{
 				icon: BadgeCheck,
@@ -163,8 +163,8 @@ const services: Service[] = [
 			{
 				icon: FileText,
 				label: "Pull Report",
-				color: "text-fuchsia-600",
-				bg: "bg-fuchsia-100",
+				color: "text-violet-600",
+				bg: "bg-violet-100",
 			},
 			{
 				icon: Receipt,
@@ -204,8 +204,8 @@ const services: Service[] = [
 			{
 				icon: Receipt,
 				label: "Initiate",
-				color: "text-sky-600",
-				bg: "bg-sky-100",
+				color: "text-blue-600",
+				bg: "bg-blue-100",
 			},
 			{
 				icon: BadgeCheck,
@@ -257,20 +257,20 @@ const services: Service[] = [
 			{
 				icon: Search,
 				label: "Request",
-				color: "text-sky-600",
-				bg: "bg-sky-100",
+				color: "text-blue-600",
+				bg: "bg-blue-100",
 			},
 			{
 				icon: FileBarChart,
 				label: "CTOS Pull",
-				color: "text-orange-600",
-				bg: "bg-orange-100",
+				color: "text-amber-600",
+				bg: "bg-amber-100",
 			},
 			{
 				icon: Gauge,
 				label: "Score",
-				color: "text-rose-600",
-				bg: "bg-rose-100",
+				color: "text-violet-600",
+				bg: "bg-violet-100",
 			},
 			{
 				icon: CheckCircle2,
@@ -329,8 +329,8 @@ const services: Service[] = [
 			{
 				icon: CheckCircle2,
 				label: "Audited",
-				color: "text-sky-600",
-				bg: "bg-sky-100",
+				color: "text-blue-600",
+				bg: "bg-blue-100",
 			},
 		],
 		flowResultLabel: "Shariah committee-ready",
@@ -372,8 +372,8 @@ const services: Service[] = [
 			{
 				icon: BarChart3,
 				label: "Risk Score",
-				color: "text-fuchsia-600",
-				bg: "bg-fuchsia-100",
+				color: "text-amber-600",
+				bg: "bg-amber-100",
 			},
 			{
 				icon: Shield,

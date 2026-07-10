@@ -59,4 +59,16 @@ export const truekreditFaq = [
 		answer:
 			"Yes — protected storage, backups and a full audit trail. Your history stays on your secure cloud and remains reachable for audits while you operate the platform.",
 	},
+	{
+		question:
+			"Is TrueKredit money lender software for Malaysia?",
+		answer:
+			"Yes. TrueKredit™ is purpose-built for KPKT-licensed money lenders in Malaysia — loan management, Lampiran A/B1 and iDeaL exports, e-KYC, and audit trails on your own secure cloud. It is the lending platform Malaysian operators use for branch operations (Standard) or nationwide digital lending (Pro).",
+	},
+	{
+		question:
+			"Do you develop lending platforms for KPKT licence holders?",
+		answer:
+			"Yes. TrueKredit™ is Truestack's lending platform product for KPKT operators. For a full digital licence conversion — licensing plus platform build — see our KPKT Digital Licence service. For Shariah digital lending, see TrueSyariah™. For SC peer-to-peer platforms, see TrueP2P™.",
+	},
 ] as const;

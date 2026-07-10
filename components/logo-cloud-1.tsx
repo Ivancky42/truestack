@@ -344,7 +344,7 @@ const LogoCloud1 = ({
 							className={cn(
 								compact
 									? "text-sm text-muted-foreground/70 uppercase tracking-wider"
-									: "font-display font-medium tracking-tight text-4xl md:text-5xl",
+									: "font-display font-medium tracking-tight text-3xl md:text-4xl",
 							)}
 						>
 							{title || defaultTitle}

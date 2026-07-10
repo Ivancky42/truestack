@@ -186,7 +186,7 @@ export function P2PPlatformDiagram() {
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
             How TrueP2P™ works
           </p>
-          <h2 className="font-display mt-3 text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-medium tracking-tight md:text-4xl">
             What we engineer for you
           </h2>
           <p className="mt-4 text-lg text-muted-foreground md:text-xl">

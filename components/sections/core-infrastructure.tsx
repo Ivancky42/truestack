@@ -209,7 +209,7 @@ export function CoreInfrastructure({ title, description }: CoreInfrastructurePro
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
             Platform Architecture
           </p>
-          <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
             {title ?? "Built on Truestack Core™"}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">

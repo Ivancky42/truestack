@@ -59,4 +59,9 @@ export const p2pFaq = [
     answer:
       "Costs depend on scope, asset class, integrations, and delivery timeline. Most full P2P platform builds — covering investor portal, issuer portal, admin console, e-KYC, payments, escrow, e-signing, and reporting — sit in a clearly scoped fixed-fee range with a monthly managed-engineering retainer afterwards. Talk to us for a written proposal tailored to your business model and SC submission.",
   },
+  {
+    question: "Who develops P2P lending platforms in Malaysia?",
+    answer:
+      "Truestack develops TrueP2P™ — custom peer-to-peer financing platform software for Malaysia, engineered for Securities Commission (SC) Recognised Market Operator requirements. We build conventional and Shariah-aligned stacks (including Gharamah and Ta'widh accounting) and can align engineering with your RMO registration pathway. Book a free consultation at truestack.my/contact.",
+  },
 ] as const;

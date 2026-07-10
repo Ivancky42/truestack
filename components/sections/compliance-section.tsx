@@ -452,7 +452,7 @@ export function ComplianceSection() {
               Built for Compliance
             </span>
           </div>
-          <h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
             Enterprise-Grade Infrastructure
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-slate-400 md:text-xl">

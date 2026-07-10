@@ -5,6 +5,9 @@ import {
 	DIGITAL_LICENSE_PAGE_PATH,
 } from "@/lib/digital-license-seo";
 import { DigitalLicenseSchema } from "@/components/seo/digital-license-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { digitalLicenseFaq } from "@/lib/digital-license-faq";
 import { DigitalLicensePageContent } from "@/components/sections/digital-license-page-content";
 
 export const metadata: Metadata = {
@@ -43,6 +46,13 @@ export default function DigitalLicensePage() {
 	return (
 		<>
 			<DigitalLicenseSchema />
+			<FaqSchema items={digitalLicenseFaq} />
+			<BreadcrumbSchema
+				items={[
+					{ name: "Home", path: "/" },
+					{ name: "Digital KPKT License", path: DIGITAL_LICENSE_PAGE_PATH },
+				]}
+			/>
 			<DigitalLicensePageContent />
 		</>
 	);

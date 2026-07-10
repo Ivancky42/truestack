@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { truesyariahFaq } from "@/lib/truesyariah-faq";
@@ -2076,6 +2077,19 @@ function ZeroToLicensedSection() {
 							build, UAT, pen-test, supervisory review support
 							and live operations.
 						</p>
+						<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/truesyariah-licence-journey.jpg"
+								alt="Two professionals reviewing Shariah licensing documents in a Malaysian office"
+								fill
+								sizes="(max-width: 1024px) 100vw, 45vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-emerald-600/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
 						<Button
 							asChild
 							size="lg"

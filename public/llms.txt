@@ -8,33 +8,32 @@ Truestack provides KPKT-related compliance services and fintech software for lic
 
 ## Main pages
 
-- https://truestack.my/
-- https://truestack.my/about — Company overview: TrueKredit™, Truestack Core™, web/mobile/cloud stack, KPKT expertise, technology partners, FAQ
-- https://truestack.my/contact — Book a free, no-obligation consultation (KPKT licensing, compliance, lending and fintech software); contact via email and WhatsApp
-- https://truestack.my/work
-- https://truestack.my/careers
+- https://truestack.my/ — Homepage: KPKT services and fintech software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™, TrueIdentity™, TrueSSM™, digital KPKT licence, and account management. Book a free consultation.
+- https://truestack.my/about — Company overview: TrueKredit™ lending platforms, Truestack Core™ infrastructure APIs (e-KYC, SSM, payments), KPKT digital licence & compliance services, and technology partners — one team from licence to live portfolio.
+- https://truestack.my/contact — Book a free, no-obligation consultation (KPKT licensing, compliance, lending and fintech software); contact via email and WhatsApp.
+- https://truestack.my/work — Selected live work: digital KPKT licence conversions, enterprise loan management on TrueKredit™, and regulated fintech platforms delivered end to end in Malaysia.
+- https://truestack.my/careers — Careers at Truestack in Kuala Lumpur: open roles across B2B sales, operations, client success, and engineering (hybrid software roles). FAQ on hiring process.
 
 ## Services
 
-- https://truestack.my/services
-- https://truestack.my/services/digital-license — Digital KPKT licence conversion end-to-end on TrueKredit™ Pro (~3 months): provisional licence, AWS Malaysia build, UAT, pen-test, KPKT review, FAQ
-- https://truestack.my/services/account-management — KPKT account management
-- https://truestack.my/services/software-development — Custom fintech & P2P platform development
-- https://truestack.my/services/p2p-software-development — TrueP2P™: Malaysian P2P platform engineering (SC-aligned; conventional & Shariah-aligned; Tawarruq via Bursa Suq Al-Sila'; Gharamah & Ta'widh; investor/issuer portals; optional SC RMO registration consultancy; FAQ)
+- https://truestack.my/services/digital-license — KPKT digital licence Malaysia: end-to-end conversion to the KPKT Online Money Lending Licence on TrueKredit™ Pro (~3 months). Licensing advisory + lending platform software (branded web/mobile, signing, AWS Malaysia), UAT, pen-test, KPKT review. For Malaysian money lenders going nationwide digital. FAQ.
+- https://truestack.my/services/account-management — KPKT account management for licensed money lenders: licence renewals, annual submissions, company updates, CoSec/SSM coordination; up to ~50% faster approvals; FAQ.
+- https://truestack.my/services/software-development — Custom software development Malaysia: web apps, mobile products, platforms, and internal tools from brief to go-live; FAQ.
+- https://truestack.my/services/p2p-software-development — TrueP2P™ P2P platform development Malaysia: SC-aligned peer-to-peer financing software (conventional & Shariah); investor/issuer portals; escrow; Tawarruq via Bursa Suq Al-Sila'; Gharamah & Ta'widh; optional SC RMO registration consultancy. FAQ.
 
 ## Products
 
-- https://truestack.my/truekredit — TrueKredit™ & TrueKredit Pro: KPKT loan management (Lampiran A/B1, iDEAL, e-KYC, CTOS, borrower apps for digital licence); FAQ
-- https://truestack.my/truesyariah — TrueSyariah™: Shariah-compliant digital financing platform for the KPKT Syariah Digital Lending Licence — Tawarruq commodity trading via Bursa Suq Al-Sila' (BSAS) through TrueCommodity™, segregated Ta'widh and Gharamah ledgers with charity disbursement, on-prem MSC Trustgate digital signing, e-KYC, branded web and native iOS/Android customer apps, dedicated AWS Malaysia ring-fenced from any conventional lending entity. Note: Syariah lending requires its own KPKT licence and a separate legal entity from the conventional KPKT digital lending licence holder. FAQ.
-- https://truestack.my/trueidentity — TrueIdentity™ e-KYC API: MyKad OCR, liveness, biometrics, PDPA-aligned, Malaysia-hosted; part of Truestack Core™; FAQ
-- https://truestack.my/truessm — TrueSSM™ SSM registry API: free entity search, ROC/ROB/LLP profiles, officers, shareholders, scanned documents, RM pricing, idempotent pulls; FAQ
+- https://truestack.my/truekredit — TrueKredit™ money lender software / loan management platform Malaysia for KPKT-licensed lenders (Lampiran A/B1, iDEAL, e-KYC, CTOS). Standard = branch; Pro = nationwide apps + digital licence readiness. FAQ.
+- https://truestack.my/truesyariah — TrueSyariah™ Shariah lending platform Malaysia for the KPKT Syariah Digital Lending Licence — Tawarruq via Bursa Suq Al-Sila' (BSAS), Ta'widh & Gharamah ledgers, on-prem Trustgate signing, e-KYC, web/iOS/Android apps, dedicated AWS Malaysia. Separate Shariah entity/licence from conventional KPKT digital lending. FAQ.
+- https://truestack.my/trueidentity — TrueIdentity™ e-KYC API: MyKad OCR, liveness, biometrics, PDPA-aligned, Malaysia-hosted; part of Truestack Core™; FAQ.
+- https://truestack.my/truessm — TrueSSM™ SSM registry API: free entity search, ROC/ROB/LLP profiles, officers, shareholders, scanned documents, RM pricing, idempotent pulls; FAQ.
 
 ## Policies
 
-- https://truestack.my/privacy
-- https://truestack.my/terms
-- https://truestack.my/pdpa
-- https://truestack.my/cybersecurity
+- https://truestack.my/privacy — Privacy policy for truestack.my and Truestack platforms.
+- https://truestack.my/terms — Terms of use for the Truestack marketing site and related services.
+- https://truestack.my/pdpa — PDPA notice for personal data processing by Truestack in Malaysia.
+- https://truestack.my/cybersecurity — Cybersecurity policy covering TrueKredit™, TrueIdentity™, and Malaysia-hosted infrastructure.
 
 ## Note
 

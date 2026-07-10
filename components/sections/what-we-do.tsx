@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { ClipboardCheck, Cloud, Code2, CreditCard } from "lucide-react";
@@ -9,6 +11,7 @@ interface OfferingProps {
 	icon: LucideIcon;
 	title: string;
 	description: string;
+	href: string;
 	index: number;
 }
 
@@ -16,6 +19,7 @@ function OfferingCard({
 	icon: Icon,
 	title,
 	description,
+	href,
 	index,
 }: OfferingProps) {
 	return (
@@ -26,29 +30,31 @@ function OfferingCard({
 			transition={{ duration: 0.5, delay: index * 0.08 }}
 			className="h-full"
 		>
-			<Card className="group flex h-full flex-col border bg-card shadow-sm transition-all hover:border-primary/40 hover:shadow-md">
-				<CardHeader className="gap-3">
-					<motion.div
-						className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/15"
-						whileHover={{ scale: 1.05 }}
-						transition={{
-							type: "spring",
-							stiffness: 400,
-							damping: 12,
-						}}
-					>
-						<Icon className="h-6 w-6 text-primary" />
-					</motion.div>
-					<CardTitle className="font-display text-lg leading-snug md:text-xl">
-						{title}
-					</CardTitle>
-				</CardHeader>
-				<CardContent className="flex flex-1 flex-col pt-0">
-					<p className="flex-1 text-pretty text-sm text-muted-foreground sm:text-base">
-						{description}
-					</p>
-				</CardContent>
-			</Card>
+			<Link href={href} className="block h-full">
+				<Card className="group flex h-full flex-col border bg-card shadow-sm transition-all hover:border-primary/40 hover:shadow-md">
+					<CardHeader className="gap-3">
+						<motion.div
+							className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/15"
+							whileHover={{ scale: 1.05 }}
+							transition={{
+								type: "spring",
+								stiffness: 400,
+								damping: 12,
+							}}
+						>
+							<Icon className="h-6 w-6 text-primary" />
+						</motion.div>
+						<CardTitle className="font-display text-lg leading-snug md:text-xl">
+							{title}
+						</CardTitle>
+					</CardHeader>
+					<CardContent className="flex flex-1 flex-col pt-0">
+						<p className="flex-1 text-pretty text-sm text-muted-foreground sm:text-base">
+							{description}
+						</p>
+					</CardContent>
+				</Card>
+			</Link>
 		</motion.div>
 	);
 }
@@ -58,25 +64,29 @@ const offerings = [
 		icon: Cloud,
 		title: "Infrastructure as a Service",
 		description:
-			"e-KYC verification, payment solutions, real-time notifications, and analytics — all through a unified API platform.",
+			"e-KYC verification, payment solutions, real-time notifications, and analytics — already built and ready to switch on.",
+		href: "/trueidentity",
 	},
 	{
 		icon: CreditCard,
 		title: "Loan Management Systems",
 		description:
 			"TrueKredit™ and TrueKredit Pro — our in-house loan management systems.",
+		href: "/truekredit",
 	},
 	{
 		icon: ClipboardCheck,
 		title: "KPKT Services",
 		description:
 			"Digital license conversion, regulatory compliance, license management, and administrative support for your lending operations.",
+		href: "/services/digital-license",
 	},
 	{
 		icon: Code2,
 		title: "Software Development",
 		description:
 			"Tailored software solutions built from scratch to meet your unique business requirements.",
+		href: "/services/software-development",
 	},
 ];
 
@@ -84,7 +94,7 @@ export function WhatWeDo() {
 	return (
 		<section
 			id="what-we-do"
-			className="relative scroll-mt-20 overflow-hidden py-16 sm:py-20"
+			className="relative scroll-mt-20 overflow-hidden border-t py-16 sm:py-20"
 		>
 			<div className="pointer-events-none absolute inset-0 -z-10">
 				<div className="absolute inset-0 bg-linear-to-b from-primary/3 via-transparent to-transparent" />
@@ -119,23 +129,38 @@ export function WhatWeDo() {
 				/>
 			</div>
 
-			<div className="w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+			<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 				<motion.div
-					className="mx-auto mb-12 max-w-3xl text-center sm:mb-14 xl:mb-16"
+					className="mb-12 grid items-center gap-10 sm:mb-14 lg:grid-cols-2 lg:gap-12 xl:mb-16"
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<h2 className="font-display text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl">
-						End-to-End Fintech Solutions
-					</h2>
-					<p className="mx-auto mt-4 text-pretty text-base text-muted-foreground sm:text-lg md:mt-5 md:text-xl">
-						Truestack is a tech-driven software and consultancy
-						company providing infrastructure, platforms, and
-						expertise to help Malaysian Fintechs and lenders build,
-						operate, and grow their businesses.
-					</p>
+					<div>
+						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							End-to-End Fintech Solutions
+						</h2>
+						<p className="mt-4 text-pretty text-base text-muted-foreground sm:text-lg md:mt-5 md:text-xl">
+							Truestack is a tech-driven software and consultancy
+							company providing infrastructure, platforms, and
+							expertise to help Malaysian Fintechs and lenders
+							build, operate, and grow their businesses.
+						</p>
+					</div>
+					<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+						<Image
+							src="/photos/homepage-fintech-team.jpg"
+							alt="Truestack team members collaborating around a laptop in a Kuala Lumpur office"
+							fill
+							sizes="(max-width: 1024px) 100vw, 50vw"
+							className="object-cover"
+						/>
+						<div
+							className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+							aria-hidden
+						/>
+					</div>
 				</motion.div>
 
 				{/* Services: 1 col → 2 col → 4 col */}
@@ -146,6 +171,7 @@ export function WhatWeDo() {
 							icon={offering.icon}
 							title={offering.title}
 							description={offering.description}
+							href={offering.href}
 							index={index}
 						/>
 					))}

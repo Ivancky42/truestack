@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { CareersHero } from "@/components/sections/careers-hero";
 import { CareersCta } from "@/components/sections/careers-cta";
 import { CareersJobs } from "@/components/sections/careers-jobs";
 import { CareersFaq } from "@/components/sections/careers-faq";
 import { CareersSchema } from "@/components/seo/careers-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { careersFaq } from "@/lib/careers-faq";
 import { howToApply, jobRoles } from "@/lib/careers-data";
 import { CAREERS_METADATA, CAREERS_PAGE_PATH } from "@/lib/careers-seo";
 import { Target, Clock, Gem, BookOpen, Briefcase } from "lucide-react";
@@ -88,16 +91,9 @@ export default function CareersPage() {
 	return (
 		<>
 			<CareersSchema />
+			<FaqSchema items={careersFaq} />
 
-			<CareersHero
-				openCount={openCount}
-				roles={jobRoles
-					.filter((r) => r.open)
-					.map((r) => ({
-						title: r.title,
-						department: r.department,
-					}))}
-			/>
+			<CareersHero openCount={openCount} />
 
 			{/* Roles */}
 			<section
@@ -163,13 +159,30 @@ export default function CareersPage() {
 			{/* Culture + Process */}
 			<section className="border-t bg-muted/30 py-12 md:py-14">
 				<div className="mx-auto max-w-6xl px-6">
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
-						Life at Truestack
-					</h2>
-					<p className="mt-1 text-sm text-muted-foreground md:text-base">
-						How we work, what you can expect, and our hiring
-						process.
-					</p>
+					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+						<div>
+							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								Life at Truestack
+							</h2>
+							<p className="mt-1 text-sm text-muted-foreground md:text-base">
+								How we work, what you can expect, and our hiring
+								process.
+							</p>
+						</div>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/careers-office-culture.jpg"
+								alt="Colleagues collaborating at shared desks in the Truestack Kuala Lumpur office"
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
+					</div>
 
 					<div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
 						{workingPrinciples.map((p) => (

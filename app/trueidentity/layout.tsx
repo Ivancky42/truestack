@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { TrueIdentitySchema } from "@/components/seo/trueidentity-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { trueidentityFaq } from "@/lib/trueidentity-faq";
 import {
 	TRUEIDENTITY_METADATA,
 	TRUEIDENTITY_PAGE_PATH,
@@ -46,6 +48,7 @@ export default function TrueIdentityLayout({
 	return (
 		<>
 			<TrueIdentitySchema />
+			<FaqSchema items={trueidentityFaq} />
 			{children}
 		</>
 	);

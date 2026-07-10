@@ -6,7 +6,7 @@ export const ABOUT_PAGE_URL = `${baseUrl}${ABOUT_PAGE_PATH}`;
 export const ABOUT_METADATA = {
 	title: "About Truestack | Malaysian Fintech Platforms, APIs & KPKT Services",
 	description:
-		"Truestack helps Malaysian licensed money lenders and fintechs go from licence to live portfolio — TrueKredit™ lending platforms, infrastructure APIs (e-KYC, SSM, payments), and KPKT digital licence & compliance services from one accountable team.",
+		"Truestack helps Malaysian money lenders go from licence to live portfolio — TrueKredit™, infrastructure APIs, and KPKT digital licence services.",
 	keywords: [
 		"Truestack",
 		"about Truestack",

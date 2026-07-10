@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { SoftwareDevelopmentSchema } from "@/components/seo/software-development-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
 import { SoftwareDevelopmentPageContent } from "@/components/sections/software-development-page-content";
+import { softwareDevelopmentFaq } from "@/lib/software-development-faq";
+import {
+	SOFTWARE_DEVELOPMENT_METADATA,
+	SOFTWARE_DEVELOPMENT_PAGE_PATH,
+} from "@/lib/software-development-seo";
 
 export const metadata: Metadata = {
-	title: "Custom Software Development | If You Can Dream It, We Can Build It",
-	description:
-		"Custom software from first sketch to go-live — web apps, mobile products, platforms, and internal tools. If you can dream it, we can build it.",
-	keywords: [
-		"custom software development Malaysia",
-		"web and mobile app development Malaysia",
-		"custom software Malaysia",
-		"software development company Malaysia",
-		"bespoke software development",
-		"product development Malaysia",
-	],
-	alternates: { canonical: "/services/software-development" },
+	title: { absolute: SOFTWARE_DEVELOPMENT_METADATA.title },
+	description: SOFTWARE_DEVELOPMENT_METADATA.description,
+	keywords: [...SOFTWARE_DEVELOPMENT_METADATA.keywords],
+	alternates: { canonical: SOFTWARE_DEVELOPMENT_PAGE_PATH },
 	openGraph: {
-		title: "Custom Software Development | Truestack",
-		description:
-			"If you can dream it, we can build it. Custom software from first sketch to go-live.",
-		url: "/services/software-development",
+		title: SOFTWARE_DEVELOPMENT_METADATA.openGraphTitle,
+		description: SOFTWARE_DEVELOPMENT_METADATA.openGraphDescription,
+		url: SOFTWARE_DEVELOPMENT_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
 		siteName: "Truestack",
@@ -27,13 +26,27 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Custom Software Development | Truestack",
-		description:
-			"If you can dream it, we can build it. Custom software from first sketch to go-live.",
+		title: SOFTWARE_DEVELOPMENT_METADATA.openGraphTitle,
+		description: SOFTWARE_DEVELOPMENT_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],
 	},
 };
 
 export default function SoftwareDevelopmentPage() {
-	return <SoftwareDevelopmentPageContent />;
+	return (
+		<>
+			<SoftwareDevelopmentSchema />
+			<FaqSchema items={softwareDevelopmentFaq} />
+			<BreadcrumbSchema
+				items={[
+					{ name: "Home", path: "/" },
+					{
+						name: "Custom Software Development",
+						path: SOFTWARE_DEVELOPMENT_PAGE_PATH,
+					},
+				]}
+			/>
+			<SoftwareDevelopmentPageContent />
+		</>
+	);
 }

@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { AccountManagementSchema } from "@/components/seo/account-management-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { AccountManagementFaq } from "@/components/sections/account-management-faq";
+import { accountManagementFaq } from "@/lib/account-management-faq";
+import {
+  ACCOUNT_MANAGEMENT_METADATA,
+  ACCOUNT_MANAGEMENT_PAGE_PATH,
+} from "@/lib/account-management-seo";
 import {
   Building2,
   FileCheck,
@@ -22,27 +32,23 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "KPKT Account Management",
-  description:
-    "KPKT compliance and account management services. License renewals, annual submissions, and regulatory coordination for licensed money lenders in Malaysia. Up to 50% faster approvals.",
-  keywords: [
-    "KPKT account management",
-    "license renewals Malaysia",
-    "money lender compliance",
-    "annual submissions KPKT",
-  ],
-  alternates: { canonical: "/services/account-management" },
+  title: { absolute: ACCOUNT_MANAGEMENT_METADATA.title },
+  description: ACCOUNT_MANAGEMENT_METADATA.description,
+  keywords: [...ACCOUNT_MANAGEMENT_METADATA.keywords],
+  alternates: { canonical: ACCOUNT_MANAGEMENT_PAGE_PATH },
   openGraph: {
-    title: "KPKT Account Management - Truestack",
-    description:
-      "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
+    title: ACCOUNT_MANAGEMENT_METADATA.openGraphTitle,
+    description: ACCOUNT_MANAGEMENT_METADATA.openGraphDescription,
+    url: ACCOUNT_MANAGEMENT_PAGE_PATH,
+    type: "website",
+    locale: "en_MY",
+    siteName: "Truestack",
     images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KPKT Account Management - Truestack",
-    description:
-      "License renewals, annual submissions, and regulatory coordination. Up to 50% faster approvals for licensed money lenders in Malaysia.",
+    title: ACCOUNT_MANAGEMENT_METADATA.openGraphTitle,
+    description: ACCOUNT_MANAGEMENT_METADATA.openGraphDescription,
     images: [defaultOgImage.url],
   },
 };
@@ -74,7 +80,7 @@ const servicesIncluded = [
   {
     icon: Building2,
     title: "Company Updates",
-    description: "Director changes, shareholder updates, and all essential company modifications handled seamlessly.",
+    description: "Director changes, shareholder updates, and all essential company modifications — handled for you, on time.",
   },
   {
     icon: FileCheck,
@@ -157,6 +163,17 @@ const pricingData: { headers: string[]; rows: PricingRow[] } = {
 export default function AccountManagementPage() {
   return (
     <>
+      <AccountManagementSchema />
+      <FaqSchema items={accountManagementFaq} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          {
+            name: "KPKT Account Management",
+            path: ACCOUNT_MANAGEMENT_PAGE_PATH,
+          },
+        ]}
+      />
       <Hero
         title="KPKT Account Management, Simplified"
         subtitle="We handle regulatory and administrative work so you can focus on growth and serving your customers."
@@ -191,14 +208,29 @@ export default function AccountManagementPage() {
       {/* Our Solution */}
       <section className="border-t bg-kpkt/5 py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl">
-            <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Solution</Badge>
-            <h2 className="mb-4 font-display text-3xl font-medium md:text-4xl">Your Single, Trusted Partner</h2>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              A dedicated KPKT account management service that handles end-to-end regulatory work. 
-              We streamline every compliance touchpoint, saving you time and reducing operational stress 
-              so you can focus on what matters most: <span className="font-semibold text-foreground">growing your lending business.</span>
-            </p>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <div className="max-w-3xl">
+              <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Solution</Badge>
+              <h2 className="mb-4 font-display text-3xl font-medium md:text-4xl">Your Single, Trusted Partner</h2>
+              <p className="text-lg text-muted-foreground md:text-xl">
+                A dedicated KPKT account management service that handles end-to-end regulatory work. 
+                We streamline every compliance touchpoint, saving you time and reducing operational stress 
+                so you can focus on what matters most: <span className="font-semibold text-foreground">growing your lending business.</span>
+              </p>
+            </div>
+            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+              <Image
+                src="/photos/account-management-shop-counter.jpg"
+                alt="Staff serving customers at a Malaysian café counter"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+                aria-hidden
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -210,7 +242,7 @@ export default function AccountManagementPage() {
             {/* Left: Content */}
             <div className="max-w-xl">
               <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Advantage</Badge>
-              <h2 className="mb-4 font-display text-4xl font-medium tracking-tight md:text-5xl">
+              <h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl">
                 Up to <span className="text-kpkt">50% Faster</span> Approvals
               </h2>
               <p className="mb-6 text-lg text-muted-foreground md:text-xl">
@@ -304,10 +336,26 @@ export default function AccountManagementPage() {
       {/* Services Covered */}
       <section className="border-t py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            title="Comprehensive Services Covered"
-            subtitle="Everything you need to stay compliant, handled by our experienced team."
-          />
+          <div className="mb-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <SectionHeader
+              title="Comprehensive Services Covered"
+              subtitle="Everything you need to stay compliant, handled by our experienced team."
+              className="mb-0"
+            />
+            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+              <Image
+                src="/photos/account-management-advisory.jpg"
+                alt="Account managers reviewing KPKT compliance documents with a client"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+                aria-hidden
+              />
+            </div>
+          </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {servicesIncluded.map((service) => (
               <Card key={service.title} className="transition-all hover:shadow-md hover:border-kpkt/50">
@@ -330,7 +378,7 @@ export default function AccountManagementPage() {
               </div>
               <div>
                 <p className="text-lg font-medium text-foreground">Full CoSec & SSM Coordination</p>
-                <p className="text-base text-muted-foreground">All document coordination handled seamlessly to keep everything running smoothly.</p>
+                <p className="text-base text-muted-foreground">All document coordination handled for you — so nothing slips through the cracks.</p>
               </div>
             </div>
           </div>
@@ -424,6 +472,8 @@ export default function AccountManagementPage() {
         </div>
       </section>
 
+      <AccountManagementFaq />
+
       <ConsultationCta
         accent="kpkt"
         heading="Let Us Handle Compliance"
@@ -432,6 +482,14 @@ export default function AccountManagementPage() {
           href: "/services/digital-license",
           label: "Explore Digital License",
         }}
+        extraLinks={[
+          { href: "/truekredit", label: "TrueKredit™" },
+          { href: "/truesyariah", label: "TrueSyariah™" },
+          {
+            href: "/services/p2p-software-development",
+            label: "TrueP2P™",
+          },
+        ]}
       />
     </>
   );

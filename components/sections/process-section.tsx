@@ -23,7 +23,7 @@ const processSteps = [
     title: "Discovery & Architecture",
     icon: Lightbulb,
     description:
-      "We dive deep into your business requirements, regulatory needs, and technical constraints to design a robust system architecture.",
+      "We dive deep into your business requirements, regulatory needs, and day-to-day operations to design a system that fits how you work.",
     details: [
       "Requirements gathering & stakeholder interviews",
       "System architecture design",
@@ -85,7 +85,7 @@ const advantages = [
   {
     icon: Plug,
     title: "API Integration",
-    description: "Seamless integration with any third-party service or vendor",
+    description: "Third-party services and vendors plugged into your workflow",
   },
   {
     icon: HeadphonesIcon,

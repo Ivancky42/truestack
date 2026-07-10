@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { truekreditFaq } from "@/lib/truekredit-faq";
@@ -130,7 +131,8 @@ export default function TrueKreditPage() {
 								transition={{ duration: 0.6, delay: 0.15 }}
 							>
 								The loan management system for Malaysian
-								KPKT-licensed money lenders.
+								KPKT-licensed money lenders — money lender
+								software built for Malaysia.
 							</motion.p>
 							<motion.p
 								className="mt-4 text-lg text-muted-foreground md:text-xl"
@@ -333,6 +335,47 @@ export default function TrueKreditPage() {
 									<ArrowRight className="h-4 w-4" />
 								</Link>
 							</div>
+						</div>
+					</motion.div>
+				</div>
+			</section>
+
+			{/* Human outcome — branch team on one live file */}
+			<section className="border-t bg-muted/30 py-14 md:py-20">
+				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+					<motion.div
+						className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12"
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 0.5 }}
+					>
+						<div>
+							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+								At the branch
+							</p>
+							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								Your team works from one live file.
+							</h2>
+							<p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+								Counter officers, credit and collections — the
+								same borrower record, the same schedules, the
+								same audit trail. No more chasing folders when
+								someone asks a simple question.
+							</p>
+						</div>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/truekredit-branch-counter.jpg"
+								alt="A lending officer at a Malaysian branch counter reviewing a borrower file on a laptop"
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
 						</div>
 					</motion.div>
 				</div>
@@ -917,6 +960,19 @@ export default function TrueKreditPage() {
 								setup, testing and go-live — so you can lend
 								nationwide on the same platform.
 							</p>
+							<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+								<Image
+									src="/photos/truekredit-licence-go-live.jpg"
+									alt="Two professionals in a Kuala Lumpur office reviewing licensing documents together"
+									fill
+									sizes="(max-width: 1024px) 100vw, 45vw"
+									className="object-cover"
+								/>
+								<div
+									className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+									aria-hidden
+								/>
+							</div>
 							<div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
 								<Button
 									asChild

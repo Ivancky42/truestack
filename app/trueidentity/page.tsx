@@ -390,8 +390,8 @@ export default function TrueIdentityPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 Malaysia&apos;s e-KYC platform for businesses. Automate identity
-                verification, reduce fraud, and stay compliant — all while
-                delivering a seamless customer experience.
+                verification, reduce fraud, and stay compliant — without making
+                your customers wait.
               </motion.p>
               <motion.div
                 className="mt-8 flex flex-col gap-4 sm:flex-row"
@@ -534,7 +534,7 @@ export default function TrueIdentityPage() {
               Simple, Secure Verification
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              A seamless verification flow that takes seconds, not minutes.
+              A verification flow that takes seconds, not minutes.
             </p>
           </motion.div>
 

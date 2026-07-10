@@ -9,7 +9,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionBadge } from "@/components/shared/section-badge";
-import { digitalLicenseFaq } from "@/lib/digital-license-seo";
+import { digitalLicenseFaq } from "@/lib/digital-license-faq";
 
 export function DigitalLicenseFaq() {
 	return (

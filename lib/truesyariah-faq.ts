@@ -65,4 +65,10 @@ export const truesyariahFaq = [
 		answer:
 			"A typical engagement runs in four stages. (1) Licensing & entity setup: Truestack helps incorporate the Shariah operating company, drafts the Shariah digital lending licence submission, and onboards your Shariah committee. (2) Build: dedicated AWS Malaysia account stood up, TrueSyariah deployed, BSAS / Trustgate / e-KYC / payment gateways wired in, financing products and Ta'widh/Gharamah caps configured to your Shariah rulings. (3) UAT & inspection: end-to-end testing, penetration test, supervisory examiner walkthrough, Shariah committee sign-off. (4) Go-live & managed engineering: first disbursement, branded web and mobile apps in market, ongoing platform engineering and regulatory / Shariah reporting support. Talk to us early — we like to align engineering milestones with your supervisory timeline.",
 	},
+	{
+		question:
+			"Who builds Shariah digital lending platforms in Malaysia?",
+		answer:
+			"Truestack builds TrueSyariah™ — a Shariah lending platform for Malaysia with Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh and Gharamah ledgers, on-prem signing, e-KYC, and a dedicated AWS Malaysia deployment. We also support the Shariah digital lending licence pathway alongside your advisors, so platform and licensing move together.",
+	},
 ] as const;

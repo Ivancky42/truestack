@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
 	ArrowRight,
@@ -302,7 +303,7 @@ export function DigitalLicensePageContent() {
 			>
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 					<motion.div
-						className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-start"
+						className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, margin: "-50px" }}
@@ -320,6 +321,15 @@ export function DigitalLicensePageContent() {
 								the room. Timelines depend on your readiness and
 								KPKT scheduling.
 							</p>
+							<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+								<Image
+									src="/photos/digital-license-advisory-documents.jpg"
+									alt="Two people reviewing licensing documents across a meeting table"
+									fill
+									sizes="(max-width: 1024px) 100vw, 45vw"
+									className="object-cover"
+								/>
+							</div>
 							<div className="mt-6 flex flex-wrap gap-3">
 								<Button asChild size="lg" className="gap-2">
 									<Link href="/contact?subject=Digital%20KPKT%20Licence">

@@ -11,7 +11,7 @@ export const CAREERS_JOBS_DATE_POSTED = "2026-05-01";
 export const CAREERS_METADATA = {
   title: "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
   description:
-    "Join Truestack in Kuala Lumpur, Malaysia. Open roles: B2B sales, admin, client success, full-stack developer, and software engineering intern. Hybrid engineering roles. Fresh graduates welcome. Apply at truestack.my/careers.",
+    "Join Truestack in Kuala Lumpur — open roles in B2B sales, ops, client success, and engineering. Hybrid software roles. Fresh graduates welcome.",
   keywords: [
     "Truestack careers",
     "Truestack jobs",
@@ -124,10 +124,7 @@ export function buildJobPostingSchema(role: JobRole) {
   };
 }
 
-export function buildCareersJsonLd(
-  roles: JobRole[],
-  faq: ReadonlyArray<{ readonly question: string; readonly answer: string }>
-) {
+export function buildCareersJsonLd(roles: JobRole[]) {
   const openRoles = roles.filter((role) => role.open);
 
   return {
@@ -176,18 +173,6 @@ export function buildCareersJsonLd(
         })),
       },
       ...openRoles.map((role) => buildJobPostingSchema(role)),
-      {
-        "@type": "FAQPage",
-        "@id": `${CAREERS_PAGE_URL}#faq`,
-        mainEntity: faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      },
     ],
   };
 }

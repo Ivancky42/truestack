@@ -1,39 +1,39 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
+import { WorkSchema } from "@/components/seo/work-schema";
+import {
+	WORK_METADATA,
+	WORK_PAGE_PATH,
+} from "@/lib/work-seo";
 
 export const metadata: Metadata = {
-	title: "Work",
-	description:
-		"See live Truestack work in Malaysia — digital KPKT licence conversions, enterprise loan management, and regulated fintech platforms taken from licence to go-live.",
-	keywords: [
-		"Truestack success stories",
-		"Truestack work",
-		"fintech projects Malaysia",
-		"KPKT success stories",
-		"KPKT digital license",
-		"digital lending software Malaysia",
-		"P2P lending platform Malaysia",
-		"CreditXpress",
-		"Andas Capital",
-		"money lending platform",
-	],
-	alternates: { canonical: "/work" },
+	title: { absolute: WORK_METADATA.title },
+	description: WORK_METADATA.description,
+	keywords: [...WORK_METADATA.keywords],
+	alternates: { canonical: WORK_PAGE_PATH },
 	openGraph: {
-		title: "Work - Truestack",
-		description:
-			"Selected work from Truestack in Malaysia — digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered end to end.",
+		title: WORK_METADATA.openGraphTitle,
+		description: WORK_METADATA.openGraphDescription,
+		url: WORK_PAGE_PATH,
+		type: "website",
+		locale: "en_MY",
+		siteName: "Truestack",
 		images: [defaultOgImage],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Work - Truestack",
-		description:
-			"Selected work from Truestack in Malaysia — digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered end to end.",
+		title: WORK_METADATA.openGraphTitle,
+		description: WORK_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],
 	},
 };
 
 export default function WorkPage() {
-	return <WorkPageContent />;
+	return (
+		<>
+			<WorkSchema />
+			<WorkPageContent />
+		</>
+	);
 }

@@ -1,4 +1,4 @@
-import { trueidentityFaq } from "@/lib/trueidentity-seo";
+import { trueidentityFaq } from "@/lib/trueidentity-faq";
 
 export function TrueIdentityFaq() {
 	return (

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -13,6 +14,7 @@ import {
 	X,
 } from "lucide-react";
 import { SoftwareDevelopmentHero } from "@/components/sections/software-development-hero";
+import { SoftwareDevelopmentFaq } from "@/components/sections/software-development-faq";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { SuccessStoriesProof } from "@/components/sections/success-stories-proof";
@@ -197,10 +199,51 @@ export function SoftwareDevelopmentPageContent() {
 				</div>
 			</section>
 
+			{/* Human outcome — one team from idea to live */}
+			<section className="border-t bg-muted/30 py-14 md:py-20">
+				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+					<motion.div
+						className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12"
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 0.5 }}
+					>
+						<div>
+							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+								How we build
+							</p>
+							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								Product and engineering in the same room.
+							</h2>
+							<p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+								You work with one team that understands the
+								brief, ships in clear milestones, and stays
+								accountable through go-live — not a chain of
+								handoffs.
+							</p>
+						</div>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/software-dev-pairing.jpg"
+								alt="Two developers pairing on a product interface in a Kuala Lumpur office"
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
+					</motion.div>
+				</div>
+			</section>
+
 			{/* What we build */}
 			<section
 				id="what-we-build"
-				className="scroll-mt-20 border-t bg-muted/30 py-14 md:py-20"
+				className="scroll-mt-20 border-t bg-background py-14 md:py-20"
 			>
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 					<motion.div
@@ -257,11 +300,11 @@ export function SoftwareDevelopmentPageContent() {
 			{/* How we work */}
 			<section
 				id="how-we-work"
-				className="scroll-mt-20 border-t bg-background py-14 md:py-20"
+				className="scroll-mt-20 border-t bg-muted/30 py-14 md:py-20"
 			>
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 					<motion.div
-						className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-start"
+						className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, margin: "-50px" }}
@@ -279,6 +322,19 @@ export function SoftwareDevelopmentPageContent() {
 								where the build stands, what ships next, and
 								what it takes to go live.
 							</p>
+							<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+								<Image
+									src="/photos/software-dev-discovery.jpg"
+									alt="Team reviewing a product roadmap and sketches during discovery"
+									fill
+									sizes="(max-width: 1024px) 100vw, 45vw"
+									className="object-cover"
+								/>
+								<div
+									className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+									aria-hidden
+								/>
+							</div>
 							<div className="mt-6 flex flex-wrap gap-3">
 								<Button asChild size="lg" className="gap-2">
 									<Link href="/contact?subject=Custom%20Software">
@@ -433,12 +489,28 @@ export function SoftwareDevelopmentPageContent() {
 				</Link>
 				{" · "}
 				<Link
+					href="/truesyariah"
+					className="font-medium text-primary hover:underline"
+				>
+					TrueSyariah™
+				</Link>
+				{" · "}
+				<Link
 					href="/services/p2p-software-development"
 					className="font-medium text-primary hover:underline"
 				>
 					TrueP2P™
 				</Link>
+				{" · "}
+				<Link
+					href="/services/digital-license"
+					className="font-medium text-primary hover:underline"
+				>
+					Digital KPKT Licence
+				</Link>
 			</p>
+
+			<SoftwareDevelopmentFaq />
 
 			<ConsultationCta
 				heading="Ready to build what you've been dreaming of?"
@@ -451,6 +523,14 @@ export function SoftwareDevelopmentPageContent() {
 					href: "/work",
 					label: "See our work",
 				}}
+				extraLinks={[
+					{ href: "/truekredit", label: "TrueKredit™" },
+					{ href: "/truesyariah", label: "TrueSyariah™" },
+					{
+						href: "/services/digital-license",
+						label: "Digital KPKT Licence",
+					},
+				]}
 			/>
 		</>
 	);

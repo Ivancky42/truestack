@@ -1,8 +1,8 @@
-import { careersFaq, jobRoles } from "@/lib/careers-data";
+import { jobRoles } from "@/lib/careers-data";
 import { buildCareersJsonLd } from "@/lib/careers-seo";
 
 export function CareersSchema() {
-  const schema = buildCareersJsonLd(jobRoles, careersFaq);
+  const schema = buildCareersJsonLd(jobRoles);
 
   return (
     <script

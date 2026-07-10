@@ -1,4 +1,4 @@
-import { careersFaq } from "@/lib/careers-data";
+import { careersFaq } from "@/lib/careers-faq";
 
 export function CareersFaq() {
   return (

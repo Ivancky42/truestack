@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { TrueKreditSchema } from "@/components/seo/truekredit-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { truekreditFaq } from "@/lib/truekredit-faq";
 import {
 	TRUEKREDIT_METADATA,
 	TRUEKREDIT_PAGE_PATH,
@@ -52,6 +54,7 @@ export default function TrueKreditLayout({
 	return (
 		<>
 			<TrueKreditSchema />
+			<FaqSchema items={truekreditFaq} />
 			{children}
 		</>
 	);

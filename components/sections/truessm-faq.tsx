@@ -1,4 +1,4 @@
-import { truessmFaq } from "@/lib/truessm-seo";
+import { truessmFaq } from "@/lib/truessm-faq";
 
 export function TrueSsmFaq() {
 	return (

@@ -56,7 +56,7 @@
   Brand Color Configuration
   To change the brand color, update --primary and --ring values
   Current: Blue Gradient (#3B82F6 -> #2563EB)
-  KPKT Accent: Teal 600 (#0d9488) - Complementary color for KPKT services
+  KPKT Accent: Blue oklch(0.55 0.2 260) — pairs with cyan-600 in from-kpkt to-cyan-600
 */
 :root {
   --radius: 0.5rem;
@@ -120,12 +120,11 @@
   
   Base: 17px (1.0625rem) for improved readability
 
-  Heading Scale:
-  - h1/hero: font-display text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight
-  - h2/section: font-display text-4xl md:text-5xl font-medium tracking-tight
-  - h3/subsection: font-display text-2xl md:text-3xl font-medium tracking-tight
-  - h4/card-title: text-xl font-semibold
-  - h5/label: text-lg font-semibold
+  Heading Scale (see docs/BRAND_GUIDE.md §4):
+  - h1/hero: font-display text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight
+  - h2/section: font-display text-3xl md:text-4xl font-medium tracking-tight
+  - h3/card-panel: font-display text-xl md:text-2xl font-medium tracking-tight
+  - eyebrow: text-xs font-semibold uppercase tracking-widest text-primary
   
   Body Scale:
   - body-lg: text-lg md:text-xl text-muted-foreground (subtitles, lead text)

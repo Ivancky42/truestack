@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { p2pFaq } from "@/lib/p2p-faq";
 import { P2P_METADATA, P2P_PAGE_PATH } from "@/lib/p2p-seo";
@@ -13,6 +14,8 @@ import {
 	type CaseStudy,
 } from "@/components/sections/case-studies";
 import { P2PSchema } from "@/components/seo/p2p-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -334,6 +337,13 @@ export default function P2PSoftwareDevelopmentPage() {
 	return (
 		<div style={p2pBrandVars}>
 			<P2PSchema />
+			<FaqSchema items={p2pFaq} />
+			<BreadcrumbSchema
+				items={[
+					{ name: "Home", path: "/" },
+					{ name: "TrueP2P™", path: P2P_PAGE_PATH },
+				]}
+			/>
 
 			<P2PHero />
 
@@ -407,7 +417,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="What we build"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
 							Every module a regulated P2P platform needs
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
@@ -450,7 +460,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Investor experience"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
 							Listings designed to earn investor trust
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
@@ -477,20 +487,35 @@ export default function P2PSoftwareDevelopmentPage() {
 			{/* Build process - vertical timeline + featured stack card */}
 			<section className="border-t bg-muted/30 py-20">
 				<div className="mx-auto max-w-6xl px-6">
-					<div className="max-w-2xl">
-						<SectionBadge icon={Network} text="Our process" />
-						<h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-							How we deliver your P2P platform
-						</h2>
-						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
-							A predictable, end-to-end engagement — from
-							regulatory mapping to launch and ongoing support.
-							You get one accountable engineering partner instead
-							of five vendors to coordinate.
-						</p>
+					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+						<div className="max-w-2xl">
+							<SectionBadge icon={Network} text="Our process" />
+							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								How we deliver your P2P platform
+							</h2>
+							<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+								A predictable, end-to-end engagement — from
+								regulatory mapping to launch and ongoing support.
+								You get one accountable engineering partner instead
+								of five vendors to coordinate.
+							</p>
+						</div>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/p2p-delivery-team.jpg"
+								alt="Two professionals reviewing a P2P platform dashboard in a Kuala Lumpur office"
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
 					</div>
 
-					<div className="mt-12 grid gap-10 lg:mt-14 lg:grid-cols-2 lg:items-start lg:gap-16">
+					<div className="mt-12 grid gap-10 lg:mt-14 lg:grid-cols-2 lg:items-center lg:gap-16">
 						<ol
 							className="relative space-y-0"
 							aria-label="P2P platform delivery process"
@@ -589,7 +614,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Built for everyone on the platform"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
 							A P2P platform that earns trust on every side
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
@@ -773,7 +798,7 @@ export default function P2PSoftwareDevelopmentPage() {
 								text="SC Malaysia compliance"
 								className="[&>span]:text-primary [&>svg]:text-primary"
 							/>
-							<h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
+							<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
 								Engineered for the SC&apos;s Recognised Market
 								framework
 							</h2>
@@ -858,7 +883,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Shariah-aligned by design"
 							className="[&>span]:text-primary [&>svg]:text-primary"
 						/>
-						<h2 className="font-display text-4xl font-medium tracking-tight text-white md:text-5xl">
+						<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
 							Engineered for Islamic peer-to-peer financing
 						</h2>
 						<p className="mt-4 text-lg text-slate-400 md:text-xl">

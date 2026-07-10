@@ -38,7 +38,7 @@ function WorkHero() {
 						Our work
 					</Badge>
 
-					<h1 className="font-display text-4xl font-medium tracking-tight text-zinc-50 md:text-5xl lg:text-6xl">
+					<h1 className="font-display text-4xl font-medium tracking-tight text-slate-50 md:text-5xl lg:text-6xl">
 						See what{" "}
 						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
 							live
@@ -46,7 +46,7 @@ function WorkHero() {
 						looks like.
 					</h1>
 
-					<p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
 						Real platforms we&apos;ve taken from idea to go-live —
 						so you can see the outcome before you commit.
 					</p>
@@ -59,7 +59,7 @@ function WorkHero() {
 						].map((pill) => (
 							<span
 								key={pill.label}
-								className="inline-flex items-center gap-1.5 rounded-full border border-zinc-800/80 bg-zinc-900/50 px-3 py-1.5 text-xs font-medium text-zinc-400 backdrop-blur-sm"
+								className="inline-flex items-center gap-1.5 rounded-full border border-slate-800/80 bg-slate-900/50 px-3 py-1.5 text-xs font-medium text-slate-400 backdrop-blur-sm"
 							>
 								<pill.icon className="h-3.5 w-3.5 text-primary" />
 								{pill.label}
@@ -78,7 +78,7 @@ function WorkHero() {
 							asChild
 							variant="outline"
 							size="lg"
-							className="border-zinc-700 bg-transparent text-zinc-100 hover:bg-zinc-800/80 hover:text-zinc-50"
+							className="border-slate-700 bg-transparent text-slate-100 hover:bg-slate-800/80 hover:text-slate-50"
 						>
 							<Link href="/contact">Book a Free Consultation</Link>
 						</Button>

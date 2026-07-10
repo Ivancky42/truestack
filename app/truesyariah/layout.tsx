@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { TrueSyariahSchema } from "@/components/seo/truesyariah-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { truesyariahFaq } from "@/lib/truesyariah-faq";
 import {
 	TRUESYARIAH_METADATA,
 	TRUESYARIAH_PAGE_PATH,
@@ -52,6 +54,7 @@ export default function TrueSyariahLayout({
 	return (
 		<>
 			<TrueSyariahSchema />
+			<FaqSchema items={truesyariahFaq} />
 			{children}
 		</>
 	);

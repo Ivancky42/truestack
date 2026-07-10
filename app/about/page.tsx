@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { ABOUT_METADATA, ABOUT_PAGE_PATH } from "@/lib/about-seo";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
@@ -94,40 +95,54 @@ export default function AboutPage() {
 
 			<section className="border-t py-16 md:py-24">
 				<div className="mx-auto max-w-6xl px-6">
-					<div className="mx-auto mb-12 max-w-3xl text-center">
-						<SectionBadge
-							icon={Handshake}
-							text="Why work with us"
-							className="justify-center"
-						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-							What you get with Truestack
-						</h2>
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-							Clear ownership from licence to live portfolio —
-							with technology and compliance that already speak
-							Malaysian fintech.
-						</p>
-					</div>
-					<div className="grid gap-8 sm:grid-cols-2">
-						{reasons.map((reason) => (
-							<div key={reason.title} className="flex gap-4">
-								<span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-									<reason.icon
-										className="h-5 w-5 text-primary"
-										aria-hidden
-									/>
-								</span>
-								<div>
-									<h3 className="font-display text-lg font-semibold tracking-tight">
-										{reason.title}
-									</h3>
-									<p className="mt-1.5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-										{reason.description}
-									</p>
-								</div>
+					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+						<div>
+							<SectionBadge
+								icon={Handshake}
+								text="Why work with us"
+							/>
+							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								What you get with Truestack
+							</h2>
+							<p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+								Clear ownership from licence to live portfolio —
+								with technology and compliance that already speak
+								Malaysian fintech.
+							</p>
+							<div className="mt-10 grid gap-8 sm:grid-cols-2">
+								{reasons.map((reason) => (
+									<div key={reason.title} className="flex gap-4">
+										<span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+											<reason.icon
+												className="h-5 w-5 text-primary"
+												aria-hidden
+											/>
+										</span>
+										<div>
+											<h3 className="font-display text-lg font-semibold tracking-tight">
+												{reason.title}
+											</h3>
+											<p className="mt-1.5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+												{reason.description}
+											</p>
+										</div>
+									</div>
+								))}
 							</div>
-						))}
+						</div>
+						<div className="relative aspect-4/5 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/about-team-collaboration.jpg"
+								alt="Truestack team collaborating in a bright Kuala Lumpur office"
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -143,6 +158,14 @@ export default function AboutPage() {
 					href: "/services/digital-license",
 					label: "Explore Digital License",
 				}}
+				extraLinks={[
+					{ href: "/truekredit", label: "TrueKredit™" },
+					{ href: "/truesyariah", label: "TrueSyariah™" },
+					{
+						href: "/services/p2p-software-development",
+						label: "TrueP2P™",
+					},
+				]}
 			/>
 		</>
 	);

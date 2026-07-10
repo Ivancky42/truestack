@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { defaultOgImage } from "@/lib/seo-defaults";
 import { TrueSsmSchema } from "@/components/seo/truessm-schema";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { truessmFaq } from "@/lib/truessm-faq";
 import { TRUESSM_METADATA, TRUESSM_PAGE_PATH } from "@/lib/truessm-seo";
 
 export const metadata: Metadata = {
@@ -43,6 +45,7 @@ export default function TrueSsmLayout({
 	return (
 		<>
 			<TrueSsmSchema />
+			<FaqSchema items={truessmFaq} />
 			{children}
 		</>
 	);
