@@ -367,7 +367,6 @@ export const workCaseStudyDetails: WorkCaseStudyDetail[] = [
 		stats: [
 			{ label: "Engagement", value: "Custom software" },
 			{ label: "Platform", value: "Shopify" },
-			{ label: "Market", value: "European Union" },
 		],
 		liveUrl: "https://eviebikes.com",
 		logo: "/logos/EVIE LOGO_FA-08.png",

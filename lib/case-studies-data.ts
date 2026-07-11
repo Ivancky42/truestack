@@ -200,7 +200,6 @@ export const caseStudies: CaseStudy[] = [
 		stats: [
 			{ label: "Engagement", value: "Custom software" },
 			{ label: "Platform", value: "Shopify" },
-			{ label: "Market", value: "European Union" },
 		],
 	},
 	{
