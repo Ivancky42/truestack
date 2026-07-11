@@ -1,7 +1,8 @@
-export type CaseStudyProduct = "TrueKredit" | "CustomSoftware";
+export type CaseStudyProduct = "TrueKredit" | "TrueSyariah" | "CustomSoftware";
 
 export const PRODUCT_LABEL: Record<CaseStudyProduct, string> = {
 	TrueKredit: "TrueKredit™",
+	TrueSyariah: "TrueSyariah™",
 	CustomSoftware: "Custom Software",
 };
 
@@ -13,9 +14,16 @@ export interface CaseStudy {
 	/** Primary product / engagement type — drives service-page filtering. */
 	product: CaseStudyProduct;
 	tags: string[];
+	/** Card / proof link — internal case study (`/work/...`) or live site. */
 	href: string;
+	/** Live product URL when `href` points at an internal case study. */
+	liveUrl?: string;
+	/** Internal case-study slug when a long-form write-up exists. */
+	slug?: string;
 	logo: string;
 	isComingSoon?: boolean;
+	/** Pin to the top of the work page grid. */
+	featured?: boolean;
 	stats?: { label: string; value: string }[];
 	/** Visual accent on work page grid (e.g. digital KPKT conversions). */
 	accent?: "primary" | "kpkt";
@@ -75,9 +83,11 @@ export const caseStudies: CaseStudy[] = [
 		blurb:
 			"P2P marketplace connecting borrowers and investors — SC-ready.",
 		product: "CustomSoftware",
-		tags: ["Custom Software", "SC Licensed", "Marketplace"],
-		href: "https://cashsouk.com",
-		isComingSoon: true,
+		tags: ["TrueP2P™", "SC-Aligned", "Marketplace"],
+		href: "/work/cashsouk",
+		liveUrl: "https://cashsouk.com",
+		slug: "cashsouk",
+		featured: true,
 		logo: "/logos/cashsouk_logo.png",
 		stats: productStats("CustomSoftware", "9 mo"),
 	},
@@ -92,19 +102,24 @@ export const caseStudies: CaseStudy[] = [
 		href: "https://creditxpress.com.my",
 		logo: "/logos/creditxpress.png",
 		stats: productStats("TrueKredit", "6 mo"),
-		accent: "kpkt",
 	},
 	{
 		title: "ezdana",
 		description:
-			"Branded digital lending stack for borrower journeys and loan-book operations — onboarding, origination, and day-to-day servicing on TrueKredit.",
+			"Branded digital lending stack for borrower journeys and loan-book operations — onboarding, origination, and day-to-day servicing on TrueKredit Pro.",
 		blurb:
-			"Loan book and borrower journeys on a branded digital stack.",
+			"Loan book and borrower journeys on TrueKredit™ Pro.",
 		product: "TrueKredit",
-		tags: ["TrueKredit™", "Loan Management", "Digital Lending"],
-		href: "https://ezdana.my",
+		tags: ["TrueKredit™ Pro", "Loan Management", "Digital Lending"],
+		href: "/work/ezdana",
+		liveUrl: "https://ezdana.my",
+		slug: "ezdana",
+		featured: true,
 		logo: "/logos/ezdana.png",
-		stats: productStats("TrueKredit", "3 mo"),
+		stats: [
+			{ label: "Product", value: "TrueKredit™ Pro" },
+			{ label: "Launch", value: "3 mo" },
+		],
 	},
 	{
 		title: "Fundle",
@@ -162,17 +177,76 @@ export const caseStudies: CaseStudy[] = [
 			"Land marketplace with map exploration, listings, and enquiry workflows.",
 		product: "CustomSoftware",
 		tags: ["Custom Software", "Proptech", "Marketplace"],
-		href: "https://landstore.my",
+		href: "/work/landstore",
+		liveUrl: "https://landstore.my",
+		slug: "landstore",
+		featured: true,
 		logo: "/logos/landstore.png",
 		stats: productStats("CustomSoftware", "8 mo"),
 	},
+	{
+		title: "EVIE Bikes",
+		description:
+			"European smart e-bike ecommerce brand selling across the EU — Shopify storefront, product journeys, and brand storytelling built as custom software.",
+		blurb:
+			"European smart e-bike brand selling in the European Union — Shopify storefront.",
+		product: "CustomSoftware",
+		tags: ["Custom Software", "E-commerce"],
+		href: "/work/eviebikes",
+		liveUrl: "https://eviebikes.com",
+		slug: "eviebikes",
+		featured: true,
+		logo: "/logos/EVIE LOGO_FA-08.png",
+		stats: [
+			{ label: "Engagement", value: "Custom software" },
+			{ label: "Platform", value: "Shopify" },
+			{ label: "Market", value: "European Union" },
+		],
+	},
+	{
+		title: "jompinjam",
+		description:
+			"Syariah-compliant digital financing for everyday Malaysians — Tawarruq-based products on TrueSyariah, phone-first from apply to disbursement.",
+		blurb:
+			"Syariah digital financing for everyday Malaysians on TrueSyariah™.",
+		product: "TrueSyariah",
+		tags: ["TrueSyariah™", "Tawarruq", "Digital Financing"],
+		href: "https://www.jompinjam.my/",
+		logo: "/logos/jompinjam.png",
+		stats: productStats("TrueSyariah", "3 mo"),
+	},
+	{
+		title: "danakini",
+		description:
+			"Institutional-grade Syariah financing for individuals and enterprises — governed digital facilities on TrueSyariah with clear profit and tenure.",
+		blurb:
+			"Institutional-grade Syariah financing on TrueSyariah™.",
+		product: "TrueSyariah",
+		tags: ["TrueSyariah™", "Tawarruq", "Digital Financing"],
+		href: "https://www.danakini.my",
+		logo: "/logos/danakini.png",
+		stats: productStats("TrueSyariah", "3 mo"),
+	},
 ];
 
-/** Work page: ezdana & Fundle first, then remaining stories. */
-export const workCaseStudies: CaseStudy[] = [
-	...caseStudies.filter((c) => c.title === "ezdana" || c.title === "Fundle"),
-	...caseStudies.filter((c) => c.title !== "ezdana" && c.title !== "Fundle"),
-];
+const FEATURED_ORDER = [
+	"ezdana",
+	"landstore",
+	"cashsouk",
+	"eviebikes",
+] as const;
+
+/** Work page: featured case studies first, then remaining stories. */
+export const workCaseStudies: CaseStudy[] = (() => {
+	const featured = FEATURED_ORDER.map((slug) =>
+		caseStudies.find((c) => c.slug === slug),
+	).filter((c): c is CaseStudy => Boolean(c));
+	const featuredSlugs = new Set<string>(FEATURED_ORDER);
+	const rest = caseStudies.filter(
+		(c) => !c.slug || !featuredSlugs.has(c.slug),
+	);
+	return [...featured, ...rest];
+})();
 
 export type ProofStudy = Pick<
 	CaseStudy,
@@ -196,7 +270,7 @@ const PROOF_LIMIT = 6;
 /**
  * Compact proof grids for service / homepage sections.
  * Filters by product when provided; always capped at 6.
- * Uses work-page ordering (ezdana & Fundle first).
+ * Uses work-page ordering (featured case studies first).
  */
 export function pickProofStudies(options?: {
 	product?: CaseStudyProduct;

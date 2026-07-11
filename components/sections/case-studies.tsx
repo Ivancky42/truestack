@@ -33,12 +33,14 @@ function CaseStudyCard({
 	dark?: boolean;
 }) {
 	const isComingSoon = study.isComingSoon;
+	const isExternal = study.href.startsWith("http");
 
 	return (
 		<Link
 			href={study.href}
-			target="_blank"
-			rel="noopener noreferrer"
+			{...(isExternal
+				? { target: "_blank", rel: "noopener noreferrer" }
+				: {})}
 			data-carousel-item
 			className={
 				featured

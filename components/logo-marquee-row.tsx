@@ -11,6 +11,8 @@ const MARQUEE_PIXELS_PER_SECOND = 26;
 type LogoItem = {
 	name: string;
 	logo: string;
+	/** Larger marquee slot for wordmarks that read small at default size. */
+	boost?: boolean;
 };
 
 export function LogoMarqueeRow({
@@ -69,6 +71,7 @@ export function LogoMarqueeRow({
 						src={item.logo}
 						alt={index < items.length ? item.name : ""}
 						displaySize={displaySize}
+						boost={item.boost}
 					/>
 				</div>
 			))}

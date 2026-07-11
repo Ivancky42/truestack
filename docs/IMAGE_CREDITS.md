@@ -18,3 +18,25 @@ Every photo in `public/photos/` must be recorded here (guide §8).
 | software-dev-discovery.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 | p2p-delivery-team.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 | truesyariah-licence-journey.jpg | Generated for Truestack | — | AI-generated (Cursor) |
+
+## Work case-study screenshots (`public/work/`)
+
+Product UI captures taken for Truestack case studies (not stock photography).
+
+| File | Source | Notes |
+|---|---|---|
+| work/ezdana/borrower-*.jpg | https://ezdana.my (demo) | Borrower portal screenshots |
+| work/ezdana/admin-*.png/jpg | https://admin.ezdana.my (demo) | Admin console screenshots |
+| work/landstore/homepage.jpg | https://landstore.my | Public homepage |
+| work/landstore/explore.jpg | https://landstore.my/explore | Explore Map |
+| work/cashsouk/homepage.jpg | https://cashsouk.com | Public homepage |
+| work/cashsouk/investor-investments.jpg | CashSouk investor portal (provided) | Investments portfolio |
+| work/cashsouk/issuer-application.jpg | CashSouk issuer portal (provided) | Multi-step financing application |
+| work/cashsouk/admin-finance.jpg | CashSouk admin (provided) | Bucket balances & lifecycle pipeline |
+| work/cashsouk/admin-reconciliation.jpg | CashSouk admin (provided) | Gateway reconciliation |
+| work/eviebikes/homepage.jpg | https://eviebikes.com | Public homepage |
+| work/eviebikes/shop.jpg | https://eviebikes.com/pages/evie-t1-product-info | EVIE T1 product info — feature cards |
+| work/eviebikes/product-t1.jpg | https://eviebikes.com/products/evie-t1 | EVIE T1 product page |
+| work/eviebikes/product-s1.jpg | https://eviebikes.com/products/evie-s1 | EVIE S1 product page |
+| work/eviebikes/design.jpg | https://eviebikes.com/pages/design | Design page |
+| work/eviebikes/app.jpg | https://eviebikes.com/pages/eviebikesapp | Companion app page |

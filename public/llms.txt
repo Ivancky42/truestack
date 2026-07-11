@@ -11,7 +11,11 @@ Truestack provides KPKT-related compliance services and fintech software for lic
 - https://truestack.my/ — Homepage: KPKT services and fintech software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™, TrueIdentity™, TrueSSM™, digital KPKT licence, and account management. Book a free consultation.
 - https://truestack.my/about — Company overview: TrueKredit™ lending platforms, Truestack Core™ infrastructure APIs (e-KYC, SSM, payments), KPKT digital licence & compliance services, and technology partners — one team from licence to live portfolio.
 - https://truestack.my/contact — Book a free, no-obligation consultation (KPKT licensing, compliance, lending and fintech software); contact via email and WhatsApp.
-- https://truestack.my/work — Selected live work: digital KPKT licence conversions, enterprise loan management on TrueKredit™, and regulated fintech platforms delivered end to end in Malaysia.
+- https://truestack.my/work — Selected live work: digital KPKT licence conversions, enterprise loan management on TrueKredit™, TrueSyariah™ platforms (jompinjam, danakini), and regulated fintech platforms delivered end to end in Malaysia. Featured case studies: ezdana (TrueKredit™ Pro), LandStore (custom land marketplace), CashSouk (TrueP2P™), EVIE Bikes (European Shopify ecommerce for the EU).
+- https://truestack.my/work/ezdana — Case study: ezdana digital lending on TrueKredit™ Pro — branded borrower portal and admin loan-book operations (L1/L2 review, disbursement, portfolio KPIs); ~3 month launch.
+- https://truestack.my/work/landstore — Case study: LandStore.my mediated land marketplace Malaysia — map exploration, Malaysian land filters, shortlists, and enquiry workflows; custom software (~8 months).
+- https://truestack.my/work/cashsouk — Case study: CashSouk P2P financing marketplace on TrueP2P™ — investor and financing journeys, marketplace listings UX, SC-aligned platform (~9 months).
+- https://truestack.my/work/eviebikes — Case study: EVIE Bikes — European smart e-bike brand selling across the EU; custom Shopify ecommerce storefront, product pages, and brand storytelling.
 - https://truestack.my/careers — Careers at Truestack in Kuala Lumpur: open roles across B2B sales, operations, client success, and engineering (hybrid software roles). FAQ on hiring process.
 
 ## Services

@@ -83,16 +83,18 @@ export const clientLogos = [
 		logo: "/logos/ams-osram.png",
 	},
 	{
-		name: "Malcan",
-		logo: "/logos/Malcan-3.svg",
+		name: "jompinjam",
+		logo: "/logos/jompinjam-wordmark.png",
+		boost: true,
 	},
 	{
 		name: "EVIE Bikes",
 		logo: "/logos/EVIE LOGO_FA-08.png",
 	},
 	{
-		name: "Terraworld",
-		logo: "/logos/terraworld.png",
+		name: "danakini",
+		logo: "/logos/danakini-wordmark.png",
+		boost: true,
 	},
 	{
 		name: "Andas Capital",
@@ -152,6 +154,7 @@ type LogoItem = {
 	name: string;
 	logo: string;
 	category?: string;
+	boost?: boolean;
 };
 
 interface LogoCloudProps {
@@ -378,6 +381,7 @@ const LogoCloud1 = ({
 											src={item.logo}
 											alt={item.name}
 											displaySize={displaySize}
+											boost={"boost" in item ? item.boost : undefined}
 										/>
 										{showCategories &&
 											"category" in item &&

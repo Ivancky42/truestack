@@ -35,6 +35,28 @@ const slotClasses: Record<LogoDisplaySize, Record<LogoShape, string>> = {
 	},
 };
 
+/** Slightly larger slots for wordmarks that need a bit more visual weight. */
+const boostedSlotClasses: Record<LogoDisplaySize, Record<LogoShape, string>> = {
+	dense: {
+		square: "h-10 w-10 sm:h-11 sm:w-11",
+		tall: "h-10 w-16 sm:h-11 sm:w-20",
+		medium: "h-9 w-28 sm:h-10 sm:w-32",
+		wide: "h-9 w-40 sm:h-10 sm:w-44",
+	},
+	default: {
+		square: "h-12 w-12 md:h-14 md:w-14",
+		tall: "h-12 w-20 md:h-14 md:w-24",
+		medium: "h-11 w-32 md:h-12 md:w-36",
+		wide: "h-11 w-44 md:h-12 md:w-52",
+	},
+	large: {
+		square: "h-12 w-12 md:h-14 md:w-14",
+		tall: "h-12 w-20 md:h-14 md:w-24",
+		medium: "h-11 w-32 md:h-12 md:w-40",
+		wide: "h-11 w-48 md:h-12 md:w-56",
+	},
+};
+
 const intrinsicSize: Record<LogoShape, { width: number; height: number }> = {
 	square: { width: 128, height: 128 },
 	tall: { width: 96, height: 128 },
@@ -49,6 +71,8 @@ interface AdaptiveLogoImageProps {
 	className?: string;
 	/** Show logo in full color instead of muted grayscale. */
 	color?: boolean;
+	/** Use a larger slot — for wordmarks that read small at default size. */
+	boost?: boolean;
 }
 
 export function AdaptiveLogoImage({
@@ -57,8 +81,10 @@ export function AdaptiveLogoImage({
 	displaySize = "default",
 	className,
 	color = false,
+	boost = false,
 }: AdaptiveLogoImageProps) {
-	const [shape, setShape] = useState<LogoShape>("medium");
+	// Wide wordmarks start in the wide slot so boost applies before onLoad.
+	const [shape, setShape] = useState<LogoShape>(boost ? "wide" : "medium");
 
 	const onLoad = useCallback(
 		(e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -71,26 +97,29 @@ export function AdaptiveLogoImage({
 	);
 
 	const { width, height } = intrinsicSize[shape];
+	const slots = boost ? boostedSlotClasses : slotClasses;
 
 	return (
 		<div
 			className={cn(
 				"flex items-center justify-center",
-				slotClasses[displaySize][shape],
+				slots[displaySize][shape],
 				className,
 			)}
 		>
 			<Image
 				src={src}
 				alt={alt}
-				width={width}
-				height={height}
+				width={boost ? 240 : width}
+				height={boost ? 72 : height}
 				onLoad={onLoad}
 				className={cn(
 					"max-h-full max-w-full object-contain transition-all",
 					color
 						? "opacity-100"
-						: "opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0",
+						: boost
+							? "opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0"
+							: "opacity-70 grayscale group-hover:opacity-100 group-hover:grayscale-0",
 				)}
 				style={{ width: "auto", height: "auto" }}
 			/>

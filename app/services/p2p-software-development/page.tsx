@@ -304,7 +304,7 @@ const cashsoukStudy: CaseStudy = {
 		"P2P marketplace connecting borrowers and investors — SC-ready.",
 	product: "CustomSoftware",
 	tags: ["TrueP2P™", "Investor + Issuer Portals", "SC-Aligned Architecture"],
-	href: "https://cashsouk.com",
+	href: "/work/cashsouk",
 	logo: "/logos/cashsouk_logo.png",
 	stats: [
 		{ label: "Platform", value: "TrueP2P™" },

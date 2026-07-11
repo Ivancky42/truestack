@@ -70,11 +70,13 @@ export function CaseStudyCard({
   );
 
   if (isClickable) {
+    const isExternal = href.startsWith("http");
     return (
       <Link
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         className={cn("group block cursor-pointer", className)}
       >
         {cardContent}

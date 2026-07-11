@@ -27,6 +27,7 @@ function WorkCaseStudyCard({
 }) {
 	const isComingSoon = study.isComingSoon;
 	const isKpkt = study.accent === "kpkt";
+	const isExternal = study.href.startsWith("http");
 
 	const card = (
 		<div
@@ -47,13 +48,23 @@ function WorkCaseStudyCard({
 						style={{ width: "auto" }}
 					/>
 				</div>
-				{isComingSoon ? (
-					<Badge variant="secondary" className="text-[10px] sm:text-xs">
-						Coming Soon
-					</Badge>
-				) : (
-					<ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
-				)}
+				<div className="flex items-center gap-2">
+					{study.featured ? (
+						<Badge
+							variant="secondary"
+							className="text-[10px] text-primary sm:text-xs"
+						>
+							Featured
+						</Badge>
+					) : null}
+					{isComingSoon ? (
+						<Badge variant="secondary" className="text-[10px] sm:text-xs">
+							Coming Soon
+						</Badge>
+					) : (
+						<ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+					)}
+				</div>
 			</div>
 
 			<div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -123,8 +134,9 @@ function WorkCaseStudyCard({
 		>
 			<Link
 				href={study.href}
-				target="_blank"
-				rel="noopener noreferrer"
+				{...(isExternal
+					? { target: "_blank", rel: "noopener noreferrer" }
+					: {})}
 				className="group block h-full"
 			>
 				{card}
