@@ -6,6 +6,14 @@ import { Button } from "@/components/ui/button";
 /** Same grouping and labels as the Solutions menu in `header.tsx`. */
 const solutionsColumns = [
   {
+    heading: "Services",
+    links: [
+      { href: "/services/digital-license", label: "KPKT Digital License" },
+      { href: "/services/account-management", label: "KPKT Account Management" },
+      { href: "/services/software-development", label: "Custom Software Development" },
+    ],
+  },
+  {
     heading: "Platforms",
     links: [
       { href: "/truekredit", label: "TrueKredit™" },
@@ -18,14 +26,6 @@ const solutionsColumns = [
     links: [
       { href: "/trueidentity", label: "TrueIdentity™" },
       { href: "/truessm", label: "TrueSSM™" },
-    ],
-  },
-  {
-    heading: "Services",
-    links: [
-      { href: "/services/digital-license", label: "KPKT Digital License" },
-      { href: "/services/account-management", label: "KPKT Account Management" },
-      { href: "/services/software-development", label: "Custom Software Development" },
     ],
   },
 ] as const;

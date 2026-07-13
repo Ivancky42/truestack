@@ -79,8 +79,36 @@ const accentClasses: Record<
 	},
 };
 
-/** Desktop Solutions dropdown + mobile accordion (three columns: Platforms, APIs, Services). */
+/** Desktop Solutions dropdown + mobile accordion (three columns: Services, Platforms, APIs). */
 const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
+	{
+		heading: "Services",
+		items: [
+			{
+				title: "KPKT Digital License",
+				href: "/services/digital-license",
+				description:
+					"Transform to a fully digital KPKT-licensed platform in 3 months.",
+				icon: FileCheck,
+				badge: "Popular",
+				badgeIcon: TrendingUp,
+			},
+			{
+				title: "KPKT Account Management",
+				href: "/services/account-management",
+				description:
+					"Compliance handling, license renewals, and regulatory submissions.",
+				icon: ClipboardCheck,
+			},
+			{
+				title: "Custom Software Development",
+				href: "/services/software-development",
+				description:
+					"Digital lending platforms, payment systems, and bespoke software built to spec.",
+				icon: Code2,
+			},
+		],
+	},
 	{
 		heading: "Platforms",
 		items: [
@@ -157,34 +185,6 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 					"AI-powered borrower risk scoring and intelligence — model-driven signals for creditworthiness beyond your own book.",
 				icon: Sparkles,
 				comingSoon: true,
-			},
-		],
-	},
-	{
-		heading: "Services",
-		items: [
-			{
-				title: "KPKT Digital License",
-				href: "/services/digital-license",
-				description:
-					"Transform to a fully digital KPKT-licensed platform in 3 months.",
-				icon: FileCheck,
-				badge: "Popular",
-				badgeIcon: TrendingUp,
-			},
-			{
-				title: "KPKT Account Management",
-				href: "/services/account-management",
-				description:
-					"Compliance handling, license renewals, and regulatory submissions.",
-				icon: ClipboardCheck,
-			},
-			{
-				title: "Custom Software Development",
-				href: "/services/software-development",
-				description:
-					"Digital lending platforms, payment systems, and bespoke software built to spec.",
-				icon: Code2,
 			},
 		],
 	},

@@ -113,9 +113,9 @@ export function WorkPageContent() {
 							Success stories
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-							Featured write-ups for ezdana, LandStore, CashSouk,
-							and EVIE Bikes — plus live platforms from digital
-							KPKT conversions to enterprise lending cores.
+							Featured case studies and live platforms — from
+							digital KPKT conversions to ecommerce and enterprise
+							lending cores.
 						</p>
 					</div>
 					<WorkCaseStudyGrid />
