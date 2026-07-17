@@ -140,9 +140,9 @@ export function Footer() {
                 Registration No. 202501058714 (1660120-X)
               </p>
               <address className="text-sm not-italic text-muted-foreground/70 leading-relaxed">
-                Lot C-13-3, KL Trillion<br />
-                No 338 Jalan Tun Razak<br />
-                50400 Kuala Lumpur
+                C-13-01, KL Trillion<br />
+                No. 338, Jalan Tun Razak<br />
+                50400 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
               </address>
             </div>
 
