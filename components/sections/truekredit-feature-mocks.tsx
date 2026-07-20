@@ -3,10 +3,13 @@
 import type { ReactNode } from "react";
 import {
 	AlertTriangle,
+	CalendarClock,
 	Check,
 	FileText,
 	History,
 	Mail,
+	PlusCircle,
+	RefreshCw,
 	Smartphone,
 	UserPlus,
 	Users,
@@ -445,7 +448,73 @@ export function CollectionsMock() {
 	);
 }
 
-/** 7 — Audit trail */
+/** 7 — Loan flexibility (refinance / top-up / reschedule) */
+export function LoanFlexibilityMock() {
+	const paths = [
+		{
+			icon: RefreshCw,
+			title: "Refinance",
+			desc: "New loan settles the old one",
+			st: "In review",
+			tone: "amber" as const,
+		},
+		{
+			icon: PlusCircle,
+			title: "Top-up",
+			desc: "Extra funds · original stays active",
+			st: "Linked",
+			tone: "blue" as const,
+		},
+		{
+			icon: CalendarClock,
+			title: "Reschedule",
+			desc: "New instalment plan on the same loan",
+			st: "Executed",
+			tone: "green" as const,
+		},
+	];
+	return (
+		<AdminChrome title="Loan changes · LPS">
+			<div className="mb-3 flex items-center justify-between">
+				<div>
+					<p className="text-[11px] font-semibold text-slate-900 sm:text-xs">
+						TK-2841 · Ahmad Hisham
+					</p>
+					<p className="mt-0.5 text-[8px] text-slate-500 sm:text-[9px]">
+						Collections · choose how the loan adapts
+					</p>
+				</div>
+				<StatusChip label="Tracked" tone="violet" />
+			</div>
+			<div className="space-y-1.5">
+				{paths.map((p) => (
+					<div
+						key={p.title}
+						className="flex items-center gap-2 rounded-md border border-slate-100 px-2 py-1.5"
+					>
+						<div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary/10">
+							<p.icon className="h-3.5 w-3.5 text-primary" />
+						</div>
+						<div className="min-w-0 flex-1">
+							<p className="truncate text-[10px] font-semibold text-slate-800">
+								{p.title}
+							</p>
+							<p className="truncate text-[8px] text-slate-500">
+								{p.desc}
+							</p>
+						</div>
+						<StatusChip label={p.st} tone={p.tone} />
+					</div>
+				))}
+			</div>
+			<p className="mt-2.5 text-[8px] text-slate-500 sm:text-[9px]">
+				Approved and recorded on the same loan file
+			</p>
+		</AdminChrome>
+	);
+}
+
+/** 8 — Audit trail */
 export function AuditTrailMock() {
 	const rows = [
 		{ t: "10:42", a: "PAYMENT_RECEIVED", who: "Finance · Lim" },

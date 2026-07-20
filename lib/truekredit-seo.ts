@@ -105,6 +105,7 @@ export function buildTrueKreditJsonLd() {
 				],
 				featureList: [
 					"Loan journey from application to repayment",
+					"Refinance, top-up and reschedule on the same loan file",
 					"Lampiran A and iDeaL CSV exports",
 					"e-KYC and TrueSSM™ integrations",
 					"Secure cloud hosting in Malaysia",

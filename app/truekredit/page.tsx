@@ -794,6 +794,7 @@ export default function TrueKreditPage() {
 											</tr>
 											{[
 												"Collections workspace — team view, promises to pay, escalations, maturity alerts",
+												"Loan flexibility — refinance, top-up and reschedule, tracked on the file",
 												"Referral & lead gen — sales queue, agents, who brought the lead, and commission",
 											].map((row) => (
 												<tr key={row}>

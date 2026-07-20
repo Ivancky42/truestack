@@ -15,6 +15,12 @@ export const truekreditFaq = [
 			"Both share the same core: the full loan journey, flexible products, risk scoring, approvals, e-KYC, company lookups, repayments, KPKT documents, reports, staff roles, audit trails and walk-in applications — all on your own secure cloud in Malaysia. Pro does not take anything away from Standard; it unlocks nationwide customer channels on the same system.",
 	},
 	{
+		question:
+			"Can TrueKredit handle refinance, top-up and reschedule?",
+		answer:
+			"Yes. When a borrower needs to refinance, top up or reschedule, your team runs the request in TrueKredit — approvals and tracking stay on the same loan file. No separate spreadsheet or side process for collections to chase.",
+	},
+	{
 		question: "Which partner checks come with Standard and Pro?",
 		answer:
 			"TrueIdentity™ e-KYC, TrueSSM™, CTOS (where available), payment gateway and related partners are already connected on both plans — you pay only when you use them, not a separate fee to connect each provider. Pro adds digital signing on your premises and digital attestation with live and video scheduling.",

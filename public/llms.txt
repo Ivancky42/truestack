@@ -27,7 +27,7 @@ Truestack provides KPKT-related compliance services and fintech software for lic
 
 ## Products
 
-- https://truestack.my/truekredit — TrueKredit™ money lender software / loan management platform Malaysia for KPKT-licensed lenders (Lampiran A/B1, iDEAL, e-KYC, CTOS). Standard = branch; Pro = nationwide apps + digital licence readiness. FAQ.
+- https://truestack.my/truekredit — TrueKredit™ money lender software / loan management platform Malaysia for KPKT-licensed lenders (Lampiran A/B1, iDEAL, e-KYC, CTOS). Refinance, top-up and reschedule tracked on the same loan file. Standard = branch; Pro = nationwide apps + digital licence readiness. FAQ.
 - https://truestack.my/truesyariah — TrueSyariah™ Shariah lending platform Malaysia for the KPKT Syariah Digital Lending Licence — Tawarruq via Bursa Suq Al-Sila' (BSAS), Ta'widh & Gharamah ledgers, on-prem Trustgate signing, e-KYC, web/iOS/Android apps, dedicated AWS Malaysia. Separate Shariah entity/licence from conventional KPKT digital lending. FAQ.
 - https://truestack.my/trueidentity — TrueIdentity™ e-KYC API: MyKad OCR, liveness, biometrics, PDPA-aligned, Malaysia-hosted; part of Truestack Core™; FAQ.
 - https://truestack.my/truessm — TrueSSM™ SSM registry API: free entity search, ROC/ROB/LLP profiles, officers, shareholders, scanned documents, RM pricing, idempotent pulls; FAQ.
