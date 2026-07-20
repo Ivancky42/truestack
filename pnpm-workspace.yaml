@@ -1,4 +1,8 @@
-# pnpm 11: allow lifecycle scripts for native deps (Next/sharp, eslint tooling).
+# Single-package workspace. allowBuilds needs pnpm ≥ 10.26 (see packageManager).
+packages:
+  - "."
+
+# Allow lifecycle scripts for native deps (Next/sharp, eslint tooling).
 allowBuilds:
   sharp: true
   unrs-resolver: true
