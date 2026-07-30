@@ -36,6 +36,11 @@ const footerLinks = {
     { href: "/work", label: "Work" },
     { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
+    {
+      href: "https://developers.truestack.my",
+      label: "Developers",
+      external: true,
+    },
   ],
   legal: [
     { href: "/cybersecurity", label: "Cybersecurity Policy" },
@@ -50,20 +55,31 @@ function LinkColumn({
   links,
 }: {
   heading: string;
-  links: readonly { href: string; label: string }[];
+  links: readonly { href: string; label: string; external?: boolean }[];
 }) {
+  const linkClassName =
+    "text-[15px] text-muted-foreground transition-colors hover:text-primary";
+
   return (
     <div>
       <h4 className="mb-4 text-base font-semibold">{heading}</h4>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>
-            <Link
-              href={link.href}
-              className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClassName}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link href={link.href} className={linkClassName}>
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
