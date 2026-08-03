@@ -28,10 +28,10 @@ const slotClasses: Record<LogoDisplaySize, Record<LogoShape, string>> = {
 		wide: "h-10 w-36 md:h-12 md:w-44",
 	},
 	large: {
-		square: "h-12 w-12 md:h-14 md:w-14",
-		tall: "h-12 w-20 md:h-14 md:w-20",
-		medium: "h-10 w-28 md:h-12 md:w-32",
-		wide: "h-10 w-40 md:h-12 md:w-48",
+		square: "h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14",
+		tall: "h-10 w-16 sm:h-12 sm:w-20 md:h-14 md:w-20",
+		medium: "h-8 w-24 sm:h-10 sm:w-28 md:h-12 md:w-32",
+		wide: "h-8 w-32 sm:h-10 sm:w-40 md:h-12 md:w-48",
 	},
 };
 
@@ -50,10 +50,10 @@ const boostedSlotClasses: Record<LogoDisplaySize, Record<LogoShape, string>> = {
 		wide: "h-11 w-44 md:h-12 md:w-52",
 	},
 	large: {
-		square: "h-12 w-12 md:h-14 md:w-14",
-		tall: "h-12 w-20 md:h-14 md:w-24",
-		medium: "h-11 w-32 md:h-12 md:w-40",
-		wide: "h-11 w-48 md:h-12 md:w-56",
+		square: "h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14",
+		tall: "h-10 w-16 sm:h-12 sm:w-20 md:h-14 md:w-24",
+		medium: "h-9 w-28 sm:h-11 sm:w-32 md:h-12 md:w-40",
+		wide: "h-9 w-36 sm:h-11 sm:w-48 md:h-12 md:w-56",
 	},
 };
 

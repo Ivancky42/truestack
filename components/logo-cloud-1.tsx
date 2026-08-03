@@ -201,11 +201,57 @@ function LogoMarqueeRowWrapper({
 	);
 }
 
+/** Unique logos in a fixed column grid — mobile + reduced-motion fallback. */
+export function LogoStaticGrid({
+	items,
+	displaySize,
+}: {
+	items: readonly LogoItem[];
+	displaySize: LogoDisplaySize;
+}) {
+	return (
+		<div className="mx-auto grid w-full max-w-5xl grid-cols-3 items-center justify-items-center gap-x-3 gap-y-5 px-5 sm:grid-cols-4 sm:gap-x-5 sm:gap-y-6 sm:px-6 md:grid-cols-5 md:gap-x-6 md:gap-y-7 lg:grid-cols-6">
+			{items.map((item) => (
+				<div
+					key={item.name}
+					className="group flex h-9 w-full items-center justify-center sm:h-10 md:h-11"
+				>
+					{/* Fill the cell so wordmarks and marks share one visual weight. */}
+					<AdaptiveLogoImage
+						src={item.logo}
+						alt={item.name}
+						displaySize={displaySize}
+						boost={item.boost}
+						className="h-full w-full max-w-[6.5rem] sm:max-w-[7.5rem] md:max-w-none"
+					/>
+				</div>
+			))}
+		</div>
+	);
+}
+
+function MarqueeEdgeFades() {
+	return (
+		<>
+			<div
+				className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-background to-transparent sm:w-20 md:w-28"
+				aria-hidden
+			/>
+			<div
+				className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-background to-transparent sm:w-20 md:w-28"
+				aria-hidden
+			/>
+		</>
+	);
+}
+
 export function LogoMarquee({
 	items,
 	displaySize,
 	rows = 2,
 	reverse = false,
+	/** When false, skip the reduced-motion grid (caller provides one). */
+	staticFallback = true,
 }: {
 	items: readonly LogoItem[];
 	displaySize: LogoDisplaySize;
@@ -213,24 +259,35 @@ export function LogoMarquee({
 	rows?: 1 | 2;
 	/** Scroll direction for a single row (false = left, true = right). */
 	reverse?: boolean;
+	staticFallback?: boolean;
 }) {
+	// Default: scrolling marquee at all breakpoints.
+	// Reduced-motion: unique static grid (no duplicated wrap).
+	const staticGrid = staticFallback ? (
+		<div className="hidden motion-reduce:block">
+			<LogoStaticGrid items={items} displaySize={displaySize} />
+		</div>
+	) : null;
+
 	if (rows === 1) {
 		return (
-			<div className="relative w-full overflow-hidden">
+			<div className="relative w-full">
+				{staticGrid}
 				<div
-					className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-background to-transparent sm:w-20 md:w-28"
-					aria-hidden
-				/>
-				<div
-					className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-background to-transparent sm:w-20 md:w-28"
-					aria-hidden
-				/>
-				<LogoMarqueeRowWrapper
-					items={items}
-					displaySize={displaySize}
-					reverse={reverse}
-					rowKey="single"
-				/>
+					className={
+						staticFallback
+							? "relative overflow-hidden motion-reduce:hidden"
+							: "relative overflow-hidden"
+					}
+				>
+					<MarqueeEdgeFades />
+					<LogoMarqueeRowWrapper
+						items={items}
+						displaySize={displaySize}
+						reverse={reverse}
+						rowKey="single"
+					/>
+				</div>
 			</div>
 		);
 	}
@@ -240,27 +297,29 @@ export function LogoMarquee({
 	const bottomRow = items.slice(midpoint);
 
 	return (
-		<div className="relative w-full overflow-hidden">
+		<div className="relative w-full">
+			{staticGrid}
 			<div
-				className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-background to-transparent sm:w-20 md:w-28"
-				aria-hidden
-			/>
-			<div
-				className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-background to-transparent sm:w-20 md:w-28"
-				aria-hidden
-			/>
-			<div className="logo-marquee-rows flex flex-col gap-3 md:gap-4">
-				<LogoMarqueeRowWrapper
-					items={topRow}
-					displaySize={displaySize}
-					rowKey="top"
-				/>
-				<LogoMarqueeRowWrapper
-					items={bottomRow}
-					displaySize={displaySize}
-					reverse
-					rowKey="bottom"
-				/>
+				className={
+					staticFallback
+						? "relative overflow-hidden motion-reduce:hidden"
+						: "relative overflow-hidden"
+				}
+			>
+				<MarqueeEdgeFades />
+				<div className="logo-marquee-rows flex flex-col gap-3 md:gap-4">
+					<LogoMarqueeRowWrapper
+						items={topRow}
+						displaySize={displaySize}
+						rowKey="top"
+					/>
+					<LogoMarqueeRowWrapper
+						items={bottomRow}
+						displaySize={displaySize}
+						reverse
+						rowKey="bottom"
+					/>
+				</div>
 			</div>
 		</div>
 	);

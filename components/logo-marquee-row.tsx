@@ -64,7 +64,7 @@ export function LogoMarqueeRow({
 			{marqueeItems.map((item, index) => (
 				<div
 					key={`${rowKey}-${item.name}-${index}`}
-					className="group flex shrink-0 items-center justify-center px-5 sm:px-7 md:px-9"
+					className="group flex shrink-0 items-center justify-center px-3.5 sm:px-6 md:px-9"
 					aria-hidden={index >= items.length}
 				>
 					<AdaptiveLogoImage

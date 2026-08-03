@@ -153,18 +153,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-marquee-rows {
-    gap: 1.5rem;
-  }
-
+  /* Animation off; unique static grid is shown via motion-reduce: in LogoMarquee. */
   .logo-marquee-track,
   .logo-marquee-track-reverse {
     animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 72rem;
-    margin-inline: auto;
-    padding-inline: 1rem;
   }
 }
