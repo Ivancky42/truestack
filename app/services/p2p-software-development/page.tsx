@@ -263,10 +263,10 @@ const shariahPillars = [
 		title: "Tawarruq disbursement",
 		arabic: "تورق",
 		summary:
-			"Shariah-compliant cash disbursement structured as a commodity sale and onward sale — typically executed on Bursa Suq Al-Sila', Bursa Malaysia's Shariah commodity trading platform.",
+			"Shariah-compliant cash disbursement structured as a commodity sale and onward sale — the customer receives MYR proceeds while the operator books a deferred receivable at the agreed profit rate.",
 		points: [
 			"Automated Tawarruq trade legs orchestrated at disbursement",
-			"Bursa Suq Al-Sila' commodity trade integration and recordkeeping",
+			"Commodity trade integration and recordkeeping",
 			"Contract pack and audit trail per disbursement for Shariah review",
 		],
 	},
@@ -363,7 +363,7 @@ export default function P2PSoftwareDevelopmentPage() {
 						— covering investor onboarding, listings, escrow,
 						payments, e-signing,{" "}
 						<span className="font-medium text-foreground">
-							Tawarruq disbursement via Bursa Suq Al-Sila&apos;
+							Tawarruq commodity disbursement
 						</span>
 						,{" "}
 						<span className="font-medium text-foreground">
@@ -892,11 +892,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							<span className="font-medium text-white">
 								Tawarruq
 							</span>{" "}
-							(تورق) disbursement orchestrated through{" "}
-							<span className="font-medium text-white">
-								Bursa Suq Al-Sila&apos;
-							</span>
-							, segregated{" "}
+							(تورق) commodity disbursement, segregated{" "}
 							<span className="font-medium text-white">
 								Gharamah
 							</span>{" "}

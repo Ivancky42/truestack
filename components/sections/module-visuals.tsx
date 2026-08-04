@@ -427,7 +427,7 @@ export function DigitalSigningVisual({
 		? "Shariah Financing Agreement"
 		: "Loan Agreement";
 	const docSubheading = isSyariah
-		? "Tawarruq · BSAS-evidenced"
+		? "Tawarruq · commodity-evidenced"
 		: "Akta Pemberi Pinjam Wang 1951";
 	const signerLabel = isSyariah ? "by Customer" : "by Borrower";
 

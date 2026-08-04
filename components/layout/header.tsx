@@ -133,7 +133,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				title: "TrueSyariah™",
 				href: "/truesyariah",
 				description:
-					"Shariah digital lending platform — Tawarruq via BSAS, Ta'widh & Gharamah ledgers.",
+					"Shariah digital lending platform — Tawarruq commodity financing, Ta'widh & Gharamah ledgers.",
 				icon: Scale,
 				badge: "New",
 				badgeIcon: Sparkles,

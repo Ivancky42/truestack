@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { TrueSyariahHeroVisual } from "@/components/sections/truesyariah-hero-visual";
 
 const features = [
-	"Tawarruq via Bursa Suq Al-Sila' (BSAS)",
+	"Tawarruq commodity financing",
 	"Segregated Ta'widh & Gharamah ledgers",
 	"Shariah committee audit packs & exports",
 	"e-KYC, digital signing & branded web/mobile apps",
@@ -36,7 +36,7 @@ export function TrueSyariahPanel() {
 					</p>
 					<p className="mt-3 text-muted-foreground">
 						Built for Shariah digital lending operators — Tawarruq
-						via BSAS, Ta&apos;widh and Gharamah ledgers, e-KYC and
+						commodity financing, Ta&apos;widh and Gharamah ledgers, e-KYC and
 						signing, with books ring-fenced from conventional
 						lending.
 					</p>

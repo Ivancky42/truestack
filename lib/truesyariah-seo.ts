@@ -6,7 +6,7 @@ export const TRUESYARIAH_PAGE_URL = `${baseUrl}${TRUESYARIAH_PAGE_PATH}`;
 export const TRUESYARIAH_METADATA = {
 	title: "TrueSyariah™ | Shariah Lending Platform Malaysia",
 	description:
-		"Shariah lending platform for Malaysia — TrueSyariah™ with Tawarruq via Bursa Suq Al-Sila', Ta'widh & Gharamah ledgers, on-prem signing, and dedicated AWS.",
+		"Shariah lending platform for Malaysia — TrueSyariah™ with Tawarruq commodity financing, Ta'widh & Gharamah ledgers, on-prem signing, and dedicated AWS.",
 	keywords: [
 		"TrueSyariah",
 		"Shariah lending platform Malaysia",
@@ -18,8 +18,8 @@ export const TRUESYARIAH_METADATA = {
 		"Islamic digital lending Malaysia",
 		"lesen pinjaman digital syariah",
 		"Tawarruq financing platform",
-		"Bursa Suq Al-Sila",
-		"BSAS Tawarruq integration",
+		"Tawarruq commodity financing",
+		"Islamic commodity Murabaha platform",
 		"Ta'widh Gharamah accounting",
 		"Syariah loan management system",
 		"Shariah money lender Malaysia software",
@@ -30,7 +30,7 @@ export const TRUESYARIAH_METADATA = {
 	openGraphTitle:
 		"TrueSyariah™ | Shariah Lending Platform Malaysia",
 	openGraphDescription:
-		"Shariah-compliant digital lending platform for Malaysia — Tawarruq via Bursa Suq Al-Sila', Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, and dedicated AWS.",
+		"Shariah-compliant digital lending platform for Malaysia — Tawarruq commodity financing, Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, and dedicated AWS.",
 	ogImagePath: "/truesyariah/hero.png",
 	ogImageAlt:
 		"TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules",
@@ -90,10 +90,10 @@ export function buildTrueSyariahJsonLd() {
 					"@type": "Offer",
 					name: "TrueSyariah Dedicated Deployment",
 					description:
-						"Dedicated AWS Malaysia deployment for Shariah digital lending — Tawarruq commodity trading via Bursa Suq Al-Sila', Ta'widh / Gharamah segregated ledgers, on-prem PKI signing, e-KYC, web & native mobile origination.",
+						"Dedicated AWS Malaysia deployment for Shariah digital lending — Tawarruq commodity financing, Ta'widh / Gharamah segregated ledgers, on-prem PKI signing, e-KYC, web & native mobile origination.",
 				},
 				featureList: [
-					"Tawarruq commodity financing via Bursa Suq Al-Sila'",
+					"Tawarruq commodity financing via TrueCommodity™",
 					"Segregated Ta'widh and Gharamah late-fee ledgers",
 					"Charity disbursement workflow for Gharamah",
 					"On-premises Trustgate PKI digital signing",

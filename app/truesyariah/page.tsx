@@ -187,13 +187,13 @@ function PhoneChrome({ children }: { children: ReactNode }) {
 }
 
 // ── Tawarruq commodity flow visual ─────────────────────────────────────────
-// Shows the four-leg sequence: Financier → BSAS commodity buy → Customer → Broker
+// Shows the four-leg sequence: Financier → commodity buy → Customer → Broker
 function TawarruqVisual() {
 	const legs = [
 		{
 			icon: Landmark,
 			label: "Financier buys commodity",
-			sub: "via BSAS broker A",
+			sub: "via broker A",
 			tint: "bg-emerald-50 text-emerald-700 border-emerald-200",
 		},
 		{
@@ -205,7 +205,7 @@ function TawarruqVisual() {
 		{
 			icon: Coins,
 			label: "Customer onward sale",
-			sub: "to BSAS broker B",
+			sub: "to broker B",
 			tint: "bg-amber-50 text-amber-700 border-amber-200",
 		},
 		{
@@ -222,8 +222,8 @@ function TawarruqVisual() {
 			glow="bg-emerald-500/20"
 			badges={[
 				{
-					label: "Bursa Suq Al-Sila'",
-					sub: "BSAS — live trade",
+					label: "Commodity trade",
+					sub: "Live Tawarruq",
 					pos: "left-3 top-4",
 					emphasis: "text-emerald-700",
 				},
@@ -505,7 +505,7 @@ function ShariahSigningVisual() {
 						Shariah Financing Agreement
 					</p>
 					<p className="mt-0.5 text-center text-[7px] text-muted-foreground">
-						Tawarruq · BSAS-evidenced
+						Tawarruq · commodity-evidenced
 					</p>
 					<div className="mt-2.5 space-y-1">
 						{[100, 92, 88, 95, 70].map((w, i) => (
@@ -742,7 +742,7 @@ function HeroSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
-							Tawarruq via Bursa Suq Al-Sila&apos;, Ta&apos;widh
+							Tawarruq commodity financing, Ta&apos;widh
 							and Gharamah ledgers, e-KYC, signing, and branded
 							borrower channels — on dedicated AWS Malaysia,
 							ring-fenced from conventional lending.
@@ -797,7 +797,7 @@ function SeoIntroSection() {
 					</strong>{" "}
 					We deliver one end-to-end stack —{" "}
 					<span className="font-medium text-foreground">
-						Tawarruq commodity trades via Bursa Suq Al-Sila&apos;
+						Tawarruq commodity trades via TrueCommodity™
 					</span>
 					, segregated{" "}
 					<span className="font-medium text-emerald-700">
@@ -1014,10 +1014,10 @@ function ShariahEngineSection() {
 			tag: "Tawarruq",
 			tagBg: "bg-emerald-500/10 text-emerald-700",
 			icon: Moon,
-			title: "Real Tawarruq trades on Bursa Suq Al-Sila'.",
-			desc: "Every disbursement is structured as a four-leg Tawarruq commodity sale routed through TrueCommodity™ to Bursa Suq Al-Sila' (BSAS) — the Shariah-compliant commodity platform operated by Bursa Malaysia. Customer receives clean MYR proceeds; the operator books a deferred receivable at the agreed profit rate. Every contract leg is time-stamped, archived, and committee-ready.",
+			title: "Real Tawarruq trades on every disbursement.",
+			desc: "Every disbursement is structured as a four-leg Tawarruq commodity sale routed through TrueCommodity™ — Truestack's Shariah trading infrastructure. Customer receives clean MYR proceeds; the operator books a deferred receivable at the agreed profit rate. Every contract leg is time-stamped, archived, and committee-ready.",
 			bullets: [
-				"Live BSAS broker routing via TrueCommodity™",
+				"Live broker routing via TrueCommodity™",
 				"Deferred profit receivable booking — Murabahah-style",
 				"Tamper-evident contract log per disbursement",
 				"PDF Tawarruq agreements signed via on-prem PKI",
@@ -1179,10 +1179,10 @@ function ConnectedModulesSection() {
 						visual: <TruesendVisual />,
 					},
 					{
-						tag: "BSAS routing",
+						tag: "Commodity routing",
 						icon: Network,
 						title: "TrueCommodity™ — Tawarruq routing",
-						desc: "Truestack's commodity trading infrastructure that fronts Bursa Suq Al-Sila'. Every Tawarruq leg — broker A purchase, customer sale, broker B onward sale — is routed, logged, and reconciled inside TrueSyariah.",
+						desc: "Truestack's commodity trading infrastructure for Shariah financing. Every Tawarruq leg — broker A purchase, customer sale, broker B onward sale — is routed, logged, and reconciled inside TrueSyariah.",
 						visual: (
 							<VisualShell
 								tint="from-emerald-500/12 via-teal-500/6 to-amber-300/10"
@@ -1190,7 +1190,7 @@ function ConnectedModulesSection() {
 								badges={[
 									{
 										label: "Live broker",
-										sub: "Real BSAS leg",
+										sub: "Real trade leg",
 										pos: "left-3 top-4",
 										emphasis: "text-emerald-700",
 									},
@@ -1213,7 +1213,7 @@ function ConnectedModulesSection() {
 											</p>
 										</div>
 										<span className="text-[8px] font-semibold uppercase tracking-wide text-emerald-700">
-											BSAS
+											Live
 										</span>
 									</div>
 									<div className="space-y-1.5 px-3 py-3">
@@ -1748,7 +1748,7 @@ function ComparisonSection() {
 		"Conventional digital lending licence reporting",
 	];
 	const syariahOnly = [
-		"Tawarruq commodity trading via Bursa Suq Al-Sila' (BSAS)",
+		"Tawarruq commodity trading via TrueCommodity™",
 		"Segregated Ta'widh & Gharamah ledgers",
 		"Charity disbursement workflow with sign-off",
 		"Quarterly Shariah committee audit pack",
@@ -1917,7 +1917,7 @@ function ComparisonSection() {
 function IntegrationsSection() {
 	const partners = [
 		{
-			name: "Bursa Suq Al-Sila'",
+			name: "TrueCommodity™",
 			desc: "Tawarruq commodity",
 			icon: Moon,
 			tint: "bg-emerald-100 text-emerald-700",
@@ -1966,7 +1966,7 @@ function IntegrationsSection() {
 						Pre-wired partners. One contract.
 					</h2>
 					<p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground md:text-lg">
-						BSAS commodity routing, on-prem PKI signing, e-KYC,
+						TrueCommodity™ routing, on-prem PKI signing, e-KYC,
 						SSM and Malaysian payment rails — all rolled into a
 						single Truestack engagement.
 					</p>
@@ -2009,12 +2009,12 @@ function IntegrationsSection() {
 						{
 							icon: Check,
 							title: "No integration fees",
-							desc: "BSAS routing, Trustgate, e-KYC and payments are wired in by default — no per-vendor integration project.",
+							desc: "TrueCommodity™ routing, Trustgate, e-KYC and payments are wired in by default — no per-vendor integration project.",
 						},
 						{
 							icon: BarChart3,
 							title: "Better partner rates",
-							desc: "Truestack volume unlocks BSAS broker pricing and Trustgate rates that solo Shariah operators struggle to reach.",
+							desc: "Truestack volume unlocks commodity broker pricing and Trustgate rates that solo Shariah operators struggle to reach.",
 						},
 						{
 							icon: Briefcase,
@@ -2116,7 +2116,7 @@ function ZeroToLicensedSection() {
 							{
 								step: "3",
 								title: "Dedicated AWS build & integration",
-								desc: "Stand up your dedicated AWS Malaysia account; deploy TrueSyariah; wire BSAS / Trustgate / TrueIdentity / payments; configure financing products to your committee's rulings.",
+								desc: "Stand up your dedicated AWS Malaysia account; deploy TrueSyariah; wire TrueCommodity™ / Trustgate / TrueIdentity / payments; configure financing products to your committee's rulings.",
 							},
 							{
 								step: "4",

@@ -3,7 +3,7 @@ export const truesyariahFaq = [
 		question:
 			"What is TrueSyariah™ and how does it differ from TrueKredit™?",
 		answer:
-			"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform — purpose-built for operators pursuing Shariah digital lending in Malaysia. It shares the same end-to-end lending lifecycle, regulatory compliance core and dedicated AWS deployment as TrueKredit™ Pro, but the financing engine is rebuilt around Shariah contracts: Tawarruq commodity trades flow through a real Bursa Suq Al-Sila' (BSAS) integration, late charges are split into segregated Ta'widh (تعويض) and Gharamah (غرامة) ledger accounts, and every document, journal and report is shaped to satisfy a Shariah committee — not a conventional money-lender audit. If you are running a conventional money-lending licence, you want TrueKredit. If you are licensed (or applying) for Shariah-based digital lending, you want TrueSyariah.",
+			"TrueSyariah™ is Truestack's Shariah-compliant digital financing platform — purpose-built for operators pursuing Shariah digital lending in Malaysia. It shares the same end-to-end lending lifecycle, regulatory compliance core and dedicated AWS deployment as TrueKredit™ Pro, but the financing engine is rebuilt around Shariah contracts: Tawarruq commodity trades flow through TrueCommodity™, late charges are split into segregated Ta'widh (تعويض) and Gharamah (غرامة) ledger accounts, and every document, journal and report is shaped to satisfy a Shariah committee — not a conventional money-lender audit. If you are running a conventional money-lending licence, you want TrueKredit. If you are licensed (or applying) for Shariah-based digital lending, you want TrueSyariah.",
 	},
 	{
 		question:
@@ -13,9 +13,9 @@ export const truesyariahFaq = [
 	},
 	{
 		question:
-			"How does Tawarruq work inside TrueSyariah, and which commodity exchange do you connect to?",
+			"How does Tawarruq work inside TrueSyariah?",
 		answer:
-			"Every disbursement is structured as a Tawarruq (مرابحة via commodity sale). When the customer's financing is approved, TrueSyariah books a real commodity transaction through TrueCommodity™ — our Shariah trading infrastructure — which routes the trade to Bursa Suq Al-Sila' (BSAS), the Bursa Malaysia-operated, Shariah-compliant commodity platform. The platform handles the full sequence — financier purchase, sale to customer at deferred profit, customer's onward sale to a third-party broker — and writes a tamper-evident audit log of every contract leg, time-stamped and committee-ready. The customer receives clean financing proceeds (in MYR), the operator books a deferred receivable at the agreed profit rate, and the underlying commodity contracts are archived as evidence for both regulators and your Shariah committee.",
+			"Every disbursement is structured as a Tawarruq (مرابحة via commodity sale). When the customer's financing is approved, TrueSyariah books a real commodity transaction through TrueCommodity™ — our Shariah trading infrastructure. The platform handles the full sequence — financier purchase, sale to customer at deferred profit, customer's onward sale to a third-party broker — and writes a tamper-evident audit log of every contract leg, time-stamped and committee-ready. The customer receives clean financing proceeds (in MYR), the operator books a deferred receivable at the agreed profit rate, and the underlying commodity contracts are archived as evidence for both regulators and your Shariah committee.",
 	},
 	{
 		question:
@@ -51,7 +51,7 @@ export const truesyariahFaq = [
 		question:
 			"Which integrations and partners come pre-wired with TrueSyariah?",
 		answer:
-			"Out of the box: TrueIdentity™ for e-KYC (MyKad OCR, liveness, biometric match), CTOS for credit reports, TrueSSM™ for SSM company lookups via Infomina, MSC Trustgate for on-prem PKI signing, TrueCommodity™ for Bursa Suq Al-Sila' Tawarruq trades, and Malaysian payment gateways (FPX, DuitNow) for disbursement and collection. We negotiate partner pricing on your behalf and roll the integrations into a single contract so your Shariah operating company isn't stuck managing five vendors in parallel.",
+			"Out of the box: TrueIdentity™ for e-KYC (MyKad OCR, liveness, biometric match), CTOS for credit reports, TrueSSM™ for SSM company lookups via Infomina, MSC Trustgate for on-prem PKI signing, TrueCommodity™ for Tawarruq commodity trades, and Malaysian payment gateways (FPX, DuitNow) for disbursement and collection. We negotiate partner pricing on your behalf and roll the integrations into a single contract so your Shariah operating company isn't stuck managing five vendors in parallel.",
 	},
 	{
 		question:
@@ -63,12 +63,12 @@ export const truesyariahFaq = [
 		question:
 			"What does a TrueSyariah engagement look like in practice?",
 		answer:
-			"A typical engagement runs in four stages. (1) Licensing & entity setup: Truestack helps incorporate the Shariah operating company, drafts the Shariah digital lending licence submission, and onboards your Shariah committee. (2) Build: dedicated AWS Malaysia account stood up, TrueSyariah deployed, BSAS / Trustgate / e-KYC / payment gateways wired in, financing products and Ta'widh/Gharamah caps configured to your Shariah rulings. (3) UAT & inspection: end-to-end testing, penetration test, supervisory examiner walkthrough, Shariah committee sign-off. (4) Go-live & managed engineering: first disbursement, branded web and mobile apps in market, ongoing platform engineering and regulatory / Shariah reporting support. Talk to us early — we like to align engineering milestones with your supervisory timeline.",
+			"A typical engagement runs in four stages. (1) Licensing & entity setup: Truestack helps incorporate the Shariah operating company, drafts the Shariah digital lending licence submission, and onboards your Shariah committee. (2) Build: dedicated AWS Malaysia account stood up, TrueSyariah deployed, TrueCommodity™ / Trustgate / e-KYC / payment gateways wired in, financing products and Ta'widh/Gharamah caps configured to your Shariah rulings. (3) UAT & inspection: end-to-end testing, penetration test, supervisory examiner walkthrough, Shariah committee sign-off. (4) Go-live & managed engineering: first disbursement, branded web and mobile apps in market, ongoing platform engineering and regulatory / Shariah reporting support. Talk to us early — we like to align engineering milestones with your supervisory timeline.",
 	},
 	{
 		question:
 			"Who builds Shariah digital lending platforms in Malaysia?",
 		answer:
-			"Truestack builds TrueSyariah™ — a Shariah lending platform for Malaysia with Tawarruq via Bursa Suq Al-Sila', segregated Ta'widh and Gharamah ledgers, on-prem signing, e-KYC, and a dedicated AWS Malaysia deployment. We also support the Shariah digital lending licence pathway alongside your advisors, so platform and licensing move together.",
+			"Truestack builds TrueSyariah™ — a Shariah lending platform for Malaysia with Tawarruq commodity financing, segregated Ta'widh and Gharamah ledgers, on-prem signing, e-KYC, and a dedicated AWS Malaysia deployment. We also support the Shariah digital lending licence pathway alongside your advisors, so platform and licensing move together.",
 	},
 ] as const;

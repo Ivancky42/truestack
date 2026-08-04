@@ -73,7 +73,7 @@ function SyariahAdminMock() {
 					<Scale className="h-3 w-3 text-emerald-700" />
 				</div>
 				<p className="text-[8px] font-medium text-slate-700">
-					BSAS commodity trade · settled today
+					Tawarruq commodity trade · settled today
 				</p>
 			</div>
 		</div>

@@ -43,7 +43,7 @@ The TrueKredit page (`app/truekredit/page.tsx`) is the canonical tone reference.
    Translate instead: "API integration" → "checks that happen inside the same system".
    (Allowed on TrueIdentity/TrueSSM pages and the tech-stack/partner strips.)
 4. **Name Malaysian realities precisely.** KPKT, MyKad, Lampiran A/B1, CTOS, SSM,
-   Bursa Suq Al-Sila', Ta'widh, Gharamah. Specificity builds trust; our buyers know
+   Ta'widh, Gharamah, Tawarruq. Specificity builds trust; our buyers know
    these terms better than we do.
 5. **No hype words.** Banned: revolutionary, cutting-edge, world-class, seamless,
    next-generation, best-in-class, robust, leverage, empower. Prove it with a specific

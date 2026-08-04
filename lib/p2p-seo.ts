@@ -26,7 +26,7 @@ export const P2P_METADATA = {
 		"invoice financing platform Malaysia",
 		"Gharamah Ta'widh accounting",
 		"Tawarruq P2P Malaysia",
-		"Bursa Suq Al-Sila integration",
+		"Tawarruq commodity disbursement",
 		"software development P2P Malaysia",
 	],
 	openGraphTitle:
@@ -75,9 +75,9 @@ const P2P_OFFER_CATALOG = [
 			"Admin console plus exports tuned for SC submissions, audits, and Shariah committee reviews.",
 	},
 	{
-		name: "Tawarruq disbursement via Bursa Suq Al-Sila'",
+		name: "Tawarruq disbursement",
 		description:
-			"Shariah-compliant Tawarruq (commodity Murabaha) disbursement orchestrated on Bursa Malaysia's Shariah commodity trading platform.",
+			"Shariah-compliant Tawarruq (commodity Murabaha) disbursement — commodity purchase, deferred sale to the customer, and onward sale for cash proceeds, with a full audit trail.",
 	},
 	{
 		name: "Shariah-aligned accounting (Gharamah & Ta'widh)",
