@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary_large_image",
+		card: "summary",
 		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
 		description:
 			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",

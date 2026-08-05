@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Terms of Use - Truestack",
     description:
       "Terms of Use for Truestack website. Read our terms and conditions for using our website and services.",

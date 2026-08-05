@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary_large_image",
+		card: "summary",
 		title: WORK_METADATA.openGraphTitle,
 		description: WORK_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

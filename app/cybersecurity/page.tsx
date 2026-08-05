@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Cybersecurity Policy - Truestack",
     description:
       "How Truestack approaches security across its website, lending systems, and e-KYC infrastructure.",

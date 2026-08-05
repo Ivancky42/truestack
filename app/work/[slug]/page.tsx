@@ -44,7 +44,7 @@ export async function generateMetadata({
 			images: [defaultOgImage],
 		},
 		twitter: {
-			card: "summary_large_image",
+			card: "summary",
 			title: study.seo.title,
 			description: study.seo.description,
 			images: [defaultOgImage.url],

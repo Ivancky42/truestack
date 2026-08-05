@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "PDPA Notice - Truestack",
     description:
       "Malaysia PDPA notice covering Truestack services and TrueIdentity e-KYC data processing.",

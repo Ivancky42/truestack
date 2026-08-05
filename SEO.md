@@ -53,7 +53,7 @@ When you have LinkedIn, Twitter, Facebook, add them to the `sameAs` array in `co
 ## Further Recommendations
 
 ### High Impact
-- Create a 1200x630 OG image (current favicon is too small for social sharing)
+- Default OG image is the site favicon (`/truestack-favicon.png`); product pages may use a hero
 - Submit to Google Search Console and add your sitemap
 - Add canonical URLs to key pages
 - Consider a blog or resources section for fresh content and long-tail keywords

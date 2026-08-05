@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Book a Free Consultation - Truestack",
     description:
       "Book a free consultation with Truestack — KPKT licensing, compliance, or lending software. Free and no obligation.",

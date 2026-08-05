@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary_large_image",
+		card: "summary",
 		title: CAREERS_METADATA.openGraphTitle,
 		description: CAREERS_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

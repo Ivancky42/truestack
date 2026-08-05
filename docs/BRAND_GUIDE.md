@@ -67,8 +67,8 @@ The TrueKredit page (`app/truekredit/page.tsx`) is the canonical tone reference.
 ## 3. Color system
 
 All neutrals and the primary brand color come from CSS tokens in `app/globals.css`.
-**Never hardcode hex values in JSX.** Exceptions: third-party logo marks (e.g. AWS
-`#FF9900`) and `app/og/route.tsx` (inline styles required there).
+**Never hardcode hex values in JSX.** Exception: third-party logo marks (e.g. AWS
+`#FF9900`).
 
 ### Tokens (use these class names)
 
@@ -232,8 +232,8 @@ Any new page or meaningful copy change must complete this checklist:
 1. **Metadata export** — unique `title` (≤ 60 chars, template appends "- Truestack"),
    `description` 140–160 chars written like ad copy with the primary keyword, and
    `alternates: { canonical: "/path" }`.
-2. **Open Graph** — inherit `defaultOgImage` or use `app/og/route.tsx`; don't ship a page
-   with no OG image.
+2. **Open Graph** — inherit `defaultOgImage` (`/truestack-favicon.png`) or a page-specific
+   image; don't ship a page with no OG image.
 3. **JSON-LD** — add/extend a schema component in `components/seo/` (Service, Product,
    `FAQPage` whenever the page has an FAQ, BreadcrumbList for deep pages). Render it in
    the page/layout.
