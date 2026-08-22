@@ -50,7 +50,7 @@ export default function DigitalLicensePage() {
 			<BreadcrumbSchema
 				items={[
 					{ name: "Home", path: "/" },
-					{ name: "Digital KPKT License", path: DIGITAL_LICENSE_PAGE_PATH },
+					{ name: "Online Money Lending Licence", path: DIGITAL_LICENSE_PAGE_PATH },
 				]}
 			/>
 			<DigitalLicensePageContent />

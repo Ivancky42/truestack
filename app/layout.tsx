@@ -35,12 +35,18 @@ export const metadata: Metadata = {
     template: "%s - Truestack",
   },
   description:
-    "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
+    "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation.",
   keywords: [
     "KPKT license Malaysia",
+    "online money lending licence",
+    "e-Lending",
+    "pemberian pinjaman wang dalam talian",
     "KPKT digital licence Malaysia",
     "KPKT account management",
+    "pembaharuan lesen PPW",
+    "permit iklan",
     "money lender Malaysia",
+    "money lending management system",
     "money lender software Malaysia",
     "lending platform Malaysia",
     "digital license conversion Malaysia",
@@ -58,7 +64,10 @@ export const metadata: Metadata = {
     "digital lending platform Malaysia",
     "KPKT PPW loan management",
     "money lender compliance Malaysia",
-    "Lampiran A Lampiran B1",
+    "Lampiran A Lampiran B Lampiran B1",
+    "iDEAL KPKT",
+    "sistem iDEAL",
+    "Jadual J Jadual K",
     "PDPA compliant KYC",
     "free fintech consultation Malaysia",
     "free KPKT consultation",
@@ -75,14 +84,14 @@ export const metadata: Metadata = {
     siteName,
     title: "Truestack - KPKT Services & Fintech Software",
     description:
-      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
+      "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation.",
     images: [defaultOgImage],
   },
   twitter: {
     card: defaultTwitterCard,
     title: "Truestack - KPKT Services & Fintech Software",
     description:
-      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",
+      "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation.",
     images: [defaultOgImage.url],
   },
   robots: {

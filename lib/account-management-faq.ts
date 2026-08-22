@@ -15,9 +15,10 @@ export const accountManagementFaq = [
 			"Operators typically see up to about 50% faster turnaround on common KPKT submissions compared with handling everything in-house. Exact timing still depends on document readiness and regulator scheduling.",
 	},
 	{
-		question: "What does the service cover?",
+		question:
+			"Do you handle pembaharuan lesen PPW / KK and permit iklan?",
 		answer:
-			"Company updates (directors and shareholders), licence and permit renewals, annual submissions, and coordination with CoSec and SSM. Digital KPKT licence conversion is a separate engagement — see our Digital License service if you are going nationwide online.",
+			"Yes. Truestack handles pembaharuan lesen PPW / KK and permit iklan (advertisement permit) renewals, plus company updates, annual submissions, and coordination with CoSec and SSM. Digital KPKT licence conversion is a separate engagement — see our Digital License service if you are going nationwide online.",
 	},
 	{
 		question: "How does pricing work?",
