@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import {
 	getWorkCaseStudy,
 	getWorkCaseStudySlugs,
@@ -44,7 +44,7 @@ export async function generateMetadata({
 			images: [defaultOgImage],
 		},
 		twitter: {
-			card: "summary",
+			card: defaultTwitterCard,
 			title: study.seo.title,
 			description: study.seo.description,
 			images: [defaultOgImage.url],

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { TrueIdentitySchema } from "@/components/seo/trueidentity-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { trueidentityFaq } from "@/lib/trueidentity-faq";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: TRUEIDENTITY_METADATA.openGraphTitle,
 		description: TRUEIDENTITY_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

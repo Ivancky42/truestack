@@ -19,6 +19,12 @@ Every photo in `public/photos/` must be recorded here (guide §8).
 | p2p-delivery-team.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 | truesyariah-licence-journey.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 
+## Brand / social
+
+| File | Source | Notes |
+|---|---|---|
+| og.png | Composited from `truestack-logo-transparent-dark.png` | Sitewide Open Graph / Twitter card (1200×630). Not photography. |
+
 ## Work case-study screenshots (`public/work/`)
 
 Product UI captures taken for Truestack case studies (not stock photography).

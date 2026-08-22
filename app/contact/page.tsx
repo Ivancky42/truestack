@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { Hero } from "@/components/sections/hero";
 import { ContactCards } from "@/components/sections/contact-cards";
 import { ContactPageBackground } from "@/components/sections/contact-page-background";
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary",
+    card: defaultTwitterCard,
     title: "Book a Free Consultation - Truestack",
     description:
       "Book a free consultation with Truestack — KPKT licensing, compliance, or lending software. Free and no obligation.",

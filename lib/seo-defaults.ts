@@ -1,8 +1,28 @@
 /**
- * Canonical site origin for absolute URLs in JSON-LD and similar.
+ * Canonical public origin for absolute URLs (canonical, sitemap, robots,
+ * JSON-LD, og:url). Live traffic lands on www — Vercel 307s the apex there —
+ * so every published URL uses www even if NEXT_PUBLIC_SITE_URL is still the apex.
+ * Preview / non-production hosts (e.g. *.vercel.app) are left unchanged.
  */
-export const siteUrl =
-	process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+const PRODUCTION_CANONICAL_ORIGIN = "https://www.truestack.my";
+const PRODUCTION_HOSTS = new Set(["truestack.my", "www.truestack.my"]);
+
+export function resolveSiteUrl(
+	raw: string | undefined = process.env.NEXT_PUBLIC_SITE_URL,
+): string {
+	if (!raw) return PRODUCTION_CANONICAL_ORIGIN;
+	try {
+		const url = new URL(raw);
+		if (PRODUCTION_HOSTS.has(url.hostname)) {
+			return PRODUCTION_CANONICAL_ORIGIN;
+		}
+		return url.origin;
+	} catch {
+		return PRODUCTION_CANONICAL_ORIGIN;
+	}
+}
+
+export const siteUrl = resolveSiteUrl();
 
 /**
  * Preferred Google sitename (`og:site_name` + WebSite schema `name`).
@@ -65,13 +85,17 @@ export const orgLogo = {
 } as const;
 
 /**
- * Default Open Graph / Twitter image: site favicon (square).
+ * Default Open Graph / Twitter image: 1200×630 brand lockup
+ * (`public/og.png`, composited from the existing wordmark).
  * metadataBase in root layout turns the relative path into an absolute URL.
- * Prefer twitter.card "summary" (not summary_large_image) with this asset.
+ * Pair with twitter.card "summary_large_image".
  */
 export const defaultOgImage = {
-  url: orgLogo.url,
-  width: orgLogo.width,
-  height: orgLogo.height,
-  alt: siteName,
+	url: "/og.png",
+	width: 1200,
+	height: 630,
+	alt: siteName,
 } as const;
+
+/** Twitter card type for the default 1200×630 OG image. */
+export const defaultTwitterCard = "summary_large_image" as const;

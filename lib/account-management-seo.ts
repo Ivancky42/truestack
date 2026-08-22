@@ -1,4 +1,6 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+import { siteUrl } from "@/lib/seo-defaults";
+
+const baseUrl = siteUrl;
 
 export const ACCOUNT_MANAGEMENT_PAGE_PATH = "/services/account-management";
 export const ACCOUNT_MANAGEMENT_PAGE_URL = `${baseUrl}${ACCOUNT_MANAGEMENT_PAGE_PATH}`;
