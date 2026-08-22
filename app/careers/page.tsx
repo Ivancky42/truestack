@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { CareersHero } from "@/components/sections/careers-hero";
 import { CareersCta } from "@/components/sections/careers-cta";
 import { CareersJobs } from "@/components/sections/careers-jobs";
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: CAREERS_METADATA.openGraphTitle,
 		description: CAREERS_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

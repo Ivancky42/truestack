@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { HomepageHero } from "@/components/sections/homepage-hero";
 // import { ComplianceSection } from "@/components/sections/compliance-section";
 import { WhatWeDo } from "@/components/sections/what-we-do";
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
 		description:
 			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",

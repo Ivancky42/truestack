@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/seo-defaults";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+const baseUrl = siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

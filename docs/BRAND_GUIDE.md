@@ -232,7 +232,7 @@ Any new page or meaningful copy change must complete this checklist:
 1. **Metadata export** — unique `title` (≤ 60 chars, template appends "- Truestack"),
    `description` 140–160 chars written like ad copy with the primary keyword, and
    `alternates: { canonical: "/path" }`.
-2. **Open Graph** — inherit `defaultOgImage` (`/truestack-favicon.png`) or a page-specific
+2. **Open Graph** — inherit `defaultOgImage` (`/og.png`, 1200×630) or a page-specific
    image; don't ship a page with no OG image.
 3. **JSON-LD** — add/extend a schema component in `components/seo/` (Service, Product,
    `FAQPage` whenever the page has an FAQ, BreadcrumbList for deep pages). Render it in

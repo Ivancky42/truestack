@@ -13,7 +13,7 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 
 1. `metadata` export: unique title ≤ 60 chars, description 140–160 chars with the primary
    keyword, `alternates: { canonical: "/path" }`.
-2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` favicon, or a page-specific image).
+2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` `/og.png`, or a page-specific image).
 3. JSON-LD component in `components/seo/` rendered by the page — Service/Product schema,
    `FAQPage` whenever the page has an FAQ, BreadcrumbList for nested pages.
 4. Route listed in `app/sitemap.ts` with priority/changeFrequency.

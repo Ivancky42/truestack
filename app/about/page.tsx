@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { ABOUT_METADATA, ABOUT_PAGE_PATH } from "@/lib/about-seo";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { AboutHero } from "@/components/sections/about-hero";
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: ABOUT_METADATA.openGraphTitle,
 		description: ABOUT_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

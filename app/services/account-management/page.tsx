@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: [defaultOgImage],
   },
   twitter: {
-    card: "summary",
+    card: defaultTwitterCard,
     title: ACCOUNT_MANAGEMENT_METADATA.openGraphTitle,
     description: ACCOUNT_MANAGEMENT_METADATA.openGraphDescription,
     images: [defaultOgImage.url],

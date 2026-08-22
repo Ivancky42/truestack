@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import {
 	DIGITAL_LICENSE_METADATA,
 	DIGITAL_LICENSE_PAGE_PATH,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: DIGITAL_LICENSE_METADATA.openGraphTitle,
 		description: DIGITAL_LICENSE_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

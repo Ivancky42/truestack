@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { TrueSsmSchema } from "@/components/seo/truessm-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { truessmFaq } from "@/lib/truessm-faq";
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: TRUESSM_METADATA.openGraphTitle,
 		description: TRUESSM_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],

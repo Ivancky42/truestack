@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage, siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
 import { WorkSchema } from "@/components/seo/work-schema";
 import {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		images: [defaultOgImage],
 	},
 	twitter: {
-		card: "summary",
+		card: defaultTwitterCard,
 		title: WORK_METADATA.openGraphTitle,
 		description: WORK_METADATA.openGraphDescription,
 		images: [defaultOgImage.url],
