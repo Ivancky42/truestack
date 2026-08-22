@@ -1,8 +1,8 @@
 export const truekreditFaq = [
 	{
-		question: "What is TrueKredit™?",
+		question: "What is TrueKredit™ money lending management system?",
 		answer:
-			"TrueKredit™ is Truestack's loan management system for KPKT-licensed money lenders in Malaysia. It runs your full loan book — applications, repayments, KPKT paperwork and audit trails — with customer data kept separate on your own secure cloud in Malaysia. Standard covers branch and counter operations; TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending. Looking for Shariah-compliant financing? See TrueSyariah™. For SC-regulated P2P, see TrueP2P™.",
+			"TrueKredit™ is Truestack's money lending management system / money lender software Malaysia for KPKT-licensed money lenders. It runs your full loan book — applications, repayments, KPKT paperwork and audit trails — with customer data kept separate on your own secure cloud in Malaysia. Standard covers branch and counter operations; TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending. Looking for Shariah-compliant financing? See TrueSyariah™. For SC-regulated P2P, see TrueP2P™.",
 	},
 	{
 		question: "Is TrueKredit only for KPKT PPW (offline) licence holders?",
@@ -12,7 +12,7 @@ export const truekreditFaq = [
 	{
 		question: "What do Standard and Pro both include?",
 		answer:
-			"Both share the same core: the full loan journey, flexible products, risk scoring, approvals, e-KYC, company lookups, repayments, KPKT documents, reports, staff roles, audit trails and walk-in applications — all on your own secure cloud in Malaysia. Pro does not take anything away from Standard; it unlocks nationwide customer channels on the same system.",
+			"Both share the same core: the full loan journey, flexible products, risk scoring, approvals, e-KYC, company lookups, repayments, KPKT documents (Lampiran A, B1, Jadual J & Jadual K / Schedule J & K), reports, staff roles, audit trails and walk-in applications — all on your own secure cloud in Malaysia. Pro does not take anything away from Standard; it unlocks nationwide customer channels on the same system.",
 	},
 	{
 		question:
@@ -51,9 +51,10 @@ export const truekreditFaq = [
 			"Yes. Start on Standard for your branch today. When you are ready for a KPKT Online licence path, upgrade to Pro without starting over — borrowers, loans, schedules and history remain where they are. Talk to us early so the upgrade lines up with your licence timeline.",
 	},
 	{
-		question: "Do you support Lampiran A and iDEAL CSV exports on both plans?",
+		question:
+			"Do you support Lampiran A, B, B1, Jadual J & K, and iDEAL KPKT?",
 		answer:
-			"Yes. Lampiran A and CSV files tuned for KPKT iDeaL submissions ship on Standard and Pro.",
+			"Yes. Lampiran A and B1, Jadual J & Jadual K (Schedule J & K), and CSV files tuned for KPKT iDEAL (sistem iDEAL) submissions ship on Standard and Pro.",
 	},
 	{
 		question: "Do I need Truesend™ just to produce PDF receipts and letters?",
@@ -67,9 +68,9 @@ export const truekreditFaq = [
 	},
 	{
 		question:
-			"Is TrueKredit money lender software for Malaysia?",
+			"Is TrueKredit money lender software Malaysia / a money lending management system?",
 		answer:
-			"Yes. TrueKredit™ is purpose-built for KPKT-licensed money lenders in Malaysia — loan management, Lampiran A/B1 and iDeaL exports, e-KYC, and audit trails on your own secure cloud. It is the lending platform Malaysian operators use for branch operations (Standard) or nationwide digital lending (Pro).",
+			"Yes. TrueKredit™ is a money lending management system / money lender software Malaysia for KPKT-licensed money lenders — loan management, Lampiran A/B1, Jadual J & K, and iDEAL (sistem iDEAL) exports, e-KYC, and audit trails on your own secure cloud. It is the lending platform Malaysian operators use for branch operations (Standard) or nationwide digital lending (Pro).",
 	},
 	{
 		question:

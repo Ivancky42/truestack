@@ -1,13 +1,14 @@
 export const digitalLicenseFaq = [
 	{
-		question: "What is a KPKT digital licence?",
+		question:
+			"What is pemberian pinjaman wang dalam talian (e-Lending)?",
 		answer:
-			"It is approval for a KPKT-licensed money lender to operate fully online — serving customers nationwide through web and mobile apps, with the controls examiners expect. TrueStack guides the licensing path, documentation, platform build, and KPKT review with your team.",
+			"Pemberian pinjaman wang dalam talian — also called e-Lending or urus niaga secara dalam talian — is the KPKT online money lending licence (digital licence). It is approval for a KPKT-licensed money lender to operate fully online — serving customers nationwide through web and mobile apps, with the controls examiners expect. TrueStack guides the licensing path, documentation, platform build, and KPKT review with your team.",
 	},
 	{
-		question: "How long does it take?",
+		question: "How long does an online money lending licence take?",
 		answer:
-			"Most operators target about three months from kickoff to go-live — provisional licence prep, TrueKredit™ Pro setup, testing, security review, KPKT review, and final approval. Timelines depend on your readiness and KPKT scheduling.",
+			"Most operators target about three months from kickoff to go-live on the online money lending licence — provisional licence prep, TrueKredit™ Pro setup, testing, security review, KPKT review, and final approval. Timelines depend on your readiness and KPKT scheduling.",
 	},
 	{
 		question: "What is TrueKredit™ Pro?",
@@ -17,12 +18,13 @@ export const digitalLicenseFaq = [
 	{
 		question: "What does TrueStack handle end-to-end?",
 		answer:
-			"Licensing strategy and advisory, provisional dossier and KPKT presentation support, TrueKredit™ Pro build (branded web, mobile, signing), testing and security review coordination, KPKT review pack preparation, and support through approval and go-live — so you are not stitching consultants and vendors yourself.",
+			"Licensing strategy and advisory aligned with the Online Moneylenders Guidelines, provisional dossier and KPKT presentation support, TrueKredit™ Pro build (branded web, mobile, signing), testing and security review coordination, KPKT review pack preparation, and support through approval and go-live — so you are not stitching consultants and vendors yourself.",
 	},
 	{
-		question: "Who is this for?",
+		question:
+			"Do existing PPW holders need kebenaran tambahan for e-Lending?",
 		answer:
-			"Established KPKT money lenders ready to go digital — operators with traditional or PPW footprints who want nationwide reach and a platform auditors can follow. We also support groups planning their first digital lending entity with a clear KPKT pathway.",
+			"Yes. Existing PPW holders use kebenaran tambahan to operate pemberian pinjaman wang dalam talian (e-Lending / urus niaga secara dalam talian). TrueStack works with established KPKT money lenders who have traditional or PPW footprints and want nationwide reach on a platform auditors can follow. We also support groups planning their first digital lending entity with a clear KPKT pathway.",
 	},
 	{
 		question:

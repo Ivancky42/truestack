@@ -6,13 +6,14 @@ export const TRUEKREDIT_PAGE_PATH = "/truekredit";
 export const TRUEKREDIT_PAGE_URL = `${baseUrl}${TRUEKREDIT_PAGE_PATH}`;
 
 export const TRUEKREDIT_METADATA = {
-	title:
-		"TrueKredit™ | Money Lender Software & Loan Platform Malaysia",
+	title: "TrueKredit™ | Money Lending Management System",
 	description:
-		"Money lender software for Malaysia — TrueKredit™ is the KPKT loan management platform for licensed lenders. Branch Standard or nationwide Pro apps.",
+		"Money lending management system for KPKT-licensed money lenders. Money lender software Malaysia — iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K.",
 	keywords: [
 		"TrueKredit",
+		"money lending management system",
 		"money lender software Malaysia",
+		"loan management for KPKT-licensed money lenders",
 		"loan management system Malaysia",
 		"lending platform Malaysia",
 		"KPKT loan management system",
@@ -24,18 +25,23 @@ export const TRUEKREDIT_METADATA = {
 		"money lender Malaysia software",
 		"KPKT compliance software",
 		"Lampiran A",
+		"Lampiran B",
 		"Lampiran B1",
 		"iDEAL KPKT",
+		"sistem iDEAL",
+		"Jadual J",
+		"Jadual K",
+		"Schedule J",
+		"Schedule K",
 		"TrueKredit Pro",
 		"TrueKredit Standard",
 		"KPKT online lending",
 		"digital money lender Malaysia",
 		"loan book software Malaysia",
 	],
-	openGraphTitle:
-		"TrueKredit™ | Money Lender Software & Loan Platform Malaysia",
+	openGraphTitle: "TrueKredit™ | Money Lender Software Malaysia",
 	openGraphDescription:
-		"KPKT loan management platform for Malaysian money lenders — applications to repayment, compliance docs, e-KYC. Pro adds nationwide apps and digital licence readiness.",
+		"Money lender software Malaysia / money lending management system. iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K (Schedule J & K).",
 	ogImagePath: "/truekredit/hero.png",
 	ogImageAlt:
 		"TrueKredit KPKT-aligned loan management platform — applications, signing, dashboards and compliance modules",
@@ -81,8 +87,10 @@ export function buildTrueKreditJsonLd() {
 				alternateName: [
 					"TrueKredit Pro",
 					"TrueKredit Standard",
-					"KPKT loan management system Malaysia",
+					"Money lending management system",
 					"Money lender software Malaysia",
+					"KPKT loan management system Malaysia",
+					"sistem iDEAL",
 					"Digital lending platform Malaysia",
 				],
 				url: TRUEKREDIT_PAGE_URL,
@@ -108,7 +116,8 @@ export function buildTrueKreditJsonLd() {
 				featureList: [
 					"Loan journey from application to repayment",
 					"Refinance, top-up and reschedule on the same loan file",
-					"Lampiran A and iDeaL CSV exports",
+					"Lampiran A, B1 and iDEAL KPKT (sistem iDEAL) exports",
+					"Jadual J & Jadual K (Schedule J & K) loan agreements",
 					"e-KYC and TrueSSM™ integrations",
 					"Secure cloud hosting in Malaysia",
 					"Audit trails and KPKT compliance workflows",

@@ -46,7 +46,7 @@ export function buildContactJsonLd() {
 				name: "Free Consultation",
 				serviceType: "Fintech & KPKT licensing consultation",
 				description:
-					"A free, no-obligation consultation covering KPKT account management, digital license conversion, lending software, and custom fintech development for licensed money lenders and fintech operators in Malaysia.",
+					"A free, no-obligation consultation covering KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, money lender software Malaysia, and custom fintech development for licensed money lenders and fintech operators in Malaysia.",
 				provider: { "@id": `${baseUrl}/#organization` },
 				areaServed: { "@type": "Country", name: "Malaysia" },
 				url: CONTACT_PAGE_URL,

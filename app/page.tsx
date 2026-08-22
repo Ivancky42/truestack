@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 		absolute: "Truestack — KPKT Services & Fintech Software for Malaysia",
 	},
 	description:
-		"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+		"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
 	alternates: { canonical: "/" },
 	openGraph: {
 		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
 		description:
-			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+			"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
 		url: "/",
 		type: "website",
 		locale: "en_MY",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 		card: defaultTwitterCard,
 		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
 		description:
-			"KPKT digital licence, account management, and lending software for Malaysian money lenders — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+			"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
 		images: [defaultOgImage.url],
 	},
 };

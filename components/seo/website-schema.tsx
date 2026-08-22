@@ -18,7 +18,7 @@ export function WebSiteSchema() {
     alternateName: [...siteNameAlternates],
     url: siteUrl,
     description:
-      "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
+      "KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders.",
     publisher: {
       "@id": `${siteUrl}/#organization`,
     },
