@@ -2,7 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { legalName, siteName } from "@/lib/seo-defaults";
+import {
+  legalName,
+  orgAddressLines,
+  orgEmail,
+  orgLinkedInUrl,
+  orgRegistrationNumber,
+  siteName,
+} from "@/lib/seo-defaults";
 
 /** Same grouping and labels as the Solutions menu in `header.tsx`. */
 const solutionsColumns = [
@@ -109,14 +116,14 @@ export function Footer() {
               KPKT compliance services and fintech software development for licensed money lenders in Malaysia.
             </p>
             <a
-              href="mailto:hello@truestack.my"
+              href={`mailto:${orgEmail}`}
               className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary group"
             >
               <Mail className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span className="text-[15px]">hello@truestack.my</span>
+              <span className="text-[15px]">{orgEmail}</span>
             </a>
             <a
-              href="https://www.linkedin.com/company/truestack-technologies/"
+              href={orgLinkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Truestack Technologies on LinkedIn"
@@ -154,12 +161,14 @@ export function Footer() {
                 {legalName.toUpperCase()}
               </p>
               <p className="text-sm text-muted-foreground/70">
-                Registration No. 202501058714 (1660120-X)
+                Registration No. {orgRegistrationNumber}
               </p>
               <address className="text-sm not-italic text-muted-foreground/70 leading-relaxed">
-                C-13-01, KL Trillion<br />
-                No. 338, Jalan Tun Razak<br />
-                50400 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
+                {orgAddressLines[0]}
+                <br />
+                {orgAddressLines[1]}
+                <br />
+                {orgAddressLines[2]}
               </address>
             </div>
 

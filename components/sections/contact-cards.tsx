@@ -4,11 +4,15 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Copy, Check } from "lucide-react";
+import {
+  orgEmail,
+  orgPhoneDisplay,
+  orgWhatsAppNumber,
+} from "@/lib/seo-defaults";
 
-const PHONE_NUMBER = "016-461 4919";
-const PHONE_LINK = "60164614919";
-const EMAIL = "hello@truestack.my";
-const WHATSAPP_URL = `https://wa.me/${PHONE_LINK}?text=Hi%20Truestack%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services.`;
+const PHONE_NUMBER = orgPhoneDisplay;
+const EMAIL = orgEmail;
+const WHATSAPP_URL = `https://wa.me/${orgWhatsAppNumber}?text=Hi%20Truestack%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services.`;
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (

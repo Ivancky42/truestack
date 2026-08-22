@@ -1,15 +1,24 @@
-import { legalName, siteName, siteNameShort, siteUrl } from "@/lib/seo-defaults";
+import {
+  legalName,
+  orgAddress,
+  orgEmail,
+  orgLinkedInUrl,
+  orgLogo,
+  orgPhoneE164,
+  orgRegistrationNumber,
+  siteName,
+  siteNameShort,
+  siteUrl,
+} from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
 
 /**
- * Optional env (comma- or newline-separated URLs), e.g. LinkedIn company page:
- * NEXT_PUBLIC_ORG_SAME_AS=https://www.linkedin.com/company/your-org
- *
- * NEXT_PUBLIC_ORG_PHONE — E.164 or local format as published on the site
- * NEXT_PUBLIC_ORG_STREET_ADDRESS, NEXT_PUBLIC_ORG_ADDRESS_LOCALITY, NEXT_PUBLIC_ORG_POSTAL_CODE
+ * Extra profile URLs (comma- or newline-separated), merged with LinkedIn.
+ * Use for Wikidata, Crunchbase, etc. once they exist:
+ * NEXT_PUBLIC_ORG_SAME_AS=https://www.wikidata.org/wiki/Q…
  */
-function orgSameAs(): string[] {
+function extraSameAs(): string[] {
   const raw = process.env.NEXT_PUBLIC_ORG_SAME_AS;
   if (!raw?.trim()) return [];
   return raw
@@ -18,36 +27,17 @@ function orgSameAs(): string[] {
     .filter(Boolean);
 }
 
+function orgSameAs(): string[] {
+  return [...new Set([orgLinkedInUrl, ...extraSameAs()])];
+}
+
 /**
  * JSON-LD Organization schema for Google Knowledge Graph / Knowledge Panel.
  * Validate at: https://validator.schema.org/
+ * @see https://developers.google.com/search/docs/appearance/structured-data/organization
  */
 export function OrganizationSchema() {
-  const sameAs = orgSameAs();
-  const street = process.env.NEXT_PUBLIC_ORG_STREET_ADDRESS?.trim();
-  const locality = process.env.NEXT_PUBLIC_ORG_ADDRESS_LOCALITY?.trim();
-  const postal = process.env.NEXT_PUBLIC_ORG_POSTAL_CODE?.trim();
-  const phone = process.env.NEXT_PUBLIC_ORG_PHONE?.trim();
-
-  const address: Record<string, string> = {
-    "@type": "PostalAddress",
-    addressCountry: "MY",
-    addressRegion: "Malaysia",
-  };
-  if (street) address.streetAddress = street;
-  if (locality) address.addressLocality = locality;
-  if (postal) address.postalCode = postal;
-
-  const contactPoint: Record<string, unknown> = {
-    "@type": "ContactPoint",
-    name: "Free consultation",
-    email: "hello@truestack.my",
-    contactType: "sales",
-    url: `${baseUrl}/contact`,
-    areaServed: "MY",
-    availableLanguage: "English",
-  };
-  if (phone) contactPoint.telephone = phone;
+  const logoUrl = `${baseUrl}${orgLogo.url}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -57,13 +47,44 @@ export function OrganizationSchema() {
     legalName,
     alternateName: [siteNameShort, "True Stack"],
     url: baseUrl,
-    logo: `${baseUrl}/truestack-logo-transparent.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: logoUrl,
+      contentUrl: logoUrl,
+      width: orgLogo.width,
+      height: orgLogo.height,
+      caption: siteName,
+    },
+    image: logoUrl,
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia — including TrueKredit™ for conventional KPKT lending, TrueSyariah™ for Shariah-compliant digital financing, and TrueP2P™ for Securities Commission Malaysia peer-to-peer platform engineering.",
     foundingDate: "2020",
-    address,
-    contactPoint,
-    ...(sameAs.length ? { sameAs } : {}),
+    email: orgEmail,
+    telephone: orgPhoneE164,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: orgAddress.streetAddress,
+      addressLocality: orgAddress.addressLocality,
+      addressRegion: orgAddress.addressRegion,
+      postalCode: orgAddress.postalCode,
+      addressCountry: orgAddress.addressCountry,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      name: "Free consultation",
+      email: orgEmail,
+      telephone: orgPhoneE164,
+      contactType: "sales",
+      url: `${baseUrl}/contact`,
+      areaServed: "MY",
+      availableLanguage: "English",
+    },
+    identifier: {
+      "@type": "PropertyValue",
+      name: "SSM Company Registration Number",
+      value: orgRegistrationNumber,
+    },
+    sameAs: orgSameAs(),
     knowsAbout: [
       "KPKT license management",
       "KPKT digital licence Malaysia",

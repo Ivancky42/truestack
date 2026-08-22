@@ -1,6 +1,7 @@
 import type { JobRole } from "@/lib/careers-data";
+import { orgAddress, orgEmail, orgLogo, siteName, siteUrl } from "@/lib/seo-defaults";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+const baseUrl = siteUrl;
 
 export const CAREERS_PAGE_PATH = "/careers";
 export const CAREERS_PAGE_URL = `${baseUrl}${CAREERS_PAGE_PATH}`;
@@ -89,17 +90,19 @@ export function buildJobPostingSchema(role: JobRole) {
     hiringOrganization: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
-      name: "Truestack",
+      name: siteName,
       sameAs: baseUrl,
-      logo: `${baseUrl}/truestack-logo-transparent.png`,
+      logo: `${baseUrl}${orgLogo.url}`,
     },
     jobLocation: {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Kuala Lumpur",
-        addressRegion: "Wilayah Persekutuan Kuala Lumpur",
-        addressCountry: "MY",
+        streetAddress: orgAddress.streetAddress,
+        addressLocality: orgAddress.addressLocality,
+        addressRegion: orgAddress.addressRegion,
+        postalCode: orgAddress.postalCode,
+        addressCountry: orgAddress.addressCountry,
       },
     },
     ...(hybrid
@@ -114,7 +117,7 @@ export function buildJobPostingSchema(role: JobRole) {
     applicationContact: {
       "@type": "ContactPoint",
       contactType: "HR",
-      email: "hello@truestack.my",
+      email: orgEmail,
       url: `${baseUrl}/contact`,
     },
     url: `${CAREERS_PAGE_URL}#open-roles`,
