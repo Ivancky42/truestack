@@ -1,4 +1,6 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+import { legalName, siteName, siteNameShort, siteUrl } from "@/lib/seo-defaults";
+
+const baseUrl = siteUrl;
 
 /**
  * Optional env (comma- or newline-separated URLs), e.g. LinkedIn company page:
@@ -51,8 +53,9 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
-    name: "Truestack",
-    alternateName: "True Stack",
+    name: siteName,
+    legalName,
+    alternateName: [siteNameShort, "True Stack"],
     url: baseUrl,
     logo: `${baseUrl}/truestack-logo-transparent.png`,
     description:

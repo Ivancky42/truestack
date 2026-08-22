@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TrueKreditSchema } from "@/components/seo/truekredit-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { truekreditFaq } from "@/lib/truekredit-faq";
+import { siteName } from "@/lib/seo-defaults";
 import {
 	TRUEKREDIT_METADATA,
 	TRUEKREDIT_PAGE_PATH,
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 		url: TRUEKREDIT_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [
 			{
 				url: TRUEKREDIT_METADATA.ogImagePath,

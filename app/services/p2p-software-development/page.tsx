@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { p2pFaq } from "@/lib/p2p-faq";
+import { siteName } from "@/lib/seo-defaults";
 import { P2P_METADATA, P2P_PAGE_PATH } from "@/lib/p2p-seo";
 import { P2PHero } from "@/components/sections/p2p-hero";
 import { SectionHeader } from "@/components/shared/section-header";
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
 		url: P2P_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [
 			{
 				url: P2P_METADATA.ogImagePath,

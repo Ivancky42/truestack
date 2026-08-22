@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
 import { WorkSchema } from "@/components/seo/work-schema";
 import {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 		url: WORK_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

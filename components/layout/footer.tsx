@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { legalName, siteName } from "@/lib/seo-defaults";
 
 /** Same grouping and labels as the Solutions menu in `header.tsx`. */
 const solutionsColumns = [
@@ -97,7 +98,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/truestack-logo-transparent.png"
-                alt="Truestack"
+                alt={siteName}
                 width={140}
                 height={32}
                 className="h-8 w-auto"
@@ -150,7 +151,7 @@ export function Footer() {
             {/* Company Registration & Address */}
             <div className="space-y-2">
               <p className="text-[15px] font-medium text-foreground/80">
-                TRUESTACK TECHNOLOGIES SDN. BHD.
+                {legalName.toUpperCase()}
               </p>
               <p className="text-sm text-muted-foreground/70">
                 Registration No. 202501058714 (1660120-X)
@@ -196,7 +197,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="mt-6 text-center text-sm text-muted-foreground/60 sm:text-left">
-            © {new Date().getFullYear()} Truestack. All rights reserved.
+            © {new Date().getFullYear()} {siteName}. All rights reserved.
           </p>
         </div>
       </div>

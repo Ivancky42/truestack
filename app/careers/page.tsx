@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { CareersHero } from "@/components/sections/careers-hero";
 import { CareersCta } from "@/components/sections/careers-cta";
 import { CareersJobs } from "@/components/sections/careers-jobs";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 		url: CAREERS_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

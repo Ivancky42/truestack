@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { SoftwareDevelopmentSchema } from "@/components/seo/software-development-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 		url: SOFTWARE_DEVELOPMENT_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

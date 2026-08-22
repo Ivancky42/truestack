@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { Hero } from "@/components/sections/hero";
 import { ContactCards } from "@/components/sections/contact-cards";
 import { ContactPageBackground } from "@/components/sections/contact-page-background";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "/contact",
     type: "website",
     locale: "en_MY",
-    siteName: "Truestack",
+    siteName,
     images: [defaultOgImage],
   },
   twitter: {

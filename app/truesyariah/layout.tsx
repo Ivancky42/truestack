@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TrueSyariahSchema } from "@/components/seo/truesyariah-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { truesyariahFaq } from "@/lib/truesyariah-faq";
+import { siteName } from "@/lib/seo-defaults";
 import {
 	TRUESYARIAH_METADATA,
 	TRUESYARIAH_PAGE_PATH,
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 		url: TRUESYARIAH_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [
 			{
 				url: TRUESYARIAH_METADATA.ogImagePath,

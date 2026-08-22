@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Truestack",
     description:
       "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+    siteName,
     images: [defaultOgImage],
   },
   twitter: {

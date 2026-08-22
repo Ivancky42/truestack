@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { TrueIdentitySchema } from "@/components/seo/trueidentity-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { trueidentityFaq } from "@/lib/trueidentity-faq";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 		url: TRUEIDENTITY_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

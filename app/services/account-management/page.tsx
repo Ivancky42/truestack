@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/sections/hero";
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: ACCOUNT_MANAGEMENT_PAGE_PATH,
     type: "website",
     locale: "en_MY",
-    siteName: "Truestack",
+    siteName,
     images: [defaultOgImage],
   },
   twitter: {

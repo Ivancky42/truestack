@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import {
 	getWorkCaseStudy,
 	getWorkCaseStudySlugs,
@@ -40,7 +40,7 @@ export async function generateMetadata({
 			url: path,
 			type: "article",
 			locale: "en_MY",
-			siteName: "Truestack",
+			siteName,
 			images: [defaultOgImage],
 		},
 		twitter: {

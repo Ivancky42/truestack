@@ -1,21 +1,26 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
+import {
+  siteName,
+  siteNameAlternates,
+  siteUrl,
+} from "@/lib/seo-defaults";
 
 /**
- * JSON-LD WebSite schema for sitelinks search box and better site understanding.
- * Helps Google show sitelinks and understand site structure.
- * Validate at: https://validator.schema.org/
+ * JSON-LD WebSite schema for Google sitename, sitelinks, and site identity.
+ * Must live on the homepage. Validate at: https://validator.schema.org/
+ * @see https://developers.google.com/search/docs/appearance/site-names
  */
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${baseUrl}/#website`,
-    name: "Truestack",
-    url: baseUrl,
+    "@id": `${siteUrl}/#website`,
+    name: siteName,
+    alternateName: [...siteNameAlternates],
+    url: siteUrl,
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia.",
     publisher: {
-      "@id": `${baseUrl}/#organization`,
+      "@id": `${siteUrl}/#organization`,
     },
     inLanguage: "en-MY",
   };

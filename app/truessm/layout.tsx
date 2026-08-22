@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { TrueSsmSchema } from "@/components/seo/truessm-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { truessmFaq } from "@/lib/truessm-faq";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		url: TRUESSM_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

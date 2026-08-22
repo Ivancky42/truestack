@@ -20,6 +20,7 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { siteName } from "@/lib/seo-defaults";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -404,7 +405,7 @@ export function Header() {
 								? "/truestack-logo-transparent-dark.png"
 								: "/truestack-logo-transparent.png"
 						}
-						alt="Truestack"
+						alt={siteName}
 						width={140}
 						height={32}
 						className="h-8 w-auto"
@@ -527,7 +528,7 @@ export function Header() {
 											? "/truestack-logo-transparent-dark.png"
 											: "/truestack-logo-transparent.png"
 									}
-									alt="Truestack"
+									alt={siteName}
 									width={120}
 									height={28}
 									className="h-7 w-auto"

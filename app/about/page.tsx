@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import { ABOUT_METADATA, ABOUT_PAGE_PATH } from "@/lib/about-seo";
 import { TechnologyPartners } from "@/components/sections/technology-partners";
 import { AboutHero } from "@/components/sections/about-hero";
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 		url: ABOUT_PAGE_PATH,
 		type: "website",
 		locale: "en_MY",
-		siteName: "Truestack",
+		siteName,
 		images: [defaultOgImage],
 	},
 	twitter: {

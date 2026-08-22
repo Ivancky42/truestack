@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/organization-schema";
 import { WebSiteSchema } from "@/components/seo/website-schema";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import "./globals.css";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://truestack.my";
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     "free fintech consultation Malaysia",
     "free KPKT consultation",
   ],
-  authors: [{ name: "Truestack" }],
+  authors: [{ name: siteName }],
   icons: {
     icon: "/truestack-favicon.png",
     shortcut: "/truestack-favicon.png",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_MY",
-    siteName: "Truestack",
+    siteName,
     title: "Truestack - KPKT Services & Fintech Software",
     description:
       "KPKT account management, digital license conversion, and custom fintech software development for licensed money lenders in Malaysia. Book a free consultation.",

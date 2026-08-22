@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { defaultOgImage } from "@/lib/seo-defaults";
+import { defaultOgImage, siteName } from "@/lib/seo-defaults";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     title: "PDPA Notice - Truestack",
     description:
       "Malaysia PDPA notice covering Truestack services and TrueIdentity e-KYC data processing.",
+    siteName,
     images: [defaultOgImage],
   },
   twitter: {
