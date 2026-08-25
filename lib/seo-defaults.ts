@@ -57,7 +57,22 @@ export const orgPhoneE164 = "+60164614919";
 export const orgWhatsAppNumber = "60164614919";
 
 export const orgLinkedInUrl =
-	"https://www.linkedin.com/company/truestack-technologies/";
+	"https://www.linkedin.com/company/truestack-technologies";
+
+export const orgCrunchbaseUrl =
+	"https://www.crunchbase.com/organization/truestack-technologies-sdn-bhd";
+
+export const orgGitHubUrl = "https://github.com/Malcan-Technologies";
+
+/**
+ * Verified public third-party profiles for Organization.sameAs.
+ * Only include live listings — do not invent unpublished directory URLs.
+ */
+export const orgSameAs = [
+	orgCrunchbaseUrl,
+	orgLinkedInUrl,
+	orgGitHubUrl,
+] as const;
 
 export const orgAddress = {
 	streetAddress: "C-13-01, KL Trillion, No. 338, Jalan Tun Razak",

@@ -2,10 +2,10 @@ import {
   legalName,
   orgAddress,
   orgEmail,
-  orgLinkedInUrl,
   orgLogo,
   orgPhoneE164,
   orgRegistrationNumber,
+  orgSameAs,
   siteName,
   siteNameShort,
   siteUrl,
@@ -14,8 +14,8 @@ import {
 const baseUrl = siteUrl;
 
 /**
- * Extra profile URLs (comma- or newline-separated), merged with LinkedIn.
- * Use for Wikidata, Crunchbase, etc. once they exist:
+ * Extra profile URLs (comma- or newline-separated), merged with the verified
+ * listings in `orgSameAs`. Use for Wikidata or other live profiles:
  * NEXT_PUBLIC_ORG_SAME_AS=https://www.wikidata.org/wiki/Q…
  */
 function extraSameAs(): string[] {
@@ -27,8 +27,16 @@ function extraSameAs(): string[] {
     .filter(Boolean);
 }
 
-function orgSameAs(): string[] {
-  return [...new Set([orgLinkedInUrl, ...extraSameAs()])];
+function resolveOrgSameAs(): string[] {
+  const seen = new Set<string>();
+  const urls: string[] = [];
+  for (const url of [...orgSameAs, ...extraSameAs()]) {
+    const key = url.replace(/\/+$/, "");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    urls.push(url);
+  }
+  return urls;
 }
 
 /**
@@ -84,7 +92,7 @@ export function OrganizationSchema() {
       name: "SSM Company Registration Number",
       value: orgRegistrationNumber,
     },
-    sameAs: orgSameAs(),
+    sameAs: resolveOrgSameAs(),
     knowsAbout: [
       "KPKT license management",
       "online money lending licence",
