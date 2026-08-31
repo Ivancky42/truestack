@@ -66,7 +66,7 @@ export function OrganizationSchema() {
     image: logoUrl,
     description:
       "KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders — including TrueKredit™ money lending management system for conventional KPKT lending, TrueSyariah™ for Shariah-compliant digital financing, and TrueP2P™ for Securities Commission Malaysia peer-to-peer platform engineering.",
-    foundingDate: "2020",
+    foundingDate: "2025-11",
     email: orgEmail,
     telephone: orgPhoneE164,
     address: {
