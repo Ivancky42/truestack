@@ -8,6 +8,17 @@ const nextConfig: NextConfig = {
 				destination: "/services/digital-license",
 				permanent: true,
 			},
+			// Legacy/audit short URLs — live page is /services/digital-license
+			{
+				source: "/digital-license",
+				destination: "/services/digital-license",
+				permanent: true,
+			},
+			{
+				source: "/digital-licence",
+				destination: "/services/digital-license",
+				permanent: true,
+			},
 		];
 	},
 };
