@@ -64,6 +64,10 @@ export const orgCrunchbaseUrl =
 
 export const orgGitHubUrl = "https://github.com/Malcan-Technologies";
 
+/** Live Capterra product listing for TrueKredit. */
+export const orgCapterraUrl =
+	"https://www.capterra.com/p/10181847/TrueKredit/";
+
 /**
  * Verified public third-party profiles for Organization.sameAs.
  * Only include live listings — do not invent unpublished directory URLs.
@@ -72,6 +76,7 @@ export const orgSameAs = [
 	orgCrunchbaseUrl,
 	orgLinkedInUrl,
 	orgGitHubUrl,
+	orgCapterraUrl,
 ] as const;
 
 export const orgAddress = {
