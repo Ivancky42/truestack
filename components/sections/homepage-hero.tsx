@@ -37,7 +37,9 @@ const HERO_VERBS = ["launch", "lend", "build", "scale", "run"] as const;
 const HERO_TITLE_STATIC =
 	"The fintech infrastructure Malaysian lenders launch on.";
 const VERB_EASE = [0.22, 1, 0.36, 1] as const;
-const ROTATE_MS = 2600;
+const ROTATE_MS = 2000;
+const VERB_ACCENT =
+	"bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent";
 
 function RotatingVerb({
 	reduceMotion,
@@ -51,6 +53,15 @@ function RotatingVerb({
 	const phrase = `${HERO_VERBS[index]} on.`;
 
 	useEffect(() => {
+		if (reduceMotion) return;
+		const start = window.setTimeout(
+			() => setReadyToCycle(true),
+			(enterDelay + 0.55) * 1000 + 80,
+		);
+		return () => window.clearTimeout(start);
+	}, [reduceMotion, enterDelay]);
+
+	useEffect(() => {
 		if (reduceMotion || !readyToCycle) return;
 		const id = window.setInterval(() => {
 			setIndex((i) => (i + 1) % HERO_VERBS.length);
@@ -60,44 +71,53 @@ function RotatingVerb({
 
 	if (reduceMotion) {
 		return (
-			<span className="inline-block rounded-md bg-primary/30 px-[0.32em] py-[0.06em] align-bottom whitespace-nowrap">
+			<span className={`inline-block whitespace-nowrap ${VERB_ACCENT}`}>
 				launch on.
 			</span>
 		);
 	}
 
 	return (
-		<span className="inline-flex rounded-md bg-primary/10 px-[0.32em] py-[0.06em] align-bottom">
-			<span className="relative inline-grid overflow-hidden">
-				{HERO_VERBS.map((verb) => (
-					<span
-						key={verb}
-						className="invisible col-start-1 row-start-1 whitespace-nowrap pb-[0.14em]"
-						aria-hidden
-					>
-						{verb} on.
-					</span>
-				))}
-				<span className="absolute inset-0 overflow-hidden">
-					<AnimatePresence>
-						<motion.span
-							key={HERO_VERBS[index]}
-							className="absolute inset-0 whitespace-nowrap"
-							initial={{ y: "108%" }}
-							animate={{ y: 0 }}
-							exit={{ y: "-108%" }}
-							transition={{
-								duration: 0.5,
-								ease: VERB_EASE,
-								delay: readyToCycle ? 0 : enterDelay,
-							}}
-							onAnimationComplete={() => setReadyToCycle(true)}
+		<span className="inline-block overflow-hidden pb-[0.14em] align-bottom">
+			<motion.span
+				className="inline-block"
+				initial={{ y: "108%" }}
+				animate={{ y: 0 }}
+				transition={{
+					duration: 0.55,
+					delay: enterDelay,
+					ease: VERB_EASE,
+				}}
+			>
+				<span className="relative inline-grid">
+					{HERO_VERBS.map((verb) => (
+						<span
+							key={verb}
+							className="invisible col-start-1 row-start-1 whitespace-nowrap"
+							aria-hidden
 						>
-							{phrase}
-						</motion.span>
-					</AnimatePresence>
+							{verb} on.
+						</span>
+					))}
+					<span className="absolute inset-0 overflow-hidden">
+						<AnimatePresence initial={false}>
+							<motion.span
+								key={HERO_VERBS[index]}
+								className="absolute inset-0 whitespace-nowrap"
+								initial={{ y: "108%" }}
+								animate={{ y: 0 }}
+								exit={{ y: "-108%" }}
+								transition={{
+									duration: 0.55,
+									ease: VERB_EASE,
+								}}
+							>
+								<span className={VERB_ACCENT}>{phrase}</span>
+							</motion.span>
+						</AnimatePresence>
+					</span>
 				</span>
-			</span>
+			</motion.span>
 		</span>
 	);
 }
@@ -231,7 +251,10 @@ export function HomepageHero() {
 	return (
 		<section className="relative overflow-hidden">
 			<div className="absolute inset-0 -z-10" aria-hidden>
-				<div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent" />
+				<div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/4 to-transparent" />
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_78%_36%,var(--primary)_0%,transparent_70%)] opacity-[0.12]" />
+				<div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-background to-transparent" />
+
 				<svg
 					className="absolute inset-0 h-full w-full text-foreground opacity-[0.045]"
 					xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +280,9 @@ export function HomepageHero() {
 						fill="url(#homepage-hero-grid)"
 					/>
 				</svg>
-				<div className="absolute -top-40 -right-30 h-155 w-155 rounded-full bg-primary/15 blur-3xl motion-safe:animate-pulse" />
+
+				<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-primary/20 blur-3xl motion-safe:animate-pulse" />
+				<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-primary/10 blur-3xl" />
 			</div>
 
 			<div className="mx-auto w-full max-w-[90rem] px-6 pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-19 lg:pb-20">
