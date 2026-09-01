@@ -53,9 +53,8 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 			</h1>
 
 			<p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-				Notes from our licensing, lending, identity and software work in
-				Malaysia — what regulators ask for, what trips teams up, and what
-				we are building next.
+				What we see when licences, loan books and software meet Malaysian
+				rules — the questions that come up, and the parts that cost time.
 			</p>
 
 			{topics.length > 0 ? (
@@ -146,7 +145,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 					</div>
 
 					<span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-						Read the insight
+						Read this article
 						<ArrowRight
 							className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
 							aria-hidden
@@ -163,11 +162,14 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 		? "Temporarily unavailable"
 		: "First articles on the way";
 	const title = loadFailed
-		? "These notes are not available right now."
+		? "These articles are not available right now."
 		: "Nothing published yet.";
+	const aside = loadFailed
+		? "Try again in a moment."
+		: "Ask us in the meantime.";
 	const body = loadFailed
-		? "Refresh the page in a few minutes. Or tell us what you are working on — a consultation costs nothing."
-		: "We are writing up what we see every week — KPKT applications, audit requests, identity checks and platforms going live. Until the first pieces land, tell us what you are working on. A consultation costs nothing.";
+		? "Give it a few minutes and refresh. Or ask us the question you came for — a consultation costs nothing."
+		: "The first pieces are on the way. Until they are up, ask us the question you came for — a consultation costs nothing.";
 
 	return (
 		<motion.div
@@ -181,9 +183,7 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 			</p>
 			<h2 className="max-w-2xl font-display text-2xl font-medium tracking-tight md:text-3xl">
 				{title}{" "}
-				<span className="text-muted-foreground">
-					Ask us directly in the meantime.
-				</span>
+				<span className="text-muted-foreground">{aside}</span>
 			</h2>
 			<p className="mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
 				{body}
@@ -228,13 +228,11 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 						id="insights-all-heading"
 						className="font-display text-3xl font-medium tracking-tight md:text-4xl"
 					>
-						More from the team.{" "}
-						<span className="text-muted-foreground">Newest first.</span>
+						More from the team.
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-						Licensing and compliance, lending operations, identity and
-						company checks, software delivery and product updates —
-						written for the people who have to make the call.
+						Same notes we give clients. Shorter than a call — and you
+						can pass them to your team.
 					</p>
 				</motion.div>
 
@@ -335,7 +333,7 @@ export function InsightsPageContent({
 
 			<ConsultationCta
 				heading="Have a question we have not written about yet?"
-				body="Tell us what you are working on — a KPKT application, an audit deadline, a lending or peer-to-peer platform to build, or customer and company checks you need inside your own system. We will map your options in a free consultation."
+				body="Tell us where you are stuck. We will walk through it in a free consultation — no obligation to buy anything."
 				primary={{
 					href: "/contact?subject=Insights",
 					label: "Book a Free Consultation",

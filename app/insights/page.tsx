@@ -16,7 +16,7 @@ const INSIGHTS_PATH = "/insights";
 
 const INSIGHTS_TITLE = "Insights: Fintech, Software & Compliance in Malaysia";
 const INSIGHTS_DESCRIPTION =
-	"Practical perspectives from the Truestack team — KPKT licensing, compliance, lending, identity checks, software delivery and product updates in Malaysia.";
+	"Notes from the Truestack team on KPKT licensing, lending and software work in Malaysia — the questions we keep answering for owners and compliance teams.";
 
 export const metadata: Metadata = {
 	title: INSIGHTS_TITLE,

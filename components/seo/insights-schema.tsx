@@ -14,7 +14,7 @@ export function InsightsSchema() {
 		url: pageUrl,
 		name: "Insights",
 		description:
-			"Practical articles from Truestack Technologies on Malaysian fintech — KPKT licensing, compliance, lending operations, Shariah financing, identity and company data checks, software delivery, and product and company updates.",
+			"Notes from Truestack Technologies on Malaysian fintech — KPKT licensing, lending, Shariah financing, compliance and the software we build around them.",
 		inLanguage: "en-MY",
 		publisher: {
 			"@type": "Organization",

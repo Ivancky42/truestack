@@ -122,7 +122,7 @@ export function InsightCard({
 						<span />
 					)}
 					<span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-						Read the insight
+						Read this article
 						<ArrowUpRight
 							className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
 							aria-hidden
