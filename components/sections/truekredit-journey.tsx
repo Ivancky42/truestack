@@ -7,7 +7,7 @@ import { Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const AUTOPLAY_MS = 3000;
+const AUTOPLAY_MS = 2000;
 
 type JourneyStep = {
 	id: string;
