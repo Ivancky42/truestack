@@ -163,16 +163,16 @@ export function FeatureCarousel({
 				<div className="mx-auto max-w-3xl text-center">
 					{eyebrow && (
 						<p
-							className={`mb-3 text-xs font-semibold uppercase tracking-widest ${eyebrowColor}`}
+							className={`mb-3 type-eyebrow ${eyebrowColor}`}
 						>
 							{eyebrow}
 						</p>
 					)}
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						{title}
 					</h2>
 					{description && (
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 							{description}
 						</p>
 					)}
@@ -314,7 +314,7 @@ function FeatureCard({
 						{item.tag}
 					</span>
 				)}
-				<h4 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+				<h4 className="type-card-title">
 					{item.title}
 				</h4>
 				<p className="text-[15px] leading-relaxed text-muted-foreground md:text-base">

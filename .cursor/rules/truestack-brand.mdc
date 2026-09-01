@@ -23,9 +23,9 @@ Hard rules (details in the guide):
   plus the page's sanctioned accent: blue = Truestack/TrueKredit, violet-600/700 =
   TrueKredit Pro, emerald-600/700 = TrueSyariah, `kpkt` token = KPKT services. Never
   hardcode hex in JSX. Dark sections: `bg-slate-950` + `data-nav-theme="dark"`.
-- **Type**: headings are `font-display font-medium tracking-tight` (Rethink Sans);
-  section h2 = `text-3xl md:text-4xl`; eyebrow = `text-xs font-semibold uppercase
-  tracking-widest text-primary`.
+- **Type**: H1/H2 are `type-h1` / `type-h2` (Rethink Sans, 500). Card titles are
+  Inter `type-card-title` (600). Eyebrow = `type-eyebrow text-primary`. Nav, buttons,
+  card body = `type-ui` (15px). Technical bits = `type-mono-label` / `type-mono-score`.
 - **Sections**: `border-t` + `py-16 md:py-20` + `mx-auto max-w-6xl px-6`, alternating
   `bg-background` / `bg-muted/30`. Reuse `components/shared/*`, `components/ui/*`, and
   `ConsultationCta` (with its `accent` prop) instead of building new variants.

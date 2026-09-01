@@ -94,7 +94,7 @@ export function InsightCard({
 			<div className="flex flex-1 flex-col p-5">
 				<div className="flex flex-wrap items-center gap-2">
 					<span
-						className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${insightCategoryChip(post.category)}`}
+						className={`inline-flex items-center rounded-full px-2.5 py-0.5 type-micro font-medium uppercase tracking-wider ${insightCategoryChip(post.category)}`}
 					>
 						{post.category}
 					</span>
@@ -103,7 +103,7 @@ export function InsightCard({
 					</span>
 				</div>
 
-				<h3 className="mt-3 font-display text-lg font-medium tracking-tight md:text-xl">
+				<h3 className="mt-3 type-subhead">
 					{post.title}
 				</h3>
 				<p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">

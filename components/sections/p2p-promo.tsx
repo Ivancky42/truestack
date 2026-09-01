@@ -31,7 +31,7 @@ export function TrueP2PPanel() {
 				<div>
 					<h3
 						id="p2p-software-development-heading"
-						className="font-display text-2xl font-medium tracking-tight md:text-3xl"
+						className="type-h2-sm"
 					>
 						TrueP2P™
 					</h3>

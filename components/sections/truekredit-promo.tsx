@@ -28,7 +28,7 @@ export function TrueKreditPanel() {
 
 			<div className="order-1 flex flex-col justify-center gap-5 lg:order-2">
 				<div>
-					<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+					<h3 className="type-h2-sm">
 						TrueKredit™
 					</h3>
 					<p className="mt-1 text-sm font-medium text-primary">

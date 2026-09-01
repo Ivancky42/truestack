@@ -206,10 +206,10 @@ export function CoreInfrastructure({ title, description }: CoreInfrastructurePro
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className="mb-3 type-eyebrow text-primary">
             Platform Architecture
           </p>
-          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+          <h2 className="type-h2">
             {title ?? "Built on Truestack Core™"}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">
@@ -224,15 +224,15 @@ export function CoreInfrastructure({ title, description }: CoreInfrastructurePro
 
         <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-3">
           <div className="rounded-xl border bg-card p-5 text-center shadow-sm">
-            <p className="font-display text-3xl font-semibold text-primary">9+</p>
+            <p className="type-h2-sm text-primary">9+</p>
             <p className="mt-1 text-sm text-muted-foreground">Shared infrastructure modules</p>
           </div>
           <div className="rounded-xl border bg-card p-5 text-center shadow-sm">
-            <p className="font-display text-3xl font-semibold text-primary">60%</p>
+            <p className="type-h2-sm text-primary">60%</p>
             <p className="mt-1 text-sm text-muted-foreground">Faster time to market on new platforms</p>
           </div>
           <div className="rounded-xl border bg-card p-5 text-center shadow-sm">
-            <p className="font-display text-3xl font-semibold text-primary">4</p>
+            <p className="type-h2-sm text-primary">4</p>
             <p className="mt-1 text-sm text-muted-foreground">Product verticals powered by one core</p>
           </div>
         </div>

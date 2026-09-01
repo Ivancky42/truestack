@@ -28,7 +28,7 @@ the guide, the guide wins.
    (blue = Truestack/TrueKredit, violet = Pro, emerald = TrueSyariah, kpkt token = KPKT
    services). Never hardcode hex. Dark sections are slate-950 and must set
    `data-nav-theme="dark"`.
-5. **Headings:** `font-display font-medium tracking-tight`, scale from the guide §4.
+5. **Headings:** `type-h1` / `type-h2` (Rethink Sans, 500). Card titles are Inter `type-card-title` (600). Scale from the guide §4.
 6. **Photos:** sparing, human, Malaysian-plausible, treated per guide §8, credited in
    `docs/IMAGE_CREDITS.md`.
 7. **Every page change re-runs the SEO checklist** — see the `truestack-seo` skill /

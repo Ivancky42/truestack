@@ -45,7 +45,7 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 				Insights
 			</Badge>
 
-			<h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+			<h1 className="type-h1">
 				What actually works in{" "}
 				<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
 					Malaysian fintech.
@@ -60,7 +60,7 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 			{topics.length > 0 ? (
 				<ul
 					aria-label="Topics we write about"
-					className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground"
+					className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 type-eyebrow text-muted-foreground"
 				>
 					{topics.map((topic, index) => (
 						<li key={topic} className="flex items-center gap-3">
@@ -109,14 +109,14 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 
 				<div className={image ? "lg:col-span-5" : "lg:col-span-9"}>
 					<div className="flex flex-wrap items-center gap-2">
-						<span className="text-xs font-semibold uppercase tracking-widest text-primary">
+						<span className="type-eyebrow text-primary">
 							Latest
 						</span>
 						<span aria-hidden className="text-muted-foreground">
 							·
 						</span>
 						<span
-							className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${insightCategoryChip(post.category)}`}
+							className={`inline-flex items-center rounded-full px-2.5 py-0.5 type-micro font-medium uppercase tracking-wider ${insightCategoryChip(post.category)}`}
 						>
 							{post.category}
 						</span>
@@ -125,7 +125,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 						</span>
 					</div>
 
-					<h2 className="mt-4 font-display text-2xl font-medium tracking-tight md:text-3xl lg:text-4xl lg:leading-tight">
+					<h2 className="mt-4 type-h2-sm lg:text-4xl lg:leading-tight">
 						{post.title}
 					</h2>
 					<p className="mt-3 text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -178,14 +178,14 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, delay: 0.12 }}
 		>
-			<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+			<p className="mb-3 type-eyebrow text-primary">
 				{eyebrow}
 			</p>
-			<h2 className="max-w-2xl font-display text-2xl font-medium tracking-tight md:text-3xl">
+			<h2 className="max-w-2xl type-h2-sm">
 				{title}{" "}
 				<span className="text-muted-foreground">{aside}</span>
 			</h2>
-			<p className="mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+			<p className="mt-4 max-w-2xl type-lede text-muted-foreground">
 				{body}
 			</p>
 			<div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -221,16 +221,16 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+					<p className="mb-3 type-eyebrow text-primary">
 						More reading
 					</p>
 					<h2
 						id="insights-all-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+						className="type-h2"
 					>
 						More from the team.
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Same notes we give clients. Shorter than a call — and you
 						can pass them to your team.
 					</p>
@@ -274,7 +274,7 @@ function InsightsFaq({ muted }: { muted: boolean }) {
 					/>
 					<h2
 						id="insights-faq-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+						className="type-h2"
 					>
 						Frequently asked questions
 					</h2>

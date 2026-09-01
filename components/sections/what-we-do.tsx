@@ -44,7 +44,7 @@ function OfferingCard({
 						>
 							<Icon className="h-6 w-6 text-primary" />
 						</motion.div>
-						<CardTitle className="font-display text-lg leading-snug md:text-xl">
+						<CardTitle className="type-subhead">
 							{title}
 						</CardTitle>
 					</CardHeader>
@@ -138,7 +138,7 @@ export function WhatWeDo() {
 					transition={{ duration: 0.5 }}
 				>
 					<div>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							End-to-End Fintech Solutions
 						</h2>
 						<p className="mt-4 text-pretty text-base text-muted-foreground sm:text-lg md:mt-5 md:text-xl">

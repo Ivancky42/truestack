@@ -182,7 +182,7 @@ export function Hero({
               transition={{ duration: 0.6 }}
             >
               <motion.h1
-                className="font-display text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
+                className="type-h1"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -190,7 +190,7 @@ export function Hero({
                 {title}
               </motion.h1>
               <motion.p
-                className="mt-6 text-lg text-muted-foreground md:text-xl"
+                className="mt-6 type-lede-hero text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -249,7 +249,7 @@ export function Hero({
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className="font-display text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
+            className="type-h1"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -257,7 +257,7 @@ export function Hero({
             {title}
           </motion.h1>
           <motion.p
-            className="mt-6 text-lg text-muted-foreground md:text-xl"
+            className="mt-6 type-lede-hero text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

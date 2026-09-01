@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
+import { homepageFaq } from "@/lib/homepage-faq";
+import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
+import { getInsightPosts } from "@/lib/insights/data";
+import type { InsightPostSummary } from "@/lib/insights/types";
+import { FaqSchema } from "@/components/seo/faq-schema";
 import { HomepageHero } from "@/components/sections/homepage-hero";
-// import { ComplianceSection } from "@/components/sections/compliance-section";
-import { WhatWeDo } from "@/components/sections/what-we-do";
-import { ConsultationCta } from "@/components/sections/consultation-cta";
-import { InfrastructureSection } from "@/components/sections/infrastructure-section";
-import { LendingPlatforms } from "@/components/sections/lending-platforms";
-import { HomepageServices } from "@/components/sections/homepage-services";
 import { HomepageLogoCloud } from "@/components/sections/homepage-logo-cloud";
+import { HomepageSolutions } from "@/components/sections/homepage-solutions";
+import { HomepageTrueKredit } from "@/components/sections/homepage-truekredit";
+import { HomepageCore } from "@/components/sections/homepage-core";
+import { HomepageTrust } from "@/components/sections/homepage-trust";
+import { HomepageInsights } from "@/components/sections/homepage-insights";
 import { SuccessStoriesProof } from "@/components/sections/success-stories-proof";
-import { pickProofStudies } from "@/lib/case-studies-data";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
+
+const title = "KPKT Licence & Loan Management Software Malaysia";
+const description =
+	"Truestack gets Malaysian money lenders licensed and live — KPKT digital licence conversion, account management, and TrueKredit™ loan management.";
 
 export const metadata: Metadata = {
 	title: {
-		absolute: "Truestack — KPKT Services & Fintech Software for Malaysia",
+		absolute: `${title} | Truestack`,
 	},
-	description:
-		"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+	description,
 	alternates: { canonical: "/" },
 	openGraph: {
-		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
-		description:
-			"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+		title: `${title} | Truestack`,
+		description,
 		url: "/",
 		type: "website",
 		locale: "en_MY",
@@ -30,35 +36,57 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: defaultTwitterCard,
-		title: "Truestack — KPKT Services & Fintech Software for Malaysia",
-		description:
-			"KPKT online money lending licence, account management, and money lender software Malaysia — TrueKredit™, TrueSyariah™, TrueP2P™. Book a free consultation.",
+		title: `${title} | Truestack`,
+		description,
 		images: [defaultOgImage.url],
 	},
 };
 
-export default function HomePage() {
+const LATEST_INSIGHTS = 6;
+
+export default async function HomePage() {
+	let latestInsights: InsightPostSummary[] = [];
+	try {
+		const posts = await getInsightPosts();
+		latestInsights = (Array.isArray(posts) ? posts : []).slice(
+			0,
+			LATEST_INSIGHTS,
+		);
+	} catch {
+		latestInsights = [];
+	}
+
 	return (
 		<>
+			<FaqSchema items={homepageFaq} />
 			<HomepageHero />
 			<HomepageLogoCloud />
-			<WhatWeDo />
-			<LendingPlatforms />
-			<InfrastructureSection />
-			<HomepageServices />
-			{/* <ComplianceSection /> */}
+			<HomepageSolutions />
+			<HomepageTrueKredit />
+			<HomepageCore />
+			<HomepageTrust />
 			<SuccessStoriesProof
-				studies={pickProofStudies({ limit: 6 })}
+				id="work"
+				studies={pickProofStudiesByTitles([
+					"ezdana",
+					"CashSouk",
+					"PinjoCep",
+					"Proficient Premium",
+				])}
+				eyebrow="Selected work"
 				title="See what live looks like."
-				subtitle="Lenders and fintechs we've taken from build to go-live — so you can see the outcome before you commit."
-				columns={3}
+				subtitle=""
+				viewAllLabel="All success stories"
+				columns={4}
+				align="start"
 			/>
+			<HomepageInsights posts={latestInsights} />
 			<ConsultationCta
 				heading="Ready to launch or scale your lending business?"
-				body="Book a free consultation and we'll show you how to launch or scale with compliant, modern technology—KPKT licensing, account management, and lending software."
+				body="Book a free consultation. We will tell you what your licence position allows, what it would take to go digital, and what it costs — before you commit to anything."
 				secondary={{
 					href: "/services/digital-license",
-					label: "Explore Digital License",
+					label: "Explore Digital Licence",
 				}}
 				extraLinks={[
 					{ href: "/truekredit", label: "TrueKredit™" },

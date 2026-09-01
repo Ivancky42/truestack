@@ -51,7 +51,7 @@ export function SoftwareDevelopmentHeroVisual({
 
 				{/* Idea — napkin / sketch brief */}
 				<div className="relative border-b bg-linear-to-br from-amber-50/80 via-muted/30 to-muted/50 px-6 py-6 dark:from-amber-950/20 dark:via-muted/20 dark:to-muted/40">
-					<p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+					<p className="mb-4 type-eyebrow text-muted-foreground">
 						Your idea
 					</p>
 					<div className="relative rounded-2xl border border-dashed border-amber-600/25 bg-background/70 p-4 shadow-sm">
@@ -66,7 +66,7 @@ export function SoftwareDevelopmentHeroVisual({
 								<Lightbulb className="h-4 w-4 text-amber-600" />
 							</div>
 							<div className="min-w-0 flex-1">
-								<p className="font-display text-[15px] font-medium italic leading-snug tracking-tight text-foreground/80">
+								<p className="type-pullquote italic text-foreground/80">
 									“What if we had an app that…”
 								</p>
 								<p className="mt-1 text-[11px] text-muted-foreground">
@@ -118,7 +118,7 @@ export function SoftwareDevelopmentHeroVisual({
 
 				{/* Built */}
 				<div className="relative bg-linear-to-br from-primary/8 via-background to-violet-500/5 px-6 py-6">
-					<p className="mb-4 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-widest text-primary">
+					<p className="mb-4 flex items-center gap-1.5 type-eyebrow text-primary">
 						<Sparkles className="h-3 w-3" />
 						We build it
 					</p>
@@ -210,21 +210,21 @@ export function SoftwareDevelopmentHero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<p className="mb-4 text-xs font-semibold uppercase tracking-widest text-primary">
+						<p className="mb-4 type-eyebrow text-primary">
 							Custom software development
 						</p>
-						<h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+						<h1 className="type-h1">
 							If you can dream it,{" "}
 							<span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
 								we can build it.
 							</span>
 						</h1>
 
-						<p className="mt-5 text-lg font-medium text-primary md:text-xl">
+						<p className="mt-5 type-lede-hero font-medium text-primary">
 							Custom software from first sketch to go-live.
 						</p>
 
-						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+						<p className="mt-4 type-lede-hero text-muted-foreground">
 							Web apps, mobile products, internal tools, and
 							platforms under your brand — designed, built, and
 							shipped with you.

@@ -418,10 +418,10 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="What we build"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							Every module a regulated P2P platform needs
 						</h2>
-						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+						<p className="mt-4 type-lede text-muted-foreground">
 							A complete peer-to-peer platform is more than a
 							marketing site and a database. We deliver every
 							piece — and we know exactly which pieces matter to a
@@ -461,10 +461,10 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Investor experience"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							Listings designed to earn investor trust
 						</h2>
-						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+						<p className="mt-4 type-lede text-muted-foreground">
 							A peer-to-peer platform lives or dies by how its
 							listings feel. Below is the kind of investor-grade
 							UI we build for our clients — tuned to your asset
@@ -491,10 +491,10 @@ export default function P2PSoftwareDevelopmentPage() {
 					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
 						<div className="max-w-2xl">
 							<SectionBadge icon={Network} text="Our process" />
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								How we deliver your P2P platform
 							</h2>
-							<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+							<p className="mt-4 type-lede text-muted-foreground">
 								A predictable, end-to-end engagement — from
 								regulatory mapping to launch and ongoing support.
 								You get one accountable engineering partner instead
@@ -615,10 +615,10 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Built for everyone on the platform"
 							className="justify-center"
 						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							A P2P platform that earns trust on every side
 						</h2>
-						<p className="mt-4 text-lg text-muted-foreground md:text-xl">
+						<p className="mt-4 type-lede text-muted-foreground">
 							Strong peer-to-peer platforms balance three
 							audiences at once: the operator who is accountable
 							to regulators, the investors whose confidence drives
@@ -799,7 +799,7 @@ export default function P2PSoftwareDevelopmentPage() {
 								text="SC Malaysia compliance"
 								className="[&>span]:text-primary [&>svg]:text-primary"
 							/>
-							<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
+							<h2 className="type-h2 text-white">
 								Engineered for the SC&apos;s Recognised Market
 								framework
 							</h2>
@@ -817,7 +817,7 @@ export default function P2PSoftwareDevelopmentPage() {
 								isn&apos;t relying on spreadsheets to stay
 								compliant.
 							</p>
-							<p className="mt-4 text-base text-slate-400 md:text-lg">
+							<p className="mt-4 type-lede text-slate-400">
 								We are a software partner, not legal counsel.
 								Our consultancy complements — never replaces —
 								your lawyers: we align product delivery with RMO
@@ -847,7 +847,7 @@ export default function P2PSoftwareDevelopmentPage() {
 
 						<Card className="border-slate-800 bg-slate-900/50">
 							<CardContent className="px-6 py-2">
-								<p className="text-sm font-semibold uppercase tracking-wider text-primary">
+								<p className="type-eyebrow text-primary">
 									Built into the platform
 								</p>
 								<ul className="mt-4 space-y-3" role="list">
@@ -884,7 +884,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							text="Shariah-aligned by design"
 							className="[&>span]:text-primary [&>svg]:text-primary"
 						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
+						<h2 className="type-h2 text-white">
 							Engineered for Islamic peer-to-peer financing
 						</h2>
 						<p className="mt-4 text-lg text-slate-400 md:text-xl">
@@ -905,7 +905,7 @@ export default function P2PSoftwareDevelopmentPage() {
 							contract templates aligned with your Shariah
 							committee.
 						</p>
-						<p className="mt-4 text-base text-slate-400 md:text-lg">
+						<p className="mt-4 type-lede text-slate-400">
 							We work with your appointed Shariah advisor to map
 							every flow to the contracts and rulings they require
 							— so the ledger your auditors see matches the
@@ -956,7 +956,7 @@ export default function P2PSoftwareDevelopmentPage() {
 										<span
 											lang="ar"
 											dir="rtl"
-											className="font-display text-3xl font-medium text-slate-500 md:text-4xl"
+											className="type-h2 text-slate-500"
 											aria-hidden
 										>
 											{shariahPillars[0].arabic}
@@ -966,7 +966,7 @@ export default function P2PSoftwareDevelopmentPage() {
 									{/* Content */}
 									<div className="min-w-0">
 										<div className="flex flex-wrap items-center gap-3">
-											<h3 className="font-display text-2xl font-bold text-white md:text-3xl">
+											<h3 className="type-h2-sm text-white">
 												{shariahPillars[0].title}
 											</h3>
 											<span className="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
@@ -1030,7 +1030,7 @@ export default function P2PSoftwareDevelopmentPage() {
 										<span
 											lang="ar"
 											dir="rtl"
-											className="font-display text-2xl font-medium text-slate-500"
+											className="type-h2-sm text-slate-500"
 											aria-hidden
 										>
 											{pillar.arabic}

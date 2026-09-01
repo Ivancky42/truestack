@@ -136,7 +136,7 @@ export function WorkCaseStudyDetailContent({
 					>
 						<nav
 							aria-label="Breadcrumb"
-							className="mb-6 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-widest text-slate-400"
+							className="mb-6 flex flex-wrap items-center gap-2 type-eyebrow text-slate-400"
 						>
 							<Link href="/" className="transition-colors hover:text-slate-200">
 								Home
@@ -160,18 +160,18 @@ export function WorkCaseStudyDetailContent({
 							{study.tags.map((tag) => (
 								<span
 									key={tag}
-									className="rounded-md border border-slate-700/80 bg-slate-900/40 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-slate-300"
+									className="rounded-md border border-slate-700/80 bg-slate-900/40 px-2.5 py-1 type-micro font-medium uppercase tracking-wider text-slate-300"
 								>
 									{tag}
 								</span>
 							))}
 						</div>
 
-						<p className="mb-3 font-display text-lg font-medium tracking-tight text-slate-200 md:text-xl">
+						<p className="mb-3 type-subhead text-slate-200">
 							{study.client}
 						</p>
 
-						<h1 className="font-display text-3xl font-medium tracking-tight text-slate-50 md:text-5xl lg:text-6xl">
+						<h1 className="type-h1 text-slate-50">
 							{study.headline}
 						</h1>
 
@@ -182,7 +182,7 @@ export function WorkCaseStudyDetailContent({
 						<div className="mt-8 grid grid-cols-3 gap-3 border-t border-slate-800 pt-6 sm:max-w-lg">
 							{study.stats.map((stat) => (
 								<div key={stat.label}>
-									<div className="font-display text-lg font-medium tracking-tight text-slate-50 sm:text-xl">
+									<div className="type-subhead text-slate-50">
 										{stat.value}
 									</div>
 									<div className="mt-0.5 text-[11px] uppercase tracking-wider text-slate-500">
@@ -259,10 +259,10 @@ export function WorkCaseStudyDetailContent({
 						className="group flex flex-col gap-3 rounded-2xl border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6"
 					>
 						<div className="min-w-0">
-							<p className="text-xs font-semibold uppercase tracking-widest text-primary">
+							<p className="type-eyebrow text-primary">
 								Built on
 							</p>
-							<p className="mt-1 font-display text-xl font-medium tracking-tight md:text-2xl">
+							<p className="mt-1 type-card-title">
 								{study.productPage.label}
 							</p>
 							<p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -294,10 +294,10 @@ export function WorkCaseStudyDetailContent({
 							viewport={{ once: true, margin: "-50px" }}
 							transition={{ duration: 0.5 }}
 						>
-							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+							<p className="mb-3 type-eyebrow text-primary">
 								{section.number}
 							</p>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								{section.title}
 							</h2>
 							<div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">
@@ -338,7 +338,7 @@ export function WorkCaseStudyDetailContent({
 						/>
 						<h2
 							id="work-case-study-faq-heading"
-							className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+							className="type-h2"
 						>
 							Frequently asked questions
 						</h2>
@@ -372,10 +372,10 @@ export function WorkCaseStudyDetailContent({
 					<div className="mx-auto max-w-6xl px-6">
 						<div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
 							<div>
-								<p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">
+								<p className="mb-2 type-eyebrow text-primary">
 									More work
 								</p>
-								<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+								<h2 className="type-h2">
 									Related case studies
 								</h2>
 							</div>
@@ -428,7 +428,7 @@ export function WorkCaseStudyDetailContent({
 													</Badge>
 												))}
 											</div>
-											<h3 className="font-display text-xl font-medium tracking-tight">
+											<h3 className="type-card-title">
 												{item.headline}
 											</h3>
 											<p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">

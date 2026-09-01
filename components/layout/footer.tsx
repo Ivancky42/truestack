@@ -71,7 +71,7 @@ function LinkColumn({
 
   return (
     <div>
-      <h4 className="mb-4 text-base font-semibold">{heading}</h4>
+      <h4 className="mb-4 type-subhead">{heading}</h4>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.label}>

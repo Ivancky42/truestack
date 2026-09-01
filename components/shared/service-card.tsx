@@ -21,7 +21,7 @@ export function ServiceCard({
         <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
           <Icon className="h-6 w-6 text-primary" />
         </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground">{description}</p>

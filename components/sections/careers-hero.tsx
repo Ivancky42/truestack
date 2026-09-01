@@ -47,7 +47,7 @@ export function CareersHero({
               We&apos;re hiring
             </Badge>
 
-            <h1 className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl">
+            <h1 className="type-h1">
               Build with us.{" "}
               <span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
                 Grow with us.

@@ -84,16 +84,16 @@ export function SoftwareDevelopmentPageContent() {
 						viewport={{ once: true, margin: "-50px" }}
 						transition={{ duration: 0.5 }}
 					>
-						<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+						<p className="mb-3 type-eyebrow text-primary">
 							Why custom
 						</p>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-[2.75rem] lg:leading-tight">
+						<h2 className="type-h2">
 							Off-the-shelf only goes so far.{" "}
 							<span className="text-muted-foreground">
 								Your edge needs software that fits.
 							</span>
 						</h2>
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 							When your product or operating model doesn&apos;t
 							match a template, you need a team that can turn the
 							brief into something live — and stay with you after
@@ -117,7 +117,7 @@ export function SoftwareDevelopmentPageContent() {
 								<X className="h-3.5 w-3.5" />
 								The usual path
 							</span>
-							<h3 className="mt-5 font-display text-xl font-medium tracking-tight md:text-2xl">
+							<h3 className="mt-5 type-card-title">
 								Ideas stall. Vendors fragment.
 							</h3>
 							<ul className="mt-6 space-y-3.5">
@@ -159,7 +159,7 @@ export function SoftwareDevelopmentPageContent() {
 								<Check className="h-3.5 w-3.5" />
 								With TrueStack
 							</span>
-							<h3 className="mt-5 font-display text-xl font-medium tracking-tight md:text-2xl">
+							<h3 className="mt-5 type-card-title">
 								One team. Idea to live product.
 							</h3>
 							<p className="mt-3 text-sm text-muted-foreground md:text-[15px]">
@@ -210,13 +210,13 @@ export function SoftwareDevelopmentPageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<div>
-							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+							<p className="mb-3 type-eyebrow text-primary">
 								How we build
 							</p>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								Product and engineering in the same room.
 							</h2>
-							<p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+							<p className="mt-4 max-w-xl type-lede text-muted-foreground">
 								You work with one team that understands the
 								brief, ships in clear milestones, and stays
 								accountable through go-live — not a chain of
@@ -253,13 +253,13 @@ export function SoftwareDevelopmentPageContent() {
 						viewport={{ once: true, margin: "-50px" }}
 						transition={{ duration: 0.5 }}
 					>
-						<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+						<p className="mb-3 type-eyebrow text-primary">
 							What we build
 						</p>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							Products that ship.
 						</h2>
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 							From customer-facing products to the tools your
 							team runs on — if you can dream it, we can build it.
 						</p>
@@ -280,7 +280,7 @@ export function SoftwareDevelopmentPageContent() {
 								<div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
 									<item.icon className="h-5 w-5 text-primary" />
 								</div>
-								<h3 className="font-display text-xl font-semibold tracking-tight">
+								<h3 className="type-card-title">
 									{item.title}
 								</h3>
 								<p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
@@ -311,10 +311,10 @@ export function SoftwareDevelopmentPageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<div>
-							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+							<p className="mb-3 type-eyebrow text-primary">
 								How we work
 							</p>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								From brief to live — without the fog.
 							</h2>
 							<p className="mt-4 text-lg text-muted-foreground">
@@ -413,7 +413,7 @@ export function SoftwareDevelopmentPageContent() {
 								text="Built to last"
 								className="[&>svg]:text-primary [&>span]:text-primary"
 							/>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								Secure by default. Ready for production.
 							</h2>
 							<p className="mt-4 text-lg text-slate-400">

@@ -38,7 +38,7 @@ function WorkHero() {
 						Our work
 					</Badge>
 
-					<h1 className="font-display text-4xl font-medium tracking-tight text-slate-50 md:text-5xl lg:text-6xl">
+					<h1 className="type-h1 text-slate-50">
 						See what{" "}
 						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
 							live
@@ -108,11 +108,11 @@ export function WorkPageContent() {
 						/>
 						<h2
 							id="success-stories-heading"
-							className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+							className="type-h2"
 						>
 							Success stories
 						</h2>
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 							Featured case studies and live platforms — from
 							digital KPKT conversions to ecommerce and enterprise
 							lending cores.

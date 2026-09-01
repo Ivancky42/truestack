@@ -18,7 +18,7 @@ export function WebSiteSchema() {
     alternateName: [...siteNameAlternates],
     url: siteUrl,
     description:
-      "KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders.",
+      "KPKT digital licence conversion, account management, and TrueKredit™ loan management software for licensed money lenders in Malaysia.",
     publisher: {
       "@id": `${siteUrl}/#organization`,
     },

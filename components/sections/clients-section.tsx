@@ -110,7 +110,7 @@ export function ClientsSection() {
     <section className="border-b bg-muted/30 py-12">
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
-          className="mb-8 text-center text-sm font-medium uppercase tracking-wider text-muted-foreground"
+          className="mb-8 text-center type-eyebrow text-muted-foreground"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

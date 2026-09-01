@@ -83,7 +83,7 @@ export function ConsultationCta({
           <div className="relative z-10">
             {eyebrow && (
               <motion.p
-                className="mb-3 text-sm font-medium uppercase tracking-wider text-primary-foreground/70"
+                className="mb-3 type-eyebrow text-primary-foreground/70"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -92,7 +92,7 @@ export function ConsultationCta({
               </motion.p>
             )}
             <motion.h2
-              className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+              className="type-h2"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -101,7 +101,7 @@ export function ConsultationCta({
               {heading}
             </motion.h2>
             <motion.p
-              className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80 md:text-xl"
+              className="mx-auto mt-4 max-w-2xl type-lede text-primary-foreground/80"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

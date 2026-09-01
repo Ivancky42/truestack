@@ -211,8 +211,8 @@ export default function AccountManagementPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <div className="max-w-3xl">
               <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Solution</Badge>
-              <h2 className="mb-4 font-display text-3xl font-medium md:text-4xl">Your Single, Trusted Partner</h2>
-              <p className="text-lg text-muted-foreground md:text-xl">
+              <h2 className="mb-4 type-h2">Your Single, Trusted Partner</h2>
+              <p className="type-lede text-muted-foreground">
                 A dedicated KPKT account management service that handles end-to-end regulatory work. 
                 We streamline every compliance touchpoint, saving you time and reducing operational stress 
                 so you can focus on what matters most: <span className="font-semibold text-foreground">growing your lending business.</span>
@@ -242,10 +242,10 @@ export default function AccountManagementPage() {
             {/* Left: Content */}
             <div className="max-w-xl">
               <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Advantage</Badge>
-              <h2 className="mb-4 font-display text-3xl font-medium tracking-tight md:text-4xl">
+              <h2 className="mb-4 type-h2">
                 Up to <span className="text-kpkt">50% Faster</span> Approvals
               </h2>
-              <p className="mb-6 text-lg text-muted-foreground md:text-xl">
+              <p className="mb-6 type-lede text-muted-foreground">
                 Our deep experience with KPKT processes and established relationships with regulators
                 mean your applications move faster through the system.
               </p>

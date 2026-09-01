@@ -200,7 +200,7 @@ function SuccessStoriesAndMoreCard({ dark = false }: { dark?: boolean }) {
 					</div>
 				</div>
 				<div className="flex flex-1 flex-col items-center justify-center p-8 text-center">
-					<h3 className="font-display text-2xl font-medium tracking-tight text-slate-900 sm:text-3xl">
+					<h3 className="type-h2-sm">
 						And More
 					</h3>
 					<p className="mx-auto mt-4 max-w-sm text-base text-slate-600">
@@ -339,7 +339,7 @@ export function CaseStudies({
 				<div className="mx-auto max-w-3xl text-center">
 					<h2
 						className={cn(
-							"font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl",
+							"type-h2",
 							dark && "text-white",
 						)}
 					>

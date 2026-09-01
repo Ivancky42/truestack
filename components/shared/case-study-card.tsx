@@ -47,7 +47,7 @@ export function CaseStudyCard({
                 {title.charAt(0)}
               </div>
             )}
-            {!logo && <CardTitle className="text-xl">{title}</CardTitle>}
+            {!logo && <CardTitle>{title}</CardTitle>}
           </div>
           {isComingSoon ? (
             <Badge variant="secondary">Coming Soon</Badge>

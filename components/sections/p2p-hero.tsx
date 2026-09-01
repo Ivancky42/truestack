@@ -81,7 +81,7 @@ export function P2PHero() {
 						</motion.div>
 
 						<motion.h1
-							className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+							className="type-h1"
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.1 }}
@@ -103,7 +103,7 @@ export function P2PHero() {
 						</motion.p>
 
 						<motion.p
-							className="mt-4 text-lg text-muted-foreground md:text-xl"
+							className="mt-4 type-lede-hero text-muted-foreground"
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}

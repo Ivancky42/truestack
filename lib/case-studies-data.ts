@@ -281,3 +281,11 @@ export function pickProofStudies(options?: {
 		: workCaseStudies;
 	return source.slice(0, limit).map(toProofStudy);
 }
+
+/** Compact proof cards in a specific title order (homepage selected work). */
+export function pickProofStudiesByTitles(titles: readonly string[]): ProofStudy[] {
+	return titles
+		.map((title) => caseStudies.find((study) => study.title === title))
+		.filter((study): study is CaseStudy => Boolean(study))
+		.map(toProofStudy);
+}

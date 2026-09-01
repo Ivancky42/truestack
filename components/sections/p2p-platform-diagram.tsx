@@ -183,13 +183,13 @@ export function P2PPlatformDiagram() {
     <section className="border-t bg-background py-20">
       <div className="mx-auto max-w-6xl px-6">
         <header className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className="type-eyebrow text-primary">
             How TrueP2P™ works
           </p>
-          <h2 className="font-display mt-3 text-3xl font-medium tracking-tight md:text-4xl">
+          <h2 className="mt-3 type-h2">
             What we engineer for you
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+          <p className="mt-4 type-lede text-muted-foreground">
             A regulated peer-to-peer platform connects investors directly with issuers. We
             build every layer in between — onboarding, listings, escrow, repayments and
             reporting — so the experience feels like a single, trusted product.
@@ -209,7 +209,7 @@ export function P2PPlatformDiagram() {
                 </IconBadge>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Investors</h3>
-                  <p className="mt-2 text-base text-muted-foreground md:text-lg">
+                  <p className="mt-2 type-lede text-muted-foreground">
                     Retail, accredited, and institutional investors looking for transparent,
                     asset-backed yield.
                   </p>
@@ -274,7 +274,7 @@ export function P2PPlatformDiagram() {
                 </IconBadge>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Issuers</h3>
-                  <p className="mt-2 text-base text-muted-foreground md:text-lg">
+                  <p className="mt-2 type-lede text-muted-foreground">
                     SMEs, project sponsors, and originators that need fast, structured access
                     to growth capital.
                   </p>

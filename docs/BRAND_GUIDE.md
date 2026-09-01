@@ -113,21 +113,52 @@ dots, syntax-highlight colors) are allowed — mockups depict software, not our 
 
 ## 4. Typography
 
-Fonts are wired in `app/layout.tsx`: **Rethink Sans** (`font-display`) for headings,
-**Inter** (`font-sans`) for body, **Geist Mono** (`font-mono`) for code/technical only.
-Body base is 17px.
+Fonts are loaded from Google Fonts via `next/font` in `app/layout.tsx`. Roles are
+strict — do not mix families.
 
-| Level | Classes |
+| Family | Role |
 |---|---|
-| Hero h1 (product pages) | `font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl` |
-| Section h2 | `font-display text-3xl font-medium tracking-tight md:text-4xl` |
-| Card/panel h3 | `font-display text-xl font-medium tracking-tight md:text-2xl` |
-| Eyebrow (above h2) | `text-xs font-semibold uppercase tracking-widest text-primary` (or accent) |
-| Lead / subtitle | `text-base text-muted-foreground md:text-lg` (heroes: `text-lg md:text-xl`) |
-| Card body | `text-sm` or `text-[15px] leading-relaxed text-muted-foreground` |
+| **Rethink Sans** (`font-display`) | Display headings only: H1, H2, pull-quotes. Weight **500**. Tracking −0.02 to −0.028em. |
+| **Inter** (`font-sans`) | Body copy, nav, buttons, card titles (weight **600**), UI labels. |
+| **Geist Mono** (`font-mono`) | Technical bits only: step numbers, week ranges, phase labels, score readouts, browser chrome (`admin.truekredit`). |
+
+Body base is **17px**. Nothing sits below **12px**.
+
+Composed utilities live in `app/globals.css`. Prefer these over stacking Tailwind size
+classes.
+
+### Display (Rethink Sans, 500)
+
+| Level | Class | Size |
+|---|---|---|
+| H1 | `type-h1` | `clamp(2.5rem, 4.6vw, 4rem)` → 40–64px, line-height 1.03, tracking −0.028em |
+| Section H2 | `type-h2` | `clamp(1.9rem, 3.4vw, 2.75rem)` → 30–44px, line-height 1.1, tracking −0.02em |
+| Smaller H2 (KPKT review, promo panels) | `type-h2-sm` | `clamp(1.75rem, 3vw, 2.4rem)` → 28–38px |
+| Pull-quote | `type-pullquote` | `clamp(1.3rem, 2.4vw, 1.75rem)` → 21–28px |
+
+### Body & UI (Inter)
+
+| Level | Class | Size |
+|---|---|---|
+| Hero lede | `type-lede-hero` | 19px / 1.6 |
+| Section lede | `type-lede` | 18px / 1.6 |
+| Body copy | default (`text-base` / inherited) | 16–17px (body default is 17px) |
+| Card titles | `type-card-title` | 20px / 600 |
+| Sub-headings | `type-subhead` | 17–19px / 600 |
+| Card body, footer links, nav, buttons | `type-ui` | 15px |
+| Eyebrows | `type-eyebrow` | 13px, 500, uppercase, 0.08em tracking |
+| Micro-labels, legal, chips | `type-micro` or `text-sm` | 12–14px |
+
+### Geist Mono
+
+| Level | Class | Size |
+|---|---|---|
+| Step numbers, week ranges, phase labels | `type-mono-label` | 12–13px |
+| Score readout | `type-mono-score` | 22px |
 
 Rules:
-- Every h1/h2/h3 display heading uses `font-display font-medium tracking-tight`. No bold headings.
+- H1/H2 use `type-h1` / `type-h2` (Rethink Sans, 500). No bold display headings.
+- Card titles and sub-headings are Inter (`type-card-title`, `type-subhead`), not Rethink Sans.
 - One `<h1>` per page. Never skip heading levels.
 - Gradient text (`bg-clip-text`) is for **one phrase in a hero h1 only**, using the
   page's accent gradient.
@@ -151,9 +182,9 @@ Every marketing section follows this skeleton:
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
     >
-      <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">Eyebrow</p>
-      <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">…</h2>
-      <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">…</p>
+      <p className="mb-3 type-eyebrow text-primary">Eyebrow</p>
+      <h2 className="type-h2">…</h2>
+      <p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">…</p>
     </motion.div>
     {/* content grid */}
   </div>
@@ -260,7 +291,7 @@ Any new page or meaningful copy change must complete this checklist:
 
 - [ ] Copy passes tone rules (§2): no jargon, no hype words, benefit-first, "Book a Free Consultation" CTA.
 - [ ] Colors are tokens or the page's sanctioned accent ramp (§3); no new raw colors, no hex.
-- [ ] Headings use `font-display font-medium tracking-tight`; scale matches §4.
+- [ ] Headings use `type-h1` / `type-h2` (Rethink Sans 500); card titles use `type-card-title` (Inter 600). Scale matches §4.
 - [ ] Section skeleton matches §5 (border-t, py-16 md:py-20, max-w-6xl, eyebrow pattern).
 - [ ] Dark sections set `data-nav-theme="dark"`.
 - [ ] Motion follows §6 and decorative elements are `aria-hidden`.

@@ -36,7 +36,7 @@ export default function TermsOfUsePage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
             <FileText className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight">Terms of Use</h1>
+          <h1 className="mb-4 type-h1">Terms of Use</h1>
           <p className="text-lg text-muted-foreground">
             Terms and conditions for using our website
           </p>
@@ -52,7 +52,7 @@ export default function TermsOfUsePage() {
           <div className="space-y-12">
             {/* Acceptance */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">1. Acceptance of Terms</h2>
+              <h2 className="mb-4 type-h2-sm">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground">
                 By accessing and using this website (truestack.my), you accept and agree 
                 to be bound by these Terms of Use. If you do not agree to these terms, 
@@ -62,7 +62,7 @@ export default function TermsOfUsePage() {
 
             {/* About */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">2. About Truestack</h2>
+              <h2 className="mb-4 type-h2-sm">2. About Truestack</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Truestack provides KPKT compliance services and fintech software development 
@@ -82,7 +82,7 @@ export default function TermsOfUsePage() {
 
             {/* Use of Website */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">3. Use of Website</h2>
+              <h2 className="mb-4 type-h2-sm">3. Use of Website</h2>
               <p className="mb-3 text-muted-foreground">
                 You agree to use this website only for lawful purposes and in a way that:
               </p>
@@ -108,7 +108,7 @@ export default function TermsOfUsePage() {
 
             {/* Intellectual Property */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">4. Intellectual Property</h2>
+              <h2 className="mb-4 type-h2-sm">4. Intellectual Property</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   All content on this website, including but not limited to text, graphics, 
@@ -124,7 +124,7 @@ export default function TermsOfUsePage() {
 
             {/* Information Accuracy */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">5. Information Accuracy</h2>
+              <h2 className="mb-4 type-h2-sm">5. Information Accuracy</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   While we strive to provide accurate and up-to-date information, we make no 
@@ -145,7 +145,7 @@ export default function TermsOfUsePage() {
 
             {/* No Professional Advice */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">6. No Professional Advice</h2>
+              <h2 className="mb-4 type-h2-sm">6. No Professional Advice</h2>
               <p className="text-muted-foreground">
                 The content on this website is for general informational purposes only and 
                 does not constitute professional advice. For specific advice regarding KPKT 
@@ -156,7 +156,7 @@ export default function TermsOfUsePage() {
 
             {/* Third-Party Links */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">7. Third-Party Links</h2>
+              <h2 className="mb-4 type-h2-sm">7. Third-Party Links</h2>
               <p className="text-muted-foreground">
                 This website may contain links to third-party websites. These links are 
                 provided for your convenience only. We have no control over and assume no 
@@ -167,7 +167,7 @@ export default function TermsOfUsePage() {
 
             {/* Limitation of Liability */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">8. Limitation of Liability</h2>
+              <h2 className="mb-4 type-h2-sm">8. Limitation of Liability</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   To the fullest extent permitted by law, Truestack shall not be liable for 
@@ -183,7 +183,7 @@ export default function TermsOfUsePage() {
 
             {/* Indemnification */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">9. Indemnification</h2>
+              <h2 className="mb-4 type-h2-sm">9. Indemnification</h2>
               <p className="text-muted-foreground">
                 You agree to indemnify and hold harmless Truestack, its officers, directors, 
                 employees, and agents from any claims, damages, losses, or expenses arising 
@@ -193,7 +193,7 @@ export default function TermsOfUsePage() {
 
             {/* Modifications */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">10. Modifications</h2>
+              <h2 className="mb-4 type-h2-sm">10. Modifications</h2>
               <p className="text-muted-foreground">
                 We reserve the right to modify these Terms of Use at any time. Changes will 
                 be effective immediately upon posting to this website. Your continued use of 
@@ -203,7 +203,7 @@ export default function TermsOfUsePage() {
 
             {/* Governing Law */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">11. Governing Law</h2>
+              <h2 className="mb-4 type-h2-sm">11. Governing Law</h2>
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="pt-4">
                   <p className="text-sm">
@@ -217,7 +217,7 @@ export default function TermsOfUsePage() {
 
             {/* Severability */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">12. Severability</h2>
+              <h2 className="mb-4 type-h2-sm">12. Severability</h2>
               <p className="text-muted-foreground">
                 If any provision of these Terms of Use is found to be unenforceable, the 
                 remaining provisions shall continue in full force and effect.
@@ -226,7 +226,7 @@ export default function TermsOfUsePage() {
 
             {/* Contact */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">13. Contact Us</h2>
+              <h2 className="mb-4 type-h2-sm">13. Contact Us</h2>
               <p className="mb-4 text-muted-foreground">
                 If you have any questions about these Terms of Use, please contact us:
               </p>

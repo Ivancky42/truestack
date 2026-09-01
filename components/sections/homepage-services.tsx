@@ -127,7 +127,7 @@ function ServicePanel({
 
 			<div className="order-1 flex flex-col justify-center gap-5 lg:order-2">
 				<div>
-					<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+					<h3 className="type-h2-sm">
 						{title}
 					</h3>
 					<p className={cn("mt-1 text-sm font-medium", eyebrowClass)}>
@@ -226,7 +226,7 @@ function DigitalLicensePanel() {
 
 			<div className="order-1 flex flex-col justify-center gap-5 lg:order-2">
 				<div>
-					<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+					<h3 className="type-h2-sm">
 						Digital KPKT License
 					</h3>
 					<p className="mt-1 text-sm font-medium text-kpkt">
@@ -286,7 +286,7 @@ function CustomSoftwarePanel() {
 
 			<div className="order-1 flex flex-col justify-center gap-5 lg:order-2">
 				<div>
-					<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+					<h3 className="type-h2-sm">
 						Custom Software Development
 					</h3>
 					<p className="mt-1 text-sm font-medium text-primary">
@@ -340,11 +340,11 @@ export function HomepageServices() {
 					/>
 					<h2
 						id="homepage-services-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+						className="type-h2"
 					>
 						Services that get you licensed and live
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Beyond platforms and APIs — we help Malaysian lenders
 						stay compliant, convert to digital licences, and ship
 						custom software when off-the-shelf isn&apos;t enough.
@@ -385,7 +385,7 @@ export function HomepageServices() {
 									<Icon className="h-5 w-5" aria-hidden />
 								</span>
 								<span className="min-w-0">
-									<span className="block font-display text-base font-semibold">
+									<span className="block type-subhead">
 										{tab.label}
 									</span>
 									<span className="block text-xs text-muted-foreground">

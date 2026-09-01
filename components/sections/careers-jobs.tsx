@@ -77,7 +77,7 @@ function JobDetailModal({ role }: { role: JobRole }) {
             </Badge>
           )}
         </div>
-        <DialogTitle className="font-display text-2xl font-medium leading-snug md:text-3xl">
+        <DialogTitle className="type-h2-sm">
           {role.title}
         </DialogTitle>
         <DialogDescription asChild>

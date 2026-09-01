@@ -20,6 +20,8 @@ type SuccessStoriesProofProps = {
 	id?: string;
 	/** 3-col default; use 2 for fewer items or denser layouts */
 	columns?: 2 | 3 | 4;
+	/** Homepage selected-work layout: left title, right view-all. */
+	align?: "center" | "start";
 };
 
 export function SuccessStoriesProof({
@@ -32,6 +34,7 @@ export function SuccessStoriesProof({
 	className,
 	id = "success-stories",
 	columns = 3,
+	align = "center",
 }: SuccessStoriesProofProps) {
 	const count = studies.length;
 	const gridClass =
@@ -50,33 +53,61 @@ export function SuccessStoriesProof({
 			id={id}
 			aria-labelledby={`${id}-heading`}
 			className={cn(
-				"scroll-mt-20 border-t bg-muted/30 py-14 md:py-20",
+				"scroll-mt-20 border-t py-14 md:py-20",
+				align === "start" ? "bg-background" : "bg-muted/30",
 				className,
 			)}
 		>
 			<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 				<motion.div
-					className="mx-auto mb-10 max-w-3xl text-center"
+					className={cn(
+						"mb-10",
+						align === "start"
+							? "flex flex-wrap items-end justify-between gap-5"
+							: "mx-auto max-w-3xl text-center",
+					)}
 					initial={{ opacity: 0, y: 16 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<SectionBadge
-						icon={Briefcase}
-						text={eyebrow}
-						className="justify-center"
-					/>
-					<h2
-						id={`${id}-heading`}
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl"
-					>
-						{title}
-					</h2>
-					{subtitle ? (
-						<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-							{subtitle}
-						</p>
+					<div className={align === "start" ? "max-w-xl" : undefined}>
+						{align === "start" ? (
+							<p className="mb-3 type-eyebrow text-primary">
+								{eyebrow}
+							</p>
+						) : (
+							<SectionBadge
+								icon={Briefcase}
+								text={eyebrow}
+								className="justify-center"
+							/>
+						)}
+						<h2
+							id={`${id}-heading`}
+							className="type-h2"
+						>
+							{title}
+						</h2>
+						{subtitle ? (
+							<p
+								className={cn(
+									"mt-4 type-lede text-muted-foreground",
+									align === "center" && "mx-auto max-w-2xl",
+								)}
+							>
+								{subtitle}
+							</p>
+						) : null}
+					</div>
+					{align === "start" && viewAllHref ? (
+						<Link
+							href={viewAllHref}
+							className="inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
+						>
+							{viewAllLabel}
+							<ArrowRight className="h-4 w-4" />
+						</Link>
 					) : null}
 				</motion.div>
 
@@ -119,7 +150,7 @@ export function SuccessStoriesProof({
 					))}
 				</motion.div>
 
-				{viewAllHref ? (
+				{align === "center" && viewAllHref ? (
 					<div className="mt-8 text-center">
 						<Link
 							href={viewAllHref}

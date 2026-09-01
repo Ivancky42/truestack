@@ -689,7 +689,7 @@ export function CTOSVisual() {
 						Credit Score
 					</p>
 					<div className="mt-0.5 flex items-baseline gap-2">
-						<span className="font-display text-3xl font-bold text-amber-600">
+						<span className="type-h2-sm text-amber-600">
 							720
 						</span>
 						<span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[9px] font-semibold text-emerald-700">

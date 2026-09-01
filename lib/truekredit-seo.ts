@@ -8,7 +8,7 @@ export const TRUEKREDIT_PAGE_URL = `${baseUrl}${TRUEKREDIT_PAGE_PATH}`;
 export const TRUEKREDIT_METADATA = {
 	title: "TrueKredit™ | Money Lending Management System",
 	description:
-		"Money lending management system for KPKT-licensed money lenders. Money lender software Malaysia — iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K.",
+		"Money lending management system for KPKT-licensed money lenders. Borrowers, schedules, Lampiran A/B/B1, Jadual J & K and iDEAL KPKT paperwork in one platform.",
 	keywords: [
 		"TrueKredit",
 		"money lending management system",
@@ -121,6 +121,7 @@ export function buildTrueKreditJsonLd() {
 					"e-KYC and TrueSSM™ integrations",
 					"Secure cloud hosting in Malaysia",
 					"Audit trails and KPKT compliance workflows",
+					"Loan workflow options configured to how your office already works",
 					"Pro: customer website, phone apps, digital signing",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },

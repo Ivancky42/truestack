@@ -528,12 +528,12 @@ function ServiceCard({ service }: { service: Service }) {
 								text={service.badgeText}
 							/>
 							{service.comingSoon && (
-								<span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
+								<span className="rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 type-micro font-medium uppercase tracking-wide text-amber-700">
 									Coming Soon
 								</span>
 							)}
 						</div>
-						<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+						<h3 className="type-h2-sm">
 							{service.name}
 						</h3>
 						<p className="mt-3 text-sm text-muted-foreground md:text-base">
@@ -671,10 +671,10 @@ export function InfrastructureSection() {
 						text="TrueStack Core"
 						className="justify-center"
 					/>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						The fintech infrastructure Malaysian operators launch on
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Go to market faster with production-ready APIs for
 						identity, company data, payments, and credit — already
 						built for Malaysian regulations and rails, so you launch

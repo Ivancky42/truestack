@@ -101,10 +101,10 @@ export default function AboutPage() {
 								icon={Handshake}
 								text="Why work with us"
 							/>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								What you get with Truestack
 							</h2>
-							<p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+							<p className="mt-4 max-w-xl type-lede text-muted-foreground">
 								Clear ownership from licence to live portfolio —
 								with technology and compliance that already speak
 								Malaysian fintech.
@@ -119,7 +119,7 @@ export default function AboutPage() {
 											/>
 										</span>
 										<div>
-											<h3 className="font-display text-lg font-semibold tracking-tight">
+											<h3 className="type-subhead">
 												{reason.title}
 											</h3>
 											<p className="mt-1.5 text-sm leading-relaxed text-muted-foreground md:text-[15px]">

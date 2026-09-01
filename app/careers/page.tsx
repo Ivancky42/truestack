@@ -140,7 +140,7 @@ export default function CareersPage() {
 								Join the team
 							</span>
 						</div>
-						<h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
+						<h2 className="type-h2 text-white">
 							Roles
 						</h2>
 						<p className="mt-1 max-w-2xl text-sm text-slate-400 md:text-base">
@@ -161,7 +161,7 @@ export default function CareersPage() {
 				<div className="mx-auto max-w-6xl px-6">
 					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
 						<div>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								Life at Truestack
 							</h2>
 							<p className="mt-1 text-sm text-muted-foreground md:text-base">

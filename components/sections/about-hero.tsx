@@ -29,7 +29,7 @@ export function AboutHero() {
 					About Truestack
 				</Badge>
 
-				<h1 className="font-display text-4xl font-medium tracking-tight text-slate-50 md:text-5xl lg:text-6xl">
+				<h1 className="type-h1 text-slate-50">
 					The partner behind{" "}
 					<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
 						compliant digital lending

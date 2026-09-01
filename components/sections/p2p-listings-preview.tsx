@@ -164,7 +164,7 @@ function ListingCard({ data }: { data: ListingPreview }) {
             <p className="mt-1 text-xs text-muted-foreground">Days</p>
           </div>
           <div className="px-2 text-center">
-            <p className="text-xl font-bold tabular-nums text-foreground md:text-2xl">
+            <p className="type-mono-score tabular-nums text-foreground">
               {data.score}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">Score</p>

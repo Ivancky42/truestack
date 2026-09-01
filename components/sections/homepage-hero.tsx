@@ -1,613 +1,327 @@
 "use client";
 
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+	ArrowRight,
+	FileCheck,
+	FileText,
+	Server,
+	ShieldCheck,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ArrowRight, TrendingUp, Wallet, Users, ShieldCheck } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { CtaLink } from "@/components/shared/cta-link";
 
-// ─── Mock data ────────────────────────────────────────────────────────────────
+const TRUST_CHIPS = [
+	{ icon: ShieldCheck, label: "KPKT, SC & Bank Negara" },
+	{ icon: Server, label: "Data in Malaysia" },
+	{ icon: FileCheck, label: "Audit-ready" },
+] as const;
 
-const CHART_POINTS = [
-  12, 18, 15, 28, 24, 38, 34, 46, 42, 55, 52, 64, 60, 72, 78, 85, 82, 90, 88, 95,
-];
+const STACK_PILLS = [
+	{ label: "Licence", active: false },
+	{ label: "Platform", active: true },
+	{ label: "API", active: false },
+] as const;
 
-// Metric definitions with min (start) and max (end) numeric values for interpolation
-const METRIC_DEFS = [
-  {
-    label: "Active Loans",
-    min: 340,
-    max: 2847,
-    format: (v: number) => Math.round(v).toLocaleString(),
-    suffix: "",
-    change: "+120.3%",
-    icon: Users,
-    delay: 0.3,
-  },
-  {
-    label: "Portfolio Value",
-    min: 5.1,
-    max: 48.2,
-    format: (v: number) => `RM ${v.toFixed(1)}M`,
-    suffix: "",
-    change: "+691.7%",
-    icon: Wallet,
-    delay: 0.45,
-  },
-  {
-    label: "Repayment Rate",
-    min: 78.2,
-    max: 99.4,
-    format: (v: number) => `${v.toFixed(1)}%`,
-    suffix: "",
-    change: "+10.1%",
-    icon: TrendingUp,
-    delay: 0.6,
-  },
-  {
-    label: "Compliance",
-    min: 100,
-    max: 100,
-    format: (v: number) => `${Math.round(v)}%`,
-    suffix: "",
-    change: "Safe",
-    icon: ShieldCheck,
-    delay: 0.75,
-  },
-];
+const HERO_TITLE_PREFIX = [
+	"The",
+	"fintech",
+	"infrastructure",
+	"Malaysian",
+	"lenders",
+] as const;
 
-// ─── SVG chart path builder ───────────────────────────────────────────────────
+const HERO_VERBS = ["launch", "lend", "build", "scale", "run"] as const;
+const HERO_TITLE_STATIC =
+	"The fintech infrastructure Malaysian lenders launch on.";
+const VERB_EASE = [0.22, 1, 0.36, 1] as const;
+const ROTATE_MS = 2600;
 
-function buildChartPath(
-  points: number[],
-  width: number,
-  height: number,
-  padding = 8
-): { line: string; area: string; coords: { x: number; y: number }[] } {
-  const maxVal = Math.max(...points);
-  const minVal = Math.min(...points);
-  const range = maxVal - minVal || 1;
-
-  const coords = points.map((p, i) => ({
-    x: padding + (i / (points.length - 1)) * (width - padding * 2),
-    y: padding + (1 - (p - minVal) / range) * (height - padding * 2),
-  }));
-
-  let line = `M ${coords[0].x},${coords[0].y}`;
-  for (let i = 1; i < coords.length; i++) {
-    const prev = coords[i - 1];
-    const curr = coords[i];
-    const cpx = (prev.x + curr.x) / 2;
-    line += ` C ${cpx},${prev.y} ${cpx},${curr.y} ${curr.x},${curr.y}`;
-  }
-
-  const lastCoord = coords[coords.length - 1];
-  const area =
-    line + ` L ${lastCoord.x},${height} L ${coords[0].x},${height} Z`;
-
-  return { line, area, coords };
-}
-
-// Interpolate a Y value along the chart at a given normalized progress (0–1)
-function interpolateChart(points: number[], progress: number): number {
-  const idx = progress * (points.length - 1);
-  const lo = Math.floor(idx);
-  const hi = Math.min(lo + 1, points.length - 1);
-  const t = idx - lo;
-  return points[lo] + (points[hi] - points[lo]) * t;
-}
-
-// ─── Metric Card ──────────────────────────────────────────────────────────────
-
-function MetricCard({
-  label,
-  displayValue,
-  change,
-  icon: Icon,
-  delay,
-  mouseX,
-  mouseY,
-  containerRef,
+function RotatingVerb({
+	reduceMotion,
+	enterDelay,
 }: {
-  label: string;
-  displayValue: string;
-  change: string;
-  icon: React.ComponentType<{ className?: string }>;
-  delay: number;
-  mouseX: ReturnType<typeof useMotionValue<number>>;
-  mouseY: ReturnType<typeof useMotionValue<number>>;
-  containerRef: React.RefObject<HTMLDivElement | null>;
+	reduceMotion: boolean | null;
+	enterDelay: number;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+	const [index, setIndex] = useState(0);
+	const [readyToCycle, setReadyToCycle] = useState(false);
+	const phrase = `${HERO_VERBS[index]} on.`;
 
-  const springX = useSpring(x, { stiffness: 150, damping: 20 });
-  const springY = useSpring(y, { stiffness: 150, damping: 20 });
+	useEffect(() => {
+		if (reduceMotion || !readyToCycle) return;
+		const id = window.setInterval(() => {
+			setIndex((i) => (i + 1) % HERO_VERBS.length);
+		}, ROTATE_MS);
+		return () => window.clearInterval(id);
+	}, [reduceMotion, readyToCycle]);
 
-  useEffect(() => {
-    const unsubX = mouseX.on("change", (latestX) => {
-      if (!cardRef.current || !containerRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const cardCenterX = rect.left + rect.width / 2 - containerRect.left;
-      const cardCenterY = rect.top + rect.height / 2 - containerRect.top;
-      const dx = latestX - cardCenterX;
-      const dy = mouseY.get() - cardCenterY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDist = 400;
-      const factor = Math.max(0, 1 - distance / maxDist);
-      x.set(dx * factor * 0.04);
-      y.set(dy * factor * 0.04);
-    });
+	if (reduceMotion) {
+		return (
+			<span className="inline-block rounded-md bg-primary/30 px-[0.32em] py-[0.06em] align-bottom whitespace-nowrap">
+				launch on.
+			</span>
+		);
+	}
 
-    return unsubX;
-  }, [mouseX, mouseY, containerRef, x, y]);
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      style={{ x: springX, y: springY }}
-    >
-      <Card className="relative gap-3 overflow-hidden border-border/60 bg-card/80 px-4 py-4 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-md">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-              <Icon className="h-4 w-4 text-primary" />
-            </div>
-            <span className="text-sm text-muted-foreground">{label}</span>
-          </div>
-          <span className="text-xs font-medium text-emerald-600">{change}</span>
-        </div>
-        <div className="pl-10">
-          <span className="text-2xl font-semibold tracking-tight tabular-nums">
-            {displayValue}
-          </span>
-        </div>
-      </Card>
-    </motion.div>
-  );
+	return (
+		<span className="inline-flex rounded-md bg-primary/10 px-[0.32em] py-[0.06em] align-bottom">
+			<span className="relative inline-grid overflow-hidden">
+				{HERO_VERBS.map((verb) => (
+					<span
+						key={verb}
+						className="invisible col-start-1 row-start-1 whitespace-nowrap pb-[0.14em]"
+						aria-hidden
+					>
+						{verb} on.
+					</span>
+				))}
+				<span className="absolute inset-0 overflow-hidden">
+					<AnimatePresence>
+						<motion.span
+							key={HERO_VERBS[index]}
+							className="absolute inset-0 whitespace-nowrap"
+							initial={{ y: "108%" }}
+							animate={{ y: 0 }}
+							exit={{ y: "-108%" }}
+							transition={{
+								duration: 0.5,
+								ease: VERB_EASE,
+								delay: readyToCycle ? 0 : enterDelay,
+							}}
+							onAnimationComplete={() => setReadyToCycle(true)}
+						>
+							{phrase}
+						</motion.span>
+					</AnimatePresence>
+				</span>
+			</span>
+		</span>
+	);
 }
 
-// ─── Growth Chart ─────────────────────────────────────────────────────────────
+function HeroHeadline() {
+	const reduceMotion = useReducedMotion();
 
-const CHART_WIDTH = 480;
-const CHART_HEIGHT = 200;
-const CHART_PADDING = 8;
-
-function GrowthChart({
-  mouseX,
-  mouseY,
-  progress,
-  chartHovered,
-}: {
-  mouseX: ReturnType<typeof useMotionValue<number>>;
-  mouseY: ReturnType<typeof useMotionValue<number>>;
-  progress: number;
-  chartHovered: boolean;
-}) {
-  const { line, area, coords } = buildChartPath(
-    CHART_POINTS,
-    CHART_WIDTH,
-    CHART_HEIGHT,
-    CHART_PADDING
-  );
-
-  // Compute the scrubber position along the chart
-  const scrubIdx = progress * (coords.length - 1);
-  const lo = Math.floor(scrubIdx);
-  const hi = Math.min(lo + 1, coords.length - 1);
-  const t = scrubIdx - lo;
-  const scrubX = coords[lo].x + (coords[hi].x - coords[lo].x) * t;
-  const scrubY = coords[lo].y + (coords[hi].y - coords[lo].y) * t;
-
-  // Interpolated point value for the tooltip
-  const pointValue = interpolateChart(CHART_POINTS, progress);
-  const growthPct = ((pointValue / CHART_POINTS[0]) * 100 - 100).toFixed(1);
-
-  // Radial glow follows cursor
-  const glowX = useSpring(useTransform(mouseX, (v) => v), {
-    stiffness: 100,
-    damping: 25,
-  });
-  const glowY = useSpring(useTransform(mouseY, (v) => v), {
-    stiffness: 100,
-    damping: 25,
-  });
-
-  // Clip path that reveals the chart up to the scrub point
-  const clipRight = chartHovered
-    ? `inset(0 ${CHART_WIDTH - scrubX}px 0 0)`
-    : "inset(0 0 0 0)";
-
-  return (
-    <motion.div
-      className="relative overflow-hidden rounded-xl border border-border/60 bg-card/80 p-5 shadow-sm backdrop-blur-sm"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.15 }}
-    >
-      {/* Radial glow that follows cursor */}
-      <motion.div
-        className="pointer-events-none absolute inset-0 hidden lg:block"
-        style={{
-          background: useTransform(
-            [glowX, glowY],
-            ([gx, gy]: number[]) =>
-              `radial-gradient(300px circle at ${gx}px ${gy}px, var(--color-primary) 0%, transparent 70%)`
-          ),
-          opacity: 0.06,
-        }}
-      />
-
-      <div className="mb-3 flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-foreground">Portfolio Growth</p>
-          <p className="text-xs text-muted-foreground">Last 12 months</p>
-        </div>
-        <div className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium tabular-nums text-emerald-700">
-          <TrendingUp className="h-3 w-3" />
-          {chartHovered ? `+${growthPct}%` : "+691.7%"}
-        </div>
-      </div>
-
-      <svg
-        viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
-        className="w-full"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.01" />
-          </linearGradient>
-          <linearGradient id="chartGradientDim" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.06" />
-            <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.01" />
-          </linearGradient>
-        </defs>
-
-        {/* Dimmed full area (shown when hovered to give context) */}
-        {chartHovered && (
-          <path
-            d={area}
-            fill="url(#chartGradientDim)"
-          />
-        )}
-
-        {/* Dimmed full line (shown when hovered) */}
-        {chartHovered && (
-          <path
-            d={line}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity={0.15}
-          />
-        )}
-
-        {/* Active area fill — clipped to scrub position when hovered */}
-        <g style={{ clipPath: clipRight }}>
-          <motion.path
-            d={area}
-            fill="url(#chartGradient)"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.6 }}
-          />
-
-          {/* Active line */}
-          <motion.path
-            d={line}
-            fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.8, delay: 0.3, ease: "easeOut" }}
-          />
-        </g>
-
-        {/* Scrubber line + dot when hovered */}
-        {chartHovered && (
-          <>
-            <line
-              x1={scrubX}
-              y1={CHART_PADDING}
-              x2={scrubX}
-              y2={CHART_HEIGHT - CHART_PADDING}
-              stroke="var(--color-primary)"
-              strokeWidth="1"
-              strokeDasharray="4 3"
-              opacity={0.3}
-            />
-            <circle
-              cx={scrubX}
-              cy={scrubY}
-              r="6"
-              fill="white"
-              stroke="var(--color-primary)"
-              strokeWidth="2.5"
-            />
-            {/* Pulsing ring around scrub dot */}
-            <circle
-              cx={scrubX}
-              cy={scrubY}
-              r="6"
-              fill="none"
-              stroke="var(--color-primary)"
-              strokeWidth="1.5"
-              opacity={0.3}
-            >
-              <animate
-                attributeName="r"
-                values="6;14;6"
-                dur="1.5s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="opacity"
-                values="0.3;0;0.3"
-                dur="1.5s"
-                repeatCount="indefinite"
-              />
-            </circle>
-          </>
-        )}
-
-        {/* Static end dot (only when not hovered) */}
-        {!chartHovered && (() => {
-          const lastCoord = coords[coords.length - 1];
-          return (
-            <>
-              <motion.circle
-                cx={lastCoord.x}
-                cy={lastCoord.y}
-                r="5"
-                fill="var(--color-primary)"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 2.0 }}
-              />
-              <motion.circle
-                cx={lastCoord.x}
-                cy={lastCoord.y}
-                r="5"
-                fill="var(--color-primary)"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: [1, 2.2, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{
-                  duration: 2,
-                  delay: 2.2,
-                  repeat: Infinity,
-                  ease: "easeOut",
-                }}
-              />
-            </>
-          );
-        })()}
-      </svg>
-    </motion.div>
-  );
+	return (
+		<h1 className="type-h1 text-pretty">
+			<span className="sr-only">{HERO_TITLE_STATIC}</span>
+			<span aria-hidden>
+				{HERO_TITLE_PREFIX.map((word, i) => (
+					<span
+						key={word}
+						className="mr-[0.28em] inline-block overflow-hidden pb-[0.14em] align-bottom"
+					>
+						<motion.span
+							className="inline-block"
+							initial={reduceMotion ? false : { y: "108%" }}
+							animate={{ y: 0 }}
+							transition={{
+								duration: 0.55,
+								delay: reduceMotion ? 0 : 0.1 + i * 0.07,
+								ease: VERB_EASE,
+							}}
+						>
+							{word}
+						</motion.span>
+					</span>
+				))}
+				<RotatingVerb
+					reduceMotion={reduceMotion}
+					enterDelay={0.1 + HERO_TITLE_PREFIX.length * 0.07}
+				/>
+			</span>
+		</h1>
+	);
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+function BrowserChrome({ label }: { label: string }) {
+	return (
+		<div className="flex h-8 items-center gap-1.5 border-b bg-muted/40 px-3">
+			<span className="size-2 rounded-full bg-border" aria-hidden />
+			<span className="size-2 rounded-full bg-border" aria-hidden />
+			<span className="size-2 rounded-full bg-border" aria-hidden />
+			<span className="ml-2 type-mono-label text-muted-foreground/70">
+				{label}
+			</span>
+		</div>
+	);
+}
+
+function HeroCollage() {
+	return (
+		<div className="relative mx-auto w-full max-w-xl md:h-[540px] lg:max-w-none">
+			{/* Lampiran A — licence document, back-right */}
+			<div className="absolute top-0 right-0 z-0 hidden w-[66%] rotate-[2.4deg] overflow-hidden rounded-[10px] border bg-card shadow-md md:block">
+				<div className="flex h-6.5 items-center gap-2 border-b bg-muted/50 px-2.5">
+					<FileText
+						className="size-3 text-muted-foreground/70"
+						aria-hidden
+					/>
+					<span className="type-mono-label text-muted-foreground/70">
+						lampiran-a.pdf · KPKT
+					</span>
+				</div>
+				<Image
+					src="/truekredit/lampiran_a_screenshot.png"
+					alt="Lampiran A borrower ledger generated from TrueKredit"
+					width={1716}
+					height={2384}
+					className="h-[150px] w-full object-cover object-top opacity-90"
+					sizes="280px"
+				/>
+			</div>
+
+			{/* Dashboard — platform, front-center */}
+			<div className="relative z-10 overflow-hidden rounded-xl border bg-card shadow-xl md:absolute md:top-[104px] md:left-0 md:w-[96%] md:-rotate-[1.2deg] md:shadow-2xl">
+				<BrowserChrome label="admin.truekredit" />
+				<Image
+					src="/truekredit/hero_dashboard_screenshot.png"
+					alt="TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender"
+					width={3368}
+					height={2662}
+					quality={100}
+					unoptimized
+					priority
+					className="h-auto w-full md:h-[360px] md:object-cover md:object-top"
+					sizes="(max-width: 1024px) 100vw, 560px"
+				/>
+			</div>
+
+			{/* Activity timeline — audit trail overlay */}
+			<div className="absolute -bottom-3 -left-2 z-20 hidden w-60 -rotate-[3.6deg] overflow-hidden rounded-xl border bg-card shadow-md md:block">
+				<Image
+					src="/truekredit/activity_timeline_screenshot.png"
+					alt="TrueKredit activity timeline — who changed a loan, exported Lampiran A, or recorded a payment"
+					width={1820}
+					height={1532}
+					className="h-42 w-full object-cover object-top-left"
+					sizes="240px"
+				/>
+			</div>
+
+			{/* Licence / Platform / API */}
+			<div
+				className="absolute right-0 bottom-3.5 z-20 hidden flex-row items-center gap-1.5 md:flex"
+				aria-hidden
+			>
+				{STACK_PILLS.map((pill) => (
+					<span
+						key={pill.label}
+						className={
+							pill.active
+								? "inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-card/90 px-3 py-1.5 text-xs font-medium text-primary shadow-sm backdrop-blur-sm"
+								: "inline-flex items-center gap-1.5 rounded-full border bg-card/90 px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm"
+						}
+					>
+						<span className="size-1.5 rounded-full bg-primary" />
+						{pill.label}
+					</span>
+				))}
+			</div>
+		</div>
+	);
+}
 
 export function HomepageHero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const chartAreaRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(-1000);
-  const mouseY = useMotionValue(-1000);
+	const reduceMotion = useReducedMotion();
 
-  // Progress: 0 = start of chart, 1 = end. Defaults to 1 (show full chart).
-  const [progress, setProgress] = useState(1);
-  const [chartHovered, setChartHovered] = useState(false);
+	return (
+		<section className="relative overflow-hidden">
+			<div className="absolute inset-0 -z-10" aria-hidden>
+				<div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent" />
+				<svg
+					className="absolute inset-0 h-full w-full text-foreground opacity-[0.045]"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<defs>
+						<pattern
+							id="homepage-hero-grid"
+							width="48"
+							height="48"
+							patternUnits="userSpaceOnUse"
+						>
+							<path
+								d="M 48 0 L 0 0 0 48"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="1"
+							/>
+						</pattern>
+					</defs>
+					<rect
+						width="100%"
+						height="100%"
+						fill="url(#homepage-hero-grid)"
+					/>
+				</svg>
+				<div className="absolute -top-40 -right-30 h-155 w-155 rounded-full bg-primary/15 blur-3xl motion-safe:animate-pulse" />
+			</div>
 
-  // Smooth the progress for the metric numbers
-  const progressMotion = useMotionValue(1);
-  const progressSpring = useSpring(progressMotion, { stiffness: 120, damping: 18 });
-  const [displayProgress, setDisplayProgress] = useState(1);
+			<div className="mx-auto w-full max-w-[90rem] px-6 pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-19 lg:pb-20">
+				<div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:gap-14">
+					<div>
+						<HeroHeadline />
 
-  // Subscribe to spring changes to update display values
-  useEffect(() => {
-    const unsub = progressSpring.on("change", (v) => {
-      setDisplayProgress(v);
-    });
-    return unsub;
-  }, [progressSpring]);
+						<motion.div
+							initial={
+								reduceMotion ? false : { opacity: 0, y: 16 }
+							}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.5,
+								delay: reduceMotion ? 0 : 0.62,
+							}}
+						>
+							<p className="mt-5 max-w-[30em] type-lede-hero text-pretty text-muted-foreground">
+								We get you licensed and we run your book —
+								lending software, paperwork, and the rails
+								underneath for KPKT money lending.
+							</p>
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      mouseX.set(e.clientX - rect.left);
-      mouseY.set(e.clientY - rect.top);
-    },
-    [mouseX, mouseY]
-  );
+							<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+								<Button asChild size="lg" className="gap-2">
+									<CtaLink href="/contact">
+										Book a Free Consultation
+										<ArrowRight className="h-4 w-4" />
+									</CtaLink>
+								</Button>
+								<Button asChild variant="outline" size="lg">
+									<CtaLink href="#solutions">
+										Find your starting point
+									</CtaLink>
+								</Button>
+							</div>
 
-  const handleMouseLeave = useCallback(() => {
-    mouseX.set(-1000);
-    mouseY.set(-1000);
-  }, [mouseX, mouseY]);
+							<div className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-sm text-muted-foreground">
+								{TRUST_CHIPS.map(({ icon: Icon, label }) => (
+									<span
+										key={label}
+										className="inline-flex items-center gap-1.5"
+									>
+										<Icon
+											className="h-3.5 w-3.5 text-primary"
+											aria-hidden
+										/>
+										{label}
+									</span>
+								))}
+							</div>
+						</motion.div>
+					</div>
 
-  // Chart area mouse tracking — converts mouse X within chart to a 0–1 progress
-  const handleChartMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!chartAreaRef.current) return;
-      const rect = chartAreaRef.current.getBoundingClientRect();
-      // Account for padding (p-5 = 20px)
-      const paddingX = 20;
-      const innerLeft = rect.left + paddingX;
-      const innerWidth = rect.width - paddingX * 2;
-      const relX = e.clientX - innerLeft;
-      const p = Math.max(0.02, Math.min(1, relX / innerWidth));
-      setProgress(p);
-      progressMotion.set(p);
-      setChartHovered(true);
-    },
-    [progressMotion]
-  );
-
-  const handleChartMouseLeave = useCallback(() => {
-    setProgress(1);
-    progressMotion.set(1);
-    setChartHovered(false);
-  }, [progressMotion]);
-
-  // Compute interpolated metric values based on displayProgress
-  const metricValues = METRIC_DEFS.map((m) => {
-    const val = m.min + (m.max - m.min) * displayProgress;
-    return m.format(val);
-  });
-
-  return (
-    <section
-      className="relative overflow-hidden"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-linear-to-b from-primary/3 via-transparent to-transparent" />
-        <svg
-          className="absolute inset-0 h-full w-full opacity-[0.03]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="heroGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#heroGrid)" />
-        </svg>
-        <motion.div
-          className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-primary/10 to-primary/5 blur-3xl"
-          animate={{ scale: [1, 1.08, 1], opacity: [0.3, 0.45, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
-      <div className="mx-auto max-w-6xl px-6 pt-12 pb-8 md:pt-24 md:pb-14 lg:pt-32 lg:pb-16">
-        <div
-          ref={containerRef}
-          className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
-        >
-          {/* ── Left: Text Content ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.p
-              className="mb-4 text-sm font-medium tracking-wide text-muted-foreground"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-            >
-              Compliant fintech software, built for Malaysia
-            </motion.p>
-
-            <motion.h1
-              className="font-display text-4xl font-medium tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Build &amp; Scale Your Lending Business
-            </motion.h1>
-
-            <motion.p
-              className="mt-6 text-lg text-muted-foreground md:text-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              KPKT account management, digital license conversion, and lending software—plus the
-              compliance and infrastructure licensed money lenders need to grow in Malaysia.
-            </motion.p>
-
-            {/* CTAs — hidden on mobile, shown on desktop alongside text */}
-            <motion.div
-              className="mt-10 hidden flex-col gap-4 sm:flex-row sm:items-center lg:flex"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Button asChild size="lg" className="gap-2">
-                <CtaLink href="/contact">
-                  Book a Free Consultation
-                  <ArrowRight className="h-4 w-4" />
-                </CtaLink>
-              </Button>
-              <Button asChild variant="ghost" size="lg" className="text-muted-foreground">
-                <CtaLink href="#what-we-do">What We Do</CtaLink>
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          {/* ── Right: Growth Visual ── */}
-          <div className="relative">
-            {/* Chart — with its own mouse tracking for scrubbing */}
-            <div
-              ref={chartAreaRef}
-              className="cursor-crosshair"
-              onMouseMove={handleChartMouseMove}
-              onMouseLeave={handleChartMouseLeave}
-            >
-              <GrowthChart
-                mouseX={mouseX}
-                mouseY={mouseY}
-                progress={progress}
-                chartHovered={chartHovered}
-              />
-            </div>
-
-            {/* Metric cards grid */}
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {METRIC_DEFS.map((metric, i) => (
-                <MetricCard
-                  key={metric.label}
-                  label={metric.label}
-                  displayValue={metricValues[i]}
-                  change={metric.change}
-                  icon={metric.icon}
-                  delay={metric.delay}
-                  mouseX={mouseX}
-                  mouseY={mouseY}
-                  containerRef={containerRef}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* ── Mobile CTAs — shown below chart on small screens ── */}
-          <motion.div
-            className="flex flex-col gap-4 sm:flex-row sm:items-center lg:hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <Button asChild size="lg" className="gap-2">
-              <CtaLink href="/contact">
-                Book a Free Consultation
-                <ArrowRight className="h-4 w-4" />
-              </CtaLink>
-            </Button>
-            <Button asChild variant="ghost" size="lg" className="text-muted-foreground">
-              <CtaLink href="#what-we-do">View Features</CtaLink>
-            </Button>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+					<motion.div
+						className="pb-6 md:pb-2"
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.12 }}
+					>
+						<HeroCollage />
+					</motion.div>
+				</div>
+			</div>
+		</section>
+	);
 }

@@ -61,11 +61,11 @@ export function LendingPlatforms() {
 					/>
 					<h2
 						id="lending-platforms-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+						className="type-h2"
 					>
 						Lending &amp; Financing Platforms
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						We build custom lending software for Malaysian operators
 						on our proven engines — whether you&apos;re applying for a
 						KPKT money-lending licence, launching Shariah financing, or
@@ -110,7 +110,7 @@ export function LendingPlatforms() {
 									<Icon className="h-5 w-5" aria-hidden />
 								</span>
 								<span className="min-w-0">
-									<span className="block font-display text-base font-semibold">
+									<span className="block type-subhead">
 										{tab.label}
 									</span>
 									<span className="block text-xs text-muted-foreground">

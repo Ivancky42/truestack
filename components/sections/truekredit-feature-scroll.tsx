@@ -441,13 +441,13 @@ export function TrueKreditFeatureScroll() {
 			<div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 				{/* Section title — scrolls into view before the sticky journey starts */}
 				<div className="mx-auto max-w-3xl text-center">
-					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+					<p className="mb-3 type-eyebrow text-primary">
 						End to end
 					</p>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						One system from first enquiry to final settlement
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						From the first lead to the last repayment — your team
 						runs the book in one place. Scroll to walk the journey.
 					</p>
@@ -491,7 +491,7 @@ export function TrueKreditFeatureScroll() {
 										>
 											{step.phase}
 										</p>
-										<h3 className="mt-1.5 font-display text-xl font-semibold leading-snug tracking-tight">
+										<h3 className="mt-1.5 type-card-title">
 											{step.title}
 										</h3>
 										<p className="mx-auto mt-2 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
@@ -588,7 +588,7 @@ export function TrueKreditFeatureScroll() {
 								/>
 								<div className="hidden lg:block">
 									<p
-										className={`mb-2 text-[11px] font-semibold uppercase tracking-wider ${
+										className={`mb-2 type-micro font-medium uppercase tracking-wider ${
 											s.device === "phone"
 												? "text-violet-600"
 												: "text-primary"
@@ -596,7 +596,7 @@ export function TrueKreditFeatureScroll() {
 									>
 										{s.phase}
 									</p>
-									<h3 className="font-display text-2xl font-medium tracking-tight xl:text-3xl">
+									<h3 className="type-h2-sm">
 										{s.title}
 									</h3>
 									<p className="mt-3 max-w-sm text-[15px] leading-relaxed text-muted-foreground">

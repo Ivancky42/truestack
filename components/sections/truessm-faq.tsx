@@ -9,7 +9,7 @@ export function TrueSsmFaq() {
 			<div className="mx-auto max-w-6xl px-6">
 				<h2
 					id="truessm-faq-heading"
-					className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+					className="type-h2"
 				>
 					Frequently asked questions
 				</h2>

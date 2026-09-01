@@ -338,7 +338,7 @@ function TawidhGharamahVisual() {
 									Ta&apos;widh
 								</p>
 							</div>
-							<p className="font-display text-base font-bold leading-none text-emerald-700">
+							<p className="type-subhead leading-none text-emerald-700">
 								RM 35
 							</p>
 							<p className="mt-1 text-[7px] leading-tight text-muted-foreground">
@@ -354,7 +354,7 @@ function TawidhGharamahVisual() {
 									Gharamah
 								</p>
 							</div>
-							<p className="font-display text-base font-bold leading-none text-amber-700">
+							<p className="type-subhead leading-none text-amber-700">
 								RM 85
 							</p>
 							<p className="mt-1 text-[7px] leading-tight text-muted-foreground">
@@ -581,7 +581,7 @@ function ShariahMobileVisual() {
 						<p className="text-[7px] text-white/40">
 							TS-9421 · Tawarruq · Active
 						</p>
-						<p className="font-display text-base font-bold text-white">
+						<p className="type-subhead text-white">
 							RM 24,800
 						</p>
 						<p className="text-[7px] text-white/40">outstanding</p>
@@ -716,7 +716,7 @@ function HeroSection() {
 							</span>
 						</motion.div>
 						<motion.h1
-							className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+							className="type-h1"
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.1 }}
@@ -737,7 +737,7 @@ function HeroSection() {
 							operators.
 						</motion.p>
 						<motion.p
-							className="mt-4 text-lg text-muted-foreground md:text-xl"
+							className="mt-4 type-lede-hero text-muted-foreground"
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
@@ -856,16 +856,16 @@ function LicenceRealitySection() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-700">
+					<p className="mb-3 type-eyebrow text-emerald-700">
 						The licensing reality
 					</p>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						Shariah lending needs its own licence —{" "}
 						<span className="text-emerald-700">
 							and its own entity.
 						</span>
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Under Malaysia&apos;s lending framework, Shariah
 						digital lending requires its own approval pathway and
 						cannot be operated under the same legal entity that
@@ -893,7 +893,7 @@ function LicenceRealitySection() {
 								Conventional digital lending
 							</span>
 						</div>
-						<h3 className="mb-3 font-display text-lg font-medium leading-snug md:text-xl">
+						<h3 className="mb-3 type-subhead">
 							Holds your existing conventional online
 							money-lending licence.
 						</h3>
@@ -940,7 +940,7 @@ function LicenceRealitySection() {
 								Shariah digital lending
 							</span>
 						</div>
-						<h3 className="mb-3 font-display text-lg font-medium leading-snug md:text-xl">
+						<h3 className="mb-3 type-subhead">
 							A separate Sdn. Bhd. — its own Shariah digital
 							lending licence.
 						</h3>
@@ -982,7 +982,7 @@ function LicenceRealitySection() {
 						<Award className="h-5 w-5 text-emerald-700" />
 					</div>
 					<div>
-						<p className="font-display text-base font-semibold tracking-tight md:text-lg">
+						<p className="type-subhead">
 							Shipped only as a Pro-equivalent dedicated
 							deployment.
 						</p>
@@ -1064,14 +1064,14 @@ function ShariahEngineSection() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-700">
+					<p className="mb-3 type-eyebrow text-emerald-700">
 						The Shariah engine
 					</p>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						Three things conventional lending software won&apos;t
 						give you.
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						TrueSyariah&apos;s lending lifecycle is the same as
 						TrueKredit Pro — but the financing engine is rebuilt
 						around Shariah contracts, not riba.
@@ -1105,7 +1105,7 @@ function ShariahEngineSection() {
 											{c.tag}
 										</span>
 									</div>
-									<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+									<h3 className="type-card-title">
 										{c.title}
 									</h3>
 									<p className="text-[15px] leading-relaxed text-muted-foreground">
@@ -1316,13 +1316,13 @@ function OriginationSection() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-700">
+					<p className="mb-3 type-eyebrow text-emerald-700">
 						Customer origination
 					</p>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+					<h2 className="type-h2">
 						Three ways to bring customers in.
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Walk-in, branded web, and native mobile — all
 						included in every TrueSyariah deployment, all
 						feeding the same Shariah financing core so
@@ -1351,7 +1351,7 @@ function OriginationSection() {
 								<UserPlus className="h-3 w-3" />
 								Counter
 							</span>
-							<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+							<h3 className="type-card-title">
 								Walk-in counter
 							</h3>
 							<p className="text-[15px] leading-relaxed text-muted-foreground">
@@ -1389,7 +1389,7 @@ function OriginationSection() {
 								<Globe className="h-3 w-3" />
 								Web
 							</span>
-							<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+							<h3 className="type-card-title">
 								Branded web portal
 							</h3>
 							<p className="text-[15px] leading-relaxed text-muted-foreground">
@@ -1427,7 +1427,7 @@ function OriginationSection() {
 								<Smartphone className="h-3 w-3" />
 								iOS &amp; Android
 							</span>
-							<h3 className="font-display text-xl font-semibold leading-snug tracking-tight md:text-2xl">
+							<h3 className="type-card-title">
 								Native iOS &amp; Android apps
 							</h3>
 							<p className="text-[15px] leading-relaxed text-muted-foreground">
@@ -1481,7 +1481,7 @@ function TrueSyariahInfrastructureSection() {
 						text="Ring-fenced & dedicated"
 						className="[&>svg]:text-emerald-400 [&>span]:text-emerald-400"
 					/>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+					<h2 className="type-h2">
 						Enterprise-grade, separation-first infrastructure.
 					</h2>
 					<p className="mt-4 max-w-2xl text-lg text-slate-400 md:text-xl">
@@ -1774,7 +1774,7 @@ function ComparisonSection() {
 						text="Feature comparison"
 						className="justify-center"
 					/>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+					<h2 className="type-h2">
 						TrueKredit Pro vs TrueSyariah
 					</h2>
 					<p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
@@ -1848,7 +1848,7 @@ function ComparisonSection() {
 										<tr className="bg-muted/40">
 											<td
 												colSpan={3}
-												className="px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+												className="px-5 py-2 type-micro font-medium uppercase tracking-wider text-muted-foreground"
 											>
 												Shared dedicated-AWS core
 											</td>
@@ -1867,7 +1867,7 @@ function ComparisonSection() {
 										<tr className="bg-blue-500/5">
 											<td
 												colSpan={3}
-												className="px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-blue-700"
+												className="px-5 py-2 type-micro font-medium uppercase tracking-wider text-blue-700"
 											>
 												Conventional-only
 											</td>
@@ -1886,7 +1886,7 @@ function ComparisonSection() {
 										<tr className="bg-emerald-500/5">
 											<td
 												colSpan={3}
-												className="px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-emerald-800"
+												className="px-5 py-2 type-micro font-medium uppercase tracking-wider text-emerald-800"
 											>
 												Shariah-only
 											</td>
@@ -1962,10 +1962,10 @@ function IntegrationsSection() {
 						text="Integration advantage"
 						className="justify-center"
 					/>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+					<h2 className="type-h2">
 						Pre-wired partners. One contract.
 					</h2>
-					<p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-3 max-w-2xl type-lede text-muted-foreground">
 						TrueCommodity™ routing, on-prem PKI signing, e-KYC,
 						SSM and Malaysian payment rails — all rolled into a
 						single Truestack engagement.
@@ -1992,7 +1992,7 @@ function IntegrationsSection() {
 									>
 										<Icon className="h-5 w-5" />
 									</div>
-									<div className="font-display text-lg font-semibold tracking-tight text-foreground">
+									<div className="type-subhead">
 										{p.name}
 									</div>
 									<div className="text-xs uppercase tracking-wider text-muted-foreground">
@@ -2066,7 +2066,7 @@ function ZeroToLicensedSection() {
 							icon={Building2}
 							text="Full-service partnership"
 						/>
-						<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+						<h2 className="type-h2">
 							From zero to licensed Shariah lending — end to end.
 						</h2>
 						<p className="mt-4 text-lg text-muted-foreground">
@@ -2182,10 +2182,10 @@ function FaqSection() {
 						text="FAQ"
 						className="justify-center"
 					/>
-					<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+					<h2 className="type-h2">
 						Frequently asked questions
 					</h2>
-					<p className="mx-auto mt-3 text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-3 type-lede text-muted-foreground">
 						How TrueSyariah differs from TrueKredit, what Shariah
 						digital lending requires, and how Tawarruq,
 						Ta&apos;widh and Gharamah work on the platform.

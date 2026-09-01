@@ -68,7 +68,7 @@ function WorkCaseStudyCard({
 			</div>
 
 			<div className="flex flex-1 flex-col p-4 sm:p-5">
-				<h3 className="font-display text-lg font-medium tracking-tight">
+				<h3 className="type-subhead">
 					{study.title}
 				</h3>
 				<p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
@@ -163,7 +163,7 @@ function WorkCaseStudyMoreCard({ index }: { index: number }) {
 					/>
 				</div>
 				<div className="flex flex-1 flex-col items-center justify-center p-5 text-center sm:p-6">
-					<h3 className="font-display text-xl font-medium tracking-tight sm:text-2xl">
+					<h3 className="type-card-title sm:text-2xl">
 						And more
 					</h3>
 					<p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">

@@ -33,6 +33,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { TrueIdentityFaq } from "@/components/sections/trueidentity-faq";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { KycFlowDiagram } from "@/components/sections/trueidentity-hero-visual";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -164,192 +165,6 @@ function GridPattern() {
   );
 }
 
-// ─── Animated KYC Flow Diagram ────────────────────────────────────────────────
-
-const KYC_STEPS = [
-  {
-    icon: FileCheck,
-    label: "Scan MyKad",
-    sublabel: "OCR extraction",
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    borderColor: "border-blue-200",
-  },
-  {
-    icon: ScanFace,
-    label: "Selfie Capture",
-    sublabel: "Liveness check",
-    color: "text-violet-600",
-    bg: "bg-violet-50",
-    borderColor: "border-violet-200",
-  },
-  {
-    icon: Fingerprint,
-    label: "Biometric Match",
-    sublabel: "Face comparison",
-    color: "text-indigo-600",
-    bg: "bg-indigo-50",
-    borderColor: "border-indigo-200",
-  },
-  {
-    icon: CheckCircle2,
-    label: "Verified",
-    sublabel: "Result in <3s",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-    borderColor: "border-emerald-200",
-  },
-];
-
-function KycFlowDiagram() {
-  return (
-    <motion.div
-      className="relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-    >
-      {/* Phone mockup with verification flow */}
-      <motion.div
-        className="mx-auto w-full max-w-[320px]"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-      >
-        {/* Phone frame */}
-        <div className="overflow-hidden rounded-[2rem] border-2 border-border/80 bg-white shadow-xl">
-          {/* Phone status bar */}
-          <div className="flex items-center justify-between bg-slate-50 px-6 py-2">
-            <span className="text-[10px] font-medium text-slate-400">9:41</span>
-            <div className="mx-auto h-5 w-20 rounded-full bg-slate-900" />
-            <div className="flex gap-1">
-              <div className="h-2 w-2 rounded-full bg-slate-300" />
-              <div className="h-2 w-2 rounded-full bg-slate-300" />
-            </div>
-          </div>
-
-          {/* Screen content */}
-          <div className="px-5 pb-6 pt-4">
-            {/* App header */}
-            <div className="mb-5 text-center">
-              <motion.div
-                className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", delay: 0.5 }}
-              >
-                <Fingerprint className="h-5 w-5 text-primary" />
-              </motion.div>
-              <p className="text-xs font-medium text-foreground">Identity Verification</p>
-              <p className="text-[10px] text-muted-foreground">Powered by TrueIdentity™</p>
-            </div>
-
-            {/* Step flow */}
-            <div className="space-y-3">
-              {KYC_STEPS.map((step, i) => {
-                const Icon = step.icon;
-                const isLast = i === KYC_STEPS.length - 1;
-                return (
-                  <motion.div
-                    key={step.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.6 + i * 0.2 }}
-                  >
-                    <div
-                      className={`flex items-center gap-3 rounded-xl border ${step.borderColor} bg-white p-3 shadow-sm`}
-                    >
-                      <div
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${step.bg}`}
-                      >
-                        <Icon className={`h-5 w-5 ${step.color}`} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="text-sm font-medium text-foreground">{step.label}</p>
-                        <p className="text-[11px] text-muted-foreground">{step.sublabel}</p>
-                      </div>
-                      {/* Progress indicator */}
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 1.0 + i * 0.25, type: "spring" }}
-                      >
-                        {isLast ? (
-                          <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                        ) : (
-                          <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                            <Check className="h-3 w-3 text-primary" />
-                          </div>
-                        )}
-                      </motion.div>
-                    </div>
-                    {/* Connector line */}
-                    {!isLast && (
-                      <motion.div
-                        className="ml-8 h-2 w-0.5 bg-border"
-                        initial={{ scaleY: 0 }}
-                        animate={{ scaleY: 1 }}
-                        transition={{ delay: 0.8 + i * 0.2, duration: 0.3 }}
-                      />
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Progress bar */}
-            <div className="mt-5">
-              <div className="mb-1.5 flex items-center justify-between">
-                <span className="text-[10px] font-medium text-muted-foreground">Verification complete</span>
-                <span className="text-[10px] font-semibold text-emerald-600">100%</span>
-              </div>
-              <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
-                <motion.div
-                  className="h-full rounded-full bg-emerald-500"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 2, delay: 1.2, ease: "easeOut" }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Floating stat badges around the phone */}
-      <motion.div
-        className="absolute -left-4 top-12 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1.8, duration: 0.5 }}
-      >
-        <p className="text-xs font-semibold text-foreground">&lt;3s</p>
-        <p className="text-[10px] text-muted-foreground">Verification</p>
-      </motion.div>
-
-      <motion.div
-        className="absolute -right-4 top-32 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.0, duration: 0.5 }}
-      >
-        <p className="text-xs font-semibold text-emerald-600">99.9%</p>
-        <p className="text-[10px] text-muted-foreground">Uptime SLA</p>
-      </motion.div>
-
-      <motion.div
-        className="absolute -left-8 bottom-24 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.2, duration: 0.5 }}
-      >
-        <p className="text-xs font-semibold text-primary">PDPA</p>
-        <p className="text-[10px] text-muted-foreground">Compliant</p>
-      </motion.div>
-    </motion.div>
-  );
-}
-
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function TrueIdentityPage() {
@@ -376,7 +191,7 @@ export default function TrueIdentityPage() {
                 TrueIdentity™ e-KYC
               </motion.div>
               <motion.h1
-                className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+                className="type-h1"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -384,7 +199,7 @@ export default function TrueIdentityPage() {
                 Verify Customers In Minutes, Not Days
               </motion.h1>
               <motion.p
-                className="mt-6 text-lg text-muted-foreground md:text-xl"
+                className="mt-6 type-lede-hero text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -448,7 +263,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionBadge icon={Zap} text="Key Features" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Why Leading Businesses Choose TrueIdentity
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -489,7 +304,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionBadge icon={TrendingUp} text="Business Impact" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Transform Your Verification Process
             </h2>
           </motion.div>
@@ -530,7 +345,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionBadge icon={Settings} text="How It Works" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Simple, Secure Verification
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -612,7 +427,7 @@ export default function TrueIdentityPage() {
               transition={{ duration: 0.5 }}
             >
               <SectionBadge icon={Monitor} text="Hosted UI" />
-              <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+              <h2 className="type-h2">
                 We Handle the Frontend, You Bring the Customers
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -783,7 +598,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionBadge icon={Building2} text="Use Cases" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Built for Every Industry
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -838,7 +653,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Simple, Predictable Pricing
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -936,11 +751,11 @@ export default function TrueIdentityPage() {
           >
             <div className="mb-4 flex items-center justify-center gap-2">
               <Terminal className="h-5 w-5 text-primary" />
-              <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+              <span className="type-eyebrow text-primary">
                 For Developers
               </span>
             </div>
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Integrate in Minutes
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">

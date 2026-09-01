@@ -1,81 +1,48 @@
 export const truekreditFaq = [
 	{
-		question: "What is TrueKredit™ money lending management system?",
+		question: "What is TrueKredit™?",
 		answer:
-			"TrueKredit™ is Truestack's money lending management system / money lender software Malaysia for KPKT-licensed money lenders. It runs your full loan book — applications, repayments, KPKT paperwork and audit trails — with customer data kept separate on your own secure cloud in Malaysia. Standard covers branch and counter operations; TrueKredit Pro adds customer website, mobile apps and digital signing for nationwide lending. Looking for Shariah-compliant financing? See TrueSyariah™. For SC-regulated P2P, see TrueP2P™.",
-	},
-	{
-		question: "Is TrueKredit only for KPKT PPW (offline) licence holders?",
-		answer:
-			"No. If you are licensed to lend money in Malaysia, you can run day-to-day operations on TrueKredit — including the KPKT documents and exports your team needs. Choose Standard for branch and counter work. Choose TrueKredit Pro when you need customer apps, video attestation and digital signing for KPKT Online Money Lending readiness.",
+			"TrueKredit™ is a money lending management system / money lender software Malaysia built for KPKT-licensed money lenders. It holds borrower profiles, loan products, applications and approvals, disbursement controls, repayment schedules, collections and the KPKT paperwork that goes with all of it — Lampiran A, B, B1, Jadual J & K, and iDEAL (sistem iDEAL) exports — in one place, on your own secure cloud.",
 	},
 	{
 		question: "What do Standard and Pro both include?",
 		answer:
-			"Both share the same core: the full loan journey, flexible products, risk scoring, approvals, e-KYC, company lookups, repayments, KPKT documents (Lampiran A, B1, Jadual J & Jadual K / Schedule J & K), reports, staff roles, audit trails and walk-in applications — all on your own secure cloud in Malaysia. Pro does not take anything away from Standard; it unlocks nationwide customer channels on the same system.",
-	},
-	{
-		question:
-			"Can TrueKredit handle refinance, top-up and reschedule?",
-		answer:
-			"Yes. When a borrower needs to refinance, top up or reschedule, your team runs the request in TrueKredit — approvals and tracking stay on the same loan file. No separate spreadsheet or side process for collections to chase.",
-	},
-	{
-		question: "Which partner checks come with Standard and Pro?",
-		answer:
-			"TrueIdentity™ e-KYC, TrueSSM™, CTOS (where available), payment gateway and related partners are already connected on both plans — you pay only when you use them, not a separate fee to connect each provider. Pro adds digital signing on your premises and digital attestation with live and video scheduling.",
+			"The full core platform: borrower profiles, flexible loan products, counter applications and approvals, affordability and risk scoring, payment vouchers with two-person payout approval, repayment schedules and arrears, KPKT paperwork and exports, portfolio reporting with role-based access, and your own secure cloud in Malaysia. Identity, company and payment integrations are connected at no additional connection fee. Pro does not take anything away from Standard.",
 	},
 	{
 		question: "What is exclusive to TrueKredit Pro?",
 		answer:
-			"A branded customer website, native iOS and Android apps, digital signing on your premises, digital attestation, and packaging aligned with KPKT Online / digital licence reviews. Your team keeps the same admin workflows; new channels feed the same loan file.",
+			"The nationwide layer: a branded customer website on your own domain, iPhone and Android apps, digital signing on your premises verified with MSC Trustgate, digital attestation live at the counter or by scheduled video call, and support for KPKT Online Money Lending Licence reviews. Your team keeps the same admin workflows; new channels feed the same loan file.",
 	},
 	{
-		question: "How does TrueKredit Standard differ from Pro in practice?",
+		question: "Can we start on Standard and upgrade to Pro later?",
 		answer:
-			"Standard is the admin system for PPW and branch-led lending, with your loan data kept separate on your own secure cloud. Pro extends that same system with nationwide digital channels and signing — without moving to a new platform.",
-	},
-	{
-		question: "How do customers apply on each plan?",
-		answer:
-			"Standard keeps applications officer-led at the counter. Pro adds a branded website and mobile apps so customers can apply, complete identity checks, sign and repay online — while every file still lands in the same admin system.",
-	},
-	{
-		question: "Where is our data kept, and is it shared with other lenders?",
-		answer:
-			"Both Standard and Pro run on your own secure cloud account in Malaysia, with protection, backups and a full audit trail. Your loan book is never mixed with other lenders. Upgrading to Pro keeps that same environment — your data stays with you.",
-	},
-	{
-		question: "Can we start on Standard and upgrade to TrueKredit Pro?",
-		answer:
-			"Yes. Start on Standard for your branch today. When you are ready for a KPKT Online licence path, upgrade to Pro without starting over — borrowers, loans, schedules and history remain where they are. Talk to us early so the upgrade lines up with your licence timeline.",
+			"Yes, and most lenders do. Start on Standard for your branch today. Upgrading adds the customer channels, signing and attestation on top of the system you already run. Your borrowers, loans and history stay exactly where they are — nothing is migrated and nothing is re-keyed.",
 	},
 	{
 		question:
 			"Do you support Lampiran A, B, B1, Jadual J & K, and iDEAL KPKT?",
 		answer:
-			"Yes. Lampiran A and B1, Jadual J & Jadual K (Schedule J & K), and CSV files tuned for KPKT iDEAL (sistem iDEAL) submissions ship on Standard and Pro.",
+			"Yes. Schedules, Lampiran A, B and B1, Jadual J and Jadual K (Schedule J & K), payment receipts and default notices are generated from the same loan records your team works in, with exports shaped for KPKT submission including sistem iDEAL. Nobody retypes a form.",
 	},
 	{
-		question: "Do I need Truesend™ just to produce PDF receipts and letters?",
+		question: "Where is our data kept, and is it shared with other lenders?",
 		answer:
-			"No. PDFs are created in the system either way. Truesend™ only handles automated email delivery if you want it.",
+			"Your loan data lives on your own secure cloud account, hosted in Malaysia, and is never pooled with another lender's book. Daily backups and a complete record of every action come as standard, on both plans. Upgrading to Pro keeps that same environment.",
 	},
 	{
-		question: "Is historical loan data safeguarded whichever plan we choose?",
+		question: "Which checks are included, and what do they cost?",
 		answer:
-			"Yes — protected storage, backups and a full audit trail. Your history stays on your secure cloud and remains reachable for audits while you operate the platform.",
+			"TrueIdentity™ e-KYC, TrueSSM™ company lookups and the payment gateway (FassPay and GKash) are already wired in, on both plans. There is no fee to connect them — you pay only for each check or transaction you run. CTOS credit pulls and TrueSight™ AI risk scoring are coming.",
 	},
 	{
-		question:
-			"Is TrueKredit money lender software Malaysia / a money lending management system?",
+		question: "Can TrueKredit handle refinance, top-up and reschedule?",
 		answer:
-			"Yes. TrueKredit™ is a money lending management system / money lender software Malaysia for KPKT-licensed money lenders — loan management, Lampiran A/B1, Jadual J & K, and iDEAL (sistem iDEAL) exports, e-KYC, and audit trails on your own secure cloud. It is the lending platform Malaysian operators use for branch operations (Standard) or nationwide digital lending (Pro).",
+			"Yes. Each path is approved and tracked on the same loan file, so the change and the reason behind it stay in the history rather than becoming a new, disconnected loan. Available as an optional add-on on both plans.",
 	},
 	{
-		question:
-			"Do you develop lending platforms for KPKT licence holders?",
+		question: "Can we configure TrueKredit to match how we already lend?",
 		answer:
-			"Yes. TrueKredit™ is Truestack's lending platform product for KPKT operators. For a full digital licence conversion — licensing plus platform build — see our KPKT Digital Licence service. For Shariah digital lending, see TrueSyariah™. For SC peer-to-peer platforms, see TrueP2P™.",
+			"Yes. Approval uploads before L2, AML confirmation, LHDN stamp certificates, and maker-checker on disbursements are each turned on or off to match how your office already works. Your team keeps their process — the system follows it.",
 	},
 ] as const;

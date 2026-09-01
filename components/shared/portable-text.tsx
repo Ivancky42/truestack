@@ -132,7 +132,7 @@ const components: PortableTextComponents = {
 		h1: ({ children, value }) => (
 			<h2
 				id={headingId(value)}
-				className="mt-12 scroll-mt-28 font-display text-2xl font-medium tracking-tight md:text-3xl"
+				className="mt-12 scroll-mt-28 type-h2-sm"
 			>
 				{children}
 			</h2>
@@ -140,7 +140,7 @@ const components: PortableTextComponents = {
 		h2: ({ children, value }) => (
 			<h2
 				id={headingId(value)}
-				className="mt-12 scroll-mt-28 font-display text-2xl font-medium tracking-tight md:text-3xl"
+				className="mt-12 scroll-mt-28 type-h2-sm"
 			>
 				{children}
 			</h2>
@@ -148,7 +148,7 @@ const components: PortableTextComponents = {
 		h3: ({ children, value }) => (
 			<h3
 				id={headingId(value)}
-				className="mt-9 scroll-mt-28 font-display text-xl font-medium tracking-tight md:text-2xl"
+				className="mt-9 scroll-mt-28 type-card-title"
 			>
 				{children}
 			</h3>
@@ -156,13 +156,13 @@ const components: PortableTextComponents = {
 		h4: ({ children, value }) => (
 			<h4
 				id={headingId(value)}
-				className="mt-7 scroll-mt-28 font-display text-lg font-medium tracking-tight md:text-xl"
+				className="mt-7 scroll-mt-28 type-subhead"
 			>
 				{children}
 			</h4>
 		),
 		blockquote: ({ children }) => (
-			<blockquote className="mt-8 border-l-2 border-primary/40 bg-muted/30 py-4 pl-5 pr-4 text-base leading-relaxed text-foreground md:text-lg">
+			<blockquote className="mt-8 border-l-2 border-primary/40 bg-muted/30 py-4 pl-5 pr-4 type-pullquote text-foreground">
 				{children}
 			</blockquote>
 		),

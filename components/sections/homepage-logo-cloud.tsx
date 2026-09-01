@@ -1,46 +1,52 @@
 import { cn } from "@/lib/utils";
 import {
 	clientLogos,
-	homepagePartners,
 	LogoMarquee,
 	LogoStaticGrid,
 } from "@/components/logo-cloud-1";
 import { toLogoDisplaySize } from "@/lib/logo-display-size";
 
-const allHomepageLogos = [...clientLogos, ...homepagePartners];
+const HOMEPAGE_CLIENT_NAMES = new Set([
+	"PinjoCep",
+	"ezdana",
+	"CreditXpress",
+	"Credibly",
+	"JomDana",
+	"jompinjam",
+	"danakini",
+	"Andas Capital",
+	"Fundle",
+	"Shoraka Digital",
+	"Proficient Premium",
+]);
+
+const homepageClientLogos = clientLogos.filter((logo) =>
+	HOMEPAGE_CLIENT_NAMES.has(logo.name),
+);
 
 export function HomepageLogoCloud({ className }: { className?: string }) {
 	const displaySize = toLogoDisplaySize("large", false);
 
 	return (
 		<section
-			className={cn("relative w-full pt-0 pb-10 md:pb-12", className)}
+			className={cn("relative w-full pt-0 pb-14 md:pb-14", className)}
 		>
-			<p className="container mx-auto mb-6 px-4 text-center text-sm text-muted-foreground/80 tracking-wide md:mb-8 md:px-6">
-				Brands &amp; partners we&apos;ve helped scale
+			<p className="mx-auto mb-6 max-w-6xl px-6 text-center text-[13px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70 md:mb-7">
+				Lenders and fintechs we have taken live
 			</p>
 
-			{/* Reduced-motion only: one tidy grid of unique logos */}
 			<div className="hidden motion-reduce:block">
 				<LogoStaticGrid
-					items={allHomepageLogos}
+					items={homepageClientLogos}
 					displaySize={displaySize}
 				/>
 			</div>
 
-			{/* Default (incl. mobile): dual opposing marquees */}
-			<div className="space-y-4 motion-reduce:hidden sm:space-y-5 md:space-y-6">
+			<div className="motion-reduce:hidden">
 				<LogoMarquee
-					items={clientLogos}
+					items={homepageClientLogos}
 					displaySize={displaySize}
 					rows={1}
-					staticFallback={false}
-				/>
-				<LogoMarquee
-					items={homepagePartners}
-					displaySize={displaySize}
-					rows={1}
-					reverse
 					staticFallback={false}
 				/>
 			</div>

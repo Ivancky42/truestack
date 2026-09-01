@@ -475,7 +475,7 @@ export default function TrueSsmPage() {
                 TrueSSM™ Registry API
               </motion.div>
               <motion.h1
-                className="font-display text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+                className="type-h1"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -483,7 +483,7 @@ export default function TrueSsmPage() {
                 SSM Registry Data, Programmatically
               </motion.h1>
               <motion.p
-                className="mt-6 text-lg text-muted-foreground md:text-xl"
+                className="mt-6 type-lede-hero text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -574,7 +574,7 @@ export default function TrueSsmPage() {
               text="Key Features"
               className="justify-center"
             />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Built for Malaysian operators
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -621,7 +621,7 @@ export default function TrueSsmPage() {
               text="Business Impact"
               className="justify-center"
             />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Skip the manual SSM lookups
             </h2>
           </motion.div>
@@ -671,7 +671,7 @@ export default function TrueSsmPage() {
               text="Endpoints"
               className="justify-center"
             />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               13 endpoints, one API key
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -752,7 +752,7 @@ export default function TrueSsmPage() {
               text="How It Works"
               className="justify-center"
             />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Predictable, idempotent, billed only on delivery
             </h2>
           </motion.div>
@@ -870,7 +870,7 @@ export default function TrueSsmPage() {
               text="Use Cases"
               className="justify-center"
             />
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               Built for fintech, lending, and compliance
             </h2>
           </motion.div>
@@ -914,11 +914,11 @@ export default function TrueSsmPage() {
           >
             <div className="mb-4 flex items-center justify-center gap-2">
               <Terminal className="h-5 w-5 text-primary" />
-              <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+              <span className="type-eyebrow text-primary">
                 For Developers
               </span>
             </div>
-            <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            <h2 className="type-h2">
               REST in, structured registry data out
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">

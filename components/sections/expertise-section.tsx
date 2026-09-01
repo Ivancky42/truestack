@@ -133,12 +133,12 @@ export function ExpertiseSection() {
 						/>
 						<h2
 							id="expertise-heading"
-							className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl lg:text-5xl"
+							className="type-h2 text-white lg:text-5xl"
 						>
 							Expertise that shows up in your delivery
 						</h2>
 					</div>
-					<p className="text-base text-slate-400 md:text-lg">
+					<p className="type-lede text-slate-400">
 						You get a team that already understands Malaysian
 						lending — regulation, product, and engineering in one
 						room — so you spend less time translating between
@@ -162,7 +162,7 @@ export function ExpertiseSection() {
 									aria-hidden
 								/>
 							</div>
-							<h3 className="mb-2 font-display text-lg font-semibold text-white">
+							<h3 className="mb-2 type-subhead text-white">
 								{item.title}
 							</h3>
 							<p className="text-sm leading-relaxed text-slate-400">
@@ -181,7 +181,7 @@ export function ExpertiseSection() {
 				>
 					<div className="mb-5 md:flex md:items-end md:justify-between md:gap-8">
 						<div>
-							<h3 className="font-display text-lg font-semibold text-white md:text-xl">
+							<h3 className="type-subhead text-white">
 								What we ship on
 							</h3>
 							<p className="mt-1 text-sm text-slate-400">

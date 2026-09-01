@@ -21,12 +21,12 @@ export function SectionHeader({
         className
       )}
     >
-      <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+      <h2 className="type-h2">
         {title}
       </h2>
       {subtitle && (
         <p className={cn(
-          "mt-4 text-lg text-muted-foreground md:text-xl",
+          "mt-4 type-lede text-muted-foreground",
           !centered && "max-w-2xl"
         )}>
           {subtitle}

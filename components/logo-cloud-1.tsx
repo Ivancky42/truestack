@@ -121,6 +121,11 @@ export const clientLogos = [
 // Strategic partners (homepage marquee — separate from technology integration partners)
 export const homepagePartners = [
 	{
+		name: "FassPay",
+		logo: "/logos/fasspay.svg",
+		boost: true,
+	},
+	{
 		name: "GKash",
 		logo: "/logos/gkash.png",
 	},
@@ -134,7 +139,8 @@ export const homepagePartners = [
 	},
 	{
 		name: "Innov8tif",
-		logo: "/logos/innov8tif.png",
+		logo: "/logos/innov8tif-mark.png",
+		boost: true,
 	},
 	{
 		name: "EC-Council",
@@ -406,13 +412,13 @@ const LogoCloud1 = ({
 							className={cn(
 								compact
 									? "text-sm text-muted-foreground/70 uppercase tracking-wider"
-									: "font-display font-medium tracking-tight text-3xl md:text-4xl",
+									: "type-h2",
 							)}
 						>
 							{title || defaultTitle}
 						</p>
 						{!compact && (
-							<p className="text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto">
+							<p className="type-lede text-muted-foreground max-w-2xl mx-auto">
 								{subtitle || defaultSubtitle}
 							</p>
 						)}

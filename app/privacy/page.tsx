@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
             <Shield className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight">Privacy Policy</h1>
+          <h1 className="mb-4 type-h1">Privacy Policy</h1>
           <p className="text-lg text-muted-foreground">
             How we collect, use, and protect your personal information
           </p>
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-12">
             {/* Introduction */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">1. Introduction</h2>
+              <h2 className="mb-4 type-h2-sm">1. Introduction</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Truestack (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. 
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Information We Collect */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">2. Information We Collect</h2>
+              <h2 className="mb-4 type-h2-sm">2. Information We Collect</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="mb-3 text-lg font-medium">Information You Provide</h3>
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
 
             {/* How We Use */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">3. How We Use Your Information</h2>
+              <h2 className="mb-4 type-h2-sm">3. How We Use Your Information</h2>
               <p className="mb-3 text-muted-foreground">We use the information we collect to:</p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
@@ -160,7 +160,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Disclosure */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">4. Disclosure of Your Information</h2>
+              <h2 className="mb-4 type-h2-sm">4. Disclosure of Your Information</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>We may share your information with:</p>
                 <ul className="space-y-2">
@@ -190,7 +190,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Data Security */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">5. Data Security</h2>
+              <h2 className="mb-4 type-h2-sm">5. Data Security</h2>
               <p className="text-muted-foreground">
                 We implement appropriate technical and organizational measures to protect 
                 your personal information against unauthorized access, alteration, disclosure, 
@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Data Retention */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">6. Data Retention</h2>
+              <h2 className="mb-4 type-h2-sm">6. Data Retention</h2>
               <p className="text-muted-foreground">
                 We retain your personal information only for as long as necessary to fulfill 
                 the purposes for which it was collected, or as required by applicable laws 
@@ -211,7 +211,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Your Rights */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">7. Your Rights</h2>
+              <h2 className="mb-4 type-h2-sm">7. Your Rights</h2>
               <p className="mb-4 text-muted-foreground">Under the PDPA, you have the right to:</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <Card>
@@ -251,7 +251,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Cookies */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">8. Cookies</h2>
+              <h2 className="mb-4 type-h2-sm">8. Cookies</h2>
               <p className="text-muted-foreground">
                 Our website may use cookies and similar tracking technologies to enhance 
                 your browsing experience. You can set your browser to refuse cookies, but 
@@ -261,7 +261,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Third-Party Links */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">9. Third-Party Links</h2>
+              <h2 className="mb-4 type-h2-sm">9. Third-Party Links</h2>
               <p className="text-muted-foreground">
                 Our website may contain links to third-party websites. We are not responsible 
                 for the privacy practices of these external sites. We encourage you to review 
@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Changes */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">10. Changes to This Policy</h2>
+              <h2 className="mb-4 type-h2-sm">10. Changes to This Policy</h2>
               <p className="text-muted-foreground">
                 We may update this Privacy Policy from time to time. We will notify you of 
                 any changes by posting the new Privacy Policy on this page and updating the 
@@ -281,7 +281,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Contact */}
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">11. Contact Us</h2>
+              <h2 className="mb-4 type-h2-sm">11. Contact Us</h2>
               <p className="mb-4 text-muted-foreground">
                 If you have any questions about this Privacy Policy or wish to exercise 
                 your rights, please contact us:

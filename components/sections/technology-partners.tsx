@@ -45,11 +45,11 @@ export function TechnologyPartners() {
 					/>
 					<h2
 						id="partners-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+						className="type-h2"
 					>
 						Your team, plus the rails Malaysia already runs on
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						In-house specialists for the work that is uniquely
 						yours — and trusted partners for identity, payments,
 						credit, and cloud where it makes sense to plug in.
@@ -70,7 +70,7 @@ export function TechnologyPartners() {
 						<p className="text-sm font-medium text-primary">
 							In-house
 						</p>
-						<h3 className="mt-1 font-display text-xl font-semibold tracking-tight">
+						<h3 className="mt-1 type-card-title">
 							The people on your engagement
 						</h3>
 						<p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
@@ -105,7 +105,7 @@ export function TechnologyPartners() {
 						<p className="text-sm font-medium text-primary">
 							Partners
 						</p>
-						<h3 className="mt-1 font-display text-xl font-semibold tracking-tight">
+						<h3 className="mt-1 type-card-title">
 							Infrastructure you can trust
 						</h3>
 						<p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-[15px]">

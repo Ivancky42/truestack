@@ -33,7 +33,7 @@ export function SoftwareDevelopmentFaq() {
 					/>
 					<h2
 						id="software-development-faq-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+						className="type-h2"
 					>
 						Frequently asked questions
 					</h2>

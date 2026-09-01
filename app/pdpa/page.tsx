@@ -79,7 +79,7 @@ export default function PdpaPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
             <Shield className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight">PDPA Notice</h1>
+          <h1 className="mb-4 type-h1">PDPA Notice</h1>
           <p className="text-lg text-muted-foreground">
             Notice and choice statement under Malaysia&apos;s Personal Data Protection
             Act 2010 (PDPA), including our KYC verification interface.
@@ -94,7 +94,7 @@ export default function PdpaPage() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="space-y-12">
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">1. Scope of this Notice</h2>
+              <h2 className="mb-4 type-h2-sm">1. Scope of this Notice</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   This PDPA Notice explains how Truestack collects, uses, stores, and
@@ -127,7 +127,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">2. Services Covered</h2>
+              <h2 className="mb-4 type-h2-sm">2. Services Covered</h2>
               <div className="grid gap-4 sm:grid-cols-1">
                 {coveredServices.map((service) => (
                   <Card key={service.title}>
@@ -146,7 +146,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">3. Personal Data We Process</h2>
+              <h2 className="mb-4 type-h2-sm">3. Personal Data We Process</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>Depending on the service flow, we may process:</p>
                 <ul className="space-y-2">
@@ -180,7 +180,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">4. Why We Process Data</h2>
+              <h2 className="mb-4 type-h2-sm">4. Why We Process Data</h2>
               <p className="mb-3 text-muted-foreground">We process personal data to:</p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
@@ -203,7 +203,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">5. Disclosure and Transfers</h2>
+              <h2 className="mb-4 type-h2-sm">5. Disclosure and Transfers</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>We may disclose personal data to:</p>
                 <ul className="space-y-2">
@@ -228,7 +228,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">
+              <h2 className="mb-4 type-h2-sm">
                 6. Third-Party Processors and Data Shared
               </h2>
               <div className="space-y-4 text-muted-foreground">
@@ -305,7 +305,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">7. Security and Retention</h2>
+              <h2 className="mb-4 type-h2-sm">7. Security and Retention</h2>
               <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-start gap-3">
                   <Lock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -322,7 +322,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">8. Your Rights Under PDPA</h2>
+              <h2 className="mb-4 type-h2-sm">8. Your Rights Under PDPA</h2>
               <p className="mb-3 text-muted-foreground">
                 Subject to applicable legal limitations, you may request to:
               </p>
@@ -343,7 +343,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">
+              <h2 className="mb-4 type-h2-sm">
                 9. KYC Interface Consent Notice
               </h2>
               <Card className="border-primary/20 bg-primary/5">
@@ -370,7 +370,7 @@ export default function PdpaPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">10. Contact</h2>
+              <h2 className="mb-4 type-h2-sm">10. Contact</h2>
               <p className="mb-4 text-muted-foreground">
                 For PDPA data requests or questions about this notice, contact:
               </p>

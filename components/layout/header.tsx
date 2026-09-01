@@ -246,7 +246,7 @@ function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
 				</div>
 				<span
 					className={cn(
-						"min-w-0 flex-1 text-base font-medium leading-none",
+						"min-w-0 flex-1 type-ui font-medium leading-none",
 						muted ? "text-muted-foreground" : "text-foreground",
 					)}
 				>
@@ -303,7 +303,7 @@ function MobileSolutionMenuItem({
 	if (item.comingSoon || !item.href) {
 		return (
 			<div
-				className="flex items-center gap-2 rounded-md px-3 py-2.5 text-base"
+				className="flex items-center gap-2 rounded-md px-3 py-2.5 type-ui"
 				aria-disabled="true"
 			>
 				<item.icon className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -322,7 +322,7 @@ function MobileSolutionMenuItem({
 			href={item.href}
 			onClick={onNavigate}
 			className={cn(
-				"flex items-center gap-2 rounded-md px-3 py-2.5 text-base transition-colors hover:bg-accent",
+				"flex items-center gap-2 rounded-md px-3 py-2.5 type-ui transition-colors hover:bg-accent",
 				pathname === item.href
 					? cn(accent.activeBg, accent.activeText)
 					: "text-muted-foreground",
@@ -386,7 +386,7 @@ export function Header() {
 
 	const navLinkClasses = (active: boolean) =>
 		cn(
-			"text-base font-medium transition-colors",
+			"type-ui font-medium transition-colors",
 			isDarkSection
 				? active
 					? "text-white"
@@ -422,7 +422,7 @@ export function Header() {
 							<NavigationMenuItem>
 								<NavigationMenuTrigger
 									className={cn(
-										"bg-transparent text-base font-medium",
+										"bg-transparent",
 										navLinkClasses(isSolutionsActive),
 									)}
 								>
@@ -445,7 +445,7 @@ export function Header() {
 															"border-l border-border pl-8",
 													)}
 												>
-													<p className="mb-2 flex items-center gap-2 px-2 text-sm font-semibold uppercase tracking-wider text-foreground">
+													<p className="mb-2 flex items-center gap-2 px-2 type-eyebrow text-foreground">
 														<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
 														{column.heading}
 													</p>
@@ -566,7 +566,7 @@ export function Header() {
 												<div key={column.heading}>
 													<p
 														className={cn(
-															"px-3 py-1 text-sm font-semibold uppercase tracking-wider text-foreground",
+															"px-3 py-1 type-eyebrow text-foreground",
 															colIndex > 0 &&
 																"mt-2",
 														)}

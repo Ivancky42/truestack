@@ -290,7 +290,7 @@ export function MobileAppVisual({
 						<p className="text-[7px] text-white/40">
 							TK-2401 • Active
 						</p>
-						<p className="font-display text-base font-bold text-white">
+						<p className="type-subhead text-white">
 							RM 11,200
 						</p>
 						<p className="text-[7px] text-white/40">outstanding</p>

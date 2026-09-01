@@ -89,11 +89,11 @@ export function ComingSoonPlatform() {
           {/* Badge */}
           <div className="mb-4 inline-flex items-center justify-center gap-2">
             <Rocket className="h-5 w-5 text-indigo-400" />
-            <span className="text-sm font-semibold uppercase tracking-wide text-indigo-400">
+            <span className="type-eyebrow text-indigo-400">
               Coming Soon
             </span>
           </div>
-          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+          <h2 className="type-h2">
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">TrueStack Core</span>
           </h2>
           <p className="mt-4 text-lg text-slate-400 md:text-xl">

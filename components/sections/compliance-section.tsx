@@ -188,7 +188,7 @@ function InfrastructureDiagram() {
       <div className="grid lg:grid-cols-2">
         {/* Left — architecture stack */}
         <div className="p-8">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <p className="mb-6 type-eyebrow text-slate-500">
             Architecture Overview
           </p>
           <div className="space-y-3">
@@ -245,7 +245,7 @@ function InfrastructureDiagram() {
 
         {/* Right — live metrics panel */}
         <div className="flex flex-col justify-center border-t border-slate-800 p-8 lg:border-l lg:border-t-0">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-slate-500">
+          <p className="mb-6 type-eyebrow text-slate-500">
             Live System Status
           </p>
           <div className="space-y-5">
@@ -448,11 +448,11 @@ export function ComplianceSection() {
         >
           <div className="mb-4 inline-flex items-center justify-center gap-2">
             <BadgeCheck className="h-5 w-5 text-blue-400" />
-            <span className="text-sm font-semibold uppercase tracking-wide text-blue-400">
+            <span className="type-eyebrow text-blue-400">
               Built for Compliance
             </span>
           </div>
-          <h2 className="font-display text-3xl font-medium tracking-tight text-white md:text-4xl">
+          <h2 className="type-h2 text-white">
             Enterprise-Grade Infrastructure
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-slate-400 md:text-xl">

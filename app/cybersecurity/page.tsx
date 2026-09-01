@@ -107,7 +107,7 @@ export default function CybersecurityPolicyPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
             <Shield className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight">Cybersecurity Policy</h1>
+          <h1 className="mb-4 type-h1">Cybersecurity Policy</h1>
           <p className="text-lg text-muted-foreground">
             How Truestack approaches security across its website, fintech platforms,
             and regulated service infrastructure.
@@ -122,7 +122,7 @@ export default function CybersecurityPolicyPage() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="space-y-12">
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">1. Purpose and Scope</h2>
+              <h2 className="mb-4 type-h2-sm">1. Purpose and Scope</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   This Cybersecurity Policy provides a public overview of how Truestack
@@ -155,7 +155,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">2. Security Principles</h2>
+              <h2 className="mb-4 type-h2-sm">2. Security Principles</h2>
               <div className="grid gap-4 sm:grid-cols-1">
                 {securityPrinciples.map((principle) => (
                   <Card key={principle.title}>
@@ -174,7 +174,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">3. Controls We Apply</h2>
+              <h2 className="mb-4 type-h2-sm">3. Controls We Apply</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Depending on the service and deployment model, our controls may include:
@@ -215,7 +215,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">4. Service-Specific Considerations</h2>
+              <h2 className="mb-4 type-h2-sm">4. Service-Specific Considerations</h2>
               <div className="grid gap-4 sm:grid-cols-1">
                 {protectedServices.map((service) => (
                   <Card key={service.title}>
@@ -234,7 +234,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">5. Incident Detection and Response</h2>
+              <h2 className="mb-4 type-h2-sm">5. Incident Detection and Response</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   We aim to detect, assess, contain, and recover from security events in a
@@ -264,7 +264,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">6. User and Customer Responsibilities</h2>
+              <h2 className="mb-4 type-h2-sm">6. User and Customer Responsibilities</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Security is a shared responsibility. Customers, partners, and authorised
@@ -292,7 +292,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">7. Policy Review</h2>
+              <h2 className="mb-4 type-h2-sm">7. Policy Review</h2>
               <p className="text-muted-foreground">
                 We may update this Cybersecurity Policy from time to time to reflect changes
                 in our services, infrastructure, regulatory obligations, or security
@@ -302,7 +302,7 @@ export default function CybersecurityPolicyPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 text-2xl font-semibold">8. Contact</h2>
+              <h2 className="mb-4 type-h2-sm">8. Contact</h2>
               <p className="mb-4 text-muted-foreground">
                 To report a security concern or request more information about our security
                 practices, contact:

@@ -65,7 +65,7 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 						<div className="mx-auto max-w-3xl">
 							<nav
 								aria-label="Breadcrumb"
-								className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-widest text-muted-foreground"
+								className="flex flex-wrap items-center gap-2 type-eyebrow text-muted-foreground"
 							>
 								<Link
 									href="/"
@@ -95,13 +95,13 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 
 							<div className="mt-6 flex flex-wrap items-center gap-2">
 								<span
-									className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${insightCategoryChip(post.category)}`}
+									className={`inline-flex items-center rounded-full px-2.5 py-0.5 type-micro font-medium uppercase tracking-wider ${insightCategoryChip(post.category)}`}
 								>
 									{post.category}
 								</span>
 							</div>
 
-							<h1 className="mt-4 font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+							<h1 className="mt-4 type-h2">
 								{post.title}
 							</h1>
 
@@ -211,7 +211,7 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 							/>
 							<h2
 								id="insight-faq-heading"
-								className="font-display text-3xl font-medium tracking-tight md:text-4xl"
+								className="type-h2"
 							>
 								Frequently asked questions
 							</h2>
@@ -242,10 +242,10 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 				<section className="border-t bg-background py-16 md:py-20">
 					<div className="mx-auto max-w-6xl px-6">
 						<div className="mx-auto max-w-3xl text-center">
-							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+							<p className="mb-3 type-eyebrow text-primary">
 								Where this applies
 							</p>
-							<h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+							<h2 className="type-h2">
 								Put this into practice.
 							</h2>
 						</div>
@@ -257,7 +257,7 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 									href={product.href}
 									className="group flex h-full flex-col rounded-2xl border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:p-6"
 								>
-									<h3 className="font-display text-xl font-medium tracking-tight md:text-2xl">
+									<h3 className="type-card-title">
 										{product.title}
 									</h3>
 									<p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">

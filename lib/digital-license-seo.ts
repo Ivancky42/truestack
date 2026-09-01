@@ -6,9 +6,9 @@ export const DIGITAL_LICENSE_PAGE_PATH = "/services/digital-license";
 export const DIGITAL_LICENSE_PAGE_URL = `${baseUrl}${DIGITAL_LICENSE_PAGE_PATH}`;
 
 export const DIGITAL_LICENSE_METADATA = {
-	title: "Online Money Lending Licence | e-Lending KPKT",
+	title: "Online Money Lending Licence Malaysia | Truestack",
 	description:
-		"Pemberian pinjaman wang dalam talian (e-Lending / urus niaga secara dalam talian). Kebenaran tambahan for existing PPW; online money lending licence.",
+		"KPKT Online Money Lending Licence (pemberian pinjaman wang dalam talian). Licensing, kebenaran tambahan, TrueKredit™ Pro — nationwide in about three months.",
 	keywords: [
 		"pemberian pinjaman wang dalam talian",
 		"e-Lending",
@@ -33,9 +33,9 @@ export const DIGITAL_LICENSE_METADATA = {
 		"nationwide money lending Malaysia",
 		"fintech platform development Malaysia",
 	],
-	openGraphTitle: "Online Money Lending Licence | e-Lending KPKT",
+	openGraphTitle: "Online Money Lending Licence Malaysia | Truestack",
 	openGraphDescription:
-		"Kebenaran tambahan for existing PPW — pemberian pinjaman wang dalam talian (e-Lending) per Online Moneylenders Guidelines. Digital KPKT licence.",
+		"End-to-end KPKT Online Money Lending Licence — pemberian pinjaman wang dalam talian. Licensing, kebenaran tambahan, and TrueKredit™ Pro.",
 } as const;
 
 export function buildDigitalLicenseJsonLd() {
@@ -67,7 +67,7 @@ export function buildDigitalLicenseJsonLd() {
 					"Digital money lender platform Malaysia",
 				],
 				serviceType:
-					"Online money lending licence (e-Lending) and kebenaran tambahan for existing PPW",
+					"KPKT Online Money Lending Licence conversion — e-Lending, kebenaran tambahan, and TrueKredit Pro",
 				url: DIGITAL_LICENSE_PAGE_URL,
 				description: DIGITAL_LICENSE_METADATA.description,
 				provider: { "@id": `${baseUrl}/#organization` },

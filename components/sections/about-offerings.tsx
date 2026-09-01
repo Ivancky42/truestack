@@ -111,12 +111,12 @@ export function AboutOfferings() {
 					/>
 					<h2
 						id="about-offerings-heading"
-						className="font-display text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl"
+						className="type-h2"
 					>
 						Platforms, infrastructure, and services — built to work
 						as one
 					</h2>
-					<p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						When you need more than a vendor — compliance, lending
 						software, and Malaysian fintech APIs that work together
 						— we give you one accountable team from launch through
@@ -150,7 +150,7 @@ export function AboutOfferings() {
 										aria-hidden
 									/>
 								</div>
-								<h3 className="font-display text-xl font-semibold tracking-tight">
+								<h3 className="type-card-title">
 									{offering.title}
 								</h3>
 								<p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
@@ -194,7 +194,7 @@ export function AboutOfferings() {
 					transition={{ duration: 0.45 }}
 				>
 					<div className="mx-auto max-w-2xl text-center">
-						<h3 className="font-display text-2xl font-medium tracking-tight md:text-3xl">
+						<h3 className="type-h2-sm">
 							How it ties together for you
 						</h3>
 						<p className="mt-3 text-sm text-muted-foreground md:text-base">
