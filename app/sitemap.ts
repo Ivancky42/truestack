@@ -1,10 +1,13 @@
 import type { MetadataRoute } from "next";
+import { getInsightSitemapEntries } from "@/lib/insights/data";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticEntries: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -131,5 +134,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+  ];
+
+  let postEntries: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await getInsightSitemapEntries();
+    postEntries = (Array.isArray(posts) ? posts : []).map((post) => ({
+      url: `${baseUrl}/insights/${post.slug}`,
+      lastModified: post.updatedAt,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
+  } catch {
+    postEntries = [];
+  }
+
+  return [
+    ...staticEntries,
+    {
+      url: `${baseUrl}/insights`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...postEntries,
   ];
 }

@@ -193,6 +193,7 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 
 const navLinks = [
 	{ href: "/work", label: "Work" },
+	{ href: "/insights", label: "Insights" },
 	{ href: "/about", label: "About" },
 	{ href: "/careers", label: "Careers" },
 ];
