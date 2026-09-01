@@ -9,7 +9,7 @@ Truestack Technologies (Truestack) provides KPKT-related compliance services and
 ## Main pages
 
 - https://www.truestack.my/ — Homepage: the fintech infrastructure Malaysian lenders launch on — KPKT digital licence conversion and account management, TrueKredit™ loan management system (KPKT paperwork on one record), TrueSyariah™, TrueP2P™, and Truestack Core rails (TrueIdentity™ e-KYC, TrueSSM™, FPX & DuitNow) built into TrueKredit™ or connected to a lender's own system via API. Two starting points: convert an existing lesen PPW, or apply / acquire a licensed company. Latest Insights articles (KPKT, lending operations, Shariah) with a link to https://www.truestack.my/insights. Data hosted in Malaysia. Book a free consultation.
-- https://www.truestack.my/about — Company overview: TrueKredit™ money lending management system, Truestack Core™ infrastructure APIs (e-KYC, SSM, payments), online money lending licence / e-Lending (KPKT digital licence) & KPKT account management, and technology partners — one team from licence to live portfolio.
+- https://www.truestack.my/about — Company page for Truestack Technologies Sdn. Bhd. (Registration No. 202501058714 (1660120-X)), founded 2025 in Kuala Lumpur (C-13-01, KL Trillion, Jalan Tun Razak). Lending platforms (TrueKredit™, TrueSyariah™, TrueP2P™), custom software, and KPKT compliance under one contract. 11 lenders and fintechs live, over RM 200 million disbursed annually. Borrower data hosted in Malaysia on each client's own cloud, PDPA by default. Four operating principles: compliance as a design constraint, your loan book is yours, one accountable team, go-live is the beginning. Careers at /careers.
 - https://www.truestack.my/contact — Book a free, no-obligation consultation (KPKT licensing, compliance, lending and fintech software); contact via email and WhatsApp.
 - https://www.truestack.my/work — Selected live work: digital KPKT licence conversions, enterprise loan management on TrueKredit™, TrueSyariah™ platforms (jompinjam, danakini), and regulated fintech platforms delivered end to end in Malaysia. Featured case studies: ezdana (TrueKredit™ Pro), LandStore (custom land marketplace), CashSouk (TrueP2P™), EVIE Bikes (European Shopify ecommerce for the EU).
 - https://www.truestack.my/work/ezdana — Case study: ezdana digital lending on TrueKredit™ Pro — branded borrower portal and admin loan-book operations (L1/L2 review, disbursement, portfolio KPIs); ~3 month launch.
@@ -34,10 +34,10 @@ Truestack Technologies (Truestack) provides KPKT-related compliance services and
 
 ## Policies
 
-- https://www.truestack.my/privacy — Privacy policy for truestack.my and Truestack platforms.
-- https://www.truestack.my/terms — Terms of use for the Truestack marketing site and related services.
-- https://www.truestack.my/pdpa — PDPA notice for personal data processing by Truestack in Malaysia.
-- https://www.truestack.my/cybersecurity — Cybersecurity policy covering TrueKredit™, TrueIdentity™, and Malaysia-hosted infrastructure.
+- https://www.truestack.my/privacy — Privacy policy for truestack.my and related Truestack hosts (developers.truestack.my, demo.truestack.my, demo-admin.truestack.my, api.truestack.my). Truestack Technologies Sdn. Bhd. does not sell personal data; no advertising cookies on the marketing site.
+- https://www.truestack.my/terms — Terms of use for the Truestack marketing site, developer portal, and demonstration environments. Paid products (TrueKredit™, TrueIdentity™) are licensed under a separate customer agreement. Governed by Malaysian law.
+- https://www.truestack.my/pdpa — PDPA notice (Act 709) for personal data processing by Truestack in Malaysia. TrueIdentity™ e-KYC: Truestack is typically the processor; the requesting lender is the controller. Processors may include Innov8tif, MSC Trustgate, and CTOS. KYC processing via api.truestack.my.
+- https://www.truestack.my/cybersecurity — Cybersecurity policy covering truestack.my, admin.truestack.my, developers.truestack.my, demo.truestack.my, demo-admin.truestack.my, and api.truestack.my — TrueKredit™, TrueSyariah™, TrueIdentity™, TrueSSM™, and Malaysia-hosted infrastructure.
 
 ## Official profiles
 

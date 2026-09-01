@@ -1,87 +1,176 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { AboutHeroGraphic } from "@/components/sections/about-hero-graphic";
-import { ArrowRight, Building2, Code2, MapPin, Shield } from "lucide-react";
+import {
+	animate,
+	motion,
+	useMotionValue,
+	useReducedMotion,
+	useTransform,
+} from "framer-motion";
+import { GridPattern } from "@/components/sections/hero";
+import { cn } from "@/lib/utils";
 
-const statPills = [
-	{ icon: MapPin, label: "Malaysia-first" },
-	{ icon: Shield, label: "KPKT-native" },
-	{ icon: Code2, label: "Licence to live" },
-];
+const pills = [
+	"Kuala Lumpur",
+	"Credit & fintech only",
+	"Regulation-native",
+] as const;
+
+const stats = [
+	{
+		value: 2025,
+		prefix: "",
+		suffix: "",
+		label: "Founded in Kuala Lumpur",
+		highlight: false,
+	},
+	{
+		value: 11,
+		prefix: "",
+		suffix: "",
+		label: "Lenders and fintechs live with us",
+		highlight: false,
+	},
+	{
+		value: 200,
+		prefix: "RM ",
+		suffix: "m+",
+		label: "Disbursed annually by our lenders",
+		highlight: true,
+	},
+] as const;
+
+function CountUp({
+	value,
+	prefix,
+	suffix,
+	delay,
+}: {
+	value: number;
+	prefix: string;
+	suffix: string;
+	delay: number;
+}) {
+	const reduceMotion = useReducedMotion();
+	const count = useMotionValue(reduceMotion ? value : 0);
+	const rounded = useTransform(count, (latest) => Math.round(latest));
+
+	useEffect(() => {
+		if (reduceMotion) {
+			count.set(value);
+			return;
+		}
+		const controls = animate(count, value, {
+			duration: 1.45,
+			delay,
+			ease: [0.16, 1, 0.3, 1],
+		});
+		return () => controls.stop();
+	}, [count, delay, reduceMotion, value]);
+
+	return (
+		<span className="tabular-nums" aria-hidden>
+			{prefix}
+			<motion.span>{rounded}</motion.span>
+			{suffix}
+		</span>
+	);
+}
 
 export function AboutHero() {
 	return (
-		<div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-			<motion.div
-				initial={{ opacity: 0, y: 16 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
-			>
-				<Badge
-					variant="outline"
-					className="mb-5 gap-1.5 border-primary/30 bg-primary/10 px-3 py-1 text-primary"
+		<section className="relative overflow-hidden">
+			<GridPattern />
+			<div className="relative mx-auto max-w-6xl px-6 pt-14 md:pt-16 lg:pt-20">
+				<motion.div
+					initial={{ opacity: 0, y: 16 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
 				>
-					<Building2 className="h-3.5 w-3.5" />
-					About Truestack
-				</Badge>
-
-				<h1 className="type-h1 text-slate-50">
-					The partner behind{" "}
-					<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-						compliant digital lending
-					</span>{" "}
-					in Malaysia.
-				</h1>
-
-				<p className="mt-4 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
-					Lending platforms, fintech infrastructure, and KPKT
-					services — delivered by one team so you can go from licence
-					to live portfolio without juggling vendors.
-				</p>
-
-				<div className="mt-6 flex flex-wrap gap-2">
-					{statPills.map((pill) => (
-						<span
-							key={pill.label}
-							className="inline-flex items-center gap-1.5 rounded-full border border-slate-800/80 bg-slate-900/50 px-3 py-1.5 text-xs font-medium text-slate-400 backdrop-blur-sm"
-						>
-							<pill.icon className="h-3.5 w-3.5 text-primary" />
-							{pill.label}
-						</span>
-					))}
-				</div>
-
-				<div className="mt-8 flex flex-col gap-3 sm:flex-row">
-					<Button asChild size="lg" className="gap-2">
-						<Link href="/contact">
-							Book a Free Consultation
-							<ArrowRight className="h-4 w-4" />
-						</Link>
-					</Button>
-					<Button
-						asChild
-						variant="outline"
-						size="lg"
-						className="border-slate-700 bg-transparent text-slate-100 hover:bg-slate-800/80 hover:text-slate-50"
+					<nav
+						aria-label="Breadcrumb"
+						className="mb-5 flex items-center gap-2 text-sm text-muted-foreground"
 					>
-						<Link href="/services/digital-license">
-							Explore Digital License
+						<Link href="/" className="hover:text-foreground">
+							Company
 						</Link>
-					</Button>
-				</div>
-			</motion.div>
+						<span className="text-border" aria-hidden>
+							/
+						</span>
+						<span className="font-medium text-foreground">
+							About
+						</span>
+					</nav>
 
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, delay: 0.15 }}
-			>
-				<AboutHeroGraphic />
-			</motion.div>
-		</div>
+					<h1 className="max-w-[22em] type-h1 text-pretty">
+						Malaysian lending deserves{" "}
+						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
+							better tools.
+						</span>
+					</h1>
+
+					<div className="mt-6 grid items-end gap-8 pb-12 md:pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+						<p className="max-w-[34em] type-lede-hero text-pretty text-muted-foreground">
+							We are a team of engineers and compliance
+							specialists working in one industry: Malaysian
+							credit. We build the platforms our clients run on,
+							take on custom software when they need it, and
+							handle the regulatory side alongside the build.
+						</p>
+						<div className="flex flex-wrap gap-2.5">
+							{pills.map((pill) => (
+								<span
+									key={pill}
+									className="rounded-full border bg-background/80 px-3.5 py-1.5 text-sm font-medium text-foreground/80 backdrop-blur-sm"
+								>
+									{pill}
+								</span>
+							))}
+						</div>
+					</div>
+				</motion.div>
+
+				<motion.div
+					className="grid overflow-hidden rounded-t-2xl border border-b-0 bg-card shadow-[0_-2px_30px_-12px_rgb(15_23_42/0.18)] sm:grid-cols-3"
+					initial={{ opacity: 0, y: 16 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.12 }}
+				>
+					{stats.map((stat, index) => (
+						<div
+							key={stat.label}
+							className={cn(
+								"px-6 py-7 md:px-8 md:py-8",
+								index < stats.length - 1 &&
+									"border-b sm:border-b-0 sm:border-r",
+								stat.highlight && "bg-primary/4",
+							)}
+						>
+							<p
+								className={cn(
+									"type-h2",
+									stat.highlight
+										? "text-primary"
+										: "text-foreground",
+								)}
+								aria-label={`${stat.prefix}${stat.value}${stat.suffix}`}
+							>
+								<CountUp
+									value={stat.value}
+									prefix={stat.prefix}
+									suffix={stat.suffix}
+									delay={0.28 + index * 0.1}
+								/>
+							</p>
+							<p className="mt-1 type-ui text-muted-foreground">
+								{stat.label}
+							</p>
+						</div>
+					))}
+				</motion.div>
+			</div>
+		</section>
 	);
 }

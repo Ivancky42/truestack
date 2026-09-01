@@ -1,311 +1,259 @@
 import type { Metadata } from "next";
-import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Shield, Mail } from "lucide-react";
+import {
+  Cookie,
+  Eye,
+  FilePenLine,
+  Shield,
+  Trash2,
+  UserRound,
+} from "lucide-react";
+import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { LegalContactCard } from "@/components/legal/legal-contact";
+import { LegalDocument, LegalSection } from "@/components/legal/legal-document";
+import { LegalFaq } from "@/components/legal/legal-faq";
+import { LegalHero } from "@/components/legal/legal-hero";
+import { LegalCallout, LegalCard, LegalList } from "@/components/legal/legal-ui";
+import { FaqSchema } from "@/components/seo/faq-schema";
+import { LegalSchema } from "@/components/seo/legal-schema";
+import { privacyFaq } from "@/lib/legal-faq";
+import { privacyToc } from "@/lib/legal";
+import {
+  defaultOgImage,
+  defaultTwitterCard,
+  legalName,
+  siteName,
+} from "@/lib/seo-defaults";
+
+const title = "Privacy Policy";
+const description =
+  "How Truestack Technologies collects, uses and protects personal information on truestack.my and related platforms, in line with Malaysia's PDPA.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+  title,
+  description,
   keywords: ["privacy policy", "Truestack", "data protection", "PDPA Malaysia"],
   alternates: { canonical: "/privacy" },
   openGraph: {
-    title: "Privacy Policy - Truestack",
-    description:
-      "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+    title: `${title} - Truestack`,
+    description,
+    url: "/privacy",
     siteName,
     images: [defaultOgImage],
   },
   twitter: {
     card: defaultTwitterCard,
-    title: "Privacy Policy - Truestack",
-    description:
-      "Privacy Policy for Truestack. Learn how we collect, use, and protect your personal information.",
+    title: `${title} - Truestack`,
+    description,
     images: [defaultOgImage.url],
   },
 };
 
+const rights = [
+  {
+    title: "Access",
+    description: "Ask for a copy of the personal data we hold about you.",
+    icon: Eye,
+  },
+  {
+    title: "Correction",
+    description: "Request correction of inaccurate or outdated data.",
+    icon: FilePenLine,
+  },
+  {
+    title: "Withdraw consent",
+    description: "Withdraw consent for processing that relies on it.",
+    icon: UserRound,
+  },
+  {
+    title: "Deletion",
+    description: "Request deletion, subject to legal and audit requirements.",
+    icon: Trash2,
+  },
+];
+
 export default function PrivacyPolicyPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="border-b bg-muted/30 py-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-            <Shield className="h-8 w-8 text-primary" />
-          </div>
-          <h1 className="mb-4 type-h1">Privacy Policy</h1>
-          <p className="text-lg text-muted-foreground">
-            How we collect, use, and protect your personal information
+      <LegalSchema path="/privacy" name={title} description={description} />
+      <FaqSchema items={privacyFaq} />
+
+      <LegalHero
+        eyebrow="Legal"
+        title="How we handle your information."
+        titleMuted="And what you can ask us to do with it."
+        lede="This policy explains how Truestack collects, uses, discloses, and safeguards personal information when you visit our website or use related systems we operate."
+        currentPath="/privacy"
+      />
+
+      <LegalDocument toc={privacyToc}>
+        <LegalSection id="introduction" title="1. Introduction">
+          <p>
+            {legalName} (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;)
+            is committed to protecting your privacy. This Privacy Policy covers
+            truestack.my and related hosts we operate — including the developer
+            portal and demonstration environments.
           </p>
-          <Badge variant="secondary" className="mt-4">
-            Last updated: January 2026
-          </Badge>
-        </div>
-      </section>
+          <LegalCallout icon={Shield}>
+            We comply with the <strong>Personal Data Protection Act 2010 (PDPA)</strong>{" "}
+            of Malaysia and other applicable data protection laws. For the
+            Malaysia-specific notice — including TrueIdentity™ e-KYC — see our{" "}
+            <Link href="/pdpa" className="font-medium text-primary hover:underline">
+              PDPA Notice
+            </Link>
+            .
+          </LegalCallout>
+        </LegalSection>
 
-      {/* Content */}
-      <section className="py-16">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="space-y-12">
-            {/* Introduction */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">1. Introduction</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Truestack (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. 
-                  This Privacy Policy explains how we collect, use, disclose, and safeguard your 
-                  information when you visit our website or engage with our services.
-                </p>
-                <Card className="border-primary/20 bg-primary/5">
-                  <CardContent className="flex items-start gap-3 pt-4">
-                    <Shield className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                    <p className="text-sm text-foreground">
-                      We comply with the <strong>Personal Data Protection Act 2010 (PDPA)</strong> of Malaysia 
-                      and other applicable data protection laws.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Information We Collect */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">2. Information We Collect</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="mb-3 text-lg font-medium">Information You Provide</h3>
-                  <p className="mb-3 text-muted-foreground">
-                    We may collect information that you voluntarily provide to us, including:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Name and contact information (email address, phone number)
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Company name and job title
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Information provided through our contact forms
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Any other information you choose to provide
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-3 text-lg font-medium">Automatically Collected Information</h3>
-                  <p className="mb-3 text-muted-foreground">
-                    When you visit our website, we may automatically collect:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Browser type and version
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Operating system
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      IP address
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Pages visited and time spent on pages
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      Referring website addresses
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* How We Use */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">3. How We Use Your Information</h2>
-              <p className="mb-3 text-muted-foreground">We use the information we collect to:</p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Respond to your inquiries and provide customer support
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Send you information about our services that may interest you
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Improve our website and services
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Analyze website usage and trends
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Comply with legal obligations
-                </li>
-              </ul>
-            </div>
-
-            {/* Disclosure */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">4. Disclosure of Your Information</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>We may share your information with:</p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Service providers who assist in our operations
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Professional advisors (lawyers, accountants)
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Regulatory authorities when required by law
-                  </li>
-                </ul>
-                <Card className="border-green-500/20 bg-green-500/5">
-                  <CardContent className="pt-4">
-                    <p className="text-sm font-medium text-foreground">
-                      We do not sell, trade, or rent your personal information to third parties 
-                      for marketing purposes.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Data Security */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">5. Data Security</h2>
-              <p className="text-muted-foreground">
-                We implement appropriate technical and organizational measures to protect 
-                your personal information against unauthorized access, alteration, disclosure, 
-                or destruction. However, no method of transmission over the Internet is 
-                100% secure.
-              </p>
-            </div>
-
-            {/* Data Retention */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">6. Data Retention</h2>
-              <p className="text-muted-foreground">
-                We retain your personal information only for as long as necessary to fulfill 
-                the purposes for which it was collected, or as required by applicable laws 
-                and regulations.
-              </p>
-            </div>
-
-            {/* Your Rights */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">7. Your Rights</h2>
-              <p className="mb-4 text-muted-foreground">Under the PDPA, you have the right to:</p>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Card>
-                  <CardContent className="pt-4">
-                    <p className="font-medium">Access</p>
-                    <p className="text-sm text-muted-foreground">
-                      Access your personal data held by us
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-4">
-                    <p className="font-medium">Correction</p>
-                    <p className="text-sm text-muted-foreground">
-                      Request correction of inaccurate data
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-4">
-                    <p className="font-medium">Withdraw Consent</p>
-                    <p className="text-sm text-muted-foreground">
-                      Withdraw consent for data processing
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-4">
-                    <p className="font-medium">Deletion</p>
-                    <p className="text-sm text-muted-foreground">
-                      Request deletion (subject to legal requirements)
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Cookies */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">8. Cookies</h2>
-              <p className="text-muted-foreground">
-                Our website may use cookies and similar tracking technologies to enhance 
-                your browsing experience. You can set your browser to refuse cookies, but 
-                this may limit your ability to use some features of our website.
-              </p>
-            </div>
-
-            {/* Third-Party Links */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">9. Third-Party Links</h2>
-              <p className="text-muted-foreground">
-                Our website may contain links to third-party websites. We are not responsible 
-                for the privacy practices of these external sites. We encourage you to review 
-                their privacy policies.
-              </p>
-            </div>
-
-            {/* Changes */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">10. Changes to This Policy</h2>
-              <p className="text-muted-foreground">
-                We may update this Privacy Policy from time to time. We will notify you of 
-                any changes by posting the new Privacy Policy on this page and updating the 
-                &quot;Last updated&quot; date.
-              </p>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h2 className="mb-4 type-h2-sm">11. Contact Us</h2>
-              <p className="mb-4 text-muted-foreground">
-                If you have any questions about this Privacy Policy or wish to exercise 
-                your rights, please contact us:
-              </p>
-              <Card>
-                <CardContent className="flex items-center gap-4 pt-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Truestack</p>
-                    <Link 
-                      href="mailto:hello@truestack.my" 
-                      className="text-primary hover:underline"
-                    >
-                      hello@truestack.my
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+        <LegalSection id="collect" title="2. Information we collect">
+          <div>
+            <h3 className="mb-3 type-subhead text-foreground">
+              Information you provide
+            </h3>
+            <p className="mb-3">
+              We may collect information you voluntarily provide, including:
+            </p>
+            <LegalList
+              items={[
+                "Name and contact information (email address, phone number)",
+                "Company name and job title",
+                "Information submitted through contact, consultation, or careers forms",
+                "Any other information you choose to provide",
+              ]}
+            />
           </div>
-        </div>
-      </section>
+          <div>
+            <h3 className="mb-3 type-subhead text-foreground">
+              Automatically collected information
+            </h3>
+            <p className="mb-3">When you visit our website, we may collect:</p>
+            <LegalList
+              items={[
+                "Browser type and version",
+                "Operating system",
+                "IP address",
+                "Pages visited and time spent on pages",
+                "Referring website addresses",
+              ]}
+            />
+          </div>
+        </LegalSection>
+
+        <LegalSection id="use" title="3. How we use your information">
+          <p>We use the information we collect to:</p>
+          <LegalList
+            items={[
+              "Respond to your enquiries and provide customer support",
+              "Send you information about our services that may interest you",
+              "Improve our website and services",
+              "Understand website usage and trends",
+              "Comply with legal obligations",
+            ]}
+          />
+        </LegalSection>
+
+        <LegalSection id="disclosure" title="4. Disclosure of your information">
+          <p>We may share your information with:</p>
+          <LegalList
+            items={[
+              "Service providers who assist in our operations",
+              "Professional advisors (lawyers, accountants)",
+              "Regulatory authorities when required by law",
+            ]}
+          />
+          <LegalCallout icon={Shield}>
+            We do not sell, trade, or rent your personal information to third
+            parties for marketing purposes.
+          </LegalCallout>
+        </LegalSection>
+
+        <LegalSection id="security" title="5. Data security">
+          <p>
+            We implement appropriate technical and organisational measures to
+            protect your personal information against unauthorised access,
+            alteration, disclosure, or destruction. No method of transmission
+            over the internet is completely secure. A public overview is in our{" "}
+            <Link href="/cybersecurity" className="font-medium text-primary hover:underline">
+              Cybersecurity Policy
+            </Link>
+            .
+          </p>
+        </LegalSection>
+
+        <LegalSection id="retention" title="6. Data retention">
+          <p>
+            We retain your personal information only for as long as necessary to
+            fulfil the purposes for which it was collected, or as required by
+            applicable laws and regulations.
+          </p>
+        </LegalSection>
+
+        <LegalSection id="rights" title="7. Your rights">
+          <p>Under the PDPA, you have the right to:</p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {rights.map((right) => (
+              <LegalCard key={right.title} icon={right.icon} title={right.title}>
+                {right.description}
+              </LegalCard>
+            ))}
+          </div>
+        </LegalSection>
+
+        <LegalSection id="cookies" title="8. Cookies">
+          <p>
+            We use cookies and similar technologies that are needed for the
+            website to function — for example to keep a page session working.
+            We do not currently use advertising cookies or third-party marketing
+            pixels on truestack.my.
+          </p>
+          <LegalCallout icon={Cookie}>
+            You can set your browser to refuse cookies. Essential cookies may
+            still be required for the site to load. If we add analytics or
+            marketing cookies later, we will update this section.
+          </LegalCallout>
+        </LegalSection>
+
+        <LegalSection id="links" title="9. Third-party links">
+          <p>
+            Our website may contain links to third-party websites. We are not
+            responsible for the privacy practices of those sites. We encourage
+            you to review their privacy policies.
+          </p>
+        </LegalSection>
+
+        <LegalSection id="changes" title="10. Changes to this policy">
+          <p>
+            We may update this Privacy Policy from time to time. We will post
+            the revised policy on this page and update the &quot;Last
+            updated&quot; date.
+          </p>
+        </LegalSection>
+
+        <LegalSection id="contact" title="11. Contact us">
+          <p>
+            If you have questions about this Privacy Policy or wish to exercise
+            your rights, contact us. For TrueIdentity™ and other regulated
+            processing, see the{" "}
+            <Link href="/pdpa" className="font-medium text-primary hover:underline">
+              PDPA Notice
+            </Link>
+            .
+          </p>
+          <LegalContactCard />
+        </LegalSection>
+
+        <LegalFaq items={privacyFaq} />
+      </LegalDocument>
+
+      <ConsultationCta
+        heading="Questions about your data?"
+        body="If you want this policy explained for a customer agreement or an e-KYC rollout, book a free consultation. No obligation."
+        extraLinks={[
+          { href: "/pdpa", label: "PDPA Notice" },
+          { href: "/cybersecurity", label: "Cybersecurity Policy" },
+          { href: "/terms", label: "Terms of Use" },
+        ]}
+      />
     </>
   );
 }

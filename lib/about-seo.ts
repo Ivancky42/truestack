@@ -6,29 +6,29 @@ export const ABOUT_PAGE_PATH = "/about";
 export const ABOUT_PAGE_URL = `${baseUrl}${ABOUT_PAGE_PATH}`;
 
 export const ABOUT_METADATA = {
-	title: "About Truestack | Malaysian Fintech Platforms, APIs & KPKT Services",
+	title: "About Truestack | Lending Platforms & KPKT Malaysia",
 	description:
-		"Truestack helps Malaysian money lenders go from licence to live portfolio — TrueKredit™, infrastructure APIs, and KPKT digital licence services.",
+		"Truestack builds lending platforms and KPKT compliance for Malaysian lenders. Founded 2025 in KL. 11 lenders live, over RM 200 million disbursed a year.",
 	keywords: [
 		"Truestack",
 		"about Truestack",
+		"Truestack Technologies Sdn Bhd",
 		"fintech software Malaysia",
 		"lending technology Malaysia",
 		"TrueKredit",
-		"TrueIdentity",
-		"TrueSSM",
+		"TrueSyariah",
+		"TrueP2P",
 		"KPKT digital licence",
 		"KPKT fintech Malaysia",
 		"licensed money lender software",
 		"loan management system Malaysia",
-		"e-KYC Malaysia",
-		"digital lending platform Malaysia",
-		"fintech infrastructure Malaysia",
+		"KL Trillion",
+		"Kuala Lumpur fintech",
 	],
 	openGraphTitle:
-		"About Truestack | Malaysian Fintech Platforms, APIs & KPKT Services",
+		"About Truestack | Lending Platforms & KPKT Malaysia",
 	openGraphDescription:
-		"Meet Truestack — the partner behind compliant digital lending in Malaysia. Platforms, infrastructure APIs, and KPKT services that work as one.",
+		"Meet Truestack — founded 2025 in Kuala Lumpur. Lending platforms and KPKT compliance under one contract. 11 lenders live, over RM 200 million disbursed a year.",
 } as const;
 
 export function buildAboutJsonLd() {
@@ -67,25 +67,30 @@ export function buildAboutJsonLd() {
 			},
 			{
 				"@type": "ItemList",
-				"@id": `${ABOUT_PAGE_URL}#offerings`,
-				name: "Truestack offerings",
+				"@id": `${ABOUT_PAGE_URL}#principles`,
+				name: "Truestack operating principles",
 				description:
-					"Lending platforms, fintech infrastructure APIs, and professional services for Malaysian operators.",
+					"Four things Truestack does not compromise on when building lending platforms and handling KPKT compliance.",
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Lending platforms — TrueKredit™, TrueSyariah™, TrueP2P™",
+						name: "Compliance is a design constraint, not a feature",
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Fintech infrastructure — TrueIdentity™, TrueSSM™, TruePay™, TrueScore™",
+						name: "Your loan book is yours",
 					},
 					{
 						"@type": "ListItem",
 						position: 3,
-						name: "Professional services — Digital KPKT licence, account management, custom software",
+						name: "One team, or it is not accountable",
+					},
+					{
+						"@type": "ListItem",
+						position: 4,
+						name: "Go-live is the beginning",
 					},
 				],
 			},
