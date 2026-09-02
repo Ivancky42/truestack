@@ -37,4 +37,10 @@ export const digitalLicenseFaq = [
 		answer:
 			"Truestack Technologies Sdn. Bhd., a Kuala Lumpur software and consultancy company working exclusively with Malaysian lenders and fintechs. Licensed money lenders including ezdana, PinjoCep, Proficient Premium, Andas Capital and CreditXpress run on our platforms.",
 	},
+	{
+		question:
+			"Do you also handle the Shariah digital licence, or only conventional PPW?",
+		answer:
+			"Both. The conventional path on this page is kebenaran tambahan for e-Lending on an existing lesen PPW, with the book on TrueKredit™ Pro. Shariah digital lending is a separate upcoming KPKT approval: its own legal entity, a Shariah advisor or committee, approved contracts, and a platform that evidences Tawarruq, Ta'widh and Gharamah. That path is TrueSyariah™ — see truestack.my/truesyariah. The two licences cannot sit in the same operating company.",
+	},
 ] as const;

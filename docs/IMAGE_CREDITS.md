@@ -18,6 +18,7 @@ Every photo in `public/photos/` must be recorded here (guide §8).
 | software-dev-discovery.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 | p2p-delivery-team.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 | truesyariah-licence-journey.jpg | Generated for Truestack | — | AI-generated (Cursor) |
+| truesyariah-consultation.jpg | Generated for Truestack | — | AI-generated (Cursor) |
 
 ## Brand / social
 

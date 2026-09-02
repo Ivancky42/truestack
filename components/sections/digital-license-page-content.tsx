@@ -22,6 +22,7 @@ import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
+import { DigitalLicensePaths } from "@/components/sections/digital-license-paths";
 
 const STORY_TODAY = [
 	{
@@ -163,6 +164,7 @@ export function DigitalLicensePageContent() {
 	return (
 		<>
 			<DigitalLicenseHero />
+			<DigitalLicensePaths />
 			<CrossLinkStrip
 				id="looking-for-the-platform"
 				ariaLabel="Looking for the platform"
@@ -579,7 +581,7 @@ export function DigitalLicensePageContent() {
 				accent="kpkt"
 				eyebrow="Full-service KPKT digital licensing"
 				heading="Ready to go nationwide?"
-				body="Book a free consultation. We will map your route to a KPKT digital licence and the TrueKredit™ Pro platform that gets you there — before you commit to anything."
+				body="Book a free consultation. We will map your route — conventional PPW digital licence on TrueKredit™ Pro, or the upcoming Shariah path on TrueSyariah™ — before you commit to anything."
 				primary={{
 					href: "/contact?subject=Digital%20KPKT%20Licence",
 					label: "Book a Free Consultation",

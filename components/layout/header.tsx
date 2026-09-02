@@ -87,7 +87,8 @@ const featuredSolutions: SolutionMenuItem[] = [
 	{
 		title: "KPKT Digital Licence",
 		href: "/services/digital-license",
-		description: "Go nationwide — we run the licence path end to end.",
+		description:
+			"Conventional PPW or Shariah — we run both licence paths.",
 		icon: FileCheck,
 		accent: "kpkt",
 	},
@@ -98,6 +99,13 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 	{
 		heading: "Services",
 		items: [
+			{
+				title: "Shariah Digital Licence",
+				href: "/services/digital-license#shariah",
+				description:
+					"Upcoming KPKT path — entity, committee and TrueSyariah™.",
+				badge: "Upcoming",
+			},
 			{
 				title: "KPKT Account Management",
 				href: "/services/account-management",
@@ -119,9 +127,8 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				title: "TrueSyariah™",
 				href: "/truesyariah",
 				description:
-					"Shariah digital lending — Tawarruq, Ta'widh and Gharamah.",
+					"Shariah digital licence and platform — Tawarruq, Ta'widh and Gharamah.",
 				badge: "New",
-				accent: "emerald",
 			},
 			{
 				title: "TrueP2P™",
@@ -169,7 +176,12 @@ function SolutionItemBadges({ item }: { item: SolutionMenuItem }) {
 	return (
 		<Badge
 			variant="secondary"
-			className="shrink-0 bg-emerald-100 px-1.5 py-0 text-[10px] font-medium text-emerald-800"
+			className={cn(
+				"shrink-0 px-1.5 py-0 text-[10px] font-medium",
+				item.badge === "Upcoming"
+					? "bg-amber-100 text-amber-800"
+					: "bg-primary/10 text-primary",
+			)}
 		>
 			{item.badge}
 		</Badge>

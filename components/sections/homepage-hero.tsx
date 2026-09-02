@@ -302,8 +302,8 @@ export function HomepageHero() {
 						>
 							<p className="mt-5 max-w-[30em] type-lede-hero text-pretty text-muted-foreground">
 								We get you licensed and we run your book —
-								lending software, paperwork, and the rails
-								underneath for KPKT money lending.
+								conventional PPW or Shariah digital lending,
+								the paperwork, and the rails underneath.
 							</p>
 
 							<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">

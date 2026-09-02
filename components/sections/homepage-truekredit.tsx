@@ -39,7 +39,7 @@ const PLATFORMS: {
 		name: "TrueSyariah™",
 		href: "/truesyariah",
 		icon: Layers,
-		body: "Shariah digital financing: Tawarruq commodity trades, segregated Ta'widh and Gharamah ledgers, committee audit packs.",
+		body: "Shariah digital licence and platform: Tawarruq commodity trades, segregated Ta'widh and Gharamah, books ring-fenced from conventional lending.",
 		cta: "Explore TrueSyariah",
 	},
 	{

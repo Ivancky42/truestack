@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { CtaLink } from "@/components/shared/cta-link";
 
-type StripAccent = "kpkt" | "violet";
+type StripAccent = "kpkt" | "violet" | "truesyariah";
 
 type CrossLinkStripProps = {
 	id: string;
@@ -16,6 +16,25 @@ type CrossLinkStripProps = {
 const accentClass: Record<StripAccent, string> = {
 	kpkt: "text-kpkt",
 	violet: "text-violet-700",
+	truesyariah: "text-ts-gold hover:text-ts-ink",
+};
+
+const shellClass: Record<StripAccent, string> = {
+	kpkt: "border-t bg-muted/30",
+	violet: "border-t bg-muted/30",
+	truesyariah: "border-t border-ts-rule bg-ts-parchment",
+};
+
+const leadClass: Record<StripAccent, string> = {
+	kpkt: "font-medium text-foreground",
+	violet: "font-medium text-foreground",
+	truesyariah: "font-medium text-ts-ink",
+};
+
+const bodyClass: Record<StripAccent, string> = {
+	kpkt: "type-ui text-muted-foreground",
+	violet: "type-ui text-muted-foreground",
+	truesyariah: "type-ui text-ts-ink-soft",
 };
 
 export function CrossLinkStrip({
@@ -28,10 +47,10 @@ export function CrossLinkStrip({
 	accent = "kpkt",
 }: CrossLinkStripProps) {
 	return (
-		<section id={id} aria-label={ariaLabel} className="border-t bg-muted/30">
+		<section id={id} aria-label={ariaLabel} className={shellClass[accent]}>
 			<div className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-				<p className="type-ui text-muted-foreground">
-					<span className="font-medium text-foreground">{lead}</span>{" "}
+				<p className={bodyClass[accent]}>
+					<span className={leadClass[accent]}>{lead}</span>{" "}
 					{body}
 				</p>
 				<CtaLink

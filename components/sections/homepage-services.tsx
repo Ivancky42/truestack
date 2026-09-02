@@ -30,7 +30,7 @@ const tabs: {
 	{
 		id: "digital",
 		label: "Digital License",
-		sublabel: "Go nationwide online",
+		sublabel: "PPW or Shariah",
 		icon: FileCheck,
 		activeClass:
 			"border-kpkt/40 bg-kpkt/5 text-kpkt [&_svg]:text-kpkt",
@@ -230,12 +230,20 @@ function DigitalLicensePanel() {
 						Digital KPKT License
 					</h3>
 					<p className="mt-1 text-sm font-medium text-kpkt">
-						From traditional licence to nationwide digital lending
+						Conventional PPW, or the upcoming Shariah path
 					</p>
 					<p className="mt-3 text-muted-foreground">
 						Go from a traditional KPKT licence to nationwide digital
-						lending. We handle licensing, TrueKredit™ Pro, and
-						go-live — typically in about three months.
+						lending on TrueKredit™ Pro — typically in about three
+						months. Shariah digital lending is a separate licence
+						and a separate platform,{" "}
+						<Link
+							href="/truesyariah"
+							className="font-medium text-foreground underline decoration-kpkt/40 underline-offset-4 hover:decoration-kpkt"
+						>
+							TrueSyariah™
+						</Link>
+						.
 					</p>
 				</div>
 				<ul className="space-y-2.5">
@@ -251,13 +259,19 @@ function DigitalLicensePanel() {
 						</li>
 					))}
 				</ul>
-				<div className="mt-1">
+				<div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-2">
 					<Button asChild className="gap-2 bg-kpkt hover:bg-kpkt/90">
 						<Link href="/services/digital-license">
 							Explore Digital License
 							<ArrowRight className="h-4 w-4" />
 						</Link>
 					</Button>
+					<Link
+						href="/services/digital-license#shariah"
+						className="type-ui font-medium text-kpkt hover:underline"
+					>
+						Shariah digital licence
+					</Link>
 				</div>
 			</div>
 		</motion.div>
@@ -346,8 +360,9 @@ export function HomepageServices() {
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
 						Beyond platforms and APIs — we help Malaysian lenders
-						stay compliant, convert to digital licences, and ship
-						custom software when off-the-shelf isn&apos;t enough.
+						stay compliant, convert a conventional PPW or take the
+						Shariah digital licence path, and ship custom software
+						when off-the-shelf isn&apos;t enough.
 					</p>
 				</div>
 

@@ -9,6 +9,29 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --font-display: var(--font-rethink-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-ts-display: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
+  --font-ts-arabic: var(--font-naskh), "Noto Naskh Arabic", serif;
+
+  /* TrueSyariah / Islamic product palette — see BRAND_GUIDE.md §3a */
+  --color-ts-parchment: var(--ts-parchment);
+  --color-ts-paper: var(--ts-paper);
+  --color-ts-ink: var(--ts-ink);
+  --color-ts-ink-muted: var(--ts-ink-muted);
+  --color-ts-ink-soft: var(--ts-ink-soft);
+  --color-ts-ink-faint: var(--ts-ink-faint);
+  --color-ts-gold: var(--ts-gold);
+  --color-ts-gold-bright: var(--ts-gold-bright);
+  --color-ts-gold-hover: var(--ts-gold-hover);
+  --color-ts-rule: var(--ts-rule);
+  --color-ts-rule-soft: var(--ts-rule-soft);
+  --color-ts-rule-faint: var(--ts-rule-faint);
+  --color-ts-cream: var(--ts-cream);
+  --color-ts-line: var(--ts-line);
+  --color-ts-stone: var(--ts-stone);
+  --color-ts-forest: var(--ts-forest);
+  --color-ts-mist: var(--ts-mist);
+  --color-ts-chrome: var(--ts-chrome);
+  --color-ts-wash: var(--ts-wash);
 
   /* Fluid display sizes (Rethink Sans). Composed utilities: type-h1, type-h2, type-h2-sm. */
   --text-display-h1: clamp(2.5rem, 4.6vw, 4rem);
@@ -109,6 +132,26 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.912 0.013 255.508);
   --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* TrueSyariah / Islamic product tokens. Use classes (bg-ts-ink), never raw hex in JSX. */
+  --ts-parchment: #faf7f0;
+  --ts-paper: #fffdf8;
+  --ts-ink: #1a3a34;
+  --ts-ink-muted: #3d5850;
+  --ts-ink-soft: #6b7d76;
+  --ts-ink-faint: #8b9d95;
+  --ts-gold: #c08b3e;
+  --ts-gold-bright: #d4af6a;
+  --ts-gold-hover: #e0c088;
+  --ts-rule: #e0d8c8;
+  --ts-rule-soft: #e8e0d0;
+  --ts-rule-faint: #f0e9db;
+  --ts-cream: #f5f0e6;
+  --ts-line: #c9bfa8;
+  --ts-stone: #a89d86;
+  --ts-forest: #2d5049;
+  --ts-mist: #a9bdb5;
+  --ts-chrome: #8fa8a0;
+  --ts-wash: #f3ede0;
 }
 
 @layer base {
@@ -218,10 +261,69 @@
   line-height: 1.2;
 }
 
+/*
+  TrueSyariah / Islamic product type — Newsreader display, Noto Naskh for Arabic terms.
+  Scoped to `.ts-page`. Header and footer stay on the site type system.
+*/
+
+@utility type-ts-h1 {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: clamp(2.6rem, 4.8vw, 4.1rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+}
+
+@utility type-ts-h2 {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+}
+
+@utility type-ts-h3 {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+@utility type-ts-card {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 1.1875rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@utility type-ts-serif {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+@utility type-ts-arabic {
+  font-family: var(--font-naskh), "Noto Naskh Arabic", serif;
+  font-weight: 500;
+  line-height: 1;
+}
+
+@utility type-ts-eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 /* Pull a page hero up under the sticky glass header (h-18). */
 @utility hero-under-nav {
   margin-top: -4.5rem;
   padding-top: 4.5rem;
+}
+
+.ts-hero-grid {
+  background-image:
+    linear-gradient(var(--ts-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ts-rule) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
 /* One loop = 1/4 of track width (four repeated logo sets). */

@@ -21,4 +21,10 @@ export const homepageFaq: readonly FaqSchemaItem[] = [
 		answer:
 			"Around three months for a full digital licence conversion, and less if you are only moving an existing loan book onto TrueKredit™. A new KPKT application takes longer because the regulator sets the pace, not the software.",
 	},
+	{
+		question:
+			"Do you handle Shariah digital lending as well as a conventional KPKT licence?",
+		answer:
+			"Yes. A conventional digital licence is kebenaran tambahan on an existing lesen PPW, and the book runs on TrueKredit™ Pro. Shariah digital lending is a separate upcoming KPKT approval — its own entity, Shariah committee and contracts — and runs on TrueSyariah™. The two licences cannot sit in the same operating company. We scope both paths; start at truestack.my/services/digital-license or truestack.my/truesyariah.",
+	},
 ];

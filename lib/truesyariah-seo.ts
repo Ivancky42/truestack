@@ -6,9 +6,9 @@ export const TRUESYARIAH_PAGE_PATH = "/truesyariah";
 export const TRUESYARIAH_PAGE_URL = `${baseUrl}${TRUESYARIAH_PAGE_PATH}`;
 
 export const TRUESYARIAH_METADATA = {
-	title: "TrueSyariah™ | Shariah Lending Platform Malaysia",
+	title: "TrueSyariah™ | Shariah Digital Lending Licence & Platform Malaysia",
 	description:
-		"Shariah lending platform for Malaysia — TrueSyariah™ with Tawarruq commodity financing, Ta'widh & Gharamah ledgers, on-prem signing, and dedicated AWS.",
+		"Launch licensed Shariah digital lending in Malaysia — entity, committee, licence and TrueSyariah™. Tawarruq, Ta'widh and Gharamah, books ring-fenced.",
 	keywords: [
 		"TrueSyariah",
 		"Shariah lending platform Malaysia",
@@ -30,9 +30,9 @@ export const TRUESYARIAH_METADATA = {
 		"licensed Shariah money lender platform",
 	],
 	openGraphTitle:
-		"TrueSyariah™ | Shariah Lending Platform Malaysia",
+		"TrueSyariah™ | Shariah Digital Lending Licence & Platform Malaysia",
 	openGraphDescription:
-		"Shariah-compliant digital lending platform for Malaysia — Tawarruq commodity financing, Ta'widh & Gharamah ledgers, on-prem signing, e-KYC, and dedicated AWS.",
+		"Launch a licensed Shariah digital lending business in Malaysia — Tawarruq financing, segregated Ta'widh and Gharamah ledgers, books ring-fenced from conventional lending.",
 	ogImagePath: "/truesyariah/hero.png",
 	ogImageAlt:
 		"TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules",
@@ -92,7 +92,7 @@ export function buildTrueSyariahJsonLd() {
 					"@type": "Offer",
 					name: "TrueSyariah Dedicated Deployment",
 					description:
-						"Dedicated AWS Malaysia deployment for Shariah digital lending — Tawarruq commodity financing, Ta'widh / Gharamah segregated ledgers, on-prem PKI signing, e-KYC, web & native mobile origination.",
+						"Dedicated AWS Malaysia deployment for Shariah digital lending — entity and licence support, Tawarruq commodity financing, segregated Ta'widh and Gharamah ledgers, on-prem PKI signing, e-KYC, web and native mobile origination.",
 				},
 				featureList: [
 					"Tawarruq commodity financing via TrueCommodity™",
@@ -106,6 +106,9 @@ export function buildTrueSyariahJsonLd() {
 					"Shariah committee audit pack and reporting",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },
+				isRelatedTo: {
+					"@id": `${baseUrl}/services/digital-license#service`,
+				},
 			},
 		],
 	};

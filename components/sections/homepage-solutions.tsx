@@ -99,10 +99,18 @@ export function HomepageSolutions() {
 						Two ways in. Same destination.
 					</h2>
 					<p className="mt-3.5 type-lede text-muted-foreground">
-						Whether you hold a KPKT licence today or you are still
-						preparing to file, the route to nationwide digital
-						lending is a known sequence. Here is what we own on your
-						behalf.
+						Whether you hold a conventional KPKT licence today or
+						you are still preparing to file, the route to nationwide
+						digital lending is a known sequence. Shariah digital
+						lending is a separate upcoming path — we run that too,
+						on{" "}
+						<CtaLink
+							href="/truesyariah"
+							className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+						>
+							TrueSyariah™
+						</CtaLink>
+						.
 					</p>
 				</motion.div>
 

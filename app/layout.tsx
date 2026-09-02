@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Rethink_Sans, Inter, Geist_Mono } from "next/font/google";
+import { Rethink_Sans, Inter, Geist_Mono, Newsreader, Noto_Naskh_Arabic } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/organization-schema";
@@ -29,6 +29,20 @@ const inter = Inter({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const notoNaskh = Noto_Naskh_Arabic({
+  variable: "--font-naskh",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -116,7 +130,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rethinkSans.variable} ${inter.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${rethinkSans.variable} ${inter.variable} ${geistMono.variable} ${newsreader.variable} ${notoNaskh.variable} font-sans antialiased`}
       >
         <OrganizationSchema />
         <WebSiteSchema />

@@ -355,7 +355,14 @@ export function DigitalLicenseHero() {
 								TrueKredit™ Pro
 							</Link>
 							, and stay in the room through approval and go-live.
-							One team, one contract.
+							One team, one contract. Pursuing the{" "}
+							<Link
+								href="#shariah"
+								className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+							>
+								Shariah digital licence
+							</Link>{" "}
+							instead? That is a separate path.
 						</p>
 
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">

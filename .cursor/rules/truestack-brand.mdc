@@ -22,11 +22,16 @@ Hard rules (details in the guide):
   existing American slugs.
 - **Colors**: CSS tokens only (`bg-background`, `text-muted-foreground`, `primary`…)
   plus the page's sanctioned accent: blue = Truestack/TrueKredit, violet-600/700 =
-  TrueKredit Pro, emerald-600/700 = TrueSyariah, `kpkt` token = KPKT services. Never
-  hardcode hex in JSX. Dark sections: `bg-slate-950` + `data-nav-theme="dark"`.
-- **Type**: H1/H2 are `type-h1` / `type-h2` (Rethink Sans, 500). Card titles are
-  Inter `type-card-title` (600). Eyebrow = `type-eyebrow text-primary`. Nav, buttons,
-  card body = `type-ui` (15px). Technical bits = `type-mono-label` / `type-mono-score`.
+  TrueKredit Pro, TrueSyariah = `ts-*` Islamic tokens (parchment / ink / gold — guide
+  §3a), `kpkt` token = KPKT services. Never hardcode hex in JSX. Dark sections:
+  `bg-slate-950` + `data-nav-theme="dark"` on standard pages; TrueSyariah dark bands
+  use `bg-ts-ink`. Header and footer stay on the site system.
+- **Type**: H1/H2 are `type-h1` / `type-h2` (Rethink Sans, 500) except TrueSyariah,
+  which uses `type-ts-h1` / `type-ts-h2` (Newsreader) and `type-ts-arabic` (Noto
+  Naskh). Card titles are Inter `type-card-title` (600) or `type-ts-h3` on
+  TrueSyariah. Eyebrow = `type-eyebrow text-primary` or `type-ts-eyebrow`. Nav,
+  buttons, card body = `type-ui` (15px). Technical bits = `type-mono-label` /
+  `type-mono-score`.
 - **Sections**: `border-t` + `py-16 md:py-20` + `mx-auto max-w-6xl px-6`, alternating
   `bg-background` / `bg-muted/30`. Reuse `components/shared/*`, `components/ui/*`, and
   `ConsultationCta` (with its `accent` prop) instead of building new variants.

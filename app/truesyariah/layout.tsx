@@ -56,7 +56,9 @@ export default function TrueSyariahLayout({
 		<>
 			<TrueSyariahSchema />
 			<FaqSchema items={truesyariahFaq} />
-			{children}
+			<div className="ts-page hero-under-nav bg-ts-parchment text-ts-ink">
+				{children}
+			</div>
 		</>
 	);
 }

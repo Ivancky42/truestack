@@ -16,7 +16,7 @@ const features = [
 export function TrueSyariahPanel() {
 	return (
 		<motion.div
-			className="grid items-center gap-8 rounded-2xl border border-emerald-200/60 bg-background p-6 md:gap-10 md:p-8 lg:grid-cols-2"
+			className="grid items-center gap-8 rounded-2xl border border-ts-rule bg-ts-parchment p-6 md:gap-10 md:p-8 lg:grid-cols-2"
 			initial={{ opacity: 0, y: 16 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, margin: "-50px" }}
@@ -31,7 +31,7 @@ export function TrueSyariahPanel() {
 					<h3 className="type-h2-sm">
 						TrueSyariah™
 					</h3>
-					<p className="mt-1 text-sm font-medium text-emerald-700">
+					<p className="mt-1 type-ts-eyebrow text-ts-gold">
 						Shariah-compliant digital financing
 					</p>
 					<p className="mt-3 text-muted-foreground">
@@ -47,8 +47,8 @@ export function TrueSyariahPanel() {
 							key={feature}
 							className="flex items-start gap-2.5 text-sm text-muted-foreground"
 						>
-							<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/10">
-								<Check className="h-3 w-3 text-emerald-700" />
+							<span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border border-ts-gold rotate-45">
+								<Check className="h-3 w-3 -rotate-45 text-ts-gold" />
 							</span>
 							<span>{feature}</span>
 						</li>
@@ -57,7 +57,7 @@ export function TrueSyariahPanel() {
 				<div className="mt-1">
 					<Button
 						asChild
-						className="gap-2 bg-emerald-600 hover:bg-emerald-700"
+						className="gap-2 rounded-[2px] bg-none bg-ts-ink text-ts-parchment hover:bg-ts-gold hover:text-ts-parchment"
 					>
 						<Link href="/truesyariah">
 							Explore TrueSyariah

@@ -91,20 +91,42 @@ Each product line owns one accent. Do not invent new ones.
 |---|---|---|
 | Truestack / TrueKredit Standard | `primary` (blue) | `from-primary-start to-primary-end` |
 | TrueKredit **Pro** | `violet-600/700` (chips: `bg-violet-500/10 text-violet-700`) | `from-indigo-600 to-violet-600` |
-| TrueSyariah | `emerald-600/700` | `from-emerald-600 to-teal-600` |
+| TrueSyariah | Islamic product tokens (`ts-*`) — see §3a | parchment / ink / gold |
 | KPKT services | `kpkt` token | `from-kpkt to-cyan-600` |
 | Pain / problem panels | `red-300/500` on dark only | — |
 | "Soon" / caution | `amber-600/700` | — |
 
 These map to `ConsultationCta`'s `accent` prop (`brand | truekredit | truesyariah | kpkt`)
-— use that prop, don't rebuild CTA bands.
+— use that prop on standard pages, don't rebuild CTA bands. TrueSyariah uses its own
+CTA band (see §3a).
+
+### 3a. Islamic product pages (TrueSyariah)
+
+TrueSyariah is a **deliberately separate visual language** — parchment, deep forest
+ink, and gold — so Shariah products do not look like a recolour of TrueKredit.
+The shared **header and footer stay on the site system** (Inter, brand tokens).
+Only the page body inside `.ts-page` uses this palette.
+
+| Token class | Role |
+|---|---|
+| `bg-ts-parchment` / `bg-ts-paper` | Page and card grounds |
+| `text-ts-ink` | Headings and primary copy |
+| `text-ts-ink-muted` / `text-ts-ink-soft` / `text-ts-ink-faint` | Ledes, body, captions |
+| `text-ts-gold` / `bg-ts-gold` / `bg-ts-gold-bright` | Accents, eyebrows, primary CTA on dark |
+| `border-ts-rule` / `border-ts-line` | Hairlines and frames |
+| `bg-ts-ink` | Dark bands (governance, closing CTA) |
+
+Dark Islamic bands use `bg-ts-ink` (not `slate-950`) and still set
+`data-nav-theme="dark"` so the shared header flips. Do not use emerald-600 as the
+TrueSyariah page accent anymore. Tokens live in `app/globals.css`; never paste the
+hex into JSX.
 
 ### Dark sections
 
-Trust/infrastructure sections use an inverted panel: `bg-slate-950 text-white`,
+Trust/infrastructure sections on standard pages use an inverted panel: `bg-slate-950 text-white`,
 body copy `text-slate-400`, hairlines `border-slate-800`, and **must** set
 `data-nav-theme="dark"` so the header adapts. Slate (not gray/zinc/neutral) is the only
-dark neutral family.
+dark neutral family on those pages. TrueSyariah dark bands use `bg-ts-ink` instead.
 
 Any other raw Tailwind color in marketing UI is a violation. Inside *product UI mockups*
 (fake app screens in `*-visuals.tsx` / `*-mocks.tsx`), realistic UI colors (green status
@@ -120,8 +142,10 @@ strict — do not mix families.
 | Family | Role |
 |---|---|
 | **Rethink Sans** (`font-display`) | Display headings only: H1, H2, pull-quotes. Weight **500**. Tracking −0.02 to −0.028em. |
-| **Inter** (`font-sans`) | Body copy, nav, buttons, card titles (weight **600**), UI labels. |
+| **Inter** (`font-sans`) | Body copy, nav, buttons, card titles (weight **600**), UI labels. Header and footer stay Inter on every page. |
 | **Geist Mono** (`font-mono`) | Technical bits only: step numbers, week ranges, phase labels, score readouts, browser chrome (`admin.truekredit`). |
+| **Newsreader** (`type-ts-h1` / `type-ts-h2` / `type-ts-h3`) | **TrueSyariah page display only.** Serif, weight **400** (H1/H2) or **500** (H3). Loaded in `app/truesyariah/layout.tsx`. |
+| **Noto Naskh Arabic** (`type-ts-arabic`) | Arabic terminology on TrueSyariah (`تورق`, `تعويض`, `غرامة`, `عقد`, `ربا`). |
 
 Body base is **17px**. Nothing sits below **12px**.
 
@@ -157,9 +181,19 @@ classes.
 | Step numbers, week ranges, phase labels | `type-mono-label` | 12–13px |
 | Score readout | `type-mono-score` | 22px |
 
+### TrueSyariah display (Newsreader)
+
+| Level | Class | Size |
+|---|---|---|
+| H1 | `type-ts-h1` | `clamp(2.6rem, 4.8vw, 4.1rem)`, weight 400, tracking −0.015em |
+| Section H2 | `type-ts-h2` | `clamp(2rem, 3.6vw, 2.9rem)`, weight 400 |
+| Card / stage titles | `type-ts-h3` / `type-ts-card` | 19–22px, weight 500 |
+| Eyebrows | `type-ts-eyebrow` | Geist Mono, 12px, gold, 0.14em tracking |
+| Arabic terms | `type-ts-arabic` | Noto Naskh, gold |
+
 Rules:
-- H1/H2 use `type-h1` / `type-h2` (Rethink Sans, 500). No bold display headings.
-- Card titles and sub-headings are Inter (`type-card-title`, `type-subhead`), not Rethink Sans.
+- H1/H2 use `type-h1` / `type-h2` (Rethink Sans, 500) on standard pages. TrueSyariah uses `type-ts-h1` / `type-ts-h2` (Newsreader). No bold display headings.
+- Card titles and sub-headings are Inter (`type-card-title`, `type-subhead`) on standard pages, Newsreader (`type-ts-h3`) on TrueSyariah.
 - One `<h1>` per page. Never skip heading levels.
 - Gradient text (`bg-clip-text`) is for **one phrase in a hero h1 only**, using the
   page's accent gradient.
@@ -198,8 +232,10 @@ Every marketing section follows this skeleton:
   `hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md` (accent border matches section accent).
 - Icon chips: `flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10` +
   `h-4 w-4 text-primary` lucide icon.
-- Every page ends with `<ConsultationCta accent="…">` — never a bespoke CTA band.
-  Two actions max: primary + optional secondary.
+- Every standard page ends with `<ConsultationCta accent="…">` — never a bespoke
+  CTA band. TrueSyariah uses the Islamic closing band in
+  `components/sections/truesyariah/cta.tsx` (same two actions: Book a Free
+  Consultation + optional secondary).
 - Reuse before building: `SectionBadge`, `SectionHeader`, `ConsultationCta`, `CtaLink`,
   `FeatureCarousel`, `CaseStudyCard`, shadcn `ui/*`. New shared pattern → `components/shared/`.
 
@@ -293,7 +329,7 @@ Any new page or meaningful copy change must complete this checklist:
 
 - [ ] Copy passes tone rules (§2): no jargon, no hype words, benefit-first, "Book a Free Consultation" CTA.
 - [ ] Colors are tokens or the page's sanctioned accent ramp (§3); no new raw colors, no hex.
-- [ ] Headings use `type-h1` / `type-h2` (Rethink Sans 500); card titles use `type-card-title` (Inter 600). Scale matches §4.
+- [ ] Headings use `type-h1` / `type-h2` (Rethink Sans 500) on standard pages, or `type-ts-h1` / `type-ts-h2` (Newsreader) on TrueSyariah. Card titles use `type-card-title` (Inter) or `type-ts-h3`. Scale matches §4.
 - [ ] Section skeleton matches §5 (border-t, py-16 md:py-20, max-w-6xl, eyebrow pattern).
 - [ ] Dark sections set `data-nav-theme="dark"`.
 - [ ] Motion follows §6 and decorative elements are `aria-hidden`.

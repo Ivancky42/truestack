@@ -17,7 +17,7 @@ import { ConsultationCta } from "@/components/sections/consultation-cta";
 
 const title = "KPKT Licence & Loan Management Software Malaysia";
 const description =
-	"Truestack gets Malaysian money lenders licensed and live — KPKT digital licence conversion, account management, and TrueKredit™ loan management.";
+	"Truestack gets Malaysian lenders licensed and live — conventional KPKT digital licence or upcoming Shariah digital lending, TrueKredit™ and TrueSyariah™.";
 
 export const metadata: Metadata = {
 	title: {
