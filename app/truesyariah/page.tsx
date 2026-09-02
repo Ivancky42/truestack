@@ -2232,13 +2232,6 @@ function TrueSyariahCtaSection() {
 				href: "/services/digital-license",
 				label: "Need licensing support?",
 			}}
-			extraLinks={[
-				{ href: "/truekredit", label: "Compare with TrueKredit" },
-				{
-					href: "/services/p2p-software-development",
-					label: "Compare with TrueP2P",
-				},
-			]}
 		/>
 	);
 }

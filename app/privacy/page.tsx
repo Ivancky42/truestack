@@ -248,11 +248,7 @@ export default function PrivacyPolicyPage() {
       <ConsultationCta
         heading="Questions about your data?"
         body="If you want this policy explained for a customer agreement or an e-KYC rollout, book a free consultation. No obligation."
-        extraLinks={[
-          { href: "/pdpa", label: "PDPA Notice" },
-          { href: "/cybersecurity", label: "Cybersecurity Policy" },
-          { href: "/terms", label: "Terms of Use" },
-        ]}
+        secondary={{ href: "/pdpa", label: "PDPA Notice" }}
       />
     </>
   );

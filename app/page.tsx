@@ -88,14 +88,6 @@ export default async function HomePage() {
 					href: "/services/digital-license",
 					label: "Explore Digital Licence",
 				}}
-				extraLinks={[
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{ href: "/truesyariah", label: "TrueSyariah™" },
-					{
-						href: "/services/p2p-software-development",
-						label: "TrueP2P™",
-					},
-				]}
 			/>
 		</>
 	);

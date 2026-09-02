@@ -244,11 +244,7 @@ export default function TermsOfUsePage() {
       <ConsultationCta
         heading="Need these terms in a customer agreement?"
         body="Website terms are not a product licence. If you are evaluating TrueKredit™ or TrueIdentity™, book a free consultation and we will point you to the right next step."
-        extraLinks={[
-          { href: "/privacy", label: "Privacy Policy" },
-          { href: "/pdpa", label: "PDPA Notice" },
-          { href: "/truekredit", label: "TrueKredit™" },
-        ]}
+        secondary={{ href: "/privacy", label: "Privacy Policy" }}
       />
     </>
   );

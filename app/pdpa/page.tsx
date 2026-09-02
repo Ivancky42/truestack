@@ -323,11 +323,7 @@ export default function PdpaPage() {
       <ConsultationCta
         heading="Questions about how we handle personal data?"
         body="If you need this notice explained for a KPKT licence, e-KYC rollout, or customer agreement, book a free consultation. No obligation."
-        extraLinks={[
-          { href: "/privacy", label: "Privacy Policy" },
-          { href: "/cybersecurity", label: "Cybersecurity Policy" },
-          { href: "/trueidentity", label: "TrueIdentity™" },
-        ]}
+        secondary={{ href: "/privacy", label: "Privacy Policy" }}
       />
     </>
   );

@@ -289,15 +289,6 @@ export function InsightPostContent({ post }: { post: InsightPost }) {
 					href: post.relatedProducts[0]?.href ?? "/services/digital-license",
 					label: post.relatedProducts[0]?.title ?? "KPKT digital licence",
 				}}
-				extraLinks={[
-					{ href: "/insights", label: "More insights" },
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{ href: "/truesyariah", label: "TrueSyariah™" },
-					{
-						href: "/services/account-management",
-						label: "KPKT account management",
-					},
-				]}
 			/>
 		</>
 	);

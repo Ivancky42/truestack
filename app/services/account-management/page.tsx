@@ -480,16 +480,8 @@ export default function AccountManagementPage() {
         body="Focus on growing your lending business while we manage the regulatory complexity. Book a free consultation and our team will scope your compliance needs."
         secondary={{
           href: "/services/digital-license",
-          label: "Explore Digital License",
+          label: "Explore Digital Licence",
         }}
-        extraLinks={[
-          { href: "/truekredit", label: "TrueKredit™" },
-          { href: "/truesyariah", label: "TrueSyariah™" },
-          {
-            href: "/services/p2p-software-development",
-            label: "TrueP2P™",
-          },
-        ]}
       />
     </>
   );

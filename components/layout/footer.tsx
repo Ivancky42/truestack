@@ -34,6 +34,12 @@ const solutionsColumns = [
     links: [
       { href: "/trueidentity", label: "TrueIdentity™" },
       { href: "/truessm", label: "TrueSSM™" },
+      { href: "/contact?subject=Payments", label: "Payment gateway" },
+      {
+        href: "https://developers.truestack.my",
+        label: "Developers",
+        external: true,
+      },
     ],
   },
 ] as const;
@@ -45,11 +51,6 @@ const footerLinks = {
     { href: "/insights", label: "Insights" },
     { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
-    {
-      href: "https://developers.truestack.my",
-      label: "Developers",
-      external: true,
-    },
   ],
   legal: [
     { href: "/cybersecurity", label: "Cybersecurity Policy" },
@@ -67,7 +68,7 @@ function LinkColumn({
   links: readonly { href: string; label: string; external?: boolean }[];
 }) {
   const linkClassName =
-    "text-[15px] text-muted-foreground transition-colors hover:text-primary";
+    "type-ui text-muted-foreground transition-colors hover:text-primary";
 
   return (
     <div>
@@ -97,74 +98,74 @@ function LinkColumn({
 }
 
 export function Footer() {
+  const contactClassName =
+    "inline-flex items-center gap-2 type-ui text-muted-foreground transition-colors hover:text-primary";
+
   return (
     <footer className="border-t bg-muted/30">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          {/* Brand */}
-          <div className="sm:col-span-2 xl:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/truestack-logo-transparent.png"
-                alt={siteName}
-                width={140}
-                height={32}
-                className="h-8 w-auto"
-                style={{ width: "auto" }}
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+        <nav aria-label="Footer">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+            {solutionsColumns.map((column) => (
+              <LinkColumn
+                key={column.heading}
+                heading={column.heading}
+                links={column.links}
               />
-            </Link>
-            <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">
-              KPKT compliance services and fintech software development for licensed money lenders in Malaysia.
-            </p>
-            <a
-              href={`mailto:${orgEmail}`}
-              className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary group"
-            >
-              <Mail className="h-4 w-4 transition-transform group-hover:scale-110" />
-              <span className="text-[15px]">{orgEmail}</span>
-            </a>
-            <a
-              href={orgLinkedInUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Truestack Technologies on LinkedIn"
-              className="mt-3 inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/60 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
-            >
-              <Linkedin className="h-4 w-4 shrink-0" aria-hidden />
-              <span className="text-[15px] font-medium">LinkedIn</span>
-            </a>
-            <Button asChild size="lg" className="mt-5 w-full gap-2 sm:w-auto">
-              <Link href="/contact">
-                <MessageSquare className="h-4 w-4" />
-                Book a Free Consultation
-              </Link>
-            </Button>
+            ))}
+            <LinkColumn heading="Company" links={footerLinks.company} />
+            <LinkColumn heading="Legal" links={footerLinks.legal} />
           </div>
+        </nav>
 
-          {solutionsColumns.map((column) => (
-            <LinkColumn
-              key={column.heading}
-              heading={column.heading}
-              links={column.links}
-            />
-          ))}
+        <div className="mt-12 border-t pt-10">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+            <div className="max-w-md">
+              <Link href="/" className="inline-flex items-center">
+                <Image
+                  src="/truestack-logo-transparent.png"
+                  alt={siteName}
+                  width={140}
+                  height={32}
+                  className="h-8 w-auto"
+                  style={{ width: "auto" }}
+                />
+              </Link>
+              <p className="mt-4 type-ui leading-relaxed text-muted-foreground">
+                KPKT compliance services and fintech software development for
+                licensed money lenders in Malaysia.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <a href={`mailto:${orgEmail}`} className={contactClassName}>
+                  <Mail className="h-4 w-4" aria-hidden />
+                  <span>{orgEmail}</span>
+                </a>
+                <a
+                  href={orgLinkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={contactClassName}
+                >
+                  <Linkedin className="h-4 w-4" aria-hidden />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+              <Button asChild size="lg" className="mt-6 gap-2">
+                <Link href="/contact">
+                  <MessageSquare className="h-4 w-4" />
+                  Book a Free Consultation
+                </Link>
+              </Button>
+            </div>
 
-          <LinkColumn heading="Company" links={footerLinks.company} />
-          <LinkColumn heading="Legal" links={footerLinks.legal} />
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 border-t pt-8">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            {/* Company Registration & Address */}
-            <div className="space-y-2">
-              <p className="text-[15px] font-medium text-foreground/80">
+            <div className="space-y-2 lg:pt-1">
+              <p className="type-ui font-medium text-foreground">
                 {legalName.toUpperCase()}
               </p>
-              <p className="text-sm text-muted-foreground/70">
+              <p className="text-sm text-muted-foreground">
                 Registration No. {orgRegistrationNumber}
               </p>
-              <address className="text-sm not-italic text-muted-foreground/70 leading-relaxed">
+              <address className="text-sm not-italic leading-relaxed text-muted-foreground">
                 {orgAddressLines[0]}
                 <br />
                 {orgAddressLines[1]}
@@ -172,43 +173,22 @@ export function Footer() {
                 {orgAddressLines[2]}
               </address>
             </div>
-
-            {/* Links */}
-            <div className="flex items-center gap-6">
-              <Link
-                href="/cybersecurity"
-                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-              >
-                Security
-              </Link>
-              <span className="text-muted-foreground/30">·</span>
-              <Link
-                href="/pdpa"
-                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-              >
-                PDPA
-              </Link>
-              <span className="text-muted-foreground/30">·</span>
-              <Link
-                href="/privacy"
-                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-              >
-                Privacy
-              </Link>
-              <span className="text-muted-foreground/30">·</span>
-              <Link
-                href="/terms"
-                className="text-[15px] text-muted-foreground transition-colors hover:text-primary"
-              >
-                Terms
-              </Link>
-            </div>
           </div>
 
-          {/* Copyright */}
-          <p className="mt-6 text-center text-sm text-muted-foreground/60 sm:text-left">
-            © {new Date().getFullYear()} {siteName}. All rights reserved.
-          </p>
+          <div className="mt-10 flex flex-col gap-5 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-muted-foreground/70">
+              © {new Date().getFullYear()} {siteName}. All rights reserved.
+            </p>
+            <a href="https://aws.amazon.com/what-is-cloud-computing">
+              {/* Official AWS embed — do not optimize or restyle the mark. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://d0.awsstatic.com/logos/powered-by-aws.png"
+                alt="Powered by AWS Cloud Computing"
+                className="h-9 w-auto"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

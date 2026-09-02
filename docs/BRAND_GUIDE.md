@@ -60,7 +60,8 @@ The TrueKredit page (`app/truekredit/page.tsx`) is the canonical tone reference.
    then plain. Product names are always CamelCase, never spaced.
 10. **CTAs:** primary is always **"Book a Free Consultation"** → `/contact?subject=<Product>`.
     Secondary CTAs are specific and low-pressure: "Standard vs Pro", "See how it works".
-    Never "Learn More" or "Get Started" alone.
+    Maximum two actions per CTA band (primary + optional secondary). Never a third
+    product-link row. Never "Learn More" or "Get Started" alone.
 
 ---
 
@@ -198,6 +199,7 @@ Every marketing section follows this skeleton:
 - Icon chips: `flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10` +
   `h-4 w-4 text-primary` lucide icon.
 - Every page ends with `<ConsultationCta accent="…">` — never a bespoke CTA band.
+  Two actions max: primary + optional secondary.
 - Reuse before building: `SectionBadge`, `SectionHeader`, `ConsultationCta`, `CtaLink`,
   `FeatureCarousel`, `CaseStudyCard`, shadcn `ui/*`. New shared pattern → `components/shared/`.
 
@@ -278,8 +280,8 @@ Any new page or meaningful copy change must complete this checklist:
 7. **Semantic HTML** — one `<h1>`, ordered heading levels, real `<section>`s,
    descriptive link text (never "click here"), `alt` on every content image.
 8. **Internal links** — every product page cross-links its siblings
-   (TrueKredit ↔ TrueSyariah ↔ TrueP2P ↔ digital-licence) in body copy or the CTA band's
-   `extraLinks`.
+   (TrueKredit ↔ TrueSyariah ↔ TrueP2P ↔ digital-licence) in body copy. CTA bands stay
+   at two actions max (primary + optional secondary) — do not add extra product links.
 9. **Keywords in copy, not stuffed** — Malaysian long-tails ("KPKT digital licence",
    "licensed money lender software Malaysia") belong in h1/h2/lead naturally.
 10. **Redirects** — if a URL moves, add a 301 in `next.config.ts` and update sitemap +

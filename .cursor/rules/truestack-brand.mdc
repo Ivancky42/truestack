@@ -17,7 +17,8 @@ Hard rules (details in the guide):
   managers), never developers. Benefit-first headlines ending with a period, second
   person ("your loan book"), zero dev jargon (no API/SDK/database talk on marketing
   pages), no hype words (seamless, cutting-edge, world-class…). Primary CTA is always
-  "Book a Free Consultation". Malaysian/British spelling in copy ("licence"); URLs keep
+  "Book a Free Consultation". Maximum two actions per CTA band (primary + optional
+  secondary). Malaysian/British spelling in copy ("licence"); URLs keep
   existing American slugs.
 - **Colors**: CSS tokens only (`bg-background`, `text-muted-foreground`, `primary`…)
   plus the page's sanctioned accent: blue = Truestack/TrueKredit, violet-600/700 =

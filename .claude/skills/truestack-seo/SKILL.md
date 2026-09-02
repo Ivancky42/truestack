@@ -21,7 +21,8 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
    (TrueKredit™, KPKT, Lampiran A/B1…). This file is what AI assistants quote.
 6. FAQ answers are self-contained 2–4 sentence facts an AI can lift verbatim.
 7. One `<h1>`, ordered headings, descriptive link text, `alt` on content images.
-8. Cross-links to sibling products/services in body or `ConsultationCta` `extraLinks`.
+8. Cross-links to sibling products/services in body copy. `ConsultationCta` stays at
+   two actions max (primary + optional secondary) — do not add extra product links.
 9. Moved URL → 301 redirect in `next.config.ts` + sitemap + llms.txt in the same commit.
 10. Malaysian long-tail keywords placed naturally in h1/h2/lead (e.g. "KPKT digital
     licence", "licensed money lender software Malaysia") — never stuffed.

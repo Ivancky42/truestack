@@ -14,18 +14,6 @@ export function CareersCta() {
 				href: "/about",
 				label: "Read about the company",
 			}}
-			extraLinks={[
-				{ href: "/truekredit", label: "TrueKredit™" },
-				{ href: "/truesyariah", label: "TrueSyariah™" },
-				{
-					href: "/services/p2p-software-development",
-					label: "TrueP2P™",
-				},
-				{
-					href: "/services/digital-license",
-					label: "Digital KPKT licence",
-				},
-			]}
 		/>
 	);
 }

@@ -257,11 +257,7 @@ export default function CybersecurityPolicyPage() {
       <ConsultationCta
         heading="Questions about how we protect your data?"
         body="Tell us about your KPKT licence, lending platform, or security review. We'll walk through how Truestack hosts and isolates your systems — free, no obligation."
-        extraLinks={[
-          { href: "/pdpa", label: "PDPA Notice" },
-          { href: "/privacy", label: "Privacy Policy" },
-          { href: "/trueidentity", label: "TrueIdentity™" },
-        ]}
+        secondary={{ href: "/pdpa", label: "PDPA Notice" }}
       />
     </>
   );

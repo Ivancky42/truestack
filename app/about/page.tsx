@@ -69,18 +69,6 @@ export default function AboutPage() {
 					href: "/work",
 					label: "See our work",
 				}}
-				extraLinks={[
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{ href: "/truesyariah", label: "TrueSyariah™" },
-					{
-						href: "/services/p2p-software-development",
-						label: "TrueP2P™",
-					},
-					{
-						href: "/services/digital-license",
-						label: "Digital KPKT licence",
-					},
-				]}
 			/>
 		</>
 	);

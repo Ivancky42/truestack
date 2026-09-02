@@ -342,19 +342,6 @@ export function InsightsPageContent({
 					href: "/services/digital-license",
 					label: "KPKT digital licence",
 				}}
-				extraLinks={[
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{ href: "/truesyariah", label: "TrueSyariah™" },
-					{
-						href: "/services/p2p-software-development",
-						label: "TrueP2P™",
-					},
-					{ href: "/trueidentity", label: "TrueIdentity™" },
-					{
-						href: "/services/software-development",
-						label: "Custom software",
-					},
-				]}
 			/>
 		</>
 	);

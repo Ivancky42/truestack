@@ -23,7 +23,8 @@ the guide, the guide wins.
    `components/shared/`.
 3. **Copy is for decision makers, not developers.** Concise, friendly, benefit-first,
    second person, zero dev jargon, no hype words. Primary CTA is always
-   "Book a Free Consultation".
+   "Book a Free Consultation". Maximum two actions per CTA band (primary +
+   optional secondary).
 4. **Colors:** tokens only, plus the page's sanctioned product accent
    (blue = Truestack/TrueKredit, violet = Pro, emerald = TrueSyariah, kpkt token = KPKT
    services). Never hardcode hex. Dark sections are slate-950 and must set

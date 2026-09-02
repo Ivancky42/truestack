@@ -523,14 +523,6 @@ export function SoftwareDevelopmentPageContent() {
 					href: "/work",
 					label: "See our work",
 				}}
-				extraLinks={[
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{ href: "/truesyariah", label: "TrueSyariah™" },
-					{
-						href: "/services/digital-license",
-						label: "Digital KPKT Licence",
-					},
-				]}
 			/>
 		</>
 	);

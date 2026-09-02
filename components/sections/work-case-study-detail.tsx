@@ -454,18 +454,6 @@ export function WorkCaseStudyDetailContent({
 					href: study.productPage.href,
 					label: study.productPage.label,
 				}}
-				extraLinks={[
-					{ href: "/work", label: "Browse more work" },
-					{ href: "/truekredit", label: "TrueKredit™" },
-					{
-						href: "/services/p2p-software-development",
-						label: "TrueP2P™",
-					},
-					{
-						href: "/services/software-development",
-						label: "Custom software",
-					},
-				]}
 			/>
 		</>
 	);

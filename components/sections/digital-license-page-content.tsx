@@ -588,16 +588,6 @@ export function DigitalLicensePageContent() {
 					href: "/truekredit",
 					label: "Explore TrueKredit™",
 				}}
-				extraLinks={[
-					{
-						href: "/truekredit#compare",
-						label: "Compare Standard vs Pro",
-					},
-					{
-						href: "/truekredit#zero-to-license",
-						label: "See the Pro journey on TrueKredit",
-					},
-				]}
 			/>
 		</>
 	);

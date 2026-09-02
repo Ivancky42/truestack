@@ -1109,10 +1109,6 @@ export default function P2PSoftwareDevelopmentPage() {
 					label: "Book a Free Consultation",
 				}}
 				secondary={{ href: "/work", label: "See our work" }}
-				extraLinks={[
-					{ href: "/truekredit", label: "Compare with TrueKredit" },
-					{ href: "/truesyariah", label: "Compare with TrueSyariah" },
-				]}
 			/>
 		</div>
 	);

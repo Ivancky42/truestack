@@ -146,8 +146,8 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 				description: "SSM registry search, profiles and scanned documents.",
 			},
 			{
-				title: "TruePay™",
-				href: "/contact?subject=TruePay",
+				title: "Payment gateway",
+				href: "/contact?subject=Payments",
 				description: "FPX, DuitNow, cards and reconciliation in one place.",
 			},
 		],

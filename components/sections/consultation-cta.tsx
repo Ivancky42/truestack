@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 
@@ -18,8 +18,6 @@ interface ConsultationCtaProps {
   body?: string;
   primary?: CtaAction;
   secondary?: CtaAction;
-  /** Smaller, lower-emphasis links (comparisons, demos, etc.). */
-  extraLinks?: CtaAction[];
   accent?: CtaAccent;
   className?: string;
 }
@@ -43,7 +41,6 @@ export function ConsultationCta({
   body = "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation.",
   primary = DEFAULT_PRIMARY,
   secondary,
-  extraLinks,
   accent = "brand",
   className,
 }: ConsultationCtaProps) {
@@ -136,27 +133,6 @@ export function ConsultationCta({
                 </Button>
               )}
             </motion.div>
-
-            {extraLinks && extraLinks.length > 0 && (
-              <motion.div
-                className="mt-5 flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                {extraLinks.map((link) => (
-                  <CtaLink
-                    key={`${link.href}-${link.label}`}
-                    href={link.href}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary-foreground/80 underline-offset-4 transition-colors hover:text-primary-foreground hover:underline"
-                  >
-                    {link.label}
-                    <ChevronRight className="h-3.5 w-3.5" />
-                  </CtaLink>
-                ))}
-              </motion.div>
-            )}
           </div>
         </motion.div>
       </div>

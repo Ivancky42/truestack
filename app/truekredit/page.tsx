@@ -768,17 +768,6 @@ export default function TrueKreditPage() {
 					href: "#compare",
 					label: "Compare Standard vs Pro",
 				}}
-				extraLinks={[
-					{
-						href: "/services/digital-license",
-						label: "Need a KPKT licence?",
-					},
-					{ href: "/truesyariah", label: "Compare with TrueSyariah" },
-					{
-						href: "/services/p2p-software-development",
-						label: "Compare with TrueP2P",
-					},
-				]}
 			/>
 		</>
 	);
