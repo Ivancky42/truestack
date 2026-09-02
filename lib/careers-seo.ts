@@ -12,7 +12,7 @@ export const CAREERS_JOBS_DATE_POSTED = "2026-05-01";
 export const CAREERS_METADATA = {
   title: "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
   description:
-    "Join Truestack in Kuala Lumpur — open roles in B2B sales, ops, client success, and engineering. Hybrid software roles. Fresh graduates welcome.",
+    "Open roles at Truestack in Kuala Lumpur — full-stack engineering, B2B sales, client success and admin. Hybrid software roles. Fresh graduates welcome.",
   keywords: [
     "Truestack careers",
     "Truestack jobs",
@@ -32,7 +32,7 @@ export const CAREERS_METADATA = {
   ],
   openGraphTitle: "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
   openGraphDescription:
-    "Build fintech and digital products with Truestack in Kuala Lumpur. View open roles in sales, operations, client success, and engineering.",
+    "Open roles at Truestack in Kuala Lumpur across engineering, sales, client success and operations. Engineering is hybrid. Fresh graduates welcome.",
 } as const;
 
 function employmentType(type: string): string {

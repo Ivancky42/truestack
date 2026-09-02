@@ -119,3 +119,12 @@ export const defaultOgImage = {
 
 /** Twitter card type for the default 1200×630 OG image. */
 export const defaultTwitterCard = "summary_large_image" as const;
+
+/**
+ * Safari / Chrome toolbar tint (`theme-color`).
+ * Matches `--primary-start` in `app/globals.css` (#3B82F6).
+ */
+export const brandThemeColor = "#3B82F6";
+
+/** Dark-section chrome — Tailwind `slate-950`, used on work / trust bands. */
+export const darkThemeColor = "#020617";

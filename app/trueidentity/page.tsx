@@ -171,7 +171,7 @@ export default function TrueIdentityPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="hero-under-nav relative overflow-hidden">
         <GridPattern />
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">

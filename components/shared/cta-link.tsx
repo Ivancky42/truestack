@@ -17,6 +17,7 @@ interface CtaLinkProps {
 export function CtaLink({ href, children, className }: CtaLinkProps) {
   const isHashLink = href.startsWith("#");
   const isExternal = /^https?:\/\//.test(href);
+  const isMailOrTel = href.startsWith("mailto:") || href.startsWith("tel:");
 
   if (isHashLink) {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -29,6 +30,14 @@ export function CtaLink({ href, children, className }: CtaLinkProps) {
 
     return (
       <a href={href} onClick={handleClick} className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  if (isMailOrTel) {
+    return (
+      <a href={href} className={className}>
         {children}
       </a>
     );

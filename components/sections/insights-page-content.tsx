@@ -311,7 +311,7 @@ export function InsightsPageContent({
 	return (
 		<>
 			{/* Masthead + featured story share one section so the story sits high on the page. */}
-			<section className="relative overflow-hidden bg-background pb-14 pt-10 md:pb-20 md:pt-14">
+			<section className="relative -mt-18 overflow-hidden bg-background pb-14 pt-[calc(2.5rem+4.5rem)] md:pb-20 md:pt-[calc(3.5rem+4.5rem)]">
 				<div
 					className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-linear-to-b from-primary/5 via-transparent to-transparent"
 					aria-hidden

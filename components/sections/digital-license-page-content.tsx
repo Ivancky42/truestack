@@ -21,6 +21,7 @@ import { SuccessStoriesProof } from "@/components/sections/success-stories-proof
 import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
+import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
 
 const STORY_TODAY = [
 	{
@@ -162,6 +163,15 @@ export function DigitalLicensePageContent() {
 	return (
 		<>
 			<DigitalLicenseHero />
+			<CrossLinkStrip
+				id="looking-for-the-platform"
+				ariaLabel="Looking for the platform"
+				lead="Looking for the platform?"
+				body="TrueKredit Pro is the nationwide system this licence runs on — branded web, apps and signing."
+				href="/truekredit"
+				cta="See TrueKredit Pro"
+				accent="violet"
+			/>
 			<DigitalLicenseQualify />
 
 			<section id="story" className="border-t bg-background py-16 md:py-20">

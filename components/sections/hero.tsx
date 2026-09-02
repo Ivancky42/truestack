@@ -21,6 +21,8 @@ interface HeroProps {
   variant?: "primary" | "kpkt";
   compact?: boolean;
   showBackground?: boolean;
+  /** Pull the hero under the sticky header. Disable when a parent already bleeds. */
+  underNav?: boolean;
 }
 
 export function GridPattern({ variant = "primary" }: { variant?: "primary" | "kpkt" }) {
@@ -162,15 +164,19 @@ export function Hero({
   variant = "primary",
   compact = false,
   showBackground = true,
+  underNav = true,
 }: HeroProps) {
   const buttonClass = variant === "kpkt" ? "bg-kpkt hover:bg-kpkt/90" : "";
   const sectionPadding = compact
     ? "pt-20 pb-8 md:pt-28 md:pb-10 lg:pt-32 lg:pb-12"
     : "py-20 md:py-28 lg:py-32";
+  const sectionClass = underNav
+    ? "hero-under-nav relative overflow-hidden"
+    : "relative overflow-hidden";
   
   if (showCodeCard) {
     return (
-      <section className="relative min-h-[600px] overflow-hidden">
+      <section className={`${sectionClass} min-h-[600px]`}>
         {showBackground && <GridPattern variant={variant} />}
 
         <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>
@@ -238,7 +244,7 @@ export function Hero({
 
   // Default centered hero (for other pages)
   return (
-    <section className="relative overflow-hidden">
+    <section className={sectionClass}>
       {showBackground && <GridPattern variant={variant} />}
 
       <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>

@@ -689,7 +689,7 @@ function HeroSection() {
 	return (
 		<section
 			id="hero"
-			className="relative overflow-hidden border-b text-emerald-950/90"
+			className="hero-under-nav relative overflow-hidden border-b text-emerald-950/90"
 		>
 			<GirihPattern />
 			<div className="mx-auto max-w-6xl px-6 py-20 md:py-24">

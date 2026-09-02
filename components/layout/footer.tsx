@@ -16,7 +16,7 @@ const solutionsColumns = [
   {
     heading: "Services",
     links: [
-      { href: "/services/digital-license", label: "KPKT Digital License" },
+      { href: "/services/digital-license", label: "KPKT Digital Licence" },
       { href: "/services/account-management", label: "KPKT Account Management" },
       { href: "/services/software-development", label: "Custom Software Development" },
     ],

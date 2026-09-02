@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Rethink_Sans, Inter, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/organization-schema";
 import { WebSiteSchema } from "@/components/seo/website-schema";
 import {
+  brandThemeColor,
   defaultOgImage,
   defaultTwitterCard,
   siteName,
@@ -30,6 +31,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: brandThemeColor,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -218,6 +218,12 @@
   line-height: 1.2;
 }
 
+/* Pull a page hero up under the sticky glass header (h-18). */
+@utility hero-under-nav {
+  margin-top: -4.5rem;
+  padding-top: 4.5rem;
+}
+
 /* One loop = 1/4 of track width (four repeated logo sets). */
 @keyframes logo-marquee {
   to {

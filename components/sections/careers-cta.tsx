@@ -1,13 +1,31 @@
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { APPLY_EMAIL, applyMailto, howToApply } from "@/lib/careers-data";
 
-export function CareersCta({ howToApply }: { howToApply: string }) {
-  return (
-    <ConsultationCta
-      eyebrow="HQ in Kuala Lumpur"
-      heading="Ready to join us?"
-      body={howToApply}
-      primary={{ href: "/contact", label: "Apply Now" }}
-      secondary={{ href: "#open-roles", label: "Browse Roles" }}
-    />
-  );
+export function CareersCta() {
+	return (
+		<ConsultationCta
+			heading="Send us your CV."
+			body={howToApply}
+			primary={{
+				href: applyMailto(),
+				label: APPLY_EMAIL,
+			}}
+			secondary={{
+				href: "/about",
+				label: "Read about the company",
+			}}
+			extraLinks={[
+				{ href: "/truekredit", label: "TrueKredit™" },
+				{ href: "/truesyariah", label: "TrueSyariah™" },
+				{
+					href: "/services/p2p-software-development",
+					label: "TrueP2P™",
+				},
+				{
+					href: "/services/digital-license",
+					label: "Digital KPKT licence",
+				},
+			]}
+		/>
+	);
 }

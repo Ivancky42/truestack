@@ -39,7 +39,7 @@ function GridPattern() {
 
 export function TrueKreditHero() {
 	return (
-		<section id="hero" className="relative overflow-hidden">
+		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
 			<div className="relative mx-auto max-w-6xl px-6 pt-16 text-center md:pt-20">
 				<motion.div

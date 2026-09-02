@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="relative isolate overflow-hidden">
+    <div className="hero-under-nav relative isolate overflow-hidden">
       <ContactPageBackground />
       <ContactSchema />
       <Hero
@@ -47,6 +47,7 @@ export default function ContactPage() {
         subtitle="Tell us about your project. We'll map out your software development build, compliance needs, or KPKT licensing—free, no obligation."
         compact
         showBackground={false}
+        underNav={false}
       />
 
       <section className="relative pb-16">

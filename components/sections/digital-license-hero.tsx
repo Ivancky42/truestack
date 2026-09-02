@@ -272,7 +272,7 @@ export function DigitalLicenseHero() {
 	const reduceMotion = useReducedMotion();
 
 	return (
-		<section className="relative overflow-hidden">
+		<section className="hero-under-nav relative overflow-hidden">
 			<div className="absolute inset-0 -z-10" aria-hidden>
 				<div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent" />
 				<svg

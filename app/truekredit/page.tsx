@@ -18,6 +18,7 @@ import {
 	MobileAppVisual,
 } from "@/components/sections/origination-channel-visuals";
 import { TrueKreditHero } from "@/components/sections/truekredit-hero";
+import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
 import { TrueKreditJourney } from "@/components/sections/truekredit-journey";
 import { TrueKreditChecks } from "@/components/sections/truekredit-checks";
 import { TrueKreditFaq } from "@/components/sections/truekredit-faq";
@@ -147,6 +148,16 @@ export default function TrueKreditPage() {
 	return (
 		<>
 			<TrueKreditHero />
+
+			<CrossLinkStrip
+				id="looking-to-get-licensed"
+				ariaLabel="Looking to get licensed"
+				lead="Looking to get licensed?"
+				body="We run the KPKT digital licence path — then your book lives on TrueKredit Pro."
+				href="/services/digital-license"
+				cta="See the licence path"
+				accent="kpkt"
+			/>
 
 			<section
 				id="story"

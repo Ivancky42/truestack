@@ -81,7 +81,7 @@ function CountUp({
 
 export function AboutHero() {
 	return (
-		<section className="relative overflow-hidden">
+		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
 			<div className="relative mx-auto max-w-6xl px-6 pt-14 md:pt-16 lg:pt-20">
 				<motion.div

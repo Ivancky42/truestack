@@ -249,7 +249,7 @@ export function HomepageHero() {
 	const reduceMotion = useReducedMotion();
 
 	return (
-		<section className="relative overflow-hidden">
+		<section className="hero-under-nav relative overflow-hidden">
 			<div className="absolute inset-0 -z-10" aria-hidden>
 				<div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/4 to-transparent" />
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_78%_36%,var(--primary)_0%,transparent_70%)] opacity-[0.12]" />

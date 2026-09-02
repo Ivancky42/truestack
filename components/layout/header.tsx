@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, type ComponentProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,39 +20,28 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import { siteName } from "@/lib/seo-defaults";
+import { brandThemeColor, darkThemeColor, siteName } from "@/lib/seo-defaults";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import {
 	FileCheck,
-	Code2,
-	ClipboardCheck,
 	Menu,
 	ChevronDown,
-	Fingerprint,
 	CreditCard,
-	Network,
-	TrendingUp,
-	Building2,
-	Banknote,
-	Gauge,
-	Moon,
-	Sparkles,
-	Scale,
+	ArrowRight,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-type ProductAccent = "primary" | "violet" | "emerald";
+type ProductAccent = "primary" | "violet" | "emerald" | "kpkt";
 
 type SolutionMenuItem = {
 	title: string;
-	href?: string;
+	href: string;
 	description: string;
-	icon: LucideIcon;
+	/** Left icon — used on featured cards only. */
+	icon?: LucideIcon;
 	badge?: string;
-	badgeIcon?: LucideIcon;
-	comingSoon?: boolean;
-	/** Brand accent for the icon — matches each product's own page. Defaults to primary. */
+	/** Brand accent — featured icon colour, or catalog active-state highlight. */
 	accent?: ProductAccent;
 };
 
@@ -78,35 +67,48 @@ const accentClasses: Record<
 		activeBg: "bg-emerald-500/10",
 		activeText: "text-emerald-700",
 	},
+	kpkt: {
+		tile: "bg-kpkt/10",
+		icon: "text-kpkt",
+		activeBg: "bg-kpkt/10",
+		activeText: "text-kpkt",
+	},
 };
 
-/** Desktop Solutions dropdown + mobile accordion (three columns: Services, Platforms, APIs). */
+/** Flagship destinations — featured in the Solutions menu, not repeated in the columns. */
+const featuredSolutions: SolutionMenuItem[] = [
+	{
+		title: "TrueKredit™",
+		href: "/truekredit",
+		description:
+			"The loan book in one system for licensed money lenders.",
+		icon: CreditCard,
+	},
+	{
+		title: "KPKT Digital Licence",
+		href: "/services/digital-license",
+		description: "Go nationwide — we run the licence path end to end.",
+		icon: FileCheck,
+		accent: "kpkt",
+	},
+];
+
+/** Remaining catalog after the featured pair (Services, Platforms, APIs). */
 const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 	{
 		heading: "Services",
 		items: [
 			{
-				title: "KPKT Digital License",
-				href: "/services/digital-license",
-				description:
-					"Transform to a fully digital KPKT-licensed platform in 3 months.",
-				icon: FileCheck,
-				badge: "Popular",
-				badgeIcon: TrendingUp,
-			},
-			{
 				title: "KPKT Account Management",
 				href: "/services/account-management",
 				description:
-					"Compliance handling, license renewals, and regulatory submissions.",
-				icon: ClipboardCheck,
+					"Renewals, permits and submissions — handled for you.",
 			},
 			{
 				title: "Custom Software Development",
 				href: "/services/software-development",
 				description:
-					"Digital lending platforms, payment systems, and bespoke software built to spec.",
-				icon: Code2,
+					"Lending platforms and software built to your process.",
 			},
 		],
 	},
@@ -114,31 +116,19 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 		heading: "Platforms",
 		items: [
 			{
-				title: "TrueKredit™",
-				href: "/truekredit",
+				title: "TrueSyariah™",
+				href: "/truesyariah",
 				description:
-					"KPKT Loan Management System for licensed money lenders.",
-				icon: CreditCard,
-				badge: "Popular",
-				badgeIcon: TrendingUp,
+					"Shariah digital lending — Tawarruq, Ta'widh and Gharamah.",
+				badge: "New",
+				accent: "emerald",
 			},
 			{
 				title: "TrueP2P™",
 				href: "/services/p2p-software-development",
 				description:
-					"SC-aligned peer-to-peer financing platforms, built end-to-end for Malaysia.",
-				icon: Network,
+					"SC-aligned peer-to-peer platforms, built for Malaysia.",
 				accent: "violet",
-			},
-			{
-				title: "TrueSyariah™",
-				href: "/truesyariah",
-				description:
-					"Shariah digital lending platform — Tawarruq commodity financing, Ta'widh & Gharamah ledgers.",
-				icon: Scale,
-				badge: "New",
-				badgeIcon: Sparkles,
-				accent: "emerald",
 			},
 		],
 	},
@@ -148,44 +138,17 @@ const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
 			{
 				title: "TrueIdentity™",
 				href: "/trueidentity",
-				description:
-					"e-KYC verification for Malaysian fintechs. Fast, secure, and compliant.",
-				icon: Fingerprint,
+				description: "e-KYC for Malaysian fintechs — MyKad, selfie, match.",
 			},
 			{
 				title: "TrueSSM™",
 				href: "/truessm",
-				description:
-					"Programmatic SSM registry search, profiles, and scanned documents.",
-				icon: Building2,
+				description: "SSM registry search, profiles and scanned documents.",
 			},
 			{
 				title: "TruePay™",
 				href: "/contact?subject=TruePay",
-				description:
-					"Unified payments API — FPX, DuitNow, cards, recurring billing, and reconciliation.",
-				icon: Banknote,
-			},
-			{
-				title: "TrueScore™",
-				description:
-					"CTOS-backed credit reports — CCRIS, scores, litigation, and trade reference checks.",
-				icon: Gauge,
-				comingSoon: true,
-			},
-			{
-				title: "TrueCommodity™",
-				description:
-					"Shariah trading infrastructure — Tawarruq commodity trading and committee-ready ledgers.",
-				icon: Moon,
-				comingSoon: true,
-			},
-			{
-				title: "TrueSight™",
-				description:
-					"AI-powered borrower risk scoring and intelligence — model-driven signals for creditworthiness beyond your own book.",
-				icon: Sparkles,
-				comingSoon: true,
+				description: "FPX, DuitNow, cards and reconciliation in one place.",
 			},
 		],
 	},
@@ -199,69 +162,30 @@ const navLinks = [
 ];
 
 const solutionMenuItemClassName =
-	"block w-full rounded-md p-2 transition-colors hover:bg-accent";
+	"block w-full rounded-xl p-3 transition-colors hover:bg-accent";
 
 function SolutionItemBadges({ item }: { item: SolutionMenuItem }) {
-	if (item.comingSoon) {
-		return (
-			<Badge
-				variant="secondary"
-				className="shrink-0 rounded-full border border-amber-200/80 bg-amber-50 px-2 py-0 text-[10px] font-semibold uppercase tracking-wide text-amber-800"
-			>
-				Coming Soon
-			</Badge>
-		);
-	}
 	if (!item.badge) return null;
 	return (
 		<Badge
 			variant="secondary"
-			className="shrink-0 gap-1 bg-emerald-100 px-1.5 py-0 text-[10px] font-medium text-emerald-800"
+			className="shrink-0 bg-emerald-100 px-1.5 py-0 text-[10px] font-medium text-emerald-800"
 		>
-			{item.badgeIcon && <item.badgeIcon className="h-2.5 w-2.5" />}
 			{item.badge}
 		</Badge>
 	);
 }
 
 function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
-	const muted = item.comingSoon;
-	const accent = accentClasses[item.accent ?? "primary"];
-
 	return (
-		<div className="min-w-0 space-y-1">
-			<div className="flex items-center gap-2">
-				<div
-					className={cn(
-						"flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
-						muted ? "bg-muted" : accent.tile,
-					)}
-				>
-					<item.icon
-						className={cn(
-							"h-3.5 w-3.5",
-							muted ? "text-muted-foreground" : accent.icon,
-						)}
-					/>
-				</div>
-				<span
-					className={cn(
-						"min-w-0 flex-1 type-ui font-medium leading-none",
-						muted ? "text-muted-foreground" : "text-foreground",
-					)}
-				>
+		<div className="min-w-0">
+			<div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+				<span className="type-ui font-medium leading-snug text-primary">
 					{item.title}
 				</span>
 				<SolutionItemBadges item={item} />
 			</div>
-			<p
-				className={cn(
-					"text-[14px] leading-snug",
-					muted
-						? "text-muted-foreground/70"
-						: "text-muted-foreground",
-				)}
-			>
+			<p className="mt-1 text-[14px] leading-snug text-muted-foreground">
 				{item.description}
 			</p>
 		</div>
@@ -269,25 +193,104 @@ function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
 }
 
 function DesktopSolutionMenuItem({ item }: { item: SolutionMenuItem }) {
-	if (item.comingSoon || !item.href) {
-		return (
-			<NavigationMenuLink asChild>
-				<div
-					className={cn(solutionMenuItemClassName, "cursor-default")}
-					aria-disabled="true"
-				>
-					<SolutionMenuItemContent item={item} />
-				</div>
-			</NavigationMenuLink>
-		);
-	}
-
 	return (
 		<NavigationMenuLink asChild>
 			<Link href={item.href} className={solutionMenuItemClassName}>
 				<SolutionMenuItemContent item={item} />
 			</Link>
 		</NavigationMenuLink>
+	);
+}
+
+function FeaturedSolutionCard({
+	item,
+	onNavigate,
+	compact = false,
+	className,
+	onClick,
+	...props
+}: {
+	item: SolutionMenuItem;
+	onNavigate?: () => void;
+	compact?: boolean;
+} & Omit<ComponentProps<typeof Link>, "href">) {
+	const accent = accentClasses[item.accent ?? "primary"];
+
+	return (
+		<Link
+			href={item.href}
+			onClick={(event) => {
+				onNavigate?.();
+				onClick?.(event);
+			}}
+			className={cn(
+				className,
+				"group flex flex-row items-start gap-3.5 rounded-2xl border bg-card transition-all",
+				compact ? "p-3.5" : "p-5",
+				item.accent === "kpkt"
+					? "hover:border-kpkt/30 hover:shadow-sm"
+					: "hover:border-primary/25 hover:shadow-sm",
+			)}
+			{...props}
+		>
+			{item.icon && (
+				<div
+					className={cn(
+						"flex shrink-0 items-center justify-center rounded-lg",
+						compact ? "size-9" : "size-10",
+						accent.tile,
+					)}
+				>
+					<item.icon
+						className={cn(compact ? "size-4" : "size-4.5", accent.icon)}
+					/>
+				</div>
+			)}
+			<div className="min-w-0 flex-1">
+				<p
+					className={cn(
+						"font-semibold text-foreground",
+						compact ? "type-ui" : "type-card-title",
+					)}
+				>
+					{item.title}
+				</p>
+				<p
+					className={cn(
+						"text-muted-foreground",
+						compact
+							? "mt-0.5 text-[13px] leading-snug"
+							: "mt-1.5 type-ui leading-snug",
+					)}
+				>
+					{item.description}
+				</p>
+			</div>
+			<ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+		</Link>
+	);
+}
+
+function DesktopFeaturedRow() {
+	return (
+		<div className="border-b px-6 py-5 md:px-8 md:py-6">
+			<p className="mb-3 flex items-center gap-2 type-eyebrow text-foreground">
+				<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+				Start here
+			</p>
+			<ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
+				{featuredSolutions.map((item) => (
+					<li key={item.title}>
+						<NavigationMenuLink
+							asChild
+							className="hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:focus:bg-transparent"
+						>
+							<FeaturedSolutionCard item={item} />
+						</NavigationMenuLink>
+					</li>
+				))}
+			</ul>
+		</div>
 	);
 }
 
@@ -300,21 +303,6 @@ function MobileSolutionMenuItem({
 	pathname: string;
 	onNavigate: () => void;
 }) {
-	if (item.comingSoon || !item.href) {
-		return (
-			<div
-				className="flex items-center gap-2 rounded-md px-3 py-2.5 type-ui"
-				aria-disabled="true"
-			>
-				<item.icon className="h-4 w-4 shrink-0 text-muted-foreground" />
-				<span className="min-w-0 flex-1 font-medium text-muted-foreground">
-					{item.title}
-				</span>
-				<SolutionItemBadges item={item} />
-			</div>
-		);
-	}
-
 	const accent = accentClasses[item.accent ?? "primary"];
 
 	return (
@@ -322,14 +310,13 @@ function MobileSolutionMenuItem({
 			href={item.href}
 			onClick={onNavigate}
 			className={cn(
-				"flex items-center gap-2 rounded-md px-3 py-2.5 type-ui transition-colors hover:bg-accent",
+				"flex items-center gap-2 rounded-md px-1 py-2.5 type-ui transition-colors hover:bg-accent",
 				pathname === item.href
 					? cn(accent.activeBg, accent.activeText)
 					: "text-muted-foreground",
 			)}
 		>
-			<item.icon className={cn("h-4 w-4 shrink-0", accent.icon)} />
-			<span className="flex-1 font-medium text-foreground">
+			<span className="flex-1 font-medium text-primary">
 				{item.title}
 			</span>
 			<SolutionItemBadges item={item} />
@@ -337,12 +324,14 @@ function MobileSolutionMenuItem({
 	);
 }
 
-function useIsDarkSection(pathname: string) {
+function useNavChrome(pathname: string) {
 	const [isDark, setIsDark] = useState(false);
+	const [isAtTop, setIsAtTop] = useState(true);
 
 	useLayoutEffect(() => {
 		const check = () => {
-			// Sample point: center of viewport, just below header (~90px from top)
+			setIsAtTop(window.scrollY < 8);
+			// Sample just below the header so dark heroes still flip the chrome.
 			const el = document.elementFromPoint(window.innerWidth / 2, 90);
 			const inDarkSection = el?.closest('[data-nav-theme="dark"]');
 			setIsDark(!!inDarkSection);
@@ -357,7 +346,17 @@ function useIsDarkSection(pathname: string) {
 		};
 	}, [pathname]);
 
-	return isDark;
+	useLayoutEffect(() => {
+		const meta = document.querySelector('meta[name="theme-color"]');
+		if (meta) {
+			meta.setAttribute(
+				"content",
+				isDark ? darkThemeColor : brandThemeColor,
+			);
+		}
+	}, [isDark]);
+
+	return { isDark, isAtTop };
 }
 
 export function Header() {
@@ -370,7 +369,14 @@ export function Header() {
 		pathname.startsWith("/truessm");
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [solutionsExpanded, setSolutionsExpanded] = useState(false);
-	const isDarkSection = useIsDarkSection(pathname);
+	const [solutionsMenu, setSolutionsMenu] = useState("");
+	const { isDark: isDarkSection, isAtTop } = useNavChrome(pathname);
+
+	useEffect(() => {
+		setSolutionsMenu("");
+		setMobileMenuOpen(false);
+		setSolutionsExpanded(false);
+	}, [pathname]);
 
 	const closeMobileMenu = () => {
 		setMobileMenuOpen(false);
@@ -378,10 +384,12 @@ export function Header() {
 	};
 
 	const headerClasses = cn(
-		"sticky top-0 z-50 w-full border-b overflow-visible transition-colors duration-200",
-		isDarkSection
-			? "bg-slate-950 border-slate-800 backdrop-blur"
-			: "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-border",
+		"sticky top-0 z-50 w-full overflow-visible border-b transition-[background-color,border-color,backdrop-filter] duration-200",
+		isAtTop
+			? "border-transparent bg-transparent"
+			: isDarkSection
+				? "border-slate-800 bg-slate-950/90 backdrop-blur-md"
+				: "border-border bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/60",
 	);
 
 	const navLinkClasses = (active: boolean) =>
@@ -417,9 +425,13 @@ export function Header() {
 
 				{/* Desktop Navigation */}
 				<nav className="hidden items-center gap-7 md:flex overflow-visible">
-					<NavigationMenu className="flex-none overflow-visible">
+					<NavigationMenu
+						value={solutionsMenu}
+						onValueChange={setSolutionsMenu}
+						className="flex-none overflow-visible"
+					>
 						<NavigationMenuList>
-							<NavigationMenuItem>
+							<NavigationMenuItem value="solutions">
 								<NavigationMenuTrigger
 									className={cn(
 										"bg-transparent",
@@ -432,43 +444,46 @@ export function Header() {
 									className={cn(
 										// Radix sizes the viewport from this node’s offsetWidth; without an
 										// explicit width, absolute positioning collapses to ~trigger width.
-										"w-[min(calc(100vw-2rem),72rem)] min-w-[min(calc(100vw-2rem),72rem)] max-w-[calc(100vw-2rem)] p-0",
+										"w-[min(calc(100vw-2rem),80rem)] min-w-[min(calc(100vw-2rem),80rem)] max-w-[calc(100vw-2rem)] p-0",
 									)}
 								>
-									<div className="grid w-full grid-cols-3 gap-x-10 gap-y-2 p-8">
-										{solutionsMenuColumns.map(
-											(column, colIndex) => (
-												<div
-													key={column.heading}
-													className={cn(
-														colIndex > 0 &&
-															"border-l border-border pl-8",
-													)}
-												>
-													<p className="mb-2 flex items-center gap-2 px-2 type-eyebrow text-foreground">
-														<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
-														{column.heading}
-													</p>
-													<ul className="space-y-0.5">
-														{column.items.map(
-															(item) => (
-																<li
-																	key={
-																		item.title
-																	}
-																>
-																	<DesktopSolutionMenuItem
-																		item={
-																			item
-																		}
-																	/>
-																</li>
-															),
+									<div className="w-full">
+										<DesktopFeaturedRow />
+										<div className="grid grid-cols-1 gap-x-8 gap-y-6 px-6 py-5 sm:grid-cols-3 sm:gap-x-10 md:px-8 md:py-6">
+											{solutionsMenuColumns.map(
+												(column, colIndex) => (
+													<div
+														key={column.heading}
+														className={cn(
+															colIndex > 0 &&
+																"sm:border-l sm:border-border sm:pl-8",
 														)}
-													</ul>
-												</div>
-											),
-										)}
+													>
+														<p className="mb-3 flex items-center gap-2 px-3 type-eyebrow text-foreground">
+															<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+															{column.heading}
+														</p>
+														<ul className="space-y-0.5">
+															{column.items.map(
+																(item) => (
+																	<li
+																		key={
+																			item.title
+																		}
+																	>
+																		<DesktopSolutionMenuItem
+																			item={
+																				item
+																			}
+																		/>
+																	</li>
+																),
+															)}
+														</ul>
+													</div>
+												),
+											)}
+										</div>
 									</div>
 								</NavigationMenuContent>
 							</NavigationMenuItem>
@@ -519,9 +534,9 @@ export function Header() {
 					</SheetTrigger>
 					<SheetContent
 						side="right"
-						className="w-full sm:w-[350px] sm:max-w-[350px]"
+						className="!inset-0 !left-0 !right-0 !h-dvh !w-full !max-w-none gap-0 border-0 p-0 sm:!max-w-none"
 					>
-						<SheetHeader>
+						<SheetHeader className="shrink-0 border-b px-6 py-4">
 							<SheetTitle className="text-left">
 								<Image
 									src={
@@ -537,15 +552,14 @@ export function Header() {
 								/>
 							</SheetTitle>
 						</SheetHeader>
-						<nav className="mt-8 flex flex-col gap-2">
-							{/* Solutions Accordion */}
+						<nav className="min-h-0 flex-1 overflow-y-auto px-6 py-6">
 							<div className="space-y-1">
 								<button
 									onClick={() =>
 										setSolutionsExpanded(!solutionsExpanded)
 									}
 									className={cn(
-										"flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-lg font-medium transition-colors hover:bg-accent",
+										"flex w-full items-center justify-between rounded-md px-1 py-2.5 text-left text-lg font-medium transition-colors hover:bg-accent",
 										isSolutionsActive
 											? "text-primary"
 											: "text-foreground",
@@ -560,69 +574,75 @@ export function Header() {
 									/>
 								</button>
 								{solutionsExpanded && (
-									<div className="ml-3 space-y-1 border-l pl-3">
-										{solutionsMenuColumns.map(
-											(column, colIndex) => (
-												<div key={column.heading}>
-													<p
-														className={cn(
-															"px-3 py-1 type-eyebrow text-foreground",
-															colIndex > 0 &&
-																"mt-2",
-														)}
-													>
-														{column.heading}
-													</p>
-													{column.items.map(
-														(item) => (
-															<MobileSolutionMenuItem
-																key={item.title}
+									<div className="space-y-5 pt-2">
+										<div>
+											<p className="px-1 pb-2.5 type-eyebrow text-foreground">
+												Start here
+											</p>
+											<ul className="space-y-2.5">
+												{featuredSolutions.map(
+													(item) => (
+														<li key={item.title}>
+															<FeaturedSolutionCard
 																item={item}
-																pathname={
-																	pathname
-																}
 																onNavigate={
 																	closeMobileMenu
 																}
 															/>
-														),
-													)}
-												</div>
-											),
-										)}
+														</li>
+													),
+												)}
+											</ul>
+										</div>
+										{solutionsMenuColumns.map((column) => (
+											<div key={column.heading}>
+												<p className="px-1 py-1 type-eyebrow text-foreground">
+													{column.heading}
+												</p>
+												{column.items.map((item) => (
+													<MobileSolutionMenuItem
+														key={item.title}
+														item={item}
+														pathname={pathname}
+														onNavigate={
+															closeMobileMenu
+														}
+													/>
+												))}
+											</div>
+										))}
 									</div>
 								)}
 							</div>
 
-							{/* Other Nav Links */}
-							{navLinks.map((link) => (
-								<Link
-									key={link.href}
-									href={link.href}
-									onClick={closeMobileMenu}
-									className={cn(
-										"rounded-md px-3 py-2.5 text-lg font-medium transition-colors hover:bg-accent",
-										pathname === link.href
-											? "text-primary"
-											: "text-foreground",
-									)}
-								>
-									{link.label}
-								</Link>
-							))}
-
-							{/* Consultation Button */}
-							<div className="mt-4 border-t pt-4 px-3">
-								<Button asChild className="w-full" size="lg">
+							<div className="mt-4 space-y-1">
+								{navLinks.map((link) => (
 									<Link
-										href="/contact"
+										key={link.href}
+										href={link.href}
 										onClick={closeMobileMenu}
+										className={cn(
+											"block rounded-md px-1 py-2.5 text-lg font-medium transition-colors hover:bg-accent",
+											pathname === link.href
+												? "text-primary"
+												: "text-foreground",
+										)}
 									>
-										Book a Free Consultation
+										{link.label}
 									</Link>
-								</Button>
+								))}
 							</div>
 						</nav>
+						<div className="shrink-0 border-t px-6 py-4">
+							<Button asChild className="w-full" size="lg">
+								<Link
+									href="/contact"
+									onClick={closeMobileMenu}
+								>
+									Book a Free Consultation
+								</Link>
+							</Button>
+						</div>
 					</SheetContent>
 				</Sheet>
 			</div>

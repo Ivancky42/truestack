@@ -35,7 +35,7 @@ export function LegalHero({
 }: LegalHeroProps) {
   const Icon = HERO_ICONS[currentPath];
   return (
-    <section className="relative overflow-hidden border-b">
+    <section className="hero-under-nav relative overflow-hidden border-b">
       <GridPattern />
       <div className="relative mx-auto max-w-6xl px-6 py-14 md:py-16 lg:py-20">
         <motion.div
