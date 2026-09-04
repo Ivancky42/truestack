@@ -2,10 +2,10 @@
 	"_status": "ai-draft",
 	"P2P": {
 		"meta": {
-			"title": "马来西亚 P2P 融资平台开发",
-			"description": "面向马来西亚的 P2P 融资平台开发。TrueP2P™ 构建符合证券监督委员会（SC）要求的点对点融资软件，传统或教法版本，并提供可选的认可市场运营商（RMO）支持。",
-			"openGraphTitle": "TrueP2P™ | 马来西亚 P2P 融资平台开发",
-			"openGraphDescription": "面向马来西亚、符合 SC 的 P2P 平台工程——投资者与发行人门户、托管账户（escrow）、教法 Gharamah 与 Ta'widh 账本，以及可选 RMO 注册支持。",
+			"title": "马来西亚P2P融资牌照 | Truestack",
+			"description": "马来西亚P2P融资平台与RMO牌照路径。TrueP2P™按证券监督委员会（SC）要求构建点对点软件，传统或教法版本，并提供可选的RMO注册支持。",
+			"openGraphTitle": "马来西亚P2P融资牌照 | Truestack",
+			"openGraphDescription": "马来西亚P2P融资平台与RMO牌照路径。TrueP2P™按证券监督委员会（SC）要求构建点对点软件，传统或教法版本，并提供可选的RMO注册支持。",
 			"ogImageAlt": "TrueP2P 点对点融资平台——投资者门户、平台市场项目挂牌、托管账户（escrow）、电子签名与马来西亚 SC 合规模块"
 		},
 		"schema": {
@@ -70,8 +70,8 @@
 			"badgeRmo": "符合 SC RMO",
 			"badgeShariah": "传统与教法",
 			"badgeExaminer": "审查就绪",
-			"title": "TrueP2P™ — 面向<accent>马来西亚</accent>的点对点平台。",
-			"lede": "传统与符合教法的点对点融资平台。",
+			"title": "马来西亚P2P融资平台，按<accent>SC与RMO</accent>要求构建。",
+			"lede": "传统或教法版本的点对点融资软件，可配合认可市场运营商（RMO）牌照路径。",
 			"body": "投资者与发行人门户、托管账户（escrow）、支付、电子签名，以及 Gharamah/Ta'widh 核算——按马来西亚 SC 打造，并在建设同期提供 RMO 注册支持。",
 			"modulesCta": "查看平台模块",
 			"stats": {
@@ -95,12 +95,12 @@
 		},
 		"diagram": {
 			"eyebrow": "TrueP2P™ 如何运作",
-			"title": "我们为您工程化的内容",
+			"title": "马来西亚P2P融资平台我们工程化的部分",
 			"body": "受监管的点对点平台让投资者直接对接发行人。我们构建中间的每一层——入驻、项目挂牌、托管账户（escrow）、还款与报表——让体验像同一套可信产品。"
 		},
 		"modules": {
 			"badge": "我们构建什么",
-			"title": "受监管 P2P 平台所需的每个模块",
+			"title": "受监管P2P融资平台所需的每个模块",
 			"body": "完整的点对点平台远不止营销网站和数据库。我们交付每一块——并且清楚马来西亚监管机构看重哪些部分。",
 			"items": {
 				"investor": {
@@ -341,15 +341,15 @@
 			}
 		},
 		"faq": {
-			"title": "TrueP2P™ — 常见问题",
+			"title": "马来西亚P2P融资平台常见问题",
 			"subtitle": "马来西亚运营商通常最先问我们的实务问题。",
 			"items": [
 				{
-					"question": "面向马来西亚市场的 P2P 软件开发是什么？",
+					"question": "马来西亚P2P融资平台开发是什么？",
 					"answer": "点对点（P2P）软件开发，是设计并工程化在线平台，让投资者直接对接发行人——通常是中小企业、项目发起方或发票资产发起方——而不经过传统银行。在马来西亚，P2P 融资平台必须由向马来西亚证券监督委员会（SC）注册的认可市场运营商（RMO）运营。Truestack 构建与 SC 的 RMO 框架对齐的可投产 P2P 平台，包括投资者入驻、适当性评估、托管账户（escrow）安排、项目挂牌工作流、支付与审计轨迹。"
 				},
 				{
-					"question": "你们是否构建符合马来西亚 SC 监管的 P2P 融资平台？",
+					"question": "马来西亚P2P融资需要SC的RMO牌照吗？",
 					"answer": "是。我们交付的每一套 P2P 平台，都以马来西亚 SC《认可市场指引》和《资本市场与服务法》（CMSA）为工程依据。我们把您的商业模式映射到相关监管义务，再把控制写入代码：分级投资者资质认定、单投资者与单发行人投资限额、隔离信托账户集成、AML/CFT 筛查、定期报表与披露文件。若您仍在申请认可市场运营商（RMO）注册，咨询团队可在工程同期把文档与里程碑对齐该路径。我们不提供法律意见，但会与您的法律顾问和合规团队协作，使平台从第一天即可接受审查。"
 				},
 				{
@@ -395,6 +395,18 @@
 				{
 					"question": "谁在马来西亚开发 P2P 融资平台？",
 					"answer": "Truestack 开发 TrueP2P™——面向马来西亚的定制点对点融资平台软件，按证券监督委员会（SC）认可市场运营商要求工程化。我们构建传统与符合教法的技术栈（含 Gharamah 与 Ta'widh 核算），并可将工程与您的 RMO 注册路径对齐。请在 truestack.my/contact 预约免费咨询。"
+				},
+				{
+					"question": "P2P系统数据存放在哪里？",
+					"answer": "全部运行于 AWS Malaysia 以满足数据驻留，并具备基于角色的访问控制、完整审计日志与 infrastructure-as-code。"
+				},
+				{
+					"question": "中国公司可以申请马来西亚P2P牌照吗？",
+					"answer": "TODO(ivan): 中国注册公司或中国股东申请马来西亚 SC 认可市场运营商（RMO）/ P2P 牌照的资格与实体要求。"
+				},
+				{
+					"question": "支持人民币投资或跨境资金吗？",
+					"answer": "TODO(ivan): TrueP2P 是否支持人民币或跨境资金，或仅限马来西亚令吉与 FPX/DuitNow 等本地通道。"
 				}
 			]
 		},

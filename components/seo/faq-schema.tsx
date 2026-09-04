@@ -1,3 +1,5 @@
+import { publishedFaqItems } from "@/lib/i18n/faq";
+
 export type FaqSchemaItem = {
 	question: string;
 	answer: string;
@@ -12,10 +14,11 @@ type FaqSchemaProps = {
  * Validate at: https://validator.schema.org/
  */
 export function FaqSchema({ items }: FaqSchemaProps) {
+	const published = publishedFaqItems(items);
 	const schema = {
 		"@context": "https://schema.org",
 		"@type": "FAQPage",
-		mainEntity: items.map((item) => ({
+		mainEntity: published.map((item) => ({
 			"@type": "Question",
 			name: item.question,
 			acceptedAnswer: {

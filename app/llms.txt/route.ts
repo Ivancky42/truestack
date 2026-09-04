@@ -37,7 +37,8 @@ export async function GET() {
 		`- English (default): ${base}/`,
 		`- Bahasa Malaysia: ${base}/ms/`,
 		`- 中文 (Simplified Chinese): ${base}/zh/`,
-		"<!-- zh summary: Phase 2b -->",
+		"Truestack Technologies（品牌 Truestack）是吉隆坡的金融科技与房屋及地方政府部 (KPKT) 服务公司，协助马来西亚持牌放贷公司申请与管理放贷牌照（含线上放贷 / e-Lending），并提供 TrueKredit™ 贷款管理系统、TrueSyariah™ 伊斯兰教法数字放贷平台、TrueP2P™（按马来西亚证券监督委员会 SC / 认可市场运营商 RMO 要求构建）、TrueIdentity™ e-KYC 与 TrueSSM™ 公司查询。咨询免费、无义务。中文站点：https://www.truestack.my/zh/",
+		"",
 		"",
 	].join("\n");
 

@@ -2,13 +2,13 @@
 	"_status": "ai-draft",
 	"DigitalLicense": {
 		"meta": {
-			"title": "马来西亚放贷牌照申请 | Truestack",
-			"description": "KPKT 数字牌照：传统 PPW（e-Lending）或即将推出的伊斯兰数字放贷。含牌照办理、附加许可（kebenaran tambahan）与 TrueKredit™ Pro。",
-			"openGraphTitle": "马来西亚线上放贷牌照申请 | Truestack",
-			"openGraphDescription": "端到端 KPKT 数字牌照——传统 PPW e-Lending，或即将推出的伊斯兰路径。含牌照办理、附加许可（kebenaran tambahan）、TrueKredit™ Pro 或 TrueSyariah™。"
+			"title": "线上借贷牌照 | Truestack",
+			"description": "申请马来西亚线上借贷牌照（KPKT e-Lending）：传统PPW附加许可或即将推出的伊斯兰数字放贷，含TrueKredit™ Pro平台。",
+			"openGraphTitle": "线上借贷牌照 | Truestack",
+			"openGraphDescription": "申请马来西亚线上借贷牌照（KPKT e-Lending）：传统PPW附加许可或即将推出的伊斯兰数字放贷，含TrueKredit™ Pro平台。"
 		},
 		"schema": {
-			"serviceName": "线上放贷牌照 (e-Lending)",
+			"serviceName": "马来西亚线上借贷牌照 (e-Lending)",
 			"alternateName": [
 				"pemberian pinjaman wang dalam talian",
 				"e-Lending",
@@ -35,8 +35,8 @@
 		"hero": {
 			"crumbSolutions": "解决方案",
 			"crumbCurrent": "KPKT 数字牌照",
-			"title": "覆盖全国。我们帮您拿下牌照。",
-			"lede": "马来西亚房屋及地方政府部 (KPKT) 端到端<strong>线上放贷牌照</strong>——pemberian pinjaman wang dalam talian，从启动到您第一笔全国放款，大约三个月。",
+			"title": "申请马来西亚线上借贷牌照，覆盖全国放贷。",
+			"lede": "马来西亚房屋及地方政府部 (KPKT) 端到端<strong>线上借贷牌照</strong>——pemberian pinjaman wang dalam talian，从启动到您第一笔全国放款，大约三个月。",
 			"body": "我们负责牌照路径，在 <truekredit>TrueKredit™ Pro</truekredit> 上搭建您的平台，并陪您走到批准与上线。一支团队，一份合同。若走 <shariah>伊斯兰数字牌照</shariah>？那是另一条路径。",
 			"secondaryCta": "查看资格",
 			"trustChips": [
@@ -66,7 +66,7 @@
 		},
 		"paths": {
 			"eyebrow": "选择您的路径",
-			"title": "两条牌照。请选择与您贷款账簿相符的一条。",
+			"title": "两条KPKT数字放贷路径，请选与账簿相符的一条。",
 			"body": "在传统 PPW 牌照上做数字放贷，是一项批准。伊斯兰数字放贷是另一项——独立的实体、委员会与账簿。请选择您正在走的路径。",
 			"tablistAria": "牌照路径",
 			"upcoming": "即将推出",
@@ -104,7 +104,7 @@
 		},
 		"qualify": {
 			"eyebrow": "您是否符合资格",
-			"title": "KPKT 首先会看的五件事。",
+			"title": "申请线上借贷牌照前，KPKT先看这五件事。",
 			"body": "勾选今天已经属实的项。这仅供参考——我们会在咨询中正式确认您的情况；清单上的缺口通常可以补上，并不是死胡同。",
 			"noLicenceTitle": "还没有牌照？",
 			"noLicenceBody": "全新申请不是唯一路径。我们也可以帮您收购已持有 KPKT 放贷牌照的公司，办理董事、股东与 CoSec 变更，再转为数字牌照。",
@@ -143,7 +143,7 @@
 		},
 		"story": {
 			"eyebrow": "为何数字化",
-			"title": "一家网点是上限。数字牌照才是突破口。",
+			"title": "一家网点是上限。数字放贷牌照才是全国入口。",
 			"body": "传统牌照把您留在本地。线上放贷牌照让您服务全国借款人——前提是牌照路径与平台都按正确顺序妥善办理。",
 			"todayEyebrow": "今天",
 			"todayTitle": "覆盖本地。路径不明。",
@@ -181,7 +181,7 @@
 		},
 		"offer": {
 			"eyebrow": "您买到的是什么",
-			"title": "牌照。平台。上线。",
+			"title": "牌照、平台、上线——KPKT数字放贷全包。",
 			"body": "不是软件交接。而是通往全国数字放贷的全流程服务，一支团队对三部分负责。",
 			"footer": "一支团队。一份合同。您专注放贷——其余交给我们。",
 			"items": {
@@ -201,7 +201,7 @@
 		},
 		"journey": {
 			"eyebrow": "大约三个月",
-			"title": "从启动到全国放贷。",
+			"title": "约三个月：从启动到全国线上放贷。",
 			"body": "一套已验证的步骤，每一步都与您一起做。时间取决于您的准备程度和 KPKT 排期。",
 			"photoAlt": "Truestack 顾问与客户审阅 KPKT 牌照文件",
 			"talkCta": "联系牌照团队",
@@ -231,7 +231,7 @@
 		},
 		"platform": {
 			"eyebrow": "基于 TrueKredit™ Pro 构建",
-			"title": "KPKT 所要求的平台——已经建好。",
+			"title": "KPKT要求的线上借贷平台——已经建好。",
 			"body": "您的数字牌照运行在 TrueKredit™ Pro 上：团队每天使用的同一本贷款账簿，加上全国借款人渠道，以及由您掌控的签名。",
 			"proUnlocks": "Pro 解锁的能力",
 			"alreadyStandard": "已在使用 TrueKredit Standard？升级到 Pro，无需迁移贷款账簿。<compare>查看对比</compare>",
@@ -285,7 +285,7 @@
 		},
 		"proof": {
 			"eyebrow": "精选案例",
-			"title": "我们带上数字牌照的放贷公司。",
+			"title": "我们已带上数字放贷牌照的放贷公司。",
 			"subtitle": "真实的 KPKT 持牌放贷公司已在 TrueKredit™ Pro 上线——由我们的团队完成牌照、搭建与批准。",
 			"viewAll": "全部成功案例"
 		},
@@ -296,11 +296,11 @@
 			"askCta": "提出其他问题",
 			"items": [
 				{
-					"question": "什么是 pemberian pinjaman wang dalam talian（e-Lending）？",
+					"question": "什么是马来西亚线上借贷牌照（e-Lending）？",
 					"answer": "通过线上开展的放贷。借款人在您的网站或移动应用上申请、核验身份、签名并还款，而不必走进网点。KPKT 将其视为一种独立的经营方式，受线上放贷人指南（Online Moneylenders Guidelines）约束，因此需要单独批准，传统牌照不会自动覆盖。"
 				},
 				{
-					"question": "线上放贷牌照需要多久？",
+					"question": "KPKT线上借贷牌照申请需要多长时间？",
 					"answer": "以我们的经验，从启动到全国上线大约三个月：两周准备临时牌照卷宗并出席 KPKT 汇报，六周搭建并配置平台，两周测试与送审准备，两周完成最终检查与批准。实际时间取决于您的准备程度和 KPKT 排期。"
 				},
 				{
@@ -326,6 +326,22 @@
 				{
 					"question": "你们是否也办理伊斯兰数字牌照，还是只做传统 PPW？",
 					"answer": "两者都做。本页的传统路径，是在现有 PPW 牌照上申请 e-Lending 附加许可，账簿放在 TrueKredit™ Pro。伊斯兰数字放贷是即将推出的另一项 KPKT 批准：独立法人、伊斯兰顾问或委员会、已批准的合同，以及能证明 Tawarruq、Ta'widh 与 Gharamah 的平台。那条路径是 TrueSyariah™——见 truestack.my/truesyariah。两张牌照不能放在同一家运营公司。"
+				},
+				{
+					"question": "没有现有PPW牌照，可以先收购已持牌公司吗？",
+					"answer": "可以。新申请并非唯一路径。我们也可以帮您购入一家已持有 KPKT 放贷牌照的现有公司，再处理董事、股东与 CoSec 变更，然后转为数字牌照。"
+				},
+				{
+					"question": "中国公司可以在马来西亚申请放贷牌照吗？",
+					"answer": "TODO(ivan): 中国注册公司或中国股东能否直接申请 KPKT 线上借贷牌照，或必须先设立/收购马来西亚实体。"
+				},
+				{
+					"question": "非马来西亚股东或董事有什么要求？",
+					"answer": "TODO(ivan): 非马来西亚公民/居民担任 KPKT 放贷公司股东或董事的资格、持股比例与董事构成要求。"
+				},
+				{
+					"question": "可以用中文办理牌照申请吗？",
+					"answer": "TODO(ivan): KPKT 数字牌照申请与汇报是否提供普通话/书面中文对接。"
 				}
 			]
 		},

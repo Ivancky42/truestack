@@ -2,10 +2,10 @@
 	"_status": "ai-draft",
 	"TrueKredit": {
 		"meta": {
-			"title": "马来西亚贷款管理系统 | TrueKredit™",
-			"description": "面向KPKT持牌放贷公司的贷款管理系统。借款人、还款计划、Lampiran A/B/B1、Jadual J与K及iDEAL KPKT文件，集于同一平台。",
-			"openGraphTitle": "TrueKredit™ | 马来西亚放贷软件",
-			"openGraphDescription": "马来西亚放贷软件 / 贷款管理系统。iDEAL KPKT（sistem iDEAL）、Lampiran A、B、B1、Jadual J 与 K。",
+			"title": "贷款管理系统｜TrueKredit™",
+			"description": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
+			"openGraphTitle": "贷款管理系统｜TrueKredit™",
+			"openGraphDescription": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
 			"ogImageAlt": "TrueKredit 对齐 KPKT 的贷款管理平台——申请、签署、仪表盘与合规模块"
 		},
 		"schema": {
@@ -42,7 +42,7 @@
 			]
 		},
 		"hero": {
-			"title": "用<accent>一个平台</accent>管理整本贷款账簿。",
+			"title": "马来西亚贷款管理系统，<accent>一本账簿一个平台。</accent>",
 			"lede": "TrueKredit™ 是面向马来西亚房屋及地方政府部 (KPKT) 持牌放贷公司的<strong>贷款管理系统</strong>——借款人、还款计划、还款与 KPKT 文件，全集中在您全团队都信赖的同一套系统中。",
 			"ctaSecondary": "Standard 与 Pro",
 			"tablistAria": "TrueKredit 界面",
@@ -67,7 +67,7 @@
 		},
 		"story": {
 			"eyebrow": "放贷的现实",
-			"title": "放贷事务繁杂。<muted>管住它不该同样麻烦。</muted>",
+			"title": "放贷事务繁杂。<muted>贷款管理系统不该同样麻烦。</muted>",
 			"lede": "每一份借款人档案、每一笔分期、每一次审计要求都堆得很快。记录散落在表格、文件夹和收件箱里，总会有东西漏掉——往往就在审查员面前。",
 			"today": {
 				"eyebrow": "多数团队同时应付的事",
@@ -117,7 +117,7 @@
 		},
 		"journey": {
 			"eyebrow": "端到端",
-			"title": "从首次问询到最终结清，只用一套系统。",
+			"title": "从询贷到结清，一套马来西亚借贷软件。",
 			"lede": "逐步查看团队将使用的界面——整本账簿，一份贷款档案。",
 			"play": "播放",
 			"pause": "暂停",
@@ -322,7 +322,7 @@
 		},
 		"infrastructure": {
 			"eyebrow": "数据始终归您",
-			"title": "您的云。留在马来西亚。绝不混用。",
+			"title": "您的云。数据留在马来西亚。绝不混用。",
 			"lede": "Standard 与 Pro 都运行在您专属的安全云账户上。贷款数据留在马来西亚，绝不与其他放贷机构混存。",
 			"items": {
 				"malaysia": {
@@ -423,11 +423,11 @@
 		"faq": {
 			"eyebrow": "FAQ",
 			"title": "常见问题",
-			"lede": "关于 Standard 与 Pro、KPKT 文件以及贷款数据存放位置的直接解答。",
+			"lede": "关于 Standard 与 Pro、KPKT 文件，以及贷款管理系统数据存放位置。",
 			"askElse": "还有其他问题",
 			"items": [
 				{
-					"question": "什么是 TrueKredit™？",
+					"question": "TrueKredit™是什么贷款管理系统？",
 					"answer": "TrueKredit™ 是面向 KPKT 持牌放贷公司打造的贷款管理系统 / 马来西亚放贷软件。它在您专属的安全云环境中，集中存放借款人档案、贷款产品、申请与审批、放款控制、还款计划、催收，以及配套的 KPKT 文件——Lampiran A、B、B1、Jadual J 与 K，以及 iDEAL（sistem iDEAL）导出。"
 				},
 				{
@@ -451,7 +451,7 @@
 					"answer": "支持。还款计划、Lampiran A、B 与 B1、Jadual J 与 Jadual K、付款收据与违约通知，都从团队使用的同一套贷款记录生成，导出格式面向 KPKT 呈报，包括 sistem iDEAL。无需重新填写表格。"
 				},
 				{
-					"question": "我们的数据存放在哪里？会与其他放贷机构共享吗？",
+					"question": "贷款管理系统的数据存放在哪里？",
 					"answer": "贷款数据存放在您专属的安全云账户中，托管于马来西亚，绝不与另一家放贷机构的账簿混存。每日备份与完整操作记录是两项方案的标配。升级到 Pro 仍使用同一环境。"
 				},
 				{
@@ -465,6 +465,14 @@
 				{
 					"question": "能否按我们既有的放贷方式配置 TrueKredit？",
 					"answer": "能。L2 之前的审批上传、AML 确认、LHDN 印花证明，以及放款上的 maker-checker，均可按办公室既有做法逐项开关。团队保留自己的流程——系统跟随它。"
+				},
+				{
+					"question": "中国公司可以直接使用TrueKredit吗？",
+					"answer": "TrueKredit™ 面向马来西亚房屋及地方政府部 (KPKT) 持牌放贷公司，部署在您自己的马来西亚安全云账户上。若尚未持牌，我们可办理 KPKT 数字牌照路径，或协助收购已持牌公司，再把账簿迁入 TrueKredit。"
+				},
+				{
+					"question": "支持人民币或跨境放款吗？",
+					"answer": "TODO(ivan): TrueKredit 还款与放款是否支持人民币或跨境资金，或仅限马来西亚令吉与 FPX/DuitNow/GKash 等本地通道。"
 				}
 			]
 		},
@@ -475,7 +483,7 @@
 		},
 		"features": {
 			"eyebrow": "端到端",
-			"title": "从首次问询到最终结清，只用一套系统",
+			"title": "从询贷到结清，一套马来西亚借贷软件",
 			"lede": "从第一条线索到最后一笔还款——团队在一处管理账簿。滚动即可走完流程。",
 			"steps": {
 				"leads": {

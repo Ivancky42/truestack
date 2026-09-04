@@ -10,12 +10,13 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CtaLink } from "@/components/shared/cta-link";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 type FaqItem = { question: string; answer: string };
 
 export function TrueKreditFaq() {
 	const t = useTranslations("TrueKredit");
-	const items = t.raw("faq.items") as FaqItem[];
+	const items = publishedFaqItems(t.raw("faq.items") as FaqItem[]);
 	return (
 		<section
 			id="faq"

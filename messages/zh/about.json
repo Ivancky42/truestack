@@ -2,10 +2,10 @@
 	"_status": "ai-draft",
 	"About": {
 		"meta": {
-			"title": "贷款平台与KPKT | 关于Truestack",
-			"description": "Truestack为马来西亚放贷机构打造贷款平台与KPKT合规。2025年创立于吉隆坡。11家机构已上线，年放款逾RM 200 million。",
-			"openGraphTitle": "贷款平台与KPKT | 关于Truestack",
-			"openGraphDescription": "认识 Truestack——2025 年创立于吉隆坡。贷款平台与 KPKT 合规放在同一份合同下。11 家放贷机构已上线，年放款逾 RM 200 million。"
+			"title": "马来西亚金融科技 | Truestack",
+			"description": "吉隆坡金融科技公司Truestack：KPKT牌照服务与贷款平台，同一份合同。2025年创立，11家机构已上线，年放款逾RM 200 million。",
+			"openGraphTitle": "马来西亚金融科技 | Truestack",
+			"openGraphDescription": "吉隆坡金融科技公司Truestack：KPKT牌照服务与贷款平台，同一份合同。2025年创立，11家机构已上线，年放款逾RM 200 million。"
 		},
 		"schema": {
 			"breadcrumbHome": "首页",
@@ -17,7 +17,7 @@
 			"breadcrumbAria": "面包屑导航",
 			"breadcrumbParent": "公司",
 			"breadcrumbCurrent": "关于我们",
-			"title": "马来西亚放贷业值得拥有<accent>更好的工具。</accent>",
+			"title": "吉隆坡金融科技团队，专注<accent>马来西亚放贷业。</accent>",
 			"lede": "我们是一支工程师与合规专家组成的团队，只做一件事：马来西亚信贷。我们打造客户赖以运转的平台，在他们需要时承接定制软件，并在建设的同时处理监管事务。",
 			"pills": {
 				"kl": "Kuala Lumpur",
@@ -38,7 +38,7 @@
 		},
 		"story": {
 			"eyebrow": "我们为何存在",
-			"title": "一个靠电子表格撑起来的市场。",
+			"title": "一个靠电子表格撑起来的放贷市场。",
 			"imageAlt": "Truestack 团队在吉隆坡办公室一起工作",
 			"lede": "马来西亚的私募信贷市场十分分散。我们遇到的每家放贷机构都在各自解决同一批问题——而且没有人觉得好受。",
 			"p1": "贷款账簿在 Excel 里。借款人文件在共享网盘。分期付款靠月末手工对账。身份核查在一家供应商的网站，公司查询在另一家，支付在第三家，彼此不通。大体还能运转，直到有人要审计轨迹。",

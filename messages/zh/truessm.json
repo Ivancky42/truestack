@@ -2,9 +2,9 @@
 	"_status": "ai-draft",
 	"TrueSSM": {
 		"meta": {
-			"title": "马来西亚公司信息查询 API",
-			"description": "TrueSSM™ 马来西亚公司信息查询 API：实体搜索、ROC/ROB/LLP 档案、高管、股东与扫描文件，按令吉透明计价，服务持牌放贷公司。",
-			"openGraphTitle": "TrueSSM™ — 马来西亚 SSM 注册处 API｜ROC、ROB、LLP 与文件",
+			"title": "马来西亚SSM查询｜TrueSSM™",
+			"description": "TrueSSM™马来西亚SSM公司查询API：实体搜索、ROC/ROB/LLP档案、高管与股东及扫描文件，按令吉透明计价，服务持牌放贷公司。",
+			"openGraphTitle": "马来西亚SSM查询｜TrueSSM™",
 			"openGraphDescription": "面向金融科技与放贷机构的可编程 SSM 访问——实体搜索、档案、明细、扫描备案、令吉计费，以及幂等 REST 拉取。",
 			"ogImageAlt": "Truestack Technologies"
 		},
@@ -29,8 +29,8 @@
 			]
 		},
 		"hero": {
-			"eyebrow": "TrueSSM™ 注册处 API",
-			"title": "以程序调用 SSM 注册数据",
+			"eyebrow": "马来西亚SSM公司查询",
+			"title": "以程序调用马来西亚SSM公司数据",
 			"body": "实体搜索、ROC/ROB/LLP 档案、明细与扫描文件——一套 REST API 对接马来西亚注册处，以令吉透明计费。",
 			"poweredBy": "技术支持",
 			"ssmSearchAlt": "SSM Search 标志",

@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 export function HomepageTrust() {
 	const t = useTranslations("Home");
-	const faq = t.raw("faq.items") as { question: string; answer: string }[];
+	const faq = publishedFaqItems(
+		t.raw("faq.items") as { question: string; answer: string }[],
+	);
 
 	return (
 		<section

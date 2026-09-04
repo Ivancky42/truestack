@@ -7,6 +7,7 @@ import {
 	TsReveal,
 	TsSection,
 } from "@/components/sections/truesyariah/primitives";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 type FaqItem = { question: string; answer: string };
 
@@ -34,7 +35,7 @@ function FaqAnswer({ answer }: { answer: string }) {
 
 export function TrueSyariahFaq() {
 	const t = useTranslations("TrueSyariah");
-	const items = t.raw("faq.items") as FaqItem[];
+	const items = publishedFaqItems(t.raw("faq.items") as FaqItem[]);
 	return (
 		<TsSection id="faq">
 			<div className="grid items-start gap-10 lg:grid-cols-[0.36fr_0.64fr] lg:gap-14">

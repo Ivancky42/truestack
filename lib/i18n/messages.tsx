@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { AbstractIntlMessages } from "next-intl";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 import enAbout from "@/messages/en/about.json";
 import enAccountManagement from "@/messages/en/accountManagement.json";
 import enBanner from "@/messages/en/banner.json";
@@ -94,15 +95,40 @@ function loadLocaleDirectory(locale: string): Record<string, unknown> {
 	return messages;
 }
 
+function stripTodoFaqItems(value: unknown): unknown {
+	if (Array.isArray(value)) {
+		const looksLikeFaq = value.every(
+			(item) =>
+				isPlainObject(item) &&
+				typeof item.question === "string" &&
+				typeof item.answer === "string",
+		);
+		if (looksLikeFaq) {
+			return publishedFaqItems(
+				value as { question: string; answer: string }[],
+			);
+		}
+		return value.map(stripTodoFaqItems);
+	}
+	if (isPlainObject(value)) {
+		const next: Record<string, unknown> = {};
+		for (const [key, child] of Object.entries(value)) {
+			next[key] = stripTodoFaqItems(child);
+		}
+		return next;
+	}
+	return value;
+}
+
 export async function loadMessages(
 	locale: string,
 ): Promise<AbstractIntlMessages> {
 	const english = loadLocaleDirectory("en");
 	if (locale === "en") {
-		return english as AbstractIntlMessages;
+		return stripTodoFaqItems(english) as AbstractIntlMessages;
 	}
 	const overlay = loadLocaleDirectory(locale);
-	return deepMerge(english, overlay) as AbstractIntlMessages;
+	return stripTodoFaqItems(deepMerge(english, overlay)) as AbstractIntlMessages;
 }
 
 /**

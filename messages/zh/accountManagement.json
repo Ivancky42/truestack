@@ -2,13 +2,13 @@
 	"_status": "ai-draft",
 	"AccountManagement": {
 		"meta": {
-			"title": "KPKT牌照合规管理 | 牌照续期",
-			"description": "面向马来西亚持牌放贷公司的 KPKT 合规账户管理——PPW / KK 牌照续期、广告许可（permit iklan）与年度申报。批准最快可提速 50%。",
-			"openGraphTitle": "KPKT 合规账户管理 | PPW 牌照续期",
-			"openGraphDescription": "KPKT 合规账户管理——PPW / KK 牌照续期与广告许可（permit iklan），以及年度 B/B1 申报和 CoSec/SSM 事务。批准最快可提速 50%。"
+			"title": "KPKT牌照续期 | Truestack",
+			"description": "马来西亚持牌放贷公司的KPKT牌照续期与合规账户管理——PPW/KK续期、广告许可、年度B/B1申报，并与CoSec及SSM协调，批准可提速约50%。",
+			"openGraphTitle": "KPKT牌照续期 | Truestack",
+			"openGraphDescription": "马来西亚持牌放贷公司的KPKT牌照续期与合规账户管理——PPW/KK续期、广告许可、年度B/B1申报，并与CoSec及SSM协调，批准可提速约50%。"
 		},
 		"schema": {
-			"serviceName": "KPKT 合规账户管理",
+			"serviceName": "KPKT牌照续期与合规账户管理",
 			"alternateName": [
 				"KPKT 合规管理",
 				"pembaharuan lesen PPW / KK",
@@ -22,12 +22,12 @@
 			"current": "KPKT 合规账户管理"
 		},
 		"hero": {
-			"title": "KPKT 合规账户管理，化繁为简",
+			"title": "KPKT牌照续期与合规账户管理，化繁为简",
 			"subtitle": "我们承接马来西亚房屋及地方政府部 (KPKT) 的监管与行政事务，让您专注增长并服务客户。",
 			"secondaryCta": "查看价格"
 		},
 		"pain": {
-			"title": "合规不必成为负担",
+			"title": "KPKT合规不必成为负担",
 			"subtitle": "经营持牌放贷业务，意味着面对沉重的监管要求。交给我们处理。",
 			"items": {
 				"compliance": {
@@ -81,7 +81,7 @@
 			"savingsCaption": "快于行业平均水平"
 		},
 		"services": {
-			"title": "覆盖的全面服务",
+			"title": "KPKT牌照续期、申报与公司变更，都由我们办",
 			"subtitle": "保持合规所需的一切，由我们经验丰富的团队处理。",
 			"photoAlt": "客户经理与客户审阅 KPKT 合规文件",
 			"items": {
@@ -168,7 +168,7 @@
 			"title": "常见问题",
 			"items": [
 				{
-					"question": "什么是 KPKT 合规账户管理？",
+					"question": "什么是KPKT牌照续期与合规账户管理？",
 					"answer": "KPKT 合规账户管理是面向马来西亚持牌放贷公司的持续合规服务。Truestack 办理牌照续期、年度申报、公司信息更新，并与 CoSec、SSM 及监管机构协调——让您的团队专注放贷，而不是文书。"
 				},
 				{
@@ -180,7 +180,7 @@
 					"answer": "与全部自行办理相比，运营商在常见 KPKT 申报上通常能看到约 50% 的更快周转。确切时间仍取决于文件准备情况和监管机构排期。"
 				},
 				{
-					"question": "你们是否办理 pembaharuan lesen PPW / KK 和 permit iklan？",
+					"question": "你们办理KPKT牌照续期和广告许可吗？",
 					"answer": "是。Truestack 办理 PPW / KK 牌照续期（pembaharuan lesen PPW / KK）和广告许可（permit iklan）续期，以及公司信息更新、年度申报，并与 CoSec、SSM 协调。KPKT 转为数字牌照是另一项委托——若您要在线上覆盖全国，请参阅我们的数字牌照服务。"
 				},
 				{
@@ -190,6 +190,14 @@
 				{
 					"question": "如何开始？",
 					"answer": "在 truestack.my/contact 预约免费咨询。我们会梳理您当前的牌照状态、即将到期的续期与申报日历，然后为您的放贷业务推荐合适的支持方案。"
+				},
+				{
+					"question": "股东或董事变更包括非马来西亚人士吗？",
+					"answer": "TODO(ivan): 非马来西亚股东/董事变更的具体监管要求，以及账户管理服务是否覆盖该情形。"
+				},
+				{
+					"question": "可以用中文对接牌照续期吗？",
+					"answer": "TODO(ivan): KPKT 牌照续期与申报是否提供普通话/书面中文对接。"
 				}
 			]
 		},

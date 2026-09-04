@@ -10,10 +10,13 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CtaLink } from "@/components/shared/cta-link";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 export function DigitalLicenseFaq() {
 	const t = useTranslations("DigitalLicense");
-	const items = t.raw("faq.items") as { question: string; answer: string }[];
+	const items = publishedFaqItems(
+		t.raw("faq.items") as { question: string; answer: string }[],
+	);
 
 	return (
 		<section

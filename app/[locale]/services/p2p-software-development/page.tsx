@@ -19,6 +19,7 @@ import {
 } from "@/components/sections/case-studies";
 import { P2PSchema } from "@/components/seo/p2p-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { Card, CardContent } from "@/components/ui/card";
@@ -176,10 +177,12 @@ export default async function P2PSoftwareDevelopmentPage({
 	setRequestLocale(resolveAppLocale(locale));
 	const t = await getTranslations("P2P");
 	const tCommon = await getTranslations("Common");
-	const faqItems = t.raw("faq.items") as {
-		question: string;
-		answer: string;
-	}[];
+	const faqItems = publishedFaqItems(
+		t.raw("faq.items") as {
+			question: string;
+			answer: string;
+		}[],
+	);
 	const stackHighlights = t.raw("process.highlights") as string[];
 	const complianceItems = t.raw("compliance.items") as string[];
 	const cashsoukStudy: CaseStudy = {

@@ -10,10 +10,13 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionBadge } from "@/components/shared/section-badge";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 export function AccountManagementFaq() {
 	const t = useTranslations("AccountManagement");
-	const items = t.raw("faq.items") as { question: string; answer: string }[];
+	const items = publishedFaqItems(
+		t.raw("faq.items") as { question: string; answer: string }[],
+	);
 
 	return (
 		<section

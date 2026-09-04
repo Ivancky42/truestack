@@ -2,10 +2,10 @@
 	"_status": "ai-draft",
 	"TrueSyariah": {
 		"meta": {
-			"title": "伊斯兰融资TrueSyariah™牌照与平台",
-			"description": "在马来西亚推出持牌伊斯兰教法数字放贷：实体、委员会、牌照与TrueSyariah™。Tawarruq、Ta'widh与Gharamah，账册独立隔离（ring-fenced）。",
-			"openGraphTitle": "伊斯兰融资TrueSyariah™牌照与平台",
-			"openGraphDescription": "在马来西亚开办持牌伊斯兰教法数字放贷业务——Tawarruq（商品交易融资）、独立的Ta'widh（补偿金）与Gharamah（罚金）分类账，账册与常规贷款独立隔离（ring-fenced）。",
+			"title": "伊斯兰教法借贷｜TrueSyariah™",
+			"description": "在马来西亚开办符合伊斯兰教法的数字放贷：独立实体、委员会、KPKT牌照与TrueSyariah™。Tawarruq、Ta'widh与Gharamah，账册隔离。",
+			"openGraphTitle": "伊斯兰教法借贷｜TrueSyariah™",
+			"openGraphDescription": "在马来西亚开办符合伊斯兰教法的数字放贷：独立实体、委员会、KPKT牌照与TrueSyariah™。Tawarruq、Ta'widh与Gharamah，账册隔离。",
 			"ogImageAlt": "TrueSyariah符合伊斯兰教法的数字放贷平台——Tawarruq、Ta'widh与Gharamah模块"
 		},
 		"schema": {
@@ -34,8 +34,8 @@
 			]
 		},
 		"hero": {
-			"eyebrow": "伊斯兰教法数字牌照",
-			"title": "从一开始，就正确地开办伊斯兰教法融资业务。",
+			"eyebrow": "伊斯兰教法数字放贷牌照",
+			"title": "开办符合伊斯兰教法的马来西亚借贷业务，从一开始就做对。",
 			"lede1": "多数经营者很晚才发现难点：委员会要看他们从未见过的合同，审计师要求把常规账册排除在外，而软件从未被设计来区分Ta'widh与Gharamah。",
 			"lede2": "我们带您从公司架构、委员会任命到牌照申请，并交付一套在设计之日就符合伊斯兰教法的平台。",
 			"ctaSecondary": "查看牌照路径",
@@ -52,8 +52,8 @@
 			"cta": "阅读草案要求"
 		},
 		"journey": {
-			"eyebrow": "牌照路径",
-			"title": "四个阶段，按监管机构预期的顺序推进。",
+			"eyebrow": "伊斯兰教法牌照路径",
+			"title": "伊斯兰教法借贷牌照：四个阶段，按监管顺序推进。",
 			"lede": "基于伊斯兰教法的放贷有独立的审批路径，实务上也需要独立实体。申请延误多半不在监管机构：而是合同在征询委员会之前就已起草。",
 			"photoAlt": "两名专业人士在马来西亚办公室桌前一同审阅牌照文件",
 			"tablistAria": "牌照阶段",
@@ -86,8 +86,8 @@
 			}
 		},
 		"system": {
-			"eyebrow": "融资管理系统",
-			"title": "完整的融资管理系统，引擎本身符合伊斯兰教法。",
+			"eyebrow": "伊斯兰教法借贷系统",
+			"title": "符合伊斯兰教法的借贷系统，引擎本身即教法。",
 			"lede": "严肃经营者所需的一切——发起、评估、放款、还款计划、催收、文件、报表——伊斯兰教法机制内建于核心，而非事后外挂。不是给常规系统套上伊斯兰名目。",
 			"lifecycleEyebrow": "融资额度生命周期",
 			"recordEyebrow": "每条融资记录上",
@@ -302,11 +302,11 @@
 			"lede": "若您的问题不在这里，请在咨询中提出。咨询免费，我们更希望尽早回答。",
 			"items": [
 				{
-					"question": "我实际需要哪一种牌照？",
+					"question": "伊斯兰教法借贷需要什么牌照？",
 					"answer": "马来西亚基于伊斯兰教法的放贷有独立的审批路径，实务上还需要与任何常规数字放贷牌照持有人分开的法律实体。放贷前，您还须任命伊斯兰教法委员会或顾问，并取得融资合同的批准。若您已持有常规牌照，Truestack会对照现有集团划定伊斯兰教法数字放贷申请的范围。"
 				},
 				{
-					"question": "我能在同一家公司同时经营伊斯兰教法与常规放贷吗？",
+					"question": "伊斯兰教法借贷和常规KPKT牌照能放同一家公司吗？",
 					"answer": "不能。两张牌照不能放在同一家运营公司。伊斯兰教法实体必须将其账册、Ta'widh与Gharamah账户、委员会监督与投诉处理，与任何基于riba的放贷完全独立隔离（ring-fenced），并使用分开的基础设施。若您并行经营两者，我们会两边都建好——TrueSyariah™在一个实体，TrueKredit™在另一个。"
 				},
 				{
@@ -336,6 +336,14 @@
 				{
 					"question": "TrueSyariah包含哪些集成？",
 					"answer": "开箱即用：TrueCommodity™用于Tawarruq交易，TrueIdentity™用于MyKad e-KYC，MSC Trustgate用于本地PKI签名，CTOS用于信用报告，TrueSSM™用于SSM公司查询，以及FPX与DuitNow用于放款和收款。它们并入同一份Truestack合同，因此您的伊斯兰教法运营公司不必并行管理五家供应商。"
+				},
+				{
+					"question": "伊斯兰教法借贷系统的数据存放在哪里？",
+					"answer": "每一个 TrueSyariah 部署都是专属的：独立的 AWS 马来西亚账户、自有数据库、自有密钥库，以及场所内 PKI 签名。伊斯兰教法账册不能与常规放贷共享基础设施。"
+				},
+				{
+					"question": "中国投资者可以申请马来西亚伊斯兰教法放贷牌照吗？",
+					"answer": "TODO(ivan): 中国投资者或中国股东申请马来西亚伊斯兰教法数字放贷牌照的实体、董事与资本资格。"
 				}
 			]
 		},
