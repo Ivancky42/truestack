@@ -16,7 +16,7 @@ the guide, the guide wins.
 
 ## Operating principles (the guide has the details)
 
-1. **Mirror the reference page.** `app/truekredit/page.tsx` is the canonical
+1. **Mirror the reference page.** `app/[locale]/truekredit/page.tsx` is the canonical
    implementation of tone and section patterns. When unsure, open it and copy its approach.
 2. **Reuse shared components** (`components/shared/`, `components/ui/`,
    `ConsultationCta`) before building anything new. New repeated pattern → extract to
@@ -33,6 +33,12 @@ the guide, the guide wins.
 6. **Photos:** sparing, human, Malaysian-plausible, treated per guide §8, credited in
    `docs/IMAGE_CREDITS.md`.
 7. **Every page change re-runs the SEO checklist** — see the `truestack-seo` skill /
-   guide §9 (metadata, canonical, JSON-LD, sitemap.ts, public/llms.txt, FAQ schema).
-8. **Before finishing:** walk the pre-merge checklist in guide §10, then run
-   `npm run lint` and `npm run build`.
+   guide §9 (metadata, canonical + `alternates.languages`, JSON-LD, sitemap.ts,
+   `app/llms.txt/route.ts`, FAQ schema).
+8. **Trilingual copy.** Every reader-facing string, metadata and JSON-LD text lives in
+   `messages/{en,ms,zh}/<namespace>.json` and is read with `useTranslations` /
+   `getTranslations` — never hardcode English in TSX. New English keys ship with `ms` and
+   `zh` drafts in the same commit. Contract, glossary and tone for translators:
+   `docs/I18N.md`. Server components never call `headers()` / `cookies()`.
+9. **Before finishing:** walk the pre-merge checklist in guide §10, then run
+   `pnpm lint`, `pnpm i18n:check` and `pnpm build`.

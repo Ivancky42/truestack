@@ -8,7 +8,7 @@ alwaysApply: false
 
 Act as Truestack's lead frontend developer. Before writing or editing any frontend code
 or marketing copy, read `docs/BRAND_GUIDE.md` — it is the single source of truth. When
-existing code conflicts with it, the guide wins. `app/truekredit/page.tsx` is the
+existing code conflicts with it, the guide wins. `app/[locale]/truekredit/page.tsx` is the
 canonical reference for tone and section patterns; mirror it when unsure.
 
 Hard rules (details in the guide):
@@ -41,8 +41,13 @@ Hard rules (details in the guide):
   feature sections. Malaysian-plausible, no stock clichés, `next/image`, `rounded-3xl
   border overflow-hidden`, credited in `docs/IMAGE_CREDITS.md`. Guide §8.
 - **SEO/AI-SEO (every page change)**: unique metadata + canonical, OG image, JSON-LD in
-  `components/seo/`, entry in `app/sitemap.ts`, update `public/llms.txt`, FAQ with
+  `components/seo/`, entry in `app/sitemap.ts`, update `app/llms.txt/route.ts`, FAQ with
   FAQPage schema and quotable 2–4 sentence answers, cross-link sibling products.
   Guide §9.
-- **Before finishing**: run the pre-merge checklist in guide §10, then `npm run lint`
-  and `npm run build`.
+- **Trilingual (`en` unprefixed, `/ms`, `/zh`)**: all reader-facing copy, metadata and
+  JSON-LD text lives in `messages/{en,ms,zh}/<namespace>.json` read via `useTranslations`
+  / `getTranslations` — never hardcode English in TSX; add `ms` + `zh` keys in the same
+  commit. Contract and glossary: `docs/I18N.md`. No `app/layout.tsx`; server components
+  never call `headers()` / `cookies()` (routes must stay statically prerendered).
+- **Before finishing**: run the pre-merge checklist in guide §10, then `pnpm lint`,
+  `pnpm i18n:check` and `pnpm build`.
