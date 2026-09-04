@@ -72,6 +72,7 @@ export default async function WorkCaseStudyPage({ params }: PageProps) {
 			<WorkCaseStudySchema study={study} />
 			<FaqSchema items={study.faq} inLanguage={inLanguage.en} />
 			<BreadcrumbSchema
+				locale="en"
 				items={[
 					{ name: tCommon("breadcrumbHome"), path: "/" },
 					{ name: t("nav"), path: "/work" },

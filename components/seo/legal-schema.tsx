@@ -37,6 +37,7 @@ export async function LegalSchema({ path, name, description }: LegalSchemaProps)
         }}
       />
       <BreadcrumbSchema
+        locale="en"
         items={[
           { name: siteName, path: "/" },
           { name, path },

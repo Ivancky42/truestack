@@ -6,6 +6,24 @@ import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import enInsights from "@/messages/en/insightsChrome.json";
+import msInsights from "@/messages/ms/insightsChrome.json";
+import zhInsights from "@/messages/zh/insightsChrome.json";
+
+// Error boundaries render outside the page's PageMessages provider, so the
+// chrome strings are bundled here per locale (English fills any gaps).
+const ERROR_MESSAGES: Record<string, typeof enInsights.InsightsChrome> = {
+	en: enInsights.InsightsChrome,
+	ms: {
+		...enInsights.InsightsChrome,
+		...msInsights.InsightsChrome,
+		error: { ...enInsights.InsightsChrome.error, ...msInsights.InsightsChrome.error },
+	},
+	zh: {
+		...enInsights.InsightsChrome,
+		...zhInsights.InsightsChrome,
+		error: { ...enInsights.InsightsChrome.error, ...zhInsights.InsightsChrome.error },
+	},
+};
 
 type InsightPostErrorProps = {
 	error: Error & { digest?: string };
@@ -61,7 +79,9 @@ export default function InsightPostError(props: InsightPostErrorProps) {
 	return (
 		<NextIntlClientProvider
 			locale={locale}
-			messages={{ InsightsChrome: enInsights.InsightsChrome }}
+			messages={{
+				InsightsChrome: ERROR_MESSAGES[locale] ?? enInsights.InsightsChrome,
+			}}
 		>
 			<InsightPostErrorInner {...props} />
 		</NextIntlClientProvider>

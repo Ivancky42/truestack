@@ -150,6 +150,7 @@ export default async function InsightPostPage({ params }: PageProps) {
 			<InsightPostSchema post={post} />
 			{post.faq.length > 0 ? <FaqSchema items={post.faq} inLanguage={inLanguage.en} /> : null}
 			<BreadcrumbSchema
+				locale="en"
 				items={[
 					{name: tCommon("breadcrumbHome"), path: "/"},
 					{name: t("nav"), path: "/insights"},

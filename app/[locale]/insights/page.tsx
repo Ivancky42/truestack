@@ -86,6 +86,7 @@ export default async function InsightsPage({
 			<InsightsSchema />
 			<FaqSchema items={faq} inLanguage={inLanguage.en} />
 			<BreadcrumbSchema
+				locale="en"
 				items={[
 					{ name: tCommon("breadcrumbHome"), path: "/" },
 					{ name: t("nav"), path: "/insights" },
