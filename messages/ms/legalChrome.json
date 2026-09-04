@@ -1,0 +1,68 @@
+{
+	"_status": "ai-draft",
+	"LegalChrome": {
+		"eyebrow": "Undang-undang",
+		"lastUpdated": "Dikemas kini {date}",
+		"onThisPage": "Di halaman ini",
+		"pagesNav": "Halaman undang-undang",
+		"tabs": {
+			"cybersecurity": "Keselamatan Siber",
+			"pdpa": "Notis PDPA",
+			"privacy": "Dasar Privasi",
+			"terms": "Terma Penggunaan"
+		},
+		"pages": {
+			"privacy": "Dasar Privasi",
+			"terms": "Terma Penggunaan",
+			"pdpa": "Notis PDPA",
+			"cybersecurity": "Dasar Keselamatan Siber"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim"
+		},
+		"contact": {
+			"registrationNo": "No. Pendaftaran {number}"
+		},
+		"privacy": {
+			"title": "Bagaimana kami mengendalikan maklumat anda.",
+			"titleMuted": "Dan apa yang anda boleh minta kami lakukan dengannya.",
+			"lede": "Dasar ini menjelaskan bagaimana Truestack mengumpul, menggunakan, mendedahkan dan melindungi maklumat peribadi apabila anda melawat laman web kami atau menggunakan sistem berkaitan yang kami kendalikan.",
+			"cta": {
+				"heading": "Soalan tentang data anda?",
+				"body": "Jika anda mahu dasar ini dijelaskan untuk perjanjian pelanggan atau pelaksanaan e-KYC, tempah konsultasi percuma. Tiada obligasi.",
+				"secondary": "Notis PDPA"
+			}
+		},
+		"terms": {
+			"title": "Peraturan penggunaan laman ini.",
+			"titleMuted": "Dan sistem Truestack berkaitan kami.",
+			"lede": "Terma ini terpakai apabila anda menggunakan truestack.my dan sistem demonstrasi serta pembangun berkaitan yang kami kendalikan. Produk berbayar dilesenkan di bawah perjanjian pelanggan yang berasingan.",
+			"cta": {
+				"heading": "Perlukan terma ini dalam perjanjian pelanggan?",
+				"body": "Terma laman web bukan lesen produk. Jika anda menilai TrueKredit™ atau TrueIdentity™, tempah konsultasi percuma dan kami akan tunjukkan langkah seterusnya yang sesuai.",
+				"secondary": "Dasar Privasi"
+			}
+		},
+		"pdpa": {
+			"title": "Bagaimana kami memproses data peribadi.",
+			"titleMuted": "Di bawah PDPA Malaysia.",
+			"lede": "Notis dan pernyataan pilihan di bawah Akta Perlindungan Data Peribadi 2010 (Akta 709), termasuk perjalanan pengesahan TrueIdentity™ yang kami kendalikan.",
+			"cta": {
+				"heading": "Soalan tentang bagaimana kami mengendalikan data peribadi?",
+				"body": "Jika anda perlukan notis ini dijelaskan untuk lesen KPKT, pelaksanaan e-KYC, atau perjanjian pelanggan, tempah konsultasi percuma. Tiada obligasi.",
+				"secondary": "Dasar Privasi"
+			}
+		},
+		"cybersecurity": {
+			"title": "Bagaimana kami melindungi sistem anda.",
+			"titleMuted": "Dan data yang berada di dalamnya.",
+			"lede": "Gambaran awam tentang bagaimana Truestack mereka bentuk, mengendalikan dan melindungi sistem yang digunakan untuk menyampaikan perisian pinjaman, perkhidmatan pematuhan KPKT, dan e-KYC di Malaysia.",
+			"cta": {
+				"heading": "Soalan tentang bagaimana kami melindungi data anda?",
+				"body": "Beritahu kami tentang lesen KPKT, platform pinjaman, atau semakan keselamatan anda. Kami akan terangkan bagaimana Truestack menghoskan dan mengasingkan sistem anda — percuma, tanpa obligasi.",
+				"secondary": "Notis PDPA"
+			}
+		}
+	}
+}

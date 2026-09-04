@@ -1,0 +1,529 @@
+{
+	"_status": "ai-draft",
+	"TrueKredit": {
+		"meta": {
+			"title": "TrueKredit™ | Sistem Pengurusan Pinjaman KPKT",
+			"description": "Sistem pengurusan pinjaman untuk pemberi pinjam wang berlesen KPKT. Peminjam, jadual, Lampiran A/B/B1, Jadual J & K dan dokumen iDEAL KPKT dalam satu platform.",
+			"openGraphTitle": "TrueKredit™ | Perisian Pemberi Pinjam Wang Malaysia",
+			"openGraphDescription": "Perisian pemberi pinjam wang Malaysia / sistem pengurusan pinjaman wang. iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K.",
+			"ogImageAlt": "Platform pengurusan pinjaman TrueKredit selaras KPKT — permohonan, tandatangan, papan pemuka dan modul pematuhan"
+		},
+		"schema": {
+			"productName": "TrueKredit™",
+			"alternateNames": [
+				"TrueKredit Pro",
+				"TrueKredit Standard",
+				"Sistem pengurusan pinjaman wang",
+				"Perisian pemberi pinjam wang Malaysia",
+				"Sistem pengurusan pinjaman KPKT Malaysia",
+				"sistem iDEAL",
+				"Platform pinjaman digital Malaysia"
+			],
+			"offers": [
+				{
+					"name": "TrueKredit Standard",
+					"description": "Perisian pengurusan pinjaman untuk PPW KPKT dan pemberi pinjam wang berasaskan cawangan di Malaysia, dengan data pelanggan pada awan selamat anda sendiri."
+				},
+				{
+					"name": "TrueKredit Pro",
+					"description": "Platform pinjaman digital seluruh negara untuk Malaysia — laman web pelanggan, aplikasi mudah alih, tandatangan digital, dan kesediaan lesen Dalam Talian KPKT."
+				}
+			],
+			"featureList": [
+				"Perjalanan pinjaman dari permohonan hingga bayaran balik",
+				"Pembiayaan semula, tambahan dan penjadualan semula pada fail pinjaman yang sama",
+				"Eksport Lampiran A, B1 dan iDEAL KPKT (sistem iDEAL)",
+				"Perjanjian pinjaman Jadual J & Jadual K",
+				"Integrasi e-KYC dan TrueSSM™",
+				"Hos awan selamat di Malaysia",
+				"Jejak audit dan aliran kerja pematuhan KPKT",
+				"Pilihan aliran kerja pinjaman dikonfigurasi mengikut cara pejabat anda sudah beroperasi",
+				"Pro: laman web peminjam berjenama, aplikasi iPhone dan Android, tandatangan digital"
+			]
+		},
+		"hero": {
+			"title": "Urus seluruh buku pinjaman anda dari <accent>satu platform.</accent>",
+			"lede": "TrueKredit™ ialah <strong>sistem pengurusan pinjaman wang</strong> untuk pemberi pinjam wang berlesen Kementerian Perumahan dan Kerajaan Tempatan (KPKT) di Malaysia — peminjam, jadual, bayaran balik dan kertas kerja KPKT dalam satu sistem yang dipercayai seluruh pasukan anda.",
+			"ctaSecondary": "Standard lwn Pro",
+			"tablistAria": "Skrin TrueKredit",
+			"slides": {
+				"admin": {
+					"label": "Admin",
+					"alt": "Papan pemuka admin TrueKredit — baki tertunggak, kutipan dan kesihatan portfolio untuk pemberi pinjam wang Malaysia"
+				},
+				"borrower": {
+					"label": "Peminjam"
+				},
+				"mobile": {
+					"label": "Mudah alih"
+				}
+			}
+		},
+		"licensed": {
+			"ariaLabel": "Ingin mendapatkan lesen",
+			"lead": "Ingin mendapatkan lesen?",
+			"body": "Kami urus laluan lesen digital KPKT — kemudian buku pinjaman anda berada di TrueKredit Pro.",
+			"cta": "Lihat laluan lesen"
+		},
+		"story": {
+			"eyebrow": "Realiti pemberian pinjaman",
+			"title": "Pinjaman memang rumit. <muted>Mengawalnya tidak sepatutnya begitu.</muted>",
+			"lede": "Setiap fail peminjam, setiap ansuran, setiap permintaan audit bertimbun dengan pantas. Apabila rekod tersebar dalam hamparan, folder dan peti masuk, sesuatu pasti terlepas — biasanya di hadapan pemeriksa.",
+			"today": {
+				"eyebrow": "Apa yang kebanyakan pasukan urus",
+				"heading": "Terlalu banyak untuk dijejak. Terlalu mudah terlepas.",
+				"items": {
+					"records": {
+						"title": "Rekod peminjam di mana-mana",
+						"desc": "IC, kenalan, penjamin dan dokumen berselerak merentas Excel dan fail kertas."
+					},
+					"payments": {
+						"title": "Bayaran sukar diselaraskan",
+						"desc": "Jadual, slip dan yuran lewat dikemas kini secara manual — ralat timbul pada akhir bulan."
+					},
+					"audits": {
+						"title": "Audit menjadi kejar-kejaran",
+						"desc": "KPKT meminta jejak; pasukan anda menggeledah folder dan bukannya menjawab dalam minit."
+					},
+					"view": {
+						"title": "Tiada satu pandangan buku",
+						"desc": "Tertunggak, tunggakan dan siapa berhutang apa, disusun dari tiga tempat."
+					}
+				}
+			},
+			"after": {
+				"eyebrow": "Dengan TrueKredit",
+				"heading": "Satu sistem. Satu sumber kebenaran.",
+				"cta": "Lihat cara ia berfungsi",
+				"items": {
+					"book": {
+						"title": "Seluruh buku pinjaman dalam satu pandangan",
+						"desc": "Dari pertanyaan pertama hingga penyelesaian akhir, pasukan anda bekerja dari fail semasa yang sama."
+					},
+					"audit": {
+						"title": "Sedia audit setiap hari",
+						"desc": "Siapa buat apa dan bila, serta jadual KPKT, Lampiran dan eksport mengikut permintaan."
+					},
+					"data": {
+						"title": "Data anda kekal dengan anda",
+						"desc": "Dihoskan pada awan selamat anda sendiri di Malaysia, tidak pernah dicampur dengan pemberi pinjam wang lain."
+					},
+					"grow": {
+						"title": "Berkembang tanpa bermula semula",
+						"desc": "Mula di cawangan; buka aplikasi dan tandatangan seluruh negara dengan Pro pada buku pinjaman yang sama."
+					}
+				}
+			}
+		},
+		"journey": {
+			"eyebrow": "Hujung ke hujung",
+			"title": "Satu sistem dari pertanyaan pertama hingga penyelesaian akhir.",
+			"lede": "Langkah demi langkah untuk melihat skrin yang akan digunakan pasukan anda — seluruh buku, satu fail pinjaman.",
+			"play": "Main",
+			"pause": "Jeda",
+			"playAria": "Main perjalanan",
+			"pauseAria": "Jeda perjalanan",
+			"tablistAria": "Perjalanan pinjaman TrueKredit",
+			"steps": {
+				"pipeline": {
+					"label": "Saluran",
+					"phase": "01 · Saluran",
+					"title": "Tahu kedudukan setiap lead.",
+					"desc": "Lead, ditukar, memohon, diluluskan, dikeluarkan — satu buku pasukan dengan kadar antara setiap langkah. Tugaskan pegawai pinjaman, kemudian tukar lead menjadi peminjam tanpa meninggalkan sistem.",
+					"chips": [
+						"Metrik saluran",
+						"Tugasan pasukan",
+						"Lead ke dikeluarkan"
+					],
+					"alt": "Saluran lead TrueKredit — corong penukaran dan prestasi jualan mengikut masa"
+				},
+				"profile": {
+					"label": "Profil",
+					"phase": "02 · Profil",
+					"title": "Kenali peminjam",
+					"desc": "Kerja, keluarga, komitmen bulanan, penjamin dan dokumen dalam satu fail lengkap yang dikongsi seluruh pasukan — supaya tiada siapa menanya semula peminjam apa yang sudah anda tahu.",
+					"chips": [
+						"Pekerjaan & komitmen",
+						"Penjamin",
+						"Peti dokumen"
+					],
+					"alt": "Profil peminjam korporat TrueKredit dengan prestasi bayaran, maklumat syarikat dan TrueSSM"
+				},
+				"approve": {
+					"label": "Lulus",
+					"phase": "03 · Lulus",
+					"title": "Luluskan dengan angka di hadapan anda.",
+					"desc": "Skor kemampuan, DSR dan ringkasan pinjaman penuh pada satu skrin — jumlah, tempoh, yuran, bayaran bulanan. Pasukan kredit dan pengarah melihat fail yang sama.",
+					"chips": [
+						"Skor kemampuan",
+						"Ringkasan pinjaman",
+						"Bayaran bulanan"
+					],
+					"alt": "Kelulusan pinjaman TrueKredit dengan skor risiko kemampuan dan ringkasan pinjaman"
+				},
+				"control": {
+					"label": "Kawalan",
+					"phase": "04 · Kawalan",
+					"title": "Orang yang sesuai melihat skrin yang sesuai.",
+					"desc": "Owner, Credit, Finance, Collections — setiap peranan hanya mendapat apa yang diperlukan tugasnya. Tambah peranan tersuai apabila lalai tidak sesuai, tanpa membuka seluruh buku kepada semua orang.",
+					"chips": [
+						"Akses ikut peranan",
+						"Peranan tersuai",
+						"Kebenaran ikut tugas"
+					],
+					"alt": "Akses berasaskan peranan TrueKredit — cipta peranan tersuai dengan kebenaran mengikut tugas"
+				},
+				"documents": {
+					"label": "Dokumen",
+					"phase": "05 · Dokumen",
+					"title": "Perjanjian, resit dan surat, secara automatik",
+					"desc": "Jadual bayaran balik, resit bayaran, notis kutipan dan surat mungkir dijana dari fail pinjaman dan diemel apabila diperlukan — termasuk borang KPKT yang diharapkan pemeriksa anda.",
+					"chips": [
+						"Lampiran A, B, B1",
+						"Jadual J & K",
+						"Resit & notis mungkir"
+					],
+					"alt": "Lampiran A dijana dari fail pinjaman TrueKredit"
+				},
+				"service": {
+					"label": "Khidmat",
+					"phase": "06 · Khidmat",
+					"title": "Setiap ansuran dalam pandangan",
+					"desc": "Bina jadual mengikut cara anda sudah menentukan harga pinjaman — kadar rata, baki mengurang, bayaran belon dan selebihnya. Slip bayaran, sebut harga penyelesaian awal dan semakan kewangan berada pada buku semasa yang sama, jadi soalan peminjam dijawab dalam saat.",
+					"chips": [
+						"Kadar rata",
+						"Baki mengurang",
+						"Bayaran belon"
+					],
+					"alt": "Jadual bayaran balik TrueKredit dengan ansuran dan baki"
+				},
+				"collect": {
+					"label": "Kutipan",
+					"phase": "07 · Kutipan",
+					"title": "Kutipan terkawal",
+					"desc": "Paparan pasukan bagi tunggakan, janji untuk bayar, peringkat eskalasi dan makluman matang — dari ansuran pertama yang terlepas hingga mungkir, dengan setiap cubaan menghubungi direkodkan.",
+					"chips": [
+						"Janji bayar",
+						"Peringkat eskalasi",
+						"Makluman matang"
+					],
+					"alt": "Ruang kerja kutipan TrueKredit dengan buku pasukan, tertunggak, lewat dan penuaan"
+				},
+				"adapt": {
+					"label": "Anjal",
+					"phase": "08 · Anjal",
+					"title": "Biaya semula, tambahan atau jadual semula",
+					"desc": "Apabila peminjam memerlukan ruang untuk menyesuaikan, setiap laluan diluluskan dan dijejak dalam sistem yang sama, pada fail pinjaman yang sama — jadi sejarah apa yang berubah dan mengapa kekal utuh.",
+					"chips": [
+						"Biaya semula",
+						"Tambahan",
+						"Jadual semula"
+					],
+					"alt": "Paparan penyelesaian awal dan penstrukturan semula pinjaman TrueKredit"
+				},
+				"govern": {
+					"label": "Tadbir",
+					"phase": "09 · Tadbir",
+					"title": "Sedia audit, setiap hari",
+					"desc": "Setiap tugasan, bayaran dan eksport berada pada garis masa — siapa buat, bila, dan dalam mod apa. Maker-checker kekal pada fail. Serahkan CSV kepada pemeriksa tanpa menggeledah folder.",
+					"chips": [
+						"Garis masa aktiviti",
+						"Maker-checker",
+						"Eksport CSV"
+					],
+					"alt": "Garis masa aktiviti TrueKredit — siapa buat apa, bila, dengan maker-checker pada fail pinjaman"
+				},
+				"configure": {
+					"label": "Tetapan",
+					"phase": "10 · Tetapan",
+					"title": "Padankan sistem pada cara anda meminjam.",
+					"desc": "Anda tidak sepatutnya menukar cara memberi pinjaman hanya untuk menyesuaikan secebis perisian. Kami konfigurasi TrueKredit mengikut proses yang sudah dikenali pasukan anda — jadi sistem mengikut aliran kerja anda, bukan sebaliknya.",
+					"chips": [
+						"Aliran kerja anda",
+						"Cara anda sudah kerja",
+						"Sedia untuk anda"
+					],
+					"alt": "Konfigurasi platform TrueKredit — pilihan aliran kerja pinjaman dihidupkan atau dimatikan mengikut cara pejabat beroperasi"
+				}
+			}
+		},
+		"channels": {
+			"eyebrow": "Perjalanan sama · lebih banyak saluran",
+			"title": "Setiap saluran masuk ke satu fail pinjaman.",
+			"lede": "Mula di kaunter pada Standard. Pro menambah laman web dan aplikasi berjenama — setiap permohonan masuk ke giliran yang sama.",
+			"tablistAria": "Saluran permulaan",
+			"adminAlt": "Papan pemuka admin TrueKredit — fail pinjaman yang sama yang diurus pasukan kaunter anda",
+			"standard": "Standard",
+			"pro": "Pro",
+			"items": {
+				"walkin": {
+					"label": "Walk-in",
+					"title": "Kaunter",
+					"desc": "MyKad, semakan identiti dan laluan kelulusan yang sama."
+				},
+				"website": {
+					"label": "Laman web",
+					"title": "Domain anda",
+					"desc": "Mohon, muat naik dan tandatangan — siang atau malam."
+				},
+				"app": {
+					"label": "Apl",
+					"title": "iPhone dan Android",
+					"desc": "Baki, bayaran dan tandatangan di bawah jenama anda."
+				}
+			}
+		},
+		"checks": {
+			"eyebrow": "Semakan berhubung",
+			"title": "Semakan yang hidup dalam fail pinjaman.",
+			"lede": "Semakan identiti, carian syarikat dan pembayaran berlaku dalam sistem yang sudah digunakan pasukan anda — bukan merentas empat laman web berasingan dengan empat log masuk berasingan.",
+			"items": {
+				"identity": {
+					"title": "TrueIdentity™ — e-KYC dan liveness",
+					"desc": "Imbas MyKad, ambil swafoto, sahkan orang yang sama. Keputusan disimpan ke fail peminjam.",
+					"tag": "Pihak pertama"
+				},
+				"ssm": {
+					"title": "Carian syarikat TrueSSM™",
+					"desc": "Butiran syarikat, pengarah dan pemegang saham untuk peminjam korporat, ditarik terus ke permohonan.",
+					"tag": "Pihak pertama"
+				},
+				"payments": {
+					"title": "Gerbang pembayaran — kutipan dan pengeluaran pinjaman",
+					"desc": "Kutip melalui FPX atau e-wallet, dan hantar pengeluaran pinjaman dari fail pinjaman yang sama yang sudah diurus pasukan anda.",
+					"tag": "FassPay · GKash"
+				},
+				"ctos": {
+					"title": "Laporan kredit CTOS",
+					"desc": "Maklumat kredit berada di sebelah permohonan, jadi pasukan kredit anda memutuskan dengan gambaran penuh.",
+					"tag": "Akan datang"
+				},
+				"truesend": {
+					"title": "Truesend™ — penghantaran automatik",
+					"desc": "Resit, peringatan, surat kutipan dan mungkir dihantar secara automatik dari fail pinjaman.",
+					"tag": "Pihak pertama"
+				},
+				"truesight": {
+					"title": "Pemarkahan risiko AI TrueSight™",
+					"desc": "Wawasan risiko tambahan di atas semakan sedia ada anda, membantu pasukan kredit mengesan fail yang lebih lemah lebih awal.",
+					"tag": "Akan datang"
+				},
+				"attestation": {
+					"title": "Pengesahan (attestation) digital — langsung & video",
+					"desc": "Di kaunter atau pada panggilan video berjadual — jemputan dan peringatan kekal pada fail pinjaman.",
+					"tag": "Pro"
+				},
+				"signing": {
+					"title": "Tandatangan digital di premis anda",
+					"desc": "Tandatangan yang mengikat secara undang-undang dengan MSC Trustgate — tandatangan kekal di bawah kawalan anda. Pelanggan menandatangani dari web atau telefon.",
+					"tag": "Pro"
+				}
+			}
+		},
+		"infrastructure": {
+			"eyebrow": "Data anda kekal milik anda",
+			"title": "Awan anda. Disimpan di Malaysia. Tidak dicampur.",
+			"lede": "Standard dan Pro kedua-duanya berjalan pada akaun awan selamat anda sendiri. Data pinjaman kekal di Malaysia dan tidak pernah digabungkan dengan pemberi pinjam wang lain.",
+			"items": {
+				"malaysia": {
+					"title": "Data kekal di Malaysia",
+					"desc": "Maklumat pelanggan dihoskan di Malaysia dan tidak keluar negara."
+				},
+				"protected": {
+					"title": "Dilindungi dan disandarkan",
+					"desc": "Perlindungan gred bank dengan sandaran harian dan rekod penuh setiap tindakan."
+				},
+				"upgrade": {
+					"title": "Naik taraf tanpa bermula semula",
+					"desc": "Berpindah ke Pro mengekalkan peminjam, pinjaman dan sejarah anda tepat di tempatnya."
+				}
+			},
+			"cardEyebrow": "Awan selamat anda",
+			"hosted": "Dihoskan di Malaysia",
+			"lender": "Pemberi anda",
+			"dataOnly": "Data anda sahaja · tidak dikongsi",
+			"backups": "Sandaran harian",
+			"actionLog": "Log tindakan penuh",
+			"otherLenders": "Pemberi lain",
+			"separateAccounts": "Akaun berasingan"
+		},
+		"compare": {
+			"eyebrow": "Perbandingan ciri",
+			"title": "Standard lwn Pro",
+			"lede": "Sistem teras yang sama untuk pasukan cawangan anda. Pro membuka saluran pelanggan seluruh negara, tandatangan digital dan pengesahan (attestation) — tanpa memindahkan buku pinjaman anda.",
+			"capability": "Keupayaan",
+			"standard": "Standard",
+			"standardSub": "Cawangan & kaunter",
+			"pro": "Pro",
+			"proSub": "Se-Malaysia",
+			"soon": "Akan datang",
+			"coreHeading": "Platform admin teras",
+			"addonHeading": "Add-on pilihan",
+			"integrationsHeading": "Integrasi percuma",
+			"integrationsLede": "Semakan identiti, syarikat dan kredit sudah disambungkan ke TrueKredit. Tiada yuran untuk menyambung — anda hanya bayar bagi setiap semakan yang dijalankan.",
+			"proHeading": "Pro membuka",
+			"coreRows": [
+				"Profil peminjam lengkap — kerja, keluarga, komitmen dan dokumen",
+				"Produk pinjaman anjal — kaedah faedah, jadual dan yuran lewat",
+				"Permohonan & kelulusan — pengambilan kaunter, lawatan lapangan, pakej pengarah",
+				"Pemarkahan risiko — semakan kemampuan sebelum anda luluskan",
+				"Perjanjian & kewangan — baucar bayaran, kelulusan dua orang sebelum bayar",
+				"Jadual & bayaran balik — ansuran, slip, penyelesaian awal, tunggakan",
+				"Kertas kerja KPKT — Jadual J & K, Lampiran A/B/B1, resit, notis mungkir, eksport",
+				"Laporan & peranan staf — paparan portfolio, siapa buat apa, akses ikut peranan",
+				"Awan selamat anda sendiri di Malaysia — data tidak dicampur dengan pemberi lain"
+			],
+			"addonRows": [
+				"Ruang kerja kutipan — paparan pasukan, janji bayar, eskalasi, makluman matang",
+				"Keluwesan pinjaman — pembiayaan semula, tambahan dan penjadualan semula, dijejak pada fail",
+				"Rujukan & janaan lead — giliran jualan, ejen, sumber lead dan komisen"
+			],
+			"integrations": {
+				"trueidentity": "TrueIdentity™ e-KYC — imbasan MyKad, swafoto dan padanan muka",
+				"truessm": "Carian syarikat TrueSSM™",
+				"payments": "Gerbang pembayaran — FassPay dan GKash",
+				"ctos": "Tarikan kredit CTOS",
+				"truesight": "Pemarkahan risiko AI TrueSight™"
+			},
+			"proRows": [
+				"Laman web pelanggan berjenama — mohon siang atau malam di domain anda",
+				"Aplikasi pelanggan iPhone dan Android",
+				"Tandatangan digital di premis anda — MSC Trustgate",
+				"Pengesahan (attestation) digital — langsung di kaunter atau video berjadual",
+				"Sokongan semakan lesen pinjaman wang dalam talian (e-Lending) KPKT"
+			],
+			"footnote": "Ingin beralih digital dengan Pro? Kami juga urus <license>lesen digital KPKT</license> dari hujung ke hujung. Pembiayaan patuh Syariah ialah <syariah>TrueSyariah™</syariah>; P2P di bawah Suruhanjaya Sekuriti Malaysia (SC) ialah <p2p>TrueP2P™</p2p>."
+		},
+		"pro": {
+			"eyebrow": "TrueKredit Pro",
+			"title": "Dari lesen hingga pinjaman beroperasi.",
+			"lede": "Mohon Lesen Pinjaman Wang Dalam Talian KPKT (e-Lending)? Kami urus laluan pelesenan, persediaan Pro, ujian dan pelancaran (go-live), supaya anda memberi pinjaman seluruh negara pada platform yang sudah dikenali pasukan anda.",
+			"ctaPrimary": "Bincang Pro dengan kami",
+			"ctaSecondary": "Perlukan lesen digital juga?",
+			"photoAlt": "Dua profesional di pejabat Kuala Lumpur menyemak dokumen pelesenan KPKT",
+			"steps": {
+				"licence": {
+					"title": "Perolehan lesen",
+					"desc": "Laluan lesen dalam talian — permohonan, pembaharuan dan perhubungan dengan KPKT."
+				},
+				"compliance": {
+					"title": "Pematuhan & perundingan",
+					"desc": "Nasihat kawal selia dan kesediaan audit untuk pinjaman digital."
+				},
+				"build": {
+					"title": "Bina di TrueKredit Pro",
+					"desc": "Laman web pelanggan, aplikasi mudah alih, tandatangan dan pengesahan (attestation) pada awan selamat anda."
+				},
+				"golive": {
+					"title": "Ujian, semakan keselamatan & pelancaran (go-live)",
+					"desc": "Sedia untuk pemeriksa, kemudian pinjaman seluruh negara beroperasi."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim",
+			"lede": "Jawapan terus tentang Standard lwn Pro, kertas kerja KPKT, dan di mana data pinjaman anda disimpan.",
+			"askElse": "Tanya kami soalan lain",
+			"items": [
+				{
+					"question": "Apakah TrueKredit™?",
+					"answer": "TrueKredit™ ialah sistem pengurusan pinjaman wang / perisian pemberi pinjam wang Malaysia yang dibina untuk pemberi pinjam wang berlesen KPKT. Ia menyimpan profil peminjam, produk pinjaman, permohonan dan kelulusan, kawalan pengeluaran pinjaman, jadual bayaran balik, kutipan dan kertas kerja KPKT yang menyertainya — Lampiran A, B, B1, Jadual J & K, dan eksport iDEAL (sistem iDEAL) — di satu tempat, pada awan selamat anda sendiri."
+				},
+				{
+					"question": "Apa yang Standard dan Pro kedua-duanya sertakan?",
+					"answer": "Platform teras penuh: profil peminjam, produk pinjaman anjal, permohonan dan kelulusan kaunter, pemarkahan kemampuan dan risiko, baucar bayaran dengan kelulusan pembayaran dua orang, jadual bayaran balik dan tunggakan, kertas kerja dan eksport KPKT, pelaporan portfolio dengan akses berasaskan peranan, dan awan selamat anda sendiri di Malaysia. Integrasi identiti, syarikat dan pembayaran disambungkan tanpa yuran sambungan tambahan. Pro tidak mengambil apa-apa daripada Standard."
+				},
+				{
+					"question": "Apa yang eksklusif kepada TrueKredit Pro?",
+					"answer": "Lapisan seluruh negara: laman web pelanggan berjenama pada domain anda sendiri, aplikasi iPhone dan Android, tandatangan digital di premis anda yang disahkan dengan MSC Trustgate, pengesahan (attestation) digital secara langsung di kaunter atau melalui panggilan video berjadual, dan sokongan untuk semakan Lesen Pinjaman Wang Dalam Talian KPKT (e-Lending). Pasukan anda mengekalkan aliran kerja admin yang sama; saluran baharu masuk ke fail pinjaman yang sama."
+				},
+				{
+					"question": "Apa yang dilihat peminjam pada laman web dan aplikasi?",
+					"answer": "Pada TrueKredit™ Pro, peminjam menggunakan laman web berjenama pada domain anda dan aplikasi iPhone atau Android. Mereka memohon, memuat naik dokumen, mengesahkan identiti, menjejak baki, membayar ansuran dan menandatangani perjanjian. Setiap tindakan masuk ke fail pinjaman yang sama yang diurus pasukan anda — tiada data dimasukkan semula."
+				},
+				{
+					"question": "Bolehkah kami mula dengan Standard dan naik taraf ke Pro kemudian?",
+					"answer": "Ya, dan kebanyakan pemberi pinjam wang berbuat demikian. Mula dengan Standard untuk cawangan anda hari ini. Naik taraf menambah saluran pelanggan, tandatangan dan pengesahan (attestation) di atas sistem yang sudah anda jalankan. Peminjam, pinjaman dan sejarah anda kekal tepat di tempatnya — tiada yang dipindahkan dan tiada yang dimasukkan semula."
+				},
+				{
+					"question": "Adakah anda menyokong Lampiran A, B, B1, Jadual J & K, dan iDEAL KPKT?",
+					"answer": "Ya. Jadual, Lampiran A, B dan B1, Jadual J dan Jadual K, resit bayaran dan notis mungkir dijana dari rekod pinjaman yang sama yang diurus pasukan anda, dengan eksport dibentuk untuk penyerahan KPKT termasuk sistem iDEAL. Tiada siapa menaip semula borang."
+				},
+				{
+					"question": "Di manakah data kami disimpan, dan adakah ia dikongsi dengan pemberi pinjam wang lain?",
+					"answer": "Data pinjaman anda berada pada akaun awan selamat anda sendiri, dihoskan di Malaysia, dan tidak pernah digabungkan dengan buku pemberi pinjam wang lain. Sandaran harian dan rekod lengkap setiap tindakan disertakan sebagai standard, pada kedua-dua pelan. Naik taraf ke Pro mengekalkan persekitaran yang sama."
+				},
+				{
+					"question": "Semakan mana yang disertakan, dan berapa kosnya?",
+					"answer": "TrueIdentity™ e-KYC, carian syarikat TrueSSM™ dan gerbang pembayaran (FassPay dan GKash) sudah disambungkan, pada kedua-dua pelan. Tiada yuran untuk menyambungkannya — anda hanya bayar bagi setiap semakan atau transaksi yang dijalankan. Tarikan kredit CTOS dan pemarkahan risiko AI TrueSight™ akan datang."
+				},
+				{
+					"question": "Bolehkah TrueKredit mengendalikan pembiayaan semula, tambahan dan penjadualan semula?",
+					"answer": "Ya. Setiap laluan diluluskan dan dijejak pada fail pinjaman yang sama, jadi perubahan dan sebab di sebaliknya kekal dalam sejarah dan bukannya menjadi pinjaman baharu yang terputus. Tersedia sebagai add-on pilihan pada kedua-dua pelan."
+				},
+				{
+					"question": "Bolehkah kami konfigurasi TrueKredit supaya sepadan dengan cara kami sudah memberi pinjaman?",
+					"answer": "Ya. Muat naik kelulusan sebelum L2, pengesahan AML, sijil setem LHDN, dan maker-checker pada pengeluaran pinjaman masing-masing dihidupkan atau dimatikan mengikut cara pejabat anda sudah beroperasi. Pasukan anda mengekalkan proses mereka — sistem mengikutinya."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Bersedia mengurus buku pinjaman anda dengan yakin?",
+			"body": "Tempah konsultasi percuma untuk melihat bagaimana TrueKredit sesuai dengan cawangan anda hari ini — atau Pro apabila anda sedia memberi pinjaman seluruh negara. Data pinjaman anda kekal dengan anda sama ada pun.",
+			"secondary": "Bandingkan Standard lwn Pro"
+		},
+		"features": {
+			"eyebrow": "Hujung ke hujung",
+			"title": "Satu sistem dari pertanyaan pertama hingga penyelesaian akhir",
+			"lede": "Dari lead pertama hingga bayaran balik terakhir — pasukan anda mengurus buku di satu tempat. Tatal untuk ikut perjalanan.",
+			"steps": {
+				"leads": {
+					"phase": "01 · Saluran",
+					"title": "Rakam setiap lead",
+					"desc": "Giliran jualan, ejen dan siapa yang membawa lead — tukar lead menjadi peminjam tanpa meninggalkan sistem."
+				},
+				"profiles": {
+					"phase": "02 · Profil",
+					"title": "Kenali peminjam",
+					"desc": "Kerja, keluarga, komitmen, penjamin dan dokumen — satu fail lengkap yang dikongsi seluruh pasukan."
+				},
+				"approve": {
+					"phase": "03 · Lulus",
+					"title": "Luluskan, kemudian keluarkan",
+					"desc": "Lawatan lapangan, semakan risiko, pakej pengarah dan kawalan kewangan — selesaikan fail lebih cepat di kaunter."
+				},
+				"docs": {
+					"phase": "04 · Dokumen",
+					"title": "Perjanjian, resit, surat — automatik",
+					"desc": "Jadual, resit bayaran, surat kutipan dan mungkir dicipta dan diemel apabila diperlukan."
+				},
+				"repay": {
+					"phase": "05 · Khidmat",
+					"title": "Setiap ansuran dalam pandangan",
+					"desc": "Jadual bayaran balik yang jelas, slip bayaran, penyelesaian awal dan semakan kewangan — satu buku semasa."
+				},
+				"collect": {
+					"phase": "06 · Kutipan",
+					"title": "Kutipan terkawal",
+					"desc": "Paparan pasukan, janji untuk bayar, eskalasi dan makluman matang — dari tunggakan hingga mungkir."
+				},
+				"flex": {
+					"phase": "07 · Anjal",
+					"title": "Biaya semula, tambahan atau jadual semula",
+					"desc": "Apabila peminjam memerlukan ruang untuk menyesuaikan — setiap laluan diluluskan dan dijejak dalam sistem yang sama, pada fail pinjaman yang sama."
+				},
+				"audit": {
+					"phase": "08 · Tadbir",
+					"title": "Sedia audit, setiap hari",
+					"desc": "Rekod jelas siapa buat apa, bila — dengan peranan untuk Owner, Credit, Finance, Collections dan Auditor."
+				},
+				"proApp": {
+					"phase": "09 · Se-Malaysia",
+					"title": "Bawa pinjaman seluruh negara",
+					"desc": "TrueKredit Pro menambah laman web berjenama dan aplikasi mudah alih — pelanggan memohon, membayar dan menandatangani, manakala setiap fail kekal dalam sistem yang sama."
+				}
+			}
+		}
+	}
+}

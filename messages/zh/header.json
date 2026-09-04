@@ -1,0 +1,67 @@
+{
+	"_status": "ai-draft",
+	"Header": {
+		"nav": {
+			"solutions": "解决方案",
+			"work": "案例",
+			"insights": "洞察",
+			"about": "关于我们",
+			"careers": "加入我们"
+		},
+		"startHere": "由此开始",
+		"openMenu": "打开菜单",
+		"freeConsultation": "免费咨询",
+		"bookConsultation": "预约免费咨询",
+		"columns": {
+			"services": "服务",
+			"platforms": "平台",
+			"apis": "API"
+		},
+		"badges": {
+			"upcoming": "即将推出",
+			"new": "新品"
+		},
+		"solutions": {
+			"truekredit": {
+				"title": "TrueKredit™",
+				"description": "为持牌放贷公司把贷款账簿集中在一个系统。"
+			},
+			"digitalLicense": {
+				"title": "KPKT数字牌照",
+				"description": "常规PPW或伊斯兰教法——两条牌照路径我们都办理。"
+			},
+			"shariahLicense": {
+				"title": "伊斯兰教法数字牌照",
+				"description": "即将推出的KPKT路径——实体、委员会与TrueSyariah™。"
+			},
+			"accountManagement": {
+				"title": "KPKT账户管理",
+				"description": "续期、许可证与呈报——由我们代办。"
+			},
+			"softwareDevelopment": {
+				"title": "定制软件开发",
+				"description": "按您的流程打造放贷平台与软件。"
+			},
+			"truesyariah": {
+				"title": "TrueSyariah™",
+				"description": "伊斯兰教法数字牌照与平台——Tawarruq、Ta'widh与Gharamah。"
+			},
+			"truep2p": {
+				"title": "TrueP2P™",
+				"description": "符合马来西亚证券监督委员会 (SC) 要求的点对点平台，专为马来西亚打造。"
+			},
+			"trueidentity": {
+				"title": "TrueIdentity™",
+				"description": "面向马来西亚金融科技的e-KYC——MyKad、自拍、比对。"
+			},
+			"truessm": {
+				"title": "TrueSSM™",
+				"description": "SSM注册查询、公司资料与扫描文件。"
+			},
+			"payments": {
+				"title": "支付网关",
+				"description": "FPX、DuitNow、银行卡与对账，集中一处。"
+			}
+		}
+	}
+}

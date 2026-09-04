@@ -1,0 +1,83 @@
+{
+	"_status": "ai-draft",
+	"InsightsChrome": {
+		"nav": "洞察",
+		"eyebrow": "洞察",
+		"title": "看看<accent>马来西亚金融科技</accent>真正行之有效的做法。",
+		"lede": "当牌照、贷款账簿与软件遇上马来西亚规则时，我们看到的问题，以及耗时的环节。",
+		"topicsLabel": "我们撰写的主题",
+		"latest": "最新",
+		"readArticle": "阅读本文",
+		"allInsights": "全部洞察",
+		"updated": "已更新",
+		"tagsLabel": "主题",
+		"grid": {
+			"eyebrow": "更多阅读",
+			"title": "团队的更多文章。",
+			"lede": "与我们给客户的笔记相同。比一通电话更短——您也可以转给团队。"
+		},
+		"empty": {
+			"unavailable": {
+				"eyebrow": "暂时无法访问",
+				"title": "这些文章目前无法访问。",
+				"aside": "请稍后再试。",
+				"body": "请稍等几分钟后刷新。或直接问您此行想问的问题——咨询不收费。"
+			},
+			"unpublished": {
+				"eyebrow": "首批文章即将发布",
+				"title": "尚无已发布内容。",
+				"aside": "在此期间欢迎询问。",
+				"body": "首批文章即将发布。在此之前，欢迎问您此行想问的问题——咨询不收费。"
+			}
+		},
+		"error": {
+			"eyebrow": "暂时无法访问",
+			"title": "这篇洞察目前无法访问。",
+			"body": "请稍后再试，或返回洞察。",
+			"retry": "重试",
+			"back": "返回洞察",
+			"metaTitle": "这篇洞察目前无法访问"
+		},
+		"related": {
+			"eyebrow": "适用场景",
+			"title": "把内容落到实处。",
+			"explore": "了解 {title}"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "常见问题",
+			"items": [
+				{
+					"question": "什么是Truestack Insights？",
+					"answer": "Truestack Insights记录我们在马来西亚金融科技客户工作中的所见——牌照、贷款账簿及相关软件。每篇文章回答一个已有人问过我们的问题。若下一步是我们提供的产品或服务，我们会说明并附上链接。"
+				},
+				{
+					"question": "谁适合阅读这些文章？",
+					"answer": "任何经营持牌放贷公司、申请KPKT线上放贷牌照 (e-Lending)，或在马来西亚开发受监管金融软件的人士。业主、合规经理与产品负责人会看到他们已在使用的术语——Lampiran呈报、CTOS、SSM、Tawarruq。若文章指向下一步，我们会链接对应的产品或服务，例如TrueKredit™或KPKT牌照咨询。"
+				},
+				{
+					"question": "你们多久发布新洞察？",
+					"answer": "通常每月一至四篇。我们宁可等待，也不发空泛内容。新文章一经发布即会出现在此。"
+				},
+				{
+					"question": "如何提出你们尚未撰文的问题？",
+					"answer": "预约免费咨询，告诉我们您卡在何处。我们会梳理适用于您情况和时间表的内容。没有购买软件或服务的义务。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "有我们尚未撰文的问题？",
+			"body": "告诉我们您卡在何处。我们会在免费咨询中逐一梳理——没有购买任何东西的义务。",
+			"secondary": "KPKT数字牌照"
+		},
+		"postCta": {
+			"heading": "与每天做这件事的人当面梳理。",
+			"body": "预约免费咨询。告诉我们您的牌照类型以及卡在何处——我们会说明哪些适用于您、哪些不适用。",
+			"secondaryFallback": "KPKT数字牌照"
+		},
+		"schema": {
+			"name": "洞察",
+			"description": "Truestack Technologies关于马来西亚金融科技的笔记——KPKT牌照、放贷、伊斯兰融资、合规以及我们围绕这些所构建的软件。"
+		}
+	}
+}

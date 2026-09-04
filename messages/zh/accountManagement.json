@@ -1,0 +1,202 @@
+{
+	"_status": "ai-draft",
+	"AccountManagement": {
+		"meta": {
+			"title": "KPKT牌照合规管理 | 牌照续期",
+			"description": "面向马来西亚持牌放贷公司的 KPKT 合规账户管理——PPW / KK 牌照续期、广告许可（permit iklan）与年度申报。批准最快可提速 50%。",
+			"openGraphTitle": "KPKT 合规账户管理 | PPW 牌照续期",
+			"openGraphDescription": "KPKT 合规账户管理——PPW / KK 牌照续期与广告许可（permit iklan），以及年度 B/B1 申报和 CoSec/SSM 事务。批准最快可提速 50%。"
+		},
+		"schema": {
+			"serviceName": "KPKT 合规账户管理",
+			"alternateName": [
+				"KPKT 合规管理",
+				"pembaharuan lesen PPW / KK",
+				"permit iklan",
+				"马来西亚放贷牌照续期"
+			],
+			"serviceType": "KPKT 合规账户管理——PPW / KK 牌照续期与广告许可（permit iklan）",
+			"audienceType": "KPKT 持牌放贷公司"
+		},
+		"breadcrumb": {
+			"current": "KPKT 合规账户管理"
+		},
+		"hero": {
+			"title": "KPKT 合规账户管理，化繁为简",
+			"subtitle": "我们承接马来西亚房屋及地方政府部 (KPKT) 的监管与行政事务，让您专注增长并服务客户。",
+			"secondaryCta": "查看价格"
+		},
+		"pain": {
+			"title": "合规不必成为负担",
+			"subtitle": "经营持牌放贷业务，意味着面对沉重的监管要求。交给我们处理。",
+			"items": {
+				"compliance": {
+					"title": "合规要求繁重",
+					"description": "KPKT 法规要求频繁申报，并严格遵守报告标准。"
+				},
+				"coordination": {
+					"title": "协调耗时",
+					"description": "与 CoSec、SSM 及监管机构协调，会占用核心业务的宝贵时间。"
+				},
+				"renewals": {
+					"title": "续期复杂",
+					"description": "牌照与许可必须每次按时办理——否则可能面临处罚。"
+				},
+				"admin": {
+					"title": "行政负担",
+					"description": "董事变更、股东更新与公司改动都需要谨慎处理。"
+				}
+			}
+		},
+		"solution": {
+			"badge": "我们的方案",
+			"title": "您唯一可信的合作方",
+			"body": "一项专责的 KPKT 合规账户管理服务，承接端到端监管事务。我们理顺每一个合规接点，为您节省时间、减轻运营压力，让您专注最重要的事：<emphasis>发展放贷业务。</emphasis>",
+			"photoAlt": "员工在马来西亚咖啡馆柜台接待顾客"
+		},
+		"advantage": {
+			"badge": "我们的优势",
+			"title": "批准提速最高 <accent>50%</accent>",
+			"body": "我们对 KPKT 流程的深厚经验，以及与监管机构已建立的关系，让您的申请在系统中走得更快。",
+			"items": {
+				"experience": {
+					"title": "多年经验",
+					"description": "我们清楚监管机构需要什么，减少来回与延误。"
+				},
+				"network": {
+					"title": "已建立的网络",
+					"description": "与关键相关方的直接关系，加快批准流程。"
+				},
+				"firstTime": {
+					"title": "一次做对",
+					"description": "从第一天起文件准确，避免驳回或重新提交的延误。"
+				}
+			},
+			"timelineTitle": "平均批准周期",
+			"diyLabel": "自行 / 传统",
+			"diyTime": "4–6 周",
+			"truestackLabel": "与 Truestack 合作",
+			"truestackTime": "2–3 周",
+			"savingsValue": "~50%",
+			"savingsCaption": "快于行业平均水平"
+		},
+		"services": {
+			"title": "覆盖的全面服务",
+			"subtitle": "保持合规所需的一切，由我们经验丰富的团队处理。",
+			"photoAlt": "客户经理与客户审阅 KPKT 合规文件",
+			"items": {
+				"company": {
+					"title": "公司信息更新",
+					"description": "董事变更、股东更新及所有必要的公司改动——由我们按时办理。"
+				},
+				"renewals": {
+					"title": "牌照续期",
+					"description": "KPKT 牌照与广告许可（permit iklan）续期，每次按时办理。"
+				},
+				"submissions": {
+					"title": "年度申报",
+					"description": "B 与 B1 贷款交易申报准确编制并提交，以符合监管截止日期。"
+				},
+				"pdpa": {
+					"title": "PDPA 牌照",
+					"description": "《个人数据保护法》牌照申请与续期，全程合规办理。"
+				},
+				"upgrade": {
+					"title": "企业升级",
+					"description": "平稳过渡至 Sdn. Bhd. 地位，文件齐全并完成监管协调。"
+				},
+				"express": {
+					"title": "加急办理",
+					"description": "紧急请求优先加快，满足您需要的短周转时间。"
+				}
+			},
+			"cosecTitle": "完整 CoSec 与 SSM 协调",
+			"cosecBody": "所有文件协调由我们办理——避免遗漏。"
+		},
+		"pricing": {
+			"title": "定价简单透明",
+			"subtitle": "按您的业务需要设计的灵活选项。只用多少付多少，没有隐藏费用。",
+			"recommended": "推荐",
+			"headers": {
+				"item": "项目",
+				"noSubscription": "无订阅",
+				"monthly": "按月",
+				"annual": "按年"
+			},
+			"emdash": "—",
+			"rows": {
+				"subscription": {
+					"item": "订阅费",
+					"noSubscription": "—",
+					"monthly": "RM 100 / 月",
+					"annual": "RM 1,000 / 年"
+				},
+				"perRequest": {
+					"item": "单次办理费",
+					"noSubscription": "RM 1,000",
+					"monthly": "RM 600",
+					"annual": "RM 500"
+				},
+				"priority": {
+					"item": "优先办理"
+				},
+				"annualSubmission": {
+					"item": "年度 B 与 B1 申报",
+					"noSubscription": "—",
+					"monthly": "—",
+					"annual": "已包含（每年一次）"
+				},
+				"savings": {
+					"item": "年度节省（10 次办理）",
+					"noSubscription": "—",
+					"monthly": "节省 RM 2,800",
+					"annual": "节省 RM 4,500"
+				},
+				"bestFor": {
+					"item": "适合",
+					"noSubscription": "偶发 / 一次性需求",
+					"monthly": "常规运营商",
+					"annual": "活跃且在扩张的运营商"
+				}
+			},
+			"noteLockin": "无长期绑定。可随业务变化在订阅档位与按需办理之间切换。",
+			"noteSavings": "年订用户的单次办理费比无订阅节省 50%。",
+			"noteConversion": "KPKT 转为数字牌照是另一项服务。<link>了解更多 →</link>"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "常见问题",
+			"items": [
+				{
+					"question": "什么是 KPKT 合规账户管理？",
+					"answer": "KPKT 合规账户管理是面向马来西亚持牌放贷公司的持续合规服务。Truestack 办理牌照续期、年度申报、公司信息更新，并与 CoSec、SSM 及监管机构协调——让您的团队专注放贷，而不是文书。"
+				},
+				{
+					"question": "这项服务适合谁？",
+					"answer": "适合需要可靠日常监管支持的 KPKT 持牌放贷公司。无论您经营传统网点还是数字牌照，我们都会把续期、申报与公司变更维持在轨道上。"
+				},
+				{
+					"question": "与 Truestack 合作，批准能快多少？",
+					"answer": "与全部自行办理相比，运营商在常见 KPKT 申报上通常能看到约 50% 的更快周转。确切时间仍取决于文件准备情况和监管机构排期。"
+				},
+				{
+					"question": "你们是否办理 pembaharuan lesen PPW / KK 和 permit iklan？",
+					"answer": "是。Truestack 办理 PPW / KK 牌照续期（pembaharuan lesen PPW / KK）和广告许可（permit iklan）续期，以及公司信息更新、年度申报，并与 CoSec、SSM 协调。KPKT 转为数字牌照是另一项委托——若您要在线上覆盖全国，请参阅我们的数字牌照服务。"
+				},
+				{
+					"question": "定价如何运作？",
+					"answer": "您可以按需合作，也可以按月或按年订阅。年订用户通常能节省单次办理费。没有长期绑定——合规量变化时即可换档。"
+				},
+				{
+					"question": "如何开始？",
+					"answer": "在 truestack.my/contact 预约免费咨询。我们会梳理您当前的牌照状态、即将到期的续期与申报日历，然后为您的放贷业务推荐合适的支持方案。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "合规交给我们",
+			"body": "您专注发展放贷业务，监管复杂性由我们管理。预约免费咨询，我们的团队会梳理您的合规需求。",
+			"secondary": "了解数字牌照"
+		}
+	}
+}

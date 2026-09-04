@@ -1,0 +1,202 @@
+{
+	"_status": "ai-draft",
+	"AccountManagement": {
+		"meta": {
+			"title": "Pengurusan Akaun KPKT | Pembaharuan Lesen & Pematuhan",
+			"description": "Pengurusan akaun KPKT bagi pemberi pinjam wang berlesen Malaysia — pembaharuan lesen PPW / KK, permit iklan dan penyerahan tahunan. Kelulusan 50% lebih pantas.",
+			"openGraphTitle": "Pengurusan Akaun KPKT | Pembaharuan Lesen PPW",
+			"openGraphDescription": "Pengurusan akaun KPKT — pembaharuan lesen PPW / KK dan permit iklan, serta penyerahan B/B1 tahunan dan kerja CoSec/SSM. Kelulusan sehingga 50% lebih pantas."
+		},
+		"schema": {
+			"serviceName": "Pengurusan Akaun KPKT",
+			"alternateName": [
+				"Pengurusan pematuhan KPKT",
+				"pembaharuan lesen PPW / KK",
+				"permit iklan",
+				"Pembaharuan lesen pemberi pinjam wang Malaysia"
+			],
+			"serviceType": "Pengurusan akaun KPKT — pembaharuan lesen PPW / KK dan permit iklan",
+			"audienceType": "Pemberi pinjam wang berlesen KPKT"
+		},
+		"breadcrumb": {
+			"current": "Pengurusan Akaun KPKT"
+		},
+		"hero": {
+			"title": "Pengurusan Akaun KPKT, Dipermudah",
+			"subtitle": "Kami uruskan kerja kawal selia dan pentadbiran Kementerian Perumahan dan Kerajaan Tempatan (KPKT) supaya anda boleh fokus pada pertumbuhan dan khidmat kepada pelanggan.",
+			"secondaryCta": "Lihat Harga"
+		},
+		"pain": {
+			"title": "Urus Pematuhan Tanpa Bebanan",
+			"subtitle": "Mengendalikan perniagaan pemberi pinjam wang berlesen bermaksud berdepan keperluan kawal selia yang berat. Biar kami yang uruskan.",
+			"items": {
+				"compliance": {
+					"title": "Keperluan Pematuhan yang Berat",
+					"description": "Peraturan KPKT menghendaki penyerahan kerap dan pematuhan ketat kepada piawaian pelaporan."
+				},
+				"coordination": {
+					"title": "Penyelarasan yang Memakan Masa",
+					"description": "Menyelaras dengan CoSec, SSM dan pengawal selia mengambil masa berharga daripada perniagaan teras anda."
+				},
+				"renewals": {
+					"title": "Pembaharuan yang Kompleks",
+					"description": "Pembaharuan lesen dan permit mesti diproses tepat pada masanya, setiap kali — atau berisiko penalti."
+				},
+				"admin": {
+					"title": "Beban Pentadbiran",
+					"description": "Perubahan pengarah, kemas kini pemegang saham dan pengubahsuaian syarikat memerlukan pengendalian yang teliti."
+				}
+			}
+		},
+		"solution": {
+			"badge": "Penyelesaian Kami",
+			"title": "Rakan Kongsi Tunggal yang Dipercayai",
+			"body": "Perkhidmatan pengurusan akaun KPKT berdedikasi yang menguruskan kerja kawal selia dari hujung ke hujung. Kami permudahkan setiap titik pematuhan, menjimatkan masa anda dan mengurangkan tekanan operasi supaya anda boleh fokus pada yang paling penting: <emphasis>mengembangkan perniagaan pinjaman anda.</emphasis>",
+			"photoAlt": "Kakitangan melayan pelanggan di kaunter kafe Malaysia"
+		},
+		"advantage": {
+			"badge": "Kelebihan Kami",
+			"title": "Kelulusan sehingga <accent>50% lebih pantas</accent>",
+			"body": "Pengalaman mendalam kami dengan proses KPKT dan hubungan terjalin dengan pengawal selia bermaksud permohonan anda bergerak lebih pantas dalam sistem.",
+			"items": {
+				"experience": {
+					"title": "Bertahun Pengalaman",
+					"description": "Kami tahu tepat apa yang pengawal selia perlukan, mengurangkan bolak-balik dan kelewatan."
+				},
+				"network": {
+					"title": "Rangkaian Terjalin",
+					"description": "Hubungan langsung dengan pihak berkepentingan utama mempercepatkan proses kelulusan."
+				},
+				"firstTime": {
+					"title": "Tepat Kali Pertama",
+					"description": "Dokumentasi tepat dari hari pertama bermaksud tiada penolakan atau kelewatan penyerahan semula."
+				}
+			},
+			"timelineTitle": "Purata Tempoh Kelulusan",
+			"diyLabel": "Sendiri / tradisional",
+			"diyTime": "4–6 minggu",
+			"truestackLabel": "Dengan Truestack",
+			"truestackTime": "2–3 minggu",
+			"savingsValue": "~50%",
+			"savingsCaption": "Lebih pantas daripada purata industri"
+		},
+		"services": {
+			"title": "Perkhidmatan Komprehensif Diliputi",
+			"subtitle": "Semua yang anda perlukan untuk kekal patuh, diuruskan oleh pasukan berpengalaman kami.",
+			"photoAlt": "Pengurus akaun menyemak dokumen pematuhan KPKT bersama klien",
+			"items": {
+				"company": {
+					"title": "Kemas Kini Syarikat",
+					"description": "Perubahan pengarah, kemas kini pemegang saham dan semua pengubahsuaian syarikat penting — diuruskan untuk anda, tepat pada masanya."
+				},
+				"renewals": {
+					"title": "Pembaharuan Lesen",
+					"description": "Pembaharuan lesen KPKT dan permit iklan diproses tepat pada masanya, setiap kali."
+				},
+				"submissions": {
+					"title": "Penyerahan Tahunan",
+					"description": "Penyerahan transaksi pinjaman B dan B1 disediakan dan difailkan dengan tepat untuk memenuhi tarikh akhir kawal selia."
+				},
+				"pdpa": {
+					"title": "Pelesenan PDPA",
+					"description": "Permohonan dan pembaharuan lesen Akta Perlindungan Data Peribadi diuruskan dengan pematuhan penuh."
+				},
+				"upgrade": {
+					"title": "Naik Taraf Perusahaan",
+					"description": "Peralihan lancar ke status Sdn. Bhd. dengan dokumentasi lengkap dan penyelarasan kawal selia."
+				},
+				"express": {
+					"title": "Urusan Ekspres",
+					"description": "Permintaan mendesak diutamakan dan dipercepatkan apabila anda perlukan masa pusingan yang pantas."
+				}
+			},
+			"cosecTitle": "Penyelarasan Penuh CoSec & SSM",
+			"cosecBody": "Semua penyelarasan dokumen diuruskan untuk anda — supaya tiada yang terlepas."
+		},
+		"pricing": {
+			"title": "Harga Ringkas dan Telus",
+			"subtitle": "Pilihan fleksibel direka untuk keperluan perniagaan anda. Bayar hanya untuk apa yang anda guna, tanpa yuran tersembunyi.",
+			"recommended": "Disyorkan",
+			"headers": {
+				"item": "Perkara",
+				"noSubscription": "Tanpa langganan",
+				"monthly": "Bulanan",
+				"annual": "Tahunan"
+			},
+			"emdash": "—",
+			"rows": {
+				"subscription": {
+					"item": "Yuran langganan",
+					"noSubscription": "—",
+					"monthly": "RM 100 / bulan",
+					"annual": "RM 1,000 / tahun"
+				},
+				"perRequest": {
+					"item": "Yuran setiap permintaan",
+					"noSubscription": "RM 1,000",
+					"monthly": "RM 600",
+					"annual": "RM 500"
+				},
+				"priority": {
+					"item": "Urusan keutamaan"
+				},
+				"annualSubmission": {
+					"item": "Penyerahan B & B1 tahunan",
+					"noSubscription": "—",
+					"monthly": "—",
+					"annual": "Termasuk (sekali setahun)"
+				},
+				"savings": {
+					"item": "Penjimatan tahunan (10 permintaan)",
+					"noSubscription": "—",
+					"monthly": "Jimat RM 2,800",
+					"annual": "Jimat RM 4,500"
+				},
+				"bestFor": {
+					"item": "Sesuai untuk",
+					"noSubscription": "Keperluan sekali sekala",
+					"monthly": "Pengendali tetap",
+					"annual": "Pengendali aktif dan berkembang"
+				}
+			},
+			"noteLockin": "Tiada ikatan jangka panjang. Tukar antara peringkat langganan atau mengikut permintaan apabila perniagaan anda berubah.",
+			"noteSavings": "Pelanggan tahunan jimat 50% pada yuran setiap permintaan berbanding tanpa langganan.",
+			"noteConversion": "Penukaran kepada lesen digital KPKT ialah perkhidmatan berasingan. <link>Ketahui lebih lanjut →</link>"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim",
+			"items": [
+				{
+					"question": "Apakah pengurusan akaun KPKT?",
+					"answer": "Pengurusan akaun KPKT ialah perkhidmatan pematuhan berterusan untuk pemberi pinjam wang berlesen di Malaysia. Truestack menguruskan pembaharuan lesen, penyerahan tahunan, kemas kini syarikat, dan penyelarasan dengan CoSec, SSM serta pengawal selia — supaya pasukan anda boleh fokus pada pinjaman, bukan kertas kerja."
+				},
+				{
+					"question": "Untuk siapa perkhidmatan ini?",
+					"answer": "Untuk pemberi pinjam wang berlesen KPKT yang memerlukan sokongan kawal selia harian yang boleh diharap. Sama ada anda mengendalikan operasi cawangan tradisional atau lesen digital, kami pastikan pembaharuan, penyerahan dokumen dan perubahan syarikat kekal di landasan."
+				},
+				{
+					"question": "Berapa lebih pantas kelulusan dengan Truestack?",
+					"answer": "Pengendali biasanya melihat pusingan sehingga kira-kira 50% lebih pantas pada penyerahan KPKT biasa berbanding menguruskan semuanya sendiri. Tempoh tepat masih bergantung pada kesediaan dokumen dan jadual pengawal selia."
+				},
+				{
+					"question": "Adakah anda uruskan pembaharuan lesen PPW / KK dan permit iklan?",
+					"answer": "Ya. Truestack menguruskan pembaharuan lesen PPW / KK dan permit iklan, serta kemas kini syarikat, penyerahan tahunan, dan penyelarasan dengan CoSec serta SSM. Penukaran kepada lesen digital KPKT ialah penglibatan berasingan — lihat perkhidmatan Lesen Digital kami jika anda mahu meminjamkan dalam talian di seluruh negara."
+				},
+				{
+					"question": "Bagaimana harga berfungsi?",
+					"answer": "Anda boleh bekerja dengan kami mengikut permintaan, atau dengan langganan bulanan atau tahunan. Pelanggan tahunan biasanya jimat pada yuran setiap permintaan. Tiada ikatan jangka panjang — tukar peringkat apabila volum pematuhan anda berubah."
+				},
+				{
+					"question": "Bagaimana saya bermula?",
+					"answer": "Tempah konsultasi percuma di truestack.my/contact. Kami akan petakan status lesen semasa anda, pembaharuan yang akan datang dan kalendar penyerahan, kemudian syorkan pelan sokongan yang sesuai untuk operasi pinjaman anda."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Biar Kami Uruskan Pematuhan",
+			"body": "Fokus pada mengembangkan perniagaan pinjaman anda sementara kami uruskan kerumitan kawal selia. Tempah konsultasi percuma dan pasukan kami akan menilai keperluan pematuhan anda.",
+			"secondary": "Terokai Lesen Digital"
+		}
+	}
+}

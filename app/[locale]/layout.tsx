@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import {
+	getMessages,
+	getTranslations,
+	setRequestLocale,
+} from "next-intl/server";
 import {
 	Rethink_Sans,
 	Inter,
@@ -157,12 +161,20 @@ export async function generateMetadata({
 	const { locale: raw } = await params;
 	const locale = resolveAppLocale(raw);
 	setRequestLocale(locale);
+	const t = await getTranslations({ locale, namespace: "Common" });
+	const title = t("siteTitle");
+	const description = t("siteDescription");
 	return {
 		...rootMetadata,
+		title: { default: title, template: "%s - Truestack" },
+		description,
 		openGraph: {
 			...rootMetadata.openGraph,
 			locale: ogLocaleFor(locale),
+			title,
+			description,
 		},
+		twitter: { ...rootMetadata.twitter, title, description },
 	};
 }
 

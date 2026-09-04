@@ -1,0 +1,66 @@
+{
+	"_status": "ai-draft",
+	"WorkChrome": {
+		"nav": "Portfolio",
+		"hero": {
+			"eyebrow": "Portfolio kami",
+			"title": "Lihat rupa <accent>yang sudah beroperasi</accent>.",
+			"lede": "Platform sebenar yang kami bawa dari idea ke pelancaran (go-live) — supaya anda dapat lihat hasilnya sebelum membuat komitmen.",
+			"pills": {
+				"kpkt": "Penukaran digital KPKT",
+				"enterprise": "Pinjaman perusahaan",
+				"aws": "AWS Malaysia"
+			},
+			"viewStories": "Lihat kisah kejayaan"
+		},
+		"grid": {
+			"eyebrow": "Portfolio terpilih",
+			"title": "Kisah kejayaan",
+			"lede": "Kajian kes terpilih dan platform yang sudah beroperasi — daripada penukaran kepada lesen digital KPKT ke e-dagang dan teras pinjaman perusahaan.",
+			"featured": "Ditonjolkan",
+			"andMore": "Dan lagi",
+			"andMoreLead": "<em>Kisah anda mungkin di sini seterusnya.</em> Membina atau mengembangkan operasi pinjaman atau fintech di Malaysia? Mari berbincang.",
+			"startConversation": "Mulakan perbualan"
+		},
+		"detail": {
+			"allWork": "Semua portfolio",
+			"builtOn": "Dibina atas",
+			"viewProduct": "Lihat produk",
+			"visitLive": "Lawati laman beroperasi",
+			"moreWork": "Portfolio lain",
+			"related": "Kajian kes berkaitan",
+			"viewAllWork": "Lihat semua portfolio"
+		},
+		"sections": {
+			"theChallenge": "Cabaran",
+			"whatWeBuilt": "Apa yang kami bina",
+			"howWeDelivered": "Bagaimana kami menyampaikannya"
+		},
+		"stats": {
+			"launch": "Lancaran",
+			"mo": "bln",
+			"product": "Produk",
+			"surfaces": "Antara muka",
+			"engagement": "Penglibatan",
+			"focus": "Fokus",
+			"regulator": "Pengawal selia",
+			"platform": "Platform"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim"
+		},
+		"cta": {
+			"heading": "Bersedia kisah anda menjadi yang seterusnya?",
+			"body": "Sama ada anda beralih digital, menukar platform, atau bermula semula — tempah konsultasi percuma dan kami akan susun laluan dari kedudukan anda ke pelancaran (go-live).",
+			"secondary": "Terokai Lesen Digital"
+		},
+		"detailCta": {
+			"heading": "Mahukan binaan seperti ini?",
+			"body": "Beritahu kami apa yang anda akan lancarkan — pinjaman digital, pasaran dalam talian, atau platform terkawal. Kami akan susun laluan dari ringkasan ke pelancaran (go-live)."
+		},
+		"schema": {
+			"name": "Portfolio | Kisah Kejayaan Truestack"
+		}
+	}
+}

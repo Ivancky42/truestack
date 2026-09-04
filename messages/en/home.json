@@ -9,6 +9,7 @@
 			"title": "The fintech infrastructure Malaysian lenders launch on.",
 			"titlePrefix": ["The", "fintech", "infrastructure", "Malaysian", "lenders"],
 			"verbs": ["launch", "lend", "build", "scale", "run"],
+			"verbSuffix": " on.",
 			"lede": "We get you licensed and we run your book — conventional PPW or Shariah digital lending, the paperwork, and the rails underneath.",
 			"secondaryCta": "Find your starting point",
 			"chips": {

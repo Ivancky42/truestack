@@ -1,0 +1,44 @@
+{
+	"_status": "ai-draft",
+	"Contact": {
+		"meta": {
+			"title": "Tempah Konsultasi Percuma",
+			"description": "Tempah konsultasi percuma dengan Truestack — pelesenan KPKT, pematuhan atau perisian pinjaman. Percuma, tanpa obligasi. Kami susun langkah seterusnya anda.",
+			"openGraphTitle": "Tempah Konsultasi Percuma - Truestack",
+			"openGraphDescription": "Tempah konsultasi percuma dengan Truestack — pelesenan KPKT, pematuhan, atau perisian pinjaman. Percuma dan tanpa obligasi."
+		},
+		"schema": {
+			"breadcrumbHome": "Laman Utama",
+			"breadcrumbCurrent": "Hubungi Kami",
+			"name": "Tempah Konsultasi Percuma - Truestack",
+			"description": "Tempah konsultasi percuma dengan Truestack untuk pelesenan KPKT, pematuhan, dan pembangunan perisian fintech di Malaysia.",
+			"serviceName": "Konsultasi Percuma",
+			"serviceType": "Konsultasi fintech dan pelesenan KPKT",
+			"serviceDescription": "Konsultasi percuma, tanpa obligasi, merangkumi pengurusan akaun KPKT (pembaharuan lesen PPW / KK, permit iklan), lesen pinjaman wang dalam talian (e-Lending), perisian pemberi pinjam wang Malaysia, dan pembangunan fintech tersuai untuk pemberi pinjam wang berlesen serta pengendali fintech di Malaysia.",
+			"offerName": "Konsultasi Percuma",
+			"offerDescription": "Konsultasi awal untuk menentukan skop keperluan pelesenan KPKT, pematuhan, atau perisian fintech anda — percuma."
+		},
+		"hero": {
+			"title": "Tempah Konsultasi Percuma Anda",
+			"subtitle": "Beritahu kami tentang projek anda. Kami akan susun pembangunan perisian, keperluan pematuhan, atau pelesenan KPKT anda—percuma, tanpa obligasi."
+		},
+		"imageAlt": "Seorang lelaki di mejanya dalam pejabat yang hangat, menyemak pertanyaan di telefonnya",
+		"cards": {
+			"copyAria": "Salin {label}",
+			"phone": {
+				"title": "Telefon",
+				"description": "Hubungi kami melalui WhatsApp. Ketik untuk mulakan perbualan.",
+				"label": "Telefon",
+				"copyLabel": "nombor telefon",
+				"whatsapp": "Buka WhatsApp"
+			},
+			"email": {
+				"title": "E-mel",
+				"description": "Hantar e-mel kepada kami untuk pertanyaan umum atau sokongan.",
+				"label": "E-mel",
+				"copyLabel": "e-mel",
+				"send": "Hantar E-mel"
+			}
+		}
+	}
+}

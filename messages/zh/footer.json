@@ -1,0 +1,44 @@
+{
+	"_status": "ai-draft",
+	"Footer": {
+		"navLabel": "页脚",
+		"columns": {
+			"services": "服务",
+			"platforms": "平台",
+			"apis": "API",
+			"company": "公司",
+			"legal": "法律"
+		},
+		"solutions": {
+			"digitalLicense": "KPKT数字牌照",
+			"shariahLicense": "伊斯兰教法数字牌照",
+			"accountManagement": "KPKT账户管理",
+			"softwareDevelopment": "定制软件开发",
+			"truekredit": "TrueKredit™",
+			"truesyariah": "TrueSyariah™",
+			"truep2p": "TrueP2P™",
+			"trueidentity": "TrueIdentity™",
+			"truessm": "TrueSSM™",
+			"payments": "支付网关",
+			"developers": "开发者"
+		},
+		"company": {
+			"about": "关于我们",
+			"work": "案例",
+			"insights": "洞察",
+			"careers": "加入我们",
+			"contact": "联系我们"
+		},
+		"legal": {
+			"cybersecurity": "网络安全政策",
+			"pdpa": "PDPA声明",
+			"privacy": "隐私政策",
+			"terms": "服务条款"
+		},
+		"tagline": "为马来西亚持牌放贷公司提供房屋及地方政府部 (KPKT) 合规服务与金融科技软件开发。",
+		"linkedin": "LinkedIn",
+		"bookConsultation": "预约免费咨询",
+		"registration": "注册号 {number}",
+		"copyright": "© {year} Truestack Technologies。保留所有权利。"
+	}
+}

@@ -1,0 +1,185 @@
+{
+	"_status": "ai-draft",
+	"SoftwareDevelopment": {
+		"meta": {
+			"title": "Pembangunan Perisian Tersuai | Web, Mudah Alih & Platform",
+			"description": "Perisian tersuai dari ringkasan ke pelancaran — aplikasi web, mudah alih, platform dan alatan dalaman untuk perniagaan Malaysia. Tempah konsultasi percuma.",
+			"openGraphTitle": "Pembangunan Perisian Tersuai | Truestack",
+			"openGraphDescription": "Perisian tersuai dari ringkasan ke pelancaran (go-live) — aplikasi web, produk mudah alih, platform dan alatan dalaman untuk perniagaan Malaysia."
+		},
+		"schema": {
+			"serviceName": "Pembangunan Perisian Tersuai",
+			"alternateName": [
+				"Pembangunan perisian tempahan Malaysia",
+				"Pembangunan perisian fintech tersuai"
+			],
+			"serviceType": "Reka bentuk dan pembangunan perisian tersuai",
+			"audienceType": "Perniagaan dan pengendali fintech Malaysia yang memerlukan perisian tersuai"
+		},
+		"breadcrumb": {
+			"current": "Pembangunan Perisian Tersuai"
+		},
+		"hero": {
+			"eyebrow": "Pembangunan perisian tersuai",
+			"title": "Jika anda boleh impikannya, <accent>kami boleh binanya.</accent>",
+			"lede": "Perisian tersuai dari lakaran pertama ke pelancaran (go-live).",
+			"body": "Aplikasi web, produk mudah alih, alatan dalaman dan platform di bawah jenama anda — direka, dibina dan dihantar bersama anda.",
+			"secondaryCta": "Lihat hasil kami"
+		},
+		"story": {
+			"eyebrow": "Mengapa tersuai",
+			"title": "Sedia ada hanya sampai di situ. <muted>Kelebihan anda perlukan perisian yang sesuai.</muted>",
+			"body": "Apabila produk atau model operasi anda tidak sepadan dengan templat, anda memerlukan pasukan yang boleh menukar ringkasan kepada sesuatu yang hidup — dan kekal bersama anda selepas pelancaran.",
+			"usualBadge": "Laluan biasa",
+			"usualTitle": "Idea terhenti. Vendor berpecah.",
+			"usual": {
+				"generic": {
+					"title": "Alatan generik memaksa jalan pintas",
+					"desc": "Proses anda tunduk kepada perisian — bukan sebaliknya."
+				},
+				"hands": {
+					"title": "Terlalu ramai pihak dalam binaan",
+					"desc": "Reka bentuk di sini, kod di situ, operasi di tempat lain — jurang muncul lewat."
+				},
+				"domain": {
+					"title": "Pengetahuan domain tiada",
+					"desc": "Vendor menghantar ciri tanpa memahami cara perniagaan anda benar-benar berjalan."
+				}
+			},
+			"withBadge": "Dengan TrueStack",
+			"withTitle": "Satu pasukan. Idea ke produk hidup.",
+			"withBody": "Kami duduk bersama anda dari ringkasan hingga pelancaran — produk dan kejuruteraan dalam bilik yang sama.",
+			"with": {
+				"operate": {
+					"title": "Dibina mengikut cara anda beroperasi",
+					"desc": "Aliran kerja anda, jenama anda, kekangan anda — bukan templat paksa."
+				},
+				"milestones": {
+					"title": "Hantar dalam batu tanda jelas",
+					"desc": "Anda nampak kemajuan awal, putuskan apa yang penting seterusnya, dan kekal mengawal."
+				},
+				"oneTeam": {
+					"title": "Satu pasukan hingga pelancaran",
+					"desc": "Reka, bina dan lancarkan tanpa anda sendiri menyambung vendor."
+				}
+			}
+		},
+		"howWeBuild": {
+			"eyebrow": "Cara kami bina",
+			"title": "Produk dan kejuruteraan dalam bilik yang sama.",
+			"body": "Anda bekerja dengan satu pasukan yang memahami ringkasan, menghantar dalam batu tanda jelas, dan kekal bertanggungjawab hingga pelancaran (go-live) — bukan rantaian penyerahan.",
+			"photoAlt": "Dua pembangun berpasangan pada antara muka produk di pejabat Kuala Lumpur"
+		},
+		"build": {
+			"eyebrow": "Apa yang kami bina",
+			"title": "Produk yang dihantar.",
+			"body": "Dari produk berhadapan pelanggan ke alatan yang pasukan anda gunakan — jika anda boleh impikannya, kami boleh binanya.",
+			"footer": "Perlu sesuatu di luar senarai ini? Beritahu kami impian itu — kami akan terangkan cara kami akan binanya.",
+			"items": {
+				"webMobile": {
+					"title": "Produk web & mudah alih",
+					"desc": "Aplikasi pelanggan, portal dan pengalaman berjenama — direka, dibina dan dihantar di bawah nama anda."
+				},
+				"platforms": {
+					"title": "Platform & alatan dalaman",
+					"desc": "Papan pemuka operasi, aliran kerja dan sistem yang pasukan anda gunakan setiap hari."
+				},
+				"integrations": {
+					"title": "Integrasi & API",
+					"desc": "Sambungkan pembayaran, identiti, pesanan dan perkhidmatan yang produk anda bergantung."
+				},
+				"secure": {
+					"title": "Binaan selamat, sedia pengeluaran",
+					"desc": "Asas kukuh — kawalan akses, kebolehpercayaan dan jejak jelas siapa membuat apa."
+				}
+			}
+		},
+		"howWeWork": {
+			"eyebrow": "Cara kami bekerja",
+			"title": "Dari ringkasan ke hidup — tanpa kabus.",
+			"body": "Laluan jelas supaya pembuat keputusan sentiasa tahu di mana binaan berada, apa yang dihantar seterusnya, dan apa yang diperlukan untuk pelancaran (go-live).",
+			"photoAlt": "Pasukan menyemak peta hala tuju produk dan lakaran semasa penemuan & penskopan (discovery)",
+			"startCta": "Mulakan perbualan",
+			"workCta": "Lihat portfolio",
+			"steps": {
+				"1": {
+					"title": "Temui",
+					"desc": "Kami peta idea, pengguna dan kekangan anda — kemudian setuju apa yang dibina dahulu."
+				},
+				"2": {
+					"title": "Reka & bina",
+					"desc": "UI produk, API dan integrasi — dihantar dalam batu tanda jelas yang anda boleh semak."
+				},
+				"3": {
+					"title": "Lancar",
+					"desc": "Hidup di infrastruktur selamat — dengan kawalan yang perniagaan anda perlukan."
+				},
+				"4": {
+					"title": "Berkembang",
+					"desc": "Sokongan, lelaran dan modul baharu apabila perniagaan anda bergerak — bukan penyerahan sekali."
+				}
+			}
+		},
+		"trust": {
+			"badge": "Tahan lama",
+			"title": "Selamat secara lalai. Sedia pengeluaran.",
+			"body": "Setiap binaan mendapat asas kukuh — supaya anda dilancarkan dengan yakin, bukan dengan pintasan yang mengejar kemudian.",
+			"items": {
+				"foundations": {
+					"title": "Asas produk kukuh",
+					"desc": "Seni bina jelas, akses selamat dan jejak siapa membuat apa — dibina dari awal."
+				},
+				"infra": {
+					"title": "Infrastruktur boleh dipercayai",
+					"desc": "Dihos dan dikendalikan supaya produk anda kekal aktif — dengan ruang untuk berkembang."
+				},
+				"support": {
+					"title": "Sokongan selepas pelancaran",
+					"desc": "Kami kekal untuk lelaran, pembetulan dan modul seterusnya — bukan penyerahan sekali."
+				}
+			}
+		},
+		"proof": {
+			"title": "Produk yang kami lancarkan.",
+			"subtitle": "Pilihan platform yang dihantar bersama pasukan kami — dari binaan pertama ke pelancaran (go-live)."
+		},
+		"crossLinks": {
+			"lead": "Mencari platform pinjaman atau pasaran (marketplace)? Lihat"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim",
+			"items": [
+				{
+					"question": "Apakah perisian tersuai yang Truestack bina?",
+					"answer": "Kami mereka dan menghantar aplikasi web, produk mudah alih, alatan dalaman, platform dan integrasi untuk perniagaan Malaysia — terutamanya fintech dan pengendali terkawal. Jika produk atau model operasi anda tidak sesuai dengan templat sedia ada, kami bina yang sesuai."
+				},
+				{
+					"question": "Bagaimana penglibatan biasa berjalan?",
+					"answer": "Kami mulakan dengan penemuan & penskopan (discovery) untuk memeta idea, pengguna dan kekangan anda, kemudian mereka dan bina dalam batu tanda jelas yang anda boleh semak. Selepas pelancaran kami kekal untuk sokongan dan lelaran — bukan penyerahan sekali pada pelancaran (go-live)."
+				},
+				{
+					"question": "Adakah anda hanya membina perisian pinjaman?",
+					"answer": "Platform pinjaman dan pasaran (marketplace) ialah kekuatan teras — TrueKredit™, TrueSyariah™ dan TrueP2P™ — tetapi kami juga membina produk tersuai di luar pinjaman apabila anda memerlukan pasukan khusus dari ringkasan ke hidup. Beritahu kami produknya; kami akan peta cara kami akan menghantarnya."
+				},
+				{
+					"question": "Di manakah perisian dihoskan?",
+					"answer": "Binaan pengeluaran biasanya berjalan di infrastruktur awan selamat di Malaysia apabila residensi data penting. Kami sediakan asas kukuh — kawalan akses, kebolehpercayaan dan jejak audit — supaya anda dilancarkan dengan yakin."
+				},
+				{
+					"question": "Apa bezanya dengan TrueKredit™ atau TrueP2P™?",
+					"answer": "TrueKredit™ dan TrueP2P™ ialah platform produk sedia ada untuk pinjaman Kementerian Perumahan dan Kerajaan Tempatan (KPKT) dan pembiayaan P2P selaras Suruhanjaya Sekuriti Malaysia (SC). Pembangunan perisian tersuai ialah untuk produk yang memerlukan binaan tempahan. Ramai pelanggan menggunakan kedua-duanya — platform produk serta modul tersuai di sekelilingnya."
+				},
+				{
+					"question": "Bagaimana saya memulakan projek?",
+					"answer": "Tempah konsultasi percuma di truestack.my/contact dengan subjek Custom Software. Bawa ringkasan atau masalah yang perlu diselesaikan — kami akan gariskan skop, batu tanda dan rupa pelancaran (go-live)."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Sedia membina apa yang anda impikan?",
+			"body": "Tempah konsultasi percuma. Beritahu kami produk yang anda perlukan — kami akan peta cara kami mereka, bina dan lancarkannya.",
+			"secondary": "Lihat portfolio"
+		}
+	}
+}

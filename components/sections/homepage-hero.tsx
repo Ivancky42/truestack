@@ -35,14 +35,17 @@ function RotatingVerb({
 	reduceMotion,
 	enterDelay,
 	verbs,
+	suffix,
 }: {
 	reduceMotion: boolean | null;
 	enterDelay: number;
 	verbs: string[];
+	/** Locale-specific tail appended to every verb (" on." in English). */
+	suffix: string;
 }) {
 	const [index, setIndex] = useState(0);
 	const [readyToCycle, setReadyToCycle] = useState(false);
-	const phrase = `${verbs[index]} on.`;
+	const phrase = `${verbs[index]}${suffix}`;
 
 	useEffect(() => {
 		if (reduceMotion) return;
@@ -64,7 +67,8 @@ function RotatingVerb({
 	if (reduceMotion) {
 		return (
 			<span className={`inline-block whitespace-nowrap ${VERB_ACCENT}`}>
-				{verbs[0]} on.
+				{verbs[0]}
+				{suffix}
 			</span>
 		);
 	}
@@ -88,7 +92,8 @@ function RotatingVerb({
 							className="invisible col-start-1 row-start-1 whitespace-nowrap"
 							aria-hidden
 						>
-							{verb} on.
+							{verb}
+							{suffix}
 						</span>
 					))}
 					<span className="absolute inset-0 overflow-hidden">
@@ -119,6 +124,7 @@ function HeroHeadline() {
 	const reduceMotion = useReducedMotion();
 	const prefix = t.raw("hero.titlePrefix") as string[];
 	const verbs = t.raw("hero.verbs") as string[];
+	const verbSuffix = t("hero.verbSuffix");
 
 	return (
 		<h1 className="type-h1 text-pretty">
@@ -147,6 +153,7 @@ function HeroHeadline() {
 					reduceMotion={reduceMotion}
 					enterDelay={0.1 + prefix.length * 0.07}
 					verbs={verbs}
+					suffix={verbSuffix}
 				/>
 			</span>
 		</h1>

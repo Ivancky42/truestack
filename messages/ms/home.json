@@ -1,0 +1,187 @@
+{
+	"_status": "ai-draft",
+	"Home": {
+		"meta": {
+			"title": "Lesen KPKT & Sistem Pengurusan Pinjaman Malaysia",
+			"description": "Truestack bantu pemberi pinjam wang Malaysia berlesen dan beroperasi — lesen digital KPKT atau pinjaman digital Syariah akan datang, TrueKredit™ & TrueSyariah™."
+		},
+		"hero": {
+			"title": "Infrastruktur fintech tempat pemberi pinjam wang Malaysia bermula.",
+			"titlePrefix": ["Infrastruktur", "fintech", "tempat", "pemberi pinjam wang", "Malaysia"],
+			"verbs": ["bermula", "memberi pinjaman", "membina", "berkembang", "beroperasi"],
+			"verbSuffix": ".",
+			"lede": "Kami dapatkan lesen untuk anda dan kami uruskan buku pinjaman anda — PPW konvensional atau pinjaman digital patuh Syariah, kertas kerja, dan rel di bawahnya.",
+			"secondaryCta": "Cari titik mula anda",
+			"chips": {
+				"regulators": "KPKT, SC & Bank Negara",
+				"data": "Data di Malaysia",
+				"audit": "Sedia diaudit"
+			},
+			"alt": {
+				"lampiran": "Lejar peminjam Lampiran A dijana daripada TrueKredit",
+				"dashboard": "Papan pemuka pentadbir TrueKredit — baki tertunggak, kutipan dan kesihatan portfolio untuk pemberi pinjam wang Malaysia",
+				"timeline": "Garis masa aktiviti TrueKredit — siapa mengubah pinjaman, mengeksport Lampiran A, atau merekod pembayaran"
+			}
+		},
+		"logoCloud": {
+			"caption": "Pemberi pinjam wang dan fintech yang kami lancarkan"
+		},
+		"solutions": {
+			"eyebrow": "Cari titik mula anda",
+			"title": "Dua cara masuk. Destinasi yang sama.",
+			"lede": "Sama ada anda memegang lesen Kementerian Perumahan dan Kerajaan Tempatan (KPKT) konvensional hari ini atau masih bersedia untuk memfail, laluan ke pinjaman digital seluruh negara ialah urutan yang diketahui. Pinjaman digital patuh Syariah ialah laluan berasingan yang akan datang — kami uruskan itu juga, pada <truesyariah>TrueSyariah™</truesyariah>.",
+			"tablistLabel": "Titik mula anda",
+			"tabs": {
+				"licensed": "Saya ada lesen KPKT",
+				"applying": "Saya sedang memohon"
+			},
+			"step": "FASA",
+			"licensed": {
+				"review": {
+					"title": "Semakan lesen",
+					"body": "Kami mengaudit lesen PPW semasa anda, permit dan pemfailan tertunggak, kemudian memetakan tepat apa yang dituntut oleh penukaran kepada lesen digital."
+				},
+				"application": {
+					"title": "Permohonan lesen digital",
+					"body": "Kami sediakan permohonan dan pembentangan lesen sementara, serta berkoordinasi dengan KPKT hingga kelulusan."
+				},
+				"build": {
+					"title": "Pembinaan platform",
+					"body": "Buku pinjaman anda berpindah ke TrueKredit™ Pro, dengan perjalanan peminjam web dan mudah alih di bawah jenama anda sendiri."
+				},
+				"golive": {
+					"title": "Pelancaran (go-live) dan jagaan",
+					"body": "Pengesahan pematuhan, latihan kakitangan, kemudian pengurusan akaun berterusan supaya tiada yang terlepas."
+				}
+			},
+			"applying": {
+				"structure": {
+					"title": "Struktur dan kelayakan",
+					"body": "Syarikat, pengarah, modal berbayar dan premis disemak berbanding keperluan KPKT sebelum apa-apa difailkan."
+				},
+				"submission": {
+					"title": "Permohonan dan penyerahan",
+					"body": "Lampiran A, dokumen sokongan dan butiran SSM disediakan dan diserahkan bagi pihak anda."
+				},
+				"readiness": {
+					"title": "Kesediaan sistem",
+					"body": "TrueKredit™ dikonfigurasi dengan dokumen Jadual J dan K, perjanjian dan resit yang KPKT jangka untuk lihat."
+				},
+				"disbursements": {
+					"title": "Pengeluaran pinjaman pertama",
+					"body": "e-KYC, semakan syarikat dan rel pembayaran diaktifkan, supaya anda boleh memberi pinjaman dari hari lesen anda diluluskan."
+				}
+			},
+			"licensedNote": "Lazimnya kira-kira tiga bulan dari mula hingga pelancaran",
+			"licensedCta": "Bincang penukaran anda",
+			"acquire": {
+				"title": "Bukan bermula dari kosong: peroleh syarikat berlesen",
+				"body": "Permohonan baharu bukan satu-satunya laluan. Kami juga boleh bantu anda mendapatkan syarikat sedia ada yang sudah memegang lesen pinjaman wang KPKT, kemudian uruskan perubahan pengarah, pemegang saham dan CoSec serta pindahkan buku ke TrueKredit™ — selalunya cara lebih pantas untuk mula memberi pinjaman."
+			},
+			"applyingNote": "Kami kekal sebagai rakan pengurusan akaun anda selepas kelulusan",
+			"applyingCta": "Semak kelayakan anda"
+		},
+		"truekredit": {
+			"eyebrow": "Sistem pengurusan pinjaman",
+			"title": "TrueKredit™ — seluruh buku pinjaman, di satu tempat yang juruaudit anda terima.",
+			"lede": "Pinjaman cepat menjadi kusut: fail peminjam dalam satu sistem, ansuran dalam hamparan, kertas kerja KPKT dalam laci. TrueKredit meletakkan peminjam, jadual, bayaran balik dan dokumen kawal selia pada satu rekod.",
+			"features": [
+				"Satu sistem untuk peminjam, jadual, bayaran balik dan kertas kerja KPKT",
+				"Data pinjaman anda kekal di awan selamat anda sendiri di Malaysia",
+				"Jejak audit yang merekod siapa melakukan apa, dan bila",
+				"Naik taraf ke Pro untuk aplikasi peminjam dan tandatangan digital — buku pinjaman yang sama"
+			],
+			"cta": "Teroka TrueKredit",
+			"alt": "Fail peminjam TrueKredit dengan ringkasan pinjaman dan aplikasi peminjam berjenama pada telefon",
+			"platforms": {
+				"truekredit": {
+					"body": "Pengurusan pinjaman KPKT untuk pemberi pinjam wang berlesen, dengan Pro untuk aplikasi peminjam berjenama dan tandatangan digital.",
+					"cta": "Teroka TrueKredit"
+				},
+				"truesyariah": {
+					"body": "Lesen digital patuh Syariah dan platform: dagangan komoditi Tawarruq, Ta'widh dan Gharamah yang diasingkan, buku dipisahkan daripada pinjaman konvensional.",
+					"cta": "Teroka TrueSyariah"
+				},
+				"truep2p": {
+					"body": "Portal pelabur dan penerbit, escrow dan pembayaran, dibina untuk keperluan RMO Suruhanjaya Sekuriti Malaysia (SC).",
+					"cta": "Teroka TrueP2P"
+				}
+			}
+		},
+		"core": {
+			"eyebrow": "Truestack Core",
+			"title": "Integrasi yang sebaliknya anda terpaksa bina dua kali.",
+			"lede": "Sudah terbina dalam TrueKredit™ — atau kami sambungkan semakan yang sama ke sistem yang anda sudah jalankan, melalui API. Identiti, data syarikat dan pembayaran di rel Malaysia — satu susunan bersepadu yang mengekalkan pematuhan anda di satu tempat.",
+			"comingSoon": "Akan datang",
+			"partners": "Rakan data, rel dan pensijilan",
+			"items": {
+				"trueidentity": {
+					"body": "e-KYC untuk Malaysia: OCR MyKad, pengesanan liveness dan padanan biometrik, patuh PDPA."
+				},
+				"truessm": {
+					"body": "Profil syarikat, pegawai, pemegang saham dan caj daripada SSM untuk usaha wajar yang sedia diaudit."
+				},
+				"payments": {
+					"name": "Gerbang pembayaran",
+					"body": "Rel FPX dan DuitNow, kad, mandat berulang, webhook dan penyesuaian automatik — disepadukan dengan FassPay dan GKash."
+				},
+				"truescore": {
+					"body": "Laporan kredit disokong CTOS, data CCRIS, semakan litigasi dan kebankrapan."
+				},
+				"truecommodity": {
+					"body": "Perdagangan komoditi Tawarruq dengan lejar Gharamah dan Ta'widh, eksport jawatankuasa."
+				},
+				"truesight": {
+					"body": "Pemarkahan risiko peminjam berasaskan AI dengan isyarat kelayakan kredit yang boleh dijelaskan merentas portfolio."
+				}
+			}
+		},
+		"trust": {
+			"eyebrow": "Apa lembaga anda akan tanya",
+			"title": "Empat soalan yang kami jawab sebelum anda menandatangani apa-apa.",
+			"alt": "Pasukan Truestack bekerjasama di pejabat Kuala Lumpur"
+		},
+		"faq": {
+			"items": [
+				{
+					"question": "Di mana data peminjam kami disimpan?",
+					"answer": "Di awan selamat anda sendiri di Malaysia, diasingkan daripada setiap pemberi pinjam wang lain yang kami layani. Fail peminjam anda tidak pernah berada dalam tenansi kongsi. Itu tetapan lalai untuk setiap pemasangan TrueKredit™."
+				},
+				{
+					"question": "Adakah ini tahan audit?",
+					"answer": "Setiap tindakan dilog dengan siapa yang melakukannya dan bila, dan kertas kerja KPKT dijana daripada rekod yang sama yang digunakan pasukan anda. Juruaudit nampak satu jejak, bukan longgokan hamparan dan folder. Begitulah TrueKredit™ kekal sedia diaudit secara lalai."
+				},
+				{
+					"question": "Bagaimana jika kami hanya perlukan satu daripada API anda?",
+					"answer": "Ya. e-KYC TrueIdentity™, semakan syarikat TrueSSM™ dan rel pembayaran kami masing-masing boleh disambungkan ke sistem yang anda sudah jalankan, melalui API — anda tidak perlu memindahkan buku pinjaman anda ke TrueKredit™. Ambil satu perkhidmatan atau ambil beberapa. Kami akan beritahu apa yang terlibat dalam integrasi itu, dan berapa kosnya, sebelum anda komited."
+				},
+				{
+					"question": "Berapa lama hingga kami beroperasi?",
+					"answer": "Kira-kira tiga bulan untuk penukaran kepada lesen digital sepenuhnya, dan kurang jika anda hanya memindahkan buku pinjaman sedia ada ke TrueKredit™. Permohonan KPKT baharu mengambil masa lebih lama kerana pengawal selia menentukan rentak, bukan perisian."
+				},
+				{
+					"question": "Adakah anda uruskan pinjaman digital patuh Syariah serta lesen KPKT konvensional?",
+					"answer": "Ya. Lesen digital konvensional ialah kebenaran tambahan pada lesen PPW sedia ada, dan buku dijalankan pada TrueKredit™ Pro. Pinjaman digital patuh Syariah ialah kelulusan KPKT berasingan yang akan datang — entiti, jawatankuasa Syariah dan kontrak sendiri — dan dijalankan pada TrueSyariah™. Kedua-dua lesen tidak boleh berada dalam syarikat pengoperasi yang sama. Kami skop kedua-dua laluan; mula di truestack.my/services/digital-license atau truestack.my/truesyariah."
+				}
+			]
+		},
+		"work": {
+			"eyebrow": "Kerja terpilih",
+			"title": "Lihat rupa sebenar yang sudah beroperasi.",
+			"viewAll": "Semua kisah kejayaan"
+		},
+		"insights": {
+			"eyebrow": "Wawasan",
+			"title": "Apa yang kami lihat dalam pinjaman wang di Malaysia.",
+			"lede": "KPKT, buku pinjaman dan peraturan yang mengubah cara anda memberi pinjaman — ditulis daripada kerja, bukan brosur.",
+			"allInsights": "Semua wawasan",
+			"previousArticles": "Artikel terdahulu",
+			"nextArticles": "Artikel berikut"
+		},
+		"cta": {
+			"heading": "Sedia untuk melancarkan atau mengembangkan perniagaan pinjaman anda?",
+			"body": "Tempah konsultasi percuma. Kami akan beritahu apa yang kedudukan lesen anda benarkan, apa yang diperlukan untuk menjadi digital, dan berapa kosnya — sebelum anda komited kepada apa-apa.",
+			"secondary": "Teroka Lesen Digital"
+		}
+	}
+}

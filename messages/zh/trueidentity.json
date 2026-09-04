@@ -1,0 +1,247 @@
+{
+	"_status": "ai-draft",
+	"TrueIdentity": {
+		"meta": {
+			"title": "马来西亚 e-KYC｜TrueIdentity™",
+			"description": "TrueIdentity™ e-KYC API：MyKad OCR 识别、活体检测、生物特征比对，符合 PDPA，数据驻留马来西亚，服务持牌放贷公司。",
+			"openGraphTitle": "TrueIdentity™ — 马来西亚 e-KYC 与身份验证 API",
+			"openGraphDescription": "面向马来西亚金融科技与放贷机构的可编程 e-KYC——MyKad OCR 识别、活体检测、生物特征比对、审计轨迹，以及马来西亚数据驻留。",
+			"ogImageAlt": "Truestack Technologies"
+		},
+		"schema": {
+			"breadcrumbHome": "首页",
+			"breadcrumbCurrent": "TrueIdentity™",
+			"softwareName": "TrueIdentity™",
+			"alternateName": ["TrueIdentity e-KYC", "Truestack e-KYC API"],
+			"featureList": [
+				"MyKad OCR 识别",
+				"活体检测",
+				"人脸生物特征比对",
+				"欺诈检测",
+				"审计轨迹记录",
+				"符合 PDPA 的处理",
+				"马来西亚数据驻留"
+			]
+		},
+		"hero": {
+			"eyebrow": "TrueIdentity™ e-KYC",
+			"title": "几分钟验证客户，无需数日",
+			"body": "面向企业的马来西亚电子身份验证 (e-KYC) 平台。自动完成身份核验、降低欺诈并保持合规——不必让客户等待。",
+			"ctaSecondary": "查看定价",
+			"stats": {
+				"instant": { "value": "即时", "label": "验证耗时" },
+				"uptime": { "value": "99.9%", "label": "可用性 SLA" },
+				"hosted": { "value": "100%", "label": "马来西亚托管" },
+				"pdpa": { "value": "PDPA", "label": "合规" }
+			},
+			"chips": {
+				"verification": { "value": "<3s", "label": "验证" },
+				"uptime": { "value": "99.9%", "label": "可用性 SLA" },
+				"pdpa": { "value": "PDPA", "label": "合规" }
+			}
+		},
+		"features": {
+			"eyebrow": "核心功能",
+			"title": "领先企业为何选择 TrueIdentity",
+			"body": "精简 KYC 流程，降低运营成本，并提供流畅的客户准入体验。",
+			"items": {
+				"quickSetup": {
+					"title": "快速接入",
+					"description": "通过简洁的 API 集成，几分钟即可开始。无需复杂配置。"
+				},
+				"costEffective": {
+					"title": "按量计费",
+					"description": "按次验证计价，随业务伸缩。无最低承诺。"
+				},
+				"security": {
+					"title": "银行级安全",
+					"description": "端到端加密，数据驻留马来西亚。完全符合本地法规。"
+				},
+				"everythingHandled": {
+					"title": "一站办妥",
+					"description": "MyKad OCR 识别、活体检测、生物特征比对——集于同一 API endpoint。"
+				}
+			}
+		},
+		"benefits": {
+			"eyebrow": "业务价值",
+			"title": "重塑您的验证流程",
+			"items": {
+				"accelerate": {
+					"title": "加快客户准入",
+					"description": "将客户准入从数日缩短至数分钟。即时核验客户，同时保持合规。"
+				},
+				"fraud": {
+					"title": "降低欺诈与风险",
+					"description": "由 AI 驱动的欺诈检测配合活体检测，防止身份伪造与证件造假。"
+				},
+				"compliant": {
+					"title": "持续合规",
+					"description": "以符合 PDPA 的方案满足监管要求。完整审计轨迹，数据驻留马来西亚。"
+				},
+				"costs": {
+					"title": "降低运营成本",
+					"description": "自动完成人工核验。扩容无需增加人手或基础设施。"
+				}
+			}
+		},
+		"howItWorks": {
+			"eyebrow": "运作方式",
+			"title": "简单、安全的验证",
+			"body": "验证流程以秒计，而不是分钟。",
+			"steps": {
+				"capture": {
+					"title": "采集证件",
+					"desc": "客户拍摄 MyKad。我们的 OCR 自动提取全部信息。"
+				},
+				"verify": {
+					"title": "核验身份",
+					"desc": "拍摄自拍并进行活体检测。AI 将人脸比对至证件照片。"
+				},
+				"results": {
+					"title": "获取结果",
+					"desc": "即时收到验证结果，含置信度分数与提取数据。"
+				}
+			},
+			"suiteTitle": "完整验证套件",
+			"capabilities": {
+				"ocr": "MyKad OCR 识别",
+				"liveness": "活体检测",
+				"biometrics": "人脸生物特征比对",
+				"realtime": "实时验证",
+				"fraud": "欺诈检测",
+				"audit": "审计轨迹记录"
+			}
+		},
+		"hostedUi": {
+			"eyebrow": "托管 UI",
+			"title": "前端由我们承接，客户由您导入",
+			"body": "不必自建验证界面。我们提供全托管的客户前端，覆盖整段验证流程——只需将用户跳转过来，再通过 webhook 接收结果。",
+			"items": {
+				"documentCapture": {
+					"title": "证件采集",
+					"desc": "摄像头与文件上传采集 MyKad 照片，并内置质量检查。"
+				},
+				"livenessSelfie": {
+					"title": "活体与自拍",
+					"desc": "实时活体检测，配合引导式自拍采集流程。"
+				},
+				"webhookResults": {
+					"title": "Webhook 回传",
+					"desc": "通过安全 webhook 即时将验证结果回传至您的 backend。"
+				}
+			},
+			"worksOnWeb": "支持网页",
+			"worksOnMobile": "支持手机",
+			"mock": {
+				"webBrowser": "网页浏览器",
+				"desktopTablet": "桌面与平板",
+				"mobile": "手机",
+				"selfie": "自拍",
+				"documentCapture": "证件采集",
+				"livenessCheck": "活体检测"
+			}
+		},
+		"useCases": {
+			"eyebrow": "适用场景",
+			"title": "适用于各行各业",
+			"body": "从银行到初创公司，马来西亚各地企业信赖 TrueIdentity。",
+			"trustedBy": "信赖机构",
+			"trustedByItems": [
+				"持牌放贷公司",
+				"数字银行",
+				"保险公司",
+				"电商平台",
+				"金融科技初创"
+			],
+			"items": {
+				"financial": {
+					"title": "金融服务",
+					"description": "银行、放贷机构与金融科技使用 TrueIdentity 处理贷款申请、开户与监管合规。"
+				},
+				"digital": {
+					"title": "数字平台",
+					"description": "电商、零工经济与共享平台核验卖家、司机与服务提供者。"
+				},
+				"telecom": {
+					"title": "电信行业",
+					"description": "电信商与数字服务核验用户，用于 SIM 登记与账户开通。"
+				}
+			}
+		},
+		"pricing": {
+			"eyebrow": "透明定价",
+			"title": "简单、可预期的价格",
+			"body": "一次性开通、按次计费，外加年度平台费。没有隐性费用。",
+			"setupFee": "开通费",
+			"setupFeeDesc": "一次性集成与客户准入——含 100 次免费验证",
+			"oneTime": "一次性",
+			"perVerification": "每次验证",
+			"perVerificationDesc": "每笔完成的 e-KYC 交易",
+			"perTransaction": "/ 笔",
+			"annualFee": "年度平台费",
+			"annualFeeDesc": "持续访问、托管与支持",
+			"perYear": "/ 年",
+			"includes": {
+				"noMinimum": {
+					"label": "无最低用量",
+					"desc": "只为实际使用的验证付费"
+				},
+				"hostedUi": {
+					"label": "含托管 UI",
+					"desc": "无需开发前端"
+				},
+				"residency": {
+					"label": "马来西亚数据驻留",
+					"desc": "符合 PDPA 的基础设施"
+				}
+			},
+			"footnote": "所有验证数据均加密，并安全存储于马来西亚。"
+		},
+		"developers": {
+			"eyebrow": "面向开发者",
+			"title": "几分钟完成集成",
+			"body": "简洁的 REST API 与完备文档。您的团队今天就能开始验证客户。",
+			"stats": {
+				"integrationTime": { "value": "<1 天", "label": "集成时间" },
+				"restApi": { "value": "REST API", "label": "简单集成" },
+				"sdk": { "value": "SDK", "label": "Node.js, Python, Go" }
+			}
+		},
+		"faq": {
+			"title": "常见问题",
+			"body": "TrueIdentity™ 在马来西亚的 e-KYC 能力、合规、集成与定价。",
+			"items": [
+				{
+					"question": "什么是 TrueIdentity™？",
+					"answer": "TrueIdentity™ 是 Truestack 面向马来西亚的电子身份验证 (e-KYC) 与身份核验 API。企业接入单一 REST endpoint，即可完成 MyKad OCR 识别、活体检测、人脸生物特征比对与欺诈核查——数据处理符合 PDPA，并保留审计轨迹。"
+				},
+				{
+					"question": "谁在使用 TrueIdentity™？",
+					"answer": "银行、持牌放贷公司、金融科技、数字平台与电信商使用 TrueIdentity，覆盖贷款申请、开户、卖家核验、SIM 登记，以及任何需要在马来西亚快速、合规完成身份验证的流程。"
+				},
+				{
+					"question": "包含哪些验证能力？",
+					"answer": "TrueIdentity 涵盖 MyKad OCR 识别、活体检测、人脸生物特征比对、实时验证结果、欺诈检测信号与审计轨迹记录——按统一 API 设计，无需拼接多家供应商。"
+				},
+				{
+					"question": "TrueIdentity™ 是否符合 PDPA 并托管在马来西亚？",
+					"answer": "是。该平台按马来西亚监管预期构建：处理符合 PDPA，传输中与静态均加密，数据驻留马来西亚，并采用适用于受监管金融服务的银行级安全实践。"
+				},
+				{
+					"question": "TrueIdentity™ 如何与其他 Truestack 产品集成？",
+					"answer": "TrueIdentity 属于 Truestack Core™ 基础设施，并原生对接 TrueKredit™ 贷款客户准入、定制金融科技系统以及 TrueSSM™ KYB 工作流——放贷核验与注册处查询可放在同一套 Truestack 体系中。"
+				},
+				{
+					"question": "TrueIdentity™ 如何定价？",
+					"answer": "TrueIdentity 按次验证计费，随用量伸缩——无高额最低承诺。向 Truestack 预约免费咨询，了解与您预期验证量匹配的方案与定价。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "准备好升级您的 KYC 流程？",
+			"body": "加入正在使用 TrueIdentity 的马来西亚企业。预约免费咨询，我们将为您讲解 e-KYC、定价与集成。",
+			"secondary": "返回 truestack.my"
+		}
+	}
+}

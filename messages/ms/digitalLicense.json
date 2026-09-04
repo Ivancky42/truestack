@@ -1,0 +1,339 @@
+{
+	"_status": "ai-draft",
+	"DigitalLicense": {
+		"meta": {
+			"title": "Lesen Pinjaman Wang Dalam Talian | Truestack",
+			"description": "Lesen digital KPKT Malaysia — PPW konvensional (e-Lending) atau pinjaman digital syariah yang akan datang. Pelesenan, kebenaran tambahan, TrueKredit™ Pro.",
+			"openGraphTitle": "Lesen Pinjaman Wang Dalam Talian Malaysia | Truestack",
+			"openGraphDescription": "Lesen digital KPKT dari hujung ke hujung — PPW e-Lending konvensional atau laluan syariah yang akan datang. Pelesenan, kebenaran tambahan, TrueKredit™ Pro atau TrueSyariah™."
+		},
+		"schema": {
+			"serviceName": "Lesen Pinjaman Wang Dalam Talian (e-Lending)",
+			"alternateName": [
+				"pemberian pinjaman wang dalam talian",
+				"e-Lending",
+				"urus niaga secara dalam talian",
+				"kebenaran tambahan",
+				"Lesen Pinjaman Wang Dalam Talian KPKT Malaysia",
+				"Lesen Digital KPKT Malaysia",
+				"Penukaran Lesen Digital KPKT",
+				"Platform pemberi pinjam wang digital Malaysia"
+			],
+			"serviceType": "Penukaran lesen pinjaman wang dalam talian KPKT — e-Lending, kebenaran tambahan dan TrueKredit Pro",
+			"audienceType": "Pemberi pinjam wang berlesen KPKT dan pengendali pinjaman digital di Malaysia",
+			"catalogName": "Laluan lesen digital KPKT",
+			"conventionalOfferName": "Lesen digital konvensional (PPW / e-Lending)",
+			"conventionalOfferDescription": "Kebenaran tambahan untuk pemberian pinjaman wang dalam talian pada lesen PPW sedia ada, bersama TrueKredit™ Pro.",
+			"shariahOfferName": "Lesen pinjaman digital syariah",
+			"shariahOfferDescription": "Laluan pinjaman digital syariah KPKT yang akan datang — entiti, jawatankuasa dan platform TrueSyariah™ yang berasingan.",
+			"relatedServiceName": "Lesen Pinjaman Digital Syariah",
+			"relatedServiceType": "Lesen pinjaman digital syariah KPKT dan platform TrueSyariah"
+		},
+		"breadcrumb": {
+			"current": "Lesen Digital KPKT"
+		},
+		"hero": {
+			"crumbSolutions": "Penyelesaian",
+			"crumbCurrent": "Lesen Digital KPKT",
+			"title": "Jangkau seluruh negara. Kami uruskan lesen anda.",
+			"lede": "Lesen <strong>Pinjaman Wang Dalam Talian</strong> Kementerian Perumahan dan Kerajaan Tempatan (KPKT) dari hujung ke hujung — pemberian pinjaman wang dalam talian, dari permulaan hingga pengeluaran seluruh negara yang pertama dalam kira-kira tiga bulan.",
+			"body": "Kami uruskan laluan lesen, bina platform anda pada <truekredit>TrueKredit™ Pro</truekredit>, dan kekal bersama anda hingga kelulusan dan pelancaran (go-live). Satu pasukan, satu kontrak. Mengejar <shariah>lesen digital syariah</shariah> pula? Itu laluan yang berasingan.",
+			"secondaryCta": "Semak kelayakan anda",
+			"trustChips": [
+				"Pelesenan, platform dan pelancaran dalam satu kontrak",
+				"Tandatangan kekal di premis anda"
+			],
+			"chart": {
+				"addressableReach": "Jangkauan sasaran",
+				"timeline": "~3 bulan",
+				"ariaLabel": "Jangkauan berkembang dari satu cawangan kepada pinjaman digital seluruh negara",
+				"branch": "1 cawangan",
+				"localOnly": "Pelanggan tempatan sahaja",
+				"nationwide": "Seluruh Malaysia",
+				"webApps": "Web & apl · lesen digital",
+				"phases": {
+					"1": { "phase": "Fasa 1", "label": "Lesen sementara" },
+					"2": { "phase": "Fasa 2–3", "label": "Bina & pakej semakan" },
+					"4": { "phase": "Fasa 4", "label": "Kelulusan & go-live" }
+				}
+			}
+		},
+		"crossLink": {
+			"ariaLabel": "Mencari platform",
+			"lead": "Mencari platform?",
+			"body": "TrueKredit Pro ialah sistem seluruh negara yang menjalankan lesen ini — web berjenama, apl dan tandatangan.",
+			"cta": "Lihat TrueKredit Pro"
+		},
+		"paths": {
+			"eyebrow": "Pilih laluan anda",
+			"title": "Dua lesen. Pilih yang sepadan dengan buku pinjaman anda.",
+			"body": "Pinjaman digital pada lesen PPW konvensional ialah satu kelulusan. Pinjaman digital syariah ialah satu lagi — entiti, jawatankuasa dan buku pinjaman sendiri. Pilih laluan yang anda berada.",
+			"tablistAria": "Laluan lesen",
+			"upcoming": "Akan datang",
+			"items": {
+				"ppw": {
+					"kicker": "Lesen digital · PPW",
+					"label": "e-Lending konvensional",
+					"summary": "Kebenaran tambahan pada lesen PPW sedia ada — pinjaman seluruh negara pada TrueKredit™ Pro.",
+					"title": "Lesen digital pada PPW sedia ada anda.",
+					"body": "Memegang lesen pemberi pinjam wang tidak membenarkan anda meminjamkan dalam talian. Anda memohon kebenaran tambahan, tunjukkan platform kepada KPKT, dan jangkau seluruh negara pada TrueKredit™ Pro. Itulah laluan yang diterangkan halaman ini.",
+					"qualifyCta": "Lihat kelayakan",
+					"points": [
+						"Lesen PPW sedia ada, kemudian kebenaran tambahan untuk meminjamkan dalam talian",
+						"TrueKredit™ Pro — web berjenama, apl dan tandatangan di premis anda",
+						"Kira-kira tiga bulan dari permulaan hingga pelancaran seluruh negara",
+						"Lesen, platform dan semakan KPKT di bawah satu kontrak"
+					]
+				},
+				"shariah": {
+					"kicker": "Lesen digital syariah",
+					"label": "Pinjaman Syariah",
+					"summary": "Entiti, jawatankuasa dan buku pinjaman berasingan — TrueSyariah™ dari penyerahan pertama.",
+					"eyebrow": "Lesen pinjaman digital syariah",
+					"title": "Buku pinjaman syariah tidak boleh duduk pada lesen konvensional.",
+					"body": "KPKT menganggap pinjaman digital syariah sebagai kelulusan tersendiri. Entiti, jawatankuasa dan kontrak mesti sedia sebelum perisian banyak berguna — dan platform mesti membuktikan Tawarruq, Ta'widh dan Gharamah dari hari pertama.",
+					"seeTrueSyariah": "Lihat TrueSyariah™",
+					"points": [
+						"Syarikat pengoperasi sendiri — bukan entiti yang sama dengan PPW konvensional",
+						"Jawatankuasa, Aqad dan urutan Tawarruq diluluskan sebelum anda menyerah",
+						"TrueSyariah™ — Ta'widh dan Gharamah diasingkan, buku pinjaman dipagar",
+						"Kami mulakan anda mengikut susunan yang pengawal selia jangka, bukan sebaliknya"
+					]
+				}
+			}
+		},
+		"qualify": {
+			"eyebrow": "Adakah anda layak",
+			"title": "Lima perkara yang KPKT akan semak dahulu.",
+			"body": "Tanda apa yang benar hari ini. Ini hanya petunjuk — kami sahkan kedudukan anda dengan betul dalam konsultasi, dan jurang pada senarai ini biasanya boleh kami bantu tutup, bukan jalan buntu.",
+			"noLicenceTitle": "Belum ada lesen?",
+			"noLicenceBody": "Permohonan baharu bukan satu-satunya laluan. Kami juga boleh membantu anda mengambil alih syarikat berlesen yang sudah memegang lesen pemberi pinjam wang KPKT, uruskan perubahan pengarah, pemegang saham dan CoSec, kemudian jadikannya digital.",
+			"groupAria": "Kesediaan lesen digital",
+			"confirmCta": "Sahkan dengan pasukan pelesenan",
+			"checks": {
+				"licence": {
+					"title": "Kami memegang lesen pemberi pinjam wang KPKT yang sah",
+					"detail": "Lesen PPW semasa atas nama syarikat."
+				},
+				"filings": {
+					"title": "Penyerahan dokumen dan permit kami terkini",
+					"detail": "Butiran SSM, pembaharuan, penyerahan B dan B1 tahunan adalah semasa."
+				},
+				"directors": {
+					"title": "Pengarah dan pemegang saham kami sudah selesai",
+					"detail": "Tiada perubahan tertunda yang akan merumitkan semakan."
+				},
+				"premises": {
+					"title": "Kami ada premis yang boleh memegang kawalan tandatangan",
+					"detail": "Pelesenan digital menghendaki tandatangan kekal di bawah bumbung anda."
+				},
+				"nationwide": {
+					"title": "Kami sedia meminjamkan di luar kawasan tempatan",
+					"detail": "Modal, kutipan dan kakitangan untuk buku pinjaman seluruh negara."
+				}
+			},
+			"verdicts": [
+				"Belum ada yang ditanda. Tanda apa yang benar hari ini dan kami akan nyatakan secara kasar kedudukan anda.",
+				"Masih awal. Ada kerja asas yang perlu dahulu — konsultasi ialah cara terpantas untuk mengetahui apa.",
+				"Ada permulaan. Beberapa prasyarat belum lengkap, tetapi kebanyakannya boleh diselesaikan dalam tempoh biasa.",
+				"Kedudukan munasabah. Penukaran kepada lesen digital realistik setelah jurang yang tinggal ditutup.",
+				"Calon kukuh. Satu perkara belum selesai, dan ia biasanya bahagian terpantas dalam proses.",
+				"Semua sedia. Anda kelihatan bersedia untuk memulakan penukaran kepada lesen digital sekarang."
+			]
+		},
+		"story": {
+			"eyebrow": "Mengapa pergi digital",
+			"title": "Satu cawangan adalah siling. Lesen digital adalah kuncinya.",
+			"body": "Lesen tradisional mengekalkan anda di kawasan tempatan. Lesen Pinjaman Wang Dalam Talian membolehkan anda khidmat peminjam seluruh negara — asalkan laluan lesen dan platform diuruskan dengan betul, dan mengikut susunan yang betul.",
+			"todayEyebrow": "Hari ini",
+			"todayTitle": "Jangkauan tempatan. Laluan tidak jelas.",
+			"afterEyebrow": "Dengan Truestack",
+			"afterTitle": "Seluruh negara. Berlesen. Beroperasi.",
+			"explorePro": "Terokai TrueKredit™ Pro",
+			"today": {
+				"limited": {
+					"title": "Terhad kepada kawasan cawangan anda",
+					"desc": "Pelanggan di luar kawasan tempatan kekal di luar jangkauan."
+				},
+				"opaque": {
+					"title": "Proses lesen terasa kabur",
+					"desc": "Apa yang KPKT jangka, dan bilakah, sukar dinavigasi sendirian."
+				},
+				"buildRisk": {
+					"title": "Risiko bina di atas risiko pematuhan",
+					"desc": "Pilihan platform yang salah boleh menggantung kelulusan atau memaksa pembinaan semula."
+				}
+			},
+			"after": {
+				"nationwide": {
+					"title": "Khidmat seluruh Malaysia",
+					"desc": "Peminjam memohon, mengesahkan dan membayar semula pada web dan apl berjenama anda."
+				},
+				"journey": {
+					"title": "Kami jalankan perjalanan lesen bersama anda",
+					"desc": "Strategi, dokumen permohonan, pembentangan, semakan dan sokongan kelulusan akhir."
+				},
+				"pro": {
+					"title": "Beroperasi pada TrueKredit™ Pro",
+					"desc": "Sistem pinjaman yang sama digunakan pengendali berlesen KPKT, sedia untuk semakan digital."
+				}
+			}
+		},
+		"offer": {
+			"eyebrow": "Apa yang anda beli",
+			"title": "Lesen. Platform. Pelancaran.",
+			"body": "Bukan serahan perisian semata-mata. Laluan perkhidmatan penuh ke pinjaman digital seluruh negara, dengan satu pasukan bertanggungjawab untuk ketiga-tiga bahagian.",
+			"footer": "Satu pasukan. Satu kontrak. Anda fokus pada pinjaman — kami uruskan yang lain.",
+			"items": {
+				"licence": {
+					"title": "Lesen",
+					"desc": "Strategi pelesenan, dokumen lesen sementara, sokongan pembentangan KPKT, dan iringan hingga kelulusan akhir."
+				},
+				"platform": {
+					"title": "Platform",
+					"desc": "Penerapan TrueKredit™ Pro berjenama: web, apl mudah alih dan tandatangan di bawah kawalan anda, pada awan selamat anda sendiri di Malaysia."
+				},
+				"golive": {
+					"title": "Pelancaran dan selepasnya",
+					"desc": "Ujian, persediaan semakan, pengeluaran pertama, dan sokongan pematuhan KPKT berterusan selepas anda dilancarkan."
+				}
+			}
+		},
+		"journey": {
+			"eyebrow": "Kira-kira tiga bulan",
+			"title": "Dari permulaan hingga pinjaman seluruh negara.",
+			"body": "Rancangan kerja yang terbukti, setiap langkah dijalankan bersama anda. Tempoh bergantung pada kesediaan anda dan jadual KPKT.",
+			"photoAlt": "Penasihat Truestack menyemak dokumen pelesenan KPKT bersama klien",
+			"talkCta": "Hubungi pasukan pelesenan",
+			"seeProCta": "Lihat TrueKredit™ Pro",
+			"steps": {
+				"1": {
+					"title": "Lesen sementara",
+					"desc": "Kami petakan model operasi anda, sediakan dokumen permohonan, dan masuk ke pembentangan KPKT bersama anda.",
+					"weeks": "Minggu 1–2"
+				},
+				"2": {
+					"title": "Bina pada TrueKredit™ Pro",
+					"desc": "Web dan apl mudah alih berjenama, tandatangan di bawah kawalan anda, dan awan selamat anda sendiri di Malaysia — disediakan untuk anda.",
+					"weeks": "Minggu 3–8"
+				},
+				"3": {
+					"title": "Ujian dan pakej semakan",
+					"desc": "Ujian bersama pasukan anda, semakan keselamatan bebas, dan pakej lengkap sedia untuk KPKT.",
+					"weeks": "Minggu 9–10"
+				},
+				"4": {
+					"title": "Kelulusan dan pelancaran",
+					"desc": "Kami duduk bersama anda melalui pemeriksaan akhir dan kekal untuk pengeluaran seluruh negara yang pertama.",
+					"weeks": "Minggu 11–12"
+				}
+			}
+		},
+		"platform": {
+			"eyebrow": "Dibina pada TrueKredit™ Pro",
+			"title": "Platform yang KPKT jangka — sudah sedia.",
+			"body": "Lesen digital anda berjalan pada TrueKredit™ Pro: buku pinjaman yang sama digunakan pasukan anda setiap hari, ditambah saluran peminjam seluruh negara dan tandatangan di bawah kawalan anda.",
+			"proUnlocks": "Apa yang Pro buka",
+			"alreadyStandard": "Sudah menggunakan TrueKredit Standard? Naik taraf ke Pro tanpa memindahkan buku pinjaman anda. <compare>Lihat perbandingan</compare>",
+			"points": {
+				"channels": {
+					"title": "Saluran pelanggan seluruh negara",
+					"desc": "Laman web berjenama serta apl iPhone dan Android — permohonan masuk ke satu barisan kelulusan."
+				},
+				"signing": {
+					"title": "Tandatangan di bawah kawalan anda",
+					"desc": "Tandatangan yang mengikat di sisi undang-undang kekal di premis anda, seperti dikehendaki pelesenan digital."
+				},
+				"cloud": {
+					"title": "Awan anda, kekal di Malaysia",
+					"desc": "Data pinjaman kekal dengan anda dan tidak pernah dicampur dengan pemberi pinjam lain."
+				}
+			},
+			"chips": [
+				"Laman web pelanggan berjenama",
+				"Apl iPhone & Android",
+				"Tandatangan digital di premis anda",
+				"Pengesahan (attestation) langsung & video",
+				"Sokongan untuk semakan lesen dalam talian KPKT"
+			]
+		},
+		"trust": {
+			"eyebrow": "Dibina untuk semakan KPKT",
+			"title": "Sedia apabila pemeriksa bertanya.",
+			"body": "Pelesenan digital sebanyak tentang kawalan dan kebolehkesanan seperti tentang apl. Platform anda disediakan supaya jawapan sudah ada, bukan disusun malam sebelumnya.",
+			"items": {
+				"data": {
+					"title": "Data anda kekal dengan anda",
+					"desc": "Dihoskan pada awan selamat anda sendiri di Malaysia, tidak pernah dicampur dengan pemberi pinjam lain."
+				},
+				"signing": {
+					"title": "Tandatangan kekal di premis anda",
+					"desc": "Peminjam menandatangani dari web atau telefon; kawalan tandatangan kekal di bawah bumbung anda."
+				},
+				"audit": {
+					"title": "Jejak audit setiap hari",
+					"desc": "Siapa buat apa, dan bilakah — sedia untuk pasukan anda dan untuk KPKT."
+				}
+			}
+		},
+		"testimonial": {
+			"quote": "Kami ada satu cawangan dan sebuah bilik penuh fail. Tiga bulan kemudian peminjam memohon dari Johor ke Kuala Lumpur pada apl kami sendiri — dan KPKT sudah melihat sistem itu sebelum mereka masuk.",
+			"name": "Director, CreditXpress",
+			"role": "Pemberi pinjam wang berlesen KPKT",
+			"logoAlt": "CreditXpress",
+			"card": "CreditXpress berpindah dari lesen cawangan tradisional kepada buku pinjaman digital seluruh negara pada TrueKredit™ Pro — web, mudah alih, dan pakej semakan yang diminta KPKT."
+		},
+		"proof": {
+			"eyebrow": "Kerja terpilih",
+			"title": "Pemberi pinjam yang kami bawa digital.",
+			"subtitle": "Pemberi pinjam wang berlesen KPKT sebenar dilancarkan pada TrueKredit™ Pro — dilesenkan, dibina dan diluluskan bersama pasukan kami.",
+			"viewAll": "Semua kisah kejayaan"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim",
+			"body": "Jawapan terus tentang e-Lending, kebenaran tambahan, dan apa yang kami benar-benar hantar — ditulis supaya anda boleh bawa kepada ketua pematuhan anda.",
+			"askCta": "Tanya soalan lain",
+			"items": [
+				{
+					"question": "Apakah pemberian pinjaman wang dalam talian (e-Lending)?",
+					"answer": "Pemberian pinjaman wang yang dijalankan dalam talian. Peminjam memohon, mengesahkan identiti, menandatangani dan membayar semula melalui laman web atau apl mudah alih anda, bukan masuk ke cawangan. KPKT menganggapnya sebagai cara operasi yang berbeza, ditadbir oleh Garis Panduan Pemberi Pinjam Wang Dalam Talian (Online Moneylenders Guidelines), jadi ia membawa kelulusan tersendiri dan tidak diliputi secara automatik oleh lesen tradisional."
+				},
+				{
+					"question": "Berapa lama lesen pinjaman wang dalam talian mengambil masa?",
+					"answer": "Kira-kira tiga bulan dari permulaan hingga pelancaran seluruh negara, berdasarkan pengalaman kami: dua minggu untuk dokumen lesen sementara dan pembentangan KPKT, enam minggu untuk bina dan konfigurasi platform, dua minggu ujian dan persediaan semakan, dan dua minggu melalui pemeriksaan akhir dan kelulusan. Tempoh sebenar bergantung pada kesediaan anda dan jadual KPKT."
+				},
+				{
+					"question": "Adakah pemegang PPW sedia ada perlukan kebenaran tambahan untuk e-Lending?",
+					"answer": "Memegang lesen pemberi pinjam wang tidak dengan sendirinya membenarkan anda meminjamkan dalam talian. Pemegang PPW sedia ada memohon kebenaran tambahan untuk berurus niaga dalam talian, dan perlu tunjukkan kepada KPKT bahawa platform, kawalan tandatangan dan pengendalian data memenuhi Garis Panduan Pemberi Pinjam Wang Dalam Talian. Kami sediakan permohonan itu bersama bukti platform yang menyokongnya, dan sahkan keperluan semasa untuk kelas lesen anda dalam konsultasi."
+				},
+				{
+					"question": "Apakah TrueKredit™ Pro?",
+					"answer": "Peringkat digital sistem pengurusan pinjaman kami. Standard menjalankan buku pinjaman anda: peminjam, jadual, bayaran semula dan kertas kerja KPKT. Pro menambah saluran peminjam seluruh negara — laman web berjenama serta apl iPhone dan Android — tandatangan digital dikekalkan di bawah kawalan anda, pengesahan (attestation) langsung dan video, dan pelaporan yang diminta semakan lesen dalam talian. Pengguna Standard sedia ada naik taraf tanpa memindahkan buku pinjaman."
+				},
+				{
+					"question": "Apa yang Truestack uruskan dari hujung ke hujung?",
+					"answer": "Strategi pelesenan, dokumen lesen sementara, sokongan pembentangan di KPKT, bina platform pada TrueKredit™ Pro, penerapan ke awan selamat anda sendiri di Malaysia, ujian, semakan keselamatan bebas, pakej semakan, iringan melalui pemeriksaan akhir, dan sokongan pematuhan KPKT berterusan selepas pelancaran. Satu pasukan, satu kontrak."
+				},
+				{
+					"question": "Adakah ini nasihat pelesenan sahaja, atau anda hantar perisian juga?",
+					"answer": "Kedua-duanya, dan kami lebih suka membuat kedua-duanya. Nasihat tanpa platform meninggalkan anda dengan kelulusan yang tidak boleh dioperasikan, dan platform tanpa sokongan pelesenan berisiko pilihan yang menggantung semakan anda. Kami bertanggungjawab atas laluan lesen dan perisian di bawah satu kontrak."
+				},
+				{
+					"question": "Siapa yang membina platform pinjaman digital KPKT di Malaysia?",
+					"answer": "Truestack Technologies Sdn. Bhd., syarikat perisian dan perundingan di Kuala Lumpur yang bekerja secara eksklusif dengan pemberi pinjam dan fintech Malaysia. Pemberi pinjam wang berlesen termasuk ezdana, PinjoCep, Proficient Premium, Andas Capital dan CreditXpress beroperasi pada platform kami."
+				},
+				{
+					"question": "Adakah anda juga uruskan lesen digital syariah, atau hanya PPW konvensional?",
+					"answer": "Kedua-duanya. Laluan konvensional di halaman ini ialah kebenaran tambahan untuk e-Lending pada lesen PPW sedia ada, dengan buku pinjaman pada TrueKredit™ Pro. Pinjaman digital syariah ialah kelulusan KPKT berasingan yang akan datang: entiti undang-undang sendiri, penasihat atau jawatankuasa syariah, kontrak diluluskan, dan platform yang membuktikan Tawarruq, Ta'widh dan Gharamah. Laluan itu ialah TrueSyariah™ — lihat truestack.my/truesyariah. Kedua-dua lesen tidak boleh duduk dalam syarikat pengoperasi yang sama."
+				}
+			]
+		},
+		"cta": {
+			"eyebrow": "Pelesenan digital KPKT perkhidmatan penuh",
+			"heading": "Sedia untuk jangkau seluruh negara?",
+			"body": "Tempah konsultasi percuma. Kami akan petakan laluan anda — lesen digital PPW konvensional pada TrueKredit™ Pro, atau laluan syariah yang akan datang pada TrueSyariah™ — sebelum anda komited kepada apa-apa.",
+			"secondary": "Terokai TrueKredit™"
+		}
+	}
+}

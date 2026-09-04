@@ -1,0 +1,66 @@
+{
+	"_status": "ai-draft",
+	"WorkChrome": {
+		"nav": "案例",
+		"hero": {
+			"eyebrow": "我们的案例",
+			"title": "看看<accent>上线</accent>是什么样。",
+			"lede": "我们已从构思带到上线的真实平台——让您在做出承诺之前先看到成果。",
+			"pills": {
+				"kpkt": "KPKT转为数字牌照",
+				"enterprise": "企业放贷",
+				"aws": "AWS Malaysia"
+			},
+			"viewStories": "查看成功案例"
+		},
+		"grid": {
+			"eyebrow": "精选案例",
+			"title": "成功案例",
+			"lede": "精选案例研究与已上线平台——从KPKT转为数字牌照，到电商与企业放贷核心系统。",
+			"featured": "精选",
+			"andMore": "还有更多",
+			"andMoreLead": "<em>下一个故事可以是您的。</em>正在马来西亚建设或扩大放贷或金融科技业务？欢迎洽谈。",
+			"startConversation": "开始洽谈"
+		},
+		"detail": {
+			"allWork": "全部案例",
+			"builtOn": "基于",
+			"viewProduct": "查看产品",
+			"visitLive": "访问已上线网站",
+			"moreWork": "更多案例",
+			"related": "相关案例研究",
+			"viewAllWork": "查看全部案例"
+		},
+		"sections": {
+			"theChallenge": "挑战",
+			"whatWeBuilt": "我们构建了什么",
+			"howWeDelivered": "我们如何交付"
+		},
+		"stats": {
+			"launch": "上线",
+			"mo": "个月",
+			"product": "产品",
+			"surfaces": "界面",
+			"engagement": "合作方式",
+			"focus": "重点",
+			"regulator": "监管机构",
+			"platform": "平台"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "常见问题"
+		},
+		"cta": {
+			"heading": "准备好让下一个故事是您的吗？",
+			"body": "无论您是转为数字化、更换平台，还是从零开始——预约免费咨询，我们将规划从现状到上线的路径。",
+			"secondary": "了解数字牌照"
+		},
+		"detailCta": {
+			"heading": "想要类似的系统？",
+			"body": "告诉我们您要上线的内容——数字放贷、市场平台或受监管平台。我们将规划从需求到上线的路径。"
+		},
+		"schema": {
+			"name": "案例 | Truestack成功案例"
+		}
+	}
+}

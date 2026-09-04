@@ -1,0 +1,273 @@
+{
+	"_status": "ai-draft",
+	"TrueSSM": {
+		"meta": {
+			"title": "TrueSSM™ — API Daftar SSM Malaysia | ROC, ROB, LLP",
+			"description": "TrueSSM™ API daftar SSM Malaysia — carian entiti, profil ROC/ROB/LLP, pegawai, pemegang saham, dan dokumen imbasan dengan harga RM yang telus.",
+			"openGraphTitle": "TrueSSM™ — API Daftar SSM Malaysia | ROC, ROB, LLP & Dokumen",
+			"openGraphDescription": "Akses SSM secara programatik untuk fintech dan pemberi pinjam — carian entiti, profil, butiran, fail imbasan, pengebilan RM, dan tarikan REST yang idempoten.",
+			"ogImageAlt": "Truestack Technologies"
+		},
+		"schema": {
+			"breadcrumbHome": "Laman Utama",
+			"breadcrumbCurrent": "TrueSSM™",
+			"softwareName": "TrueSSM™",
+			"alternateName": [
+				"TrueSSM Registry API",
+				"Truestack SSM API",
+				"API daftar Malaysia"
+			],
+			"featureList": [
+				"Pengesahan carian entiti percuma",
+				"Profil syarikat ROC",
+				"Profil perniagaan ROB",
+				"Profil LLP",
+				"Pegawai dan pemegang saham",
+				"Dokumen SSM imbasan",
+				"Tarikan REST idempoten",
+				"Harga telus dalam RM"
+			]
+		},
+		"hero": {
+			"eyebrow": "TrueSSM™ API Daftar",
+			"title": "Data Daftar SSM, Secara Programatik",
+			"body": "Carian entiti, profil ROC/ROB/LLP, butiran, dan dokumen imbasan — satu REST API untuk daftar Malaysia, dibilkan secara telus dalam RM.",
+			"poweredBy": "Dikuasakan oleh",
+			"ssmSearchAlt": "Logo SSM Search",
+			"ctaSecondary": "Lihat Endpoint",
+			"stats": {
+				"endpoints": { "value": "13", "label": "Endpoint" },
+				"entitySearch": { "value": "Percuma", "label": "Carian Entiti" },
+				"rm": { "value": "RM", "label": "Setiap operasi" },
+				"idempotent": { "value": "Idempotent", "label": "Ikut Rekaan" }
+			},
+			"chips": {
+				"endpoints": { "value": "13", "label": "Endpoint" },
+				"entitySearch": { "value": "Percuma", "label": "Carian entiti" },
+				"idempotent": { "value": "Idempotent", "label": "Retry selamat" }
+			}
+		},
+		"features": {
+			"eyebrow": "Ciri Utama",
+			"title": "Dibina untuk pengendali Malaysia",
+			"body": "Semua yang anda perlukan untuk menyepadukan daftar SSM ke dalam produk anda — tanpa membinanya dari awal.",
+			"items": {
+				"oneIntegration": {
+					"title": "Satu Integrasi",
+					"description": "Profil ROC, ROB, dan LLP, butiran, dan dokumen imbasan — semuanya daripada satu REST API."
+				},
+				"freeValidation": {
+					"title": "Pengesahan Percuma",
+					"description": "Carian entiti percuma secara automatik sebelum tarikan boleh bil. Tiada caj apabila entiti tidak dijumpai."
+				},
+				"rmPricing": {
+					"title": "Harga RM",
+					"description": "Harga telus setiap operasi dalam Ringgit Malaysia; peringkat tersuai tersedia."
+				},
+				"idempotentPulls": {
+					"title": "Tarikan Idempoten",
+					"description": "Cuba semula dengan selamat menggunakan Idempotency-Key. Keputusan yang dihantar tidak dibilkan dua kali untuk kunci yang sama."
+				}
+			}
+		},
+		"benefits": {
+			"eyebrow": "Kesan Perniagaan",
+			"title": "Langkau carian SSM manual",
+			"items": {
+				"faster": {
+					"title": "Onboarding & Pengunderaitan Pantas",
+					"description": "Tarik profil syarikat, pegawai, dan pemegang saham dalam beberapa saat — tiada carian SSM manual."
+				},
+				"risk": {
+					"title": "Kurangkan Pendedahan Risiko",
+					"description": "Sahkan pihak berlawanan dengan data gadaian (charges), modal saham, dan pegawai semasa terus daripada daftar."
+				},
+				"costs": {
+					"title": "Kos Boleh Dijangka",
+					"description": "Bayar hanya untuk tarikan yang dihantar. Pengesahan gagal dan kebanyakan respons tanpa data tidak dicaj."
+				},
+				"automation": {
+					"title": "Untuk Automasi",
+					"description": "Idempotensi, ralat berstruktur, dan medan asli pembekal memudahkan penyambungan ke aliran kerja anda."
+				}
+			}
+		},
+		"endpoints": {
+			"eyebrow": "Endpoint",
+			"title": "13 endpoint, satu kunci API",
+			"body": "Harga templat dipaparkan. Peringkat harga tersuai mungkin dikenakan — setiap respons membawa <code>acknowledgement.billed_rm</code> yang berwibawa.",
+			"columns": {
+				"endpoint": "Endpoint",
+				"description": "Penerangan",
+				"price": "Harga"
+			},
+			"free": "Percuma",
+			"items": {
+				"entity_search": {
+					"name": "Carian Entiti",
+					"description": "Padankan entiti mengikut nombor pendaftaran dan/atau nama, dengan penomboran halaman."
+				},
+				"company_profile": {
+					"name": "Profil Syarikat",
+					"description": "Profil ROC: nama, pendaftaran, jenis, status, alamat, maklumat saham, pegawai, pemegang saham, gadaian (charges)."
+				},
+				"business_profile": {
+					"name": "Profil Perniagaan",
+					"description": "Profil ROB: nama, pemilikan, alamat, tarikh, status, cawangan, pemilik semasa dan terdahulu."
+				},
+				"llp_profile": {
+					"name": "Profil LLP",
+					"description": "Profil semasa LLP: butiran entiti, alamat, kod perniagaan, maklumat rakan kongsi."
+				},
+				"officers": {
+					"name": "Butiran Pegawai",
+					"description": "Pengarah/pegawai semasa dan terdahulu dengan tarikh lantikan dan peletakan jawatan."
+				},
+				"share_capital": {
+					"name": "Modal Saham",
+					"description": "Jumlah saham terbitan, saham biasa dan keutamaan, peruntukan saham dan butiran."
+				},
+				"shareholders": {
+					"name": "Pemegang Saham",
+					"description": "Butiran pemegang saham: nama, ID, alamat, saham dipegang, diperoleh dan dilupuskan."
+				},
+				"registered_address": {
+					"name": "Alamat Berdaftar",
+					"description": "Alamat berdaftar semasa dan sejarah perubahan."
+				},
+				"company_secretary": {
+					"name": "Setiausaha Syarikat",
+					"description": "Butiran setiausaha: nama, IC, lesen, status, alamat kediaman."
+				},
+				"charges": {
+					"name": "Gadaian Syarikat",
+					"description": "Nombor gadaian, jenis instrumen, harta terjejas, jenis gadaian dan tarikh."
+				},
+				"audit_firm": {
+					"name": "Firma Audit",
+					"description": "Nombor firma, nama juruaudit, lesen, tarikh mula dan alamat."
+				},
+				"document_list": {
+					"name": "Lihat Dokumen Imbasan",
+					"description": "Metadata dokumen imbasan: jenis borang, tarikh dokumen, jumlah halaman, id versi."
+				},
+				"document_image": {
+					"name": "Dokumen Imbasan",
+					"description": "Kandungan binari untuk satu fail (lazimnya base64). Memerlukan regNo dan verId."
+				}
+			}
+		},
+		"howItWorks": {
+			"eyebrow": "Cara Ia Berfungsi",
+			"title": "Boleh dijangka, idempoten, dibilkan hanya semasa penghantaran",
+			"steps": {
+				"authenticate": {
+					"title": "Autentikasi",
+					"desc": "Hantar kunci API TrueSSM™ anda. Berasingan daripada kunci TrueIdentity."
+				},
+				"freeValidation": {
+					"title": "Pengesahan Percuma",
+					"desc": "Kami mengesahkan nombor daftar secara automatik dengan carian entiti percuma sebelum sebarang tarikan boleh bil."
+				},
+				"pullReport": {
+					"title": "Tarik Laporan",
+					"desc": "Profil, butiran, atau dokumen imbasan — medan asli pembekal dalam respons."
+				},
+				"acknowledged": {
+					"title": "Diakui",
+					"desc": "Setiap penghantaran mengembalikan pengakuan dengan jumlah yang dibilkan dalam RM."
+				}
+			},
+			"safeguardsTitle": "Perlindungan terbina dalam",
+			"safeguards": {
+				"freeValidation": {
+					"label": "Pengesahan entiti percuma",
+					"desc": "ENTITY_NOT_FOUND tidak dikenakan caj."
+				},
+				"entityTypeRouting": {
+					"label": "Penghalaan jenis entiti",
+					"desc": "Keluarga endpoint yang salah disekat sebelum pengebilan."
+				},
+				"idempotencyKeys": {
+					"label": "Kunci idempotensi",
+					"desc": "Keputusan yang dihantar tidak dibilkan dua kali."
+				},
+				"acknowledgementReceipt": {
+					"label": "Resit pengakuan",
+					"desc": "Setiap respons merangkumi billed_rm."
+				},
+				"timestamps": {
+					"label": "Cap masa ISO-8601",
+					"desc": "Semua masa penghantaran dalam UTC."
+				},
+				"providerFields": {
+					"label": "Medan asli pembekal",
+					"desc": "Data respons menggunakan bentuk JSON pembekal."
+				}
+			}
+		},
+		"useCases": {
+			"eyebrow": "Kes Penggunaan",
+			"title": "Untuk fintech, pinjaman, dan pematuhan",
+			"items": {
+				"lenders": {
+					"title": "Pemberi Pinjam & Pengunderait",
+					"description": "Tarik pegawai, gadaian (charges), dan modal saham untuk menilai peminjam korporat dalam beberapa saat."
+				},
+				"kyb": {
+					"title": "KYB dan Onboarding",
+					"description": "Sahkan pihak berlawanan perniagaan dengan profil ROC/ROB dan alamat berdaftar semasa."
+				},
+				"compliance": {
+					"title": "Pematuhan & Audit",
+					"description": "Dapatkan fail imbasan mengikut keperluan untuk usaha wajar (due diligence), audit, dan penyerahan kawal selia."
+				}
+			}
+		},
+		"developers": {
+			"eyebrow": "Untuk Pembangun",
+			"title": "REST masuk, data daftar berstruktur keluar",
+			"body": "POST JSON, terima JSON. Idempoten, dengan medan asli pembekal di bawah <code>data</code>.",
+			"stats": {
+				"post": { "value": "POST", "label": "Setiap endpoint" },
+				"json": { "value": "JSON", "label": "Masuk dan keluar" },
+				"rest": { "value": "REST", "label": "Tanpa SDK" }
+			}
+		},
+		"faq": {
+			"title": "Soalan lazim",
+			"body": "Liputan daftar SSM, harga RM, idempotensi, dan bagaimana TrueSSM™ sesuai dalam tumpukan Truestack anda.",
+			"items": [
+				{
+					"question": "Apakah TrueSSM™?",
+					"answer": "TrueSSM™ ialah API REST Truestack untuk data daftar Suruhanjaya Syarikat Malaysia (SSM). Integrasikan satu API untuk mencari entiti, tarik profil ROC/ROB/LLP, dapatkan pegawai, pemegang saham, gadaian (charges), dan muat turun dokumen imbasan — dengan harga RM yang telus setiap operasi."
+				},
+				{
+					"question": "Data daftar apa yang boleh saya tarik dengan TrueSSM™?",
+					"answer": "TrueSSM menyokong carian entiti percuma, profil syarikat (ROC), profil perniagaan (ROB), profil LLP, butiran pegawai, modal saham, pemegang saham, alamat berdaftar, setiausaha syarikat, gadaian (charges), butiran firma audit, dan endpoint senarai/imej dokumen imbasan."
+				},
+				{
+					"question": "Bagaimana harga TrueSSM™ berfungsi?",
+					"answer": "Pengesahan carian entiti adalah percuma apabila tiada padanan. Operasi boleh bil dikenakan harga telus dalam Ringgit Malaysia setiap tarikan yang dihantar — sebagai contoh profil syarikat sekitar RM 15.40. Pengesahan gagal dan kebanyakan respons tanpa data tidak dicaj. Peringkat tersuai tersedia untuk volum tinggi."
+				},
+				{
+					"question": "Apakah pengebilan idempoten pada TrueSSM™?",
+					"answer": "Hantar pengepala Idempotency-Key pada permintaan tarikan supaya cubaan semula yang selamat tidak dibilkan dua kali. Jika kunci yang sama sudah menghasilkan keputusan yang dihantar, anda menerima hasil cache tanpa caj kedua — penting untuk saluran pengunderaitan dan onboarding automatik."
+				},
+				{
+					"question": "Siapa yang menggunakan TrueSSM™?",
+					"answer": "Pemberi pinjam, pengunderait, pasukan onboarding fintech, dan fungsi pematuhan menggunakan TrueSSM untuk mengesahkan peminjam korporat dan pihak berlawanan — menarik pegawai, modal saham, gadaian (charges), dan fail dalam beberapa saat, bukan kerja portal SSM secara manual."
+				},
+				{
+					"question": "Bagaimana TrueSSM™ berkaitan dengan TrueKredit™ dan TrueIdentity™?",
+					"answer": "TrueSSM menggunakan kunci API yang berasingan daripada TrueIdentity dan disepadukan ke dalam tumpukan pinjaman Truestack — termasuk aliran kerja TrueKredit™ yang sudah menyambungkan semakan Infomina/SSM untuk operasi pinjaman Kementerian Perumahan dan Kerajaan Tempatan (KPKT) dan enterprise."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Bersedia menyambungkan SSM ke produk anda?",
+			"body": "Dapatkan kunci API, tambah dana dalam RM, dan tarik profil pertama anda. Tempah konsultasi percuma dan kami akan bantu anda menyepadukan data daftar SSM ke dalam produk anda.",
+			"secondary": "Kembali ke truestack.my"
+		}
+	}
+}

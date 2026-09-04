@@ -1,0 +1,407 @@
+{
+	"_status": "ai-draft",
+	"P2P": {
+		"meta": {
+			"title": "TrueP2P™ | Platform P2P Malaysia | Selaras SC",
+			"description": "Pembangunan platform P2P untuk Malaysia — TrueP2P™ membina perisian pembiayaan P2P selaras SC, konvensional atau Syariah, dengan sokongan RMO pilihan.",
+			"openGraphTitle": "TrueP2P™ | Pembangunan Platform P2P Malaysia",
+			"openGraphDescription": "Kejuruteraan platform P2P selaras SC untuk Malaysia — portal pelabur dan penerbit, akaun amanah (escrow), lejar Syariah Gharamah & Ta'widh, dan sokongan pendaftaran RMO pilihan.",
+			"ogImageAlt": "Platform pembiayaan P2P TrueP2P — portal pelabur, penyenaraian pasaran (marketplace), akaun amanah (escrow), tandatangan digital dan modul pematuhan SC Malaysia"
+		},
+		"schema": {
+			"serviceName": "TrueP2P™",
+			"alternateName": [
+				"Pembangunan Perisian P2P Malaysia",
+				"Pembangunan Platform Pembiayaan P2P Malaysia",
+				"Pembangunan platform P2P Malaysia",
+				"Pembangunan Platform P2P Selaras Syariah",
+				"Perisian pembiayaan rakan ke rakan Malaysia"
+			],
+			"serviceType": "Kejuruteraan platform P2P tersuai dan pembangunan perisian untuk Malaysia — konvensional dan selaras Syariah",
+			"audienceType": "Pengendali Pasaran Berdaftar (RMO), pengendali kewangan Islam, dan pengasas fintech yang membina platform P2P di Malaysia",
+			"catalogName": "Modul platform TrueP2P™",
+			"offers": {
+				"investor": {
+					"name": "Portal pelabur",
+					"description": "Pengalaman web dan mudah alih berjenama untuk pendaftaran pelabur, kesesuaian, deposit, peruntukan dan penyata."
+				},
+				"issuer": {
+					"name": "Portal penerbit",
+					"description": "Onboarding layan diri, muat naik dokumen, permohonan penyenaraian dan keterlihatan pembiayaan secara langsung untuk PKS dan originator."
+				},
+				"listings": {
+					"name": "Enjin penyenaraian & padanan",
+					"description": "Jenis nota boleh dikonfigurasi, onboarding aset tersaring Syariah, had pembiayaan, peraturan peruntukan, dan had kepekatan setiap pelabur."
+				},
+				"escrow": {
+					"name": "Akaun amanah (escrow) & pembayaran",
+					"description": "Integrasi akaun amanah, rel FPX dan DuitNow, pencairan automatik dan penyesuaian bayaran balik."
+				},
+				"ekyc": {
+					"name": "e-KYC & akreditasi",
+					"description": "MyKad, liveness, saringan AML/CFT dan akreditasi pelabur berperingkat dibina dalam onboarding."
+				},
+				"esign": {
+					"name": "Tandatangan digital & kontrak",
+					"description": "Penjanaan perjanjian di platform, tandatangan digital dan peti dokumen tahan ubah suai."
+				},
+				"ops": {
+					"name": "Operasi & pelaporan",
+					"description": "Konsol pentadbir serta eksport diselaras untuk penyerahan SC, audit dan semakan jawatankuasa Syariah."
+				},
+				"tawarruq": {
+					"name": "Pencairan Tawarruq",
+					"description": "Pencairan Tawarruq patuh Syariah (Murabaha komoditi) — pembelian komoditi, jualan tertunda kepada pelanggan, dan jualan seterusnya untuk hasil tunai, dengan jejak audit penuh."
+				},
+				"shariahAccounting": {
+					"name": "Perakaunan selaras Syariah (Gharamah & Ta'widh)",
+					"description": "Lejar Gharamah dan Ta'widh terasing dengan aliran kerja pencairan amal untuk platform P2P Islam."
+				},
+				"rmo": {
+					"name": "Persediaan pendaftaran RMO SC Malaysia",
+					"description": "Perundingan bersama kejuruteraan TrueP2P™ untuk kelulusan Pengendali Pasaran Berdaftar (RMO) dengan Suruhanjaya Sekuriti Malaysia (SC)."
+				}
+			}
+		},
+		"breadcrumb": {
+			"current": "TrueP2P™"
+		},
+		"hero": {
+			"badgeRmo": "Selaras SC RMO",
+			"badgeShariah": "Konvensional & Syariah",
+			"badgeExaminer": "Sedia pemeriksa",
+			"title": "TrueP2P™ — platform P2P untuk <accent>Malaysia.</accent>",
+			"lede": "Platform pembiayaan P2P konvensional dan selaras Syariah.",
+			"body": "Portal pelabur dan penerbit, akaun amanah (escrow), pembayaran, tandatangan digital, dan perakaunan Gharamah/Ta'widh — dibina untuk SC Malaysia, dengan sokongan pendaftaran RMO selari binaan.",
+			"modulesCta": "Lihat modul platform",
+			"stats": {
+				"endToEnd": {
+					"value": "Menyeluruh",
+					"label": "Pelabur + Penerbit + Admin"
+				},
+				"aws": {
+					"value": "AWS Malaysia",
+					"label": "Residensi data"
+				},
+				"audit": {
+					"value": "Sedia audit",
+					"label": "Log & eksport"
+				}
+			}
+		},
+		"intro": {
+			"body": "<lead>TrueP2P™ ialah rakan kejuruteraan platform P2P Truestack di Malaysia.</lead> Kami membina platform pembiayaan P2P sedia pengeluaran — <emphasis>konvensional dan selaras Syariah</emphasis> — merangkumi onboarding pelabur, penyenaraian, akaun amanah (escrow), pembayaran, tandatangan digital, <tawarruq>pencairan komoditi Tawarruq</tawarruq>, <gharamah>perakaunan Gharamah dan Ta'widh</gharamah> serta pelaporan, untuk pengendali di bawah rangka kerja Pengendali Pasaran Berdaftar (RMO) <sc>Suruhanjaya Sekuriti Malaysia</sc>. Sama ada anda melancarkan platform P2P baharu, menukar platform sedia ada, atau berkembang ke kelas aset baharu, kami menghantar stack penuh dan mengendalikannya bersama pasukan anda.<close> Di luar kejuruteraan, pasukan perundingan kami — disokong rangkaian perunding pakar — boleh membimbing A–Z pendaftaran RMO SC Malaysia selari dengan binaan anda.</close>",
+			"kpktLead": "Mencari pinjaman wang berlesen Kementerian Perumahan dan Kerajaan Tempatan (KPKT) pula? Lihat <truekredit>TrueKredit™</truekredit> untuk pinjaman digital KPKT konvensional atau <truesyariah>TrueSyariah™</truesyariah> untuk Lesen Pinjaman Digital Syariah KPKT."
+		},
+		"diagram": {
+			"eyebrow": "Cara TrueP2P™ berfungsi",
+			"title": "Apa yang kami kejuruteraan untuk anda",
+			"body": "Platform P2P terkawal menyambungkan pelabur terus dengan penerbit. Kami membina setiap lapisan di antaranya — onboarding, penyenaraian, akaun amanah (escrow), bayaran balik dan pelaporan — supaya pengalaman terasa seperti satu produk yang dipercayai."
+		},
+		"modules": {
+			"badge": "Apa yang kami bina",
+			"title": "Setiap modul yang platform P2P terkawal perlukan",
+			"body": "Platform rakan ke rakan yang lengkap lebih daripada tapak pemasaran dan pangkalan data. Kami hantar setiap bahagian — dan kami tahu tepat bahagian mana yang penting kepada pengawal selia Malaysia.",
+			"items": {
+				"investor": {
+					"title": "Portal pelabur",
+					"description": "Pengalaman web dan mudah alih berjenama untuk pendaftaran pelabur, kesesuaian, deposit, peruntukan dan penyata."
+				},
+				"issuer": {
+					"title": "Portal penerbit",
+					"description": "Onboarding layan diri, muat naik dokumen, permohonan penyenaraian dan keterlihatan pembiayaan secara langsung untuk PKS dan originator."
+				},
+				"listings": {
+					"title": "Enjin penyenaraian & padanan",
+					"description": "Jenis nota boleh dikonfigurasi, onboarding aset tersaring Syariah, had pembiayaan, peraturan peruntukan, senarai menunggu dan had kepekatan setiap pelabur."
+				},
+				"escrow": {
+					"title": "Akaun amanah (escrow) & pembayaran",
+					"description": "Integrasi akaun amanah, rel FPX dan DuitNow, pencairan automatik dan penyesuaian bayaran balik."
+				},
+				"ekyc": {
+					"title": "e-KYC & akreditasi",
+					"description": "MyKad, liveness, saringan AML/CFT dan akreditasi pelabur berperingkat dibina dalam aliran onboarding."
+				},
+				"esign": {
+					"title": "Tandatangan digital & kontrak",
+					"description": "Penjanaan perjanjian di platform, tandatangan digital dan peti dokumen tahan ubah suai untuk setiap pihak."
+				},
+				"ops": {
+					"title": "Operasi & pelaporan",
+					"description": "Konsol pentadbir untuk operasi, kewangan dan pematuhan — serta eksport diselaras untuk penyerahan SC, audit dan semakan jawatankuasa Syariah."
+				},
+				"security": {
+					"title": "Keselamatan & jejak audit",
+					"description": "Penyulitan, RBAC, log audit tidak berubah, infrastructure-as-code dan seni bina sedia ujian penembusan."
+				}
+			}
+		},
+		"listings": {
+			"badge": "Pengalaman pelabur",
+			"title": "Penyenaraian direka untuk meraih kepercayaan pelabur",
+			"body": "Platform P2P hidup atau mati berdasarkan rasa penyenaraiannya. Di bawah ialah jenis UI gred pelabur yang kami bina untuk pelanggan — diselaras kepada kelas aset, model risiko dan jenama anda.",
+			"disclaimer": "UI sampel untuk ilustrasi. Penyenaraian, skor dan jumlah bukan pelaburan sebenar dan bukan tawaran untuk melabur.",
+			"regionAria": "Sampel penyenaraian pelaburan P2P — UI ilustrasi",
+			"progressAria": "Kemajuan pembiayaan",
+			"scrollLeft": "Tatal penyenaraian ke kiri",
+			"scrollRight": "Tatal penyenaraian ke kanan",
+			"sampleCaption": "UI sampel — bukan penyenaraian sebenar"
+		},
+		"process": {
+			"badge": "Proses kami",
+			"title": "Cara kami menghantar platform P2P anda",
+			"body": "Penglibatan hujung ke hujung yang boleh dijangka — dari pemetaan kawal selia ke pelancaran dan sokongan berterusan. Anda mendapat satu rakan kejuruteraan yang bertanggungjawab, bukan lima vendor untuk diselaras.",
+			"photoAlt": "Dua profesional menyemak papan pemuka platform P2P di pejabat Kuala Lumpur",
+			"stepsAria": "Proses penghantaran platform P2P",
+			"steps": {
+				"discovery": {
+					"title": "Penemuan & pemetaan kawal selia",
+					"description": "Kami terjemah model perniagaan P2P anda kepada spesifikasi produk yang jelas — kelas aset, peringkat pelabur, struktur yuran dan kewajipan SC yang platform mesti penuhi. Di mana anda memerlukannya, pasukan perundingan kami menyelaraskan peta hala tuju ini dengan perjalanan pendaftaran RMO SC Malaysia anda."
+				},
+				"ux": {
+					"title": "UX & seni bina sistem",
+					"description": "Reka bentuk perjalanan pelabur, penerbit dan pentadbir bersama seni bina awan, model data, sempadan keselamatan dan peta integrasi."
+				},
+				"build": {
+					"title": "Bina & integrasi",
+					"description": "Penghantaran berulang platform dengan e-KYC, pembayaran, akaun amanah (escrow), tandatangan digital dan integrasi CTOS / SSM disambungkan oleh pasukan kami."
+				},
+				"uat": {
+					"title": "Semakan pematuhan & UAT",
+					"description": "Laluan bersama pegawai pematuhan dan peguam anda, rakaman skrin gaya pemeriksa, serta ujian penerimaan pengguna berstruktur."
+				},
+				"launch": {
+					"title": "Pelancaran & sokongan",
+					"description": "Penempatan (deployment) AWS Malaysia, pemantauan, tindak balas insiden, semakan keselamatan berkala dan penghantaran ciri berterusan apabila platform anda berkembang."
+				}
+			},
+			"stackBadge": "Paling popular",
+			"stackTitle": "Stack P2P sedia pengeluaran",
+			"stackBody": "Platform rakan ke rakan penuh dihantar sebagai satu penglibatan yang bertanggungjawab — dibina untuk pengendali Malaysia, dihos di AWS Malaysia, sedia untuk perbualan pemeriksa SC dari hari pertama, dengan perundingan pendaftaran RMO pilihan berjalan selari.",
+			"stackCta": "Minta cadangan skop",
+			"highlights": [
+				"Platform P2P hujung ke hujung — pelabur + penerbit + pentadbir",
+				"Persediaan SC RMO — perundingan selari kejuruteraan (dalaman + perunding rakan)",
+				"Akreditasi pelabur & had selaras SC",
+				"Integrasi akaun amanah (escrow), FPX, DuitNow dan pemegang amanah",
+				"Penyambung e-KYC MyKad, AML/CFT dan CTOS",
+				"Residensi data AWS Malaysia, disulitkan secara lalai",
+				"Log, eksport dan pelaporan sedia audit",
+				"Pengalaman web berjenama dan mudah alih asli",
+				"Retainer kejuruteraan terurus jangka panjang"
+			]
+		},
+		"audiences": {
+			"badge": "Dibina untuk semua pihak di platform",
+			"title": "Platform P2P yang meraih kepercayaan di setiap sisi",
+			"body": "Platform P2P yang kukuh mengimbangi tiga khalayak sekaligus: pengendali yang bertanggungjawab kepada pengawal selia, pelabur yang keyakinannya memacu setiap penyenaraian baharu, dan penerbit yang pertumbuhannya memberi platform alasan untuk wujud.",
+			"operators": {
+				"title": "Untuk pengendali platform",
+				"body": "Hantar platform yang lesen anda anggap anda ada — tanpa sakit kepala menyambung lima vendor.",
+				"cta": "Bincang kejuruteraan",
+				"items": {
+					"speed": {
+						"title": "Laju ke pasaran",
+						"description": "Modul teruji dan ritual penghantaran jelas membawa anda dari permulaan ke platform hidup tanpa seretan agensi biasa."
+					},
+					"examiner": {
+						"title": "Sedia pemeriksa",
+						"description": "Gambar rajah seni bina, kawalan IT, jejak audit dan dasar keselamatan dihasilkan semasa platform dibina — bukan dipasang kemudian — dengan artifak yang penyerahan SC anda boleh rujuk."
+					},
+					"predictable": {
+						"title": "Kejuruteraan boleh dijangka",
+						"description": "Binaan yuran tetap, kawalan perubahan telus, dan satu pasukan bertanggungjawab yang memiliki penghantaran serta sokongan selepas pelancaran."
+					}
+				}
+			},
+			"investors": {
+				"title": "Untuk pelabur anda",
+				"body": "Pengalaman pelabur yang bersih dan telus, yang menandakan tepat jenis platform yang pasaran terkawal jangkakan.",
+				"cta": "Lihat modul platform",
+				"items": {
+					"trust": {
+						"title": "Amanah dari reka",
+						"description": "Onboarding bersih, penyenaraian telus, kemajuan pembiayaan masa nyata dan penyata pelabur yang jelas membina kredibiliti yang platform terkawal perlukan."
+					},
+					"clarity": {
+						"title": "Kejelasan berasaskan aset",
+						"description": "Struktur setiap nota, tempoh, pulangan dijangka dan skor risiko dipaparkan secara konsisten supaya pelabur boleh saiz kedudukan dengan yakin."
+					},
+					"secure": {
+						"title": "Penyertaan selamat",
+						"description": "Akreditasi berperingkat, had pelaburan dan akaun amanah terasing melindungi pelabur serta lesen pengendali."
+					}
+				}
+			},
+			"issuers": {
+				"title": "Untuk penerbit & PKS",
+				"body": "Pengalaman pembiayaan yang menghormati masa penerbit — dan membalas bayaran balik yang baik dengan akses modal masa depan yang lebih lancar.",
+				"cta": "Rancang platform",
+				"items": {
+					"speed": {
+						"title": "Masa ke pembiayaan",
+						"description": "Penyenaraian mencapai sasaran pembiayaan dalam hari, bukan bulan, dengan keterlihatan kemajuan harian dan gesaan langkah seterusnya yang jelas untuk penerbit."
+					},
+					"terms": {
+						"title": "Terma telus",
+						"description": "Kadar berkesan, tempoh, yuran dan kewajipan dipaparkan di hadapan — tiada kos tersembunyi dan tiada kejutan selepas pencairan."
+					},
+					"next": {
+						"title": "Raih pusingan seterusnya",
+						"description": "Data bayaran balik tepat masa terus ke pengumpulan masa depan yang lebih laju dan lebih besar, dengan kurang kertas kerja pada kali kedua."
+					}
+				}
+			}
+		},
+		"compliance": {
+			"badge": "Pematuhan SC Malaysia",
+			"title": "Dikejuruteraan untuk rangka kerja Pasaran Berdaftar SC",
+			"body": "Setiap platform P2P yang kami hantar dibina dengan <emphasis>Garis Panduan Pasaran Berdaftar</emphasis> dan <emphasis>Akta Pasaran Modal dan Perkhidmatan</emphasis> sebagai rujukan. Kami terjemah kewajipan itu kepada kawalan produk — supaya pasukan operasi anda tidak bergantung pada hamparan untuk kekal patuh.",
+			"disclaimer": "Kami rakan perisian, bukan peguam. Perundingan kami melengkapi — tidak pernah menggantikan — peguam anda: kami selaraskan penghantaran produk dengan persediaan RMO, artifak dan aliran berhadapan pemeriksa, manakala peguam menasihati kewajipan dan pemfailan.",
+			"discussCta": "Bincang penyerahan SC",
+			"otherCta": "Perkhidmatan fintech lain",
+			"catalogEyebrow": "Dibina dalam platform",
+			"items": [
+				"Sokongan pendaftaran RMO SC Malaysia — pasukan perundingan serta rangkaian perunding pakar",
+				"Penyelarasan rangka kerja RMO Suruhanjaya Sekuriti Malaysia (SC)",
+				"Peringkat akreditasi pelabur & had setiap pelabur",
+				"Had pembiayaan setiap penerbit dikuatkuasakan dalam kod",
+				"Integrasi akaun amanah terasing / akaun amanah (escrow)",
+				"Saringan AML/CFT, semakan sekatan & semakan PEP",
+				"Pengendalian data patuh PDPA & pengurusan persetujuan",
+				"Ujian penembusan bebas pra-pelancaran",
+				"Residensi data AWS Malaysia, disulitkan semasa rehat & dalam transit"
+			]
+		},
+		"shariah": {
+			"badge": "Selaras Syariah dari reka",
+			"title": "Dikejuruteraan untuk pembiayaan P2P Islam",
+			"body": "Kami kejuruteraan varian selaras Syariah bagi setiap platform P2P yang kami hantar — termasuk pencairan komoditi <tawarruq>Tawarruq</tawarruq> (تورق), perakaunan <gharamah>Gharamah</gharamah> dan <tawidh>Ta'widh</tawidh> terasing, onboarding aset tersaring Syariah, dan templat kontrak selaras dengan jawatankuasa Syariah anda.",
+			"advisor": "Kami bekerja dengan penasihat Syariah yang anda lantik untuk memeta setiap aliran kepada kontrak dan keputusan yang mereka kehendaki — supaya lejar yang juruaudit anda lihat sepadan dengan keputusan yang jawatankuasa anda luluskan.",
+			"kpktLead": "Perlu pinjaman digital Syariah KPKT dan bukan P2P SC? <link>Terokai TrueSyariah™</link> — dibina untuk Lesen Pinjaman Digital Syariah KPKT pada entiti dan penempatan AWS yang berasingan.",
+			"discussCta": "Bincang binaan Syariah",
+			"disbursementBadge": "Struktur pencairan",
+			"tawarruqNote": "Tawarruq ialah struktur patuh Syariah yang dominan untuk pencairan tunai dalam kewangan Islam Malaysia. Kami sambungkan kaki dagangan komoditi ke dalam aliran pencairan platform anda — dengan rekod penuh untuk setiap kaki — supaya setiap peristiwa pembiayaan mempunyai jejak Syariah yang boleh disahkan dan sedia audit.",
+			"pillars": {
+				"tawarruq": {
+					"title": "Pencairan Tawarruq",
+					"arabic": "تورق",
+					"summary": "Pencairan tunai patuh Syariah distruktur sebagai jualan komoditi dan jualan seterusnya — pelanggan menerima hasil MYR manakala pengendali merekodkan terimaan tertunda pada kadar keuntungan yang dipersetujui.",
+					"points": [
+						"Kaki dagangan Tawarruq automatik diatur pada pencairan",
+						"Integrasi dagangan komoditi dan penyimpanan rekod",
+						"Pek kontrak dan jejak audit setiap pencairan untuk semakan Syariah"
+					]
+				},
+				"gharamah": {
+					"title": "Akaun Gharamah",
+					"arabic": "غرامة",
+					"summary": "Penalti bayaran lewat yang, di bawah Syariah, tidak boleh memperkaya pembiaya — disalurkan kepada amal sebaliknya.",
+					"points": [
+						"Pisahan automatik daripada setiap caj lewat ke lejar terasing",
+						"Aliran kerja pencairan amal dengan jadual didokumenkan",
+						"Laporan peruntukan boleh diaudit untuk jawatankuasa Syariah"
+					]
+				},
+				"tawidh": {
+					"title": "Akaun Ta'widh",
+					"arabic": "تعويض",
+					"summary": "Pampasan untuk kos sebenar pemulihan — secara sah dikekalkan oleh pengendali atau pembiaya.",
+					"points": [
+						"Peruntukan berjustifikasi kos dengan metadata untuk semakan Syariah",
+						"Pengumpulan peka had supaya catatan kekal dalam had yang dipersetujui",
+						"Eksport sedia jawatankuasa Syariah bersama pelaporan SC"
+					]
+				}
+			}
+		},
+		"caseStudies": {
+			"title": "Kisah kejayaan",
+			"subtitle": "Platform pembiayaan P2P patuh SC, sedia pelabur, yang kami reka dan kejuruteraan untuk pengendali P2P Malaysia.",
+			"defaultTitle": "Kisah Kejayaan",
+			"defaultSubtitle": "Lihat bagaimana kami membantu pengendali Fintech Malaysia beralih digital dan menskalakan perniagaan mereka.",
+			"andMore": {
+				"ariaLabel": "Kisah anda mungkin muncul di sini seterusnya",
+				"title": "Dan Lagi",
+				"body": "<lead>Kisah anda mungkin di sini seterusnya.</lead> Jika anda sedang membina atau menskalakan operasi pinjaman atau fintech di Malaysia, kami ingin mendengar matlamat anda."
+			},
+			"cashsouk": {
+				"description": "Pasaran (marketplace) pembiayaan P2P yang menyambungkan PKS Malaysia dengan pelabur. Truestack kejuruteraan stack penuh — portal pelabur, onboarding penerbit, enjin penyenaraian, integrasi akaun amanah (escrow) dan pelaporan — dan terus mengendalikannya apabila platform berkembang.",
+				"blurb": "Pasaran (marketplace) P2P yang menyambungkan peminjam dan pelabur — sedia SC.",
+				"tags": [
+					"TrueP2P™",
+					"Portal Pelabur + Penerbit",
+					"Seni Bina Selaras SC"
+				],
+				"stats": {
+					"platform": "Platform",
+					"regulator": "Pengawal selia"
+				}
+			}
+		},
+		"faq": {
+			"title": "TrueP2P™ — soalan lazim",
+			"subtitle": "Jawapan praktikal kepada soalan yang pengendali Malaysia biasanya bawa kepada kami dahulu.",
+			"items": [
+				{
+					"question": "Apakah pembangunan perisian P2P untuk pasaran Malaysia?",
+					"answer": "Pembangunan perisian rakan ke rakan (P2P) ialah reka bentuk dan kejuruteraan platform dalam talian yang menyambungkan pelabur terus dengan penerbit — biasanya PKS, penaja projek, atau originator invois — tanpa melalui bank tradisional. Di Malaysia, platform pembiayaan P2P mesti dikendalikan oleh Pengendali Pasaran Berdaftar (RMO) yang berdaftar dengan Suruhanjaya Sekuriti Malaysia (SC). Truestack membina platform P2P sedia pengeluaran yang selaras dengan rangka kerja RMO SC, termasuk onboarding pelabur, penilaian kesesuaian, susunan akaun amanah (escrow), aliran kerja penyenaraian, pembayaran, dan jejak audit."
+				},
+				{
+					"question": "Adakah anda membina platform pembiayaan P2P yang patuh peraturan SC Malaysia?",
+					"answer": "Ya. Setiap platform P2P yang kami hantar dikejuruteraan dengan Garis Panduan Pasaran Berdaftar SC Malaysia dan Akta Pasaran Modal dan Perkhidmatan (CMSA) sebagai rujukan. Kami peta model perniagaan anda kepada kewajipan kawal selia yang relevan, kemudian hantar kawalan dalam kod: akreditasi pelabur berperingkat, had pelaburan setiap pelabur dan setiap penerbit, integrasi akaun amanah terasing, saringan AML/CFT, pelaporan berkala, dan dokumen pendedahan. Jika anda masih mengejar pendaftaran Pengendali Pasaran Berdaftar (RMO), pasukan perundingan kami boleh selaraskan dokumentasi dan batu tanda dengan laluan itu selari kejuruteraan. Kami tidak memberikan pendapat undang-undang, tetapi kami bekerja bersama peguam dan pasukan pematuhan anda supaya platform sedia pemeriksa dari hari pertama."
+				},
+				{
+					"question": "Adakah anda membina platform P2P patuh Syariah (syariah)?",
+					"answer": "Ya. Kami kejuruteraan varian selaras Syariah bagi setiap platform P2P yang kami hantar — untuk pengendali yang menjalankan perniagaan pembiayaan P2P Islam di Malaysia. Itu termasuk onboarding aset tersaring Syariah, templat kontrak selaras dengan jawatankuasa Syariah anda, struktur yuran yang mengelak riba, akaun Gharamah dan Ta'widh terasing (lihat di bawah), dan pelaporan diselaras untuk semakan jawatankuasa Syariah. Kami rakan perisian, bukan pihak berkuasa Syariah — kami bekerja dengan penasihat Syariah yang anda lantik supaya platform mencerminkan keputusan yang mereka luluskan."
+				},
+				{
+					"question": "Bagaimana anda mengendalikan Gharamah dan Ta'widh pada platform P2P patuh Syariah?",
+					"answer": "Pada setiap bayaran lewat, platform memisahkan caj lewat kepada dua bakul perakaunan terasing. Ta'widh (تعويض) ialah bahagian yang mewakili kos sebenar pemulihan pengendali — overhed pentadbiran, kos kutipan — dan boleh secara sah dikekalkan oleh pembiaya atau pengendali. Gharamah (غرامة) ialah penalti baki yang, di bawah Syariah, tidak boleh memperkaya pembiaya; ia dicatat ke lejar berasingan dan dicairkan kepada badan amal diluluskan mengikut jadual didokumenkan. Truestack membina logik pisahan, peraturan pengumpulan peka had, aliran kerja pencairan amal, dan laporan audit yang jawatankuasa Syariah serta SC kedua-duanya ingin lihat — terus ke dalam lejar."
+				},
+				{
+					"question": "Berapa lama untuk melancarkan platform P2P dengan Truestack?",
+					"answer": "Platform P2P baharu biasanya dilancarkan dalam 4 hingga 6 bulan dari permulaan. Jika anda masih menyediakan permohonan RMO SC, pasukan perundingan kami boleh selaraskan batu tanda kejuruteraan dengan peta hala tuju pendaftaran anda supaya penghantaran produk dan garis masa penyerahan bergerak bersama. Tempoh keseluruhan bergantung pada kerumitan kelas aset anda (pembiayaan invois, pinjaman berjangka PKS, pembiayaan projek), integrasi yang diperlukan (e-KYC, CTOS/CCRIS, rel pembayaran, akaun amanah (escrow)), dan seberapa pantas pasukan anda meluluskan UAT. Kami menggunakan seni bina teruji dan modul boleh guna semula — jadi kami bergerak pada kelajuan fintech tanpa menjejaskan pematuhan."
+				},
+				{
+					"question": "Apa yang termasuk dalam stack platform P2P anda?",
+					"answer": "Secara sedia ada anda mendapat: portal pelabur (web dan mudah alih), portal penerbit, konsol pentadbir dan operasi, enjin penyenaraian dengan kemajuan pembiayaan, padanan pelabur automatik, aliran kerja akaun amanah (escrow) dan pencairan, aliran e-KYC dan akreditasi, tandatangan digital, peti dokumen, pemprosesan bayaran balik, penyata pelabur, dan lapisan pelaporan untuk penyerahan SC. Semuanya berjalan di AWS Malaysia untuk residensi data, dengan kawalan akses berasaskan peranan, log audit penuh, dan infrastructure-as-code."
+				},
+				{
+					"question": "Bolehkah platform P2P disesuaikan kepada kelas aset dan strategi pelabur kami?",
+					"answer": "Ya. Kami mereka enjin penyenaraian, model pemarkahan, struktur yuran dan pengalaman pelabur mengikut kelas aset khusus anda — pembiayaan invois, modal kerja PKS, pembiayaan rantaian bekalan, nota disokong aset, atau pembiayaan projek. Kami selaraskan logik akreditasi pelabur dan had kepekatan setiap pelabur kepada penyerahan SC anda, dengan penjenamaan dan aliran kerja dibentuk untuk pengendali anda."
+				},
+				{
+					"question": "Adakah anda mengendalikan integrasi dengan vendor fintech Malaysia?",
+					"answer": "Ya. Kami secara rutin berintegrasi dengan rel Malaysia — termasuk FPX, DuitNow, gerbang pembayaran, pemegang amanah akaun amanah (escrow), penyedia e-KYC (TrueIdentity dan lain-lain), CTOS/CCRIS untuk data kredit, pengesahan MyKad dan SSM, dan penyedia tandatangan digital. Kami juga mengendalikan perolehan vendor dan perhubungan teknikal supaya pasukan anda tidak tersekat merunding lima kontrak secara selari."
+				},
+				{
+					"question": "Bagaimana anda memastikan keselamatan dan pematuhan PDPA untuk platform P2P?",
+					"answer": "Keselamatan dikejuruteraan masuk, bukan ditambah kemudian. Setiap platform dihantar dengan: penyulitan semasa rehat dan dalam transit, persekitaran pengeluaran terasing, pengurusan rahsia, infrastructure-as-code, sandaran automatik, pengesanan pencerobohan, dan runbook operasi keselamatan didokumenkan. Kami ikut keperluan PDPA untuk data peribadi peminjam dan pelabur, termasuk pengurusan persetujuan, dasar pengekalan, dan aliran kerja akses subjek data. Kami juga menyelaras ujian penembusan bebas sebelum pelancaran."
+				},
+				{
+					"question": "Adakah anda menyediakan penyelenggaraan berterusan selepas platform P2P dilancarkan?",
+					"answer": "Ya. Kami tawarkan kejuruteraan terurus berterusan — merangkumi pemantauan platform, tindak balas insiden, penjejakan perubahan kawal selia, semakan keselamatan berkala, penghantaran ciri, dan sokongan pelaporan SC. Kebanyakan pelanggan mengekalkan kami sebagai rakan teknologi jangka panjang supaya platform kekal selaras dengan kemas kini SC dan jangkaan pasaran apabila portfolio berkembang."
+				},
+				{
+					"question": "Bolehkah anda membantu kami bersedia untuk pendaftaran RMO SC Malaysia?",
+					"answer": "Ya. Selain kejuruteraan platform TrueP2P™, kami mengekalkan pasukan perundingan yang boleh membimbing anda melalui A–Z penuh pembangunan tawaran P2P anda dan mengejar kelulusan Pengendali Pasaran Berdaftar (RMO) dengan Suruhanjaya Sekuriti Malaysia. Kami gabungkan kepakaran teknologi kawal selia dalaman dengan rangkaian perunding pakar untuk menyokong dokumentasi, kesediaan penyerahan, perbualan pemeriksa, dan batu tanda selari binaan anda — supaya platform dan laluan pelesenan anda kekal selaras. Kami bukan firma undang-undang; nasihat undang-undang formal kekal dengan peguam anda, dan kami berkoordinasi rapat dengan mereka."
+				},
+				{
+					"question": "Berapakah kos penglibatan pembangunan platform P2P?",
+					"answer": "Kos bergantung pada skop, kelas aset, integrasi dan garis masa penghantaran. Kebanyakan binaan platform P2P penuh — merangkumi portal pelabur, portal penerbit, konsol pentadbir, e-KYC, pembayaran, akaun amanah (escrow), tandatangan digital dan pelaporan — berada dalam julat yuran tetap berskop jelas dengan retainer kejuruteraan terurus bulanan selepas itu. Bincang dengan kami untuk cadangan bertulis yang diselaras kepada model perniagaan dan penyerahan SC anda."
+				},
+				{
+					"question": "Siapa yang membangunkan platform pembiayaan P2P di Malaysia?",
+					"answer": "Truestack membangunkan TrueP2P™ — perisian platform pembiayaan P2P tersuai untuk Malaysia, dikejuruteraan untuk keperluan Pengendali Pasaran Berdaftar Suruhanjaya Sekuriti Malaysia (SC). Kami membina stack konvensional dan selaras Syariah (termasuk perakaunan Gharamah dan Ta'widh) dan boleh selaraskan kejuruteraan dengan laluan pendaftaran RMO anda. Tempah konsultasi percuma di truestack.my/contact."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Sedia membina TrueP2P™?",
+			"body": "Sama ada anda sedang menyediakan penyerahan RMO SC atau menukar operasi P2P sedia ada, tempah konsultasi percuma dan pasukan kejuruteraan kami akan membawa anda dari skop ke platform hidup.",
+			"secondary": "Lihat portfolio"
+		}
+	}
+}

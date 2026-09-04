@@ -1,0 +1,422 @@
+{
+	"_status": "ai-draft",
+	"Careers": {
+		"meta": {
+			"title": "Kerjaya di Truestack | Jawatan di Kuala Lumpur, Malaysia",
+			"description": "Jawatan kosong Truestack di Kuala Lumpur — kejuruteraan full-stack, jualan B2B, kejayaan klien dan admin. Peranan perisian hibrid. Graduan baharu dialu-alukan.",
+			"openGraphTitle": "Kerjaya di Truestack | Jawatan di Kuala Lumpur, Malaysia",
+			"openGraphDescription": "Jawatan kosong Truestack di Kuala Lumpur merentas kejuruteraan, jualan, kejayaan klien dan operasi. Kejuruteraan adalah hibrid. Graduan baharu dialu-alukan."
+		},
+		"schema": {
+			"breadcrumbHome": "Laman Utama",
+			"breadcrumbCurrent": "Kerjaya",
+			"jobListName": "Jawatan kosong Truestack",
+			"industryEngineering": "Pembangunan Perisian",
+			"industryOther": "Teknologi",
+			"workOn": "Apa yang akan anda kerjakan:",
+			"responsibilities": "Tanggungjawab:",
+			"requirements": "Keperluan:",
+			"bonus": "Kemahiran tambahan:",
+			"tech": "Stack teknologi:"
+		},
+		"hero": {
+			"breadcrumbAria": "Jejak navigasi",
+			"breadcrumbParent": "Syarikat",
+			"breadcrumbCurrent": "Kerjaya",
+			"title": "Bina sistem yang <accent>menggerakkan kredit Malaysia.</accent>",
+			"lede": "Kami membina perisian yang pemberi pinjaman dan fintech di sini guna setiap hari. Ia mengurus wang sebenar dan peminjam sebenar, jadi kerjanya tidak pernah abstrak — dan anda sentiasa tahu sama ada ia berjaya."
+		},
+		"jobs": {
+			"eyebrow": "Jawatan dibuka",
+			"title": "Apa yang kami sedang ambil.",
+			"lede": "Buka jawatan untuk butiran.",
+			"tabsAria": "Senarai jawatan",
+			"tabs": {
+				"open": "Dibuka",
+				"closed": "Ditutup"
+			},
+			"empty": {
+				"openTitle": "Tiada jawatan dibuka sekarang",
+				"openBody": "Tulis kepada kami juga. Jawatan baharu dibuka apabila kami ambil klien.",
+				"closedTitle": "Tiada jawatan tertutup untuk dipaparkan",
+				"closedBody": "Jawatan yang telah diisi akan muncul di sini."
+			},
+			"footer": {
+				"open": "Tiada yang sesuai? Tulis kepada kami juga. Kami baca setiap permohonan, dan jawatan baharu dibuka apabila kami ambil klien.",
+				"closed": "Ditutup buat masa ini. Jika salah satu ini tepat apa yang anda buat, tulis juga. Kami simpan CV yang baik."
+			},
+			"columns": {
+				"role": "Jawatan",
+				"team": "Pasukan",
+				"location": "Lokasi",
+				"type": "Jenis"
+			},
+			"status": {
+				"open": "Dibuka",
+				"filled": "Diisi"
+			},
+			"details": "Butiran",
+			"modal": {
+				"workOn": "Apa yang akan anda kerjakan",
+				"do": "Apa yang akan anda buat",
+				"lookingFor": "Apa yang kami cari",
+				"niceToHave": "Bagus jika ada",
+				"whatWeUse": "Apa yang kami guna",
+				"applyHint": "E-melkan CV anda dan sebut jawatan ini.",
+				"apply": "Mohon jawatan ini",
+				"filledHint": "Yang ini sudah diisi. Jika ia tepat apa yang anda buat, tulis juga — kami simpan CV yang baik.",
+				"write": "Tulis kepada kami"
+			},
+			"items": {
+				"full-stack-web-developer": {
+					"title": "Pembangun Web Full-Stack (Full-Stack Web Developer)",
+					"department": "Kejuruteraan",
+					"location": "Kuala Lumpur, Malaysia · Hibrid",
+					"type": "Sepenuh masa",
+					"summary": "React, Next.js, TypeScript, Node dan Postgres, merentasi platform pinjaman kami dan perkhidmatan di belakangnya. 3+ tahun.",
+					"description": "Anda akan bina dan selenggara platform pinjaman yang klien kami jalankan setiap hari — skrin yang kakitangan mereka guna, aplikasi menghadap peminjam, dan perkhidmatan di belakangnya. Kerja merentas frontend dan backend, bersama produk dan operasi dalam bilik yang sama.",
+					"workAreas": [
+						"Aplikasi web menghadap pelanggan untuk operasi pinjaman dan fintech",
+						"Alat pentadbiran dalaman dan papan pemuka operasi",
+						"Perkhidmatan backend dan sambungan pihak ketiga (e-KYC, pemberitahuan, pembayaran)",
+						"Sistem yang harus tahan pematuhan, pelaporan dan audit"
+					],
+					"responsibilities": [
+						"Bina dan selenggara aplikasi web dalam React, Next.js dan TypeScript",
+						"Tulis perkhidmatan backend dalam Node.js dan Express",
+						"Sambungkan sistem kami ke alat dalaman dan perkhidmatan pihak ketiga",
+						"Bekerja dengan PostgreSQL dan model data di sebalik buku pinjaman langsung",
+						"Duduk bersama produk, reka bentuk dan operasi untuk tentukan apa yang dibina seterusnya",
+						"Baiki masalah merentas stack dan jadikan sistem lebih dipercayai",
+						"Tulis kod yang orang lain boleh baca, ubah dan uji",
+						"Bantu keluaran, CI dan persediaan awan yang sudah kami jalankan",
+						"Pantau prestasi dan betapa menyusahkan sistem itu untuk dikerjakan"
+					],
+					"requirements": [
+						"3+ tahun pembangunan web full-stack",
+						"Selesa dengan React / Next.js dan TypeScript",
+						"Pernah membina perkhidmatan backend dengan Node.js dan Express",
+						"Pernah bekerja dengan PostgreSQL atau pangkalan data relasi yang lain",
+						"Tahu mereka bentuk REST API yang mudah; GraphQL adalah kelebihan",
+						"Biasa dengan AWS, Docker, CI dan cara keluaran benar-benar dikeluarkan",
+						"Boleh kerjakan masalah tanpa seseorang berdiri di belakang anda",
+						"Boleh terangkan keputusan teknikal kepada orang yang bukan jurutera",
+						"Warganegara Malaysia atau pemastautin tetap diutamakan"
+					],
+					"bonusSkills": [
+						"Anda pernah menghantar perisian fintech, pinjaman, SaaS atau yang berat pematuhan",
+						"Anda pernah mengendalikan pembayaran, semakan identiti atau produk beraliran kerja padat",
+						"Anda pernah bekerja dalam persekitaran terkawal selia",
+						"Anda pernah bertugas on-call atau mengendalikan isu pengeluaran"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript",
+						"Node.js / Express",
+						"PostgreSQL",
+						"AWS",
+						"Docker & CI/CD"
+					]
+				},
+				"software-development-intern": {
+					"title": "Pelatih Pembangunan Perisian (Software Development Intern)",
+					"department": "Kejuruteraan",
+					"location": "Kuala Lumpur, Malaysia · Hibrid",
+					"type": "Latihan industri",
+					"summary": "Kerja klien sebenar, bukan kerja sia-sia, dengan pembangun yang menyemak kerja anda. Boleh ditukar ke sepenuh masa.",
+					"description": "Anda akan duduk bersama pasukan kejuruteraan pada kerja klien dan dalaman yang sedang berjalan. Anda menulis kod sebenar, seseorang menyemaknya, dan ia dihantar. Kami tidak mencari orang untuk ambil kopi atau lukis semula tiket.",
+					"workAreas": [],
+					"responsibilities": [
+						"Bantu bina dan selenggara aplikasi web serta alat dalaman",
+						"Kerja pada frontend, backend, atau kedua-duanya — bergantung pada kekuatan anda dan keperluan kami",
+						"Sertai ciri, pembaikan pepijat dan pengujian",
+						"Sertai stand-up dan alatan yang sama digunakan pasukan",
+						"Tulis kod yang orang lain boleh sambung selepas anda",
+						"Belajar cara kami benar-benar menghantar kerja, bukan sekadar cara tutorial"
+					],
+					"requirements": [
+						"Sedang mengikuti Diploma atau Ijazah dalam Sains Komputer, Kejuruteraan Perisian, IT, atau yang seumpamanya",
+						"Anda memahami asas pengaturcaraan",
+						"Anda pernah membina laman web, walaupun yang kecil",
+						"Anda boleh bekerja secara berdikari pada hari hibrid",
+						"Anda boleh bertanya apabila tersekat"
+					],
+					"bonusSkills": [
+						"Projek peribadi atau portfolio yang boleh anda tunjukkan",
+						"Sebarang pengalaman dengan React, Next.js atau Node.js",
+						"Anda sudah menggunakan Git",
+						"Rasa ingin tahu tentang UI, automasi atau awan — tiada yang wajib"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript / JavaScript",
+						"Node.js",
+						"Tailwind CSS",
+						"API & pangkalan data",
+						"Git & GitHub"
+					]
+				},
+				"marketing-sales-executive": {
+					"title": "Eksekutif Pemasaran & Jualan B2B (Marketing & Sales Executive)",
+					"department": "Jualan & Pemasaran",
+					"location": "Kuala Lumpur, Malaysia · Di pejabat",
+					"type": "Sepenuh masa",
+					"summary": "Temui pemberi pinjaman dan fintech, tunjukkan apa yang kami buat, dan kekal bersama mereka hingga penyerahan. Kenderaan sendiri diperlukan.",
+					"description": "Anda akan menghabiskan sebahagian besar minggu bercakap dengan orang yang mengurus buku pinjaman. Tugasnya ialah menemui mereka, tunjukkan apa yang kami buat, dan kekal bersama sehingga kerja diserahkan kepada penghantaran. Ini bukan operasi panggilan secara pukal.",
+					"workAreas": [],
+					"responsibilities": [
+						"Cari pemberi pinjam wang berlesen dan fintech yang mungkin memerlukan kami",
+						"Atur mesyuarat dan hadir di dalamnya",
+						"Kekalkan hubungan selepas perbualan pertama",
+						"Dengar apa yang mereka benar-benar perlukan dan cadangkan produk atau perkhidmatan yang tepat",
+						"Tulis sebut harga, cadangan dan sesekali dek pembentangan",
+						"Susuli petunjuk yang masih terbuka",
+						"Serahkan kerja dengan kemas kepada orang yang akan membina",
+						"Bantu acara, perkongsian atau usaha penjenamaan yang timbul sekali-sekala"
+					],
+					"requirements": [
+						"Diploma atau Ijazah dalam Pemasaran, Perniagaan, Komunikasi, atau yang seumpamanya",
+						"Anda boleh bercakap dengan orang tanpa kedengaran seperti skrip",
+						"Selesa menemui klien secara bersemuka",
+						"Anda menggerakkan perkara tanpa diminta dua kali",
+						"Bahasa Inggeris bertulis dan lisan yang baik",
+						"Kenderaan sendiri, dan sanggup pergi ke mesyuarat sekitar KL",
+						"Graduan baharu yang boleh mengekalkan perbualan dialu-alukan"
+					],
+					"bonusSkills": [
+						"Anda pernah menjual kepada perniagaan",
+						"Anda pernah menjual perisian atau perkhidmatan, bukan produk sahaja",
+						"Anda sudah kenal orang dalam pinjaman atau fintech"
+					],
+					"technologies": []
+				},
+				"client-success-executive": {
+					"title": "Eksekutif Kejayaan Klien (Client Success Executive)",
+					"department": "Kejayaan Klien",
+					"location": "Kuala Lumpur, Malaysia · Di pejabat",
+					"type": "Sepenuh masa",
+					"summary": "Orang yang klien hubungi, dari onboarding hingga penyerahan, bekerja bersama pasukan kejuruteraan.",
+					"description": "Anda ialah orang yang klien hubungi, dari perbualan onboarding pertama hingga penyerahan. Anda bekerja di sebelah kejuruteraan — bukan sebagai penampan di hadapan mereka.",
+					"workAreas": [],
+					"responsibilities": [
+						"Jadi orang hubungan bernama untuk klien semasa projek berjalan",
+						"Pastikan klien dan pasukan kejuruteraan terus berbincang",
+						"Jejaki kemajuan dan hantar kemas kini sebelum sesiapa terpaksa bertanya",
+						"Kumpul apa yang klien benar-benar perlukan, bukan apa yang mereka kata pada minggu pertama",
+						"Jaga garis masa, dokumen dan hasil kerja daripada terhanyut",
+						"Dapatkan orang onboarding tanpa kabus tiga minggu dek permulaan",
+						"Kekal berhubung selepas go-live, kerana itulah soalan sebenar bermula"
+					],
+					"requirements": [
+						"Diploma atau Ijazah dalam Perniagaan, Komunikasi, IT, atau yang seumpamanya",
+						"Anda boleh menulis e-mel yang jelas dan mengendalikan mesyuarat",
+						"Teratur, dan anda perasan apabila tarikh sudah terlewat",
+						"Mampu memegang lebih daripada satu projek dalam kepala",
+						"Anda kekal tenang apabila sesuatu lambat atau tidak jelas",
+						"Graduan baharu dialu-alukan"
+					],
+					"bonusSkills": [
+						"Anda pernah menggunakan Notion, Trello, ClickUp atau yang seumpamanya",
+						"Anda pernah bekerja di syarikat teknologi, agensi, atau pada projek perisian"
+					],
+					"technologies": []
+				},
+				"admin-executive": {
+					"title": "Eksekutif Pentadbiran (Admin Executive)",
+					"department": "Operasi",
+					"location": "Kuala Lumpur, Malaysia · Di pejabat",
+					"type": "Sepenuh masa",
+					"summary": "Invois, sebut harga, rekod dan penjadualan. Penyelarasan yang memastikan segala yang lain bergerak.",
+					"description": "Invois, sebut harga, rekod dan penjadualan — penyelarasan yang menghalang syarikat kecil tersandung sendiri. Orang akan perasan jika anda pandai melakukannya.",
+					"workAreas": [],
+					"responsibilities": [
+						"Uruskan kerja pentadbiran dan operasi harian",
+						"Sediakan invois, sebut harga dan dokumen di sekelilingnya",
+						"Pastikan kalendar, mesyuarat dan susulan tidak bertembung",
+						"Simpan rekod syarikat di tempat orang lain boleh jumpa",
+						"Bantu kertas kerja HR dan onboarding",
+						"Bercakap dengan vendor, klien dan pasukan apabila sesuatu perlu dikejar",
+						"Sokong orang yang mengurus syarikat dengan apa sahaja yang mendesak minggu itu"
+					],
+					"requirements": [
+						"Diploma atau Ijazah dalam Pentadbiran Perniagaan atau yang seumpamanya",
+						"Teratur, dan anda menulis dengan jelas",
+						"Anda perasan apabila nombor atau nama salah",
+						"Selesa dengan Microsoft Office atau Google Workspace",
+						"Anda boleh memegang beberapa tugas sekali gus tanpa menggugurkan yang penting",
+						"Graduan baharu dialu-alukan"
+					],
+					"bonusSkills": [
+						"Anda pernah menggunakan perisian perakaunan atau penyimpanan buku",
+						"Anda pernah membuat kerja pentadbiran atau penyelarasan pejabat"
+					],
+					"technologies": []
+				},
+				"backend-developer": {
+					"title": "Pembangun Backend (Backend Developer)",
+					"department": "Kejuruteraan",
+					"location": "Kuala Lumpur, Malaysia · Hibrid",
+					"type": "Sepenuh masa",
+					"summary": "Node, TypeScript dan Postgres di belakang perkhidmatan dan jejak audit kami.",
+					"description": "Reka dan bina backend di belakang platform pinjaman kami — perkhidmatan, model data, dan jejak audit yang pengawal selia jangkakan untuk dilihat.",
+					"workAreas": [],
+					"responsibilities": [
+						"Reka perkhidmatan backend yang boleh membesar bersama buku pinjaman",
+						"Bina API yang dipanggil aplikasi dan rakan kami",
+						"Pastikan pertanyaan PostgreSQL dan model data jujur",
+						"Pasang jejak audit dan ciri pematuhan dari awal",
+						"Sambungkan KYC, pembayaran dan perkhidmatan pihak ketiga yang lain",
+						"Pastikan sistem berjalan dan cukup laju",
+						"Bekerja dengan frontend dan sesiapa yang mengurus awan minggu itu"
+					],
+					"requirements": [
+						"3+ tahun pembangunan backend",
+						"Node.js dan TypeScript yang kukuh",
+						"Pengalaman dengan Express atau yang seumpamanya",
+						"Anda memahami PostgreSQL, bukan ORM sahaja",
+						"Anda tahu cara pengesahan dan keselamatan asas berfungsi",
+						"Sedikit AWS (ECS, EC2, S3 atau seumpamanya)",
+						"Pengalaman fintech atau pematuhan ialah kelebihan, bukan syarat wajib",
+						"Warganegara Malaysia atau pemastautin tetap"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Node.js / TypeScript",
+						"Express",
+						"PostgreSQL",
+						"AWS",
+						"REST APIs"
+					]
+				},
+				"qa-engineer": {
+					"title": "Jurutera QA (QA Engineer)",
+					"department": "Kejuruteraan",
+					"location": "Kuala Lumpur, Malaysia · Hibrid",
+					"type": "Sepenuh masa",
+					"summary": "Pengujian automatik dan manual merentas platform, serta sokongan keluaran.",
+					"description": "Pastikan apa yang kami hantar benar-benar berfungsi — ujian automatik, pemeriksaan penerokaan sekali-sekala, dan suara dalam cara keluaran dikeluarkan.",
+					"workAreas": [],
+					"responsibilities": [
+						"Tentukan apa yang berbaloi diuji dan caranya",
+						"Tulis dan kekalkan suite ujian automatik",
+						"Lakukan pengujian manual dan penerokaan yang suite tidak mampu",
+						"Baiki perkara kecil yang anda jumpa, apabila itu lebih cepat daripada failkan tiket",
+						"Jaga persekitaran ujian daripada reput",
+						"Duduk semasa keluaran supaya kejutan muncul sebelum klien",
+						"Pantau apa yang rosak dalam pengeluaran dan maklumkan semula"
+					],
+					"requirements": [
+						"2+ tahun QA",
+						"Selesa dengan Jest, Cypress atau Playwright",
+						"Anda pernah melakukan pengujian automatik dan penerokaan",
+						"Anda boleh membaca JavaScript/TypeScript dan aplikasi React",
+						"Anda tahu cara menguji API",
+						"Anda pernah melihat pipeline CI dan proses keluaran",
+						"Docker dan platform awan sudah biasa",
+						"Warganegara Malaysia atau pemastautin tetap"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Jest / Cypress / Playwright",
+						"TypeScript",
+						"CI/CD",
+						"Docker"
+					]
+				}
+			}
+		},
+		"culture": {
+			"eyebrow": "Cara kami bekerja",
+			"title": "Apa pekerjaan ini sebenarnya.",
+			"lede": "Pasukan kecil, sistem yang sedang berjalan, dan industri dengan peraturan. Kebanyakan yang berikut datang daripada itu.",
+			"imageAlt": "Rakan sekerja bekerjasama di meja kongsi di pejabat Truestack Kuala Lumpur",
+			"items": {
+				"name": {
+					"title": "Kerja anda membawa nama anda",
+					"body": "Anda tentukan skop, bina, hantar, dan dengar maklum balas klien sendiri. Tiada siapa duduk antara anda dan hasilnya — itu bahagian yang baik dan yang sukar."
+				},
+				"together": {
+					"title": "Bersama apabila membantu, senyap apabila tidak",
+					"body": "Semua orang di KL. Kejuruteraan adalah hibrid, peranan perniagaan di pejabat. Kami berkumpul dalam bilik apabila keputusan memerlukannya, dan selain itu biarkan orang bekerja sendiri."
+				},
+				"audited": {
+					"title": "Perisian diaudit, jadi kami tidak tergesa-gesa",
+					"body": "Perisian kami menggerakkan wang orang lain dan dilihat oleh pengawal selia. Ujian, semakan dan jejak audit ialah perkara pertama di bawah tekanan, jadi kami melindunginya."
+				},
+				"learn": {
+					"title": "Anda akan belajar pinjaman, bukan alatan sahaja",
+					"body": "Semua orang di sini akhirnya memahami cara pinjaman dan peraturannya berfungsi. Tidak ramai orang yang tahu — ia menjadikan anda lebih baik dalam kerja, dan anda membawanya bersama."
+				}
+			}
+		},
+		"process": {
+			"eyebrow": "Proses pengambilan",
+			"title": "Empat langkah, tiada kejutan.",
+			"lede": "Kami membaca setiap permohonan dan membalas setiap calon yang disenarai pendek.",
+			"steps": {
+				"intro": {
+					"tag": "30 min",
+					"title": "Panggilan pengenalan",
+					"body": "Apa yang anda telah buat, apa yang anda mahu seterusnya, dan rupa jawatan itu pada hari biasa."
+				},
+				"discussion": {
+					"tag": "45–60 min",
+					"title": "Perbincangan jawatan",
+					"body": "Perbualan sebenar dengan orang yang akan duduk di sebelah anda, tentang kerja yang kami ada sekarang."
+				},
+				"case": {
+					"tag": "Sesetengah",
+					"title": "Kajian kes praktikal",
+					"body": "Sesuatu yang kecil dan realistik. Kami pastikan ia singkat, dan kami semak bersama anda selepas itu."
+				},
+				"offer": {
+					"tag": "Tawaran",
+					"title": "Tawaran dan onboarding",
+					"body": "Terma, tarikh mula, dan minggu pertama yang disediakan supaya anda menghantar sesuatu yang sebenar awal."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "Soalan",
+			"title": "Sebelum anda memohon.",
+			"lede": "Apa-apa yang kami terlepas, e-mel dan tanya sahaja. Lebih baik sekarang daripada selepas temuduga.",
+			"aboutQuestion": "Apa sebenarnya yang Truestack bina?",
+			"aboutAnswerDisplay": "Platform pinjaman, semakan identiti dan pembayaran, serta perisian tersuai untuk pemberi pinjaman dan fintech Malaysia — berserta kerja pematuhan KPKT yang menyertainya. Produk termasuk TrueKredit™, TrueSyariah™, TrueP2P™ dan TrueIdentity™. <link>Lanjut tentang kami</link>.",
+			"items": [
+				{
+					"question": "Di manakah jawatan ini berpangkalan?",
+					"answer": "Semua jawatan di Kuala Lumpur. Jualan, pentadbiran dan kejayaan klien adalah di pejabat kami. Jawatan kejuruteraan adalah hibrid — berpangkalan di Kuala Lumpur, dengan hari jarak jauh yang fleksibel."
+				},
+				{
+					"question": "Jawatan apakah yang Truestack sedang ambil?",
+					"answer": "Truestack sedang mengambil Pembangun Web Full-Stack, Pelatih Pembangunan Perisian, Eksekutif Pemasaran & Jualan B2B, Eksekutif Kejayaan Klien, dan Eksekutif Pentadbiran. Jawatan dibuka dan yang baru diisi disenaraikan di truestack.my/careers."
+				},
+				{
+					"question": "Adakah anda mengambil graduan baharu?",
+					"answer": "Ya. Kami mengalu-alukan graduan baharu — termasuk untuk pembangunan perisian — asalkan anda ingin belajar dan boleh bekerja secara berdikari. Itu terpakai merentas jualan, pentadbiran, kejayaan klien dan kejuruteraan."
+				},
+				{
+					"question": "Perlukah saya ada pengalaman fintech?",
+					"answer": "Tidak. Ia membantu pada jawatan kejuruteraan, tetapi kami jangkakan untuk mengajar anda cara pinjaman dan pematuhan KPKT berfungsi. Minat terhadap industri itu lebih penting daripada mempunyai kosa kata pada hari pertama."
+				},
+				{
+					"question": "Bagaimana saya memohon jawatan di Truestack?",
+					"answer": "E-mel hello@truestack.my dengan CV, portfolio atau pautan projek anda, dan beritahu kami jawatan yang anda mohon. Anda juga boleh guna borang di truestack.my/contact. Kami baca setiap permohonan dan membalas orang yang disenarai pendek."
+				},
+				{
+					"question": "Apakah proses pengambilan Truestack?",
+					"answer": "Panggilan pengenalan (lebih kurang 30 minit), perbincangan jawatan dengan orang yang akan duduk di sebelah anda (45 hingga 60 minit), kajian kes praktikal pilihan untuk sesetengah jawatan, kemudian perbualan tawaran dan onboarding. Kami membalas setiap calon yang disenarai pendek."
+				},
+				{
+					"question": "Apa sebenarnya yang Truestack bina?",
+					"answer": "Platform pinjaman, semakan identiti dan pembayaran, serta perisian tersuai untuk pemberi pinjaman dan fintech Malaysia — berserta kerja pematuhan KPKT yang menyertainya. Produk termasuk TrueKredit™, TrueSyariah™, TrueP2P™ dan TrueIdentity™. Lanjut di truestack.my/about."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Hantar CV anda.",
+			"body": "CV, portfolio atau pautan projek anda, dan jawatan yang anda mahu. Jika tiada yang dibuka sesuai, beritahu kami apa yang anda buat dan kami akan simpannya.",
+			"secondary": "Baca tentang syarikat"
+		}
+	}
+}

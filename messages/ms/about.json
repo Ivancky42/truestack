@@ -1,0 +1,150 @@
+{
+	"_status": "ai-draft",
+	"About": {
+		"meta": {
+			"title": "Tentang Truestack | Platform Pinjaman & KPKT Malaysia",
+			"description": "Truestack bina platform pinjaman dan pematuhan KPKT untuk pemberi pinjam wang Malaysia. Diasaskan 2025 di KL. 11 sudah beroperasi, lebih RM 200 juta/tahun.",
+			"openGraphTitle": "Tentang Truestack | Platform Pinjaman & KPKT Malaysia",
+			"openGraphDescription": "Kenali Truestack — diasaskan 2025 di Kuala Lumpur. Platform pinjaman dan pematuhan KPKT di bawah satu kontrak. 11 pemberi pinjam wang beroperasi, lebih RM 200 juta dikeluarkan setahun."
+		},
+		"schema": {
+			"breadcrumbHome": "Laman Utama",
+			"breadcrumbCurrent": "Tentang",
+			"principlesName": "Prinsip operasi Truestack",
+			"principlesDescription": "Empat perkara yang Truestack tidak kompromi semasa membina platform pinjaman dan mengendalikan pematuhan KPKT."
+		},
+		"hero": {
+			"breadcrumbAria": "Laluan navigasi",
+			"breadcrumbParent": "Syarikat",
+			"breadcrumbCurrent": "Tentang",
+			"title": "Pinjaman wang di Malaysia wajar mendapat <accent>alatan yang lebih baik.</accent>",
+			"lede": "Kami pasukan jurutera dan pakar pematuhan yang bekerja dalam satu industri: kredit Malaysia. Kami membina platform yang dijalankan pelanggan, mengendalikan perisian tersuai apabila mereka memerlukannya, dan menguruskan sisi kawal selia bersama-sama dengan pembinaan.",
+			"pills": {
+				"kl": "Kuala Lumpur",
+				"credit": "Kredit & fintech sahaja",
+				"regulation": "Berpaksikan peraturan"
+			},
+			"stats": {
+				"founded": {
+					"label": "Diasaskan di Kuala Lumpur"
+				},
+				"lenders": {
+					"label": "Pemberi pinjam wang dan fintech yang beroperasi bersama kami"
+				},
+				"disbursed": {
+					"label": "Pengeluaran pinjaman tahunan oleh pelanggan kami"
+				}
+			}
+		},
+		"story": {
+			"eyebrow": "Mengapa kami wujud",
+			"title": "Pasaran yang diikat oleh spreadsheet.",
+			"imageAlt": "Pasukan Truestack bekerjasama di pejabat Kuala Lumpur mereka",
+			"lede": "Pasaran kredit persendirian Malaysia terpecah-pecah. Setiap pemberi pinjam wang yang kami temui telah menyelesaikan masalah yang sama secara berasingan — dan tiada siapa yang menikmatinya.",
+			"p1": "Buku pinjaman dalam Excel. Dokumen peminjam dalam pemacu kongsi. Ansuran diselaraskan secara manual pada akhir bulan. Semakan identiti di laman web satu vendor, carian syarikat di yang lain, pembayaran di yang ketiga, tiada yang berkomunikasi antara satu sama lain. Semuanya berfungsi, lebih kurang, sehingga seseorang meminta jejak audit.",
+			"p2": "Kemudian ada pengawal selia. Bagi pemberi pinjam wang Kementerian Perumahan dan Kerajaan Tempatan (KPKT), pematuhan bukan pilihan dan bukan mudah, dan bagi kebanyakan mereka ia di luar kepakaran — dinding antara memegang lesen dan benar-benar membesar dengannya. Pengendali P2P menghadapi perkara yang sama dengan Suruhanjaya Sekuriti Malaysia (SC). Perniagaan baik tertahan oleh kertas kerja, bukan oleh risiko kredit atau modal.",
+			"p3": "Kami memulakan Truestack pada 2025 kerana jurang itu tidak perlu wujud. Perisian dan kerja kawal selia ialah dua bahagian kerja yang sama, dan memisahkannya antara vendor perisian dan perunding itulah yang menyukarkan keduanya. Jadi kami lakukan kedua-duanya, di bawah satu kontrak, untuk satu industri — sama ada buku pinjaman KPKT, produk pembiayaan patuh Syariah, pasaran P2P, semakan identiti atau syarikat yang anda lebih suka tidak bina sendiri, atau sistem tersuai yang tiada siapa jual sedia ada.",
+			"p4": "Hari ini sebelas pemberi pinjam wang dan fintech beroperasi di platform kami, mengeluarkan lebih RM 200 juta setahun, dengan buku, dokumen dan jejak audit di tempat yang sama. Pinjaman KPKT ialah sebahagian besar kerja kami. Ia bukan hadnya."
+		},
+		"beliefs": {
+			"eyebrow": "Apa yang kami percaya",
+			"title": "Empat perkara yang kami tidak kompromi.",
+			"lede": "Ini hujah yang sudah kami debat secara dalaman, selesaikan, dan kini jadi asas reka bentuk.",
+			"items": {
+				"compliance": {
+					"title": "Pematuhan ialah kekangan reka bentuk, bukan ciri",
+					"body": "Jika kertas kerja kawal selia terpaksa disusun secara manual selepas perisian dihantar, perisian itu direka dengan salah. Jadual KPKT, Lampiran, lejar Syariah dan jejak audit keluar daripada rekod yang sama yang digunakan pasukan anda setiap hari."
+				},
+				"loanBook": {
+					"title": "Buku pinjaman anda milik anda",
+					"body": "Setiap pelanggan beroperasi pada akaun awan selamat sendiri, dihoskan di Malaysia. Kami tidak menggabungkan data peminjam merentas pelanggan, dan kami tidak membina produk daripadanya."
+				},
+				"oneTeam": {
+					"title": "Satu pasukan, atau tiada akauntabiliti",
+					"body": "Memisahkan laluan kawal selia daripada pembinaan ialah cara projek terhenti — setiap pihak menunggu yang lain. Pakar pematuhan dan jurutera kami berada dalam penyerahan yang sama, jadi ada satu rancangan dan satu orang untuk dihubungi."
+				},
+				"goLive": {
+					"title": "Pelancaran (go-live) ialah permulaan",
+					"body": "Pinjaman tidak berhenti pada pelancaran, jadi kami juga tidak. Pembaharuan, pemfailan, keluaran dan ciri seterusnya kekal dengan orang yang membina perkara itu dari awal."
+				}
+			}
+		},
+		"howWeWork": {
+			"eyebrow": "Cara kami bekerja",
+			"title": "Rupa sebenar bekerja dengan kami.",
+			"lede": "Tiada fasa penemuan yang dibilkan selama enam minggu dan berakhir dengan dek slaid. Empat peringkat, sama ada kerjanya penukaran lesen, platform, integrasi atau binaan tersuai.",
+			"stages": {
+				"stand": {
+					"tag": "Percuma",
+					"title": "Kami beritahu kedudukan anda",
+					"body": "Konsultasi tentang kedudukan kawal selia anda, apa yang anda sebenarnya mahu bina, dan anggaran kosnya. Jika jawapannya anda belum bersedia, kami katakan begitu."
+				},
+				"plan": {
+					"tag": "Satu kontrak",
+					"title": "Satu rancangan merentas lesen dan binaan",
+					"body": "Mercu tanda pematuhan dan mercu tanda penyerahan pada garis masa yang sama, dengan pemilik dinamakan di kedua-dua belah. Anda bukan lapisan integrasi antara dua vendor."
+				},
+				"base": {
+					"tag": "Asas terbukti",
+					"title": "Anda bermula daripada yang sudah berjalan",
+					"body": "Platform anda dikonfigurasi daripada sistem yang sudah beroperasi dengan pelanggan lain, bukan dibina dari kosong. Kerja tersuai pergi ke tempat perniagaan anda benar-benar berbeza."
+				},
+				"stay": {
+					"tag": "Berterusan",
+					"title": "Kami kekal selepas pelancaran",
+					"body": "Pembaharuan, penyerahan tahunan, sokongan dan keluaran seterusnya. Pasukan yang sama, bukan serahan kepada pengurus akaun yang tidak berada di situ."
+				}
+			},
+			"teams": {
+				"engineering": {
+					"title": "Produk & kejuruteraan",
+					"body": "Arkitek, produk, mudah alih dan awan — satu pasukan penyerahan, dari bengkel hingga pelancaran."
+				},
+				"compliance": {
+					"title": "Pematuhan & operasi",
+					"body": "Pelesenan, pemfailan dan sokongan pelancaran, berjalan bersama pembinaan bukan selepasnya."
+				},
+				"design": {
+					"title": "Reka bentuk & pengalaman",
+					"body": "Antara muka yang kakitangan kaunter, pelabur dan peminjam anda benar-benar boleh guna tanpa latihan."
+				}
+			}
+		},
+		"office": {
+			"eyebrow": "Di mana kami berada",
+			"title": "KL Trillion, Jalan Tun Razak.",
+			"lede": "Kami syarikat Kuala Lumpur yang bekerja dengan pemberi pinjam wang dan fintech Malaysia, dalam zon waktu yang sama dan realiti kawal selia yang sama dengan pelanggan kami. Pelawat dialu-alukan — kebanyakan penglibatan bermula dengan perbualan di bilik.",
+			"linkedin": "LinkedIn",
+			"registeredEntity": "Entiti berdaftar",
+			"whoWeWorkWith": "Siapa yang kami layani",
+			"fields": {
+				"company": "Syarikat",
+				"registration": "No. pendaftaran",
+				"incorporated": "Ditubuhkan",
+				"incorporatedValue": "2025 · Kuala Lumpur, Malaysia"
+			},
+			"audiences": {
+				"lenders": "Pemberi pinjam wang berlesen",
+				"shariah": "Pengendali pembiayaan patuh Syariah",
+				"p2p": "Platform P2P",
+				"fintechs": "Fintech yang membina di atas rel kami"
+			}
+		},
+		"careers": {
+			"eyebrow": "Kerjaya",
+			"title": "Kami pasukan kecil, jadi setiap pengambilan ketara.",
+			"lede": "Kejuruteraan, reka bentuk, pematuhan dan pelaksanaan — jika perisian kewangan terkawal di Malaysia lebih menarik daripada papan pemuka yang lain, kami ingin mendengar daripada anda.",
+			"cta": "Lihat jawatan",
+			"tracks": {
+				"engineering": "Produk & kejuruteraan",
+				"compliance": "Pematuhan & operasi",
+				"design": "Reka bentuk & pengalaman"
+			}
+		},
+		"cta": {
+			"heading": "Beritahu kami apa yang anda sedang bina.",
+			"body": "Lesen, platform pinjaman, pasaran P2P, atau integrasi yang anda lebih suka tidak bina dua kali. Tempah konsultasi percuma dan kami akan beritahu dengan jujur apa yang diperlukan.",
+			"secondary": "Lihat portfolio"
+		}
+	}
+}
