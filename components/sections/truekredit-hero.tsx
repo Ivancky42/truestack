@@ -85,10 +85,7 @@ export function TrueKreditHero() {
 	const slide = SLIDES[active];
 
 	useEffect(() => {
-		if (reduceMotion) setPlaying(false);
-	}, [reduceMotion]);
-
-	useEffect(() => {
+		// Autoplay is suppressed entirely under prefers-reduced-motion.
 		if (!playing || reduceMotion) return;
 		const id = window.setInterval(() => {
 			setActive((index) => (index + 1) % SLIDES.length);
