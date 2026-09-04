@@ -1,4 +1,68 @@
 {
 	"_status": "source",
-	"LegalChrome": {}
+	"LegalChrome": {
+		"eyebrow": "Legal",
+		"lastUpdated": "Last updated {date}",
+		"onThisPage": "On this page",
+		"pagesNav": "Legal pages",
+		"tabs": {
+			"cybersecurity": "Cybersecurity",
+			"pdpa": "PDPA Notice",
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Use"
+		},
+		"pages": {
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Use",
+			"pdpa": "PDPA Notice",
+			"cybersecurity": "Cybersecurity Policy"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions"
+		},
+		"contact": {
+			"registrationNo": "Registration No. {number}"
+		},
+		"privacy": {
+			"title": "How we handle your information.",
+			"titleMuted": "And what you can ask us to do with it.",
+			"lede": "This policy explains how Truestack collects, uses, discloses, and safeguards personal information when you visit our website or use related systems we operate.",
+			"cta": {
+				"heading": "Questions about your data?",
+				"body": "If you want this policy explained for a customer agreement or an e-KYC rollout, book a free consultation. No obligation.",
+				"secondary": "PDPA Notice"
+			}
+		},
+		"terms": {
+			"title": "The rules for using this site.",
+			"titleMuted": "And our related Truestack systems.",
+			"lede": "These terms apply when you use truestack.my and the related demonstration and developer systems we operate. Paid products are licensed under a separate customer agreement.",
+			"cta": {
+				"heading": "Need these terms in a customer agreement?",
+				"body": "Website terms are not a product licence. If you are evaluating TrueKredit™ or TrueIdentity™, book a free consultation and we will point you to the right next step.",
+				"secondary": "Privacy Policy"
+			}
+		},
+		"pdpa": {
+			"title": "How we process personal data.",
+			"titleMuted": "Under Malaysia's PDPA.",
+			"lede": "Notice and choice statement under the Personal Data Protection Act 2010 (Act 709), including TrueIdentity™ verification journeys we operate.",
+			"cta": {
+				"heading": "Questions about how we handle personal data?",
+				"body": "If you need this notice explained for a KPKT licence, e-KYC rollout, or customer agreement, book a free consultation. No obligation.",
+				"secondary": "Privacy Policy"
+			}
+		},
+		"cybersecurity": {
+			"title": "How we protect your systems.",
+			"titleMuted": "And the data that lives on them.",
+			"lede": "A public overview of how Truestack designs, operates, and protects the systems used to deliver lending software, KPKT compliance services, and e-KYC in Malaysia.",
+			"cta": {
+				"heading": "Questions about how we protect your data?",
+				"body": "Tell us about your KPKT licence, lending platform, or security review. We'll walk through how Truestack hosts and isolates your systems — free, no obligation.",
+				"secondary": "PDPA Notice"
+			}
+		}
+	}
 }

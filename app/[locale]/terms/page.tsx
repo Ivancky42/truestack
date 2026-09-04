@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
 import { AlertTriangle, KeyRound, MonitorPlay, Scale } from "lucide-react";
@@ -62,16 +63,18 @@ export default async function TermsOfUsePage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+  const t = await getTranslations("LegalChrome");
   return (
     <>
-      <LegalSchema path="/terms" name={title} description={description} />
+      <LegalSchema path="/terms" name={t("pages.terms")} description={description} />
       <FaqSchema items={termsFaq} />
 
+      <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero
-        eyebrow="Legal"
-        title="The rules for using this site."
-        titleMuted="And our related Truestack systems."
-        lede="These terms apply when you use truestack.my and the related demonstration and developer systems we operate. Paid products are licensed under a separate customer agreement."
+        eyebrow={t("eyebrow")}
+        title={t("terms.title")}
+        titleMuted={t("terms.titleMuted")}
+        lede={t("terms.lede")}
         currentPath="/terms"
       />
 
@@ -260,10 +263,11 @@ export default async function TermsOfUsePage({
       </LegalDocument>
 
       <ConsultationCta
-        heading="Need these terms in a customer agreement?"
-        body="Website terms are not a product licence. If you are evaluating TrueKredit™ or TrueIdentity™, book a free consultation and we will point you to the right next step."
-        secondary={{ href: "/privacy", label: "Privacy Policy" }}
+        heading={t("terms.cta.heading")}
+        body={t("terms.cta.body")}
+        secondary={{ href: "/privacy", label: t("terms.cta.secondary") }}
       />
+      </PageMessages>
     </>
   );
 }

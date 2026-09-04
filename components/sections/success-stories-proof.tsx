@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase } from "lucide-react";
@@ -36,6 +37,7 @@ export function SuccessStoriesProof({
 	columns = 3,
 	align = "center",
 }: SuccessStoriesProofProps) {
+	const t = useTranslations("Common");
 	const count = studies.length;
 	const gridClass =
 		count === 1
@@ -139,7 +141,7 @@ export function SuccessStoriesProof({
 										variant="secondary"
 										className="text-[10px] sm:text-xs"
 									>
-										Coming Soon
+										{t("comingSoon")}
 									</Badge>
 								) : null}
 							</div>

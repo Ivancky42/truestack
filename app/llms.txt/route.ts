@@ -30,7 +30,21 @@ export async function GET() {
 		posts = [];
 	}
 
-	const body = buildLlmsTxt(insightsSection(posts));
+	const base = siteUrl.replace(/\/$/, "");
+	const languagesBlock = [
+		"## Languages",
+		"",
+		`- English (default): ${base}/`,
+		`- Bahasa Malaysia: ${base}/ms/`,
+		`- 中文 (Simplified Chinese): ${base}/zh/`,
+		"<!-- zh summary: Phase 2b -->",
+		"",
+	].join("\n");
+
+	const assembled = buildLlmsTxt(insightsSection(posts));
+	const body = assembled.includes("## Main pages\n")
+		? assembled.replace("## Main pages\n", `${languagesBlock}## Main pages\n`)
+		: `${assembled.replace(/\s*$/, "\n\n")}${languagesBlock}`;
 
 	return new Response(body, {
 		headers: {

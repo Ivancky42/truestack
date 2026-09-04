@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
 	BarChart3,
@@ -15,74 +16,37 @@ import {
 import { cn } from "@/lib/utils";
 import { TrueKreditChecksCollage } from "@/components/sections/truekredit-check-visuals";
 
+type CheckKey =
+	| "identity"
+	| "ssm"
+	| "payments"
+	| "ctos"
+	| "truesend"
+	| "truesight"
+	| "attestation"
+	| "signing";
+
 type CheckCard = {
+	key: CheckKey;
 	icon: LucideIcon;
-	title: string;
-	desc: string;
-	tag: string;
 	tagTone: "muted" | "pro" | "soon";
 	highlight?: boolean;
 };
 
 const CHECKS: CheckCard[] = [
+	{ key: "identity", icon: Fingerprint, tagTone: "muted" },
+	{ key: "ssm", icon: Building2, tagTone: "muted" },
+	{ key: "payments", icon: Wallet, tagTone: "muted" },
+	{ key: "ctos", icon: BarChart3, tagTone: "soon" },
+	{ key: "truesend", icon: Mail, tagTone: "muted" },
+	{ key: "truesight", icon: Sparkles, tagTone: "soon" },
 	{
-		icon: Fingerprint,
-		title: "TrueIdentity™ — e-KYC & liveness",
-		desc: "Scan MyKad, take a selfie, confirm it is the same person. The result is saved to the borrower file.",
-		tag: "First-party",
-		tagTone: "muted",
-	},
-	{
-		icon: Building2,
-		title: "TrueSSM™ company lookups",
-		desc: "Company, director and shareholder details for corporate borrowers, pulled straight into the application.",
-		tag: "First-party",
-		tagTone: "muted",
-	},
-	{
-		icon: Wallet,
-		title: "Payment gateway — collections and disbursements",
-		desc: "Collect through FPX or e-wallet, and send disbursements from the same loan file your team already works from.",
-		tag: "FassPay · GKash",
-		tagTone: "muted",
-	},
-	{
-		icon: BarChart3,
-		title: "CTOS credit reports",
-		desc: "Credit information sits next to the application, so your credit team decides with the full picture.",
-		tag: "Soon",
-		tagTone: "soon",
-	},
-	{
-		icon: Mail,
-		title: "Truesend™ — automated delivery",
-		desc: "Receipts, reminders, collection and default letters sent automatically from the loan file.",
-		tag: "First-party",
-		tagTone: "muted",
-	},
-	{
-		icon: Sparkles,
-		title: "TrueSight™ AI risk scoring",
-		desc: "Extra risk insight on top of your existing checks, helping your credit team spot weaker files earlier.",
-		tag: "Soon",
-		tagTone: "soon",
-	},
-	{
+		key: "attestation",
 		icon: CalendarDays,
-		title: "Digital attestation — live & video",
-		desc: "At the counter or on a scheduled video call — invites and reminders stay on the loan file.",
-		tag: "Pro",
 		tagTone: "pro",
 		highlight: true,
 	},
-	{
-		icon: PenLine,
-		title: "Digital signing on your premises",
-		desc: "Legally binding signatures with MSC Trustgate — signing stays under your control. Customers sign from web or phone.",
-		tag: "Pro",
-		tagTone: "pro",
-		highlight: true,
-	},
+	{ key: "signing", icon: PenLine, tagTone: "pro", highlight: true },
 ];
 
 function Tag({
@@ -108,6 +72,7 @@ function Tag({
 }
 
 export function TrueKreditChecks() {
+	const t = useTranslations("TrueKredit");
 	return (
 		<section
 			id="checks"
@@ -123,16 +88,13 @@ export function TrueKreditChecks() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="type-eyebrow mb-3 text-primary">
-						Connected checks
+						{t("checks.eyebrow")}
 					</p>
 					<h2 id="truekredit-checks-heading" className="type-h2">
-						Checks that live inside the loan file.
+						{t("checks.title")}
 					</h2>
 					<p className="mt-3.5 type-lede text-muted-foreground">
-						Identity checks, company lookups and payments
-						happen in the system your team already uses — not
-						across four separate websites with four separate
-						logins.
+						{t("checks.lede")}
 					</p>
 				</motion.div>
 
@@ -155,7 +117,7 @@ export function TrueKreditChecks() {
 				>
 					{CHECKS.map((item) => (
 						<article
-							key={item.title}
+							key={item.key}
 							className={cn(
 								"rounded-xl border bg-card p-5 shadow-sm",
 								item.highlight &&
@@ -166,13 +128,16 @@ export function TrueKreditChecks() {
 								<div className="flex size-9 items-center justify-center rounded-lg bg-primary/10">
 									<item.icon className="size-4 text-primary" />
 								</div>
-								<Tag label={item.tag} tone={item.tagTone} />
+								<Tag
+									label={t(`checks.items.${item.key}.tag`)}
+									tone={item.tagTone}
+								/>
 							</div>
 							<h3 className="type-card-title text-[1.125rem]">
-								{item.title}
+								{t(`checks.items.${item.key}.title`)}
 							</h3>
 							<p className="mt-1.5 type-ui text-muted-foreground">
-								{item.desc}
+								{t(`checks.items.${item.key}.desc`)}
 							</p>
 						</article>
 					))}

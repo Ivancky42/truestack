@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
-import { homepageFaq } from "@/lib/homepage-faq";
 import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
 import { getInsightPosts } from "@/lib/insights/data";
 import type { InsightPostSummary } from "@/lib/insights/types";
@@ -18,32 +18,7 @@ import { HomepageInsights } from "@/components/sections/homepage-insights";
 import { SuccessStoriesProof } from "@/components/sections/success-stories-proof";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 
-const title = "KPKT Licence & Loan Management Software Malaysia";
-const description =
-	"Truestack gets Malaysian lenders licensed and live — conventional KPKT digital licence or upcoming Shariah digital lending, TrueKredit™ and TrueSyariah™.";
-
-const pageMetadata: Metadata = {
-	title: {
-		absolute: `${title} | Truestack`,
-	},
-	description,
-	alternates: { canonical: "/" },
-	openGraph: {
-		title: `${title} | Truestack`,
-		description,
-		url: "/",
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [defaultOgImage],
-	},
-	twitter: {
-		card: defaultTwitterCard,
-		title: `${title} | Truestack`,
-		description,
-		images: [defaultOgImage.url],
-	},
-};
+const LATEST_INSIGHTS = 6;
 
 export async function generateMetadata({
 	params,
@@ -51,10 +26,36 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, "/", resolveAppLocale(locale));
-}
+	const resolved = resolveAppLocale(locale);
+	const t = await getTranslations({ locale: resolved, namespace: "Home" });
+	const title = t("meta.title");
+	const description = t("meta.description");
 
-const LATEST_INSIGHTS = 6;
+	const pageMetadata: Metadata = {
+		title: {
+			absolute: `${title} | Truestack`,
+		},
+		description,
+		alternates: { canonical: "/" },
+		openGraph: {
+			title: `${title} | Truestack`,
+			description,
+			url: "/",
+			type: "website",
+			locale: "en_MY",
+			siteName,
+			images: [defaultOgImage],
+		},
+		twitter: {
+			card: defaultTwitterCard,
+			title: `${title} | Truestack`,
+			description,
+			images: [defaultOgImage.url],
+		},
+	};
+
+	return localizePageMetadata(pageMetadata, "/", resolved);
+}
 
 export default async function HomePage({
 	params,
@@ -63,6 +64,8 @@ export default async function HomePage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("Home");
+	const faq = t.raw("faq.items") as { question: string; answer: string }[];
 	let latestInsights: InsightPostSummary[] = [];
 	try {
 		const posts = await getInsightPosts();
@@ -76,37 +79,39 @@ export default async function HomePage({
 
 	return (
 		<>
-			<FaqSchema items={homepageFaq} />
-			<HomepageHero />
-			<HomepageLogoCloud />
-			<HomepageSolutions />
-			<HomepageTrueKredit />
-			<HomepageCore />
-			<HomepageTrust />
-			<SuccessStoriesProof
-				id="work"
-				studies={pickProofStudiesByTitles([
-					"ezdana",
-					"CashSouk",
-					"PinjoCep",
-					"Proficient Premium",
-				])}
-				eyebrow="Selected work"
-				title="See what live looks like."
-				subtitle=""
-				viewAllLabel="All success stories"
-				columns={4}
-				align="start"
-			/>
-			<HomepageInsights posts={latestInsights} />
-			<ConsultationCta
-				heading="Ready to launch or scale your lending business?"
-				body="Book a free consultation. We will tell you what your licence position allows, what it would take to go digital, and what it costs — before you commit to anything."
-				secondary={{
-					href: "/services/digital-license",
-					label: "Explore Digital Licence",
-				}}
-			/>
+			<FaqSchema items={faq} />
+			<PageMessages namespaces={["Home"]}>
+				<HomepageHero />
+				<HomepageLogoCloud />
+				<HomepageSolutions />
+				<HomepageTrueKredit />
+				<HomepageCore />
+				<HomepageTrust />
+				<SuccessStoriesProof
+					id="work"
+					studies={pickProofStudiesByTitles([
+						"ezdana",
+						"CashSouk",
+						"PinjoCep",
+						"Proficient Premium",
+					])}
+					eyebrow={t("work.eyebrow")}
+					title={t("work.title")}
+					subtitle=""
+					viewAllLabel={t("work.viewAll")}
+					columns={4}
+					align="start"
+				/>
+				<HomepageInsights posts={latestInsights} />
+				<ConsultationCta
+					heading={t("cta.heading")}
+					body={t("cta.body")}
+					secondary={{
+						href: "/services/digital-license",
+						label: t("cta.secondary"),
+					}}
+				/>
+			</PageMessages>
 		</>
 	);
 }

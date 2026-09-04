@@ -1,4 +1,339 @@
 {
 	"_status": "source",
-	"DigitalLicense": {}
+	"DigitalLicense": {
+		"meta": {
+			"title": "Online Money Lending Licence Malaysia | Truestack",
+			"description": "KPKT digital licence Malaysia — conventional PPW (e-Lending) or upcoming Shariah digital lending. Licensing, kebenaran tambahan, TrueKredit™ Pro.",
+			"openGraphTitle": "Online Money Lending Licence Malaysia | Truestack",
+			"openGraphDescription": "End-to-end KPKT digital licence — conventional PPW e-Lending or the upcoming Shariah path. Licensing, kebenaran tambahan, TrueKredit™ Pro or TrueSyariah™."
+		},
+		"schema": {
+			"serviceName": "Online Money Lending Licence (e-Lending)",
+			"alternateName": [
+				"pemberian pinjaman wang dalam talian",
+				"e-Lending",
+				"urus niaga secara dalam talian",
+				"kebenaran tambahan",
+				"KPKT Online Money Lending Licence Malaysia",
+				"KPKT Digital Licence Malaysia",
+				"KPKT Digital License Conversion",
+				"Digital money lender platform Malaysia"
+			],
+			"serviceType": "KPKT Online Money Lending Licence conversion — e-Lending, kebenaran tambahan, and TrueKredit Pro",
+			"audienceType": "KPKT-licensed money lenders and digital lending operators in Malaysia",
+			"catalogName": "KPKT digital licence paths",
+			"conventionalOfferName": "Conventional digital licence (PPW / e-Lending)",
+			"conventionalOfferDescription": "Kebenaran tambahan for pemberian pinjaman wang dalam talian on an existing lesen PPW, with TrueKredit™ Pro.",
+			"shariahOfferName": "Shariah digital lending licence",
+			"shariahOfferDescription": "Upcoming KPKT Shariah digital lending path — separate entity, committee and TrueSyariah™ platform.",
+			"relatedServiceName": "Shariah Digital Lending Licence",
+			"relatedServiceType": "KPKT Shariah digital lending licence and TrueSyariah platform"
+		},
+		"breadcrumb": {
+			"current": "KPKT Digital Licence"
+		},
+		"hero": {
+			"crumbSolutions": "Solutions",
+			"crumbCurrent": "KPKT Digital Licence",
+			"title": "Go nationwide. We'll get you licensed.",
+			"lede": "End-to-end KPKT <strong>Online Money Lending Licence</strong> — pemberian pinjaman wang dalam talian, from kickoff to your first nationwide disbursement in about three months.",
+			"body": "We run the licence path, build your platform on <truekredit>TrueKredit™ Pro</truekredit>, and stay in the room through approval and go-live. One team, one contract. Pursuing the <shariah>Shariah digital licence</shariah> instead? That is a separate path.",
+			"secondaryCta": "Check if you qualify",
+			"trustChips": [
+				"Licensing, platform and go-live in one contract",
+				"Signing stays on your premises"
+			],
+			"chart": {
+				"addressableReach": "Addressable reach",
+				"timeline": "~3 months",
+				"ariaLabel": "Reach growing from a single branch to nationwide digital lending",
+				"branch": "1 branch",
+				"localOnly": "Local customers only",
+				"nationwide": "All of Malaysia",
+				"webApps": "Web & apps · digital licence",
+				"phases": {
+					"1": { "phase": "Phase 1", "label": "Provisional licence" },
+					"2": { "phase": "Phase 2–3", "label": "Build & review pack" },
+					"4": { "phase": "Phase 4", "label": "Approval & go-live" }
+				}
+			}
+		},
+		"crossLink": {
+			"ariaLabel": "Looking for the platform",
+			"lead": "Looking for the platform?",
+			"body": "TrueKredit Pro is the nationwide system this licence runs on — branded web, apps and signing.",
+			"cta": "See TrueKredit Pro"
+		},
+		"paths": {
+			"eyebrow": "Choose your path",
+			"title": "Two licences. Pick the one that matches your book.",
+			"body": "Digital lending on a conventional lesen PPW is one approval. Shariah digital lending is another — its own entity, committee and book. Pick the path you are on.",
+			"tablistAria": "Licence paths",
+			"upcoming": "Upcoming",
+			"items": {
+				"ppw": {
+					"kicker": "Digital licence · PPW",
+					"label": "Conventional e-Lending",
+					"summary": "Kebenaran tambahan on an existing lesen PPW — nationwide lending on TrueKredit™ Pro.",
+					"title": "Digital licence on your existing PPW.",
+					"body": "Holding a money-lending licence does not let you lend online. You apply for kebenaran tambahan, show KPKT the platform, and go nationwide on TrueKredit™ Pro. That is the path this page walks.",
+					"qualifyCta": "See if you qualify",
+					"points": [
+						"Existing lesen PPW, then kebenaran tambahan to lend online",
+						"TrueKredit™ Pro — branded web, apps and signing on your premises",
+						"About three months from kickoff to nationwide go-live",
+						"Licence, platform and KPKT review under one contract"
+					]
+				},
+				"shariah": {
+					"kicker": "Shariah digital licence",
+					"label": "Syariah Lending",
+					"summary": "A separate entity, committee and book — TrueSyariah™ from the first filing.",
+					"eyebrow": "Lesen pinjaman digital syariah",
+					"title": "A Shariah book cannot sit on a conventional licence.",
+					"body": "KPKT treats Shariah digital lending as its own approval. The entity, the committee and the contracts have to be in place before the software is much use — and the platform has to evidence Tawarruq, Ta'widh and Gharamah from day one.",
+					"seeTrueSyariah": "See TrueSyariah™",
+					"points": [
+						"Own operating company — not the same entity as a conventional PPW",
+						"Committee, Aqad and Tawarruq sequence approved before you file",
+						"TrueSyariah™ — Ta'widh and Gharamah split, books ring-fenced",
+						"We start you in the order the regulator expects, not the other way around"
+					]
+				}
+			}
+		},
+		"qualify": {
+			"eyebrow": "Do you qualify",
+			"title": "Five things KPKT will look at first.",
+			"body": "Tick what is true today. This is indicative only — we confirm your position properly in the consultation, and a gap on this list is usually something we can help close rather than a dead end.",
+			"noLicenceTitle": "No licence yet?",
+			"noLicenceBody": "A fresh application is not the only route. We can also help you procure an existing company that already holds a KPKT money-lending licence, handle the director, shareholder and CoSec changes, then take it digital.",
+			"groupAria": "Digital licence readiness",
+			"confirmCta": "Confirm this with our licensing team",
+			"checks": {
+				"licence": {
+					"title": "We hold a valid KPKT money lending licence",
+					"detail": "A current lesen PPW in the company's name."
+				},
+				"filings": {
+					"title": "Our filings and permits are up to date",
+					"detail": "SSM particulars, renewals, annual B and B1 submissions current."
+				},
+				"directors": {
+					"title": "Our directors and shareholders are settled",
+					"detail": "No pending changes that would complicate a review."
+				},
+				"premises": {
+					"title": "We have premises that can hold signing control",
+					"detail": "Digital licensing expects signing to stay under your roof."
+				},
+				"nationwide": {
+					"title": "We are ready to lend outside our locality",
+					"detail": "Capital, collections and staffing for a nationwide book."
+				}
+			},
+			"verdicts": [
+				"Nothing ticked yet. Tick what is true today and we will tell you roughly where you stand.",
+				"Early days. There is groundwork to do first — the consultation is the fastest way to find out what.",
+				"A start. Some prerequisites are missing, but most of them are fixable well inside a normal timeline.",
+				"Reasonable position. A conversion is realistic once the remaining gaps are closed.",
+				"Strong candidate. One item outstanding, and it is usually the quickest part of the process.",
+				"Everything in place. You look ready to start a digital licence conversion now."
+			]
+		},
+		"story": {
+			"eyebrow": "Why go digital",
+			"title": "One branch is a ceiling. A digital licence is the unlock.",
+			"body": "A traditional licence keeps you local. An Online Money Lending Licence lets you serve borrowers nationwide — provided the licence path and the platform are handled properly, and in the right order.",
+			"todayEyebrow": "Today",
+			"todayTitle": "Local reach. Unclear path.",
+			"afterEyebrow": "With Truestack",
+			"afterTitle": "Nationwide. Licensed. Live.",
+			"explorePro": "Explore TrueKredit™ Pro",
+			"today": {
+				"limited": {
+					"title": "Limited to your branch area",
+					"desc": "Customers outside your locality stay out of reach."
+				},
+				"opaque": {
+					"title": "The licence process feels opaque",
+					"desc": "What KPKT expects, and when, is hard to navigate alone."
+				},
+				"buildRisk": {
+					"title": "Build risk on top of compliance risk",
+					"desc": "The wrong platform choice can stall approval or force a rebuild."
+				}
+			},
+			"after": {
+				"nationwide": {
+					"title": "Serve all of Malaysia",
+					"desc": "Borrowers apply, verify and repay on your branded web and apps."
+				},
+				"journey": {
+					"title": "We run the licence journey with you",
+					"desc": "Strategy, dossier, presentation, review, and final approval support."
+				},
+				"pro": {
+					"title": "Live on TrueKredit™ Pro",
+					"desc": "The same lending system KPKT-licensed operators already run on, ready for digital review."
+				}
+			}
+		},
+		"offer": {
+			"eyebrow": "What you are buying",
+			"title": "Licence. Platform. Go-live.",
+			"body": "Not a software handoff. A full-service path to nationwide digital lending, with one team accountable for all three parts.",
+			"footer": "One team. One contract. You focus on lending — we handle the rest.",
+			"items": {
+				"licence": {
+					"title": "The licence",
+					"desc": "Licensing strategy, the provisional dossier, KPKT presentation support, and accompaniment through final approval."
+				},
+				"platform": {
+					"title": "The platform",
+					"desc": "A branded TrueKredit™ Pro deployment: web, mobile apps and signing under your control, on your own secure cloud in Malaysia."
+				},
+				"golive": {
+					"title": "Go-live and after",
+					"desc": "Testing, review preparation, first disbursements, and ongoing KPKT compliance support once you have launched."
+				}
+			}
+		},
+		"journey": {
+			"eyebrow": "About three months",
+			"title": "From kickoff to nationwide lending.",
+			"body": "A proven playbook, every step run with you in the room. Timelines depend on your readiness and KPKT scheduling.",
+			"photoAlt": "Truestack advisors reviewing KPKT licensing documents with a client",
+			"talkCta": "Talk to our licensing team",
+			"seeProCta": "See TrueKredit™ Pro",
+			"steps": {
+				"1": {
+					"title": "Provisional licence",
+					"desc": "We map your operating model, prepare the dossier, and walk into the KPKT presentation with you.",
+					"weeks": "Weeks 1–2"
+				},
+				"2": {
+					"title": "Build on TrueKredit™ Pro",
+					"desc": "Branded web and mobile apps, signing under your control, and your own secure cloud in Malaysia — set up for you.",
+					"weeks": "Weeks 3–8"
+				},
+				"3": {
+					"title": "Test and review pack",
+					"desc": "Hands-on testing with your team, an independent security review, and a complete pack ready for KPKT.",
+					"weeks": "Weeks 9–10"
+				},
+				"4": {
+					"title": "Approval and go-live",
+					"desc": "We sit with you through final inspection and stay on for your first nationwide disbursements.",
+					"weeks": "Weeks 11–12"
+				}
+			}
+		},
+		"platform": {
+			"eyebrow": "Built on TrueKredit™ Pro",
+			"title": "The platform KPKT expects — already built.",
+			"body": "Your digital licence runs on TrueKredit™ Pro: the same loan book your team works in every day, plus nationwide borrower channels and signing under your control.",
+			"proUnlocks": "What Pro unlocks",
+			"alreadyStandard": "Already on TrueKredit Standard? Upgrade to Pro without moving your loan book. <compare>See the comparison</compare>",
+			"points": {
+				"channels": {
+					"title": "Nationwide customer channels",
+					"desc": "Branded website plus iPhone and Android apps — applications land in one approval queue."
+				},
+				"signing": {
+					"title": "Signing under your control",
+					"desc": "Legally binding signatures stay on your premises, as digital licensing requires."
+				},
+				"cloud": {
+					"title": "Your cloud, kept in Malaysia",
+					"desc": "Loan data stays with you and is never mixed with other lenders."
+				}
+			},
+			"chips": [
+				"Branded customer website",
+				"iPhone & Android apps",
+				"Digital signing on your premises",
+				"Live & video attestation",
+				"Support for KPKT online licence reviews"
+			]
+		},
+		"trust": {
+			"eyebrow": "Built for KPKT review",
+			"title": "Ready when examiners ask.",
+			"body": "Digital licensing is as much about control and traceability as it is about apps. Your platform is set up so the answers are already there, not assembled the night before.",
+			"items": {
+				"data": {
+					"title": "Your data stays with you",
+					"desc": "Hosted on your own secure cloud in Malaysia, never mixed with other lenders."
+				},
+				"signing": {
+					"title": "Signing stays on your premises",
+					"desc": "Borrowers sign from web or phone; the signing control stays under your roof."
+				},
+				"audit": {
+					"title": "Audit trail every day",
+					"desc": "Who did what, and when — ready for your team and for KPKT."
+				}
+			}
+		},
+		"testimonial": {
+			"quote": "We had one branch and a room full of files. Three months later borrowers were applying from Johor to Kuala Lumpur on our own apps — and KPKT had already seen the system before they walked in.",
+			"name": "Director, CreditXpress",
+			"role": "KPKT-licensed money lender",
+			"logoAlt": "CreditXpress",
+			"card": "CreditXpress moved from a traditional branch licence to a nationwide digital book on TrueKredit™ Pro — web, mobile, and the review pack KPKT asked for."
+		},
+		"proof": {
+			"eyebrow": "Selected work",
+			"title": "Lenders we have taken digital.",
+			"subtitle": "Real KPKT-licensed lenders launched on TrueKredit™ Pro — licensed, built, and approved with our team.",
+			"viewAll": "All success stories"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"body": "Straight answers on e-Lending, kebenaran tambahan, and what we actually deliver — written so you can take them to your compliance lead.",
+			"askCta": "Ask us something else",
+			"items": [
+				{
+					"question": "What is pemberian pinjaman wang dalam talian (e-Lending)?",
+					"answer": "Money lending conducted online. Borrowers apply, verify their identity, sign and repay through your website or mobile app instead of walking into your branch. KPKT treats it as a distinct way of operating, governed by the Online Moneylenders Guidelines, so it carries its own approval rather than being covered automatically by a traditional licence."
+				},
+				{
+					"question": "How long does an online money lending licence take?",
+					"answer": "About three months from kickoff to nationwide go-live, in our experience: two weeks for the provisional dossier and KPKT presentation, six weeks to build and configure the platform, two weeks of testing and review preparation, and two weeks through final inspection and approval. Real timing depends on your readiness and KPKT scheduling."
+				},
+				{
+					"question": "Do existing PPW holders need kebenaran tambahan for e-Lending?",
+					"answer": "Holding a money lending licence does not by itself permit you to lend online. Existing PPW holders seek additional permission — kebenaran tambahan — to transact online, and have to show KPKT that the platform, signing controls and data handling meet the Online Moneylenders Guidelines. We prepare that application together with the platform evidence that supports it, and confirm the current requirement for your licence class in the consultation."
+				},
+				{
+					"question": "What is TrueKredit™ Pro?",
+					"answer": "The digital tier of our loan management system. Standard runs your loan book: borrowers, schedules, repayments and KPKT paperwork. Pro adds nationwide borrower channels — a branded website plus iPhone and Android apps — digital signing kept under your control, live and video attestation, and the reporting an online licence review asks for. Existing Standard users upgrade without moving the loan book."
+				},
+				{
+					"question": "What does Truestack handle end-to-end?",
+					"answer": "Licensing strategy, the provisional dossier, presentation support at KPKT, the platform build on TrueKredit™ Pro, deployment to your own secure cloud in Malaysia, testing, an independent security review, the review pack, accompaniment through final inspection, and ongoing KPKT compliance support after launch. One team, one contract."
+				},
+				{
+					"question": "Is this licensing advice only, or do you deliver the software too?",
+					"answer": "Both, and we prefer to do both. Advice without a platform leaves you holding an approval you cannot operate on, and a platform without licensing support risks choices that stall your review. We take responsibility for the licence path and the software under a single contract."
+				},
+				{
+					"question": "Who builds KPKT digital lending platforms in Malaysia?",
+					"answer": "Truestack Technologies Sdn. Bhd., a Kuala Lumpur software and consultancy company working exclusively with Malaysian lenders and fintechs. Licensed money lenders including ezdana, PinjoCep, Proficient Premium, Andas Capital and CreditXpress run on our platforms."
+				},
+				{
+					"question": "Do you also handle the Shariah digital licence, or only conventional PPW?",
+					"answer": "Both. The conventional path on this page is kebenaran tambahan for e-Lending on an existing lesen PPW, with the book on TrueKredit™ Pro. Shariah digital lending is a separate upcoming KPKT approval: its own legal entity, a Shariah advisor or committee, approved contracts, and a platform that evidences Tawarruq, Ta'widh and Gharamah. That path is TrueSyariah™ — see truestack.my/truesyariah. The two licences cannot sit in the same operating company."
+				}
+			]
+		},
+		"cta": {
+			"eyebrow": "Full-service KPKT digital licensing",
+			"heading": "Ready to go nationwide?",
+			"body": "Book a free consultation. We will map your route — conventional PPW digital licence on TrueKredit™ Pro, or the upcoming Shariah path on TrueSyariah™ — before you commit to anything.",
+			"secondary": "Explore TrueKredit™"
+		}
+	}
 }

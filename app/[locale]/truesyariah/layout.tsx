@@ -1,54 +1,15 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { TrueSyariahSchema } from "@/components/seo/truesyariah-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
-import { truesyariahFaq } from "@/lib/truesyariah-faq";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { siteName } from "@/lib/seo-defaults";
 import {
-	TRUESYARIAH_METADATA,
+	TRUESYARIAH_KEYWORDS,
+	TRUESYARIAH_OG_IMAGE_PATH,
 	TRUESYARIAH_PAGE_PATH,
 } from "@/lib/truesyariah-seo";
-
-const pageMetadata: Metadata = {
-	title: { absolute: TRUESYARIAH_METADATA.title },
-	description: TRUESYARIAH_METADATA.description,
-	keywords: [...TRUESYARIAH_METADATA.keywords],
-	alternates: { canonical: TRUESYARIAH_PAGE_PATH },
-	openGraph: {
-		title: TRUESYARIAH_METADATA.openGraphTitle,
-		description: TRUESYARIAH_METADATA.openGraphDescription,
-		url: TRUESYARIAH_PAGE_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [
-			{
-				url: TRUESYARIAH_METADATA.ogImagePath,
-				width: 1536,
-				height: 1024,
-				alt: TRUESYARIAH_METADATA.ogImageAlt,
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: TRUESYARIAH_METADATA.openGraphTitle,
-		description: TRUESYARIAH_METADATA.openGraphDescription,
-		images: [TRUESYARIAH_METADATA.ogImagePath],
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
 
 export async function generateMetadata({
 	params,
@@ -56,10 +17,55 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
+	const appLocale = resolveAppLocale(locale);
+	const t = await getTranslations({
+		locale: appLocale,
+		namespace: "TrueSyariah",
+	});
+
+	const pageMetadata: Metadata = {
+		title: { absolute: t("meta.title") },
+		description: t("meta.description"),
+		keywords: [...TRUESYARIAH_KEYWORDS],
+		alternates: { canonical: TRUESYARIAH_PAGE_PATH },
+		openGraph: {
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			url: TRUESYARIAH_PAGE_PATH,
+			type: "website",
+			locale: "en_MY",
+			siteName,
+			images: [
+				{
+					url: TRUESYARIAH_OG_IMAGE_PATH,
+					width: 1536,
+					height: 1024,
+					alt: t("meta.ogImageAlt"),
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			images: [TRUESYARIAH_OG_IMAGE_PATH],
+		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				"max-image-preview": "large",
+				"max-snippet": -1,
+			},
+		},
+	};
+
 	return localizePageMetadata(
 		pageMetadata,
 		TRUESYARIAH_PAGE_PATH,
-		resolveAppLocale(locale),
+		appLocale,
 	);
 }
 
@@ -71,11 +77,23 @@ export default async function TrueSyariahLayout({
 	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
-	setRequestLocale(resolveAppLocale(locale));
+	const appLocale = resolveAppLocale(locale);
+	setRequestLocale(appLocale);
+	const t = await getTranslations({
+		locale: appLocale,
+		namespace: "TrueSyariah",
+	});
 	return (
 		<>
 			<TrueSyariahSchema />
-			<FaqSchema items={truesyariahFaq} />
+			<FaqSchema
+				items={
+					t.raw("faq.items") as {
+						question: string;
+						answer: string;
+					}[]
+				}
+			/>
 			<div className="ts-page hero-under-nav bg-ts-parchment text-ts-ink">
 				{children}
 			</div>

@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import TrueIdentityPage from "./trueidentity-page-client";
 
 export default async function TrueIdentityServerPage({
@@ -9,5 +10,9 @@ export default async function TrueIdentityServerPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
-	return <TrueIdentityPage />;
+	return (
+		<PageMessages namespaces={["TrueIdentity"]}>
+			<TrueIdentityPage />
+		</PageMessages>
+	);
 }

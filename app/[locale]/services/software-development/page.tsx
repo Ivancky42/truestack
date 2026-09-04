@@ -1,39 +1,17 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { localizePageMetadata } from "@/lib/i18n/seo";
+import { PageMessages } from "@/lib/i18n/messages";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { SoftwareDevelopmentSchema } from "@/components/seo/software-development-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { SoftwareDevelopmentPageContent } from "@/components/sections/software-development-page-content";
-import { softwareDevelopmentFaq } from "@/lib/software-development-faq";
 import {
-	SOFTWARE_DEVELOPMENT_METADATA,
+	SOFTWARE_DEVELOPMENT_KEYWORDS,
 	SOFTWARE_DEVELOPMENT_PAGE_PATH,
 } from "@/lib/software-development-seo";
-
-const pageMetadata: Metadata = {
-	title: { absolute: SOFTWARE_DEVELOPMENT_METADATA.title },
-	description: SOFTWARE_DEVELOPMENT_METADATA.description,
-	keywords: [...SOFTWARE_DEVELOPMENT_METADATA.keywords],
-	alternates: { canonical: SOFTWARE_DEVELOPMENT_PAGE_PATH },
-	openGraph: {
-		title: SOFTWARE_DEVELOPMENT_METADATA.openGraphTitle,
-		description: SOFTWARE_DEVELOPMENT_METADATA.openGraphDescription,
-		url: SOFTWARE_DEVELOPMENT_PAGE_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [defaultOgImage],
-	},
-	twitter: {
-		card: defaultTwitterCard,
-		title: SOFTWARE_DEVELOPMENT_METADATA.openGraphTitle,
-		description: SOFTWARE_DEVELOPMENT_METADATA.openGraphDescription,
-		images: [defaultOgImage.url],
-	},
-};
 
 export async function generateMetadata({
 	params,
@@ -41,7 +19,36 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, SOFTWARE_DEVELOPMENT_PAGE_PATH, resolveAppLocale(locale));
+	const resolved = resolveAppLocale(locale);
+	const t = await getTranslations({
+		locale: resolved,
+		namespace: "SoftwareDevelopment",
+	});
+	return localizePageMetadata(
+		{
+			title: { absolute: t("meta.title") },
+			description: t("meta.description"),
+			keywords: [...SOFTWARE_DEVELOPMENT_KEYWORDS],
+			alternates: { canonical: SOFTWARE_DEVELOPMENT_PAGE_PATH },
+			openGraph: {
+				title: t("meta.openGraphTitle"),
+				description: t("meta.openGraphDescription"),
+				url: SOFTWARE_DEVELOPMENT_PAGE_PATH,
+				type: "website",
+				locale: "en_MY",
+				siteName,
+				images: [defaultOgImage],
+			},
+			twitter: {
+				card: defaultTwitterCard,
+				title: t("meta.openGraphTitle"),
+				description: t("meta.openGraphDescription"),
+				images: [defaultOgImage.url],
+			},
+		},
+		SOFTWARE_DEVELOPMENT_PAGE_PATH,
+		resolved,
+	);
 }
 
 export default async function SoftwareDevelopmentPage({
@@ -51,20 +58,28 @@ export default async function SoftwareDevelopmentPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("SoftwareDevelopment");
+	const tCommon = await getTranslations("Common");
+	const faqItems = t.raw("faq.items") as {
+		question: string;
+		answer: string;
+	}[];
 	return (
 		<>
 			<SoftwareDevelopmentSchema />
-			<FaqSchema items={softwareDevelopmentFaq} />
+			<FaqSchema items={faqItems} />
 			<BreadcrumbSchema
 				items={[
-					{ name: "Home", path: "/" },
+					{ name: tCommon("breadcrumbHome"), path: "/" },
 					{
-						name: "Custom Software Development",
+						name: t("breadcrumb.current"),
 						path: SOFTWARE_DEVELOPMENT_PAGE_PATH,
 					},
 				]}
 			/>
-			<SoftwareDevelopmentPageContent />
+			<PageMessages namespaces={["SoftwareDevelopment"]}>
+				<SoftwareDevelopmentPageContent />
+			</PageMessages>
 		</>
 	);
 }

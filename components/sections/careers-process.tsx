@@ -1,40 +1,18 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const steps = [
-	{
-		step: "1",
-		tag: "30 min",
-		title: "Introductory call",
-		body: "What you have done, what you want next, and what the role looks like on an ordinary day.",
-		highlight: false,
-	},
-	{
-		step: "2",
-		tag: "45–60 min",
-		title: "Role discussion",
-		body: "A proper conversation with the people you would sit next to, about work we have on right now.",
-		highlight: false,
-	},
-	{
-		step: "3",
-		tag: "Some roles",
-		title: "Practical case study",
-		body: "Something small and realistic. We keep it short, and we go through it with you afterwards.",
-		highlight: false,
-	},
-	{
-		step: "4",
-		tag: "Offer",
-		title: "Offer and onboarding",
-		body: "Terms, a start date, and a first week set up so you ship something real early.",
-		highlight: true,
-	},
+	{ key: "intro", step: "1", highlight: false },
+	{ key: "discussion", step: "2", highlight: false },
+	{ key: "case", step: "3", highlight: false },
+	{ key: "offer", step: "4", highlight: true },
 ] as const;
 
 export function CareersProcess() {
+	const t = useTranslations("Careers");
 	return (
 		<section
 			id="process"
@@ -51,24 +29,23 @@ export function CareersProcess() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="mb-3 type-eyebrow text-blue-400">
-						Hiring process
+						{t("process.eyebrow")}
 					</p>
 					<h2
 						id="careers-process-heading"
 						className="type-h2 text-white"
 					>
-						Four steps, no surprises.
+						{t("process.title")}
 					</h2>
 					<p className="mt-4 max-w-2xl type-lede text-slate-400">
-						We read every application and get back to everyone we
-						shortlist.
+						{t("process.lede")}
 					</p>
 				</motion.div>
 
 				<div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 					{steps.map((step, index) => (
 						<motion.article
-							key={step.step}
+							key={step.key}
 							className={cn(
 								"rounded-2xl border p-6 md:p-7",
 								step.highlight
@@ -99,14 +76,14 @@ export function CareersProcess() {
 											: "text-slate-500",
 									)}
 								>
-									{step.tag}
+									{t(`process.steps.${step.key}.tag`)}
 								</span>
 							</div>
 							<h3 className="type-subhead text-white">
-								{step.title}
+								{t(`process.steps.${step.key}.title`)}
 							</h3>
 							<p className="mt-2 type-ui leading-relaxed text-slate-400">
-								{step.body}
+								{t(`process.steps.${step.key}.body`)}
 							</p>
 						</motion.article>
 					))}

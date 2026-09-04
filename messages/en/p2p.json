@@ -1,4 +1,407 @@
 {
 	"_status": "source",
-	"P2P": {}
+	"P2P": {
+		"meta": {
+			"title": "TrueP2P™ | P2P Platform Development Malaysia | SC-Aligned",
+			"description": "P2P platform development for Malaysia — TrueP2P™ builds SC-aligned peer-to-peer financing software, conventional or Shariah, with optional RMO support.",
+			"openGraphTitle": "TrueP2P™ | P2P Platform Development Malaysia",
+			"openGraphDescription": "SC-aligned P2P platform engineering for Malaysia — investor and issuer portals, escrow, Shariah Gharamah & Ta'widh ledgers, and optional RMO registration support.",
+			"ogImageAlt": "TrueP2P peer-to-peer financing platform — investor portal, marketplace listings, escrow, e-signing and SC Malaysia compliance modules"
+		},
+		"schema": {
+			"serviceName": "TrueP2P™",
+			"alternateName": [
+				"P2P Software Development Malaysia",
+				"P2P Lending Platform Development Malaysia",
+				"P2P platform development Malaysia",
+				"Shariah-Aligned P2P Platform Development",
+				"Peer-to-peer financing software Malaysia"
+			],
+			"serviceType": "Custom P2P platform engineering and software development for Malaysia — conventional and Shariah-aligned",
+			"audienceType": "Recognised Market Operators, Islamic finance operators, and fintech founders building P2P platforms in Malaysia",
+			"catalogName": "TrueP2P™ platform modules",
+			"offers": {
+				"investor": {
+					"name": "Investor portal",
+					"description": "Branded web and mobile experiences for investor sign-up, suitability, deposits, allocations and statements."
+				},
+				"issuer": {
+					"name": "Issuer portal",
+					"description": "Self-serve onboarding, document upload, listing applications and live funding visibility for SMEs and originators."
+				},
+				"listings": {
+					"name": "Listings & matching engine",
+					"description": "Configurable note types, Shariah-screened asset onboarding, funding caps, allocation rules, and per-investor concentration limits."
+				},
+				"escrow": {
+					"name": "Escrow & payments",
+					"description": "Trust account integration, FPX and DuitNow rails, automated disbursement and repayment reconciliation."
+				},
+				"ekyc": {
+					"name": "e-KYC & accreditation",
+					"description": "MyKad, liveness, AML/CFT screening and tiered investor accreditation built into onboarding."
+				},
+				"esign": {
+					"name": "e-Signing & contracts",
+					"description": "On-platform agreement generation, e-signing and a tamper-evident document vault."
+				},
+				"ops": {
+					"name": "Operations & reporting",
+					"description": "Admin console plus exports tuned for SC submissions, audits, and Shariah committee reviews."
+				},
+				"tawarruq": {
+					"name": "Tawarruq disbursement",
+					"description": "Shariah-compliant Tawarruq (commodity Murabaha) disbursement — commodity purchase, deferred sale to the customer, and onward sale for cash proceeds, with a full audit trail."
+				},
+				"shariahAccounting": {
+					"name": "Shariah-aligned accounting (Gharamah & Ta'widh)",
+					"description": "Segregated Gharamah and Ta'widh ledgers with charity disbursement workflows for Islamic P2P platforms."
+				},
+				"rmo": {
+					"name": "SC Malaysia RMO registration preparation",
+					"description": "Consultancy alongside TrueP2P™ engineering for Recognised Market Operator approval with the Securities Commission Malaysia."
+				}
+			}
+		},
+		"breadcrumb": {
+			"current": "TrueP2P™"
+		},
+		"hero": {
+			"badgeRmo": "SC RMO-aligned",
+			"badgeShariah": "Conventional & Shariah-aligned",
+			"badgeExaminer": "Examiner-ready by design",
+			"title": "TrueP2P™ — peer-to-peer platforms for <accent>Malaysia.</accent>",
+			"lede": "Conventional and Shariah-aligned peer-to-peer financing platforms.",
+			"body": "Investor and issuer portals, escrow, payments, e-signing, and Gharamah/Ta'widh accounting — built for SC Malaysia, with RMO registration support alongside the build.",
+			"modulesCta": "See platform modules",
+			"stats": {
+				"endToEnd": {
+					"value": "End-to-end",
+					"label": "Investor + Issuer + Admin"
+				},
+				"aws": {
+					"value": "AWS Malaysia",
+					"label": "Data residency"
+				},
+				"audit": {
+					"value": "Audit-ready",
+					"label": "Logs & exports"
+				}
+			}
+		},
+		"intro": {
+			"body": "<lead>TrueP2P™ is Truestack's Malaysian peer-to-peer platform engineering partner.</lead> We build production-ready peer-to-peer financing platforms — <emphasis>conventional and Shariah-aligned</emphasis> — covering investor onboarding, listings, escrow, payments, e-signing, <tawarruq>Tawarruq commodity disbursement</tawarruq>, <gharamah>Gharamah and Ta'widh accounting</gharamah> and reporting, for operators running under the <sc>Securities Commission Malaysia</sc> Recognised Market Operator framework. Whether you are launching a new P2P platform, replatforming an existing one, or extending into a new asset class, we ship the full stack and operate it alongside your team.<close> Beyond engineering, our consultancy team — supported by a network of specialist consultants — can guide the A–Z of SC Malaysia RMO registration alongside your build.</close>",
+			"kpktLead": "Looking for KPKT-licensed money lending instead? See <truekredit>TrueKredit™</truekredit> for conventional KPKT digital lending or <truesyariah>TrueSyariah™</truesyariah> for the KPKT Syariah Digital Lending Licence."
+		},
+		"diagram": {
+			"eyebrow": "How TrueP2P™ works",
+			"title": "What we engineer for you",
+			"body": "A regulated peer-to-peer platform connects investors directly with issuers. We build every layer in between — onboarding, listings, escrow, repayments and reporting — so the experience feels like a single, trusted product."
+		},
+		"modules": {
+			"badge": "What we build",
+			"title": "Every module a regulated P2P platform needs",
+			"body": "A complete peer-to-peer platform is more than a marketing site and a database. We deliver every piece — and we know exactly which pieces matter to a Malaysian regulator.",
+			"items": {
+				"investor": {
+					"title": "Investor portal",
+					"description": "Branded web and mobile experiences for investor sign-up, suitability, deposits, allocations and statements."
+				},
+				"issuer": {
+					"title": "Issuer portal",
+					"description": "Self-serve onboarding, document upload, listing applications and live funding visibility for SMEs and originators."
+				},
+				"listings": {
+					"title": "Listings & matching engine",
+					"description": "Configurable note types, Shariah-screened asset onboarding, funding caps, allocation rules, waitlists and per-investor concentration limits."
+				},
+				"escrow": {
+					"title": "Escrow & payments",
+					"description": "Trust account integration, FPX and DuitNow rails, automated disbursement and repayment reconciliation."
+				},
+				"ekyc": {
+					"title": "e-KYC & accreditation",
+					"description": "MyKad, liveness, AML/CFT screening and tiered investor accreditation built into the onboarding flow."
+				},
+				"esign": {
+					"title": "e-Signing & contracts",
+					"description": "On-platform agreement generation, e-signing and a tamper-evident document vault for every party."
+				},
+				"ops": {
+					"title": "Operations & reporting",
+					"description": "Admin console for ops, finance and compliance — plus exports tuned for SC submissions, audits, and Shariah committee reviews."
+				},
+				"security": {
+					"title": "Security & audit trail",
+					"description": "Encryption, RBAC, immutable audit logs, infrastructure-as-code and pen-test-ready architecture."
+				}
+			}
+		},
+		"listings": {
+			"badge": "Investor experience",
+			"title": "Listings designed to earn investor trust",
+			"body": "A peer-to-peer platform lives or dies by how its listings feel. Below is the kind of investor-grade UI we build for our clients — tuned to your asset class, risk model and brand.",
+			"disclaimer": "Sample UI for illustration. Listings, scores and amounts are not real investments and are not an offer to invest.",
+			"regionAria": "Sample P2P investment listings — illustrative UI",
+			"progressAria": "Funding progress",
+			"scrollLeft": "Scroll listings left",
+			"scrollRight": "Scroll listings right",
+			"sampleCaption": "Sample UI — not a real listing"
+		},
+		"process": {
+			"badge": "Our process",
+			"title": "How we deliver your P2P platform",
+			"body": "A predictable, end-to-end engagement — from regulatory mapping to launch and ongoing support. You get one accountable engineering partner instead of five vendors to coordinate.",
+			"photoAlt": "Two professionals reviewing a P2P platform dashboard in a Kuala Lumpur office",
+			"stepsAria": "P2P platform delivery process",
+			"steps": {
+				"discovery": {
+					"title": "Discovery & regulatory mapping",
+					"description": "We translate your P2P business model into a clear product spec — asset class, investor tiers, fee structure and the SC obligations the platform must satisfy. Where you need it, our consultancy team aligns this roadmap with your SC Malaysia RMO registration journey."
+				},
+				"ux": {
+					"title": "UX & system architecture",
+					"description": "Design of investor, issuer and admin journeys alongside the cloud architecture, data model, security boundaries and integration map."
+				},
+				"build": {
+					"title": "Build & integrations",
+					"description": "Iterative delivery of the platform with e-KYC, payments, escrow, e-signing and CTOS / SSM integrations wired in by our team."
+				},
+				"uat": {
+					"title": "Compliance review & UAT",
+					"description": "Walk-throughs with your compliance officer and counsel, examiner-style screen recordings, plus structured user acceptance testing."
+				},
+				"launch": {
+					"title": "Launch & ongoing support",
+					"description": "AWS Malaysia deployment, monitoring, incident response, periodic security reviews and continuous feature delivery as your platform scales."
+				}
+			},
+			"stackBadge": "Most popular",
+			"stackTitle": "Production-ready P2P stack",
+			"stackBody": "A full peer-to-peer platform delivered as a single, accountable engagement — built for Malaysian operators, hosted in AWS Malaysia, ready for SC examiner conversations from day one, with optional RMO registration consultancy running in parallel.",
+			"stackCta": "Get a scoped proposal",
+			"highlights": [
+				"End-to-end P2P platform — investor + issuer + admin",
+				"SC RMO preparation — consultancy alongside engineering (in-house + partner consultants)",
+				"SC-aligned investor accreditation & limits",
+				"Escrow, FPX, DuitNow and trustee integrations",
+				"MyKad e-KYC, AML/CFT and CTOS connectors",
+				"AWS Malaysia data residency, encrypted by default",
+				"Audit-ready logs, exports and reporting",
+				"Branded web and native mobile experiences",
+				"Long-term managed engineering retainer"
+			]
+		},
+		"audiences": {
+			"badge": "Built for everyone on the platform",
+			"title": "A P2P platform that earns trust on every side",
+			"body": "Strong peer-to-peer platforms balance three audiences at once: the operator who is accountable to regulators, the investors whose confidence drives every new listing, and the issuers whose growth gives the platform a reason to exist.",
+			"operators": {
+				"title": "For platform operators",
+				"body": "Ship the platform your licence assumes you have — without the headaches of stitching five vendors together.",
+				"cta": "Talk to engineering",
+				"items": {
+					"speed": {
+						"title": "Speed-to-market",
+						"description": "Battle-tested modules and clear delivery rituals get you from kickoff to live platform without the typical agency drag."
+					},
+					"examiner": {
+						"title": "Examiner-ready by design",
+						"description": "Architecture diagrams, IT controls, audit trails and security policies are produced as the platform is built — not retrofitted later — with artefacts your SC submission can cite."
+					},
+					"predictable": {
+						"title": "Predictable engineering",
+						"description": "Fixed-fee build, transparent change-control, and a single accountable team that owns delivery and post-launch support."
+					}
+				}
+			},
+			"investors": {
+				"title": "For your investors",
+				"body": "A clean, transparent investor experience that signals exactly the kind of platform a regulated market expects.",
+				"cta": "See platform modules",
+				"items": {
+					"trust": {
+						"title": "Trust by design",
+						"description": "Clean onboarding, transparent listings, real-time funding progress and clear investor statements build the credibility a regulated platform needs."
+					},
+					"clarity": {
+						"title": "Asset-backed clarity",
+						"description": "Per-note structures, tenor, expected yield, and risk score are surfaced consistently so investors can size positions with confidence."
+					},
+					"secure": {
+						"title": "Secure participation",
+						"description": "Tiered accreditation, investment limits and segregated trust accounts protect both the investor and the operator's licence."
+					}
+				}
+			},
+			"issuers": {
+				"title": "For issuers & SMEs",
+				"body": "A funding experience that respects an issuer's time — and rewards good repayment with smoother future access to capital.",
+				"cta": "Plan your platform",
+				"items": {
+					"speed": {
+						"title": "Time to funding",
+						"description": "Listings reach their goal in days, not months, with daily progress visibility and clear next-step prompts for issuers."
+					},
+					"terms": {
+						"title": "Transparent terms",
+						"description": "Effective rate, tenor, fees and obligations are surfaced up front — no hidden costs and no post-disbursement surprises."
+					},
+					"next": {
+						"title": "Earn the next round",
+						"description": "On-time repayment data feeds straight into faster, larger future raises, with less paperwork the second time around."
+					}
+				}
+			}
+		},
+		"compliance": {
+			"badge": "SC Malaysia compliance",
+			"title": "Engineered for the SC's Recognised Market framework",
+			"body": "Every P2P platform we deliver is built with the <emphasis>Guidelines on Recognised Markets</emphasis> and the <emphasis>Capital Markets and Services Act</emphasis> in view. We translate those obligations into product controls — so your operations team isn't relying on spreadsheets to stay compliant.",
+			"disclaimer": "We are a software partner, not legal counsel. Our consultancy complements — never replaces — your lawyers: we align product delivery with RMO preparation, artefacts and examiner-facing flows, while counsel advises on obligations and filings.",
+			"discussCta": "Discuss your SC submission",
+			"otherCta": "Other fintech services",
+			"catalogEyebrow": "Built into the platform",
+			"items": [
+				"SC Malaysia RMO registration support — consultancy team plus specialist consultant network",
+				"Securities Commission (SC) Malaysia RMO framework alignment",
+				"Investor accreditation tiers & per-investor caps",
+				"Per-issuer funding limits enforced in code",
+				"Segregated trust account / escrow integration",
+				"AML/CFT screening, sanctions checks & PEP review",
+				"PDPA-compliant data handling & consent management",
+				"Independent penetration testing pre-launch",
+				"AWS Malaysia data residency, encrypted at rest & in transit"
+			]
+		},
+		"shariah": {
+			"badge": "Shariah-aligned by design",
+			"title": "Engineered for Islamic peer-to-peer financing",
+			"body": "We engineer Shariah-aligned variants of every P2P platform we deliver — including <tawarruq>Tawarruq</tawarruq> (تورق) commodity disbursement, segregated <gharamah>Gharamah</gharamah> and <tawidh>Ta'widh</tawidh> accounting, Shariah-screened asset onboarding, and contract templates aligned with your Shariah committee.",
+			"advisor": "We work with your appointed Shariah advisor to map every flow to the contracts and rulings they require — so the ledger your auditors see matches the rulings your committee has approved.",
+			"kpktLead": "Need KPKT Syariah digital lending instead of SC peer-to-peer? <link>Explore TrueSyariah™</link> — built for the KPKT Syariah Digital Lending Licence on a separate entity and AWS deployment.",
+			"discussCta": "Discuss your Shariah build",
+			"disbursementBadge": "Disbursement structure",
+			"tawarruqNote": "Tawarruq is the dominant Shariah-compliant structure for cash disbursement in Malaysian Islamic finance. We wire the commodity-trade legs into your platform's disbursement flow — with full recordkeeping for every leg — so each financing event has a verifiable, audit-ready Shariah footprint.",
+			"pillars": {
+				"tawarruq": {
+					"title": "Tawarruq disbursement",
+					"arabic": "تورق",
+					"summary": "Shariah-compliant cash disbursement structured as a commodity sale and onward sale — the customer receives MYR proceeds while the operator books a deferred receivable at the agreed profit rate.",
+					"points": [
+						"Automated Tawarruq trade legs orchestrated at disbursement",
+						"Commodity trade integration and recordkeeping",
+						"Contract pack and audit trail per disbursement for Shariah review"
+					]
+				},
+				"gharamah": {
+					"title": "Gharamah account",
+					"arabic": "غرامة",
+					"summary": "Late-payment penalty that, under Shariah, must not enrich the financier — channelled to charity instead.",
+					"points": [
+						"Auto-split from every late charge into a segregated ledger",
+						"Charity disbursement workflow with documented schedule",
+						"Auditable allocation report for the Shariah committee"
+					]
+				},
+				"tawidh": {
+					"title": "Ta'widh account",
+					"arabic": "تعويض",
+					"summary": "Compensation for the actual cost of recovery — legitimately retained by the operator or financier.",
+					"points": [
+						"Cost-justified allocation with metadata for Shariah review",
+						"Cap-aware accumulation so postings stay within agreed limits",
+						"Shariah committee-ready exports alongside SC reporting"
+					]
+				}
+			}
+		},
+		"caseStudies": {
+			"title": "Success story",
+			"subtitle": "An SC-compliant, investor-ready peer-to-peer financing platform we designed and engineered for a Malaysian P2P operator.",
+			"defaultTitle": "Success Stories",
+			"defaultSubtitle": "See how we've helped Malaysian Fintech operators go digital and scale their businesses.",
+			"andMore": {
+				"ariaLabel": "Your story could appear here next",
+				"title": "And More",
+				"body": "<lead>Your story could be here next.</lead> If you're building or scaling a lending or fintech operation in Malaysia, we'd love to hear what you're working toward."
+			},
+			"cashsouk": {
+				"description": "Peer-to-peer financing marketplace connecting Malaysian SMEs with investors. Truestack engineered the full stack — investor portal, issuer onboarding, listings engine, escrow integration and reporting — and continues to operate it as the platform scales.",
+				"blurb": "P2P marketplace connecting borrowers and investors — SC-ready.",
+				"tags": [
+					"TrueP2P™",
+					"Investor + Issuer Portals",
+					"SC-Aligned Architecture"
+				],
+				"stats": {
+					"platform": "Platform",
+					"regulator": "Regulator"
+				}
+			}
+		},
+		"faq": {
+			"title": "TrueP2P™ — frequently asked",
+			"subtitle": "Practical answers to the questions Malaysian operators usually bring to us first.",
+			"items": [
+				{
+					"question": "What is P2P software development for the Malaysian market?",
+					"answer": "Peer-to-peer (P2P) software development is the design and engineering of online platforms that connect investors directly with issuers — typically SMEs, project sponsors, or invoice originators — without going through a traditional bank. In Malaysia, P2P financing platforms must be operated by a Recognised Market Operator (RMO) registered with the Securities Commission Malaysia (SC). Truestack builds production-ready P2P platforms that align with the SC's RMO framework, including investor onboarding, suitability assessment, escrow arrangements, listing workflows, payments, and audit trails."
+				},
+				{
+					"question": "Do you build P2P lending platforms compliant with SC Malaysia regulations?",
+					"answer": "Yes. Every P2P platform we deliver is engineered with the SC Malaysia Guidelines on Recognised Markets and the Capital Markets and Services Act (CMSA) in mind. We map your business model to the relevant regulatory obligations, then ship the controls in code: tiered investor accreditation, investment limits per investor and per issuer, segregated trust account integration, AML/CFT screening, periodic reporting, and disclosure documents. If you are still pursuing Recognised Market Operator (RMO) registration, our consultancy team can align documentation and milestones with that pathway alongside engineering. We do not provide legal opinions, but we work alongside your legal counsel and compliance team so the platform is examiner-ready from day one."
+				},
+				{
+					"question": "Do you build Shariah-compliant (syariah) P2P platforms?",
+					"answer": "Yes. We engineer Shariah-aligned variants of every P2P platform we deliver — for operators running an Islamic peer-to-peer financing business in Malaysia. That includes Shariah-screened asset onboarding, contract templates aligned with your Shariah committee, fee structures that avoid riba, segregated Gharamah and Ta'widh accounts (see below), and reporting tuned for Shariah committee review. We are a software partner, not a Shariah authority — we work with your appointed Shariah advisor so the platform reflects the rulings they have approved."
+				},
+				{
+					"question": "How do you handle Gharamah and Ta'widh on a Shariah-compliant P2P platform?",
+					"answer": "On every late payment, the platform splits the late charge into two segregated accounting buckets. Ta'widh (تعويض) is the portion that represents the operator's actual cost of recovery — administrative overhead, collection costs — and may legitimately be retained by the financier or operator. Gharamah (غرامة) is the residual penalty that, under Shariah, must not enrich the financier; it is posted to a separate ledger and disbursed to approved charities on a documented schedule. Truestack builds the split logic, the cap-aware accumulation rules, the charity disbursement workflow, and the audit reports that your Shariah committee and the SC will both want to see — directly into the ledger."
+				},
+				{
+					"question": "How long does it take to launch a P2P platform with Truestack?",
+					"answer": "A new P2P platform typically goes live within 4 to 6 months from kickoff. If you are still preparing your SC RMO application, our consultancy team can align engineering milestones with your registration roadmap so product delivery and submission timelines move together. Overall duration depends on the complexity of your asset class (invoice financing, SME term loans, project financing), the integrations required (e-KYC, CTOS/CCRIS, payment rails, escrow), and how quickly your team approves UAT. We use a battle-tested architecture and reusable modules — so we move at fintech speed without compromising compliance."
+				},
+				{
+					"question": "What's included in your peer-to-peer platform stack?",
+					"answer": "Out of the box you get: an investor portal (web and mobile), an issuer portal, an admin and operations console, a listings engine with funding progress, automated investor matching, escrow and disbursement workflows, e-KYC and accreditation flows, e-signing, document vault, repayment processing, investor statements, and a reporting layer for SC submissions. Everything runs in AWS Malaysia for data residency, with role-based access control, full audit logs, and infrastructure-as-code."
+				},
+				{
+					"question": "Can the P2P platform be customised to our asset class and investor strategy?",
+					"answer": "Yes. We design the listings engine, scoring model, fee structure, and investor experience around your specific asset class — invoice financing, SME working capital, supply-chain financing, asset-backed notes, or project financing. We tune the investor accreditation logic and per-investor concentration limits to your SC submission, with branding and workflows shaped for your operator."
+				},
+				{
+					"question": "Do you handle integrations with Malaysian fintech vendors?",
+					"answer": "Yes. We routinely integrate with Malaysian rails — including FPX, DuitNow, payment gateways, escrow trustees, e-KYC providers (TrueIdentity and others), CTOS/CCRIS for credit data, MyKad and SSM verification, and digital signing providers. We also handle the vendor procurement and technical liaison so your team isn't stuck negotiating five contracts in parallel."
+				},
+				{
+					"question": "How do you ensure security and PDPA compliance for a P2P platform?",
+					"answer": "Security is engineered in, not bolted on. Every platform ships with: encryption at rest and in transit, segregated production environments, secrets management, infrastructure-as-code, automated backups, intrusion detection, and a documented security operations runbook. We follow PDPA requirements for personal data of borrowers and investors, including consent management, retention policies, and data subject access workflows. We also coordinate independent penetration testing before launch."
+				},
+				{
+					"question": "Do you provide ongoing maintenance after the P2P platform goes live?",
+					"answer": "Yes. We offer ongoing managed engineering — covering platform monitoring, incident response, regulatory change tracking, periodic security reviews, feature delivery, and SC reporting support. Most clients keep us as their long-term technology partner so the platform stays aligned with SC updates and market expectations as the portfolio scales."
+				},
+				{
+					"question": "Can you help us prepare for SC Malaysia RMO registration?",
+					"answer": "Yes. Besides TrueP2P™ platform engineering, we maintain a consultancy team that can guide you through the full A–Z of developing your peer-to-peer offering and pursuing Recognised Market Operator (RMO) approval with the Securities Commission Malaysia. We combine in-house regulatory-technology expertise with a network of specialist consultants to support documentation, submission readiness, examiner conversations, and milestones alongside your build — so your platform and your licensing pathway stay aligned. We are not a law firm; formal legal advice stays with your lawyers, and we coordinate closely with them."
+				},
+				{
+					"question": "What does a P2P platform development engagement cost?",
+					"answer": "Costs depend on scope, asset class, integrations, and delivery timeline. Most full P2P platform builds — covering investor portal, issuer portal, admin console, e-KYC, payments, escrow, e-signing, and reporting — sit in a clearly scoped fixed-fee range with a monthly managed-engineering retainer afterwards. Talk to us for a written proposal tailored to your business model and SC submission."
+				},
+				{
+					"question": "Who develops P2P lending platforms in Malaysia?",
+					"answer": "Truestack develops TrueP2P™ — custom peer-to-peer financing platform software for Malaysia, engineered for Securities Commission (SC) Recognised Market Operator requirements. We build conventional and Shariah-aligned stacks (including Gharamah and Ta'widh accounting) and can align engineering with your RMO registration pathway. Book a free consultation at truestack.my/contact."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ready to build TrueP2P™?",
+			"body": "Whether you're preparing your SC RMO submission or replatforming an existing P2P operation, book a free consultation and our engineering team will take you from scope to live platform.",
+			"secondary": "See our work"
+		}
+	}
 }

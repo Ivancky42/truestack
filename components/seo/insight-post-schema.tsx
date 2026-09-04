@@ -1,5 +1,3 @@
-import { getLocale } from "next-intl/server";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { imageUrl } from "@/lib/insights/client";
 import type { InsightPost, SanityImage } from "@/lib/insights/types";
 import {
@@ -28,7 +26,6 @@ function insightImageUrl(image?: SanityImage): string | undefined {
  * Validate at: https://validator.schema.org/
  */
 export async function InsightPostSchema({ post }: { post: InsightPost }) {
-	const locale = resolveAppLocale(await getLocale());
 	const pageUrl = `${siteUrl}/insights/${post.slug}`;
 	const image = insightImageUrl(post.mainImage) ?? defaultOgAbsoluteUrl();
 
@@ -71,7 +68,7 @@ export async function InsightPostSchema({ post }: { post: InsightPost }) {
 				height: orgLogo.height,
 			},
 		},
-		inLanguage: inLanguage[locale],
+		inLanguage: "en-MY",
 		isPartOf: { "@id": `${siteUrl}/insights#blog` },
 	};
 

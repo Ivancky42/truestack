@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { getTranslations } from "next-intl/server";
 import { LegalToc } from "@/components/legal/legal-toc";
 import type { LegalTocItem } from "@/lib/legal";
 
@@ -7,7 +8,8 @@ type LegalDocumentProps = {
   children: ReactNode;
 };
 
-export function LegalDocument({ toc, children }: LegalDocumentProps) {
+export async function LegalDocument({ toc, children }: LegalDocumentProps) {
+  const t = await getTranslations("LegalChrome");
   return (
     <section className="border-t bg-background py-16 md:py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
@@ -15,7 +17,7 @@ export function LegalDocument({ toc, children }: LegalDocumentProps) {
           <LegalToc items={toc} />
         </div>
         <div className="lg:hidden">
-          <p className="mb-3 type-eyebrow text-primary">On this page</p>
+          <p className="mb-3 type-eyebrow text-primary">{t("onThisPage")}</p>
           <ul className="flex flex-wrap gap-2">
             {toc.map((item) => (
               <li key={item.id}>

@@ -1,4 +1,247 @@
 {
 	"_status": "source",
-	"TrueIdentity": {}
+	"TrueIdentity": {
+		"meta": {
+			"title": "TrueIdentity™ — e-KYC & Identity Verification API for Malaysia",
+			"description": "TrueIdentity™ e-KYC API for Malaysia — MyKad OCR, liveness, biometrics, PDPA-aligned processing, and Malaysia-hosted infrastructure for lenders.",
+			"openGraphTitle": "TrueIdentity™ — e-KYC & Identity Verification API for Malaysia",
+			"openGraphDescription": "Programmatic e-KYC for Malaysian fintechs and lenders — MyKad OCR, liveness, biometrics, audit trails, and data residency in Malaysia.",
+			"ogImageAlt": "Truestack Technologies"
+		},
+		"schema": {
+			"breadcrumbHome": "Home",
+			"breadcrumbCurrent": "TrueIdentity™",
+			"softwareName": "TrueIdentity™",
+			"alternateName": ["TrueIdentity e-KYC", "Truestack e-KYC API"],
+			"featureList": [
+				"MyKad OCR extraction",
+				"Liveness detection",
+				"Facial biometric matching",
+				"Fraud detection",
+				"Audit trail logging",
+				"PDPA-aligned processing",
+				"Malaysia data residency"
+			]
+		},
+		"hero": {
+			"eyebrow": "TrueIdentity™ e-KYC",
+			"title": "Verify Customers In Minutes, Not Days",
+			"body": "Malaysia's e-KYC platform for businesses. Automate identity verification, reduce fraud, and stay compliant — without making your customers wait.",
+			"ctaSecondary": "View Pricing",
+			"stats": {
+				"instant": { "value": "Instant", "label": "Verification Time" },
+				"uptime": { "value": "99.9%", "label": "Uptime SLA" },
+				"hosted": { "value": "100%", "label": "Malaysia-Hosted" },
+				"pdpa": { "value": "PDPA", "label": "Compliant" }
+			},
+			"chips": {
+				"verification": { "value": "<3s", "label": "Verification" },
+				"uptime": { "value": "99.9%", "label": "Uptime SLA" },
+				"pdpa": { "value": "PDPA", "label": "Compliant" }
+			}
+		},
+		"features": {
+			"eyebrow": "Key Features",
+			"title": "Why Leading Businesses Choose TrueIdentity",
+			"body": "Streamline your KYC process, reduce operational costs, and deliver a frictionless onboarding experience.",
+			"items": {
+				"quickSetup": {
+					"title": "Quick Setup",
+					"description": "Get started in minutes with our simple API integration. No complex configurations required."
+				},
+				"costEffective": {
+					"title": "Cost Effective",
+					"description": "Pay-per-verification pricing that scales with your business. No minimum commitments."
+				},
+				"security": {
+					"title": "Bank-Grade Security",
+					"description": "End-to-end encryption with data residency in Malaysia. Fully compliant with local regulations."
+				},
+				"everythingHandled": {
+					"title": "Everything Handled",
+					"description": "MyKad OCR, liveness detection, biometric matching — all in one unified API endpoint."
+				}
+			}
+		},
+		"benefits": {
+			"eyebrow": "Business Impact",
+			"title": "Transform Your Verification Process",
+			"items": {
+				"accelerate": {
+					"title": "Accelerate Customer Onboarding",
+					"description": "Reduce onboarding time from days to minutes. Verify customers instantly while maintaining compliance."
+				},
+				"fraud": {
+					"title": "Reduce Fraud & Risk",
+					"description": "AI-powered fraud detection with liveness checks prevents identity spoofing and document forgery."
+				},
+				"compliant": {
+					"title": "Stay Compliant",
+					"description": "Meet regulatory requirements with our PDPA-compliant solution. Full audit trails and data residency in Malaysia."
+				},
+				"costs": {
+					"title": "Lower Operational Costs",
+					"description": "Automate manual verification processes. Scale without adding headcount or infrastructure."
+				}
+			}
+		},
+		"howItWorks": {
+			"eyebrow": "How It Works",
+			"title": "Simple, Secure Verification",
+			"body": "A verification flow that takes seconds, not minutes.",
+			"steps": {
+				"capture": {
+					"title": "Capture Document",
+					"desc": "Customer takes a photo of their MyKad. Our OCR extracts all details automatically."
+				},
+				"verify": {
+					"title": "Verify Identity",
+					"desc": "Selfie capture with liveness detection. AI matches face to document photo."
+				},
+				"results": {
+					"title": "Get Results",
+					"desc": "Receive instant verification results with confidence scores and extracted data."
+				}
+			},
+			"suiteTitle": "Complete Verification Suite",
+			"capabilities": {
+				"ocr": "MyKad OCR extraction",
+				"liveness": "Liveness detection",
+				"biometrics": "Facial biometric matching",
+				"realtime": "Real-time verification",
+				"fraud": "Fraud detection",
+				"audit": "Audit trail logging"
+			}
+		},
+		"hostedUi": {
+			"eyebrow": "Hosted UI",
+			"title": "We Handle the Frontend, You Bring the Customers",
+			"body": "No need to build verification UI yourself. We provide a fully hosted customer frontend that handles the entire verification flow — just redirect your users and receive results via webhook.",
+			"items": {
+				"documentCapture": {
+					"title": "Document Capture",
+					"desc": "Camera access and file upload for MyKad photos with built-in quality checks."
+				},
+				"livenessSelfie": {
+					"title": "Liveness & Selfie",
+					"desc": "Real-time liveness detection with guided selfie capture flow."
+				},
+				"webhookResults": {
+					"title": "Webhook Results",
+					"desc": "Receive verification results instantly via secure webhook to your backend."
+				}
+			},
+			"worksOnWeb": "Works on Web",
+			"worksOnMobile": "Works on Mobile",
+			"mock": {
+				"webBrowser": "Web Browser",
+				"desktopTablet": "Desktop & Tablet",
+				"mobile": "Mobile",
+				"selfie": "Selfie",
+				"documentCapture": "Document Capture",
+				"livenessCheck": "Liveness Check"
+			}
+		},
+		"useCases": {
+			"eyebrow": "Use Cases",
+			"title": "Built for Every Industry",
+			"body": "From banks to startups, businesses across Malaysia trust TrueIdentity.",
+			"trustedBy": "Trusted by",
+			"trustedByItems": [
+				"Licensed money lenders",
+				"Digital banks",
+				"Insurance providers",
+				"E-commerce platforms",
+				"Fintech startups"
+			],
+			"items": {
+				"financial": {
+					"title": "Financial Services",
+					"description": "Banks, lenders, and fintechs use TrueIdentity for loan applications, account opening, and regulatory compliance."
+				},
+				"digital": {
+					"title": "Digital Platforms",
+					"description": "E-commerce, gig economy, and sharing platforms verify sellers, drivers, and service providers."
+				},
+				"telecom": {
+					"title": "Telecommunications",
+					"description": "Telcos and digital services verify subscribers for SIM registration and account activation."
+				}
+			}
+		},
+		"pricing": {
+			"eyebrow": "Transparent Pricing",
+			"title": "Simple, Predictable Pricing",
+			"body": "A one-time setup, pay-per-use transactions, and an annual platform fee. No hidden costs.",
+			"setupFee": "Setup Fee",
+			"setupFeeDesc": "One-time integration & onboarding — includes 100 free verifications",
+			"oneTime": "one-time",
+			"perVerification": "Per Verification",
+			"perVerificationDesc": "Each completed e-KYC transaction",
+			"perTransaction": "/ transaction",
+			"annualFee": "Annual Platform Fee",
+			"annualFeeDesc": "Ongoing access, hosting & support",
+			"perYear": "/ year",
+			"includes": {
+				"noMinimum": {
+					"label": "No minimum volume",
+					"desc": "Pay only for verifications you use"
+				},
+				"hostedUi": {
+					"label": "Includes hosted UI",
+					"desc": "No frontend development needed"
+				},
+				"residency": {
+					"label": "Malaysia data residency",
+					"desc": "PDPA-compliant infrastructure"
+				}
+			},
+			"footnote": "All verification data is encrypted and stored securely in Malaysia."
+		},
+		"developers": {
+			"eyebrow": "For Developers",
+			"title": "Integrate in Minutes",
+			"body": "Simple REST API with comprehensive documentation. Your team can start verifying customers today.",
+			"stats": {
+				"integrationTime": { "value": "<1 day", "label": "Integration time" },
+				"restApi": { "value": "REST API", "label": "Simple integration" },
+				"sdk": { "value": "SDK", "label": "Node.js, Python, Go" }
+			}
+		},
+		"faq": {
+			"title": "Frequently asked questions",
+			"body": "e-KYC capabilities, compliance, integrations, and pricing for TrueIdentity™ in Malaysia.",
+			"items": [
+				{
+					"question": "What is TrueIdentity™?",
+					"answer": "TrueIdentity™ is Truestack's e-KYC and identity verification API for Malaysia. Businesses integrate a single REST endpoint to run MyKad OCR, liveness detection, facial biometric matching, and fraud checks — with PDPA-aligned handling and audit trails."
+				},
+				{
+					"question": "Who uses TrueIdentity™?",
+					"answer": "Banks, licensed money lenders, fintechs, digital platforms, and telcos use TrueIdentity for loan applications, account opening, seller verification, SIM registration, and any workflow that requires fast, compliant identity verification in Malaysia."
+				},
+				{
+					"question": "What verification capabilities are included?",
+					"answer": "TrueIdentity covers MyKad OCR extraction, liveness detection, facial biometric matching, real-time verification results, fraud detection signals, and audit trail logging — designed as one unified API rather than stitching multiple vendors."
+				},
+				{
+					"question": "Is TrueIdentity™ PDPA compliant and hosted in Malaysia?",
+					"answer": "Yes. The platform is built for Malaysian regulatory expectations — PDPA-compliant processing, encryption in transit and at rest, and data residency in Malaysia with bank-grade security practices suitable for regulated financial services."
+				},
+				{
+					"question": "How does TrueIdentity™ integrate with other Truestack products?",
+					"answer": "TrueIdentity is part of Truestack Core™ infrastructure and connects natively to TrueKredit™ loan onboarding, custom fintech builds, and TrueSSM™ KYB workflows — so lending and registry checks can sit in one Truestack stack."
+				},
+				{
+					"question": "How is TrueIdentity™ priced?",
+					"answer": "TrueIdentity uses pay-per-verification pricing that scales with your volume — no large minimum commitments. Book a free consultation with Truestack for a walkthrough and pricing aligned to your expected verification throughput."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ready to Transform Your KYC Process?",
+			"body": "Join leading Malaysian businesses using TrueIdentity. Book a free consultation and we'll walk you through e-KYC, pricing, and integration.",
+			"secondary": "Back to truestack.my"
+		}
+	}
 }

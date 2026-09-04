@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { imageUrl } from "@/lib/insights/client";
@@ -22,6 +25,30 @@ const CATEGORY_CHIP: Partial<Record<InsightCategory, string>> = {
 
 export function insightCategoryChip(category: InsightCategory) {
 	return CATEGORY_CHIP[category] ?? "bg-primary/10 text-primary";
+}
+
+const INSIGHT_DATE_OPTIONS = {
+	day: "numeric",
+	month: "long",
+	year: "numeric",
+} as const;
+
+/** English source is en-GB (`1 September 2026`); next-intl locale `en` would be US-ordered. */
+function formatLocalizedInsightDate(
+	value: string | undefined,
+	locale: string,
+	format: ReturnType<typeof useFormatter>,
+) {
+	if (!value) return "";
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) return "";
+	if (locale === "en") {
+		return new Intl.DateTimeFormat("en-GB", {
+			...INSIGHT_DATE_OPTIONS,
+			timeZone: "Asia/Kuala_Lumpur",
+		}).format(date);
+	}
+	return format.dateTime(date, INSIGHT_DATE_OPTIONS);
 }
 
 const insightDateFormatter = new Intl.DateTimeFormat("en-GB", {
@@ -70,8 +97,11 @@ export function InsightCard({
 	post: InsightPostSummary;
 	priority?: boolean;
 }) {
+	const tCommon = useTranslations("Common");
+	const format = useFormatter();
+	const locale = useLocale();
 	const image = insightImageUrl(post.mainImage, { width: 800, height: 500 });
-	const published = formatInsightDate(post.publishedAt);
+	const published = formatLocalizedInsightDate(post.publishedAt, locale, format);
 
 	return (
 		<Link
@@ -99,7 +129,7 @@ export function InsightCard({
 						{post.category}
 					</span>
 					<span className="text-xs text-muted-foreground">
-						{post.estimatedReadingMinutes} min read
+						{tCommon("minRead", { minutes: post.estimatedReadingMinutes })}
 					</span>
 				</div>
 
@@ -122,7 +152,7 @@ export function InsightCard({
 						<span />
 					)}
 					<span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-						Read this article
+						{tCommon("readArticle")}
 						<ArrowUpRight
 							className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
 							aria-hidden

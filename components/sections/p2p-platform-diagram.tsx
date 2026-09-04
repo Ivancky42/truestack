@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import {
   Banknote,
@@ -178,21 +179,20 @@ function FlowDiagram({ variant }: { variant: "top" | "bottom" }) {
   );
 }
 
-export function P2PPlatformDiagram() {
+export async function P2PPlatformDiagram() {
+  const t = await getTranslations("P2P");
   return (
     <section className="border-t bg-background py-20">
       <div className="mx-auto max-w-6xl px-6">
         <header className="mx-auto max-w-3xl text-center">
           <p className="type-eyebrow text-primary">
-            How TrueP2P™ works
+            {t("diagram.eyebrow")}
           </p>
           <h2 className="mt-3 type-h2">
-            What we engineer for you
+            {t("diagram.title")}
           </h2>
           <p className="mt-4 type-lede text-muted-foreground">
-            A regulated peer-to-peer platform connects investors directly with issuers. We
-            build every layer in between — onboarding, listings, escrow, repayments and
-            reporting — so the experience feels like a single, trusted product.
+            {t("diagram.body")}
           </p>
         </header>
 

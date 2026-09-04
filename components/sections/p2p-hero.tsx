@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import {
@@ -49,7 +50,17 @@ function GridPattern() {
 	);
 }
 
+const STAT_KEYS = ["endToEnd", "aws", "audit"] as const;
+const STAT_ICONS = {
+	endToEnd: Banknote,
+	aws: ShieldCheck,
+	audit: Receipt,
+} as const;
+
 export function P2PHero() {
+	const t = useTranslations("P2P");
+	const tCommon = useTranslations("Common");
+
 	return (
 		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
@@ -68,15 +79,15 @@ export function P2PHero() {
 						>
 							<span className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 px-3.5 py-1.5 text-violet-700">
 								<ShieldCheck className="h-4 w-4 shrink-0" />
-								SC RMO-aligned
+								{t("hero.badgeRmo")}
 							</span>
 							<span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3.5 py-1.5 text-emerald-700">
 								<Sparkles className="h-4 w-4 shrink-0" />
-								Conventional &amp; Shariah-aligned
+								{t("hero.badgeShariah")}
 							</span>
 							<span className="inline-flex items-center gap-2 rounded-full bg-indigo-500/10 px-3.5 py-1.5 text-indigo-700">
 								<BadgeCheck className="h-4 w-4 shrink-0" />
-								Examiner-ready by design
+								{t("hero.badgeExaminer")}
 							</span>
 						</motion.div>
 
@@ -86,10 +97,13 @@ export function P2PHero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.1 }}
 						>
-							TrueP2P™ — peer-to-peer platforms for{" "}
-							<span className="bg-linear-to-r from-violet-600 via-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
-								Malaysia.
-							</span>
+							{t.rich("hero.title", {
+								accent: (chunks) => (
+									<span className="bg-linear-to-r from-violet-600 via-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
+										{chunks}
+									</span>
+								),
+							})}
 						</motion.h1>
 
 						<motion.p
@@ -98,8 +112,7 @@ export function P2PHero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.15 }}
 						>
-							Conventional and Shariah-aligned peer-to-peer
-							financing platforms.
+							{t("hero.lede")}
 						</motion.p>
 
 						<motion.p
@@ -108,10 +121,7 @@ export function P2PHero() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
-							Investor and issuer portals, escrow, payments,
-							e-signing, and Gharamah/Ta&apos;widh accounting —
-							built for SC Malaysia, with RMO registration support
-							alongside the build.
+							{t("hero.body")}
 						</motion.p>
 
 						<motion.div
@@ -126,7 +136,7 @@ export function P2PHero() {
 								className="gap-2 bg-violet-600 hover:bg-violet-700"
 							>
 								<Link href="/contact?subject=TrueP2P">
-									Book a Free Consultation
+									{tCommon("bookConsultation")}
 									<ArrowRight className="h-4 w-4" />
 								</Link>
 							</Button>
@@ -138,7 +148,7 @@ export function P2PHero() {
 							>
 								<Link href="#what-we-build">
 									<Layers className="h-4 w-4" />
-									See platform modules
+									{t("hero.modulesCta")}
 								</Link>
 							</Button>
 						</motion.div>
@@ -149,38 +159,25 @@ export function P2PHero() {
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.6, delay: 0.4 }}
 						>
-							{[
-								{
-									icon: Banknote,
-									value: "End-to-end",
-									label: "Investor + Issuer + Admin",
-								},
-								{
-									icon: ShieldCheck,
-									value: "AWS Malaysia",
-									label: "Data residency",
-								},
-								{
-									icon: Receipt,
-									value: "Audit-ready",
-									label: "Logs & exports",
-								},
-							].map((stat) => (
-								<div
-									key={stat.label}
-									className="flex items-start gap-2"
-								>
-									<stat.icon className="mt-0.5 h-4 w-4 shrink-0 text-violet-600" />
-									<div>
-										<p className="text-sm font-semibold text-foreground">
-											{stat.value}
-										</p>
-										<p className="text-xs text-muted-foreground">
-											{stat.label}
-										</p>
+							{STAT_KEYS.map((key) => {
+								const Icon = STAT_ICONS[key];
+								return (
+									<div
+										key={key}
+										className="flex items-start gap-2"
+									>
+										<Icon className="mt-0.5 h-4 w-4 shrink-0 text-violet-600" />
+										<div>
+											<p className="text-sm font-semibold text-foreground">
+												{t(`hero.stats.${key}.value`)}
+											</p>
+											<p className="text-xs text-muted-foreground">
+												{t(`hero.stats.${key}.label`)}
+											</p>
+										</div>
 									</div>
-								</div>
-							))}
+								);
+							})}
 						</motion.div>
 					</motion.div>
 

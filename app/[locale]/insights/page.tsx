@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import {
 	defaultOgImage,
@@ -12,7 +13,6 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { InsightsSchema } from "@/components/seo/insights-schema";
 import { getInsightPosts } from "@/lib/insights/data";
-import { insightsFaq } from "@/lib/insights/faq";
 import type { InsightPostSummary } from "@/lib/insights/types";
 
 const INSIGHTS_PATH = "/insights";
@@ -69,6 +69,9 @@ export default async function InsightsPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("InsightsChrome");
+	const tCommon = await getTranslations("Common");
+	const faq = t.raw("faq.items") as { question: string; answer: string }[];
 	let posts: InsightPostSummary[] = [];
 	let loadFailed = false;
 	try {
@@ -81,14 +84,16 @@ export default async function InsightsPage({
 	return (
 		<>
 			<InsightsSchema />
-			<FaqSchema items={insightsFaq} />
+			<FaqSchema items={faq} />
 			<BreadcrumbSchema
 				items={[
-					{ name: "Home", path: "/" },
-					{ name: "Insights", path: "/insights" },
+					{ name: tCommon("breadcrumbHome"), path: "/" },
+					{ name: t("nav"), path: "/insights" },
 				]}
 			/>
-			<InsightsPageContent posts={posts} loadFailed={loadFailed} />
+			<PageMessages namespaces={["InsightsChrome"]}>
+				<InsightsPageContent posts={posts} loadFailed={loadFailed} />
+			</PageMessages>
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 import {
@@ -174,6 +175,9 @@ export function SoftwareDevelopmentHeroVisual({
 }
 
 export function SoftwareDevelopmentHero() {
+	const t = useTranslations("SoftwareDevelopment");
+	const tCommon = useTranslations("Common");
+
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
 			<div className="absolute inset-0 -z-10">
@@ -211,29 +215,30 @@ export function SoftwareDevelopmentHero() {
 						transition={{ duration: 0.6 }}
 					>
 						<p className="mb-4 type-eyebrow text-primary">
-							Custom software development
+							{t("hero.eyebrow")}
 						</p>
 						<h1 className="type-h1">
-							If you can dream it,{" "}
-							<span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
-								we can build it.
-							</span>
+							{t.rich("hero.title", {
+								accent: (chunks) => (
+									<span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
+										{chunks}
+									</span>
+								),
+							})}
 						</h1>
 
 						<p className="mt-5 type-lede-hero font-medium text-primary">
-							Custom software from first sketch to go-live.
+							{t("hero.lede")}
 						</p>
 
 						<p className="mt-4 type-lede-hero text-muted-foreground">
-							Web apps, mobile products, internal tools, and
-							platforms under your brand — designed, built, and
-							shipped with you.
+							{t("hero.body")}
 						</p>
 
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							<Button asChild size="lg" className="gap-2">
 								<CtaLink href="/contact?subject=Custom%20Software">
-									Book a Free Consultation
+									{tCommon("bookConsultation")}
 									<ArrowRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>
@@ -244,7 +249,7 @@ export function SoftwareDevelopmentHero() {
 								className="gap-2"
 							>
 								<CtaLink href="#what-we-build">
-									See what we build
+									{t("hero.secondaryCta")}
 									<ChevronRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>

@@ -1,54 +1,15 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { TrueKreditSchema } from "@/components/seo/truekredit-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
-import { truekreditFaq } from "@/lib/truekredit-faq";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { siteName } from "@/lib/seo-defaults";
 import {
-	TRUEKREDIT_METADATA,
+	TRUEKREDIT_KEYWORDS,
+	TRUEKREDIT_OG_IMAGE_PATH,
 	TRUEKREDIT_PAGE_PATH,
 } from "@/lib/truekredit-seo";
-
-const pageMetadata: Metadata = {
-	title: { absolute: TRUEKREDIT_METADATA.title },
-	description: TRUEKREDIT_METADATA.description,
-	keywords: [...TRUEKREDIT_METADATA.keywords],
-	alternates: { canonical: TRUEKREDIT_PAGE_PATH },
-	openGraph: {
-		title: TRUEKREDIT_METADATA.openGraphTitle,
-		description: TRUEKREDIT_METADATA.openGraphDescription,
-		url: TRUEKREDIT_PAGE_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [
-			{
-				url: TRUEKREDIT_METADATA.ogImagePath,
-				width: 1536,
-				height: 1024,
-				alt: TRUEKREDIT_METADATA.ogImageAlt,
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: TRUEKREDIT_METADATA.openGraphTitle,
-		description: TRUEKREDIT_METADATA.openGraphDescription,
-		images: [TRUEKREDIT_METADATA.ogImagePath],
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
 
 export async function generateMetadata({
 	params,
@@ -56,10 +17,55 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
+	const appLocale = resolveAppLocale(locale);
+	const t = await getTranslations({
+		locale: appLocale,
+		namespace: "TrueKredit",
+	});
+
+	const pageMetadata: Metadata = {
+		title: { absolute: t("meta.title") },
+		description: t("meta.description"),
+		keywords: [...TRUEKREDIT_KEYWORDS],
+		alternates: { canonical: TRUEKREDIT_PAGE_PATH },
+		openGraph: {
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			url: TRUEKREDIT_PAGE_PATH,
+			type: "website",
+			locale: "en_MY",
+			siteName,
+			images: [
+				{
+					url: TRUEKREDIT_OG_IMAGE_PATH,
+					width: 1536,
+					height: 1024,
+					alt: t("meta.ogImageAlt"),
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			images: [TRUEKREDIT_OG_IMAGE_PATH],
+		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				"max-image-preview": "large",
+				"max-snippet": -1,
+			},
+		},
+	};
+
 	return localizePageMetadata(
 		pageMetadata,
 		TRUEKREDIT_PAGE_PATH,
-		resolveAppLocale(locale),
+		appLocale,
 	);
 }
 
@@ -71,11 +77,23 @@ export default async function TrueKreditLayout({
 	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
-	setRequestLocale(resolveAppLocale(locale));
+	const appLocale = resolveAppLocale(locale);
+	setRequestLocale(appLocale);
+	const t = await getTranslations({
+		locale: appLocale,
+		namespace: "TrueKredit",
+	});
 	return (
 		<>
 			<TrueKreditSchema />
-			<FaqSchema items={truekreditFaq} />
+			<FaqSchema
+				items={
+					t.raw("faq.items") as {
+						question: string;
+						answer: string;
+					}[]
+				}
+			/>
 			{children}
 		</>
 	);

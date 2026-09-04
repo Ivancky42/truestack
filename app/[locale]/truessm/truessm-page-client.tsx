@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
@@ -33,194 +34,77 @@ import { ConsultationCta } from "@/components/sections/consultation-cta";
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const features = [
-  {
-    icon: Zap,
-    title: "One Integration",
-    description:
-      "ROC, ROB, and LLP profiles, particulars, and scanned documents — all from a single REST API.",
-  },
-  {
-    icon: Shield,
-    title: "Free Validation",
-    description:
-      "Automatic free entity search before billable pulls. Nothing charged when an entity isn't found.",
-  },
-  {
-    icon: Receipt,
-    title: "RM Pricing",
-    description:
-      "Transparent per-operation pricing in Malaysian Ringgit; custom tiers available.",
-  },
-  {
-    icon: Layers,
-    title: "Idempotent Pulls",
-    description:
-      "Safe retries with Idempotency-Key. Delivered results aren't billed twice for the same key.",
-  },
-];
+  { key: "oneIntegration", icon: Zap },
+  { key: "freeValidation", icon: Shield },
+  { key: "rmPricing", icon: Receipt },
+  { key: "idempotentPulls", icon: Layers },
+] as const;
 
 const businessBenefits = [
-  {
-    icon: TrendingUp,
-    title: "Faster Onboarding & Underwriting",
-    description:
-      "Pull company profiles, officers, and shareholders in seconds — no manual SSM lookups.",
-  },
-  {
-    icon: Shield,
-    title: "Reduce Risk Exposure",
-    description:
-      "Verify counterparties with charges, share capital, and current officers data straight from the registry.",
-  },
-  {
-    icon: Receipt,
-    title: "Predictable Costs",
-    description:
-      "Pay only for delivered pulls. Failed validations and most no-data responses incur no charge.",
-  },
-  {
-    icon: Settings,
-    title: "Built for Automation",
-    description:
-      "Idempotency, structured errors, and provider-native fields make it easy to wire into your workflows.",
-  },
-];
+  { key: "faster", icon: TrendingUp },
+  { key: "risk", icon: Shield },
+  { key: "costs", icon: Receipt },
+  { key: "automation", icon: Settings },
+] as const;
 
 type Endpoint = {
   path: string;
-  name: string;
-  usageType: string;
+  usageType:
+    | "entity_search"
+    | "company_profile"
+    | "business_profile"
+    | "llp_profile"
+    | "officers"
+    | "share_capital"
+    | "shareholders"
+    | "registered_address"
+    | "company_secretary"
+    | "charges"
+    | "audit_firm"
+    | "document_list"
+    | "document_image";
   /** Billable amount in RM for a delivered pull (template pricing). */
   rm: number | "Free";
-  description: string;
 };
 
 const endpoints: Endpoint[] = [
-  {
-    path: "entities/search",
-    name: "Entity Search",
-    usageType: "entity_search",
-    rm: "Free",
-    description:
-      "Match entities by registration number and/or name with pagination.",
-  },
-  {
-    path: "reports/company-profile",
-    name: "Company Profile",
-    usageType: "company_profile",
-    rm: 15.4,
-    description:
-      "ROC profile: name, registration, type, status, address, share info, officers, shareholders, charges.",
-  },
-  {
-    path: "reports/business-profile",
-    name: "Business Profile",
-    usageType: "business_profile",
-    rm: 15.4,
-    description:
-      "ROB profile: name, ownership, addresses, dates, status, branches, current and previous owners.",
-  },
-  {
-    path: "reports/llp-profile",
-    name: "LLP Profile",
-    usageType: "llp_profile",
-    rm: 25.4,
-    description:
-      "LLP current profile: entity details, addresses, business code, partner information.",
-  },
-  {
-    path: "reports/officers",
-    name: "Particulars of Officers",
-    usageType: "officers",
-    rm: 23.2,
-    description:
-      "Current and previous directors/officers with appointment and resignation dates.",
-  },
-  {
-    path: "reports/share-capital",
-    name: "Share Capital",
-    usageType: "share_capital",
-    rm: 23.2,
-    description:
-      "Total issued shares, ordinary and preference shares, allotments and details.",
-  },
-  {
-    path: "reports/shareholders",
-    name: "Shareholders",
-    usageType: "shareholders",
-    rm: 23.2,
-    description:
-      "Shareholder particulars: name, ID, address, shares held, acquired and disposed.",
-  },
-  {
-    path: "reports/registered-address",
-    name: "Registered Address",
-    usageType: "registered_address",
-    rm: 23.2,
-    description: "Current registered address and history of changes.",
-  },
-  {
-    path: "reports/company-secretary",
-    name: "Company Secretary",
-    usageType: "company_secretary",
-    rm: 23.2,
-    description:
-      "Secretary particulars: name, IC, licence, status, residential address.",
-  },
-  {
-    path: "reports/charges",
-    name: "Company Charges",
-    usageType: "charges",
-    rm: 23.2,
-    description:
-      "Charge number, instrument type, properties affected, charge type and date.",
-  },
-  {
-    path: "reports/audit-firm",
-    name: "Audit Firm",
-    usageType: "audit_firm",
-    rm: 13.2,
-    description:
-      "Firm number, auditor name, licence, commencement date and address.",
-  },
-  {
-    path: "documents/list",
-    name: "View Scanned Documents",
-    usageType: "document_list",
-    rm: 15.4,
-    description:
-      "Scanned document metadata: form type, document date, total pages, version id.",
-  },
-  {
-    path: "documents/image",
-    name: "Scanned Document",
-    usageType: "document_image",
-    rm: 15.4,
-    description:
-      "Binary content for one filing (typically base64). Requires regNo and verId.",
-  },
+  { path: "entities/search", usageType: "entity_search", rm: "Free" },
+  { path: "reports/company-profile", usageType: "company_profile", rm: 15.4 },
+  { path: "reports/business-profile", usageType: "business_profile", rm: 15.4 },
+  { path: "reports/llp-profile", usageType: "llp_profile", rm: 25.4 },
+  { path: "reports/officers", usageType: "officers", rm: 23.2 },
+  { path: "reports/share-capital", usageType: "share_capital", rm: 23.2 },
+  { path: "reports/shareholders", usageType: "shareholders", rm: 23.2 },
+  { path: "reports/registered-address", usageType: "registered_address", rm: 23.2 },
+  { path: "reports/company-secretary", usageType: "company_secretary", rm: 23.2 },
+  { path: "reports/charges", usageType: "charges", rm: 23.2 },
+  { path: "reports/audit-firm", usageType: "audit_firm", rm: 13.2 },
+  { path: "documents/list", usageType: "document_list", rm: 15.4 },
+  { path: "documents/image", usageType: "document_image", rm: 15.4 },
 ];
 
 const useCases = [
-  {
-    icon: Building2,
-    title: "Lenders & Underwriters",
-    description:
-      "Pull officers, charges, and share capital to assess corporate borrowers in seconds.",
-  },
-  {
-    icon: Users,
-    title: "KYB & Onboarding",
-    description:
-      "Verify business counterparties with ROC/ROB profiles and live registered addresses.",
-  },
-  {
-    icon: FileSearch,
-    title: "Compliance & Audit",
-    description:
-      "Retrieve scanned filings on-demand for due diligence, audits, and regulatory submissions.",
-  },
-];
+  { key: "lenders", icon: Building2 },
+  { key: "kyb", icon: Users },
+  { key: "compliance", icon: FileSearch },
+] as const;
+
+const heroStats = ["endpoints", "entitySearch", "rm", "idempotent"] as const;
+const howItWorksSteps = [
+  "authenticate",
+  "freeValidation",
+  "pullReport",
+  "acknowledged",
+] as const;
+const safeguards = [
+  { key: "freeValidation", icon: Shield },
+  { key: "entityTypeRouting", icon: BadgeCheck },
+  { key: "idempotencyKeys", icon: Layers },
+  { key: "acknowledgementReceipt", icon: Receipt },
+  { key: "timestamps", icon: Clock },
+  { key: "providerFields", icon: FileCheck },
+] as const;
+const developerStats = ["post", "json", "rest"] as const;
 
 // ─── Grid Pattern Background ──────────────────────────────────────────────────
 
@@ -296,6 +180,7 @@ const SSM_STEPS = [
 ];
 
 function RegistryFlowDiagram() {
+  const t = useTranslations("TrueSSM");
   return (
     <motion.div
       className="relative"
@@ -423,8 +308,8 @@ function RegistryFlowDiagram() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.8, duration: 0.5 }}
       >
-        <p className="text-xs font-semibold text-foreground">13</p>
-        <p className="text-[10px] text-muted-foreground">Endpoints</p>
+        <p className="text-xs font-semibold text-foreground">{t("hero.chips.endpoints.value")}</p>
+        <p className="text-[10px] text-muted-foreground">{t("hero.chips.endpoints.label")}</p>
       </motion.div>
 
       <motion.div
@@ -433,8 +318,8 @@ function RegistryFlowDiagram() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.0, duration: 0.5 }}
       >
-        <p className="text-xs font-semibold text-emerald-600">Free</p>
-        <p className="text-[10px] text-muted-foreground">Entity search</p>
+        <p className="text-xs font-semibold text-emerald-600">{t("hero.chips.entitySearch.value")}</p>
+        <p className="text-[10px] text-muted-foreground">{t("hero.chips.entitySearch.label")}</p>
       </motion.div>
 
       <motion.div
@@ -443,8 +328,8 @@ function RegistryFlowDiagram() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.2, duration: 0.5 }}
       >
-        <p className="text-xs font-semibold text-primary">Idempotent</p>
-        <p className="text-[10px] text-muted-foreground">Safe retries</p>
+        <p className="text-xs font-semibold text-primary">{t("hero.chips.idempotent.value")}</p>
+        <p className="text-[10px] text-muted-foreground">{t("hero.chips.idempotent.label")}</p>
       </motion.div>
     </motion.div>
   );
@@ -453,6 +338,9 @@ function RegistryFlowDiagram() {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function TrueSsmPage() {
+  const t = useTranslations("TrueSSM");
+  const tCommon = useTranslations("Common");
+
   return (
     <>
       {/* Hero */}
@@ -472,7 +360,7 @@ export default function TrueSsmPage() {
                 transition={{ duration: 0.4 }}
               >
                 <Building2 className="h-4 w-4" />
-                TrueSSM™ Registry API
+                {t("hero.eyebrow")}
               </motion.div>
               <motion.h1
                 className="type-h1"
@@ -480,7 +368,7 @@ export default function TrueSsmPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                SSM Registry Data, Programmatically
+                {t("hero.title")}
               </motion.h1>
               <motion.p
                 className="mt-6 type-lede-hero text-muted-foreground"
@@ -488,9 +376,7 @@ export default function TrueSsmPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Entity search, ROC/ROB/LLP profiles, particulars, and scanned
-                documents — one REST API for the Malaysian registry, billed
-                transparently in RM.
+                {t("hero.body")}
               </motion.p>
 
               <motion.div
@@ -500,12 +386,12 @@ export default function TrueSsmPage() {
                 transition={{ duration: 0.4, delay: 0.35 }}
               >
                 <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  Powered by
+                  {t("hero.poweredBy")}
                 </span>
                 <div className="relative h-6 w-24">
                   <Image
                     src="/truekredit/integrations/ssmsearch-logo.webp"
-                    alt="SSM Search logo"
+                    alt={t("hero.ssmSearchAlt")}
                     fill
                     className="object-contain object-left"
                     sizes="96px"
@@ -521,12 +407,12 @@ export default function TrueSsmPage() {
               >
                 <Button asChild size="lg" className="gap-2">
                   <Link href="/contact">
-                    Book a Free Consultation
+                    {tCommon("bookConsultation")}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#endpoints">View Endpoints</Link>
+                  <Link href="#endpoints">{t("hero.ctaSecondary")}</Link>
                 </Button>
               </motion.div>
 
@@ -536,18 +422,13 @@ export default function TrueSsmPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                {[
-                  { value: "13", label: "Endpoints" },
-                  { value: "Free", label: "Entity Search" },
-                  { value: "RM", label: "Per operation" },
-                  { value: "Idempotent", label: "By Design" },
-                ].map((stat) => (
-                  <div key={stat.label}>
+                {heroStats.map((key) => (
+                  <div key={key}>
                     <div className="text-2xl font-bold text-primary">
-                      {stat.value}
+                      {t(`hero.stats.${key}.value`)}
                     </div>
                     <div className="text-sm text-muted-foreground">
-                      {stat.label}
+                      {t(`hero.stats.${key}.label`)}
                     </div>
                   </div>
                 ))}
@@ -571,22 +452,21 @@ export default function TrueSsmPage() {
           >
             <SectionBadge
               icon={Zap}
-              text="Key Features"
+              text={t("features.eyebrow")}
               className="justify-center"
             />
             <h2 className="type-h2">
-              Built for Malaysian operators
+              {t("features.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Everything you need to integrate the SSM registry into your
-              product — without building it from scratch.
+              {t("features.body")}
             </p>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <motion.div
-                key={feature.title}
+                key={feature.key}
                 className="group rounded-2xl border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -596,9 +476,9 @@ export default function TrueSsmPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
+                <h3 className="mb-2 text-lg font-semibold">{t(`features.items.${feature.key}.title`)}</h3>
                 <p className="text-sm text-muted-foreground">
-                  {feature.description}
+                  {t(`features.items.${feature.key}.description`)}
                 </p>
               </motion.div>
             ))}
@@ -618,18 +498,18 @@ export default function TrueSsmPage() {
           >
             <SectionBadge
               icon={TrendingUp}
-              text="Business Impact"
+              text={t("benefits.eyebrow")}
               className="justify-center"
             />
             <h2 className="type-h2">
-              Skip the manual SSM lookups
+              {t("benefits.title")}
             </h2>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2">
             {businessBenefits.map((benefit, index) => (
               <motion.div
-                key={benefit.title}
+                key={benefit.key}
                 className="group rounded-2xl border bg-background p-8 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -642,9 +522,9 @@ export default function TrueSsmPage() {
                   </div>
                   <div>
                     <h3 className="mb-2 text-xl font-semibold">
-                      {benefit.title}
+                      {t(`benefits.items.${benefit.key}.title`)}
                     </h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <p className="text-muted-foreground">{t(`benefits.items.${benefit.key}.description`)}</p>
                   </div>
                 </div>
               </motion.div>
@@ -668,19 +548,20 @@ export default function TrueSsmPage() {
           >
             <SectionBadge
               icon={Layers}
-              text="Endpoints"
+              text={t("endpoints.eyebrow")}
               className="justify-center"
             />
             <h2 className="type-h2">
-              13 endpoints, one API key
+              {t("endpoints.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Template prices shown. Custom pricing tiers may apply — every
-              response carries an authoritative{" "}
-              <code className="rounded bg-background px-1.5 py-0.5 text-sm">
-                acknowledgement.billed_rm
-              </code>
-              .
+              {t.rich("endpoints.body", {
+                code: (chunks) => (
+                  <code className="rounded bg-background px-1.5 py-0.5 text-sm">
+                    {chunks}
+                  </code>
+                ),
+              })}
             </p>
           </motion.div>
 
@@ -696,10 +577,10 @@ export default function TrueSsmPage() {
                   <table className="w-full text-left text-sm">
                     <thead className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
                       <tr>
-                        <th className="px-6 py-3 font-semibold">Endpoint</th>
-                        <th className="px-6 py-3 font-semibold">Description</th>
+                        <th className="px-6 py-3 font-semibold">{t("endpoints.columns.endpoint")}</th>
+                        <th className="px-6 py-3 font-semibold">{t("endpoints.columns.description")}</th>
                         <th className="px-6 py-3 text-right font-semibold">
-                          Price
+                          {t("endpoints.columns.price")}
                         </th>
                       </tr>
                     </thead>
@@ -707,18 +588,18 @@ export default function TrueSsmPage() {
                       {endpoints.map((ep) => (
                         <tr key={ep.path} className="align-top">
                           <td className="px-6 py-4">
-                            <div className="font-medium">{ep.name}</div>
+                            <div className="font-medium">{t(`endpoints.items.${ep.usageType}.name`)}</div>
                             <div className="mt-1 font-mono text-xs text-muted-foreground">
                               POST /api/v1/ssm/{ep.path}
                             </div>
                           </td>
                           <td className="px-6 py-4 text-muted-foreground">
-                            {ep.description}
+                            {t(`endpoints.items.${ep.usageType}.description`)}
                           </td>
                           <td className="whitespace-nowrap px-6 py-4 text-right">
                             {ep.rm === "Free" ? (
                               <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
-                                Free
+                                {t("endpoints.free")}
                               </span>
                             ) : (
                               <span className="font-semibold">
@@ -749,49 +630,28 @@ export default function TrueSsmPage() {
           >
             <SectionBadge
               icon={Settings}
-              text="How It Works"
+              text={t("howItWorks.eyebrow")}
               className="justify-center"
             />
             <h2 className="type-h2">
-              Predictable, idempotent, billed only on delivery
+              {t("howItWorks.title")}
             </h2>
           </motion.div>
 
           <div className="mb-12 grid gap-8 md:grid-cols-4">
-            {[
-              {
-                step: 1,
-                title: "Authenticate",
-                desc: "Send your TrueSSM™ API key. Separate from TrueIdentity keys.",
-              },
-              {
-                step: 2,
-                title: "Free Validation",
-                desc: "We auto-validate the registry number with a free entity search before any billable pull.",
-              },
-              {
-                step: 3,
-                title: "Pull Report",
-                desc: "Profile, particulars, or scanned document — provider-native fields in the response.",
-              },
-              {
-                step: 4,
-                title: "Acknowledged",
-                desc: "Every delivery returns an acknowledgement with the billed amount in RM.",
-              },
-            ].map((item, i) => (
+            {howItWorksSteps.map((key, i) => (
               <motion.div
-                key={item.step}
+                key={key}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-bold">
-                  {item.step}
+                  {i + 1}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <h3 className="mb-2 text-lg font-semibold">{t(`howItWorks.steps.${key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`howItWorks.steps.${key}.desc`)}</p>
               </motion.div>
             ))}
           </div>
@@ -804,49 +664,18 @@ export default function TrueSsmPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="mb-6 text-center text-xl font-semibold">
-              Built-in safeguards
+              {t("howItWorks.safeguardsTitle")}
             </h3>
             <div className="grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  icon: Shield,
-                  label: "Free entity validation",
-                  desc: "ENTITY_NOT_FOUND returns no charge.",
-                },
-                {
-                  icon: BadgeCheck,
-                  label: "Entity-type routing",
-                  desc: "Wrong endpoint family is blocked before billing.",
-                },
-                {
-                  icon: Layers,
-                  label: "Idempotency keys",
-                  desc: "Delivered results aren't billed twice.",
-                },
-                {
-                  icon: Receipt,
-                  label: "Acknowledgement receipt",
-                  desc: "Every response includes billed_rm.",
-                },
-                {
-                  icon: Clock,
-                  label: "ISO-8601 timestamps",
-                  desc: "All delivery times in UTC.",
-                },
-                {
-                  icon: FileCheck,
-                  label: "Provider-native fields",
-                  desc: "Response data uses provider's JSON shape.",
-                },
-              ].map((item) => (
+              {safeguards.map((item) => (
                 <div
-                  key={item.label}
+                  key={item.key}
                   className="flex items-start gap-3 rounded-lg bg-muted/40 p-4"
                 >
                   <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <p className="text-sm font-medium">{item.label}</p>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    <p className="text-sm font-medium">{t(`howItWorks.safeguards.${item.key}.label`)}</p>
+                    <p className="text-xs text-muted-foreground">{t(`howItWorks.safeguards.${item.key}.desc`)}</p>
                   </div>
                 </div>
               ))}
@@ -867,18 +696,18 @@ export default function TrueSsmPage() {
           >
             <SectionBadge
               icon={Building2}
-              text="Use Cases"
+              text={t("useCases.eyebrow")}
               className="justify-center"
             />
             <h2 className="type-h2">
-              Built for fintech, lending, and compliance
+              {t("useCases.title")}
             </h2>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {useCases.map((useCase, index) => (
               <motion.div
-                key={useCase.title}
+                key={useCase.key}
                 className="group rounded-2xl border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -888,9 +717,9 @@ export default function TrueSsmPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
                   <useCase.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{useCase.title}</h3>
+                <h3 className="mb-2 text-lg font-semibold">{t(`useCases.items.${useCase.key}.title`)}</h3>
                 <p className="text-sm text-muted-foreground">
-                  {useCase.description}
+                  {t(`useCases.items.${useCase.key}.description`)}
                 </p>
               </motion.div>
             ))}
@@ -915,19 +744,20 @@ export default function TrueSsmPage() {
             <div className="mb-4 flex items-center justify-center gap-2">
               <Terminal className="h-5 w-5 text-primary" />
               <span className="type-eyebrow text-primary">
-                For Developers
+                {t("developers.eyebrow")}
               </span>
             </div>
             <h2 className="type-h2">
-              REST in, structured registry data out
+              {t("developers.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
-              POST JSON, get JSON back. Idempotent, with provider-native fields
-              under{" "}
-              <code className="rounded bg-slate-900 px-1.5 py-0.5 text-sm text-slate-200">
-                data
-              </code>
-              .
+              {t.rich("developers.body", {
+                code: (chunks) => (
+                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-sm text-slate-200">
+                    {chunks}
+                  </code>
+                ),
+              })}
             </p>
           </motion.div>
 
@@ -1083,21 +913,17 @@ export default function TrueSsmPage() {
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6">
-            {[
-              { value: "POST", label: "Every endpoint" },
-              { value: "JSON", label: "In and out" },
-              { value: "REST", label: "No SDK required" },
-            ].map((stat) => (
+            {developerStats.map((key) => (
               <motion.div
-                key={stat.label}
+                key={key}
                 className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
+                <div className="text-2xl font-bold text-white">{t(`developers.stats.${key}.value`)}</div>
+                <div className="mt-1 text-sm text-slate-400">{t(`developers.stats.${key}.label`)}</div>
               </motion.div>
             ))}
           </div>
@@ -1107,9 +933,9 @@ export default function TrueSsmPage() {
       <TrueSsmFaq />
 
       <ConsultationCta
-        heading="Ready to wire SSM into your product?"
-        body="Get an API key, add funds in RM, and pull your first profile. Book a free consultation and we'll help you integrate SSM registry data into your product."
-        secondary={{ href: "/", label: "Back to truestack.my" }}
+        heading={t("cta.heading")}
+        body={t("cta.body")}
+        secondary={{ href: "/", label: t("cta.secondary") }}
       />
     </>
   );

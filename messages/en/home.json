@@ -1,4 +1,186 @@
 {
 	"_status": "source",
-	"Home": {}
+	"Home": {
+		"meta": {
+			"title": "KPKT Licence & Loan Management Software Malaysia",
+			"description": "Truestack gets Malaysian lenders licensed and live — conventional KPKT digital licence or upcoming Shariah digital lending, TrueKredit™ and TrueSyariah™."
+		},
+		"hero": {
+			"title": "The fintech infrastructure Malaysian lenders launch on.",
+			"titlePrefix": ["The", "fintech", "infrastructure", "Malaysian", "lenders"],
+			"verbs": ["launch", "lend", "build", "scale", "run"],
+			"lede": "We get you licensed and we run your book — conventional PPW or Shariah digital lending, the paperwork, and the rails underneath.",
+			"secondaryCta": "Find your starting point",
+			"chips": {
+				"regulators": "KPKT, SC & Bank Negara",
+				"data": "Data in Malaysia",
+				"audit": "Audit-ready"
+			},
+			"alt": {
+				"lampiran": "Lampiran A borrower ledger generated from TrueKredit",
+				"dashboard": "TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender",
+				"timeline": "TrueKredit activity timeline — who changed a loan, exported Lampiran A, or recorded a payment"
+			}
+		},
+		"logoCloud": {
+			"caption": "Lenders and fintechs we have taken live"
+		},
+		"solutions": {
+			"eyebrow": "Find your starting point",
+			"title": "Two ways in. Same destination.",
+			"lede": "Whether you hold a conventional KPKT licence today or you are still preparing to file, the route to nationwide digital lending is a known sequence. Shariah digital lending is a separate upcoming path — we run that too, on <truesyariah>TrueSyariah™</truesyariah>.",
+			"tablistLabel": "Your starting point",
+			"tabs": {
+				"licensed": "I hold a KPKT licence",
+				"applying": "I am applying for one"
+			},
+			"step": "STEP",
+			"licensed": {
+				"review": {
+					"title": "Licence review",
+					"body": "We audit your current lesen PPW, permits and outstanding filings, then map exactly what a digital conversion requires of you."
+				},
+				"application": {
+					"title": "Digital licence application",
+					"body": "We prepare the application and the provisional licence presentation, and coordinate with KPKT through to approval."
+				},
+				"build": {
+					"title": "Platform build",
+					"body": "Your loan book moves onto TrueKredit™ Pro, with web and mobile borrower journeys under your own brand."
+				},
+				"golive": {
+					"title": "Go-live and aftercare",
+					"body": "Compliance verification, staff training, then ongoing account management so nothing slips through."
+				}
+			},
+			"applying": {
+				"structure": {
+					"title": "Structure and eligibility",
+					"body": "Company, directors, paid-up capital and premises checked against KPKT requirements before anything is filed."
+				},
+				"submission": {
+					"title": "Application and submission",
+					"body": "Lampiran A, supporting documents and SSM particulars prepared and submitted on your behalf."
+				},
+				"readiness": {
+					"title": "System readiness",
+					"body": "TrueKredit™ configured with the Jadual J and K documents, agreements and receipts KPKT expects to see."
+				},
+				"disbursements": {
+					"title": "First disbursements",
+					"body": "e-KYC, company checks and payment rails switched on, so you can lend from the day your licence lands."
+				}
+			},
+			"licensedNote": "Typically about three months from kick-off to go-live",
+			"licensedCta": "Talk through your conversion",
+			"acquire": {
+				"title": "Not starting from scratch: acquire a licensed company",
+				"body": "A new application is not the only route. We can also help you procure an existing company that already holds a KPKT money-lending licence, then handle the director, shareholder and CoSec changes and move the book onto TrueKredit™ — often the faster way to start lending."
+			},
+			"applyingNote": "We stay on as your account management partner after approval",
+			"applyingCta": "Check if you qualify"
+		},
+		"truekredit": {
+			"eyebrow": "Loan management system",
+			"title": "TrueKredit™ — the whole loan book, in one place your auditor accepts.",
+			"lede": "Lending gets messy fast: borrower files in one system, instalments in a spreadsheet, KPKT paperwork in a drawer. TrueKredit puts borrowers, schedules, repayments and regulatory documents on a single record.",
+			"features": [
+				"One system for borrowers, schedules, repayments and KPKT paperwork",
+				"Your loan data stays on your own secure cloud in Malaysia",
+				"Audit trails that record who did what, and when",
+				"Upgrade to Pro for borrower apps and digital signing — same loan book"
+			],
+			"cta": "Explore TrueKredit",
+			"alt": "TrueKredit borrower file with loan summary and the branded borrower app on a phone",
+			"platforms": {
+				"truekredit": {
+					"body": "KPKT loan management for licensed money lenders, with Pro for branded borrower apps and digital signing.",
+					"cta": "Explore TrueKredit"
+				},
+				"truesyariah": {
+					"body": "Shariah digital licence and platform: Tawarruq commodity trades, segregated Ta'widh and Gharamah, books ring-fenced from conventional lending.",
+					"cta": "Explore TrueSyariah"
+				},
+				"truep2p": {
+					"body": "Investor and issuer portals, escrow and payments, engineered for Securities Commission Malaysia RMO requirements.",
+					"cta": "Explore TrueP2P"
+				}
+			}
+		},
+		"core": {
+			"eyebrow": "Truestack Core",
+			"title": "The integrations you would otherwise build twice.",
+			"lede": "Already built into TrueKredit™ — or we connect the same checks to the system you already run, via API. Identity, company data and payments on Malaysian rails — one integrated stack that keeps your compliance in one place.",
+			"comingSoon": "Coming soon",
+			"partners": "Data, rails and certification partners",
+			"items": {
+				"trueidentity": {
+					"body": "e-KYC for Malaysia: MyKad OCR, liveness detection and biometric matching, PDPA compliant."
+				},
+				"truessm": {
+					"body": "SSM-sourced company profiles, officers, shareholders and charges for audit-ready due diligence."
+				},
+				"payments": {
+					"name": "Payment gateway",
+					"body": "FPX and DuitNow rails, cards, recurring mandates, webhooks and automated reconciliation — integrated with FassPay and GKash."
+				},
+				"truescore": {
+					"body": "CTOS-backed credit reports, CCRIS data, litigation and bankruptcy checks."
+				},
+				"truecommodity": {
+					"body": "Tawarruq commodity trading with Gharamah and Ta'widh ledgers, committee exports."
+				},
+				"truesight": {
+					"body": "AI borrower risk scoring with explainable creditworthiness signals across portfolios."
+				}
+			}
+		},
+		"trust": {
+			"eyebrow": "What your board will ask",
+			"title": "The four questions we answer before you sign anything.",
+			"alt": "Truestack team collaborating in the Kuala Lumpur office"
+		},
+		"faq": {
+			"items": [
+				{
+					"question": "Where does our borrower data live?",
+					"answer": "On your own secure cloud in Malaysia, kept separate from every other lender we work with. Your borrower files never sit in a shared tenancy. That is the default for every TrueKredit™ deployment."
+				},
+				{
+					"question": "Will this survive an audit?",
+					"answer": "Every action is logged with who did it and when, and KPKT paperwork generates from the same records your team works in. Auditors see one trail, not a pile of spreadsheets and folders. That is how TrueKredit™ stays audit-ready by default."
+				},
+				{
+					"question": "What if we only need one of your APIs?",
+					"answer": "Yes. TrueIdentity™ e-KYC, TrueSSM™ company checks and our payment rails can each connect to the system you already run, via API — you do not have to move your loan book onto TrueKredit™. Take one service or take several. We will tell you what that integration involves, and what it costs, before you commit."
+				},
+				{
+					"question": "How long until we are live?",
+					"answer": "Around three months for a full digital licence conversion, and less if you are only moving an existing loan book onto TrueKredit™. A new KPKT application takes longer because the regulator sets the pace, not the software."
+				},
+				{
+					"question": "Do you handle Shariah digital lending as well as a conventional KPKT licence?",
+					"answer": "Yes. A conventional digital licence is kebenaran tambahan on an existing lesen PPW, and the book runs on TrueKredit™ Pro. Shariah digital lending is a separate upcoming KPKT approval — its own entity, Shariah committee and contracts — and runs on TrueSyariah™. The two licences cannot sit in the same operating company. We scope both paths; start at truestack.my/services/digital-license or truestack.my/truesyariah."
+				}
+			]
+		},
+		"work": {
+			"eyebrow": "Selected work",
+			"title": "See what live looks like.",
+			"viewAll": "All success stories"
+		},
+		"insights": {
+			"eyebrow": "Insights",
+			"title": "What we are seeing in Malaysian lending.",
+			"lede": "KPKT, loan books and the rules that change how you lend — written from the work, not the brochure.",
+			"allInsights": "All insights",
+			"previousArticles": "Previous articles",
+			"nextArticles": "Next articles"
+		},
+		"cta": {
+			"heading": "Ready to launch or scale your lending business?",
+			"body": "Book a free consultation. We will tell you what your licence position allows, what it would take to go digital, and what it costs — before you commit to anything.",
+			"secondary": "Explore Digital Licence"
+		}
+	}
 }

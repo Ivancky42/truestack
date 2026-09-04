@@ -1,5 +1,4 @@
-import { getLocale } from "next-intl/server";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { getTranslations } from "next-intl/server";
 import { legalName, siteName, siteUrl } from "@/lib/seo-defaults";
 
 const pageUrl = `${siteUrl}/insights`;
@@ -9,15 +8,15 @@ const pageUrl = `${siteUrl}/insights`;
  * Validate at: https://validator.schema.org/
  */
 export async function InsightsSchema() {
+	const t = await getTranslations("InsightsChrome");
 	const schema = {
 		"@context": "https://schema.org",
 		"@type": "Blog",
 		"@id": `${pageUrl}#blog`,
 		url: pageUrl,
-		name: "Insights",
-		description:
-			"Notes from Truestack Technologies on Malaysian fintech — KPKT licensing, lending, Shariah financing, compliance and the software we build around them.",
-		inLanguage: inLanguage[resolveAppLocale(await getLocale())],
+		name: t("schema.name"),
+		description: t("schema.description"),
+		inLanguage: "en-MY",
 		publisher: {
 			"@type": "Organization",
 			"@id": `${siteUrl}/#organization`,

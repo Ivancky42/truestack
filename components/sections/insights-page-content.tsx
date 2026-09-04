@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, HelpCircle, Newspaper } from "lucide-react";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import {
 	InsightCard,
-	formatInsightDate,
 	insightCategoryChip,
 	insightImageAlt,
 	insightImageUrl,
@@ -21,7 +21,6 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { insightsFaq } from "@/lib/insights/faq";
 import type { InsightPostSummary } from "@/lib/insights/types";
 
 /** Topics come from published posts only — the list grows as new categories appear. */
@@ -29,7 +28,31 @@ function publishedTopics(posts: InsightPostSummary[]) {
 	return [...new Set(posts.map((post) => post.category))];
 }
 
+function formatFeaturedDate(
+	value: string | undefined,
+	locale: string,
+	format: ReturnType<typeof useFormatter>,
+) {
+	if (!value) return "";
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) return "";
+	const options = {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	} as const;
+	if (locale === "en") {
+		return new Intl.DateTimeFormat("en-GB", {
+			...options,
+			timeZone: "Asia/Kuala_Lumpur",
+		}).format(date);
+	}
+	return format.dateTime(date, options);
+}
+
 function InsightsMasthead({ topics }: { topics: string[] }) {
+	const t = useTranslations("InsightsChrome");
+
 	return (
 		<motion.div
 			className="max-w-2xl"
@@ -42,24 +65,26 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 				className="mb-4 gap-1.5 border-primary/20 bg-primary/10 px-3 py-1 text-primary"
 			>
 				<Newspaper className="h-3.5 w-3.5" aria-hidden />
-				Insights
+				{t("eyebrow")}
 			</Badge>
 
 			<h1 className="type-h1">
-				What actually works in{" "}
-				<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-					Malaysian fintech.
-				</span>
+				{t.rich("title", {
+					accent: (chunks) => (
+						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
+							{chunks}
+						</span>
+					),
+				})}
 			</h1>
 
 			<p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-				What we see when licences, loan books and software meet Malaysian
-				rules — the questions that come up, and the parts that cost time.
+				{t("lede")}
 			</p>
 
 			{topics.length > 0 ? (
 				<ul
-					aria-label="Topics we write about"
+					aria-label={t("topicsLabel")}
 					className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 type-eyebrow text-muted-foreground"
 				>
 					{topics.map((topic, index) => (
@@ -80,8 +105,12 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 }
 
 function FeaturedInsight({ post }: { post: InsightPostSummary }) {
+	const t = useTranslations("InsightsChrome");
+	const tCommon = useTranslations("Common");
+	const format = useFormatter();
+	const locale = useLocale();
 	const image = insightImageUrl(post.mainImage, { width: 1600, height: 1200 });
-	const published = formatInsightDate(post.publishedAt);
+	const published = formatFeaturedDate(post.publishedAt, locale, format);
 
 	return (
 		<motion.article
@@ -110,7 +139,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 				<div className={image ? "lg:col-span-5" : "lg:col-span-9"}>
 					<div className="flex flex-wrap items-center gap-2">
 						<span className="type-eyebrow text-primary">
-							Latest
+							{t("latest")}
 						</span>
 						<span aria-hidden className="text-muted-foreground">
 							·
@@ -121,7 +150,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 							{post.category}
 						</span>
 						<span className="text-xs text-muted-foreground">
-							{post.estimatedReadingMinutes} min read
+							{tCommon("minRead", { minutes: post.estimatedReadingMinutes })}
 						</span>
 					</div>
 
@@ -145,7 +174,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 					</div>
 
 					<span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-						Read this article
+						{t("readArticle")}
 						<ArrowRight
 							className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
 							aria-hidden
@@ -158,18 +187,9 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 }
 
 function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
-	const eyebrow = loadFailed
-		? "Temporarily unavailable"
-		: "First articles on the way";
-	const title = loadFailed
-		? "These articles are not available right now."
-		: "Nothing published yet.";
-	const aside = loadFailed
-		? "Try again in a moment."
-		: "Ask us in the meantime.";
-	const body = loadFailed
-		? "Give it a few minutes and refresh. Or ask us the question you came for — a consultation costs nothing."
-		: "The first pieces are on the way. Until they are up, ask us the question you came for — a consultation costs nothing.";
+	const t = useTranslations("InsightsChrome");
+	const tCommon = useTranslations("Common");
+	const state = loadFailed ? "unavailable" : "unpublished";
 
 	return (
 		<motion.div
@@ -179,25 +199,25 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 			transition={{ duration: 0.5, delay: 0.12 }}
 		>
 			<p className="mb-3 type-eyebrow text-primary">
-				{eyebrow}
+				{t(`empty.${state}.eyebrow`)}
 			</p>
 			<h2 className="max-w-2xl type-h2-sm">
-				{title}{" "}
-				<span className="text-muted-foreground">{aside}</span>
+				{t(`empty.${state}.title`)}{" "}
+				<span className="text-muted-foreground">{t(`empty.${state}.aside`)}</span>
 			</h2>
 			<p className="mt-4 max-w-2xl type-lede text-muted-foreground">
-				{body}
+				{t(`empty.${state}.body`)}
 			</p>
 			<div className="mt-7 flex flex-col gap-3 sm:flex-row">
 				<Button asChild size="lg" className="gap-2">
 					<Link href="/contact?subject=Insights">
-						Book a Free Consultation
+						{tCommon("bookConsultation")}
 						<ArrowRight className="h-4 w-4" aria-hidden />
 					</Link>
 				</Button>
 				<Button asChild variant="outline" size="lg" className="gap-2">
 					<Link href="/services/digital-license">
-						KPKT digital licence
+						{t("cta.secondary")}
 						<ArrowRight className="h-4 w-4" aria-hidden />
 					</Link>
 				</Button>
@@ -207,6 +227,8 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 }
 
 function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
+	const t = useTranslations("InsightsChrome");
+
 	return (
 		<section
 			id="all"
@@ -222,17 +244,16 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="mb-3 type-eyebrow text-primary">
-						More reading
+						{t("grid.eyebrow")}
 					</p>
 					<h2
 						id="insights-all-heading"
 						className="type-h2"
 					>
-						More from the team.
+						{t("grid.title")}
 					</h2>
 					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
-						Same notes we give clients. Shorter than a call — and you
-						can pass them to your team.
+						{t("grid.lede")}
 					</p>
 				</motion.div>
 
@@ -259,6 +280,9 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 }
 
 function InsightsFaq({ muted }: { muted: boolean }) {
+	const t = useTranslations("InsightsChrome");
+	const items = t.raw("faq.items") as { question: string; answer: string }[];
+
 	return (
 		<section
 			id="faq"
@@ -269,20 +293,20 @@ function InsightsFaq({ muted }: { muted: boolean }) {
 				<div className="mx-auto mb-10 max-w-3xl text-center">
 					<SectionBadge
 						icon={HelpCircle}
-						text="FAQ"
+						text={t("faq.eyebrow")}
 						className="justify-center"
 					/>
 					<h2
 						id="insights-faq-heading"
 						className="type-h2"
 					>
-						Frequently asked questions
+						{t("faq.title")}
 					</h2>
 				</div>
 
 				<div className="mx-auto max-w-3xl">
 					<Accordion type="single" collapsible className="w-full">
-						{insightsFaq.map((item, index) => (
+						{items.map((item, index) => (
 							<AccordionItem key={item.question} value={`item-${index}`}>
 								<AccordionTrigger className="py-5 text-left text-base font-medium md:text-lg">
 									{item.question}
@@ -306,6 +330,8 @@ export function InsightsPageContent({
 	posts: InsightPostSummary[];
 	loadFailed?: boolean;
 }) {
+	const t = useTranslations("InsightsChrome");
+	const tCommon = useTranslations("Common");
 	const [featured, ...rest] = posts;
 
 	return (
@@ -332,15 +358,15 @@ export function InsightsPageContent({
 			<InsightsFaq muted={rest.length === 0} />
 
 			<ConsultationCta
-				heading="Have a question we have not written about yet?"
-				body="Tell us where you are stuck. We will walk through it in a free consultation — no obligation to buy anything."
+				heading={t("cta.heading")}
+				body={t("cta.body")}
 				primary={{
 					href: "/contact?subject=Insights",
-					label: "Book a Free Consultation",
+					label: tCommon("bookConsultation"),
 				}}
 				secondary={{
 					href: "/services/digital-license",
-					label: "KPKT digital licence",
+					label: t("cta.secondary"),
 				}}
 			/>
 		</>

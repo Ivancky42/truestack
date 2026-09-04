@@ -1,12 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
-import { careersFaq } from "@/lib/careers-faq";
-
-const ABOUT_FAQ_QUESTION = "What does Truestack actually build?";
 
 export function CareersFaq() {
+	const t = useTranslations("Careers");
+	const items = t.raw("faq.items") as { question: string; answer: string }[];
+	const aboutQuestion = t("faq.aboutQuestion");
 	return (
 		<section
 			id="faq"
@@ -22,19 +23,18 @@ export function CareersFaq() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="mb-3 type-eyebrow text-primary">
-							Questions
+							{t("faq.eyebrow")}
 						</p>
 						<h2 id="careers-faq-heading" className="type-h2">
-							Before you apply.
+							{t("faq.title")}
 						</h2>
 						<p className="mt-4 type-lede text-muted-foreground">
-							Anything we have missed, just email and ask. Better
-							now than after an interview.
+							{t("faq.lede")}
 						</p>
 					</motion.div>
 
 					<dl className="border-t">
-						{careersFaq.map((item, index) => (
+						{items.map((item, index) => (
 							<motion.div
 								key={item.question}
 								className="border-b py-5"
@@ -48,26 +48,18 @@ export function CareersFaq() {
 							>
 								<dt className="type-subhead">{item.question}</dt>
 								<dd className="mt-1.5 text-base leading-relaxed text-muted-foreground">
-									{item.question === ABOUT_FAQ_QUESTION ? (
-										<>
-											Lending platforms, identity and
-											payment checks, and custom software
-											for Malaysian lenders and fintechs
-											— plus the KPKT compliance work that
-											goes with it. Products include
-											TrueKredit™, TrueSyariah™, TrueP2P™
-											and TrueIdentity™.{" "}
-											<Link
-												href="/about"
-												className="font-medium text-primary underline-offset-4 hover:underline"
-											>
-												More about us
-											</Link>
-											.
-										</>
-									) : (
-										item.answer
-									)}
+									{item.question === aboutQuestion
+										? t.rich("faq.aboutAnswerDisplay", {
+												link: (c) => (
+													<Link
+														href="/about"
+														className="font-medium text-primary underline-offset-4 hover:underline"
+													>
+														{c}
+													</Link>
+												),
+											})
+										: item.answer}
 								</dd>
 							</motion.div>
 						))}

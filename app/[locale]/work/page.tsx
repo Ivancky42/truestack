@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
@@ -51,7 +52,9 @@ export default async function WorkPage({
 	return (
 		<>
 			<WorkSchema />
-			<WorkPageContent />
+			<PageMessages namespaces={["WorkChrome"]}>
+				<WorkPageContent />
+			</PageMessages>
 		</>
 	);
 }

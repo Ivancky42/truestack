@@ -1,4 +1,44 @@
 {
 	"_status": "source",
-	"Contact": {}
+	"Contact": {
+		"meta": {
+			"title": "Book a Free Consultation",
+			"description": "Book a free consultation with Truestack — KPKT licensing, compliance, or lending software. Free and no obligation. We'll map your next steps.",
+			"openGraphTitle": "Book a Free Consultation - Truestack",
+			"openGraphDescription": "Book a free consultation with Truestack — KPKT licensing, compliance, or lending software. Free and no obligation."
+		},
+		"schema": {
+			"breadcrumbHome": "Home",
+			"breadcrumbCurrent": "Contact",
+			"name": "Book a Free Consultation - Truestack",
+			"description": "Book a free consultation with Truestack for KPKT licensing, compliance, and fintech software development in Malaysia.",
+			"serviceName": "Free Consultation",
+			"serviceType": "Fintech & KPKT licensing consultation",
+			"serviceDescription": "A free, no-obligation consultation covering KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, money lender software Malaysia, and custom fintech development for licensed money lenders and fintech operators in Malaysia.",
+			"offerName": "Free Consultation",
+			"offerDescription": "Initial consultation to scope your KPKT licensing, compliance, or fintech software needs — free of charge."
+		},
+		"hero": {
+			"title": "Book Your Free Consultation",
+			"subtitle": "Tell us about your project. We'll map out your software development build, compliance needs, or KPKT licensing—free, no obligation."
+		},
+		"imageAlt": "A man at his desk in a warm office, checking an enquiry on his phone",
+		"cards": {
+			"copyAria": "Copy {label}",
+			"phone": {
+				"title": "Phone",
+				"description": "Reach us via WhatsApp. Tap to start a conversation.",
+				"label": "Phone",
+				"copyLabel": "phone number",
+				"whatsapp": "Open WhatsApp"
+			},
+			"email": {
+				"title": "Email",
+				"description": "Send us an email for general inquiries or support.",
+				"label": "Email",
+				"copyLabel": "email",
+				"send": "Send Email"
+			}
+		}
+	}
 }

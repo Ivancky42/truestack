@@ -1,17 +1,19 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, FileCheck, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 
 const tracks = [
-	{ icon: Code2, label: "Product & engineering" },
-	{ icon: FileCheck, label: "Compliance & operations" },
-	{ icon: Palette, label: "Design & experience" },
+	{ icon: Code2, key: "engineering" },
+	{ icon: FileCheck, key: "compliance" },
+	{ icon: Palette, key: "design" },
 ] as const;
 
 export function AboutCareers() {
+	const t = useTranslations("About");
 	return (
 		<section
 			id="careers"
@@ -27,19 +29,16 @@ export function AboutCareers() {
 					transition={{ duration: 0.5 }}
 				>
 					<div>
-						<p className="mb-3 type-eyebrow text-primary">Careers</p>
+						<p className="mb-3 type-eyebrow text-primary">{t("careers.eyebrow")}</p>
 						<h2 id="about-careers-heading" className="type-h2-sm">
-							We are a small team, so every hire shows.
+							{t("careers.title")}
 						</h2>
 						<p className="mt-4 max-w-xl type-lede text-muted-foreground">
-							Engineering, design, compliance and delivery — if
-							regulated financial software in Malaysia sounds more
-							interesting than another dashboard, we would like to
-							hear from you.
+							{t("careers.lede")}
 						</p>
 						<Button asChild variant="outline" size="lg" className="mt-6 gap-2">
 							<CtaLink href="/careers">
-								See open roles
+								{t("careers.cta")}
 								<ArrowRight className="h-4 w-4" />
 							</CtaLink>
 						</Button>
@@ -47,7 +46,7 @@ export function AboutCareers() {
 					<div className="flex flex-col gap-2.5">
 						{tracks.map((track) => (
 							<div
-								key={track.label}
+								key={track.key}
 								className="flex items-center gap-3 rounded-xl border bg-card px-4 py-3.5"
 							>
 								<track.icon
@@ -55,7 +54,7 @@ export function AboutCareers() {
 									aria-hidden
 								/>
 								<span className="text-base text-foreground/80">
-									{track.label}
+									{t(`careers.tracks.${track.key}`)}
 								</span>
 							</div>
 						))}

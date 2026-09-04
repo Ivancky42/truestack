@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import {
@@ -14,44 +15,36 @@ import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 
-const FEATURES = [
-	"One system for borrowers, schedules, repayments and KPKT paperwork",
-	"Your loan data stays on your own secure cloud in Malaysia",
-	"Audit trails that record who did what, and when",
-	"Upgrade to Pro for borrower apps and digital signing — same loan book",
-] as const;
-
 const PLATFORMS: {
+	key: "truekredit" | "truesyariah" | "truep2p";
 	name: string;
 	href: string;
 	icon: LucideIcon;
-	body: string;
-	cta: string;
 }[] = [
 	{
+		key: "truekredit",
 		name: "TrueKredit™",
 		href: "/truekredit",
 		icon: CreditCard,
-		body: "KPKT loan management for licensed money lenders, with Pro for branded borrower apps and digital signing.",
-		cta: "Explore TrueKredit",
 	},
 	{
+		key: "truesyariah",
 		name: "TrueSyariah™",
 		href: "/truesyariah",
 		icon: Layers,
-		body: "Shariah digital licence and platform: Tawarruq commodity trades, segregated Ta'widh and Gharamah, books ring-fenced from conventional lending.",
-		cta: "Explore TrueSyariah",
 	},
 	{
+		key: "truep2p",
 		name: "TrueP2P™",
 		href: "/services/p2p-software-development",
 		icon: Network,
-		body: "Investor and issuer portals, escrow and payments, engineered for Securities Commission Malaysia RMO requirements.",
-		cta: "Explore TrueP2P",
 	},
 ];
 
 export function HomepageTrueKredit() {
+	const t = useTranslations("Home");
+	const features = t.raw("truekredit.features") as string[];
+
 	return (
 		<section
 			id="truekredit"
@@ -66,21 +59,16 @@ export function HomepageTrueKredit() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="mb-3 type-eyebrow text-primary">
-							Loan management system
+							{t("truekredit.eyebrow")}
 						</p>
 						<h2 className="type-h2">
-							TrueKredit™ — the whole loan book, in one place
-							your auditor accepts.
+							{t("truekredit.title")}
 						</h2>
 						<p className="mt-4 type-lede text-muted-foreground">
-							Lending gets messy fast: borrower files in one
-							system, instalments in a spreadsheet, KPKT paperwork
-							in a drawer. TrueKredit puts borrowers, schedules,
-							repayments and regulatory documents on a single
-							record.
+							{t("truekredit.lede")}
 						</p>
 						<ul className="mt-6 space-y-3">
-							{FEATURES.map((feature) => (
+							{features.map((feature) => (
 								<li
 									key={feature}
 									className="flex items-start gap-2.5 text-base text-foreground/80"
@@ -96,7 +84,7 @@ export function HomepageTrueKredit() {
 						<div className="mt-7">
 							<Button asChild variant="outline" size="lg" className="gap-2">
 								<CtaLink href="/truekredit">
-									Explore TrueKredit
+									{t("truekredit.cta")}
 									<ArrowRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>
@@ -116,7 +104,7 @@ export function HomepageTrueKredit() {
 						/>
 						<Image
 							src="/truekredit/homepage-borrower-collage.png"
-							alt="TrueKredit borrower file with loan summary and the branded borrower app on a phone"
+							alt={t("truekredit.alt")}
 							width={2160}
 							height={1766}
 							quality={100}
@@ -132,7 +120,7 @@ export function HomepageTrueKredit() {
 						const Icon = platform.icon;
 						return (
 							<motion.div
-								key={platform.name}
+								key={platform.key}
 								initial={{ opacity: 0, y: 16 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, margin: "-50px" }}
@@ -155,10 +143,10 @@ export function HomepageTrueKredit() {
 										{platform.name}
 									</h3>
 									<p className="mt-2 flex-1 type-ui leading-relaxed text-muted-foreground">
-										{platform.body}
+										{t(`truekredit.platforms.${platform.key}.body`)}
 									</p>
 									<span className="mt-4 inline-flex items-center gap-1.5 type-ui font-medium text-primary">
-										{platform.cta}
+										{t(`truekredit.platforms.${platform.key}.cta`)}
 										<ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
 									</span>
 								</Link>

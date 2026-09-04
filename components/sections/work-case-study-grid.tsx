@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,31 @@ import {
 	type CaseStudy,
 	workCaseStudies,
 } from "@/lib/case-studies-data";
+
+const STAT_LABEL_KEYS: Record<string, string> = {
+	Launch: "stats.launch",
+	Product: "stats.product",
+	Surfaces: "stats.surfaces",
+	Engagement: "stats.engagement",
+	Focus: "stats.focus",
+	Regulator: "stats.regulator",
+	Platform: "stats.platform",
+};
+
+function localizeStatLabel(
+	t: ReturnType<typeof useTranslations>,
+	label: string,
+) {
+	const key = STAT_LABEL_KEYS[label];
+	return key ? t(key) : label;
+}
+
+function localizeStatValue(
+	t: ReturnType<typeof useTranslations>,
+	value: string,
+) {
+	return value.replace(/(\d+)\s+mo\b/g, (_, n) => `${n} ${t("stats.mo")}`);
+}
 
 function accentBorder(accent?: CaseStudy["accent"]) {
 	return accent === "kpkt"
@@ -25,6 +51,8 @@ function WorkCaseStudyCard({
 	study: CaseStudy;
 	index: number;
 }) {
+	const t = useTranslations("WorkChrome");
+	const tCommon = useTranslations("Common");
 	const isComingSoon = study.isComingSoon;
 	const isKpkt = study.accent === "kpkt";
 	const isExternal = study.href.startsWith("http");
@@ -54,12 +82,12 @@ function WorkCaseStudyCard({
 							variant="secondary"
 							className="text-[10px] text-primary sm:text-xs"
 						>
-							Featured
+							{t("grid.featured")}
 						</Badge>
 					) : null}
 					{isComingSoon ? (
 						<Badge variant="secondary" className="text-[10px] sm:text-xs">
-							Coming Soon
+							{tCommon("comingSoon")}
 						</Badge>
 					) : (
 						<ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
@@ -97,10 +125,10 @@ function WorkCaseStudyCard({
 								className="rounded-lg bg-muted/30 px-2 py-2 text-center sm:px-3"
 							>
 								<div className="text-sm font-semibold tracking-tight sm:text-base">
-									{stat.value}
+									{localizeStatValue(t, stat.value)}
 								</div>
 								<div className="text-[10px] text-muted-foreground">
-									{stat.label}
+									{localizeStatLabel(t, stat.label)}
 								</div>
 							</div>
 						))}
@@ -146,6 +174,8 @@ function WorkCaseStudyCard({
 }
 
 function WorkCaseStudyMoreCard({ index }: { index: number }) {
+	const t = useTranslations("WorkChrome");
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 16 }}
@@ -164,18 +194,18 @@ function WorkCaseStudyMoreCard({ index }: { index: number }) {
 				</div>
 				<div className="flex flex-1 flex-col items-center justify-center p-5 text-center sm:p-6">
 					<h3 className="type-card-title sm:text-2xl">
-						And more
+						{t("grid.andMore")}
 					</h3>
 					<p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-						<span className="font-medium text-foreground">
-							Your story could be here next.
-						</span>{" "}
-						Building or scaling a lending or fintech operation in
-						Malaysia? Let&apos;s talk.
+						{t.rich("grid.andMoreLead", {
+							em: (chunks) => (
+								<span className="font-medium text-foreground">{chunks}</span>
+							),
+						})}
 					</p>
 					<Button asChild className="mt-5 gap-2" size="sm">
 						<Link href="/contact">
-							Start a conversation
+							{t("grid.startConversation")}
 							<ArrowRight className="h-3.5 w-3.5" />
 						</Link>
 					</Button>

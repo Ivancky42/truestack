@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import {
@@ -9,9 +10,11 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CtaLink } from "@/components/shared/cta-link";
-import { digitalLicenseFaq } from "@/lib/digital-license-faq";
 
 export function DigitalLicenseFaq() {
+	const t = useTranslations("DigitalLicense");
+	const items = t.raw("faq.items") as { question: string; answer: string }[];
+
 	return (
 		<section
 			id="faq"
@@ -25,23 +28,23 @@ export function DigitalLicenseFaq() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="type-eyebrow mb-3 text-primary">FAQ</p>
+					<p className="type-eyebrow mb-3 text-primary">
+						{t("faq.eyebrow")}
+					</p>
 					<h2
 						id="digital-license-faq-heading"
 						className="type-h2 text-foreground"
 					>
-						Frequently asked questions
+						{t("faq.title")}
 					</h2>
 					<p className="mt-3.5 text-[17px] text-muted-foreground">
-						Straight answers on e-Lending, kebenaran tambahan, and
-						what we actually deliver — written so you can take them
-						to your compliance lead.
+						{t("faq.body")}
 					</p>
 					<CtaLink
 						href="/contact?subject=Digital%20KPKT%20Licence"
 						className="mt-[18px] inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 					>
-						Ask us something else
+						{t("faq.askCta")}
 						<ArrowRight className="h-4 w-4" />
 					</CtaLink>
 				</motion.div>
@@ -59,7 +62,7 @@ export function DigitalLicenseFaq() {
 						defaultValue="item-0"
 						className="w-full space-y-2.5"
 					>
-						{digitalLicenseFaq.map((faq, index) => (
+						{items.map((faq, index) => (
 							<AccordionItem
 								key={faq.question}
 								value={`item-${index}`}

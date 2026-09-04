@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import {
 	defaultOgImage,
 	defaultTwitterCard,
 	siteName,
 } from "@/lib/seo-defaults";
-import { ABOUT_METADATA, ABOUT_PAGE_PATH } from "@/lib/about-seo";
+import { ABOUT_KEYWORDS, ABOUT_PAGE_PATH } from "@/lib/about-seo";
 import { AboutHero } from "@/components/sections/about-hero";
 import { AboutStory } from "@/components/sections/about-story";
 import { AboutBeliefs } from "@/components/sections/about-beliefs";
@@ -17,45 +18,46 @@ import { AboutCareers } from "@/components/sections/about-careers";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { AboutSchema } from "@/components/seo/about-schema";
 
-const pageMetadata: Metadata = {
-	title: { absolute: ABOUT_METADATA.title },
-	description: ABOUT_METADATA.description,
-	keywords: [...ABOUT_METADATA.keywords],
-	alternates: { canonical: ABOUT_PAGE_PATH },
-	openGraph: {
-		title: ABOUT_METADATA.openGraphTitle,
-		description: ABOUT_METADATA.openGraphDescription,
-		url: ABOUT_PAGE_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [defaultOgImage],
-	},
-	twitter: {
-		card: defaultTwitterCard,
-		title: ABOUT_METADATA.openGraphTitle,
-		description: ABOUT_METADATA.openGraphDescription,
-		images: [defaultOgImage.url],
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
-
 export async function generateMetadata({
 	params,
 }: {
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, ABOUT_PAGE_PATH, resolveAppLocale(locale));
+	const resolved = resolveAppLocale(locale);
+	const t = await getTranslations({ locale: resolved, namespace: "About" });
+	const pageMetadata: Metadata = {
+		title: { absolute: t("meta.title") },
+		description: t("meta.description"),
+		keywords: [...ABOUT_KEYWORDS],
+		alternates: { canonical: ABOUT_PAGE_PATH },
+		openGraph: {
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			url: ABOUT_PAGE_PATH,
+			type: "website",
+			locale: "en_MY",
+			siteName,
+			images: [defaultOgImage],
+		},
+		twitter: {
+			card: defaultTwitterCard,
+			title: t("meta.openGraphTitle"),
+			description: t("meta.openGraphDescription"),
+			images: [defaultOgImage.url],
+		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				"max-image-preview": "large",
+				"max-snippet": -1,
+			},
+		},
+	};
+	return localizePageMetadata(pageMetadata, ABOUT_PAGE_PATH, resolved);
 }
 
 export default async function AboutPage({
@@ -65,29 +67,33 @@ export default async function AboutPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("About");
+	const tCommon = await getTranslations("Common");
 	return (
 		<>
 			<AboutSchema />
 
-			<AboutHero />
-			<AboutStory />
-			<AboutBeliefs />
-			<AboutHowWeWork />
-			<AboutOffice />
-			<AboutCareers />
+			<PageMessages namespaces={["About"]}>
+				<AboutHero />
+				<AboutStory />
+				<AboutBeliefs />
+				<AboutHowWeWork />
+				<AboutOffice />
+				<AboutCareers />
 
-			<ConsultationCta
-				heading="Tell us what you're building."
-				body="A licence, a lending platform, a P2P marketplace, or an integration you would rather not build twice. Book a free consultation and we will tell you honestly what it takes."
-				primary={{
-					href: "/contact?subject=About",
-					label: "Book a Free Consultation",
-				}}
-				secondary={{
-					href: "/work",
-					label: "See our work",
-				}}
-			/>
+				<ConsultationCta
+					heading={t("cta.heading")}
+					body={t("cta.body")}
+					primary={{
+						href: "/contact?subject=About",
+						label: tCommon("bookConsultation"),
+					}}
+					secondary={{
+						href: "/work",
+						label: t("cta.secondary"),
+					}}
+				/>
+			</PageMessages>
 		</>
 	);
 }

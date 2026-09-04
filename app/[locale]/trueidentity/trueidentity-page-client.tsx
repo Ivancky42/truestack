@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import {
@@ -37,96 +38,43 @@ import { KycFlowDiagram } from "@/components/sections/trueidentity-hero-visual";
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const businessBenefits = [
-  {
-    icon: TrendingUp,
-    title: "Accelerate Customer Onboarding",
-    description:
-      "Reduce onboarding time from days to minutes. Verify customers instantly while maintaining compliance.",
-  },
-  {
-    icon: Shield,
-    title: "Reduce Fraud & Risk",
-    description:
-      "AI-powered fraud detection with liveness checks prevents identity spoofing and document forgery.",
-  },
-  {
-    icon: Lock,
-    title: "Stay Compliant",
-    description:
-      "Meet regulatory requirements with our PDPA-compliant solution. Full audit trails and data residency in Malaysia.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Lower Operational Costs",
-    description:
-      "Automate manual verification processes. Scale without adding headcount or infrastructure.",
-  },
-];
+  { key: "accelerate", icon: TrendingUp },
+  { key: "fraud", icon: Shield },
+  { key: "compliant", icon: Lock },
+  { key: "costs", icon: TrendingUp },
+] as const;
 
 const useCases = [
-  {
-    icon: Building2,
-    title: "Financial Services",
-    description:
-      "Banks, lenders, and fintechs use TrueIdentity for loan applications, account opening, and regulatory compliance.",
-  },
-  {
-    icon: Users,
-    title: "Digital Platforms",
-    description:
-      "E-commerce, gig economy, and sharing platforms verify sellers, drivers, and service providers.",
-  },
-  {
-    icon: Globe,
-    title: "Telecommunications",
-    description:
-      "Telcos and digital services verify subscribers for SIM registration and account activation.",
-  },
-];
+  { key: "financial", icon: Building2 },
+  { key: "digital", icon: Users },
+  { key: "telecom", icon: Globe },
+] as const;
 
 const capabilities = [
-  { label: "MyKad OCR extraction", icon: FileCheck },
-  { label: "Liveness detection", icon: BadgeCheck },
-  { label: "Facial biometric matching", icon: Fingerprint },
-  { label: "Real-time verification", icon: Zap },
-  { label: "Fraud detection", icon: Shield },
-  { label: "Audit trail logging", icon: Clock },
-];
+  { key: "ocr", icon: FileCheck },
+  { key: "liveness", icon: BadgeCheck },
+  { key: "biometrics", icon: Fingerprint },
+  { key: "realtime", icon: Zap },
+  { key: "fraud", icon: Shield },
+  { key: "audit", icon: Clock },
+] as const;
 
 const features = [
-  {
-    icon: Zap,
-    title: "Quick Setup",
-    description:
-      "Get started in minutes with our simple API integration. No complex configurations required.",
-  },
-  {
-    icon: DollarSign,
-    title: "Cost Effective",
-    description:
-      "Pay-per-verification pricing that scales with your business. No minimum commitments.",
-  },
-  {
-    icon: Shield,
-    title: "Bank-Grade Security",
-    description:
-      "End-to-end encryption with data residency in Malaysia. Fully compliant with local regulations.",
-  },
-  {
-    icon: Settings,
-    title: "Everything Handled",
-    description:
-      "MyKad OCR, liveness detection, biometric matching — all in one unified API endpoint.",
-  },
-];
+  { key: "quickSetup", icon: Zap },
+  { key: "costEffective", icon: DollarSign },
+  { key: "security", icon: Shield },
+  { key: "everythingHandled", icon: Settings },
+] as const;
 
-const trustedBy = [
-  "Licensed money lenders",
-  "Digital banks",
-  "Insurance providers",
-  "E-commerce platforms",
-  "Fintech startups",
-];
+const heroStats = ["instant", "uptime", "hosted", "pdpa"] as const;
+const howItWorksSteps = ["capture", "verify", "results"] as const;
+const hostedUiItems = [
+  { key: "documentCapture", icon: Camera },
+  { key: "livenessSelfie", icon: ScanFace },
+  { key: "webhookResults", icon: Webhook },
+] as const;
+const pricingIncludes = ["noMinimum", "hostedUi", "residency"] as const;
+const developerStats = ["integrationTime", "restApi", "sdk"] as const;
 
 // ─── Grid Pattern Background ──────────────────────────────────────────────────
 
@@ -167,6 +115,10 @@ function GridPattern() {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function TrueIdentityPage() {
+  const t = useTranslations("TrueIdentity");
+  const tCommon = useTranslations("Common");
+  const trustedBy = t.raw("useCases.trustedByItems") as string[];
+
   return (
     <>
       {/* Hero Section */}
@@ -187,7 +139,7 @@ export default function TrueIdentityPage() {
                 transition={{ duration: 0.4 }}
               >
                 <Fingerprint className="h-4 w-4" />
-                TrueIdentity™ e-KYC
+                {t("hero.eyebrow")}
               </motion.div>
               <motion.h1
                 className="type-h1"
@@ -195,7 +147,7 @@ export default function TrueIdentityPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Verify Customers In Minutes, Not Days
+                {t("hero.title")}
               </motion.h1>
               <motion.p
                 className="mt-6 type-lede-hero text-muted-foreground"
@@ -203,9 +155,7 @@ export default function TrueIdentityPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Malaysia&apos;s e-KYC platform for businesses. Automate identity
-                verification, reduce fraud, and stay compliant — without making
-                your customers wait.
+                {t("hero.body")}
               </motion.p>
               <motion.div
                 className="mt-8 flex flex-col gap-4 sm:flex-row"
@@ -215,12 +165,12 @@ export default function TrueIdentityPage() {
               >
                 <Button asChild size="lg" className="gap-2">
                   <Link href="/contact">
-                    Book a Free Consultation
+                    {tCommon("bookConsultation")}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#pricing">View Pricing</Link>
+                  <Link href="#pricing">{t("hero.ctaSecondary")}</Link>
                 </Button>
               </motion.div>
 
@@ -231,15 +181,10 @@ export default function TrueIdentityPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                {[
-                  { value: "Instant", label: "Verification Time" },
-                  { value: "99.9%", label: "Uptime SLA" },
-                  { value: "100%", label: "Malaysia-Hosted" },
-                  { value: "PDPA", label: "Compliant" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                {heroStats.map((key) => (
+                  <div key={key}>
+                    <div className="text-2xl font-bold text-primary">{t(`hero.stats.${key}.value`)}</div>
+                    <div className="text-sm text-muted-foreground">{t(`hero.stats.${key}.label`)}</div>
                   </div>
                 ))}
               </motion.div>
@@ -261,20 +206,19 @@ export default function TrueIdentityPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={Zap} text="Key Features" className="justify-center" />
+            <SectionBadge icon={Zap} text={t("features.eyebrow")} className="justify-center" />
             <h2 className="type-h2">
-              Why Leading Businesses Choose TrueIdentity
+              {t("features.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              Streamline your KYC process, reduce operational costs, and deliver a
-              frictionless onboarding experience.
+              {t("features.body")}
             </p>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <motion.div
-                key={feature.title}
+                key={feature.key}
                 className="group rounded-2xl border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -284,8 +228,8 @@ export default function TrueIdentityPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="mb-2 text-lg font-semibold">{t(`features.items.${feature.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`features.items.${feature.key}.description`)}</p>
               </motion.div>
             ))}
           </div>
@@ -302,16 +246,16 @@ export default function TrueIdentityPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={TrendingUp} text="Business Impact" className="justify-center" />
+            <SectionBadge icon={TrendingUp} text={t("benefits.eyebrow")} className="justify-center" />
             <h2 className="type-h2">
-              Transform Your Verification Process
+              {t("benefits.title")}
             </h2>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2">
             {businessBenefits.map((benefit, index) => (
               <motion.div
-                key={benefit.title}
+                key={benefit.key}
                 className="group rounded-2xl border bg-background p-8 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -323,8 +267,8 @@ export default function TrueIdentityPage() {
                     <benefit.icon className="h-7 w-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-semibold">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <h3 className="mb-2 text-xl font-semibold">{t(`benefits.items.${benefit.key}.title`)}</h3>
+                    <p className="text-muted-foreground">{t(`benefits.items.${benefit.key}.description`)}</p>
                   </div>
                 </div>
               </motion.div>
@@ -343,36 +287,20 @@ export default function TrueIdentityPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={Settings} text="How It Works" className="justify-center" />
+            <SectionBadge icon={Settings} text={t("howItWorks.eyebrow")} className="justify-center" />
             <h2 className="type-h2">
-              Simple, Secure Verification
+              {t("howItWorks.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              A verification flow that takes seconds, not minutes.
+              {t("howItWorks.body")}
             </p>
           </motion.div>
 
           {/* Process Steps */}
           <div className="mb-16 flex flex-col gap-8 md:flex-row">
-            {[
-              {
-                step: 1,
-                title: "Capture Document",
-                desc: "Customer takes a photo of their MyKad. Our OCR extracts all details automatically.",
-              },
-              {
-                step: 2,
-                title: "Verify Identity",
-                desc: "Selfie capture with liveness detection. AI matches face to document photo.",
-              },
-              {
-                step: 3,
-                title: "Get Results",
-                desc: "Receive instant verification results with confidence scores and extracted data.",
-              },
-            ].map((item, i) => (
+            {howItWorksSteps.map((key, i) => (
               <motion.div
-                key={item.step}
+                key={key}
                 className="flex-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -381,12 +309,12 @@ export default function TrueIdentityPage() {
               >
                 <div className="mb-4 flex items-center gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white font-bold">
-                    {item.step}
+                    {i + 1}
                   </div>
                   {i < 2 && <div className="hidden h-0.5 flex-1 bg-border md:block" />}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
+                <h3 className="mb-2 text-lg font-semibold">{t(`howItWorks.steps.${key}.title`)}</h3>
+                <p className="text-muted-foreground">{t(`howItWorks.steps.${key}.desc`)}</p>
               </motion.div>
             ))}
           </div>
@@ -400,13 +328,13 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="mb-6 text-center text-xl font-semibold">
-              Complete Verification Suite
+              {t("howItWorks.suiteTitle")}
             </h3>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
               {capabilities.map((cap) => (
-                <div key={cap.label} className="flex items-center gap-3 rounded-lg bg-muted/50 p-3">
+                <div key={cap.key} className="flex items-center gap-3 rounded-lg bg-muted/50 p-3">
                   <cap.icon className="h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm">{cap.label}</span>
+                  <span className="text-sm">{t(`howItWorks.capabilities.${cap.key}`)}</span>
                 </div>
               ))}
             </div>
@@ -425,41 +353,23 @@ export default function TrueIdentityPage() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5 }}
             >
-              <SectionBadge icon={Monitor} text="Hosted UI" />
+              <SectionBadge icon={Monitor} text={t("hostedUi.eyebrow")} />
               <h2 className="type-h2">
-                We Handle the Frontend, You Bring the Customers
+                {t("hostedUi.title")}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                No need to build verification UI yourself. We provide a fully hosted
-                customer frontend that handles the entire verification flow — just
-                redirect your users and receive results via webhook.
+                {t("hostedUi.body")}
               </p>
 
               <div className="mt-8 space-y-4">
-                {[
-                  {
-                    icon: Camera,
-                    title: "Document Capture",
-                    desc: "Camera access and file upload for MyKad photos with built-in quality checks.",
-                  },
-                  {
-                    icon: ScanFace,
-                    title: "Liveness & Selfie",
-                    desc: "Real-time liveness detection with guided selfie capture flow.",
-                  },
-                  {
-                    icon: Webhook,
-                    title: "Webhook Results",
-                    desc: "Receive verification results instantly via secure webhook to your backend.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-3">
+                {hostedUiItems.map((item) => (
+                  <div key={item.key} className="flex items-start gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-medium">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h4 className="font-medium">{t(`hostedUi.items.${item.key}.title`)}</h4>
+                      <p className="text-sm text-muted-foreground">{t(`hostedUi.items.${item.key}.desc`)}</p>
                     </div>
                   </div>
                 ))}
@@ -468,11 +378,11 @@ export default function TrueIdentityPage() {
               <div className="mt-8 flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Works on Web</span>
+                  <span className="text-sm">{t("hostedUi.worksOnWeb")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Smartphone className="h-5 w-5 text-primary" />
-                  <span className="text-sm">Works on Mobile</span>
+                  <span className="text-sm">{t("hostedUi.worksOnMobile")}</span>
                 </div>
               </div>
             </motion.div>
@@ -490,9 +400,9 @@ export default function TrueIdentityPage() {
                 <div className="rounded-2xl border bg-background p-4">
                   <div className="mb-3 flex items-center gap-2">
                     <Globe className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-medium">Web Browser</span>
+                    <span className="text-sm font-medium">{t("hostedUi.mock.webBrowser")}</span>
                     <span className="ml-auto text-xs text-muted-foreground">
-                      Desktop & Tablet
+                      {t("hostedUi.mock.desktopTablet")}
                     </span>
                   </div>
                   <div className="overflow-hidden rounded-lg border bg-white">
@@ -532,7 +442,7 @@ export default function TrueIdentityPage() {
                   <div className="rounded-2xl border bg-background p-4">
                     <div className="mb-3 flex items-center gap-2">
                       <Smartphone className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium">Mobile</span>
+                      <span className="text-sm font-medium">{t("hostedUi.mock.mobile")}</span>
                     </div>
                     <div className="mx-auto w-28">
                       <div className="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white">
@@ -550,7 +460,7 @@ export default function TrueIdentityPage() {
                       </div>
                     </div>
                     <p className="mt-3 text-center text-xs text-muted-foreground">
-                      Document Capture
+                      {t("hostedUi.mock.documentCapture")}
                     </p>
                   </div>
 
@@ -558,7 +468,7 @@ export default function TrueIdentityPage() {
                   <div className="rounded-2xl border bg-background p-4">
                     <div className="mb-3 flex items-center gap-2">
                       <ScanFace className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-medium">Selfie</span>
+                      <span className="text-sm font-medium">{t("hostedUi.mock.selfie")}</span>
                     </div>
                     <div className="mx-auto w-28">
                       <div className="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white">
@@ -576,7 +486,7 @@ export default function TrueIdentityPage() {
                       </div>
                     </div>
                     <p className="mt-3 text-center text-xs text-muted-foreground">
-                      Liveness Check
+                      {t("hostedUi.mock.livenessCheck")}
                     </p>
                   </div>
                 </div>
@@ -596,19 +506,19 @@ export default function TrueIdentityPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={Building2} text="Use Cases" className="justify-center" />
+            <SectionBadge icon={Building2} text={t("useCases.eyebrow")} className="justify-center" />
             <h2 className="type-h2">
-              Built for Every Industry
+              {t("useCases.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              From banks to startups, businesses across Malaysia trust TrueIdentity.
+              {t("useCases.body")}
             </p>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {useCases.map((useCase, index) => (
               <motion.div
-                key={useCase.title}
+                key={useCase.key}
                 className="group rounded-2xl border bg-background p-6 transition-all hover:border-primary/30 hover:shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -618,15 +528,15 @@ export default function TrueIdentityPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
                   <useCase.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{useCase.title}</h3>
-                <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                <h3 className="mb-2 text-lg font-semibold">{t(`useCases.items.${useCase.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground">{t(`useCases.items.${useCase.key}.description`)}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Trusted By */}
           <div className="mt-16 text-center">
-            <p className="mb-6 text-sm text-muted-foreground">Trusted by</p>
+            <p className="mb-6 text-sm text-muted-foreground">{t("useCases.trustedBy")}</p>
             <div className="flex flex-wrap justify-center gap-3">
               {trustedBy.map((item) => (
                 <span
@@ -651,12 +561,12 @@ export default function TrueIdentityPage() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5 }}
           >
-            <SectionBadge icon={Receipt} text="Transparent Pricing" className="justify-center" />
+            <SectionBadge icon={Receipt} text={t("pricing.eyebrow")} className="justify-center" />
             <h2 className="type-h2">
-              Simple, Predictable Pricing
+              {t("pricing.title")}
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              A one-time setup, pay-per-use transactions, and an annual platform fee. No hidden costs.
+              {t("pricing.body")}
             </p>
           </motion.div>
 
@@ -672,32 +582,32 @@ export default function TrueIdentityPage() {
                   <tbody className="divide-y">
                     <tr className="bg-primary/5">
                       <td className="px-6 py-4">
-                        <div className="font-semibold">Setup Fee</div>
-                        <div className="text-sm text-muted-foreground">One-time integration & onboarding — includes 100 free verifications</div>
+                        <div className="font-semibold">{t("pricing.setupFee")}</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.setupFeeDesc")}</div>
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="text-2xl font-bold text-primary">RM 8,000</div>
-                        <div className="text-sm text-muted-foreground">one-time</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.oneTime")}</div>
                       </td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4">
-                        <div className="font-medium">Per Verification</div>
-                        <div className="text-sm text-muted-foreground">Each completed e-KYC transaction</div>
+                        <div className="font-medium">{t("pricing.perVerification")}</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.perVerificationDesc")}</div>
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="text-2xl font-bold">RM 3.50</div>
-                        <div className="text-sm text-muted-foreground">/ transaction</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.perTransaction")}</div>
                       </td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4">
-                        <div className="font-medium">Annual Platform Fee</div>
-                        <div className="text-sm text-muted-foreground">Ongoing access, hosting & support</div>
+                        <div className="font-medium">{t("pricing.annualFee")}</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.annualFeeDesc")}</div>
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="text-2xl font-bold">RM 4,000</div>
-                        <div className="text-sm text-muted-foreground">/ year</div>
+                        <div className="text-sm text-muted-foreground">{t("pricing.perYear")}</div>
                       </td>
                     </tr>
                   </tbody>
@@ -706,19 +616,15 @@ export default function TrueIdentityPage() {
             </Card>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {[
-                { label: "No minimum volume", desc: "Pay only for verifications you use" },
-                { label: "Includes hosted UI", desc: "No frontend development needed" },
-                { label: "Malaysia data residency", desc: "PDPA-compliant infrastructure" },
-              ].map((item) => (
+              {pricingIncludes.map((key) => (
                 <div
-                  key={item.label}
+                  key={key}
                   className="flex items-start gap-3 rounded-xl border bg-background p-4"
                 >
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <p className="text-sm font-medium">{item.label}</p>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    <p className="text-sm font-medium">{t(`pricing.includes.${key}.label`)}</p>
+                    <p className="text-xs text-muted-foreground">{t(`pricing.includes.${key}.desc`)}</p>
                   </div>
                 </div>
               ))}
@@ -733,7 +639,7 @@ export default function TrueIdentityPage() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Shield className="h-4 w-4" />
-            All verification data is encrypted and stored securely in Malaysia.
+            {t("pricing.footnote")}
           </motion.div>
         </div>
       </section>
@@ -751,14 +657,14 @@ export default function TrueIdentityPage() {
             <div className="mb-4 flex items-center justify-center gap-2">
               <Terminal className="h-5 w-5 text-primary" />
               <span className="type-eyebrow text-primary">
-                For Developers
+                {t("developers.eyebrow")}
               </span>
             </div>
             <h2 className="type-h2">
-              Integrate in Minutes
+              {t("developers.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
-              Simple REST API with comprehensive documentation. Your team can start verifying customers today.
+              {t("developers.body")}
             </p>
           </motion.div>
 
@@ -865,21 +771,17 @@ export default function TrueIdentityPage() {
 
           {/* Integration Stats */}
           <div className="mt-12 grid grid-cols-3 gap-6">
-            {[
-              { value: "<1 day", label: "Integration time" },
-              { value: "REST API", label: "Simple integration" },
-              { value: "SDK", label: "Node.js, Python, Go" },
-            ].map((stat) => (
+            {developerStats.map((key) => (
               <motion.div
-                key={stat.label}
+                key={key}
                 className="rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
+                <div className="text-2xl font-bold text-white">{t(`developers.stats.${key}.value`)}</div>
+                <div className="mt-1 text-sm text-slate-400">{t(`developers.stats.${key}.label`)}</div>
               </motion.div>
             ))}
           </div>
@@ -889,9 +791,9 @@ export default function TrueIdentityPage() {
       <TrueIdentityFaq />
 
       <ConsultationCta
-        heading="Ready to Transform Your KYC Process?"
-        body="Join leading Malaysian businesses using TrueIdentity. Book a free consultation and we'll walk you through e-KYC, pricing, and integration."
-        secondary={{ href: "/", label: "Back to truestack.my" }}
+        heading={t("cta.heading")}
+        body={t("cta.body")}
+        secondary={{ href: "/", label: t("cta.secondary") }}
       />
     </>
   );

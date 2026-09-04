@@ -1,48 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { CtaLink } from "@/components/shared/cta-link";
 import { cn } from "@/lib/utils";
 
-const CHECKS = [
-	{
-		title: "We hold a valid KPKT money lending licence",
-		detail: "A current lesen PPW in the company's name.",
-	},
-	{
-		title: "Our filings and permits are up to date",
-		detail: "SSM particulars, renewals, annual B and B1 submissions current.",
-	},
-	{
-		title: "Our directors and shareholders are settled",
-		detail: "No pending changes that would complicate a review.",
-	},
-	{
-		title: "We have premises that can hold signing control",
-		detail: "Digital licensing expects signing to stay under your roof.",
-	},
-	{
-		title: "We are ready to lend outside our locality",
-		detail: "Capital, collections and staffing for a nationwide book.",
-	},
-] as const;
-
-const VERDICTS = [
-	"Nothing ticked yet. Tick what is true today and we will tell you roughly where you stand.",
-	"Early days. There is groundwork to do first — the consultation is the fastest way to find out what.",
-	"A start. Some prerequisites are missing, but most of them are fixable well inside a normal timeline.",
-	"Reasonable position. A conversion is realistic once the remaining gaps are closed.",
-	"Strong candidate. One item outstanding, and it is usually the quickest part of the process.",
-	"Everything in place. You look ready to start a digital licence conversion now.",
+const CHECK_KEYS = [
+	"licence",
+	"filings",
+	"directors",
+	"premises",
+	"nationwide",
 ] as const;
 
 export function DigitalLicenseQualify() {
+	const t = useTranslations("DigitalLicense");
 	const [checked, setChecked] = useState<boolean[]>(() =>
-		CHECKS.map(() => false),
+		CHECK_KEYS.map(() => false),
 	);
 	const score = checked.filter(Boolean).length;
+	const verdicts = t.raw("qualify.verdicts") as string[];
 
 	return (
 		<section
@@ -57,27 +36,20 @@ export function DigitalLicenseQualify() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="type-eyebrow mb-3 text-primary">
-						Do you qualify
+						{t("qualify.eyebrow")}
 					</p>
 					<h2 className="type-h2 text-foreground">
-						Five things KPKT will look at first.
+						{t("qualify.title")}
 					</h2>
 					<p className="mt-4 text-base text-muted-foreground md:text-[17px]">
-						Tick what is true today. This is indicative only — we
-						confirm your position properly in the consultation, and
-						a gap on this list is usually something we can help
-						close rather than a dead end.
+						{t("qualify.body")}
 					</p>
 					<div className="mt-5 rounded-xl border border-primary/20 bg-primary/5 px-5 py-[18px]">
 						<h3 className="text-base font-semibold text-foreground">
-							No licence yet?
+							{t("qualify.noLicenceTitle")}
 						</h3>
 						<p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">
-							A fresh application is not the only route. We can
-							also help you procure an existing company that
-							already holds a KPKT money-lending licence, handle
-							the director, shareholder and CoSec changes, then
-							take it digital.
+							{t("qualify.noLicenceBody")}
 						</p>
 					</div>
 				</motion.div>
@@ -89,12 +61,12 @@ export function DigitalLicenseQualify() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5, delay: 0.08 }}
 				>
-					<div role="group" aria-label="Digital licence readiness">
-						{CHECKS.map((item, index) => {
+					<div role="group" aria-label={t("qualify.groupAria")}>
+						{CHECK_KEYS.map((key, index) => {
 							const on = checked[index];
 							return (
 								<button
-									key={item.title}
+									key={key}
 									type="button"
 									role="checkbox"
 									aria-checked={on}
@@ -131,10 +103,10 @@ export function DigitalLicenseQualify() {
 									</span>
 									<span>
 										<span className="block text-base font-semibold leading-snug text-foreground">
-											{item.title}
+											{t(`qualify.checks.${key}.title`)}
 										</span>
 										<span className="mt-0.5 block text-sm text-muted-foreground">
-											{item.detail}
+											{t(`qualify.checks.${key}.detail`)}
 										</span>
 									</span>
 								</button>
@@ -158,13 +130,13 @@ export function DigitalLicenseQualify() {
 							</div>
 						</div>
 						<p className="text-[15px] text-muted-foreground">
-							{VERDICTS[score]}
+							{verdicts[score]}
 						</p>
 						<CtaLink
 							href="/contact?subject=Digital%20KPKT%20Licence"
 							className="mt-3 inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 						>
-							Confirm this with our licensing team
+							{t("qualify.confirmCta")}
 							<ArrowRight className="h-4 w-4" />
 						</CtaLink>
 					</div>

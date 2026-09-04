@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import {
@@ -9,9 +10,12 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CtaLink } from "@/components/shared/cta-link";
-import { truekreditFaq } from "@/lib/truekredit-faq";
+
+type FaqItem = { question: string; answer: string };
 
 export function TrueKreditFaq() {
+	const t = useTranslations("TrueKredit");
+	const items = t.raw("faq.items") as FaqItem[];
 	return (
 		<section
 			id="faq"
@@ -25,22 +29,23 @@ export function TrueKreditFaq() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="type-eyebrow mb-3 text-primary">FAQ</p>
+					<p className="type-eyebrow mb-3 text-primary">
+						{t("faq.eyebrow")}
+					</p>
 					<h2
 						id="truekredit-faq-heading"
 						className="type-h2"
 					>
-						Frequently asked questions
+						{t("faq.title")}
 					</h2>
 					<p className="mt-3.5 text-[17px] text-muted-foreground">
-						Straight answers on Standard vs Pro, KPKT paperwork,
-						and where your loan data lives.
+						{t("faq.lede")}
 					</p>
 					<CtaLink
 						href="/contact?subject=TrueKredit"
 						className="mt-4 inline-flex items-center gap-1.5 type-ui font-medium text-primary hover:underline"
 					>
-						Ask us something else
+						{t("faq.askElse")}
 						<ArrowRight className="h-3.5 w-3.5" />
 					</CtaLink>
 				</motion.div>
@@ -57,7 +62,7 @@ export function TrueKreditFaq() {
 						defaultValue="item-0"
 						className="w-full space-y-2.5"
 					>
-						{truekreditFaq.map((faq, index) => (
+						{items.map((faq, index) => (
 							<AccordionItem
 								key={faq.question}
 								value={`item-${index}`}

@@ -1,5 +1,4 @@
-import { getLocale } from "next-intl/server";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { getTranslations } from "next-intl/server";
 import { siteUrl } from "@/lib/seo-defaults";
 import type { WorkCaseStudyDetail } from "@/lib/work-case-studies";
 
@@ -8,7 +7,8 @@ export async function WorkCaseStudySchema({
 }: {
 	study: WorkCaseStudyDetail;
 }) {
-	const locale = resolveAppLocale(await getLocale());
+	const tCommon = await getTranslations("Common");
+	const t = await getTranslations("WorkChrome");
 	const pageUrl = `${siteUrl}/work/${study.slug}`;
 
 	const schema = {
@@ -20,7 +20,7 @@ export async function WorkCaseStudySchema({
 				url: pageUrl,
 				name: study.seo.title,
 				description: study.seo.description,
-				inLanguage: inLanguage[locale],
+				inLanguage: "en-MY",
 				isPartOf: { "@id": `${siteUrl}/#website` },
 				about: { "@id": `${siteUrl}/#organization` },
 				breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
@@ -32,13 +32,13 @@ export async function WorkCaseStudySchema({
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Home",
+						name: tCommon("breadcrumbHome"),
 						item: siteUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Work",
+						name: t("nav"),
 						item: `${siteUrl}/work`,
 					},
 					{

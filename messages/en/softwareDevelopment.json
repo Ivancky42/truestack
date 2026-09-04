@@ -1,4 +1,185 @@
 {
 	"_status": "source",
-	"SoftwareDevelopment": {}
+	"SoftwareDevelopment": {
+		"meta": {
+			"title": "Custom Software Development | Web, Mobile & Platforms",
+			"description": "Custom software from brief to go-live — web apps, mobile products, platforms, and internal tools for Malaysian businesses. Book a free consultation.",
+			"openGraphTitle": "Custom Software Development | Truestack",
+			"openGraphDescription": "Custom software from brief to go-live — web apps, mobile products, platforms, and internal tools for Malaysian businesses."
+		},
+		"schema": {
+			"serviceName": "Custom Software Development",
+			"alternateName": [
+				"Bespoke software development Malaysia",
+				"Custom fintech software development"
+			],
+			"serviceType": "Custom software design and development",
+			"audienceType": "Malaysian businesses and fintech operators needing custom software"
+		},
+		"breadcrumb": {
+			"current": "Custom Software Development"
+		},
+		"hero": {
+			"eyebrow": "Custom software development",
+			"title": "If you can dream it, <accent>we can build it.</accent>",
+			"lede": "Custom software from first sketch to go-live.",
+			"body": "Web apps, mobile products, internal tools, and platforms under your brand — designed, built, and shipped with you.",
+			"secondaryCta": "See what we build"
+		},
+		"story": {
+			"eyebrow": "Why custom",
+			"title": "Off-the-shelf only goes so far. <muted>Your edge needs software that fits.</muted>",
+			"body": "When your product or operating model doesn't match a template, you need a team that can turn the brief into something live — and stay with you after launch.",
+			"usualBadge": "The usual path",
+			"usualTitle": "Ideas stall. Vendors fragment.",
+			"usual": {
+				"generic": {
+					"title": "Generic tools force workarounds",
+					"desc": "Your process bends to the software — not the other way around."
+				},
+				"hands": {
+					"title": "Too many hands in the build",
+					"desc": "Design here, code there, ops somewhere else — gaps show up late."
+				},
+				"domain": {
+					"title": "Domain knowledge missing",
+					"desc": "Vendors ship features without understanding how your business actually works."
+				}
+			},
+			"withBadge": "With TrueStack",
+			"withTitle": "One team. Idea to live product.",
+			"withBody": "We sit with you from the brief through launch — product and engineering in the same room.",
+			"with": {
+				"operate": {
+					"title": "Built around how you operate",
+					"desc": "Your workflows, your brand, your constraints — not a forced template."
+				},
+				"milestones": {
+					"title": "Ship in clear milestones",
+					"desc": "You see progress early, decide what matters next, and stay in control."
+				},
+				"oneTeam": {
+					"title": "One team through go-live",
+					"desc": "Design, build, and launch without stitching vendors together yourself."
+				}
+			}
+		},
+		"howWeBuild": {
+			"eyebrow": "How we build",
+			"title": "Product and engineering in the same room.",
+			"body": "You work with one team that understands the brief, ships in clear milestones, and stays accountable through go-live — not a chain of handoffs.",
+			"photoAlt": "Two developers pairing on a product interface in a Kuala Lumpur office"
+		},
+		"build": {
+			"eyebrow": "What we build",
+			"title": "Products that ship.",
+			"body": "From customer-facing products to the tools your team runs on — if you can dream it, we can build it.",
+			"footer": "Need something outside this list? Tell us the dream — we'll tell you how we'd build it.",
+			"items": {
+				"webMobile": {
+					"title": "Web & mobile products",
+					"desc": "Customer apps, portals, and branded experiences — designed, built, and shipped under your name."
+				},
+				"platforms": {
+					"title": "Platforms & internal tools",
+					"desc": "Ops dashboards, workflows, and the systems your team runs on every day."
+				},
+				"integrations": {
+					"title": "Integrations & APIs",
+					"desc": "Connect payments, identity, messaging, and the services your product depends on."
+				},
+				"secure": {
+					"title": "Secure, production-ready builds",
+					"desc": "Solid foundations — access control, reliability, and a clear trail of who did what."
+				}
+			}
+		},
+		"howWeWork": {
+			"eyebrow": "How we work",
+			"title": "From brief to live — without the fog.",
+			"body": "A clear path so decision-makers always know where the build stands, what ships next, and what it takes to go live.",
+			"photoAlt": "Team reviewing a product roadmap and sketches during discovery",
+			"startCta": "Start a conversation",
+			"workCta": "See our work",
+			"steps": {
+				"1": {
+					"title": "Discover",
+					"desc": "We map your idea, users, and constraints — then agree what to build first."
+				},
+				"2": {
+					"title": "Design & build",
+					"desc": "Product UI, APIs, and integrations — shipped in clear milestones you can review."
+				},
+				"3": {
+					"title": "Launch",
+					"desc": "Go live on secure infrastructure — with the controls your business needs."
+				},
+				"4": {
+					"title": "Grow with you",
+					"desc": "Support, iterations, and new modules as your business moves — not a one-off handoff."
+				}
+			}
+		},
+		"trust": {
+			"badge": "Built to last",
+			"title": "Secure by default. Ready for production.",
+			"body": "Every build gets solid foundations — so you launch with confidence, not with shortcuts that catch up later.",
+			"items": {
+				"foundations": {
+					"title": "Solid product foundations",
+					"desc": "Clear architecture, secure access, and a trail of who did what — built in from the start."
+				},
+				"infra": {
+					"title": "Reliable infrastructure",
+					"desc": "Hosted and operated so your product stays up — with room to grow."
+				},
+				"support": {
+					"title": "Support after launch",
+					"desc": "We stay on for iterations, fixes, and the next module — not a one-off handoff."
+				}
+			}
+		},
+		"proof": {
+			"title": "Products we've taken live.",
+			"subtitle": "A selection of platforms shipped with our team — from first build to go-live."
+		},
+		"crossLinks": {
+			"lead": "Looking for lending or marketplace platforms? See"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"items": [
+				{
+					"question": "What custom software does Truestack build?",
+					"answer": "We design and ship web apps, mobile products, internal tools, platforms, and integrations for Malaysian businesses — especially fintech and regulated operators. If your product or operating model does not fit an off-the-shelf template, we build what fits."
+				},
+				{
+					"question": "How does a typical engagement work?",
+					"answer": "We start with discovery to map your idea, users, and constraints, then design and build in clear milestones you can review. After launch we stay on for support and iterations — not a one-off handoff at go-live."
+				},
+				{
+					"question": "Do you only build lending software?",
+					"answer": "Lending and marketplace platforms are a core strength — TrueKredit™, TrueSyariah™, and TrueP2P™ — but we also build custom products outside lending when you need a dedicated team from brief to live. Tell us the product; we will map how we would ship it."
+				},
+				{
+					"question": "Where is the software hosted?",
+					"answer": "Production builds typically run on secure cloud infrastructure in Malaysia when data residency matters. We set up solid foundations — access control, reliability, and an audit trail — so you launch with confidence."
+				},
+				{
+					"question": "How is this different from TrueKredit™ or TrueP2P™?",
+					"answer": "TrueKredit™ and TrueP2P™ are ready product platforms for KPKT lending and SC-aligned P2P. Custom software development is for products that need a bespoke build. Many clients use both — a product platform plus custom modules around it."
+				},
+				{
+					"question": "How do I start a project?",
+					"answer": "Book a free consultation at truestack.my/contact with the subject Custom Software. Bring the brief or the problem you need solved — we will outline scope, milestones, and what go-live looks like."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ready to build what you've been dreaming of?",
+			"body": "Book a free consultation. Tell us the product you need — we'll map how we'd design, build, and launch it.",
+			"secondary": "See our work"
+		}
+	}
 }

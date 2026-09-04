@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -18,17 +19,14 @@ const AUTOPLAY_MS = 5000;
 const SLIDES = [
 	{
 		id: "admin",
-		label: "Admin",
 		kind: "web" as const,
 		chrome: "admin.truekredit",
 		src: "/truekredit/hero_dashboard_screenshot.png",
-		alt: "TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender",
 		width: 3368,
 		height: 2662,
 	},
 	{
 		id: "borrower",
-		label: "Borrower",
 		kind: "web" as const,
 		chrome: "kredit.yourcompany.com.my",
 		src: BORROWER_SHOTS.webDashboard.src,
@@ -38,7 +36,6 @@ const SLIDES = [
 	},
 	{
 		id: "mobile",
-		label: "Mobile",
 		kind: "phone" as const,
 		chrome: "iOS & Android",
 		src: BORROWER_SHOTS.appHome.src,
@@ -79,6 +76,8 @@ function GridPattern() {
 }
 
 export function TrueKreditHero() {
+	const t = useTranslations("TrueKredit");
+	const tCommon = useTranslations("Common");
 	const reduceMotion = useReducedMotion();
 	const [active, setActive] = useState(0);
 	const [playing, setPlaying] = useState(true);
@@ -117,29 +116,34 @@ export function TrueKreditHero() {
 					transition={{ duration: 0.6 }}
 				>
 					<h1 className="mx-auto max-w-[20em] type-h1 text-pretty">
-						Run your entire lending book from{" "}
-						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-							one platform.
-						</span>
+						{t.rich("hero.title", {
+							accent: (c) => (
+								<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
+									{c}
+								</span>
+							),
+						})}
 					</h1>
 					<p className="mx-auto mt-5 max-w-[40em] type-lede-hero text-pretty text-muted-foreground">
-						TrueKredit™ is the{" "}
-						<strong className="font-semibold text-foreground">
-							money lending management system
-						</strong>{" "}
-						for Malaysian KPKT-licensed money lenders — borrowers,
-						schedules, repayments and KPKT paperwork in one system
-						your whole team trusts.
+						{t.rich("hero.lede", {
+							strong: (c) => (
+								<strong className="font-semibold text-foreground">
+									{c}
+								</strong>
+							),
+						})}
 					</p>
 					<div className="mt-8 flex flex-wrap justify-center gap-3">
 						<Button asChild size="lg" className="gap-2">
 							<Link href="/contact?subject=TrueKredit">
-								Book a Free Consultation
+								{tCommon("bookConsultation")}
 								<ArrowRight className="h-4 w-4" />
 							</Link>
 						</Button>
 						<Button asChild variant="outline" size="lg">
-							<CtaLink href="#compare">Standard vs Pro</CtaLink>
+							<CtaLink href="#compare">
+								{t("hero.ctaSecondary")}
+							</CtaLink>
 						</Button>
 					</div>
 				</motion.div>
@@ -153,7 +157,7 @@ export function TrueKreditHero() {
 			>
 				<div
 					role="tablist"
-					aria-label="TrueKredit screens"
+					aria-label={t("hero.tablistAria")}
 					className="mb-6 flex items-end justify-center gap-10 border-b md:mb-8 md:gap-16"
 				>
 					{SLIDES.map((item, index) => {
@@ -172,7 +176,7 @@ export function TrueKreditHero() {
 										: "border-transparent text-muted-foreground hover:text-foreground",
 								)}
 							>
-								{item.label}
+								{t(`hero.slides.${item.id}.label`)}
 							</button>
 						);
 					})}
@@ -212,7 +216,11 @@ export function TrueKreditHero() {
 								) : (
 									<Image
 										src={slide.src}
-										alt={slide.alt}
+										alt={
+											"alt" in slide
+												? slide.alt
+												: t("hero.slides.admin.alt")
+										}
 										width={slide.width}
 										height={slide.height}
 										quality={100}

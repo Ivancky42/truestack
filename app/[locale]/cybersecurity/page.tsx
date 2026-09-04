@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
 import {
@@ -124,16 +125,18 @@ export default async function CybersecurityPolicyPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+  const t = await getTranslations("LegalChrome");
   return (
     <>
-      <LegalSchema path="/cybersecurity" name={title} description={description} />
+      <LegalSchema path="/cybersecurity" name={t("pages.cybersecurity")} description={description} />
       <FaqSchema items={cybersecurityFaq} />
 
+      <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero
-        eyebrow="Legal"
-        title="How we protect your systems."
-        titleMuted="And the data that lives on them."
-        lede="A public overview of how Truestack designs, operates, and protects the systems used to deliver lending software, KPKT compliance services, and e-KYC in Malaysia."
+        eyebrow={t("eyebrow")}
+        title={t("cybersecurity.title")}
+        titleMuted={t("cybersecurity.titleMuted")}
+        lede={t("cybersecurity.lede")}
         currentPath="/cybersecurity"
       />
 
@@ -273,10 +276,11 @@ export default async function CybersecurityPolicyPage({
       </LegalDocument>
 
       <ConsultationCta
-        heading="Questions about how we protect your data?"
-        body="Tell us about your KPKT licence, lending platform, or security review. We'll walk through how Truestack hosts and isolates your systems — free, no obligation."
-        secondary={{ href: "/pdpa", label: "PDPA Notice" }}
+        heading={t("cybersecurity.cta.heading")}
+        body={t("cybersecurity.cta.body")}
+        secondary={{ href: "/pdpa", label: t("cybersecurity.cta.secondary") }}
       />
+      </PageMessages>
     </>
   );
 }

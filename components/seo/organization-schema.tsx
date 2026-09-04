@@ -1,3 +1,4 @@
+import { getLocale } from "next-intl/server";
 import {
   legalName,
   orgAddress,
@@ -44,7 +45,8 @@ function resolveOrgSameAs(): string[] {
  * Validate at: https://validator.schema.org/
  * @see https://developers.google.com/search/docs/appearance/structured-data/organization
  */
-export function OrganizationSchema() {
+export async function OrganizationSchema() {
+  await getLocale();
   const logoUrl = `${baseUrl}${orgLogo.url}`;
 
   const schema = {

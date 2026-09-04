@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -14,6 +15,7 @@ type LegalFaqProps = {
 };
 
 export function LegalFaq({ items }: LegalFaqProps) {
+  const t = useTranslations("LegalChrome");
   return (
     <section
       id="faq"
@@ -26,9 +28,9 @@ export function LegalFaq({ items }: LegalFaqProps) {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.5 }}
       >
-        <p className="mb-3 type-eyebrow text-primary">FAQ</p>
+        <p className="mb-3 type-eyebrow text-primary">{t("faq.eyebrow")}</p>
         <h2 id="legal-faq-heading" className="type-h2-sm">
-          Frequently asked questions
+          {t("faq.title")}
         </h2>
         <Accordion
           type="single"

@@ -1,6 +1,4 @@
-import { getLocale } from "next-intl/server";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import {
   LEGAL_DATE_MODIFIED,
   type LegalPolicyHref,
@@ -14,7 +12,6 @@ type LegalSchemaProps = {
 };
 
 export async function LegalSchema({ path, name, description }: LegalSchemaProps) {
-  const locale = resolveAppLocale(await getLocale());
   const url = `${siteUrl}${path}`;
   const schema = {
     "@context": "https://schema.org",
@@ -24,7 +21,7 @@ export async function LegalSchema({ path, name, description }: LegalSchemaProps)
     description,
     url,
     dateModified: LEGAL_DATE_MODIFIED,
-    inLanguage: inLanguage[locale],
+    inLanguage: "en-MY",
     isPartOf: { "@id": `${siteUrl}/#website` },
     about: { "@id": `${siteUrl}/#organization` },
     publisher: { "@id": `${siteUrl}/#organization` },

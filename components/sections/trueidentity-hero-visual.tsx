@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
 	Check,
@@ -46,6 +47,7 @@ const KYC_STEPS = [
 
 /** Full TrueIdentity hero phone + stat chips. */
 export function KycFlowDiagram() {
+	const t = useTranslations("TrueIdentity");
 	return (
 		<motion.div
 			className="relative"
@@ -68,8 +70,8 @@ export function KycFlowDiagram() {
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 1.8, duration: 0.5 }}
 			>
-				<p className="text-xs font-semibold text-foreground">&lt;3s</p>
-				<p className="text-[10px] text-muted-foreground">Verification</p>
+				<p className="text-xs font-semibold text-foreground">{t("hero.chips.verification.value")}</p>
+				<p className="text-[10px] text-muted-foreground">{t("hero.chips.verification.label")}</p>
 			</motion.div>
 
 			<motion.div
@@ -78,8 +80,8 @@ export function KycFlowDiagram() {
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 2.0, duration: 0.5 }}
 			>
-				<p className="text-xs font-semibold text-emerald-600">99.9%</p>
-				<p className="text-[10px] text-muted-foreground">Uptime SLA</p>
+				<p className="text-xs font-semibold text-emerald-600">{t("hero.chips.uptime.value")}</p>
+				<p className="text-[10px] text-muted-foreground">{t("hero.chips.uptime.label")}</p>
 			</motion.div>
 
 			<motion.div
@@ -88,8 +90,8 @@ export function KycFlowDiagram() {
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 2.2, duration: 0.5 }}
 			>
-				<p className="text-xs font-semibold text-primary">PDPA</p>
-				<p className="text-[10px] text-muted-foreground">Compliant</p>
+				<p className="text-xs font-semibold text-primary">{t("hero.chips.pdpa.value")}</p>
+				<p className="text-[10px] text-muted-foreground">{t("hero.chips.pdpa.label")}</p>
 			</motion.div>
 		</motion.div>
 	);

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
 	ArrowRight,
@@ -14,9 +15,9 @@ import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 
 const TRUST_CHIPS = [
-	{ icon: ShieldCheck, label: "KPKT, SC & Bank Negara" },
-	{ icon: Server, label: "Data in Malaysia" },
-	{ icon: FileCheck, label: "Audit-ready" },
+	{ icon: ShieldCheck, key: "regulators" },
+	{ icon: Server, key: "data" },
+	{ icon: FileCheck, key: "audit" },
 ] as const;
 
 const STACK_PILLS = [
@@ -25,17 +26,6 @@ const STACK_PILLS = [
 	{ label: "API", active: false },
 ] as const;
 
-const HERO_TITLE_PREFIX = [
-	"The",
-	"fintech",
-	"infrastructure",
-	"Malaysian",
-	"lenders",
-] as const;
-
-const HERO_VERBS = ["launch", "lend", "build", "scale", "run"] as const;
-const HERO_TITLE_STATIC =
-	"The fintech infrastructure Malaysian lenders launch on.";
 const VERB_EASE = [0.22, 1, 0.36, 1] as const;
 const ROTATE_MS = 2000;
 const VERB_ACCENT =
@@ -44,13 +34,15 @@ const VERB_ACCENT =
 function RotatingVerb({
 	reduceMotion,
 	enterDelay,
+	verbs,
 }: {
 	reduceMotion: boolean | null;
 	enterDelay: number;
+	verbs: string[];
 }) {
 	const [index, setIndex] = useState(0);
 	const [readyToCycle, setReadyToCycle] = useState(false);
-	const phrase = `${HERO_VERBS[index]} on.`;
+	const phrase = `${verbs[index]} on.`;
 
 	useEffect(() => {
 		if (reduceMotion) return;
@@ -64,15 +56,15 @@ function RotatingVerb({
 	useEffect(() => {
 		if (reduceMotion || !readyToCycle) return;
 		const id = window.setInterval(() => {
-			setIndex((i) => (i + 1) % HERO_VERBS.length);
+			setIndex((i) => (i + 1) % verbs.length);
 		}, ROTATE_MS);
 		return () => window.clearInterval(id);
-	}, [reduceMotion, readyToCycle]);
+	}, [reduceMotion, readyToCycle, verbs.length]);
 
 	if (reduceMotion) {
 		return (
 			<span className={`inline-block whitespace-nowrap ${VERB_ACCENT}`}>
-				launch on.
+				{verbs[0]} on.
 			</span>
 		);
 	}
@@ -90,7 +82,7 @@ function RotatingVerb({
 				}}
 			>
 				<span className="relative inline-grid">
-					{HERO_VERBS.map((verb) => (
+					{verbs.map((verb) => (
 						<span
 							key={verb}
 							className="invisible col-start-1 row-start-1 whitespace-nowrap"
@@ -102,7 +94,7 @@ function RotatingVerb({
 					<span className="absolute inset-0 overflow-hidden">
 						<AnimatePresence initial={false}>
 							<motion.span
-								key={HERO_VERBS[index]}
+								key={verbs[index]}
 								className="absolute inset-0 whitespace-nowrap"
 								initial={{ y: "108%" }}
 								animate={{ y: 0 }}
@@ -123,13 +115,16 @@ function RotatingVerb({
 }
 
 function HeroHeadline() {
+	const t = useTranslations("Home");
 	const reduceMotion = useReducedMotion();
+	const prefix = t.raw("hero.titlePrefix") as string[];
+	const verbs = t.raw("hero.verbs") as string[];
 
 	return (
 		<h1 className="type-h1 text-pretty">
-			<span className="sr-only">{HERO_TITLE_STATIC}</span>
+			<span className="sr-only">{t("hero.title")}</span>
 			<span aria-hidden>
-				{HERO_TITLE_PREFIX.map((word, i) => (
+				{prefix.map((word, i) => (
 					<span
 						key={word}
 						className="mr-[0.28em] inline-block overflow-hidden pb-[0.14em] align-bottom"
@@ -150,7 +145,8 @@ function HeroHeadline() {
 				))}
 				<RotatingVerb
 					reduceMotion={reduceMotion}
-					enterDelay={0.1 + HERO_TITLE_PREFIX.length * 0.07}
+					enterDelay={0.1 + prefix.length * 0.07}
+					verbs={verbs}
 				/>
 			</span>
 		</h1>
@@ -171,6 +167,8 @@ function BrowserChrome({ label }: { label: string }) {
 }
 
 function HeroCollage() {
+	const t = useTranslations("Home");
+
 	return (
 		<div className="relative mx-auto h-[380px] w-full max-w-xl px-1 sm:h-[440px] sm:px-0 md:h-[540px] lg:max-w-none">
 			{/* Lampiran A — licence document, back-right */}
@@ -186,7 +184,7 @@ function HeroCollage() {
 				</div>
 				<Image
 					src="/truekredit/lampiran_a_screenshot.png"
-					alt="Lampiran A borrower ledger generated from TrueKredit"
+					alt={t("hero.alt.lampiran")}
 					width={1716}
 					height={2384}
 					className="h-[100px] w-full object-cover object-top opacity-90 sm:h-[120px] md:h-[150px]"
@@ -199,7 +197,7 @@ function HeroCollage() {
 				<BrowserChrome label="admin.truekredit" />
 				<Image
 					src="/truekredit/hero_dashboard_screenshot.png"
-					alt="TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender"
+					alt={t("hero.alt.dashboard")}
 					width={3368}
 					height={2662}
 					quality={100}
@@ -214,7 +212,7 @@ function HeroCollage() {
 			<div className="absolute bottom-0 left-1 z-20 w-[52%] max-w-60 -rotate-[3.6deg] overflow-hidden rounded-xl border bg-card shadow-md sm:-bottom-3 sm:-left-2 md:w-60">
 				<Image
 					src="/truekredit/activity_timeline_screenshot.png"
-					alt="TrueKredit activity timeline — who changed a loan, exported Lampiran A, or recorded a payment"
+					alt={t("hero.alt.timeline")}
 					width={1820}
 					height={1532}
 					className="h-32 w-full object-cover object-top-left sm:h-36 md:h-42"
@@ -246,6 +244,8 @@ function HeroCollage() {
 }
 
 export function HomepageHero() {
+	const t = useTranslations("Home");
+	const tCommon = useTranslations("Common");
 	const reduceMotion = useReducedMotion();
 
 	return (
@@ -301,36 +301,34 @@ export function HomepageHero() {
 							}}
 						>
 							<p className="mt-5 max-w-[30em] type-lede-hero text-pretty text-muted-foreground">
-								We get you licensed and we run your book —
-								conventional PPW or Shariah digital lending,
-								the paperwork, and the rails underneath.
+								{t("hero.lede")}
 							</p>
 
 							<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
 								<Button asChild size="lg" className="gap-2">
 									<CtaLink href="/contact">
-										Book a Free Consultation
+										{tCommon("bookConsultation")}
 										<ArrowRight className="h-4 w-4" />
 									</CtaLink>
 								</Button>
 								<Button asChild variant="outline" size="lg">
 									<CtaLink href="#solutions">
-										Find your starting point
+										{t("hero.secondaryCta")}
 									</CtaLink>
 								</Button>
 							</div>
 
 							<div className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-sm text-muted-foreground">
-								{TRUST_CHIPS.map(({ icon: Icon, label }) => (
+								{TRUST_CHIPS.map(({ icon: Icon, key }) => (
 									<span
-										key={label}
+										key={key}
 										className="inline-flex items-center gap-1.5"
 									>
 										<Icon
 											className="h-3.5 w-3.5 text-primary"
 											aria-hidden
 										/>
-										{label}
+										{t(`hero.chips.${key}`)}
 									</span>
 								))}
 							</div>

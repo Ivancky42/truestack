@@ -1,5 +1,6 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { TrueSyariahHero } from "@/components/sections/truesyariah/hero";
 import { TrueSyariahJourney } from "@/components/sections/truesyariah/journey";
 import { TrueSyariahSystem } from "@/components/sections/truesyariah/system";
@@ -18,16 +19,17 @@ export default async function TrueSyariahPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("TrueSyariah");
 	return (
-		<>
+		<PageMessages namespaces={["TrueSyariah"]}>
 			<TrueSyariahHero />
 			<CrossLinkStrip
 				id="draft-kpkt-rules"
-				ariaLabel="Upcoming KPKT Shariah credit rules"
-				lead="Following the draft KPKT rules?"
-				body="The CCA 2025 Garis Panduan sets what a Shariah credit system has to evidence — governance, advisor, audit and iDEAL."
+				ariaLabel={t("draftRules.ariaLabel")}
+				lead={t("draftRules.lead")}
+				body={t("draftRules.body")}
 				href="/insights/shariah-credit-system-requirements-cca-2025-draft"
-				cta="Read the draft requirements"
+				cta={t("draftRules.cta")}
 				accent="truesyariah"
 			/>
 			<TrueSyariahJourney />
@@ -38,6 +40,6 @@ export default async function TrueSyariahPage({
 			<TrueSyariahReceive />
 			<TrueSyariahFaq />
 			<TrueSyariahCta />
-		</>
+		</PageMessages>
 	);
 }

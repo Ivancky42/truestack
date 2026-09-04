@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { englishOnlyMetadata, ogLocaleFor } from "@/lib/i18n/seo";
 import {
 	getWorkCaseStudy,
@@ -59,6 +60,8 @@ export async function generateMetadata({
 export default async function WorkCaseStudyPage({ params }: PageProps) {
 	const { locale, slug } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+	const t = await getTranslations("WorkChrome");
+	const tCommon = await getTranslations("Common");
 	const study = getWorkCaseStudy(slug);
 	if (!study) {
 		notFound();
@@ -70,12 +73,14 @@ export default async function WorkCaseStudyPage({ params }: PageProps) {
 			<FaqSchema items={study.faq} />
 			<BreadcrumbSchema
 				items={[
-					{ name: "Home", path: "/" },
-					{ name: "Work", path: "/work" },
+					{ name: tCommon("breadcrumbHome"), path: "/" },
+					{ name: t("nav"), path: "/work" },
 					{ name: study.client, path: `/work/${study.slug}` },
 				]}
 			/>
-			<WorkCaseStudyDetailContent study={study} />
+			<PageMessages namespaces={["WorkChrome"]}>
+				<WorkCaseStudyDetailContent study={study} />
+			</PageMessages>
 		</>
 	);
 }

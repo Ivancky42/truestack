@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
 import {
@@ -91,16 +92,18 @@ export default async function PrivacyPolicyPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+  const t = await getTranslations("LegalChrome");
   return (
     <>
-      <LegalSchema path="/privacy" name={title} description={description} />
+      <LegalSchema path="/privacy" name={t("pages.privacy")} description={description} />
       <FaqSchema items={privacyFaq} />
 
+      <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero
-        eyebrow="Legal"
-        title="How we handle your information."
-        titleMuted="And what you can ask us to do with it."
-        lede="This policy explains how Truestack collects, uses, discloses, and safeguards personal information when you visit our website or use related systems we operate."
+        eyebrow={t("eyebrow")}
+        title={t("privacy.title")}
+        titleMuted={t("privacy.titleMuted")}
+        lede={t("privacy.lede")}
         currentPath="/privacy"
       />
 
@@ -264,10 +267,11 @@ export default async function PrivacyPolicyPage({
       </LegalDocument>
 
       <ConsultationCta
-        heading="Questions about your data?"
-        body="If you want this policy explained for a customer agreement or an e-KYC rollout, book a free consultation. No obligation."
-        secondary={{ href: "/pdpa", label: "PDPA Notice" }}
+        heading={t("privacy.cta.heading")}
+        body={t("privacy.cta.body")}
+        secondary={{ href: "/pdpa", label: t("privacy.cta.secondary") }}
       />
+      </PageMessages>
     </>
   );
 }

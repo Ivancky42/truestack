@@ -1,18 +1,20 @@
+import { getTranslations } from "next-intl/server";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
-import { APPLY_EMAIL, applyMailto, howToApply } from "@/lib/careers-data";
+import { APPLY_EMAIL, applyMailto } from "@/lib/careers-data";
 
-export function CareersCta() {
+export async function CareersCta() {
+	const t = await getTranslations("Careers");
 	return (
 		<ConsultationCta
-			heading="Send us your CV."
-			body={howToApply}
+			heading={t("cta.heading")}
+			body={t("cta.body")}
 			primary={{
 				href: applyMailto(),
 				label: APPLY_EMAIL,
 			}}
 			secondary={{
 				href: "/about",
-				label: "Read about the company",
+				label: t("cta.secondary"),
 			}}
 		/>
 	);

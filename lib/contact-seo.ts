@@ -1,5 +1,3 @@
-import type { AppLocale } from "@/i18n/routing";
-import { DEFAULT_LOCALE, inLanguage } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
@@ -7,7 +5,28 @@ const baseUrl = siteUrl;
 export const CONTACT_PAGE_PATH = "/contact";
 export const CONTACT_PAGE_URL = `${baseUrl}${CONTACT_PAGE_PATH}`;
 
-export function buildContactJsonLd(locale: AppLocale = DEFAULT_LOCALE) {
+export const CONTACT_KEYWORDS = [
+	"free consultation Truestack",
+	"free KPKT consultation Malaysia",
+	"fintech consulting Malaysia",
+	"KPKT services inquiry",
+	"money lender software quote",
+] as const;
+
+export type ContactSchemaCopy = {
+	webpageName: string;
+	webpageDescription: string;
+	inLanguage: string;
+	breadcrumbHome: string;
+	breadcrumbCurrent: string;
+	serviceName: string;
+	serviceType: string;
+	serviceDescription: string;
+	offerName: string;
+	offerDescription: string;
+};
+
+export function buildContactJsonLd(copy: ContactSchemaCopy) {
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
@@ -15,10 +34,9 @@ export function buildContactJsonLd(locale: AppLocale = DEFAULT_LOCALE) {
 				"@type": "ContactPage",
 				"@id": `${CONTACT_PAGE_URL}#webpage`,
 				url: CONTACT_PAGE_URL,
-				name: "Book a Free Consultation - Truestack",
-				description:
-					"Book a free consultation with Truestack for KPKT licensing, compliance, and fintech software development in Malaysia.",
-				inLanguage: inLanguage[locale],
+				name: copy.webpageName,
+				description: copy.webpageDescription,
+				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
 				breadcrumb: { "@id": `${CONTACT_PAGE_URL}#breadcrumb` },
@@ -31,13 +49,13 @@ export function buildContactJsonLd(locale: AppLocale = DEFAULT_LOCALE) {
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Home",
+						name: copy.breadcrumbHome,
 						item: baseUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Contact",
+						name: copy.breadcrumbCurrent,
 						item: CONTACT_PAGE_URL,
 					},
 				],
@@ -45,18 +63,16 @@ export function buildContactJsonLd(locale: AppLocale = DEFAULT_LOCALE) {
 			{
 				"@type": "Service",
 				"@id": `${CONTACT_PAGE_URL}#consultation`,
-				name: "Free Consultation",
-				serviceType: "Fintech & KPKT licensing consultation",
-				description:
-					"A free, no-obligation consultation covering KPKT account management (pembaharuan lesen PPW / KK, permit iklan), online money lending licence / e-Lending, money lender software Malaysia, and custom fintech development for licensed money lenders and fintech operators in Malaysia.",
+				name: copy.serviceName,
+				serviceType: copy.serviceType,
+				description: copy.serviceDescription,
 				provider: { "@id": `${baseUrl}/#organization` },
 				areaServed: { "@type": "Country", name: "Malaysia" },
 				url: CONTACT_PAGE_URL,
 				offers: {
 					"@type": "Offer",
-					name: "Free Consultation",
-					description:
-						"Initial consultation to scope your KPKT licensing, compliance, or fintech software needs — free of charge.",
+					name: copy.offerName,
+					description: copy.offerDescription,
 					price: "0",
 					priceCurrency: "MYR",
 					availability: "https://schema.org/InStock",

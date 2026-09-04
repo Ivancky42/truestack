@@ -105,18 +105,23 @@ export async function loadMessages(
 	return deepMerge(english, overlay) as AbstractIntlMessages;
 }
 
+/**
+ * Accepts the typed `EnMessages` shape (which contains string arrays read via
+ * `t.raw`) as well as the loose `AbstractIntlMessages`; returns the loose shape
+ * expected by `NextIntlClientProvider`.
+ */
 export function pickMessages(
-	messages: AbstractIntlMessages,
+	messages: Record<string, unknown>,
 	...namespaces: string[]
 ): AbstractIntlMessages {
-	const picked: AbstractIntlMessages = {};
+	const picked: Record<string, unknown> = {};
 	for (const namespace of namespaces) {
 		const value = messages[namespace];
 		if (value != null) {
 			picked[namespace] = value;
 		}
 	}
-	return picked;
+	return picked as AbstractIntlMessages;
 }
 
 export async function PageMessages({

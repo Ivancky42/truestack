@@ -1,12 +1,14 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { truesyariahFaq } from "@/lib/truesyariah-faq";
 import {
 	TsEyebrow,
 	TsReveal,
 	TsSection,
 } from "@/components/sections/truesyariah/primitives";
+
+type FaqItem = { question: string; answer: string };
 
 function FaqAnswer({ answer }: { answer: string }) {
 	const marker = "TrueKredit.";
@@ -31,22 +33,22 @@ function FaqAnswer({ answer }: { answer: string }) {
 }
 
 export function TrueSyariahFaq() {
+	const t = useTranslations("TrueSyariah");
+	const items = t.raw("faq.items") as FaqItem[];
 	return (
 		<TsSection id="faq">
 			<div className="grid items-start gap-10 lg:grid-cols-[0.36fr_0.64fr] lg:gap-14">
 				<TsReveal>
-					<TsEyebrow>Questions</TsEyebrow>
+					<TsEyebrow>{t("faq.eyebrow")}</TsEyebrow>
 					<h2 className="type-ts-h2 text-pretty text-ts-ink">
-						Before you commit capital
+						{t("faq.title")}
 					</h2>
 					<p className="mt-4 type-lede text-ts-ink-soft">
-						If your question is not here, ask it in the
-						consultation. It is free and we would rather answer it
-						early.
+						{t("faq.lede")}
 					</p>
 				</TsReveal>
 				<TsReveal delay={0.08} className="border-t border-ts-rule">
-					{truesyariahFaq.map((faq) => (
+					{items.map((faq) => (
 						<div
 							key={faq.question}
 							className="border-b border-ts-rule py-6"

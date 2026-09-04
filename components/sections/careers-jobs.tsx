@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, MapPin } from "lucide-react";
 import {
@@ -13,11 +14,47 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { applyMailto, shortLocation, type JobRole } from "@/lib/careers-data";
+import {
+	applyMailto,
+	shortLocation,
+	type JobId,
+	type JobRole,
+} from "@/lib/careers-data";
 
 export type { JobRole };
 
 type RoleTab = "open" | "closed";
+
+type JobCopy = {
+	title: string;
+	department: string;
+	location: string;
+	type: string;
+	summary: string;
+	description: string;
+	workAreas: string[];
+	responsibilities: string[];
+	requirements: string[];
+	bonusSkills: string[];
+	technologies: string[];
+};
+
+function useJobCopy() {
+	const t = useTranslations("Careers");
+	return (id: JobId): JobCopy => ({
+		title: t(`jobs.items.${id}.title`),
+		department: t(`jobs.items.${id}.department`),
+		location: t(`jobs.items.${id}.location`),
+		type: t(`jobs.items.${id}.type`),
+		summary: t(`jobs.items.${id}.summary`),
+		description: t(`jobs.items.${id}.description`),
+		workAreas: t.raw(`jobs.items.${id}.workAreas`) as string[],
+		responsibilities: t.raw(`jobs.items.${id}.responsibilities`) as string[],
+		requirements: t.raw(`jobs.items.${id}.requirements`) as string[],
+		bonusSkills: t.raw(`jobs.items.${id}.bonusSkills`) as string[],
+		technologies: t.raw(`jobs.items.${id}.technologies`) as string[],
+	});
+}
 
 function JobDetailList({ items }: { items: string[] }) {
 	return (
@@ -38,12 +75,19 @@ function JobDetailList({ items }: { items: string[] }) {
 	);
 }
 
-function JobDetailModal({ role }: { role: JobRole }) {
+function JobDetailModal({
+	role,
+	copy,
+}: {
+	role: JobRole;
+	copy: JobCopy;
+}) {
+	const t = useTranslations("Careers");
 	return (
 		<div className="space-y-6 pr-2 sm:pr-6">
 			<DialogHeader className="space-y-3 text-left">
 				<div className="flex flex-wrap items-center gap-2">
-					<Badge variant="secondary">{role.department}</Badge>
+					<Badge variant="secondary">{copy.department}</Badge>
 					<Badge
 						variant="outline"
 						className={
@@ -52,65 +96,65 @@ function JobDetailModal({ role }: { role: JobRole }) {
 								: "border-muted-foreground/30 bg-muted text-muted-foreground"
 						}
 					>
-						{role.open ? "Open" : "Filled"}
+						{role.open ? t("jobs.status.open") : t("jobs.status.filled")}
 					</Badge>
 				</div>
-				<DialogTitle className="type-h2-sm">{role.title}</DialogTitle>
+				<DialogTitle className="type-h2-sm">{copy.title}</DialogTitle>
 				<DialogDescription asChild>
 					<div className="flex flex-wrap items-center gap-x-4 gap-y-1 type-ui">
 						<span className="inline-flex items-center gap-1.5 text-muted-foreground">
 							<MapPin className="h-3.5 w-3.5 shrink-0" />
-							{role.location}
+							{copy.location}
 						</span>
 						<span className="inline-flex items-center gap-1.5 text-muted-foreground">
 							<Briefcase className="h-3.5 w-3.5 shrink-0" />
-							{role.type}
+							{copy.type}
 						</span>
 					</div>
 				</DialogDescription>
 			</DialogHeader>
 
 			<p className="text-base leading-relaxed text-muted-foreground">
-				{role.description}
+				{copy.description}
 			</p>
 
-			{role.workAreas && role.workAreas.length > 0 && (
+			{copy.workAreas.length > 0 && (
 				<div>
 					<h4 className="mb-3 text-sm font-semibold">
-						What you will work on
+						{t("jobs.modal.workOn")}
 					</h4>
-					<JobDetailList items={role.workAreas} />
+					<JobDetailList items={copy.workAreas} />
 				</div>
 			)}
 
 			<div className="grid gap-6 sm:grid-cols-2">
 				<div>
 					<h4 className="mb-3 text-sm font-semibold">
-						What you will do
+						{t("jobs.modal.do")}
 					</h4>
-					<JobDetailList items={role.responsibilities} />
+					<JobDetailList items={copy.responsibilities} />
 				</div>
 				<div>
 					<h4 className="mb-3 text-sm font-semibold">
-						What we are looking for
+						{t("jobs.modal.lookingFor")}
 					</h4>
-					<JobDetailList items={role.requirements} />
+					<JobDetailList items={copy.requirements} />
 				</div>
-				{role.bonusSkills && role.bonusSkills.length > 0 && (
+				{copy.bonusSkills.length > 0 && (
 					<div>
 						<h4 className="mb-3 text-sm font-semibold">
-							Nice to have
+							{t("jobs.modal.niceToHave")}
 						</h4>
-						<JobDetailList items={role.bonusSkills} />
+						<JobDetailList items={copy.bonusSkills} />
 					</div>
 				)}
-				{role.technologies && role.technologies.length > 0 && (
+				{copy.technologies.length > 0 && (
 					<div>
 						<h4 className="mb-3 text-sm font-semibold">
-							What we use
+							{t("jobs.modal.whatWeUse")}
 						</h4>
 						<div className="flex flex-wrap gap-1.5">
-							{role.technologies.map((tech) => (
+							{copy.technologies.map((tech) => (
 								<Badge
 									key={tech}
 									variant="secondary"
@@ -128,11 +172,11 @@ function JobDetailModal({ role }: { role: JobRole }) {
 				{role.open ? (
 					<>
 						<p className="type-ui text-muted-foreground">
-							Email us your CV and mention this role.
+							{t("jobs.modal.applyHint")}
 						</p>
 						<Button asChild className="shrink-0 gap-2">
-							<a href={applyMailto(role.title)}>
-								Apply for this role
+							<a href={applyMailto(copy.title)}>
+								{t("jobs.modal.apply")}
 								<ArrowRight className="h-4 w-4" />
 							</a>
 						</Button>
@@ -140,16 +184,15 @@ function JobDetailModal({ role }: { role: JobRole }) {
 				) : (
 					<>
 						<p className="type-ui text-muted-foreground">
-							This one is filled. If it is exactly what you do,
-							write anyway — we keep good CVs on file.
+							{t("jobs.modal.filledHint")}
 						</p>
 						<Button
 							asChild
 							variant="outline"
 							className="shrink-0 gap-2"
 						>
-							<a href={applyMailto(role.title)}>
-								Write to us
+							<a href={applyMailto(copy.title)}>
+								{t("jobs.modal.write")}
 								<ArrowRight className="h-4 w-4" />
 							</a>
 						</Button>
@@ -171,16 +214,17 @@ function RoleTabs({
 	openCount: number;
 	closedCount: number;
 }) {
-	const tabs: { id: RoleTab; label: string; count: number }[] = [
-		{ id: "open", label: "Open", count: openCount },
-		{ id: "closed", label: "Closed", count: closedCount },
+	const t = useTranslations("Careers");
+	const tabs: { id: RoleTab; count: number }[] = [
+		{ id: "open", count: openCount },
+		{ id: "closed", count: closedCount },
 	];
 
 	return (
 		<div
 			className="inline-flex rounded-full border bg-card p-1 shadow-sm"
 			role="tablist"
-			aria-label="Job listings"
+			aria-label={t("jobs.tabsAria")}
 		>
 			{tabs.map((tab) => {
 				const active = activeTab === tab.id;
@@ -198,7 +242,7 @@ function RoleTabs({
 								: "text-muted-foreground hover:text-foreground",
 						)}
 					>
-						{tab.label} ({tab.count})
+						{t(`jobs.tabs.${tab.id}`)} ({tab.count})
 					</button>
 				);
 			})}
@@ -206,7 +250,16 @@ function RoleTabs({
 	);
 }
 
-function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
+function RoleRow({
+	role,
+	copy,
+	onSelect,
+}: {
+	role: JobRole;
+	copy: JobCopy;
+	onSelect: () => void;
+}) {
+	const t = useTranslations("Careers");
 	return (
 		<button
 			type="button"
@@ -223,7 +276,7 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 						role.open ? "text-foreground" : "text-muted-foreground",
 					)}
 				>
-					{role.title}
+					{copy.title}
 				</h3>
 				<p
 					className={cn(
@@ -233,18 +286,18 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 							: "text-muted-foreground/70",
 					)}
 				>
-					{role.summary}
+					{copy.summary}
 				</p>
 				<p className="mt-2 type-ui text-muted-foreground md:hidden">
-					{role.department}
+					{copy.department}
 					<span className="mx-1.5 text-border" aria-hidden>
 						·
 					</span>
-					{shortLocation(role.location)}
+					{shortLocation(copy.location)}
 					<span className="mx-1.5 text-border" aria-hidden>
 						·
 					</span>
-					{role.type}
+					{copy.type}
 				</p>
 			</div>
 			<p
@@ -255,7 +308,7 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 						: "text-muted-foreground/70",
 				)}
 			>
-				{role.department}
+				{copy.department}
 			</p>
 			<p
 				className={cn(
@@ -265,7 +318,7 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 						: "text-muted-foreground/70",
 				)}
 			>
-				{shortLocation(role.location)}
+				{shortLocation(copy.location)}
 			</p>
 			<p
 				className={cn(
@@ -275,17 +328,17 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 						: "text-muted-foreground/70",
 				)}
 			>
-				{role.type}
+				{copy.type}
 			</p>
 			<div className="mt-1 text-left md:mt-0 md:text-right">
 				{role.open ? (
 					<span className="inline-flex items-center gap-1.5 type-ui font-medium text-primary">
-						Details
+						{t("jobs.details")}
 						<ArrowRight className="h-3.5 w-3.5" />
 					</span>
 				) : (
 					<span className="inline-flex rounded-full bg-muted px-2.5 py-1 text-sm font-medium text-muted-foreground">
-						Filled
+						{t("jobs.status.filled")}
 					</span>
 				)}
 			</div>
@@ -294,6 +347,8 @@ function RoleRow({ role, onSelect }: { role: JobRole; onSelect: () => void }) {
 }
 
 export function CareersJobs({ roles }: { roles: JobRole[] }) {
+	const t = useTranslations("Careers");
+	const getCopy = useJobCopy();
 	const openRoles = roles.filter((r) => r.open);
 	const closedRoles = roles.filter((r) => !r.open);
 	const [activeTab, setActiveTab] = useState<RoleTab>("open");
@@ -322,13 +377,13 @@ export function CareersJobs({ roles }: { roles: JobRole[] }) {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="mb-3 type-eyebrow text-primary">
-							Open roles
+							{t("jobs.eyebrow")}
 						</p>
 						<h2 id="careers-roles-heading" className="type-h2">
-							What we are hiring for.
+							{t("jobs.title")}
 						</h2>
 						<p className="mt-4 type-lede text-muted-foreground">
-							Open a role for details.
+							{t("jobs.lede")}
 						</p>
 					</motion.div>
 					<RoleTabs
@@ -344,28 +399,29 @@ export function CareersJobs({ roles }: { roles: JobRole[] }) {
 						<div className="rounded-2xl border border-dashed px-6 py-14 text-center">
 							<p className="text-base font-medium">
 								{activeTab === "open"
-									? "No open positions right now"
-									: "No closed positions to show"}
+									? t("jobs.empty.openTitle")
+									: t("jobs.empty.closedTitle")}
 							</p>
 							<p className="mt-2 type-ui text-muted-foreground">
 								{activeTab === "open"
-									? "Write to us anyway. New roles open as we take on clients."
-									: "Previously filled roles will appear here."}
+									? t("jobs.empty.openBody")
+									: t("jobs.empty.closedBody")}
 							</p>
 						</div>
 					) : (
 						<div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
 							<div className="hidden grid-cols-[minmax(0,2.1fr)_1fr_1.3fr_0.8fr_7.5rem] gap-5 border-b bg-muted/40 px-6 py-3 type-mono-label uppercase tracking-[0.06em] text-muted-foreground md:grid">
-								<div>Role</div>
-								<div>Team</div>
-								<div>Location</div>
-								<div>Type</div>
+								<div>{t("jobs.columns.role")}</div>
+								<div>{t("jobs.columns.team")}</div>
+								<div>{t("jobs.columns.location")}</div>
+								<div>{t("jobs.columns.type")}</div>
 								<div />
 							</div>
 							{visibleRoles.map((role) => (
 								<RoleRow
 									key={role.id}
 									role={role}
+									copy={getCopy(role.id)}
 									onSelect={() => setSelectedRole(role)}
 								/>
 							))}
@@ -375,8 +431,8 @@ export function CareersJobs({ roles }: { roles: JobRole[] }) {
 
 				<p className="mt-4 type-ui text-muted-foreground">
 					{activeTab === "open"
-						? "Nothing here fits? Write to us anyway. We read every application, and new roles open as we take on clients."
-						: "Closed for now. If one of these is exactly what you do, write anyway. We keep good CVs on file."}
+						? t("jobs.footer.open")
+						: t("jobs.footer.closed")}
 				</p>
 			</div>
 
@@ -385,7 +441,12 @@ export function CareersJobs({ roles }: { roles: JobRole[] }) {
 				onOpenChange={(open) => !open && setSelectedRole(null)}
 			>
 				<DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto p-6 md:p-8">
-					{selectedRole && <JobDetailModal role={selectedRole} />}
+					{selectedRole && (
+						<JobDetailModal
+							role={selectedRole}
+							copy={getCopy(selectedRole.id)}
+						/>
+					)}
 				</DialogContent>
 			</Dialog>
 		</section>

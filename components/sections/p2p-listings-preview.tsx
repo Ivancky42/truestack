@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import {
   Building2,
   ChevronLeft,
@@ -111,6 +112,7 @@ function loopSegmentWidth(el: HTMLElement) {
 }
 
 function ListingCard({ data }: { data: ListingPreview }) {
+  const t = useTranslations("P2P");
   const pct =
     data.goal > 0 ? Math.min(100, Math.round((data.funded / data.goal) * 100)) : 0;
 
@@ -141,7 +143,7 @@ function ListingCard({ data }: { data: ListingPreview }) {
               aria-valuenow={pct}
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-label="Funding progress"
+              aria-label={t("listings.progressAria")}
             />
           </div>
           <div className="flex items-baseline justify-between gap-3 text-sm font-semibold text-foreground">
@@ -175,7 +177,7 @@ function ListingCard({ data }: { data: ListingPreview }) {
           Invest now
         </div>
         <p className="mt-3 text-center text-[11px] uppercase tracking-wider text-muted-foreground/80">
-          Sample UI — not a real listing
+          {t("listings.sampleCaption")}
         </p>
       </div>
     </article>
@@ -183,6 +185,7 @@ function ListingCard({ data }: { data: ListingPreview }) {
 }
 
 export function P2PListingsPreview() {
+  const t = useTranslations("P2P");
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const pausedRef = React.useRef(false);
 
@@ -286,7 +289,7 @@ export function P2PListingsPreview() {
       <div
         ref={scrollRef}
         role="region"
-        aria-label="Sample P2P investment listings — illustrative UI"
+        aria-label={t("listings.regionAria")}
         className="flex gap-6 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         style={{
           paddingLeft:
@@ -321,7 +324,7 @@ export function P2PListingsPreview() {
           type="button"
           onClick={() => scrollByCard(-1)}
           className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          aria-label="Scroll listings left"
+          aria-label={t("listings.scrollLeft")}
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
@@ -329,7 +332,7 @@ export function P2PListingsPreview() {
           type="button"
           onClick={() => scrollByCard(1)}
           className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-foreground shadow-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          aria-label="Scroll listings right"
+          aria-label={t("listings.scrollRight")}
         >
           <ChevronRight className="h-5 w-5" />
         </button>

@@ -1,7 +1,7 @@
 import { buildWorkJsonLd } from "@/lib/work-seo";
 
-export function WorkSchema() {
-	const schema = buildWorkJsonLd();
+export async function WorkSchema() {
+	const schema = await buildWorkJsonLd();
 
 	return (
 		<script

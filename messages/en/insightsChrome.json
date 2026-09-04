@@ -1,4 +1,83 @@
 {
 	"_status": "source",
-	"InsightsChrome": {}
+	"InsightsChrome": {
+		"nav": "Insights",
+		"eyebrow": "Insights",
+		"title": "What actually works in <accent>Malaysian fintech.</accent>",
+		"lede": "What we see when licences, loan books and software meet Malaysian rules — the questions that come up, and the parts that cost time.",
+		"topicsLabel": "Topics we write about",
+		"latest": "Latest",
+		"readArticle": "Read this article",
+		"allInsights": "All insights",
+		"updated": "Updated",
+		"tagsLabel": "Topics",
+		"grid": {
+			"eyebrow": "More reading",
+			"title": "More from the team.",
+			"lede": "Same notes we give clients. Shorter than a call — and you can pass them to your team."
+		},
+		"empty": {
+			"unavailable": {
+				"eyebrow": "Temporarily unavailable",
+				"title": "These articles are not available right now.",
+				"aside": "Try again in a moment.",
+				"body": "Give it a few minutes and refresh. Or ask us the question you came for — a consultation costs nothing."
+			},
+			"unpublished": {
+				"eyebrow": "First articles on the way",
+				"title": "Nothing published yet.",
+				"aside": "Ask us in the meantime.",
+				"body": "The first pieces are on the way. Until they are up, ask us the question you came for — a consultation costs nothing."
+			}
+		},
+		"error": {
+			"eyebrow": "Temporarily unavailable",
+			"title": "This insight is not available right now.",
+			"body": "Try again in a moment, or go back to Insights.",
+			"retry": "Try again",
+			"back": "Back to Insights",
+			"metaTitle": "This insight is not available right now"
+		},
+		"related": {
+			"eyebrow": "Where this applies",
+			"title": "Put this into practice.",
+			"explore": "Explore {title}"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"items": [
+				{
+					"question": "What is Truestack Insights?",
+					"answer": "Truestack Insights is where we write up what we learn from client work in Malaysian fintech — licences, loan books, and the software around them. Each article answers a question someone has already asked us. When a next step is a product or service we offer, we say so and link it."
+				},
+				{
+					"question": "Who should read these articles?",
+					"answer": "Anyone running a licensed money lender, applying for a KPKT digital licence, or building regulated financial software in Malaysia. Owners, compliance managers and product leads will see the terms they already use — Lampiran reporting, CTOS, SSM, Tawarruq. If an article points to a next step, we link the matching product or service, such as TrueKredit™ or KPKT licence advisory."
+				},
+				{
+					"question": "How often do you publish new insights?",
+					"answer": "Usually one to four articles a month. We would rather wait than publish something thin. New pieces show up here as soon as they are live."
+				},
+				{
+					"question": "How do I ask a question you have not written about yet?",
+					"answer": "Book a free consultation and tell us where you are stuck. We will map what applies to your situation and your timeline. There is no obligation to buy software or a service."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Have a question we have not written about yet?",
+			"body": "Tell us where you are stuck. We will walk through it in a free consultation — no obligation to buy anything.",
+			"secondary": "KPKT digital licence"
+		},
+		"postCta": {
+			"heading": "Talk it through with someone who does this daily.",
+			"body": "Book a free consultation. Tell us your licence type and where you are stuck — we will tell you what applies to you and what does not.",
+			"secondaryFallback": "KPKT digital licence"
+		},
+		"schema": {
+			"name": "Insights",
+			"description": "Notes from Truestack Technologies on Malaysian fintech — KPKT licensing, lending, Shariah financing, compliance and the software we build around them."
+		}
+	}
 }

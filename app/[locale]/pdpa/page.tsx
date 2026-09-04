@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
 import {
@@ -102,16 +103,18 @@ export default async function PdpaPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
+  const t = await getTranslations("LegalChrome");
   return (
     <>
-      <LegalSchema path="/pdpa" name={title} description={description} />
+      <LegalSchema path="/pdpa" name={t("pages.pdpa")} description={description} />
       <FaqSchema items={pdpaFaq} />
 
+      <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero
-        eyebrow="Legal"
-        title="How we process personal data."
-        titleMuted="Under Malaysia's PDPA."
-        lede="Notice and choice statement under the Personal Data Protection Act 2010 (Act 709), including TrueIdentity™ verification journeys we operate."
+        eyebrow={t("eyebrow")}
+        title={t("pdpa.title")}
+        titleMuted={t("pdpa.titleMuted")}
+        lede={t("pdpa.lede")}
         currentPath="/pdpa"
       />
 
@@ -339,10 +342,11 @@ export default async function PdpaPage({
       </LegalDocument>
 
       <ConsultationCta
-        heading="Questions about how we handle personal data?"
-        body="If you need this notice explained for a KPKT licence, e-KYC rollout, or customer agreement, book a free consultation. No obligation."
-        secondary={{ href: "/privacy", label: "Privacy Policy" }}
+        heading={t("pdpa.cta.heading")}
+        body={t("pdpa.cta.body")}
+        secondary={{ href: "/privacy", label: t("pdpa.cta.secondary") }}
       />
+      </PageMessages>
     </>
   );
 }

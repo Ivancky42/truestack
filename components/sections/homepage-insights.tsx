@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -8,6 +9,7 @@ import { InsightCard } from "@/components/shared/insight-card";
 import type { InsightPostSummary } from "@/lib/insights/types";
 
 export function HomepageInsights({ posts }: { posts: InsightPostSummary[] }) {
+	const t = useTranslations("Home");
 	const scrollerRef = useRef<HTMLDivElement>(null);
 	const [canPrev, setCanPrev] = useState(false);
 	const [canNext, setCanNext] = useState(true);
@@ -57,14 +59,13 @@ export function HomepageInsights({ posts }: { posts: InsightPostSummary[] }) {
 				>
 					<div className="max-w-xl">
 						<p className="mb-3 type-eyebrow text-primary">
-							Insights
+							{t("insights.eyebrow")}
 						</p>
 						<h2 id="insights-latest-heading" className="type-h2">
-							What we are seeing in Malaysian lending.
+							{t("insights.title")}
 						</h2>
 						<p className="mt-4 type-lede text-muted-foreground">
-							KPKT, loan books and the rules that change how you
-							lend — written from the work, not the brochure.
+							{t("insights.lede")}
 						</p>
 					</div>
 					<div className="flex items-center gap-3">
@@ -72,7 +73,7 @@ export function HomepageInsights({ posts }: { posts: InsightPostSummary[] }) {
 							href="/insights"
 							className="inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 						>
-							All insights
+							{t("insights.allInsights")}
 							<ArrowRight className="h-4 w-4" />
 						</Link>
 						<div className="hidden gap-2 md:flex">
@@ -81,7 +82,7 @@ export function HomepageInsights({ posts }: { posts: InsightPostSummary[] }) {
 								onClick={() => scrollByPage(-1)}
 								disabled={!canPrev}
 								className="flex h-10 w-10 items-center justify-center rounded-full border bg-background text-foreground transition-all hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
-								aria-label="Previous articles"
+								aria-label={t("insights.previousArticles")}
 							>
 								<ChevronLeft className="h-4 w-4" />
 							</button>
@@ -90,7 +91,7 @@ export function HomepageInsights({ posts }: { posts: InsightPostSummary[] }) {
 								onClick={() => scrollByPage(1)}
 								disabled={!canNext}
 								className="flex h-10 w-10 items-center justify-center rounded-full border bg-background text-foreground transition-all hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-30"
-								aria-label="Next articles"
+								aria-label={t("insights.nextArticles")}
 							>
 								<ChevronRight className="h-4 w-4" />
 							</button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
 	animate,
@@ -12,32 +13,28 @@ import {
 import { GridPattern } from "@/components/sections/hero";
 import { cn } from "@/lib/utils";
 
-const pills = [
-	"Kuala Lumpur",
-	"Credit & fintech only",
-	"Regulation-native",
-] as const;
+const pills = ["kl", "credit", "regulation"] as const;
 
 const stats = [
 	{
+		key: "founded",
 		value: 2025,
 		prefix: "",
 		suffix: "",
-		label: "Founded in Kuala Lumpur",
 		highlight: false,
 	},
 	{
+		key: "lenders",
 		value: 11,
 		prefix: "",
 		suffix: "",
-		label: "Lenders and fintechs live with us",
 		highlight: false,
 	},
 	{
+		key: "disbursed",
 		value: 200,
 		prefix: "RM ",
 		suffix: "m+",
-		label: "Disbursed annually by our lenders",
 		highlight: true,
 	},
 ] as const;
@@ -80,6 +77,7 @@ function CountUp({
 }
 
 export function AboutHero() {
+	const t = useTranslations("About");
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
@@ -90,34 +88,33 @@ export function AboutHero() {
 					transition={{ duration: 0.6 }}
 				>
 					<nav
-						aria-label="Breadcrumb"
+						aria-label={t("hero.breadcrumbAria")}
 						className="mb-5 flex items-center gap-2 text-sm text-muted-foreground"
 					>
 						<Link href="/" className="hover:text-foreground">
-							Company
+							{t("hero.breadcrumbParent")}
 						</Link>
 						<span className="text-border" aria-hidden>
 							/
 						</span>
 						<span className="font-medium text-foreground">
-							About
+							{t("hero.breadcrumbCurrent")}
 						</span>
 					</nav>
 
 					<h1 className="max-w-[22em] type-h1 text-pretty">
-						Malaysian lending deserves{" "}
-						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-							better tools.
-						</span>
+						{t.rich("hero.title", {
+							accent: (c) => (
+								<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
+									{c}
+								</span>
+							),
+						})}
 					</h1>
 
 					<div className="mt-6 grid items-end gap-8 pb-12 md:pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
 						<p className="max-w-[34em] type-lede-hero text-pretty text-muted-foreground">
-							We are a team of engineers and compliance
-							specialists working in one industry: Malaysian
-							credit. We build the platforms our clients run on,
-							take on custom software when they need it, and
-							handle the regulatory side alongside the build.
+							{t("hero.lede")}
 						</p>
 						<div className="flex flex-wrap gap-2.5">
 							{pills.map((pill) => (
@@ -125,7 +122,7 @@ export function AboutHero() {
 									key={pill}
 									className="rounded-full border bg-background/80 px-3.5 py-1.5 text-sm font-medium text-foreground/80 backdrop-blur-sm"
 								>
-									{pill}
+									{t(`hero.pills.${pill}`)}
 								</span>
 							))}
 						</div>
@@ -140,7 +137,7 @@ export function AboutHero() {
 				>
 					{stats.map((stat, index) => (
 						<div
-							key={stat.label}
+							key={stat.key}
 							className={cn(
 								"px-6 py-7 md:px-8 md:py-8",
 								index < stats.length - 1 &&
@@ -165,7 +162,7 @@ export function AboutHero() {
 								/>
 							</p>
 							<p className="mt-1 type-ui text-muted-foreground">
-								{stat.label}
+								{t(`hero.stats.${stat.key}.label`)}
 							</p>
 						</div>
 					))}

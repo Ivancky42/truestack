@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -25,131 +26,31 @@ import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
 import { DigitalLicensePaths } from "@/components/sections/digital-license-paths";
 import { BorrowerPortalCollage } from "@/components/sections/truekredit-borrower-visuals";
 
-const STORY_TODAY = [
-	{
-		title: "Limited to your branch area",
-		desc: "Customers outside your locality stay out of reach.",
-	},
-	{
-		title: "The licence process feels opaque",
-		desc: "What KPKT expects, and when, is hard to navigate alone.",
-	},
-	{
-		title: "Build risk on top of compliance risk",
-		desc: "The wrong platform choice can stall approval or force a rebuild.",
-	},
-] as const;
+const STORY_TODAY = ["limited", "opaque", "buildRisk"] as const;
+const STORY_AFTER = ["nationwide", "journey", "pro"] as const;
 
-const STORY_AFTER = [
-	{
-		title: "Serve all of Malaysia",
-		desc: "Borrowers apply, verify and repay on your branded web and apps.",
-	},
-	{
-		title: "We run the licence journey with you",
-		desc: "Strategy, dossier, presentation, review, and final approval support.",
-	},
-	{
-		title: "Live on TrueKredit™ Pro",
-		desc: "The same lending system KPKT-licensed operators already run on, ready for digital review.",
-	},
-] as const;
-
-const OFFER: {
-	icon: LucideIcon;
-	title: string;
-	desc: string;
-}[] = [
-	{
-		icon: FileBadge,
-		title: "The licence",
-		desc: "Licensing strategy, the provisional dossier, KPKT presentation support, and accompaniment through final approval.",
-	},
-	{
-		icon: Monitor,
-		title: "The platform",
-		desc: "A branded TrueKredit™ Pro deployment: web, mobile apps and signing under your control, on your own secure cloud in Malaysia.",
-	},
-	{
-		icon: Headphones,
-		title: "Go-live and after",
-		desc: "Testing, review preparation, first disbursements, and ongoing KPKT compliance support once you have launched.",
-	},
+const OFFER: { key: "licence" | "platform" | "golive"; icon: LucideIcon }[] = [
+	{ key: "licence", icon: FileBadge },
+	{ key: "platform", icon: Monitor },
+	{ key: "golive", icon: Headphones },
 ];
 
 const JOURNEY: {
-	step: string;
-	title: string;
-	desc: string;
-	weeks: string;
+	step: "1" | "2" | "3" | "4";
 	highlight?: boolean;
 }[] = [
-	{
-		step: "1",
-		title: "Provisional licence",
-		desc: "We map your operating model, prepare the dossier, and walk into the KPKT presentation with you.",
-		weeks: "Weeks 1–2",
-	},
-	{
-		step: "2",
-		title: "Build on TrueKredit™ Pro",
-		desc: "Branded web and mobile apps, signing under your control, and your own secure cloud in Malaysia — set up for you.",
-		weeks: "Weeks 3–8",
-	},
-	{
-		step: "3",
-		title: "Test and review pack",
-		desc: "Hands-on testing with your team, an independent security review, and a complete pack ready for KPKT.",
-		weeks: "Weeks 9–10",
-	},
-	{
-		step: "4",
-		title: "Approval and go-live",
-		desc: "We sit with you through final inspection and stay on for your first nationwide disbursements.",
-		weeks: "Weeks 11–12",
-		highlight: true,
-	},
+	{ step: "1" },
+	{ step: "2" },
+	{ step: "3" },
+	{ step: "4", highlight: true },
 ];
 
-const PLATFORM_POINTS = [
-	{
-		title: "Nationwide customer channels",
-		desc: "Branded website plus iPhone and Android apps — applications land in one approval queue.",
-	},
-	{
-		title: "Signing under your control",
-		desc: "Legally binding signatures stay on your premises, as digital licensing requires.",
-	},
-	{
-		title: "Your cloud, kept in Malaysia",
-		desc: "Loan data stays with you and is never mixed with other lenders.",
-	},
-] as const;
+const PLATFORM_POINTS = ["channels", "signing", "cloud"] as const;
 
-const PRO_CHIPS = [
-	"Branded customer website",
-	"iPhone & Android apps",
-	"Digital signing on your premises",
-	"Live & video attestation",
-	"Support for KPKT online licence reviews",
-] as const;
-
-const TRUST: { icon: LucideIcon; title: string; desc: string }[] = [
-	{
-		icon: Server,
-		title: "Your data stays with you",
-		desc: "Hosted on your own secure cloud in Malaysia, never mixed with other lenders.",
-	},
-	{
-		icon: ShieldCheck,
-		title: "Signing stays on your premises",
-		desc: "Borrowers sign from web or phone; the signing control stays under your roof.",
-	},
-	{
-		icon: FileBadge,
-		title: "Audit trail every day",
-		desc: "Who did what, and when — ready for your team and for KPKT.",
-	},
+const TRUST: { key: "data" | "signing" | "audit"; icon: LucideIcon }[] = [
+	{ key: "data", icon: Server },
+	{ key: "signing", icon: ShieldCheck },
+	{ key: "audit", icon: FileBadge },
 ];
 
 const WORK_TITLES = [
@@ -162,17 +63,21 @@ const WORK_TITLES = [
 ] as const;
 
 export function DigitalLicensePageContent() {
+	const t = useTranslations("DigitalLicense");
+	const tCommon = useTranslations("Common");
+	const proChips = t.raw("platform.chips") as string[];
+
 	return (
 		<>
 			<DigitalLicenseHero />
 			<DigitalLicensePaths />
 			<CrossLinkStrip
 				id="looking-for-the-platform"
-				ariaLabel="Looking for the platform"
-				lead="Looking for the platform?"
-				body="TrueKredit Pro is the nationwide system this licence runs on — branded web, apps and signing."
+				ariaLabel={t("crossLink.ariaLabel")}
+				lead={t("crossLink.lead")}
+				body={t("crossLink.body")}
 				href="/truekredit"
-				cta="See TrueKredit Pro"
+				cta={t("crossLink.cta")}
 				accent="violet"
 			/>
 			<DigitalLicenseQualify />
@@ -187,18 +92,13 @@ export function DigitalLicensePageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="type-eyebrow mb-3 text-primary">
-							Why go digital
+							{t("story.eyebrow")}
 						</p>
 						<h2 className="type-h2 text-foreground">
-							One branch is a ceiling. A digital licence is the
-							unlock.
+							{t("story.title")}
 						</h2>
 						<p className="mt-3.5 type-lede text-muted-foreground">
-							A traditional licence keeps you local. An Online
-							Money Lending Licence lets you serve borrowers
-							nationwide — provided the licence path and the
-							platform are handled properly, and in the right
-							order.
+							{t("story.body")}
 						</p>
 					</motion.div>
 
@@ -211,19 +111,19 @@ export function DigitalLicensePageContent() {
 					>
 						<div className="rounded-xl border bg-card p-[30px] shadow-sm">
 							<p className="type-eyebrow mb-2.5 text-muted-foreground/70">
-								Today
+								{t("story.todayEyebrow")}
 							</p>
 							<h3 className="text-xl font-semibold text-foreground/80">
-								Local reach. Unclear path.
+								{t("story.todayTitle")}
 							</h3>
 							<ul className="mt-[22px] flex flex-col gap-[18px]">
-								{STORY_TODAY.map((item) => (
-									<li key={item.title}>
+								{STORY_TODAY.map((key) => (
+									<li key={key}>
 										<p className="font-semibold text-foreground/80">
-											{item.title}
+											{t(`story.today.${key}.title`)}
 										</p>
 										<p className="mt-0.5 text-[15px] text-muted-foreground">
-											{item.desc}
+											{t(`story.today.${key}.desc`)}
 										</p>
 									</li>
 								))}
@@ -232,19 +132,19 @@ export function DigitalLicensePageContent() {
 
 						<div className="relative overflow-hidden rounded-xl border border-primary/25 bg-primary/4 p-[30px] shadow-sm">
 							<p className="type-eyebrow mb-2.5 text-primary">
-								With Truestack
+								{t("story.afterEyebrow")}
 							</p>
 							<h3 className="text-xl font-semibold text-foreground">
-								Nationwide. Licensed. Live.
+								{t("story.afterTitle")}
 							</h3>
 							<ul className="mt-[22px] mb-6 flex flex-col gap-[18px]">
-								{STORY_AFTER.map((item) => (
-									<li key={item.title}>
+								{STORY_AFTER.map((key) => (
+									<li key={key}>
 										<p className="font-semibold text-foreground">
-											{item.title}
+											{t(`story.after.${key}.title`)}
 										</p>
 										<p className="mt-0.5 text-[15px] text-muted-foreground">
-											{item.desc}
+											{t(`story.after.${key}.desc`)}
 										</p>
 									</li>
 								))}
@@ -253,7 +153,7 @@ export function DigitalLicensePageContent() {
 								href="#platform"
 								className="inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 							>
-								Explore TrueKredit™ Pro
+								{t("story.explorePro")}
 								<ArrowRight className="h-4 w-4" />
 							</CtaLink>
 						</div>
@@ -271,15 +171,13 @@ export function DigitalLicensePageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="type-eyebrow mb-3 text-primary">
-							What you are buying
+							{t("offer.eyebrow")}
 						</p>
 						<h2 className="type-h2 text-foreground">
-							Licence. Platform. Go-live.
+							{t("offer.title")}
 						</h2>
 						<p className="mt-3.5 type-lede text-muted-foreground">
-							Not a software handoff. A full-service path to
-							nationwide digital lending, with one team
-							accountable for all three parts.
+							{t("offer.body")}
 						</p>
 					</motion.div>
 
@@ -292,7 +190,7 @@ export function DigitalLicensePageContent() {
 					>
 						{OFFER.map((item) => (
 							<div
-								key={item.title}
+								key={item.key}
 								className="rounded-xl border bg-primary/3 p-[26px] shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
 							>
 								<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
@@ -302,17 +200,16 @@ export function DigitalLicensePageContent() {
 									/>
 								</div>
 								<h3 className="type-card-title text-foreground">
-									{item.title}
+									{t(`offer.items.${item.key}.title`)}
 								</h3>
 								<p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-									{item.desc}
+									{t(`offer.items.${item.key}.desc`)}
 								</p>
 							</div>
 						))}
 					</motion.div>
 					<p className="mt-[22px] text-[17px] text-muted-foreground">
-						One team. One contract. You focus on lending — we handle
-						the rest.
+						{t("offer.footer")}
 					</p>
 				</div>
 			</section>
@@ -330,20 +227,18 @@ export function DigitalLicensePageContent() {
 							transition={{ duration: 0.5 }}
 						>
 							<p className="type-eyebrow mb-3 text-primary">
-								About three months
+								{t("journey.eyebrow")}
 							</p>
 							<h2 className="type-h2 text-foreground">
-								From kickoff to nationwide lending.
+								{t("journey.title")}
 							</h2>
 							<p className="mt-4 text-[17px] text-muted-foreground">
-								A proven playbook, every step run with you in
-								the room. Timelines depend on your readiness and
-								KPKT scheduling.
+								{t("journey.body")}
 							</p>
 							<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-[14px] border shadow-sm">
 								<Image
 									src="/photos/homepage-fintech-team.jpg"
-									alt="Truestack advisors reviewing KPKT licensing documents with a client"
+									alt={t("journey.photoAlt")}
 									fill
 									sizes="(max-width: 1024px) 100vw, 45vw"
 									className="object-cover"
@@ -352,12 +247,12 @@ export function DigitalLicensePageContent() {
 							<div className="mt-[22px] flex flex-wrap gap-3">
 								<Button asChild size="lg">
 									<Link href="/contact?subject=Digital%20KPKT%20Licence">
-										Talk to our licensing team
+										{t("journey.talkCta")}
 									</Link>
 								</Button>
 								<Button asChild variant="outline" size="lg">
 									<CtaLink href="#platform">
-										See TrueKredit™ Pro
+										{t("journey.seeProCta")}
 									</CtaLink>
 								</Button>
 							</div>
@@ -392,14 +287,14 @@ export function DigitalLicensePageContent() {
 									>
 										<div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-2">
 											<h3 className="type-subhead text-foreground">
-												{step.title}
+												{t(`journey.steps.${step.step}.title`)}
 											</h3>
 											<span className="type-mono-label font-medium text-primary">
-												{step.weeks}
+												{t(`journey.steps.${step.step}.weeks`)}
 											</span>
 										</div>
 										<p className="text-base text-muted-foreground">
-											{step.desc}
+											{t(`journey.steps.${step.step}.desc`)}
 										</p>
 									</div>
 								</li>
@@ -421,35 +316,32 @@ export function DigitalLicensePageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="type-eyebrow mb-3 text-primary">
-							Built on TrueKredit™ Pro
+							{t("platform.eyebrow")}
 						</p>
 						<h2 className="type-h2 text-foreground">
-							The platform KPKT expects — already built.
+							{t("platform.title")}
 						</h2>
 						<p className="mt-4 type-lede text-muted-foreground">
-							Your digital licence runs on TrueKredit™ Pro: the
-							same loan book your team works in every day, plus
-							nationwide borrower channels and signing under your
-							control.
+							{t("platform.body")}
 						</p>
 						<ul className="mt-6 mb-[26px] flex flex-col gap-[18px]">
-							{PLATFORM_POINTS.map((item) => (
-								<li key={item.title}>
+							{PLATFORM_POINTS.map((key) => (
+								<li key={key}>
 									<p className="text-[17px] font-semibold text-foreground">
-										{item.title}
+										{t(`platform.points.${key}.title`)}
 									</p>
 									<p className="mt-0.5 text-base text-muted-foreground">
-										{item.desc}
+										{t(`platform.points.${key}.desc`)}
 									</p>
 								</li>
 							))}
 						</ul>
 						<div className="rounded-xl border bg-muted/40 px-[22px] py-5">
 							<p className="type-eyebrow mb-3.5 text-muted-foreground/70">
-								What Pro unlocks
+								{t("platform.proUnlocks")}
 							</p>
 							<div className="mb-3.5 flex flex-wrap gap-2">
-								{PRO_CHIPS.map((chip) => (
+								{proChips.map((chip) => (
 									<span
 										key={chip}
 										className="rounded-full bg-primary/10 px-2.5 py-1 text-sm font-medium text-primary"
@@ -459,14 +351,16 @@ export function DigitalLicensePageContent() {
 								))}
 							</div>
 							<p className="text-[15px] text-muted-foreground">
-								Already on TrueKredit Standard? Upgrade to Pro
-								without moving your loan book.{" "}
-								<Link
-									href="/truekredit#compare"
-									className="font-medium text-primary hover:underline"
-								>
-									See the comparison
-								</Link>
+								{t.rich("platform.alreadyStandard", {
+									compare: (chunks) => (
+										<Link
+											href="/truekredit#compare"
+											className="font-medium text-primary hover:underline"
+										>
+											{chunks}
+										</Link>
+									),
+								})}
 							</p>
 						</div>
 					</motion.div>
@@ -500,22 +394,19 @@ export function DigitalLicensePageContent() {
 					>
 						<div className="mb-[30px] max-w-[44em]">
 							<p className="type-eyebrow mb-3 text-primary">
-								Built for KPKT review
+								{t("trust.eyebrow")}
 							</p>
 							<h2 className="type-h2-sm text-foreground">
-								Ready when examiners ask.
+								{t("trust.title")}
 							</h2>
 							<p className="mt-3.5 type-lede text-muted-foreground">
-								Digital licensing is as much about control and
-								traceability as it is about apps. Your platform
-								is set up so the answers are already there, not
-								assembled the night before.
+								{t("trust.body")}
 							</p>
 						</div>
 						<div className="grid gap-5 md:grid-cols-3">
 							{TRUST.map((item) => (
 								<div
-									key={item.title}
+									key={item.key}
 									className="rounded-xl border bg-card p-6"
 								>
 									<div className="mb-3.5 flex h-[42px] w-[42px] items-center justify-center rounded-lg bg-primary/10">
@@ -525,10 +416,10 @@ export function DigitalLicensePageContent() {
 										/>
 									</div>
 									<h3 className="text-lg font-semibold text-foreground">
-										{item.title}
+										{t(`trust.items.${item.key}.title`)}
 									</h3>
 									<p className="mt-1.5 text-[15px] text-muted-foreground">
-										{item.desc}
+										{t(`trust.items.${item.key}.desc`)}
 									</p>
 								</div>
 							))}
@@ -542,10 +433,10 @@ export function DigitalLicensePageContent() {
 			<SuccessStoriesProof
 				id="work"
 				studies={pickProofStudiesByTitles(WORK_TITLES)}
-				eyebrow="Selected work"
-				title="Lenders we have taken digital."
-				subtitle="Real KPKT-licensed lenders launched on TrueKredit™ Pro — licensed, built, and approved with our team."
-				viewAllLabel="All success stories"
+				eyebrow={t("proof.eyebrow")}
+				title={t("proof.title")}
+				subtitle={t("proof.subtitle")}
+				viewAllLabel={t("proof.viewAll")}
 				columns={3}
 				align="start"
 			/>
@@ -554,16 +445,16 @@ export function DigitalLicensePageContent() {
 
 			<ConsultationCta
 				accent="kpkt"
-				eyebrow="Full-service KPKT digital licensing"
-				heading="Ready to go nationwide?"
-				body="Book a free consultation. We will map your route — conventional PPW digital licence on TrueKredit™ Pro, or the upcoming Shariah path on TrueSyariah™ — before you commit to anything."
+				eyebrow={t("cta.eyebrow")}
+				heading={t("cta.heading")}
+				body={t("cta.body")}
 				primary={{
 					href: "/contact?subject=Digital%20KPKT%20Licence",
-					label: "Book a Free Consultation",
+					label: tCommon("bookConsultation"),
 				}}
 				secondary={{
 					href: "/truekredit",
-					label: "Explore TrueKredit™",
+					label: t("cta.secondary"),
 				}}
 			/>
 		</>

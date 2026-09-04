@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { localizePageMetadata } from "@/lib/i18n/seo";
+import { PageMessages } from "@/lib/i18n/messages";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
@@ -14,47 +15,24 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { AccountManagementSchema } from "@/components/seo/account-management-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { AccountManagementFaq } from "@/components/sections/account-management-faq";
-import { accountManagementFaq } from "@/lib/account-management-faq";
 import {
-  ACCOUNT_MANAGEMENT_METADATA,
-  ACCOUNT_MANAGEMENT_PAGE_PATH,
+	ACCOUNT_MANAGEMENT_KEYWORDS,
+	ACCOUNT_MANAGEMENT_PAGE_PATH,
 } from "@/lib/account-management-seo";
 import {
-  Building2,
-  FileCheck,
-  CalendarCheck,
-  Shield,
-  ArrowUpCircle,
-  Zap,
-  CheckCircle2,
-  X,
-  Clock,
-  AlertCircle,
-  FileText,
-  Users,
+	Building2,
+	FileCheck,
+	CalendarCheck,
+	Shield,
+	ArrowUpCircle,
+	Zap,
+	CheckCircle2,
+	X,
+	Clock,
+	AlertCircle,
+	FileText,
+	Users,
 } from "lucide-react";
-
-const pageMetadata: Metadata = {
-  title: { absolute: ACCOUNT_MANAGEMENT_METADATA.title },
-  description: ACCOUNT_MANAGEMENT_METADATA.description,
-  keywords: [...ACCOUNT_MANAGEMENT_METADATA.keywords],
-  alternates: { canonical: ACCOUNT_MANAGEMENT_PAGE_PATH },
-  openGraph: {
-    title: ACCOUNT_MANAGEMENT_METADATA.openGraphTitle,
-    description: ACCOUNT_MANAGEMENT_METADATA.openGraphDescription,
-    url: ACCOUNT_MANAGEMENT_PAGE_PATH,
-    type: "website",
-    locale: "en_MY",
-    siteName,
-    images: [defaultOgImage],
-  },
-  twitter: {
-    card: defaultTwitterCard,
-    title: ACCOUNT_MANAGEMENT_METADATA.openGraphTitle,
-    description: ACCOUNT_MANAGEMENT_METADATA.openGraphDescription,
-    images: [defaultOgImage.url],
-  },
-};
 
 export async function generateMetadata({
 	params,
@@ -62,115 +40,109 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, ACCOUNT_MANAGEMENT_PAGE_PATH, resolveAppLocale(locale));
+	const resolved = resolveAppLocale(locale);
+	const t = await getTranslations({
+		locale: resolved,
+		namespace: "AccountManagement",
+	});
+	return localizePageMetadata(
+		{
+			title: { absolute: t("meta.title") },
+			description: t("meta.description"),
+			keywords: [...ACCOUNT_MANAGEMENT_KEYWORDS],
+			alternates: { canonical: ACCOUNT_MANAGEMENT_PAGE_PATH },
+			openGraph: {
+				title: t("meta.openGraphTitle"),
+				description: t("meta.openGraphDescription"),
+				url: ACCOUNT_MANAGEMENT_PAGE_PATH,
+				type: "website",
+				locale: "en_MY",
+				siteName,
+				images: [defaultOgImage],
+			},
+			twitter: {
+				card: defaultTwitterCard,
+				title: t("meta.openGraphTitle"),
+				description: t("meta.openGraphDescription"),
+				images: [defaultOgImage.url],
+			},
+		},
+		ACCOUNT_MANAGEMENT_PAGE_PATH,
+		resolved,
+	);
 }
 
 const painPoints = [
-  {
-    icon: AlertCircle,
-    title: "Heavy Compliance Requirements",
-    description: "KPKT regulations require frequent submissions and strict adherence to reporting standards.",
-  },
-  {
-    icon: Clock,
-    title: "Time-Consuming Coordination",
-    description: "Coordinating with CoSec, SSM, and regulators takes valuable time away from your core business.",
-  },
-  {
-    icon: FileText,
-    title: "Complex Renewals",
-    description: "License and permit renewals must be processed on time, every time — or risk penalties.",
-  },
-  {
-    icon: Users,
-    title: "Administrative Burden",
-    description: "Director changes, shareholder updates, and company modifications require careful handling.",
-  },
-];
+	{ key: "compliance", icon: AlertCircle },
+	{ key: "coordination", icon: Clock },
+	{ key: "renewals", icon: FileText },
+	{ key: "admin", icon: Users },
+] as const;
 
 const servicesIncluded = [
-  {
-    icon: Building2,
-    title: "Company Updates",
-    description: "Director changes, shareholder updates, and all essential company modifications — handled for you, on time.",
-  },
-  {
-    icon: FileCheck,
-    title: "License Renewals",
-    description: "KPKT license and advertisement permit renewals processed on time, every time.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Annual Submissions",
-    description: "B and B1 loan transaction submissions prepared and filed accurately to meet regulatory deadlines.",
-  },
-  {
-    icon: Shield,
-    title: "PDPA Licensing",
-    description: "Personal Data Protection Act license applications and renewals managed with full compliance.",
-  },
-  {
-    icon: ArrowUpCircle,
-    title: "Enterprise Upgrade",
-    description: "Smooth transition to Sdn. Bhd. status with complete documentation and regulatory coordination.",
-  },
-  {
-    icon: Zap,
-    title: "Express Handling",
-    description: "Urgent requests prioritized and expedited when you need fast turnaround times.",
-  },
-];
+	{ key: "company", icon: Building2 },
+	{ key: "renewals", icon: FileCheck },
+	{ key: "submissions", icon: CalendarCheck },
+	{ key: "pdpa", icon: Shield },
+	{ key: "upgrade", icon: ArrowUpCircle },
+	{ key: "express", icon: Zap },
+] as const;
+
+const advantageItems = [
+	{ key: "experience", icon: Zap },
+	{ key: "network", icon: Users },
+	{ key: "firstTime", icon: FileCheck },
+] as const;
+
+type PricingCell = string | boolean | null;
 
 interface PricingRow {
-  item: string;
-  noSubscription: string | boolean | null;
-  monthly: string | boolean | null;
-  annual: string | boolean | null;
-  isHighlight?: boolean;
+	key: "subscription" | "perRequest" | "priority" | "annualSubmission" | "savings" | "bestFor";
+	noSubscription: PricingCell;
+	monthly: PricingCell;
+	annual: PricingCell;
+	isHighlight?: boolean;
 }
 
-const pricingData: { headers: string[]; rows: PricingRow[] } = {
-  headers: ["Item", "No Subscription", "Monthly", "Annual"],
-  rows: [
-    {
-      item: "Subscription Fee",
-      noSubscription: "—",
-      monthly: "RM 100 / month",
-      annual: "RM 1,000 / year",
-    },
-    {
-      item: "Per Request Fee",
-      noSubscription: "RM 1,000",
-      monthly: "RM 600",
-      annual: "RM 500",
-    },
-    {
-      item: "Priority Handling",
-      noSubscription: null,
-      monthly: true,
-      annual: true,
-    },
-    {
-      item: "Annual B & B1 Submission",
-      noSubscription: "—",
-      monthly: "—",
-      annual: "Included (once per year)",
-    },
-    {
-      item: "Annual Savings (10 requests)",
-      noSubscription: "—",
-      monthly: "Save RM 2,800",
-      annual: "Save RM 4,500",
-      isHighlight: true,
-    },
-    {
-      item: "Best For",
-      noSubscription: "Occasional / one-off needs",
-      monthly: "Regular operators",
-      annual: "Active & growing operators",
-    },
-  ],
-};
+const pricingRows: PricingRow[] = [
+	{
+		key: "subscription",
+		noSubscription: "noSubscription",
+		monthly: "monthly",
+		annual: "annual",
+	},
+	{
+		key: "perRequest",
+		noSubscription: "noSubscription",
+		monthly: "monthly",
+		annual: "annual",
+	},
+	{
+		key: "priority",
+		noSubscription: null,
+		monthly: true,
+		annual: true,
+	},
+	{
+		key: "annualSubmission",
+		noSubscription: "noSubscription",
+		monthly: "monthly",
+		annual: "annual",
+	},
+	{
+		key: "savings",
+		noSubscription: "noSubscription",
+		monthly: "monthly",
+		annual: "annual",
+		isHighlight: true,
+	},
+	{
+		key: "bestFor",
+		noSubscription: "noSubscription",
+		monthly: "monthly",
+		annual: "annual",
+	},
+];
 
 export default async function AccountManagementPage({
 	params,
@@ -179,328 +151,429 @@ export default async function AccountManagementPage({
 }) {
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
-  return (
-    <>
-      <AccountManagementSchema />
-      <FaqSchema items={accountManagementFaq} />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "/" },
-          {
-            name: "KPKT Account Management",
-            path: ACCOUNT_MANAGEMENT_PAGE_PATH,
-          },
-        ]}
-      />
-      <Hero
-        title="KPKT Account Management, Simplified"
-        subtitle="We handle regulatory and administrative work so you can focus on growth and serving your customers."
-        primaryCta={{ label: "Book a Free Consultation", href: "/contact" }}
-        secondaryCta={{ label: "View Pricing", href: "#pricing" }}
-        variant="kpkt"
-      />
+	const t = await getTranslations("AccountManagement");
+	const tCommon = await getTranslations("Common");
+	const faqItems = t.raw("faq.items") as {
+		question: string;
+		answer: string;
+	}[];
 
-      {/* Pain Points */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            title="Navigate Compliance Without the Hassle"
-            subtitle="Running a licensed money lending business means dealing with heavy regulatory requirements. Let us handle it."
-          />
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {painPoints.map((point) => (
-              <Card key={point.title} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
-                    <point.icon className="h-6 w-6 text-destructive" />
-                  </div>
-                  <h3 className="mb-2 text-lg font-semibold">{point.title}</h3>
-                  <p className="text-base text-muted-foreground">{point.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+	const pricingCells = {
+		subscription: {
+			noSubscription: t("pricing.rows.subscription.noSubscription"),
+			monthly: t("pricing.rows.subscription.monthly"),
+			annual: t("pricing.rows.subscription.annual"),
+		},
+		perRequest: {
+			noSubscription: t("pricing.rows.perRequest.noSubscription"),
+			monthly: t("pricing.rows.perRequest.monthly"),
+			annual: t("pricing.rows.perRequest.annual"),
+		},
+		annualSubmission: {
+			noSubscription: t("pricing.rows.annualSubmission.noSubscription"),
+			monthly: t("pricing.rows.annualSubmission.monthly"),
+			annual: t("pricing.rows.annualSubmission.annual"),
+		},
+		savings: {
+			noSubscription: t("pricing.rows.savings.noSubscription"),
+			monthly: t("pricing.rows.savings.monthly"),
+			annual: t("pricing.rows.savings.annual"),
+		},
+		bestFor: {
+			noSubscription: t("pricing.rows.bestFor.noSubscription"),
+			monthly: t("pricing.rows.bestFor.monthly"),
+			annual: t("pricing.rows.bestFor.annual"),
+		},
+	} as const;
 
-      {/* Our Solution */}
-      <section className="border-t bg-kpkt/5 py-12">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <div className="max-w-3xl">
-              <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Solution</Badge>
-              <h2 className="mb-4 type-h2">Your Single, Trusted Partner</h2>
-              <p className="type-lede text-muted-foreground">
-                A dedicated KPKT account management service that handles end-to-end regulatory work. 
-                We streamline every compliance touchpoint, saving you time and reducing operational stress 
-                so you can focus on what matters most: <span className="font-semibold text-foreground">growing your lending business.</span>
-              </p>
-            </div>
-            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
-              <Image
-                src="/photos/account-management-shop-counter.jpg"
-                alt="Staff serving customers at a Malaysian café counter"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div
-                className="absolute inset-0 bg-primary/10 mix-blend-multiply"
-                aria-hidden
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+	const renderCell = (
+		row: PricingRow,
+		column: "noSubscription" | "monthly" | "annual",
+		value: PricingCell,
+	) => {
+		if (value === null) {
+			return <X className="mx-auto h-5 w-5 text-muted-foreground" />;
+		}
+		if (value === true) {
+			return <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />;
+		}
+		const text =
+			row.key === "priority" ? "" : pricingCells[row.key][column];
+		if (column === "annual") {
+			return (
+				<span
+					className={
+						row.isHighlight
+							? "font-semibold text-kpkt"
+							: "font-medium"
+					}
+				>
+					{text}
+				</span>
+			);
+		}
+		return (
+			<span className={row.isHighlight ? "text-muted-foreground" : ""}>
+				{text}
+			</span>
+		);
+	};
 
-      {/* Speed Advantage */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Left: Content */}
-            <div className="max-w-xl">
-              <Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">Our Advantage</Badge>
-              <h2 className="mb-4 type-h2">
-                Up to <span className="text-kpkt">50% Faster</span> Approvals
-              </h2>
-              <p className="mb-6 type-lede text-muted-foreground">
-                Our deep experience with KPKT processes and established relationships with regulators
-                mean your applications move faster through the system.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
-                    <Zap className="h-4 w-4 text-kpkt" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Years of Experience</h4>
-                    <p className="text-base text-muted-foreground">We know exactly what regulators need, reducing back-and-forth and delays.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
-                    <Users className="h-4 w-4 text-kpkt" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Established Network</h4>
-                    <p className="text-base text-muted-foreground">Direct relationships with key stakeholders expedite the approval process.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
-                    <FileCheck className="h-4 w-4 text-kpkt" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">First-Time Right</h4>
-                    <p className="text-base text-muted-foreground">Accurate documentation from day one means no rejection or resubmission delays.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+	return (
+		<>
+			<AccountManagementSchema />
+			<FaqSchema items={faqItems} />
+			<BreadcrumbSchema
+				items={[
+					{ name: tCommon("breadcrumbHome"), path: "/" },
+					{
+						name: t("breadcrumb.current"),
+						path: ACCOUNT_MANAGEMENT_PAGE_PATH,
+					},
+				]}
+			/>
+			<Hero
+				title={t("hero.title")}
+				subtitle={t("hero.subtitle")}
+				primaryCta={{
+					label: tCommon("bookConsultation"),
+					href: "/contact",
+				}}
+				secondaryCta={{ label: t("hero.secondaryCta"), href: "#pricing" }}
+				variant="kpkt"
+			/>
 
-            {/* Right: Visual Comparison */}
-            <div className="relative">
-              <Card className="overflow-hidden">
-                <div className="-mx-px -mt-px rounded-t-xl border-b bg-muted/50 px-6 py-4">
-                  <h3 className="text-center text-lg font-semibold">Average Approval Timeline</h3>
-                </div>
-                <CardContent className="p-6">
-                  <div className="space-y-8">
-                    {/* DIY Bar */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium text-muted-foreground">DIY / Traditional</span>
-                        <span className="font-semibold">4–6 weeks</span>
-                      </div>
-                      <div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
-                        <div 
-                          className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-muted-foreground/30 pr-3"
-                          style={{ width: '100%' }}
-                        >
-                          <Clock className="h-5 w-5 text-muted-foreground" />
-                        </div>
-                      </div>
-                    </div>
+			{/* Pain Points */}
+			<section className="py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeader
+						title={t("pain.title")}
+						subtitle={t("pain.subtitle")}
+					/>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+						{painPoints.map((point) => (
+							<Card key={point.key} className="text-center">
+								<CardContent className="pt-6">
+									<div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
+										<point.icon className="h-6 w-6 text-destructive" />
+									</div>
+									<h3 className="mb-2 text-lg font-semibold">
+										{t(`pain.items.${point.key}.title`)}
+									</h3>
+									<p className="text-base text-muted-foreground">
+										{t(`pain.items.${point.key}.description`)}
+									</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
 
-                    {/* Truestack Bar */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="font-semibold text-kpkt">With Truestack</span>
-                        <span className="font-bold text-kpkt">2–3 weeks</span>
-                      </div>
-                      <div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
-                        <div 
-                          className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-gradient-to-r from-kpkt to-kpkt/80 pr-3"
-                          style={{ width: '50%' }}
-                        >
-                          <Zap className="h-5 w-5 text-white" />
-                        </div>
-                      </div>
-                    </div>
+			{/* Our Solution */}
+			<section className="border-t bg-kpkt/5 py-12">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+						<div className="max-w-3xl">
+							<Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">
+								{t("solution.badge")}
+							</Badge>
+							<h2 className="mb-4 type-h2">{t("solution.title")}</h2>
+							<p className="type-lede text-muted-foreground">
+								{t.rich("solution.body", {
+									emphasis: (chunks) => (
+										<span className="font-semibold text-foreground">
+											{chunks}
+										</span>
+									),
+								})}
+							</p>
+						</div>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/account-management-shop-counter.jpg"
+								alt={t("solution.photoAlt")}
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 
-                    {/* Savings Highlight */}
-                    <div className="rounded-xl border-2 border-dashed border-kpkt/30 bg-kpkt/5 p-4 text-center">
-                      <div className="mb-1 text-3xl font-bold text-kpkt">~50%</div>
-                      <div className="text-sm font-medium text-muted-foreground">Faster than industry average</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+			{/* Speed Advantage */}
+			<section className="py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="grid items-center gap-12 lg:grid-cols-2">
+						{/* Left: Content */}
+						<div className="max-w-xl">
+							<Badge className="mb-4 bg-kpkt hover:bg-kpkt/90">
+								{t("advantage.badge")}
+							</Badge>
+							<h2 className="mb-4 type-h2">
+								{t.rich("advantage.title", {
+									accent: (chunks) => (
+										<span className="text-kpkt">{chunks}</span>
+									),
+								})}
+							</h2>
+							<p className="mb-6 type-lede text-muted-foreground">
+								{t("advantage.body")}
+							</p>
+							<div className="space-y-4">
+								{advantageItems.map((item) => (
+									<div key={item.key} className="flex items-start gap-3">
+										<div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+											<item.icon className="h-4 w-4 text-kpkt" />
+										</div>
+										<div>
+											<h4 className="text-lg font-semibold">
+												{t(`advantage.items.${item.key}.title`)}
+											</h4>
+											<p className="text-base text-muted-foreground">
+												{t(`advantage.items.${item.key}.description`)}
+											</p>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
 
-      {/* Services Covered */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <SectionHeader
-              title="Comprehensive Services Covered"
-              subtitle="Everything you need to stay compliant, handled by our experienced team."
-              className="mb-0"
-            />
-            <div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
-              <Image
-                src="/photos/account-management-advisory.jpg"
-                alt="Account managers reviewing KPKT compliance documents with a client"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div
-                className="absolute inset-0 bg-primary/10 mix-blend-multiply"
-                aria-hidden
-              />
-            </div>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {servicesIncluded.map((service) => (
-              <Card key={service.title} className="transition-all hover:shadow-md hover:border-kpkt/50">
-                <CardHeader className="pb-2">
-                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-kpkt/10">
-                    <service.icon className="h-5 w-5 text-kpkt" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-base text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="mx-auto mt-10 max-w-2xl">
-            <div className="flex items-center gap-4 rounded-xl border bg-gradient-to-r from-kpkt/5 to-transparent p-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
-                <CheckCircle2 className="h-6 w-6 text-kpkt" />
-              </div>
-              <div>
-                <p className="text-lg font-medium text-foreground">Full CoSec & SSM Coordination</p>
-                <p className="text-base text-muted-foreground">All document coordination handled for you — so nothing slips through the cracks.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+						{/* Right: Visual Comparison */}
+						<div className="relative">
+							<Card className="overflow-hidden">
+								<div className="-mx-px -mt-px rounded-t-xl border-b bg-muted/50 px-6 py-4">
+									<h3 className="text-center text-lg font-semibold">
+										{t("advantage.timelineTitle")}
+									</h3>
+								</div>
+								<CardContent className="p-6">
+									<div className="space-y-8">
+										{/* DIY Bar */}
+										<div className="space-y-3">
+											<div className="flex items-center justify-between text-sm">
+												<span className="font-medium text-muted-foreground">
+													{t("advantage.diyLabel")}
+												</span>
+												<span className="font-semibold">
+													{t("advantage.diyTime")}
+												</span>
+											</div>
+											<div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
+												<div
+													className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-muted-foreground/30 pr-3"
+													style={{ width: "100%" }}
+												>
+													<Clock className="h-5 w-5 text-muted-foreground" />
+												</div>
+											</div>
+										</div>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="scroll-mt-20 border-t bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeader
-            title="Simple, Transparent Pricing"
-            subtitle="Flexible options designed for your business needs. Pay only for what you use, with no hidden fees."
-          />
-          
-          <div className="mx-auto max-w-4xl">
-            <Card className="overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b bg-muted/50">
-                      <th className="px-6 py-4 text-left font-semibold align-bottom">Item</th>
-                      <th className="px-6 py-4 text-center font-semibold align-bottom">
-                        No Subscription
-                      </th>
-                      <th className="px-6 py-4 text-center font-semibold align-bottom">
-                        Monthly
-                      </th>
-                      <th className="px-6 py-4 text-center font-semibold align-bottom">
-                        <Badge variant="default" className="mb-2 bg-kpkt hover:bg-kpkt/90">Recommended</Badge>
-                        <div>Annual</div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {pricingData.rows.map((row) => (
-                      <tr 
-                        key={row.item} 
-                        className={`border-b last:border-0 ${row.isHighlight ? 'bg-kpkt/5' : ''}`}
-                      >
-                        <td className="px-6 py-4 font-medium">{row.item}</td>
-                        <td className="px-6 py-4 text-center">
-                          {row.noSubscription === null ? (
-                            <X className="mx-auto h-5 w-5 text-muted-foreground" />
-                          ) : row.noSubscription === true ? (
-                            <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
-                          ) : (
-                            <span className={row.isHighlight ? 'text-muted-foreground' : ''}>{row.noSubscription}</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          {row.monthly === null ? (
-                            <X className="mx-auto h-5 w-5 text-muted-foreground" />
-                          ) : row.monthly === true ? (
-                            <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
-                          ) : (
-                            <span className={row.isHighlight ? 'text-muted-foreground' : ''}>{row.monthly}</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-4 text-center">
-                          {row.annual === null ? (
-                            <X className="mx-auto h-5 w-5 text-muted-foreground" />
-                          ) : row.annual === true ? (
-                            <CheckCircle2 className="mx-auto h-5 w-5 text-kpkt" />
-                          ) : (
-                            <span className={row.isHighlight ? 'font-semibold text-kpkt' : 'font-medium'}>{row.annual}</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Card>
+										{/* Truestack Bar */}
+										<div className="space-y-3">
+											<div className="flex items-center justify-between text-sm">
+												<span className="font-semibold text-kpkt">
+													{t("advantage.truestackLabel")}
+												</span>
+												<span className="font-bold text-kpkt">
+													{t("advantage.truestackTime")}
+												</span>
+											</div>
+											<div className="relative h-10 w-full overflow-hidden rounded-lg bg-muted">
+												<div
+													className="absolute inset-y-0 left-0 flex items-center justify-end rounded-lg bg-gradient-to-r from-kpkt to-kpkt/80 pr-3"
+													style={{ width: "50%" }}
+												>
+													<Zap className="h-5 w-5 text-white" />
+												</div>
+											</div>
+										</div>
 
-            {/* Notes */}
-            <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <p className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-kpkt" />
-                No long-term lock-in. Switch between subscription tiers or on-demand as your business evolves.
-              </p>
-              <p className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-kpkt" />
-                Annual subscribers save 50% on per-request fees compared to no subscription.
-              </p>
-              <p className="flex items-center gap-2 font-medium text-foreground">
-                <Zap className="h-4 w-4 text-kpkt" />
-                Digital KPKT License conversion is a separate service. <Link href="/services/digital-license" className="text-kpkt underline-offset-4 hover:underline">Learn more →</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+										{/* Savings Highlight */}
+										<div className="rounded-xl border-2 border-dashed border-kpkt/30 bg-kpkt/5 p-4 text-center">
+											<div className="mb-1 text-3xl font-bold text-kpkt">
+												{t("advantage.savingsValue")}
+											</div>
+											<div className="text-sm font-medium text-muted-foreground">
+												{t("advantage.savingsCaption")}
+											</div>
+										</div>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <AccountManagementFaq />
+			{/* Services Covered */}
+			<section className="border-t py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="mb-12 grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+						<SectionHeader
+							title={t("services.title")}
+							subtitle={t("services.subtitle")}
+							className="mb-0"
+						/>
+						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
+							<Image
+								src="/photos/account-management-advisory.jpg"
+								alt={t("services.photoAlt")}
+								fill
+								sizes="(max-width: 1024px) 100vw, 50vw"
+								className="object-cover"
+							/>
+							<div
+								className="absolute inset-0 bg-primary/10 mix-blend-multiply"
+								aria-hidden
+							/>
+						</div>
+					</div>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+						{servicesIncluded.map((service) => (
+							<Card
+								key={service.key}
+								className="transition-all hover:shadow-md hover:border-kpkt/50"
+							>
+								<CardHeader className="pb-2">
+									<div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-kpkt/10">
+										<service.icon className="h-5 w-5 text-kpkt" />
+									</div>
+									<CardTitle className="text-xl">
+										{t(`services.items.${service.key}.title`)}
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<p className="text-base text-muted-foreground">
+										{t(`services.items.${service.key}.description`)}
+									</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+					<div className="mx-auto mt-10 max-w-2xl">
+						<div className="flex items-center gap-4 rounded-xl border bg-gradient-to-r from-kpkt/5 to-transparent p-5">
+							<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-kpkt/10">
+								<CheckCircle2 className="h-6 w-6 text-kpkt" />
+							</div>
+							<div>
+								<p className="text-lg font-medium text-foreground">
+									{t("services.cosecTitle")}
+								</p>
+								<p className="text-base text-muted-foreground">
+									{t("services.cosecBody")}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <ConsultationCta
-        accent="kpkt"
-        heading="Let Us Handle Compliance"
-        body="Focus on growing your lending business while we manage the regulatory complexity. Book a free consultation and our team will scope your compliance needs."
-        secondary={{
-          href: "/services/digital-license",
-          label: "Explore Digital Licence",
-        }}
-      />
-    </>
-  );
+			{/* Pricing Section */}
+			<section id="pricing" className="scroll-mt-20 border-t bg-muted/30 py-20">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeader
+						title={t("pricing.title")}
+						subtitle={t("pricing.subtitle")}
+					/>
+
+					<div className="mx-auto max-w-4xl">
+						<Card className="overflow-hidden">
+							<div className="overflow-x-auto">
+								<table className="w-full">
+									<thead>
+										<tr className="border-b bg-muted/50">
+											<th className="px-6 py-4 text-left font-semibold align-bottom">
+												{t("pricing.headers.item")}
+											</th>
+											<th className="px-6 py-4 text-center font-semibold align-bottom">
+												{t("pricing.headers.noSubscription")}
+											</th>
+											<th className="px-6 py-4 text-center font-semibold align-bottom">
+												{t("pricing.headers.monthly")}
+											</th>
+											<th className="px-6 py-4 text-center font-semibold align-bottom">
+												<Badge
+													variant="default"
+													className="mb-2 bg-kpkt hover:bg-kpkt/90"
+												>
+													{t("pricing.recommended")}
+												</Badge>
+												<div>{t("pricing.headers.annual")}</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										{pricingRows.map((row) => (
+											<tr
+												key={row.key}
+												className={`border-b last:border-0 ${row.isHighlight ? "bg-kpkt/5" : ""}`}
+											>
+												<td className="px-6 py-4 font-medium">
+													{t(`pricing.rows.${row.key}.item`)}
+												</td>
+												<td className="px-6 py-4 text-center">
+													{renderCell(row, "noSubscription", row.noSubscription)}
+												</td>
+												<td className="px-6 py-4 text-center">
+													{renderCell(row, "monthly", row.monthly)}
+												</td>
+												<td className="px-6 py-4 text-center">
+													{renderCell(row, "annual", row.annual)}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+						</Card>
+
+						{/* Notes */}
+						<div className="mt-6 space-y-2 text-sm text-muted-foreground">
+							<p className="flex items-center gap-2">
+								<CheckCircle2 className="h-4 w-4 text-kpkt" />
+								{t("pricing.noteLockin")}
+							</p>
+							<p className="flex items-center gap-2">
+								<CheckCircle2 className="h-4 w-4 text-kpkt" />
+								{t("pricing.noteSavings")}
+							</p>
+							<p className="flex items-center gap-2 font-medium text-foreground">
+								<Zap className="h-4 w-4 text-kpkt" />
+								{t.rich("pricing.noteConversion", {
+									link: (chunks) => (
+										<Link
+											href="/services/digital-license"
+											className="text-kpkt underline-offset-4 hover:underline"
+										>
+											{chunks}
+										</Link>
+									),
+								})}
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<PageMessages namespaces={["AccountManagement"]}>
+				<AccountManagementFaq />
+			</PageMessages>
+
+			<ConsultationCta
+				accent="kpkt"
+				heading={t("cta.heading")}
+				body={t("cta.body")}
+				secondary={{
+					href: "/services/digital-license",
+					label: t("cta.secondary"),
+				}}
+			/>
+		</>
+	);
 }

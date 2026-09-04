@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
@@ -23,7 +24,9 @@ export const WORK_METADATA = {
 		"Selected work from Truestack — digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered end to end.",
 } as const;
 
-export function buildWorkJsonLd() {
+export async function buildWorkJsonLd() {
+	const tCommon = await getTranslations("Common");
+	const t = await getTranslations("WorkChrome");
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
@@ -31,7 +34,7 @@ export function buildWorkJsonLd() {
 				"@type": ["WebPage", "CollectionPage"],
 				"@id": `${WORK_PAGE_URL}#webpage`,
 				url: WORK_PAGE_URL,
-				name: WORK_METADATA.openGraphTitle,
+				name: t("schema.name"),
 				description: WORK_METADATA.description,
 				inLanguage: "en-MY",
 				isPartOf: { "@id": `${baseUrl}/#website` },
@@ -45,13 +48,13 @@ export function buildWorkJsonLd() {
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Home",
+						name: tCommon("breadcrumbHome"),
 						item: baseUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Work",
+						name: t("nav"),
 						item: WORK_PAGE_URL,
 					},
 				],

@@ -1,4 +1,150 @@
 {
 	"_status": "source",
-	"About": {}
+	"About": {
+		"meta": {
+			"title": "About Truestack | Lending Platforms & KPKT Malaysia",
+			"description": "Truestack builds lending platforms and KPKT compliance for Malaysian lenders. Founded 2025 in KL. 11 lenders live, over RM 200 million disbursed a year.",
+			"openGraphTitle": "About Truestack | Lending Platforms & KPKT Malaysia",
+			"openGraphDescription": "Meet Truestack — founded 2025 in Kuala Lumpur. Lending platforms and KPKT compliance under one contract. 11 lenders live, over RM 200 million disbursed a year."
+		},
+		"schema": {
+			"breadcrumbHome": "Home",
+			"breadcrumbCurrent": "About",
+			"principlesName": "Truestack operating principles",
+			"principlesDescription": "Four things Truestack does not compromise on when building lending platforms and handling KPKT compliance."
+		},
+		"hero": {
+			"breadcrumbAria": "Breadcrumb",
+			"breadcrumbParent": "Company",
+			"breadcrumbCurrent": "About",
+			"title": "Malaysian lending deserves <accent>better tools.</accent>",
+			"lede": "We are a team of engineers and compliance specialists working in one industry: Malaysian credit. We build the platforms our clients run on, take on custom software when they need it, and handle the regulatory side alongside the build.",
+			"pills": {
+				"kl": "Kuala Lumpur",
+				"credit": "Credit & fintech only",
+				"regulation": "Regulation-native"
+			},
+			"stats": {
+				"founded": {
+					"label": "Founded in Kuala Lumpur"
+				},
+				"lenders": {
+					"label": "Lenders and fintechs live with us"
+				},
+				"disbursed": {
+					"label": "Disbursed annually by our lenders"
+				}
+			}
+		},
+		"story": {
+			"eyebrow": "Why we exist",
+			"title": "A market held together by spreadsheets.",
+			"imageAlt": "The Truestack team working together in their Kuala Lumpur office",
+			"lede": "Malaysia's private credit market is fragmented. Every lender we met had solved the same problems separately — and none of them enjoyed it.",
+			"p1": "A loan book in Excel. Borrower documents in a shared drive. Instalments reconciled by hand at month-end. Identity checks on one vendor's website, company searches on another, payments on a third, none of them talking to each other. Everything worked, more or less, until somebody asked for an audit trail.",
+			"p2": "Then there was the regulator. For KPKT money lenders, compliance is not optional and not simple, and for most of them it sat outside their expertise — a wall between holding a licence and actually growing on it. P2P operators face the same thing with the Securities Commission. Good businesses were held back by paperwork rather than by credit risk or capital.",
+			"p3": "We started Truestack in 2025 because that gap did not need to exist. The software and the regulatory work are two halves of the same job, and splitting them across a software vendor and a consultant is what makes both harder. So we do both, under one contract, for one industry — whether that is a KPKT loan book, a Shariah financing product, a P2P marketplace, identity or company checks you would rather not build yourself, or a custom system nobody sells off the shelf.",
+			"p4": "Today eleven lenders and fintechs run on our platforms, disbursing over RM 200 million a year, with their books, documents and audit trails in the same place. KPKT lending is the bulk of what we do. It is not the limit of it."
+		},
+		"beliefs": {
+			"eyebrow": "What we believe",
+			"title": "Four things we do not compromise on.",
+			"lede": "These are the arguments we have already had internally, settled, and now design around.",
+			"items": {
+				"compliance": {
+					"title": "Compliance is a design constraint, not a feature",
+					"body": "If the regulatory paperwork has to be assembled by hand after the software ships, the software was designed wrong. KPKT schedules, Lampiran, Shariah ledgers and audit trails come out of the same records your team works in every day."
+				},
+				"loanBook": {
+					"title": "Your loan book is yours",
+					"body": "Every client runs on their own secure cloud account, hosted in Malaysia. We do not pool borrower data across clients, and we do not build products out of it."
+				},
+				"oneTeam": {
+					"title": "One team, or it is not accountable",
+					"body": "Splitting the regulatory path from the build is how projects stall — each side waits on the other. Our compliance specialists and engineers sit in the same delivery, so there is one plan and one person to call."
+				},
+				"goLive": {
+					"title": "Go-live is the beginning",
+					"body": "Lending does not stop at launch, so neither do we. Renewals, filings, releases and the next feature stay with the people who built the thing in the first place."
+				}
+			}
+		},
+		"howWeWork": {
+			"eyebrow": "How we work",
+			"title": "What working with us actually looks like.",
+			"lede": "No discovery phase that bills for six weeks and ends in a slide deck. Four stages, whether the job is a licence conversion, a platform, an integration or a custom build.",
+			"stages": {
+				"stand": {
+					"tag": "Free",
+					"title": "We tell you where you stand",
+					"body": "A consultation on your regulatory position, what you are actually trying to build, and roughly what it costs. If the answer is that you are not ready, we say so."
+				},
+				"plan": {
+					"tag": "One contract",
+					"title": "One plan across licence and build",
+					"body": "Compliance milestones and delivery milestones on the same timeline, with named owners on both sides. You are not the integration layer between two vendors."
+				},
+				"base": {
+					"tag": "Proven base",
+					"title": "You start from what already runs",
+					"body": "Your platform is configured from systems already live with other clients, not built from zero. Custom work goes where your business is genuinely different."
+				},
+				"stay": {
+					"tag": "Ongoing",
+					"title": "We stay after go-live",
+					"body": "Renewals, annual submissions, support and the next release. The same team, not a handover to an account manager who was not there."
+				}
+			},
+			"teams": {
+				"engineering": {
+					"title": "Product & engineering",
+					"body": "Architects, product, mobile and cloud — one delivery team, from workshop through launch."
+				},
+				"compliance": {
+					"title": "Compliance & operations",
+					"body": "Licensing, filings and go-live support, running alongside the build rather than after it."
+				},
+				"design": {
+					"title": "Design & experience",
+					"body": "Interfaces your counter staff, your investors and your borrowers can actually use without training."
+				}
+			}
+		},
+		"office": {
+			"eyebrow": "Where we are",
+			"title": "KL Trillion, Jalan Tun Razak.",
+			"lede": "We are a Kuala Lumpur company working with Malaysian lenders and fintechs, in the same time zone and the same regulatory reality as our clients. Visitors are welcome — most engagements start with a conversation in the room.",
+			"linkedin": "LinkedIn",
+			"registeredEntity": "Registered entity",
+			"whoWeWorkWith": "Who we work with",
+			"fields": {
+				"company": "Company",
+				"registration": "Registration no.",
+				"incorporated": "Incorporated",
+				"incorporatedValue": "2025 · Kuala Lumpur, Malaysia"
+			},
+			"audiences": {
+				"lenders": "Licensed money lenders",
+				"shariah": "Shariah financing operators",
+				"p2p": "P2P platforms",
+				"fintechs": "Fintechs building on our rails"
+			}
+		},
+		"careers": {
+			"eyebrow": "Careers",
+			"title": "We are a small team, so every hire shows.",
+			"lede": "Engineering, design, compliance and delivery — if regulated financial software in Malaysia sounds more interesting than another dashboard, we would like to hear from you.",
+			"cta": "See open roles",
+			"tracks": {
+				"engineering": "Product & engineering",
+				"compliance": "Compliance & operations",
+				"design": "Design & experience"
+			}
+		},
+		"cta": {
+			"heading": "Tell us what you're building.",
+			"body": "A licence, a lending platform, a P2P marketplace, or an integration you would rather not build twice. Book a free consultation and we will tell you honestly what it takes.",
+			"secondary": "See our work"
+		}
+	}
 }

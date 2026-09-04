@@ -1,4 +1,422 @@
 {
 	"_status": "source",
-	"Careers": {}
+	"Careers": {
+		"meta": {
+			"title": "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
+			"description": "Open roles at Truestack in Kuala Lumpur — full-stack engineering, B2B sales, client success and admin. Hybrid software roles. Fresh graduates welcome.",
+			"openGraphTitle": "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
+			"openGraphDescription": "Open roles at Truestack in Kuala Lumpur across engineering, sales, client success and operations. Engineering is hybrid. Fresh graduates welcome."
+		},
+		"schema": {
+			"breadcrumbHome": "Home",
+			"breadcrumbCurrent": "Careers",
+			"jobListName": "Truestack open positions",
+			"industryEngineering": "Software Development",
+			"industryOther": "Technology",
+			"workOn": "What you'll work on:",
+			"responsibilities": "Responsibilities:",
+			"requirements": "Requirements:",
+			"bonus": "Bonus skills:",
+			"tech": "Tech stack:"
+		},
+		"hero": {
+			"breadcrumbAria": "Breadcrumb",
+			"breadcrumbParent": "Company",
+			"breadcrumbCurrent": "Careers",
+			"title": "Build the systems <accent>Malaysian credit runs on.</accent>",
+			"lede": "We build the software lenders and fintechs here use every day. It handles real money and real borrowers, so the work is never abstract — and you always know whether it worked."
+		},
+		"jobs": {
+			"eyebrow": "Open roles",
+			"title": "What we are hiring for.",
+			"lede": "Open a role for details.",
+			"tabsAria": "Job listings",
+			"tabs": {
+				"open": "Open",
+				"closed": "Closed"
+			},
+			"empty": {
+				"openTitle": "No open positions right now",
+				"openBody": "Write to us anyway. New roles open as we take on clients.",
+				"closedTitle": "No closed positions to show",
+				"closedBody": "Previously filled roles will appear here."
+			},
+			"footer": {
+				"open": "Nothing here fits? Write to us anyway. We read every application, and new roles open as we take on clients.",
+				"closed": "Closed for now. If one of these is exactly what you do, write anyway. We keep good CVs on file."
+			},
+			"columns": {
+				"role": "Role",
+				"team": "Team",
+				"location": "Location",
+				"type": "Type"
+			},
+			"status": {
+				"open": "Open",
+				"filled": "Filled"
+			},
+			"details": "Details",
+			"modal": {
+				"workOn": "What you will work on",
+				"do": "What you will do",
+				"lookingFor": "What we are looking for",
+				"niceToHave": "Nice to have",
+				"whatWeUse": "What we use",
+				"applyHint": "Email us your CV and mention this role.",
+				"apply": "Apply for this role",
+				"filledHint": "This one is filled. If it is exactly what you do, write anyway — we keep good CVs on file.",
+				"write": "Write to us"
+			},
+			"items": {
+				"full-stack-web-developer": {
+					"title": "Full-Stack Web Developer",
+					"department": "Engineering",
+					"location": "Kuala Lumpur, Malaysia · Hybrid",
+					"type": "Full-time",
+					"summary": "React, Next.js, TypeScript, Node and Postgres, across our lending platforms and the services behind them. 3+ years.",
+					"description": "You will build and maintain the lending platforms our clients run every day — the screens their staff use, the borrower-facing apps, and the services behind them. The work sits across frontend and backend, with product and operations in the same room.",
+					"workAreas": [
+						"Customer-facing web apps for lending and fintech operations",
+						"Internal admin tools and operational dashboards",
+						"Backend services and third-party connections (e-KYC, notifications, payments)",
+						"Systems that have to stand up to compliance, reporting and audits"
+					],
+					"responsibilities": [
+						"Build and maintain web apps in React, Next.js and TypeScript",
+						"Write backend services in Node.js and Express",
+						"Connect our systems to internal tools and third-party services",
+						"Work with PostgreSQL and the data models behind live loan books",
+						"Sit with product, design and operations to decide what to build next",
+						"Fix problems across the stack and make the system more reliable",
+						"Write code other people can read, change and test",
+						"Help with releases, CI and the cloud setup we already run",
+						"Keep an eye on performance and how painful the system is to work in"
+					],
+					"requirements": [
+						"3+ years of full-stack web development",
+						"Comfortable with React / Next.js and TypeScript",
+						"Have built backend services with Node.js and Express",
+						"Have worked with PostgreSQL or another relational database",
+						"Know how to design a straightforward REST API; GraphQL is a plus",
+						"Familiar with AWS, Docker, CI and how releases actually go out",
+						"Can work on a problem without someone standing over you",
+						"Can explain a technical decision to someone who is not an engineer",
+						"Malaysian citizen or permanent resident preferred"
+					],
+					"bonusSkills": [
+						"You have shipped fintech, lending, SaaS or compliance-heavy software",
+						"You have dealt with payments, identity checks or workflow-heavy products",
+						"You have worked in a regulated environment",
+						"You have been on-call or handled production issues"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript",
+						"Node.js / Express",
+						"PostgreSQL",
+						"AWS",
+						"Docker & CI/CD"
+					]
+				},
+				"software-development-intern": {
+					"title": "Software Development Intern",
+					"department": "Engineering",
+					"location": "Kuala Lumpur, Malaysia · Hybrid",
+					"type": "Internship",
+					"summary": "Real client work, not busywork, with a developer reviewing yours. Can convert to full-time.",
+					"description": "You will sit with the engineering team on live client and internal work. You write real code, someone reviews it, and it ships. We are not looking for someone to fetch coffee or redraw tickets.",
+					"workAreas": [],
+					"responsibilities": [
+						"Help build and maintain web apps and internal tools",
+						"Work on frontend, backend, or both — depending on what you are good at and what we need",
+						"Take part in features, bug fixes and testing",
+						"Join the same stand-ups and tools the rest of the team uses",
+						"Write code someone else can pick up after you",
+						"Learn how we actually ship things, not just how a tutorial does"
+					],
+					"requirements": [
+						"Currently doing a Diploma or Degree in Computer Science, Software Engineering, IT, or something close",
+						"You understand the basics of programming",
+						"You have built a website, even a small one",
+						"You can work independently on hybrid days",
+						"You can ask a question when you are stuck"
+					],
+					"bonusSkills": [
+						"A personal project or portfolio you can show us",
+						"Any time with React, Next.js or Node.js",
+						"You already use Git",
+						"Curiosity about UI, automation or cloud — none of these are required"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript / JavaScript",
+						"Node.js",
+						"Tailwind CSS",
+						"APIs & databases",
+						"Git & GitHub"
+					]
+				},
+				"marketing-sales-executive": {
+					"title": "Marketing & Sales Executive (B2B)",
+					"department": "Sales & Marketing",
+					"location": "Kuala Lumpur, Malaysia · On-site",
+					"type": "Full-time",
+					"summary": "Meet lenders and fintechs, show them what we do, and stay with them through to handover. Own transport needed.",
+					"description": "You will spend most of your week talking to people who run loan books. The job is to meet them, show them what we do, and stay with them until the work is handed to delivery. It is not a phone farm.",
+					"workAreas": [],
+					"responsibilities": [
+						"Find licensed lenders and fintechs who might need us",
+						"Set up meetings and sit in them",
+						"Keep the relationship going after the first conversation",
+						"Listen to what they actually need and propose the right product or service",
+						"Write quotations, proposals and the occasional deck",
+						"Follow up on leads that are still open",
+						"Hand work over cleanly to the people who will build it",
+						"Help with the odd event, partnership or branding effort"
+					],
+					"requirements": [
+						"Diploma or Degree in Marketing, Business, Communications, or something close",
+						"You can talk to people without it sounding like a script",
+						"Comfortable meeting clients in person",
+						"You get things moving without being asked twice",
+						"Good written and spoken English",
+						"Own transport, and willing to travel for meetings around KL",
+						"Fresh graduates who can hold a conversation are welcome"
+					],
+					"bonusSkills": [
+						"You have sold to businesses before",
+						"You have sold software or a service, not only a product",
+						"You already know people in lending or fintech"
+					],
+					"technologies": []
+				},
+				"client-success-executive": {
+					"title": "Client Success Executive",
+					"department": "Client Success",
+					"location": "Kuala Lumpur, Malaysia · On-site",
+					"type": "Full-time",
+					"summary": "The person clients call, from onboarding through to delivery, working alongside the engineering team.",
+					"description": "You are the person clients call, from the first onboarding conversation through to delivery. You work next to engineering — not as a buffer in front of them.",
+					"workAreas": [],
+					"responsibilities": [
+						"Be the named contact for clients while a project is running",
+						"Keep clients and the engineering team talking to each other",
+						"Track progress and send updates before anyone has to ask",
+						"Collect what the client actually needs, not what they said in week one",
+						"Keep timelines, documents and deliverables from drifting",
+						"Get people onboarded without a three-week fog of kickoff decks",
+						"Stay in touch after go-live, because that is when the real questions start"
+					],
+					"requirements": [
+						"Diploma or Degree in Business, Communications, IT, or something close",
+						"You can write a clear email and run a meeting",
+						"Organised, and you notice when a date has slipped",
+						"Able to hold more than one project in your head",
+						"You stay calm when something is late or unclear",
+						"Fresh graduates are welcome"
+					],
+					"bonusSkills": [
+						"You have used Notion, Trello, ClickUp or something like them",
+						"You have worked at a tech company, an agency, or on a software project"
+					],
+					"technologies": []
+				},
+				"admin-executive": {
+					"title": "Admin Executive",
+					"department": "Operations",
+					"location": "Kuala Lumpur, Malaysia · On-site",
+					"type": "Full-time",
+					"summary": "Invoices, quotations, records and scheduling. The coordination that keeps everything else moving.",
+					"description": "Invoices, quotations, records and scheduling — the coordination that keeps a small company from tripping over itself. People will notice if you are good at it.",
+					"workAreas": [],
+					"responsibilities": [
+						"Handle the day-to-day admin and operations work",
+						"Prepare invoices, quotations and the documents around them",
+						"Keep calendars, meetings and follow-ups from colliding",
+						"Keep company records in a place other people can find",
+						"Help with HR paperwork and onboarding",
+						"Talk to vendors, clients and the rest of the team when something needs chasing",
+						"Support the people running the company with whatever is on fire that week"
+					],
+					"requirements": [
+						"Diploma or Degree in Business Administration or something close",
+						"Organised, and you write clearly",
+						"You notice when a number or a name is wrong",
+						"Comfortable with Microsoft Office or Google Workspace",
+						"You can hold a few tasks at once without dropping the important one",
+						"Fresh graduates are welcome"
+					],
+					"bonusSkills": [
+						"You have used bookkeeping or accounting software",
+						"You have done admin or office coordination before"
+					],
+					"technologies": []
+				},
+				"backend-developer": {
+					"title": "Backend Developer",
+					"department": "Engineering",
+					"location": "Kuala Lumpur, Malaysia · Hybrid",
+					"type": "Full-time",
+					"summary": "Node, TypeScript and Postgres behind our services and audit trails.",
+					"description": "Design and build the backend behind our lending platforms — the services, the data models, and the audit trails regulators expect to see.",
+					"workAreas": [],
+					"responsibilities": [
+						"Design backend services that can grow with the loan book",
+						"Build the APIs our apps and partners call",
+						"Keep PostgreSQL queries and data models honest",
+						"Put audit trails and compliance features in from the start",
+						"Connect KYC, payments and other third-party services",
+						"Keep the system up and reasonably fast",
+						"Work with frontend and whoever is running the cloud that week"
+					],
+					"requirements": [
+						"3+ years of backend development",
+						"Strong Node.js and TypeScript",
+						"Experience with Express or something like it",
+						"You understand PostgreSQL, not just ORMs",
+						"You know how authentication and basic security work",
+						"Some AWS (ECS, EC2, S3 or similar)",
+						"Fintech or compliance experience is a plus, not a gate",
+						"Malaysian citizen or permanent resident"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Node.js / TypeScript",
+						"Express",
+						"PostgreSQL",
+						"AWS",
+						"REST APIs"
+					]
+				},
+				"qa-engineer": {
+					"title": "QA Engineer",
+					"department": "Engineering",
+					"location": "Kuala Lumpur, Malaysia · Hybrid",
+					"type": "Full-time",
+					"summary": "Automated and manual testing across the platforms, plus release support.",
+					"description": "Make sure what we ship actually works — automated tests, the occasional exploratory pass, and a say in how releases go out.",
+					"workAreas": [],
+					"responsibilities": [
+						"Decide what is worth testing and how",
+						"Write and keep automated test suites",
+						"Do the manual and exploratory testing the suite cannot",
+						"Fix the small things you find, when that is faster than filing a ticket",
+						"Keep test environments from rotting",
+						"Sit in on releases so surprises show up before clients do",
+						"Watch what breaks in production and feed it back"
+					],
+					"requirements": [
+						"2+ years of QA",
+						"Comfortable with Jest, Cypress or Playwright",
+						"You have done both automated and exploratory testing",
+						"You can read JavaScript/TypeScript and a React app",
+						"You know how to test an API",
+						"You have seen a CI pipeline and a release process",
+						"Docker and a cloud platform are familiar",
+						"Malaysian citizen or permanent resident"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Jest / Cypress / Playwright",
+						"TypeScript",
+						"CI/CD",
+						"Docker"
+					]
+				}
+			}
+		},
+		"culture": {
+			"eyebrow": "How we work",
+			"title": "What the job is actually like.",
+			"lede": "A small team, systems that are live, and an industry with rules. Most of what follows comes from that.",
+			"imageAlt": "Colleagues collaborating at shared desks in the Truestack Kuala Lumpur office",
+			"items": {
+				"name": {
+					"title": "Your work has your name on it",
+					"body": "You scope it, build it, ship it, and hear back from the client yourself. Nobody sits between you and the result — which is the good part and the hard part."
+				},
+				"together": {
+					"title": "Together when it helps, quiet when it doesn't",
+					"body": "Everyone is in KL. Engineering is hybrid, business roles are on-site. We get in a room when a decision needs one, and otherwise leave people alone to work."
+				},
+				"audited": {
+					"title": "The software gets audited, so we don't rush it",
+					"body": "Our software moves other people's money and gets looked at by regulators. Tests, reviews and audit trails are the first thing under pressure, so we protect them."
+				},
+				"learn": {
+					"title": "You will learn lending, not just the tools",
+					"body": "Everyone here ends up understanding how lending and its regulation work. Not many people do — it makes you better at the job, and you keep it."
+				}
+			}
+		},
+		"process": {
+			"eyebrow": "Hiring process",
+			"title": "Four steps, no surprises.",
+			"lede": "We read every application and get back to everyone we shortlist.",
+			"steps": {
+				"intro": {
+					"tag": "30 min",
+					"title": "Introductory call",
+					"body": "What you have done, what you want next, and what the role looks like on an ordinary day."
+				},
+				"discussion": {
+					"tag": "45–60 min",
+					"title": "Role discussion",
+					"body": "A proper conversation with the people you would sit next to, about work we have on right now."
+				},
+				"case": {
+					"tag": "Some roles",
+					"title": "Practical case study",
+					"body": "Something small and realistic. We keep it short, and we go through it with you afterwards."
+				},
+				"offer": {
+					"tag": "Offer",
+					"title": "Offer and onboarding",
+					"body": "Terms, a start date, and a first week set up so you ship something real early."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "Questions",
+			"title": "Before you apply.",
+			"lede": "Anything we have missed, just email and ask. Better now than after an interview.",
+			"aboutQuestion": "What does Truestack actually build?",
+			"aboutAnswerDisplay": "Lending platforms, identity and payment checks, and custom software for Malaysian lenders and fintechs — plus the KPKT compliance work that goes with it. Products include TrueKredit™, TrueSyariah™, TrueP2P™ and TrueIdentity™. <link>More about us</link>.",
+			"items": [
+				{
+					"question": "Where are the jobs based?",
+					"answer": "All roles are in Kuala Lumpur. Sales, admin and client success are on-site at our office. Engineering roles are hybrid — based in Kuala Lumpur, with flexible remote days."
+				},
+				{
+					"question": "What jobs is Truestack currently hiring for?",
+					"answer": "Truestack is hiring for Full-Stack Web Developer, Software Development Intern, Marketing & Sales Executive (B2B), Client Success Executive, and Admin Executive. Open and recently filled roles are listed at truestack.my/careers."
+				},
+				{
+					"question": "Do you hire fresh graduates?",
+					"answer": "Yes. We welcome fresh graduates — including for software development — as long as you are keen to learn and can work independently. That applies across sales, admin, client success and engineering."
+				},
+				{
+					"question": "Do I need fintech experience?",
+					"answer": "No. It helps on the engineering roles, but we expect to teach you how lending and KPKT compliance work. Being interested in that industry matters more than having the vocabulary on day one."
+				},
+				{
+					"question": "How do I apply for a job at Truestack?",
+					"answer": "Email hello@truestack.my with your CV, portfolio or project links, and tell us which role you are applying for. You can also use the form at truestack.my/contact. We read every application and reply to the people we shortlist."
+				},
+				{
+					"question": "What is Truestack's hiring process?",
+					"answer": "An introductory call (about 30 minutes), a role discussion with the people you would sit next to (45 to 60 minutes), an optional practical case study for some roles, then an offer conversation and onboarding. We get back to everyone we shortlist."
+				},
+				{
+					"question": "What does Truestack actually build?",
+					"answer": "Lending platforms, identity and payment checks, and custom software for Malaysian lenders and fintechs — plus the KPKT compliance work that goes with it. Products include TrueKredit™, TrueSyariah™, TrueP2P™ and TrueIdentity™. More at truestack.my/about."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Send us your CV.",
+			"body": "Your CV, portfolio or project links, and the role you are after. If none of the open ones fit, tell us what you do and we will keep it on file.",
+			"secondary": "Read about the company"
+		}
+	}
 }
