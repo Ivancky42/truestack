@@ -1,6 +1,10 @@
 {
 	"_status": "ai-draft",
 	"InsightsChrome": {
+		"meta": {
+			"title": "Wawasan: Fintech, Perisian & Pematuhan di Malaysia",
+			"description": "Nota pasukan Truestack tentang pelesenan KPKT, pinjaman dan kerja perisian di Malaysia — soalan yang kami terus jawab untuk pemilik dan pasukan pematuhan."
+		},
 		"nav": "Wawasan",
 		"eyebrow": "Wawasan",
 		"title": "Apa yang benar-benar berkesan dalam <accent>fintech Malaysia.</accent>",

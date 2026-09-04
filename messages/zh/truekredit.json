@@ -3,9 +3,9 @@
 	"TrueKredit": {
 		"meta": {
 			"title": "贷款管理系统｜TrueKredit™",
-			"description": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
+			"description": "面向出海马来西亚的放贷机构：TrueKredit™贷款管理系统覆盖借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，部署于您自己的马来西亚云。",
 			"openGraphTitle": "贷款管理系统｜TrueKredit™",
-			"openGraphDescription": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
+			"openGraphDescription": "面向出海马来西亚的放贷机构：TrueKredit™贷款管理系统覆盖借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，部署于您自己的马来西亚云。",
 			"ogImageAlt": "TrueKredit 对齐 KPKT 的贷款管理平台——申请、签署、仪表盘与合规模块"
 		},
 		"schema": {

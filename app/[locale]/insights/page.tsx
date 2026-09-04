@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import {
@@ -17,47 +17,48 @@ import type { InsightPostSummary } from "@/lib/insights/types";
 
 const INSIGHTS_PATH = "/insights";
 
-const INSIGHTS_TITLE = "Insights: Fintech, Software & Compliance in Malaysia";
-const INSIGHTS_DESCRIPTION =
-	"Notes from the Truestack team on KPKT licensing, lending and software work in Malaysia — the questions we keep answering for owners and compliance teams.";
-
-const pageMetadata: Metadata = {
-	title: INSIGHTS_TITLE,
-	description: INSIGHTS_DESCRIPTION,
-	keywords: [
-		"Malaysian fintech insights",
-		"KPKT licensing insights",
-		"money lender compliance Malaysia",
-		"lending operations Malaysia",
-		"fintech software development Malaysia",
-		"e-KYC and SSM checks Malaysia",
-		"Shariah financing Malaysia",
-	],
-	alternates: { canonical: INSIGHTS_PATH },
-	openGraph: {
-		title: INSIGHTS_TITLE,
-		description: INSIGHTS_DESCRIPTION,
-		url: INSIGHTS_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [defaultOgImage],
-	},
-	twitter: {
-		card: defaultTwitterCard,
-		title: INSIGHTS_TITLE,
-		description: INSIGHTS_DESCRIPTION,
-		images: [defaultOgImage.url],
-	},
-};
-
 export async function generateMetadata({
 	params,
 }: {
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, INSIGHTS_PATH, resolveAppLocale(locale), "english-only");
+	const resolved = resolveAppLocale(locale);
+	const t = await getTranslations({ locale: resolved, namespace: "InsightsChrome" });
+	const title = t("meta.title");
+	const description = t("meta.description");
+
+	const pageMetadata: Metadata = {
+		title,
+		description,
+		keywords: [
+			"Malaysian fintech insights",
+			"KPKT licensing insights",
+			"money lender compliance Malaysia",
+			"lending operations Malaysia",
+			"fintech software development Malaysia",
+			"e-KYC and SSM checks Malaysia",
+			"Shariah financing Malaysia",
+		],
+		alternates: { canonical: INSIGHTS_PATH },
+		openGraph: {
+			title,
+			description,
+			url: INSIGHTS_PATH,
+			type: "website",
+			locale: "en_MY",
+			siteName,
+			images: [defaultOgImage],
+		},
+		twitter: {
+			card: defaultTwitterCard,
+			title,
+			description,
+			images: [defaultOgImage.url],
+		},
+	};
+
+	return localizePageMetadata(pageMetadata, INSIGHTS_PATH, resolved);
 }
 
 export const revalidate = 3600;
@@ -84,9 +85,8 @@ export default async function InsightsPage({
 	return (
 		<>
 			<InsightsSchema />
-			<FaqSchema items={faq} inLanguage={inLanguage.en} />
+			<FaqSchema items={faq} />
 			<BreadcrumbSchema
-				locale="en"
 				items={[
 					{ name: tCommon("breadcrumbHome"), path: "/" },
 					{ name: t("nav"), path: "/insights" },

@@ -330,7 +330,8 @@ Any new page or meaningful copy change must complete this checklist:
     description 140–160 chars; zh title ≤ 30 / description 70–90 code points with the
     primary keyword in the first 10 characters. Pages get `alternates.languages`
     (`en`, `ms`, `zh-Hans`, `zh-CN`, `x-default`) via `lib/i18n/seo.ts`; English-only surfaces
-    (Insights, legal) are `noindex` under `/ms` and `/zh` with canonical → English.
+    (legal pages) are `noindex` under `/ms` and `/zh` with canonical → English. Insights
+    locale URLs are indexable with a self-canonical; article bodies stay English.
     Full contract, glossary and tone-for-translators: `docs/I18N.md`. Run `pnpm i18n:check`.
 
 ---

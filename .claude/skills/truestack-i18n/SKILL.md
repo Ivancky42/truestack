@@ -37,7 +37,7 @@ Full contract, glossary, and Mandarin SEO table: [docs/I18N.md](../../../docs/I1
 
 ## English-only (do not extract)
 
-Insights article bodies, legal pages (privacy/terms/PDPA/cybersecurity), product mock-UI labels, office address. Those stay English under `/ms` and `/zh` with `englishOnlyMetadata` + `ENGLISH_ONLY_PATHS`.
+Insights article bodies, legal pages (privacy/terms/PDPA/cybersecurity), product mock-UI labels, office address. Legal pages stay English under `/ms` and `/zh` with `englishOnlyMetadata` + `ENGLISH_ONLY_PATHS`. Insights bodies stay English; locale URLs (`/ms/insights`, `/zh/insights`, and the same slugs) are indexable and must stay out of `ENGLISH_ONLY_PATHS`.
 
 ## Checks
 

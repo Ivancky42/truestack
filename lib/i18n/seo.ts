@@ -4,6 +4,7 @@ import {
 	DEFAULT_LOCALE,
 	hreflangAlternates,
 	localizePath,
+	ogAlternateLocales,
 	ogLocale,
 } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
@@ -48,6 +49,10 @@ export function ogLocaleFor(locale: AppLocale): string {
 	return ogLocale[locale];
 }
 
+export function ogLocaleAlternatesFor(locale: AppLocale): string[] {
+	return ogAlternateLocales(locale);
+}
+
 /** Spread an existing metadata object and apply locale alternates + og:locale. */
 export function localizePageMetadata(
 	metadata: Metadata,
@@ -73,6 +78,11 @@ export function localizePageMetadata(
 			...metadata.openGraph,
 			url: ogUrl,
 			locale: ogLocaleFor(locale),
+			// Localized pages advertise sibling locales. English-only surfaces
+			// stay on a single og:locale — their /ms and /zh URLs are noindex.
+			...(mode === "localized"
+				? { alternateLocale: ogLocaleAlternatesFor(locale) }
+				: {}),
 		},
 	};
 }
