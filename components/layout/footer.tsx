@@ -1,5 +1,3 @@
-"use client";
-
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Linkedin, Mail, MessageSquare } from "lucide-react";

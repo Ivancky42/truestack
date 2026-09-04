@@ -72,8 +72,6 @@ export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
 }
 
-/** next-intl reads `headers()` unless the locale is fixed; keep [locale] prerendered. */
-export const dynamic = "force-static";
 
 export const viewport: Viewport = {
 	themeColor: brandThemeColor,
