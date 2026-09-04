@@ -29,6 +29,8 @@ export const TRUESYARIAH_KEYWORDS = [
 export const TRUESYARIAH_OG_IMAGE_PATH = "/truesyariah/hero.png";
 
 export type TrueSyariahSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -45,30 +47,30 @@ export function buildTrueSyariahJsonLd(copy: TrueSyariahSchemaCopy) {
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${TRUESYARIAH_PAGE_URL}#webpage`,
-				url: TRUESYARIAH_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${TRUESYARIAH_PAGE_URL}#software` },
-				breadcrumb: { "@id": `${TRUESYARIAH_PAGE_URL}#breadcrumb` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${TRUESYARIAH_PAGE_URL}#breadcrumb`,
+				"@id": `${copy.pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: copy.breadcrumbHome,
-						item: baseUrl,
+						item: copy.homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: copy.productName,
-						item: TRUESYARIAH_PAGE_URL,
+						item: copy.pageUrl,
 					},
 				],
 			},

@@ -39,6 +39,8 @@ export type JobPostingCopy = {
 };
 
 export type CareersSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	webpageDescription: string;
 	inLanguage: string;
@@ -94,7 +96,7 @@ export function buildJobPostingSchema(
 ) {
 	return {
 		"@type": "JobPosting",
-		"@id": `${CAREERS_PAGE_URL}#job-${role.id}`,
+		"@id": `${copy.pageUrl}#job-${role.id}`,
 		title: role.title,
 		description: jobPostingDescription(role, copy.headings),
 		identifier: {
@@ -138,7 +140,7 @@ export function buildJobPostingSchema(
 			email: orgEmail,
 			url: `${baseUrl}/contact`,
 		},
-		url: `${CAREERS_PAGE_URL}#open-roles`,
+		url: `${copy.pageUrl}#open-roles`,
 		industry: role.engineering
 			? copy.industryEngineering
 			: copy.industryOther,
@@ -156,44 +158,44 @@ export function buildCareersJsonLd(
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${CAREERS_PAGE_URL}#webpage`,
-				url: CAREERS_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.webpageDescription,
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
-				breadcrumb: { "@id": `${CAREERS_PAGE_URL}#breadcrumb` },
-				mainEntity: { "@id": `${CAREERS_PAGE_URL}#job-list` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
+				mainEntity: { "@id": `${copy.pageUrl}#job-list` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${CAREERS_PAGE_URL}#breadcrumb`,
+				"@id": `${copy.pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: copy.breadcrumbHome,
-						item: baseUrl,
+						item: copy.homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: copy.breadcrumbCurrent,
-						item: CAREERS_PAGE_URL,
+						item: copy.pageUrl,
 					},
 				],
 			},
 			{
 				"@type": "ItemList",
-				"@id": `${CAREERS_PAGE_URL}#job-list`,
+				"@id": `${copy.pageUrl}#job-list`,
 				name: copy.jobListName,
 				numberOfItems: openRoles.length,
 				itemListElement: openRoles.map((role, index) => ({
 					"@type": "ListItem",
 					position: index + 1,
 					name: role.title,
-					item: { "@id": `${CAREERS_PAGE_URL}#job-${role.id}` },
+					item: { "@id": `${copy.pageUrl}#job-${role.id}` },
 				})),
 			},
 			...openRoles.map((role) => buildJobPostingSchema(role, copy)),

@@ -1,3 +1,6 @@
+import type { AppLocale } from "@/i18n/routing";
+import { localizePath } from "@/lib/i18n/config";
+
 /**
  * Canonical public origin for absolute URLs (canonical, sitemap, robots,
  * JSON-LD, og:url). Live traffic lands on www — Vercel 307s the apex there —
@@ -23,6 +26,12 @@ export function resolveSiteUrl(
 }
 
 export const siteUrl = resolveSiteUrl();
+
+/** Absolute public URL for a path in a given locale (`en` unprefixed). */
+export function absoluteLocalizedUrl(path: string, locale: AppLocale): string {
+	const localized = localizePath(path, locale);
+	return localized === "/" ? siteUrl : `${siteUrl}${localized}`;
+}
 
 /**
  * Preferred Google sitename (`og:site_name` + WebSite schema `name`).

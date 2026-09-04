@@ -23,6 +23,8 @@ export const ABOUT_KEYWORDS = [
 ] as const;
 
 export type AboutSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	webpageDescription: string;
 	inLanguage: string;
@@ -39,37 +41,37 @@ export function buildAboutJsonLd(copy: AboutSchemaCopy) {
 		"@graph": [
 			{
 				"@type": ["WebPage", "AboutPage"],
-				"@id": `${ABOUT_PAGE_URL}#webpage`,
-				url: ABOUT_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.webpageDescription,
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
-				breadcrumb: { "@id": `${ABOUT_PAGE_URL}#breadcrumb` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 				mainEntity: { "@id": `${baseUrl}/#organization` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${ABOUT_PAGE_URL}#breadcrumb`,
+				"@id": `${copy.pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: copy.breadcrumbHome,
-						item: baseUrl,
+						item: copy.homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: copy.breadcrumbCurrent,
-						item: ABOUT_PAGE_URL,
+						item: copy.pageUrl,
 					},
 				],
 			},
 			{
 				"@type": "ItemList",
-				"@id": `${ABOUT_PAGE_URL}#principles`,
+				"@id": `${copy.pageUrl}#principles`,
 				name: copy.principlesName,
 				description: copy.principlesDescription,
 				itemListElement: copy.principles.map((name, index) => ({

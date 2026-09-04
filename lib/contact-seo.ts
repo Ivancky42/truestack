@@ -14,6 +14,8 @@ export const CONTACT_KEYWORDS = [
 ] as const;
 
 export type ContactSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	webpageDescription: string;
 	inLanguage: string;
@@ -32,43 +34,43 @@ export function buildContactJsonLd(copy: ContactSchemaCopy) {
 		"@graph": [
 			{
 				"@type": "ContactPage",
-				"@id": `${CONTACT_PAGE_URL}#webpage`,
-				url: CONTACT_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.webpageDescription,
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
-				breadcrumb: { "@id": `${CONTACT_PAGE_URL}#breadcrumb` },
-				mainEntity: { "@id": `${CONTACT_PAGE_URL}#consultation` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
+				mainEntity: { "@id": `${copy.pageUrl}#consultation` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${CONTACT_PAGE_URL}#breadcrumb`,
+				"@id": `${copy.pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: copy.breadcrumbHome,
-						item: baseUrl,
+						item: copy.homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: copy.breadcrumbCurrent,
-						item: CONTACT_PAGE_URL,
+						item: copy.pageUrl,
 					},
 				],
 			},
 			{
 				"@type": "Service",
-				"@id": `${CONTACT_PAGE_URL}#consultation`,
+				"@id": `${copy.pageUrl}#consultation`,
 				name: copy.serviceName,
 				serviceType: copy.serviceType,
 				description: copy.serviceDescription,
 				provider: { "@id": `${baseUrl}/#organization` },
 				areaServed: { "@type": "Country", name: "Malaysia" },
-				url: CONTACT_PAGE_URL,
+				url: copy.pageUrl,
 				offers: {
 					"@type": "Offer",
 					name: copy.offerName,
@@ -76,7 +78,7 @@ export function buildContactJsonLd(copy: ContactSchemaCopy) {
 					price: "0",
 					priceCurrency: "MYR",
 					availability: "https://schema.org/InStock",
-					url: CONTACT_PAGE_URL,
+					url: copy.pageUrl,
 				},
 			},
 		],

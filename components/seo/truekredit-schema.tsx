@@ -1,12 +1,18 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
-import { buildTrueKreditJsonLd } from "@/lib/truekredit-seo";
+import { absoluteLocalizedUrl } from "@/lib/seo-defaults";
+import {
+	TRUEKREDIT_PAGE_PATH,
+	buildTrueKreditJsonLd,
+} from "@/lib/truekredit-seo";
 
 export async function TrueKreditSchema() {
 	const locale = resolveAppLocale(await getLocale());
 	const t = await getTranslations({ locale, namespace: "TrueKredit" });
 	const tCommon = await getTranslations({ locale, namespace: "Common" });
 	const schema = buildTrueKreditJsonLd({
+		pageUrl: absoluteLocalizedUrl(TRUEKREDIT_PAGE_PATH, locale),
+		homeUrl: absoluteLocalizedUrl("/", locale),
 		webpageName: t("meta.openGraphTitle"),
 		description: t("meta.description"),
 		inLanguage: inLanguage[locale],

@@ -22,13 +22,33 @@ export const htmlLang: Record<AppLocale, string> = {
 };
 
 export const hreflang: Record<AppLocale, string> = {
-	en: "en-MY",
-	ms: "ms-MY",
+	en: "en",
+	ms: "ms",
 	zh: "zh-Hans",
 };
 
 /** Extra hreflang emitted for Chinese pages (Baidu / mainland China). */
 export const ZH_HREFLANG_CN = "zh-CN";
+
+/**
+ * The full hreflang set for an indexable path, keyed by hreflang value.
+ * `x-default` points at English. Used by both page metadata and the sitemap so
+ * the two never drift.
+ */
+export function hreflangAlternates(
+	path: string,
+	toUrl: (path: string) => string = (p) => p,
+): Record<string, string> {
+	const en = toUrl(localizePath(path, "en"));
+	const zh = toUrl(localizePath(path, "zh"));
+	return {
+		[hreflang.en]: en,
+		[hreflang.ms]: toUrl(localizePath(path, "ms")),
+		[hreflang.zh]: zh,
+		[ZH_HREFLANG_CN]: zh,
+		"x-default": en,
+	};
+}
 
 export const ogLocale: Record<AppLocale, string> = {
 	en: "en_MY",

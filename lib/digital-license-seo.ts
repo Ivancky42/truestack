@@ -35,6 +35,8 @@ export const DIGITAL_LICENSE_KEYWORDS = [
 ] as const;
 
 export type DigitalLicenseSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -57,8 +59,8 @@ export function buildDigitalLicenseJsonLd(copy: DigitalLicenseSchemaCopy) {
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${DIGITAL_LICENSE_PAGE_URL}#webpage`,
-				url: DIGITAL_LICENSE_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,

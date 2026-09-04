@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { resolveAppLocale } from "@/lib/i18n/config";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
@@ -67,7 +67,7 @@ export default async function TermsOfUsePage({
   return (
     <>
       <LegalSchema path="/terms" name={t("pages.terms")} description={description} />
-      <FaqSchema items={termsFaq} />
+      <FaqSchema items={termsFaq} inLanguage={inLanguage.en} />
 
       <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero

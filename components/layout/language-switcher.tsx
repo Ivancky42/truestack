@@ -2,7 +2,7 @@
 
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Check, ChevronDown, Globe } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
@@ -49,6 +49,7 @@ function LanguageSwitcherInner({
 	onSelected,
 }: LanguageSwitcherProps) {
 	const locale = useLocale();
+	const t = useTranslations("Header");
 	const pathname = usePathname();
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -99,7 +100,7 @@ function LanguageSwitcherInner({
 			<DropdownMenuTrigger asChild>
 				<Button
 					variant="ghost"
-					aria-label="Change language"
+					aria-label={t("changeLanguage")}
 					className={cn("type-ui gap-1.5 px-2.5", className)}
 				>
 					<Globe className="h-4 w-4 size-4" />

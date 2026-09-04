@@ -1,11 +1,14 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
-import { buildTrueSsmJsonLd } from "@/lib/truessm-seo";
+import { absoluteLocalizedUrl } from "@/lib/seo-defaults";
+import { TRUESSM_PAGE_PATH, buildTrueSsmJsonLd } from "@/lib/truessm-seo";
 
 export async function TrueSsmSchema() {
 	const locale = resolveAppLocale(await getLocale());
 	const t = await getTranslations({ locale, namespace: "TrueSSM" });
 	const schema = buildTrueSsmJsonLd({
+		pageUrl: absoluteLocalizedUrl(TRUESSM_PAGE_PATH, locale),
+		homeUrl: absoluteLocalizedUrl("/", locale),
 		webpageName: t("meta.openGraphTitle"),
 		webpageDescription: t("meta.description"),
 		inLanguage: inLanguage[locale],

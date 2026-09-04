@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
+import { ABOUT_PAGE_PATH, buildAboutJsonLd } from "@/lib/about-seo";
 import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
-import { buildAboutJsonLd } from "@/lib/about-seo";
+import { absoluteLocalizedUrl } from "@/lib/seo-defaults";
 
 const PRINCIPLE_KEYS = [
 	"compliance",
@@ -13,6 +14,8 @@ export async function AboutSchema() {
 	const locale = resolveAppLocale(await getLocale());
 	const t = await getTranslations({ locale, namespace: "About" });
 	const schema = buildAboutJsonLd({
+		pageUrl: absoluteLocalizedUrl(ABOUT_PAGE_PATH, locale),
+		homeUrl: absoluteLocalizedUrl("/", locale),
 		webpageName: t("meta.openGraphTitle"),
 		webpageDescription: t("meta.description"),
 		inLanguage: inLanguage[locale],

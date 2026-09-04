@@ -16,6 +16,8 @@ export const SOFTWARE_DEVELOPMENT_KEYWORDS = [
 ] as const;
 
 export type SoftwareDevelopmentSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -33,8 +35,8 @@ export function buildSoftwareDevelopmentJsonLd(
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${SOFTWARE_DEVELOPMENT_PAGE_URL}#webpage`,
-				url: SOFTWARE_DEVELOPMENT_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getInsightSitemapEntries } from "@/lib/insights/data";
-import { LOCALES, localizePath } from "@/lib/i18n/config";
+import { LOCALES, hreflangAlternates, localizePath } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
@@ -26,14 +26,7 @@ function absoluteUrl(path: string): string {
 }
 
 function languageAlternates(path: string): Record<string, string> {
-	const en = absoluteUrl(path);
-	return {
-		"en-MY": en,
-		"ms-MY": absoluteUrl(localizePath(path, "ms")),
-		"zh-Hans": absoluteUrl(localizePath(path, "zh")),
-		"zh-CN": absoluteUrl(localizePath(path, "zh")),
-		"x-default": en,
-	};
+	return hreflangAlternates(path, absoluteUrl);
 }
 
 function localizedEntries(

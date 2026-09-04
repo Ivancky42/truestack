@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
-import { buildP2PJsonLd } from "@/lib/p2p-seo";
+import { P2P_PAGE_PATH, buildP2PJsonLd } from "@/lib/p2p-seo";
+import { absoluteLocalizedUrl } from "@/lib/seo-defaults";
 
 const OFFER_KEYS = [
 	"investor",
@@ -19,6 +20,8 @@ export async function P2PSchema() {
 	const locale = resolveAppLocale(await getLocale());
 	const t = await getTranslations("P2P");
 	const schema = buildP2PJsonLd({
+		pageUrl: absoluteLocalizedUrl(P2P_PAGE_PATH, locale),
+		homeUrl: absoluteLocalizedUrl("/", locale),
 		webpageName: t("meta.openGraphTitle"),
 		description: t("meta.description"),
 		inLanguage: inLanguage[locale],

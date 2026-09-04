@@ -39,6 +39,8 @@ export const TRUEKREDIT_KEYWORDS = [
 export const TRUEKREDIT_OG_IMAGE_PATH = "/truekredit/hero.png";
 
 export type TrueKreditSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -55,30 +57,30 @@ export function buildTrueKreditJsonLd(copy: TrueKreditSchemaCopy) {
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${TRUEKREDIT_PAGE_URL}#webpage`,
-				url: TRUEKREDIT_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${TRUEKREDIT_PAGE_URL}#software` },
-				breadcrumb: { "@id": `${TRUEKREDIT_PAGE_URL}#breadcrumb` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${TRUEKREDIT_PAGE_URL}#breadcrumb`,
+				"@id": `${copy.pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: copy.breadcrumbHome,
-						item: baseUrl,
+						item: copy.homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: copy.productName,
-						item: TRUEKREDIT_PAGE_URL,
+						item: copy.pageUrl,
 					},
 				],
 			},

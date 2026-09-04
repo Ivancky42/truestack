@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { resolveAppLocale } from "@/lib/i18n/config";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { Link } from "@/i18n/navigation";
@@ -107,7 +107,7 @@ export default async function PdpaPage({
   return (
     <>
       <LegalSchema path="/pdpa" name={t("pages.pdpa")} description={description} />
-      <FaqSchema items={pdpaFaq} />
+      <FaqSchema items={pdpaFaq} inLanguage={inLanguage.en} />
 
       <PageMessages namespaces={["LegalChrome"]}>
       <LegalHero

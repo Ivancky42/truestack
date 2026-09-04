@@ -8,6 +8,7 @@ import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
 import { getInsightPosts } from "@/lib/insights/data";
 import type { InsightPostSummary } from "@/lib/insights/types";
 import { FaqSchema } from "@/components/seo/faq-schema";
+import { HomeSchema } from "@/components/seo/home-schema";
 import { HomepageHero } from "@/components/sections/homepage-hero";
 import { HomepageLogoCloud } from "@/components/sections/homepage-logo-cloud";
 import { HomepageSolutions } from "@/components/sections/homepage-solutions";
@@ -79,6 +80,7 @@ export default async function HomePage({
 
 	return (
 		<>
+			<HomeSchema />
 			<FaqSchema items={faq} />
 			<PageMessages namespaces={["Home"]}>
 				<HomepageHero />

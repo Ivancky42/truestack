@@ -6,7 +6,7 @@ import {
 	defaultTwitterCard,
 	siteName,
 } from "@/lib/seo-defaults";
-import { resolveAppLocale } from "@/lib/i18n/config";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { englishOnlyMetadata, ogLocaleFor } from "@/lib/i18n/seo";
 import { InsightPostContent } from "@/components/sections/insight-post-content";
 import { InsightPostSchema } from "@/components/seo/insight-post-schema";
@@ -148,7 +148,7 @@ export default async function InsightPostPage({ params }: PageProps) {
 	return (
 		<>
 			<InsightPostSchema post={post} />
-			{post.faq.length > 0 ? <FaqSchema items={post.faq} /> : null}
+			{post.faq.length > 0 ? <FaqSchema items={post.faq} inLanguage={inLanguage.en} /> : null}
 			<BreadcrumbSchema
 				items={[
 					{name: tCommon("breadcrumbHome"), path: "/"},

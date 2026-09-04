@@ -18,6 +18,8 @@ export const ACCOUNT_MANAGEMENT_KEYWORDS = [
 ] as const;
 
 export type AccountManagementSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -33,8 +35,8 @@ export function buildAccountManagementJsonLd(copy: AccountManagementSchemaCopy) 
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${ACCOUNT_MANAGEMENT_PAGE_URL}#webpage`,
-				url: ACCOUNT_MANAGEMENT_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,

@@ -28,6 +28,8 @@ export const P2P_KEYWORDS = [
 ] as const;
 
 export type P2PSchemaCopy = {
+	pageUrl: string;
+	homeUrl: string;
 	webpageName: string;
 	description: string;
 	inLanguage: string;
@@ -45,8 +47,8 @@ export function buildP2PJsonLd(copy: P2PSchemaCopy) {
 		"@graph": [
 			{
 				"@type": "WebPage",
-				"@id": `${P2P_PAGE_URL}#webpage`,
-				url: P2P_PAGE_URL,
+				"@id": `${copy.pageUrl}#webpage`,
+				url: copy.pageUrl,
 				name: copy.webpageName,
 				description: copy.description,
 				inLanguage: copy.inLanguage,

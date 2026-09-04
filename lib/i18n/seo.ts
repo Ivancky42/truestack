@@ -2,14 +2,21 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import {
 	DEFAULT_LOCALE,
-	ZH_HREFLANG_CN,
+	hreflangAlternates,
 	localizePath,
 	ogLocale,
 } from "@/lib/i18n/config";
+import { siteUrl } from "@/lib/seo-defaults";
 
 function normalizePath(path: string): string {
 	if (path === "" || path === "/") return "/";
 	return path.startsWith("/") ? path : `/${path}`;
+}
+
+/** Absolute URL for a (possibly locale-prefixed) site path. */
+export function absoluteUrl(path: string): string {
+	const normalized = normalizePath(path);
+	return normalized === "/" ? siteUrl : `${siteUrl}${normalized}`;
 }
 
 export function buildAlternates(
@@ -17,19 +24,9 @@ export function buildAlternates(
 	locale: AppLocale,
 ): NonNullable<Metadata["alternates"]> {
 	const normalized = normalizePath(path);
-	const enPath = normalized;
-	const msPath = localizePath(normalized, "ms");
-	const zhPath = localizePath(normalized, "zh");
-
 	return {
 		canonical: localizePath(normalized, locale),
-		languages: {
-			"en-MY": enPath,
-			"ms-MY": msPath,
-			"zh-Hans": zhPath,
-			[ZH_HREFLANG_CN]: zhPath,
-			"x-default": enPath,
-		},
+		languages: hreflangAlternates(normalized),
 	};
 }
 
@@ -62,12 +59,19 @@ export function localizePageMetadata(
 		mode === "english-only"
 			? englishOnlyMetadata(path, locale)
 			: { alternates: buildAlternates(path, locale) };
+	// og:url must match the canonical: the locale-prefixed URL on translated
+	// pages, the English URL on English-only surfaces.
+	const ogUrl =
+		mode === "english-only"
+			? absoluteUrl(path)
+			: absoluteUrl(localizePath(normalizePath(path), locale));
 
 	return {
 		...metadata,
 		...extra,
 		openGraph: {
 			...metadata.openGraph,
+			url: ogUrl,
 			locale: ogLocaleFor(locale),
 		},
 	};

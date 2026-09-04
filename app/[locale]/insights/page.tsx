@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { resolveAppLocale } from "@/lib/i18n/config";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import {
@@ -84,7 +84,7 @@ export default async function InsightsPage({
 	return (
 		<>
 			<InsightsSchema />
-			<FaqSchema items={faq} />
+			<FaqSchema items={faq} inLanguage={inLanguage.en} />
 			<BreadcrumbSchema
 				items={[
 					{ name: tCommon("breadcrumbHome"), path: "/" },
