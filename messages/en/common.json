@@ -4,6 +4,18 @@
 		"bookConsultation": "Book a Free Consultation",
 		"freeConsultation": "Free Consultation",
 		"consultationHeading": "Book a free consultation",
-		"consultationBody": "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation."
+		"consultationBody": "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation.",
+		"learnMore": "Learn more",
+		"readMore": "Read more",
+		"viewAll": "View all",
+		"previous": "Previous",
+		"next": "Next",
+		"close": "Close",
+		"comingSoon": "Coming Soon",
+		"live": "Live",
+		"minRead": "{minutes} min read",
+		"breadcrumbHome": "Home",
+		"contactUs": "Contact us",
+		"talkToUs": "Talk to us"
 	}
 }
