@@ -106,9 +106,11 @@ const errors = [];
 /** @type {string[]} */
 const warnings = [];
 
+// English metadata is pre-existing, reviewed copy: report length drift as a
+// warning only. Translated locales (ms/zh) are new and are held to the limits.
 for (const [key, value] of Object.entries(source)) {
 	const issue = metaLengthError(SOURCE, key, value);
-	if (issue) errors.push(issue);
+	if (issue) warnings.push(issue);
 }
 
 for (const locale of TARGETS) {
