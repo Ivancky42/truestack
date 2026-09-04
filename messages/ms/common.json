@@ -19,6 +19,20 @@
 		"contactUs": "Hubungi kami",
 		"talkToUs": "Bincang dengan kami",
 		"siteTitle": "Truestack - Perkhidmatan KPKT & Perisian Fintech",
-		"siteDescription": "Pengurusan akaun KPKT, lesen pinjaman wang dalam talian (e-Lending) dan perisian pemberi pinjam wang Malaysia untuk pemberi pinjam wang berlesen. Tempah konsultasi percuma."
+		"siteDescription": "Pengurusan akaun KPKT, lesen pinjaman wang dalam talian (e-Lending) dan perisian pemberi pinjam wang Malaysia untuk pemberi pinjam wang berlesen. Tempah konsultasi percuma.",
+		"logoCloud": {
+			"partners": {
+				"badge": "Ekosistem Rakan Kongsi",
+				"title": "Bersepadu dengan Peneraju Industri",
+				"subtitle": "Kami bekerjasama dengan rakan dipercayai untuk menyampaikan penyelesaian fintech menyeluruh merangkumi kecerdasan kredit, pematuhan, pembayaran dan infrastruktur awan.",
+				"bottom": "+ lebih banyak integrasi disesuaikan dengan keperluan khusus anda"
+			},
+			"clients": {
+				"badge": "Pelanggan Kami",
+				"title": "Dipercayai oleh Peneraju Industri",
+				"subtitle": "Kami bekerjasama dengan syarikat terkemuka merentas fintech, pinjaman dan sektor perusahaan.",
+				"bottom": "Dan ramai lagi di seluruh Malaysia"
+			}
+		}
 	}
 }

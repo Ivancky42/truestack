@@ -24,7 +24,15 @@
 			"title": "为马来西亚市场打造<accent>金融科技软件。</accent>",
 			"lede": "从简报到上线的定制软件——网页、移动与借贷平台。",
 			"body": "网页应用、移动产品、内部工具与平台，均以您的品牌呈现——与您一同设计、构建并交付。",
-			"secondaryCta": "查看作品"
+			"secondaryCta": "查看作品",
+			"ideaEyebrow": "您的想法",
+			"quote": "“假如我们有一款应用可以……”",
+			"brief": "粗略简报 · 仍在成形",
+			"tagUsers": "用户？",
+			"tagFlows": "流程？",
+			"tagMustHaves": "必备项",
+			"buildEyebrow": "我们来构建",
+			"caption": "网页、移动与后台——以您的品牌上线"
 		},
 		"story": {
 			"eyebrow": "为何定制",
@@ -140,8 +148,10 @@
 			}
 		},
 		"proof": {
+			"eyebrow": "精选案例",
 			"title": "我们已上线的产品。",
-			"subtitle": "与我们团队共同交付的部分平台——从首次构建到上线。"
+			"subtitle": "与我们团队共同交付的部分平台——从首次构建到上线。",
+			"viewAll": "查看全部成功案例"
 		},
 		"crossLinks": {
 			"lead": "在寻找放贷或平台市场方案？请参阅"

@@ -396,14 +396,22 @@ export function SoftwareDevelopmentPageContent() {
 					product: "CustomSoftware",
 					limit: 6,
 				})}
+				eyebrow={t("proof.eyebrow")}
 				title={t("proof.title")}
 				subtitle={t("proof.subtitle")}
+				viewAllLabel={t("proof.viewAll")}
 				columns={3}
 			/>
 
 			<div className="border-t bg-muted/30 pb-14 md:pb-20">
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-					<LogoCloud1 className="py-0" />
+					<LogoCloud1
+						className="py-0"
+						badge={tCommon("logoCloud.partners.badge")}
+						title={tCommon("logoCloud.partners.title")}
+						subtitle={tCommon("logoCloud.partners.subtitle")}
+						bottomText={tCommon("logoCloud.partners.bottom")}
+					/>
 				</div>
 			</div>
 

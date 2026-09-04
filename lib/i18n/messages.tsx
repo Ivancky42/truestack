@@ -1,5 +1,3 @@
-import { readdirSync, readFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
 import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -25,10 +23,14 @@ import enTrueKredit from "@/messages/en/truekredit.json";
 import enTrueSSM from "@/messages/en/truessm.json";
 import enTrueSyariah from "@/messages/en/truesyariah.json";
 import enWorkChrome from "@/messages/en/workChrome.json";
+import msMessages from "@/messages/ms";
+import zhMessages from "@/messages/zh";
 
 /**
  * Every English namespace file, one per namespace. Adding a namespace =
- * add the JSON file under messages/en and import it here (types flow from it).
+ * add the JSON file under messages/{en,ms,zh}, import the English file here
+ * (types flow from it), and add the ms/zh files to messages/ms/index.ts and
+ * messages/zh/index.ts.
  */
 export type EnMessages = Omit<
 	typeof enCommon &
@@ -74,26 +76,39 @@ function deepMerge<T extends Record<string, unknown>>(
 	return result as T;
 }
 
-function loadLocaleDirectory(locale: string): Record<string, unknown> {
-	const dir = join(process.cwd(), "messages", locale);
-	if (!existsSync(dir)) {
-		return {};
-	}
-
-	const messages: Record<string, unknown> = {};
-	for (const file of readdirSync(dir)) {
-		if (!file.endsWith(".json")) continue;
-		const parsed: unknown = JSON.parse(
-			readFileSync(join(dir, file), "utf8"),
-		);
-		if (isPlainObject(parsed)) {
-			const { _status: _fileStatus, ...rest } = parsed;
-			void _fileStatus;
-			Object.assign(messages, rest);
-		}
-	}
-	return messages;
+function stripFileStatus(mod: object): Record<string, unknown> {
+	const { _status: _fileStatus, ...rest } = mod as Record<string, unknown>;
+	void _fileStatus;
+	return rest;
 }
+
+const englishMessages: Record<string, unknown> = {
+	...stripFileStatus(enAbout),
+	...stripFileStatus(enAccountManagement),
+	...stripFileStatus(enBanner),
+	...stripFileStatus(enCareers),
+	...stripFileStatus(enCommon),
+	...stripFileStatus(enContact),
+	...stripFileStatus(enDigitalLicense),
+	...stripFileStatus(enFooter),
+	...stripFileStatus(enHeader),
+	...stripFileStatus(enHome),
+	...stripFileStatus(enInsightsChrome),
+	...stripFileStatus(enLegalChrome),
+	...stripFileStatus(enNotFound),
+	...stripFileStatus(enP2P),
+	...stripFileStatus(enSoftwareDevelopment),
+	...stripFileStatus(enTrueIdentity),
+	...stripFileStatus(enTrueKredit),
+	...stripFileStatus(enTrueSSM),
+	...stripFileStatus(enTrueSyariah),
+	...stripFileStatus(enWorkChrome),
+};
+
+const localeOverlay: Record<string, Record<string, unknown>> = {
+	ms: msMessages,
+	zh: zhMessages,
+};
 
 function stripTodoFaqItems(value: unknown): unknown {
 	if (Array.isArray(value)) {
@@ -120,15 +135,21 @@ function stripTodoFaqItems(value: unknown): unknown {
 	return value;
 }
 
+const messagesCache = new Map<string, AbstractIntlMessages>();
+
 export async function loadMessages(
 	locale: string,
 ): Promise<AbstractIntlMessages> {
-	const english = loadLocaleDirectory("en");
-	if (locale === "en") {
-		return stripTodoFaqItems(english) as AbstractIntlMessages;
-	}
-	const overlay = loadLocaleDirectory(locale);
-	return stripTodoFaqItems(deepMerge(english, overlay)) as AbstractIntlMessages;
+	const cached = messagesCache.get(locale);
+	if (cached) return cached;
+
+	const overlay = localeOverlay[locale];
+	const merged = overlay
+		? deepMerge(englishMessages, overlay)
+		: englishMessages;
+	const result = stripTodoFaqItems(merged) as AbstractIntlMessages;
+	messagesCache.set(locale, result);
+	return result;
 }
 
 /**

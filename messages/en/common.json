@@ -19,6 +19,20 @@
 		"contactUs": "Contact us",
 		"talkToUs": "Talk to us",
 		"siteTitle": "Truestack - KPKT Services & Fintech Software",
-		"siteDescription": "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation."
+		"siteDescription": "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation.",
+		"logoCloud": {
+			"partners": {
+				"badge": "Partner Ecosystem",
+				"title": "Integrated with Industry Leaders",
+				"subtitle": "We work with trusted partners to deliver comprehensive fintech solutions with credit intelligence, compliance, payments, and cloud infrastructure.",
+				"bottom": "+ more integrations tailored to your specific requirements"
+			},
+			"clients": {
+				"badge": "Our Clients",
+				"title": "Trusted by Industry Leaders",
+				"subtitle": "We partner with leading companies across fintech, lending, and enterprise sectors.",
+				"bottom": "And many more across Malaysia"
+			}
+		}
 	}
 }

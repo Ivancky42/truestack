@@ -24,7 +24,15 @@
 			"title": "If you can dream it, <accent>we can build it.</accent>",
 			"lede": "Custom software from first sketch to go-live.",
 			"body": "Web apps, mobile products, internal tools, and platforms under your brand — designed, built, and shipped with you.",
-			"secondaryCta": "See what we build"
+			"secondaryCta": "See what we build",
+			"ideaEyebrow": "Your idea",
+			"quote": "“What if we had an app that…”",
+			"brief": "Rough brief · still forming",
+			"tagUsers": "users?",
+			"tagFlows": "flows?",
+			"tagMustHaves": "must-haves",
+			"buildEyebrow": "We build it",
+			"caption": "Web, mobile & admin — live under your brand"
 		},
 		"story": {
 			"eyebrow": "Why custom",
@@ -140,8 +148,10 @@
 			}
 		},
 		"proof": {
+			"eyebrow": "Selected work",
 			"title": "Products we've taken live.",
-			"subtitle": "A selection of platforms shipped with our team — from first build to go-live."
+			"subtitle": "A selection of platforms shipped with our team — from first build to go-live.",
+			"viewAll": "See all success stories"
 		},
 		"crossLinks": {
 			"lead": "Looking for lending or marketplace platforms? See"

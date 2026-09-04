@@ -24,7 +24,15 @@
 			"title": "Jika anda boleh impikannya, <accent>kami boleh binanya.</accent>",
 			"lede": "Perisian tersuai dari lakaran pertama ke pelancaran (go-live).",
 			"body": "Aplikasi web, produk mudah alih, alatan dalaman dan platform di bawah jenama anda — direka, dibina dan dihantar bersama anda.",
-			"secondaryCta": "Lihat hasil kami"
+			"secondaryCta": "Lihat hasil kami",
+			"ideaEyebrow": "Idea anda",
+			"quote": "“Bagaimana jika kita ada aplikasi yang…”",
+			"brief": "Ringkasan kasar · masih terbentuk",
+			"tagUsers": "pengguna?",
+			"tagFlows": "aliran?",
+			"tagMustHaves": "keperluan wajib",
+			"buildEyebrow": "Kami binanya",
+			"caption": "Web, mudah alih dan pentadbiran — hidup di bawah jenama anda"
 		},
 		"story": {
 			"eyebrow": "Mengapa tersuai",
@@ -140,8 +148,10 @@
 			}
 		},
 		"proof": {
+			"eyebrow": "Kerja terpilih",
 			"title": "Produk yang kami lancarkan.",
-			"subtitle": "Pilihan platform yang dihantar bersama pasukan kami — dari binaan pertama ke pelancaran (go-live)."
+			"subtitle": "Pilihan platform yang dihantar bersama pasukan kami — dari binaan pertama ke pelancaran (go-live).",
+			"viewAll": "Lihat semua kisah kejayaan"
 		},
 		"crossLinks": {
 			"lead": "Mencari platform pinjaman atau pasaran (marketplace)? Lihat"

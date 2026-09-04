@@ -96,7 +96,40 @@
 		"diagram": {
 			"eyebrow": "Cara TrueP2P™ berfungsi",
 			"title": "Apa yang kami kejuruteraan untuk anda",
-			"body": "Platform P2P terkawal menyambungkan pelabur terus dengan penerbit. Kami membina setiap lapisan di antaranya — onboarding, penyenaraian, akaun amanah (escrow), bayaran balik dan pelaporan — supaya pengalaman terasa seperti satu produk yang dipercayai."
+			"body": "Platform P2P terkawal menyambungkan pelabur terus dengan penerbit. Kami membina setiap lapisan di antaranya — onboarding, penyenaraian, akaun amanah (escrow), bayaran balik dan pelaporan — supaya pengalaman terasa seperti satu produk yang dipercayai.",
+			"flow": {
+				"investment": "Pelaburan",
+				"funding": "Pembiayaan",
+				"repayment": "Bayaran balik",
+				"yield": "Pulangan"
+			},
+			"investors": {
+				"title": "Pelabur",
+				"body": "Pelabur runcit, bertauliah dan institusi yang mencari hasil telus berasaskan aset.",
+				"items": [
+					"Deposit dan labur dalam nota",
+					"Diversifikasi merentas penerbit",
+					"Jejaki pulangan secara masa nyata"
+				]
+			},
+			"hub": {
+				"title": "TrueP2P™ — kejuruteraan oleh Truestack",
+				"body": "Onboarding pelabur selaras SC, penyenaraian, akaun amanah (escrow), pembayaran, tandatangan digital dan pelaporan — dihantar sebagai platform sedia pengeluaran untuk pengendali anda.",
+				"items": [
+					"Akreditasi dan had pelabur",
+					"Integrasi akaun amanah (escrow)",
+					"Pelaporan selaras SC dan jejak audit"
+				]
+			},
+			"issuers": {
+				"title": "Penerbit",
+				"body": "PKS, penaja projek dan originator yang memerlukan akses pantas dan berstruktur kepada modal pertumbuhan.",
+				"items": [
+					"Mohon pembiayaan",
+					"Hantar dokumen dan KYC",
+					"Terima pencairan"
+				]
+			}
 		},
 		"modules": {
 			"badge": "Apa yang kami bina",

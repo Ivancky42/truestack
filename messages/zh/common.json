@@ -19,6 +19,20 @@
 		"contactUs": "联系我们",
 		"talkToUs": "与我们洽谈",
 		"siteTitle": "Truestack - 马来西亚KPKT放贷牌照服务与金融科技软件",
-		"siteDescription": "KPKT合规账户管理、线上放贷牌照 (e-Lending) 申请，以及面向马来西亚持牌放贷公司的贷款管理软件。预约免费咨询。"
+		"siteDescription": "KPKT合规账户管理、线上放贷牌照 (e-Lending) 申请，以及面向马来西亚持牌放贷公司的贷款管理软件。预约免费咨询。",
+		"logoCloud": {
+			"partners": {
+				"badge": "合作伙伴生态",
+				"title": "与行业领导者集成",
+				"subtitle": "我们与可信合作伙伴协作，交付涵盖信用情报、合规、支付与云基础设施的全面金融科技方案。",
+				"bottom": "+ 更多按您具体需求定制的集成"
+			},
+			"clients": {
+				"badge": "我们的客户",
+				"title": "受行业领导者信赖",
+				"subtitle": "我们与金融科技、放贷与企业领域的领先公司合作。",
+				"bottom": "以及马来西亚各地的更多客户"
+			}
+		}
 	}
 }

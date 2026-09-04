@@ -24,6 +24,8 @@ export function SoftwareDevelopmentHeroVisual({
 	className,
 	animateOnMount = false,
 }: SoftwareDevelopmentHeroVisualProps) {
+	const t = useTranslations("SoftwareDevelopment");
+
 	return (
 		<motion.div
 			className={cn("relative mx-auto w-full max-w-md", className)}
@@ -53,7 +55,7 @@ export function SoftwareDevelopmentHeroVisual({
 				{/* Idea — napkin / sketch brief */}
 				<div className="relative border-b bg-linear-to-br from-amber-50/80 via-muted/30 to-muted/50 px-6 py-6 dark:from-amber-950/20 dark:via-muted/20 dark:to-muted/40">
 					<p className="mb-4 type-eyebrow text-muted-foreground">
-						Your idea
+						{t("hero.ideaEyebrow")}
 					</p>
 					<div className="relative rounded-2xl border border-dashed border-amber-600/25 bg-background/70 p-4 shadow-sm">
 						{/* Corner fold */}
@@ -68,10 +70,10 @@ export function SoftwareDevelopmentHeroVisual({
 							</div>
 							<div className="min-w-0 flex-1">
 								<p className="type-pullquote italic text-foreground/80">
-									“What if we had an app that…”
+									{t("hero.quote")}
 								</p>
 								<p className="mt-1 text-[11px] text-muted-foreground">
-									Rough brief · still forming
+									{t("hero.brief")}
 								</p>
 							</div>
 						</div>
@@ -105,13 +107,13 @@ export function SoftwareDevelopmentHeroVisual({
 
 						<div className="mt-3 flex flex-wrap gap-1.5">
 							<span className="rounded-full border border-dashed border-muted-foreground/30 px-2 py-0.5 text-[10px] text-muted-foreground">
-								users?
+								{t("hero.tagUsers")}
 							</span>
 							<span className="rounded-full border border-dashed border-muted-foreground/30 px-2 py-0.5 text-[10px] text-muted-foreground">
-								flows?
+								{t("hero.tagFlows")}
 							</span>
 							<span className="rounded-full border border-dashed border-amber-600/35 bg-amber-500/10 px-2 py-0.5 text-[10px] text-amber-800/80">
-								must-haves
+								{t("hero.tagMustHaves")}
 							</span>
 						</div>
 					</div>
@@ -121,7 +123,7 @@ export function SoftwareDevelopmentHeroVisual({
 				<div className="relative bg-linear-to-br from-primary/8 via-background to-violet-500/5 px-6 py-6">
 					<p className="mb-4 flex items-center gap-1.5 type-eyebrow text-primary">
 						<Sparkles className="h-3 w-3" />
-						We build it
+						{t("hero.buildEyebrow")}
 					</p>
 					<div className="flex items-end gap-3">
 						{/* Browser mock */}
@@ -166,7 +168,7 @@ export function SoftwareDevelopmentHeroVisual({
 						</div>
 					</div>
 					<p className="mt-4 text-center text-xs text-muted-foreground">
-						Web, mobile &amp; admin — live under your brand
+						{t("hero.caption")}
 					</p>
 				</div>
 			</div>

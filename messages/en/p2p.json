@@ -96,7 +96,40 @@
 		"diagram": {
 			"eyebrow": "How TrueP2P™ works",
 			"title": "What we engineer for you",
-			"body": "A regulated peer-to-peer platform connects investors directly with issuers. We build every layer in between — onboarding, listings, escrow, repayments and reporting — so the experience feels like a single, trusted product."
+			"body": "A regulated peer-to-peer platform connects investors directly with issuers. We build every layer in between — onboarding, listings, escrow, repayments and reporting — so the experience feels like a single, trusted product.",
+			"flow": {
+				"investment": "Investment",
+				"funding": "Funding",
+				"repayment": "Repayment",
+				"yield": "Yield"
+			},
+			"investors": {
+				"title": "Investors",
+				"body": "Retail, accredited, and institutional investors looking for transparent, asset-backed yield.",
+				"items": [
+					"Deposit & invest in notes",
+					"Diversify across issuers",
+					"Track returns in real time"
+				]
+			},
+			"hub": {
+				"title": "TrueP2P™ — engineered by Truestack",
+				"body": "SC-aligned investor onboarding, listings, escrow, payments, e-signing and reporting — delivered as a production-ready platform for your operator.",
+				"items": [
+					"Investor accreditation & limits",
+					"Escrow & trust account integration",
+					"SC-aligned reporting & audit trail"
+				]
+			},
+			"issuers": {
+				"title": "Issuers",
+				"body": "SMEs, project sponsors, and originators that need fast, structured access to growth capital.",
+				"items": [
+					"Apply for funding",
+					"Submit documents & KYC",
+					"Receive disbursement"
+				]
+			}
 		},
 		"modules": {
 			"badge": "What we build",
