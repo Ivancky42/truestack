@@ -119,20 +119,6 @@ export function TrueKreditHero() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					<nav
-						aria-label="Breadcrumb"
-						className="mb-5 flex items-center justify-center gap-2 text-sm text-muted-foreground"
-					>
-						<Link href="/" className="hover:text-foreground">
-							Platforms
-						</Link>
-						<span className="text-border" aria-hidden>
-							/
-						</span>
-						<span className="font-medium text-foreground">
-							TrueKredit™
-						</span>
-					</nav>
 					<h1 className="mx-auto max-w-[20em] type-h1 text-pretty">
 						Run your entire lending book from{" "}
 						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
@@ -148,11 +134,7 @@ export function TrueKreditHero() {
 						schedules, repayments and KPKT paperwork in one system
 						your whole team trusts.
 					</p>
-					<p className="mx-auto mt-3.5 max-w-[40em] type-lede text-muted-foreground">
-						Your data stays on your own secure cloud in Malaysia.
-						Go nationwide with Pro when you are ready.
-					</p>
-					<div className="mt-8 mb-12 flex flex-wrap justify-center gap-3">
+					<div className="mt-8 flex flex-wrap justify-center gap-3">
 						<Button asChild size="lg" className="gap-2">
 							<Link href="/contact?subject=TrueKredit">
 								Book a Free Consultation
@@ -167,12 +149,38 @@ export function TrueKreditHero() {
 			</div>
 
 			<motion.div
-				className="relative mx-auto max-w-270 px-6"
+				className="relative mx-auto max-w-270 px-6 pt-10"
 				initial={{ opacity: 0, y: 16 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7, delay: 0.15 }}
 			>
-				<div className="overflow-hidden rounded-t-xl border border-b-0 bg-card shadow-lg">
+				<div
+					role="tablist"
+					aria-label="TrueKredit screens"
+					className="mb-6 flex items-end justify-center gap-10 border-b md:mb-8 md:gap-16"
+				>
+					{SLIDES.map((item, index) => {
+						const on = index === active;
+						return (
+							<button
+								key={item.id}
+								type="button"
+								role="tab"
+								aria-selected={on}
+								onClick={() => selectSlide(index)}
+								className={cn(
+									"-mb-px border-b-2 px-1 pb-3 type-ui font-medium whitespace-nowrap transition-colors",
+									on
+										? "border-primary text-primary"
+										: "border-transparent text-muted-foreground hover:text-foreground",
+								)}
+							>
+								{item.label}
+							</button>
+						);
+					})}
+				</div>
+				<div className="mb-8 overflow-hidden rounded-t-xl border border-b-0 bg-card shadow-lg md:mb-10">
 					<div className="flex h-9 items-center gap-1.5 border-b bg-muted/40 px-3.5">
 						<span
 							className="size-2.5 rounded-full bg-border"
@@ -220,32 +228,6 @@ export function TrueKreditHero() {
 							</motion.div>
 						</AnimatePresence>
 					</div>
-				</div>
-				<div
-					role="tablist"
-					aria-label="TrueKredit screens"
-					className="mx-auto mt-4 mb-8 flex w-fit items-center gap-1 rounded-full border bg-card/95 p-1 shadow-sm backdrop-blur-sm md:mb-10"
-				>
-					{SLIDES.map((item, index) => {
-						const on = index === active;
-						return (
-							<button
-								key={item.id}
-								type="button"
-								role="tab"
-								aria-selected={on}
-								onClick={() => selectSlide(index)}
-								className={cn(
-									"rounded-full px-3.5 py-1.5 type-ui font-medium transition-colors",
-									on
-										? "bg-foreground text-background"
-										: "text-muted-foreground hover:text-foreground",
-								)}
-							>
-								{item.label}
-							</button>
-						);
-					})}
 				</div>
 			</motion.div>
 		</section>
