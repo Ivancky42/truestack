@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useEffect, useLayoutEffect, type ComponentProps } from "react";
+import {
+	useState,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	type ComponentProps,
+	type RefObject,
+} from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -21,6 +28,7 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { LanguageSuggestionBar } from "@/components/layout/language-suggestion-bar";
 import { brandThemeColor, darkThemeColor, siteName } from "@/lib/seo-defaults";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
@@ -339,15 +347,25 @@ function MobileSolutionMenuItem({
 	);
 }
 
-function useNavChrome(pathname: string) {
+function useNavChrome(
+	pathname: string,
+	headerRef: RefObject<HTMLElement | null>,
+	bannerVisible: boolean,
+) {
 	const [isDark, setIsDark] = useState(false);
 	const [isAtTop, setIsAtTop] = useState(true);
 
 	useLayoutEffect(() => {
 		const check = () => {
 			setIsAtTop(window.scrollY < 8);
-			// Sample just below the header so dark heroes still flip the chrome.
-			const el = document.elementFromPoint(window.innerWidth / 2, 90);
+			// Sample just below the header's real bottom edge (it grows when the
+			// language suggestion bar is visible) so dark heroes still flip the chrome.
+			const headerBottom =
+				headerRef.current?.getBoundingClientRect().bottom ?? 72;
+			const el = document.elementFromPoint(
+				window.innerWidth / 2,
+				headerBottom + 18,
+			);
 			const inDarkSection = el?.closest('[data-nav-theme="dark"]');
 			setIsDark(!!inDarkSection);
 		};
@@ -360,7 +378,8 @@ function useNavChrome(pathname: string) {
 			window.removeEventListener("scroll", check);
 			window.removeEventListener("resize", check);
 		};
-	}, [pathname]);
+		// `bannerVisible` changes the header's height, so re-sample when it flips.
+	}, [pathname, headerRef, bannerVisible]);
 
 	useLayoutEffect(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
@@ -387,7 +406,13 @@ export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [solutionsExpanded, setSolutionsExpanded] = useState(false);
 	const [solutionsMenu, setSolutionsMenu] = useState("");
-	const { isDark: isDarkSection, isAtTop } = useNavChrome(pathname);
+	const headerRef = useRef<HTMLElement>(null);
+	const [bannerVisible, setBannerVisible] = useState(false);
+	const { isDark: isDarkSection, isAtTop } = useNavChrome(
+		pathname,
+		headerRef,
+		bannerVisible,
+	);
 
 	useEffect(() => {
 		const frame = requestAnimationFrame(() => {
@@ -405,7 +430,10 @@ export function Header() {
 
 	const headerClasses = cn(
 		"sticky top-0 z-50 w-full overflow-visible border-b transition-[background-color,border-color,backdrop-filter] duration-200",
-		isAtTop
+		// Transparent-at-top assumes a hero tucked under the 72px header. With the
+		// suggestion bar showing, the header is taller and body background would
+		// bleed through, so fall back to the solid chrome.
+		isAtTop && !bannerVisible
 			? "border-transparent bg-transparent"
 			: isDarkSection
 				? "border-slate-800 bg-slate-950/90 backdrop-blur-md"
@@ -425,7 +453,7 @@ export function Header() {
 		);
 
 	return (
-		<header className={headerClasses}>
+		<header ref={headerRef} className={headerClasses}>
 			<div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 overflow-visible">
 				<Link href="/" className="flex items-center gap-2">
 					<Image
@@ -680,6 +708,11 @@ export function Header() {
 					</SheetContent>
 				</Sheet>
 			</div>
+			{/* Lives inside the sticky header so `-mt-18` heroes cannot paint over it. */}
+			<LanguageSuggestionBar
+				tone={isDarkSection ? "dark" : "light"}
+				onVisibilityChange={setBannerVisible}
+			/>
 		</header>
 	);
 }

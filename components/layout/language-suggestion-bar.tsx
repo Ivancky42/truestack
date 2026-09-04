@@ -13,6 +13,7 @@ import {
 	LOCALE_HINT_COOKIE,
 } from "@/lib/i18n/config";
 import { readCookie, setCookie } from "@/lib/i18n/cookies";
+import { cn } from "@/lib/utils";
 
 const LOCALE_MAX_AGE = 31_536_000;
 const HINT_MAX_AGE = 2_592_000;
@@ -49,7 +50,19 @@ function queryFromSearchParams(
 	return query;
 }
 
-function LanguageSuggestionBarInner() {
+type Tone = "light" | "dark";
+
+type LanguageSuggestionBarProps = {
+	tone?: Tone;
+	/** Fires whenever the bar mounts or unmounts, so the header can adapt. */
+	onVisibilityChange?: (visible: boolean) => void;
+};
+
+function LanguageSuggestionBarInner({
+	tone,
+	onVisibilityChange,
+}: Required<Pick<LanguageSuggestionBarProps, "tone">> &
+	Pick<LanguageSuggestionBarProps, "onVisibilityChange">) {
 	const locale = useLocale();
 	const current = isAppLocale(locale) ? locale : "en";
 	const pathname = usePathname();
@@ -71,6 +84,10 @@ function LanguageSuggestionBarInner() {
 		return () => cancelAnimationFrame(frame);
 	}, [current]);
 
+	useEffect(() => {
+		onVisibilityChange?.(target !== null);
+	}, [target, onVisibilityChange]);
+
 	if (!target) return null;
 
 	const switchToTarget = () => {
@@ -88,8 +105,18 @@ function LanguageSuggestionBarInner() {
 		setTarget(null);
 	};
 
+	const dark = tone === "dark";
+
 	return (
-		<div className="border-b bg-muted/30">
+		<div
+			role="status"
+			className={cn(
+				"border-t border-b",
+				dark
+					? "border-slate-800 bg-slate-950 text-slate-200"
+					: "border-border bg-muted text-foreground",
+			)}
+		>
 			<div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-2.5 type-ui">
 				<p className="flex min-w-0 items-center gap-2">
 					<Languages className="h-4 w-4 shrink-0 text-primary" />
@@ -100,7 +127,10 @@ function LanguageSuggestionBarInner() {
 						type="button"
 						lang={htmlLang[target]}
 						onClick={switchToTarget}
-						className="text-primary font-medium underline-offset-4 hover:underline"
+						className={cn(
+							"font-medium underline-offset-4 hover:underline",
+							dark ? "text-white" : "text-primary",
+						)}
 					>
 						{t(`${target}.cta`)}
 					</button>
@@ -108,7 +138,12 @@ function LanguageSuggestionBarInner() {
 						type="button"
 						onClick={dismiss}
 						aria-label={t(`${target}.dismiss`)}
-						className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+						className={cn(
+							"rounded-md p-1 transition-colors",
+							dark
+								? "text-slate-400 hover:bg-slate-800 hover:text-white"
+								: "text-muted-foreground hover:bg-accent hover:text-foreground",
+						)}
 					>
 						<X className="h-4 w-4" />
 					</button>
@@ -118,10 +153,16 @@ function LanguageSuggestionBarInner() {
 	);
 }
 
-export function LanguageSuggestionBar() {
+export function LanguageSuggestionBar({
+	tone = "light",
+	onVisibilityChange,
+}: LanguageSuggestionBarProps) {
 	return (
 		<Suspense fallback={null}>
-			<LanguageSuggestionBarInner />
+			<LanguageSuggestionBarInner
+				tone={tone}
+				onVisibilityChange={onVisibilityChange}
+			/>
 		</Suspense>
 	);
 }
