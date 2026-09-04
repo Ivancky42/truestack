@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { Building2, CreditCard, Fingerprint } from "lucide-react";
 import type { LucideIcon } from "lucide-react";

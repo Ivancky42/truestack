@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { FileText, Scale, Shield } from "lucide-react";
 import { GridPattern } from "@/components/sections/hero";

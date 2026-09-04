@@ -1,11 +1,14 @@
+import { getLocale } from "next-intl/server";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 import type { WorkCaseStudyDetail } from "@/lib/work-case-studies";
 
-export function WorkCaseStudySchema({
+export async function WorkCaseStudySchema({
 	study,
 }: {
 	study: WorkCaseStudyDetail;
 }) {
+	const locale = resolveAppLocale(await getLocale());
 	const pageUrl = `${siteUrl}/work/${study.slug}`;
 
 	const schema = {
@@ -17,7 +20,7 @@ export function WorkCaseStudySchema({
 				url: pageUrl,
 				name: study.seo.title,
 				description: study.seo.description,
-				inLanguage: "en-MY",
+				inLanguage: inLanguage[locale],
 				isPartOf: { "@id": `${siteUrl}/#website` },
 				about: { "@id": `${siteUrl}/#organization` },
 				breadcrumb: { "@id": `${pageUrl}#breadcrumb` },

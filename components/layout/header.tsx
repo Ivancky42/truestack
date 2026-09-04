@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect, useLayoutEffect, type ComponentProps } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
 	NavigationMenu,

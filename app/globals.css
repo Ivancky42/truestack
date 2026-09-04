@@ -86,6 +86,11 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+html[lang="zh-CN"] {
+  --font-sans: var(--font-noto-sc), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-noto-sc), var(--font-rethink-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
 /* 
   Brand Color Configuration
   To change the brand color, update --primary and --ring values

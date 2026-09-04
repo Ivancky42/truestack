@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { ClipboardCheck, Cloud, Code2, CreditCard } from "lucide-react";

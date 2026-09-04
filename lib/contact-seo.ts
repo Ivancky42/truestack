@@ -1,3 +1,5 @@
+import type { AppLocale } from "@/i18n/routing";
+import { DEFAULT_LOCALE, inLanguage } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
@@ -5,7 +7,7 @@ const baseUrl = siteUrl;
 export const CONTACT_PAGE_PATH = "/contact";
 export const CONTACT_PAGE_URL = `${baseUrl}${CONTACT_PAGE_PATH}`;
 
-export function buildContactJsonLd() {
+export function buildContactJsonLd(locale: AppLocale = DEFAULT_LOCALE) {
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
@@ -16,7 +18,7 @@ export function buildContactJsonLd() {
 				name: "Book a Free Consultation - Truestack",
 				description:
 					"Book a free consultation with Truestack for KPKT licensing, compliance, and fintech software development in Malaysia.",
-				inLanguage: "en-MY",
+				inLanguage: inLanguage[locale],
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
 				breadcrumb: { "@id": `${CONTACT_PAGE_URL}#breadcrumb` },

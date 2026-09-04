@@ -1,7 +1,10 @@
+import { getLocale } from "next-intl/server";
+import { resolveAppLocale } from "@/lib/i18n/config";
 import { buildContactJsonLd } from "@/lib/contact-seo";
 
-export function ContactSchema() {
-	const schema = buildContactJsonLd();
+export async function ContactSchema() {
+	const locale = resolveAppLocale(await getLocale());
+	const schema = buildContactJsonLd(locale);
 
 	return (
 		<script

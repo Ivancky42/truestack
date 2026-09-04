@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, BookLock, HandCoins, Scale } from "lucide-react";
 import { TrueSyariahHeroVisual } from "@/components/sections/truesyariah-hero-visual";

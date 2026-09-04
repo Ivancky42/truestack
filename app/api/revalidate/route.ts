@@ -2,6 +2,7 @@ import {parseBody} from "next-sanity/webhook";
 import {revalidatePath, revalidateTag} from "next/cache";
 import {type NextRequest} from "next/server";
 import {insightsTag} from "@/lib/insights/config";
+import {revalidateAllLocales} from "@/lib/i18n/revalidate";
 
 export const runtime = "nodejs";
 
@@ -24,7 +25,7 @@ export async function POST(request: NextRequest) {
 	}
 
 	revalidateTag(insightsTag, "max");
-	revalidatePath("/insights", "layout");
+	revalidateAllLocales("/insights", "layout");
 	revalidatePath("/llms.txt");
 	revalidatePath("/sitemap.xml");
 

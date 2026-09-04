@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const DEFAULT_SANITY_PROJECT_ID = "ms6n63j9";
 const DEFAULT_SANITY_DATASET = "production";
@@ -46,8 +49,23 @@ const nextConfig: NextConfig = {
 				destination: "/services/digital-license",
 				permanent: true,
 			},
+			{
+				source: "/:locale(ms|zh)/services",
+				destination: "/:locale/services/digital-license",
+				permanent: true,
+			},
+			{
+				source: "/:locale(ms|zh)/digital-license",
+				destination: "/:locale/services/digital-license",
+				permanent: true,
+			},
+			{
+				source: "/:locale(ms|zh)/digital-licence",
+				destination: "/:locale/services/digital-license",
+				permanent: true,
+			},
 		];
 	},
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

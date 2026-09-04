@@ -1,3 +1,5 @@
+import { getLocale } from "next-intl/server";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import {
   siteName,
   siteNameAlternates,
@@ -9,7 +11,8 @@ import {
  * Must live on the homepage. Validate at: https://validator.schema.org/
  * @see https://developers.google.com/search/docs/appearance/site-names
  */
-export function WebSiteSchema() {
+export async function WebSiteSchema() {
+  const locale = resolveAppLocale(await getLocale());
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -22,7 +25,7 @@ export function WebSiteSchema() {
     publisher: {
       "@id": `${siteUrl}/#organization`,
     },
-    inLanguage: "en-MY",
+    inLanguage: inLanguage[locale],
   };
 
   return (

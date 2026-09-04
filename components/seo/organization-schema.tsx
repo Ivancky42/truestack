@@ -85,7 +85,7 @@ export function OrganizationSchema() {
       contactType: "sales",
       url: `${baseUrl}/contact`,
       areaServed: "MY",
-      availableLanguage: "English",
+      availableLanguage: ["English", "Malay", "Chinese"],
     },
     identifier: {
       "@type": "PropertyValue",

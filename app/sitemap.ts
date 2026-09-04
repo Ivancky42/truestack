@@ -1,162 +1,137 @@
 import type { MetadataRoute } from "next";
 import { getInsightSitemapEntries } from "@/lib/insights/data";
+import { LOCALES, localizePath } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
 
 export const revalidate = 3600;
 
+const ENGLISH_ONLY_PATHS = new Set([
+	"/work",
+	"/work/ezdana",
+	"/work/landstore",
+	"/work/cashsouk",
+	"/work/eviebikes",
+	"/cybersecurity",
+	"/privacy",
+	"/pdpa",
+	"/terms",
+	"/insights",
+]);
+
+function absoluteUrl(path: string): string {
+	if (path === "/") return baseUrl;
+	return `${baseUrl}${path}`;
+}
+
+function languageAlternates(path: string): Record<string, string> {
+	const en = absoluteUrl(path);
+	return {
+		"en-MY": en,
+		"ms-MY": absoluteUrl(localizePath(path, "ms")),
+		"zh-Hans": absoluteUrl(localizePath(path, "zh")),
+		"zh-CN": absoluteUrl(localizePath(path, "zh")),
+		"x-default": en,
+	};
+}
+
+function localizedEntries(
+	path: string,
+	meta: Pick<
+		MetadataRoute.Sitemap[number],
+		"lastModified" | "changeFrequency" | "priority"
+	>,
+): MetadataRoute.Sitemap {
+	if (ENGLISH_ONLY_PATHS.has(path) || path.startsWith("/insights/")) {
+		return [
+			{
+				url: absoluteUrl(path),
+				...meta,
+			},
+		];
+	}
+
+	return LOCALES.map((locale) => ({
+		url: absoluteUrl(localizePath(path, locale)),
+		...meta,
+		alternates: {
+			languages: languageAlternates(path),
+		},
+	}));
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticEntries: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/account-management`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/digital-license`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/software-development`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/p2p-software-development`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/trueidentity`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/truessm`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/truekredit`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/truesyariah`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/work/ezdana`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/work/landstore`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/work/cashsouk`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/work/eviebikes`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/careers`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cybersecurity`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/pdpa`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
+	const staticPaths: Array<{
+		path: string;
+		changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+		priority: number;
+	}> = [
+		{ path: "/", changeFrequency: "weekly", priority: 1 },
+		{ path: "/about", changeFrequency: "monthly", priority: 0.9 },
+		{ path: "/contact", changeFrequency: "monthly", priority: 0.9 },
+		{
+			path: "/services/account-management",
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			path: "/services/digital-license",
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			path: "/services/software-development",
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			path: "/services/p2p-software-development",
+			changeFrequency: "monthly",
+			priority: 0.9,
+		},
+		{ path: "/trueidentity", changeFrequency: "monthly", priority: 0.9 },
+		{ path: "/truessm", changeFrequency: "monthly", priority: 0.9 },
+		{ path: "/truekredit", changeFrequency: "monthly", priority: 0.9 },
+		{ path: "/truesyariah", changeFrequency: "monthly", priority: 0.9 },
+		{ path: "/work", changeFrequency: "monthly", priority: 0.7 },
+		{ path: "/work/ezdana", changeFrequency: "monthly", priority: 0.7 },
+		{ path: "/work/landstore", changeFrequency: "monthly", priority: 0.7 },
+		{ path: "/work/cashsouk", changeFrequency: "monthly", priority: 0.7 },
+		{ path: "/work/eviebikes", changeFrequency: "monthly", priority: 0.7 },
+		{ path: "/careers", changeFrequency: "weekly", priority: 0.8 },
+		{ path: "/cybersecurity", changeFrequency: "yearly", priority: 0.3 },
+		{ path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
+		{ path: "/pdpa", changeFrequency: "yearly", priority: 0.3 },
+		{ path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+	];
 
-  let postEntries: MetadataRoute.Sitemap = [];
-  try {
-    const posts = await getInsightSitemapEntries();
-    postEntries = (Array.isArray(posts) ? posts : []).map((post) => ({
-      url: `${baseUrl}/insights/${post.slug}`,
-      lastModified: post.updatedAt,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }));
-  } catch {
-    postEntries = [];
-  }
+	const lastModified = new Date();
+	const staticEntries = staticPaths.flatMap(({ path, changeFrequency, priority }) =>
+		localizedEntries(path, { lastModified, changeFrequency, priority }),
+	);
 
-  return [
-    ...staticEntries,
-    {
-      url: `${baseUrl}/insights`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    ...postEntries,
-  ];
+	let postEntries: MetadataRoute.Sitemap = [];
+	try {
+		const posts = await getInsightSitemapEntries();
+		postEntries = (Array.isArray(posts) ? posts : []).flatMap((post) =>
+			localizedEntries(`/insights/${post.slug}`, {
+				lastModified: post.updatedAt,
+				changeFrequency: "monthly",
+				priority: 0.7,
+			}),
+		);
+	} catch {
+		postEntries = [];
+	}
+
+	return [
+		...staticEntries,
+		...localizedEntries("/insights", {
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.8,
+		}),
+		...postEntries,
+	];
 }
