@@ -18,6 +18,7 @@ import truekredit from "./truekredit.json";
 import truessm from "./truessm.json";
 import truesyariah from "./truesyariah.json";
 import workChrome from "./workChrome.json";
+import workStudies from "./workStudies.json";
 
 function namespaces(
 	...files: object[]
@@ -55,6 +56,7 @@ const messages = namespaces(
 	truessm,
 	truesyariah,
 	workChrome,
+	workStudies,
 );
 
 export default messages;

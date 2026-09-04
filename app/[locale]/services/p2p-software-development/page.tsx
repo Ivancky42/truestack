@@ -186,6 +186,7 @@ export default async function P2PSoftwareDevelopmentPage({
 	const stackHighlights = t.raw("process.highlights") as string[];
 	const complianceItems = t.raw("compliance.items") as string[];
 	const cashsoukStudy: CaseStudy = {
+		id: "cashsouk",
 		title: "CashSouk",
 		description: t("caseStudies.cashsouk.description"),
 		blurb: t("caseStudies.cashsouk.blurb"),
@@ -209,7 +210,7 @@ export default async function P2PSoftwareDevelopmentPage({
 				]}
 			/>
 
-			<PageMessages namespaces={["P2P"]}>
+			<PageMessages namespaces={["P2P", "WorkStudies"]}>
 			<P2PHero />
 
 			{/* SEO intro paragraph - visible and scannable */}

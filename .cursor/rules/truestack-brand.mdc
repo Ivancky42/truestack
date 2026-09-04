@@ -1,6 +1,6 @@
 ---
 description: Truestack brand, design-system, tone-of-voice, and SEO rules. Apply to any frontend code or marketing copy change (pages, sections, components, headlines, CTAs, metadata).
-globs: app/**/*.ts,app/**/*.tsx,components/**/*.ts,components/**/*.tsx,lib/**/*.ts
+globs: app/**/*.ts,app/**/*.tsx,components/**/*.ts,components/**/*.tsx,lib/**/*.ts,messages/**/*.json
 alwaysApply: false
 ---
 
@@ -44,10 +44,9 @@ Hard rules (details in the guide):
   `components/seo/`, entry in `app/sitemap.ts`, update `app/llms.txt/route.ts`, FAQ with
   FAQPage schema and quotable 2–4 sentence answers, cross-link sibling products.
   Guide §9.
-- **Trilingual (`en` unprefixed, `/ms`, `/zh`)**: all reader-facing copy, metadata and
-  JSON-LD text lives in `messages/{en,ms,zh}/<namespace>.json` read via `useTranslations`
-  / `getTranslations` — never hardcode English in TSX; add `ms` + `zh` keys in the same
-  commit. Contract and glossary: `docs/I18N.md`. No `app/layout.tsx`; server components
+- **Trilingual (`en` unprefixed, `/ms`, `/zh`)**: ship all three locales in the same
+  change — do not wait to be asked. Follow `.cursor/rules/truestack-i18n.mdc` and
+  `docs/I18N.md`. Never hardcode English in TSX. No `app/layout.tsx`; server components
   never call `headers()` / `cookies()` (routes must stay statically prerendered).
 - **Before finishing**: run the pre-merge checklist in guide §10, then `pnpm lint`,
   `pnpm i18n:check` and `pnpm build`.

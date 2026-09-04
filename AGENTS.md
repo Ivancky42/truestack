@@ -12,15 +12,18 @@ shadcn/ui, framer-motion, next-intl). Three rules override everything else:
    `app/sitemap.ts`, `app/llms.txt/route.ts`, FAQ with FAQPage schema, cross-links to
    sibling products.
 3. **The site is trilingual (`en` unprefixed, `/ms`, `/zh`) — read `docs/I18N.md` before
-   touching copy.** All reader-facing text, metadata and JSON-LD strings live in
-   `messages/{en,ms,zh}/<namespace>.json` and are read with `useTranslations` /
-   `getTranslations`; never hardcode English in TSX. Add `ms` + `zh` keys in the same
-   commit. There is no `app/layout.tsx` (`app/[locale]/layout.tsx` is the root) and server
+   touching copy.** Any new page or copy change ships English, Bahasa Malaysia, and
+   Simplified Chinese in the **same change** (do not wait to be asked). All reader-facing
+   text, metadata and JSON-LD strings live in `messages/{en,ms,zh}/<namespace>.json` and
+   are read with `useTranslations` / `getTranslations`; never hardcode English in TSX.
+   There is no `app/layout.tsx` (`app/[locale]/layout.tsx` is the root) and server
    components must never call `headers()` / `cookies()` — every marketing route stays
    statically prerendered.
 
-Claude Code users: the `truestack-brand` and `truestack-seo` skills in `.claude/skills/`
-encode the same rules. Cursor loads them from `.cursor/rules/truestack-brand.mdc`.
+Claude Code users: the `truestack-brand`, `truestack-seo`, and `truestack-i18n` skills in
+`.claude/skills/` encode the same rules. Cursor loads brand from
+`.cursor/rules/truestack-brand.mdc` and the i18n playbook from
+`.cursor/rules/truestack-i18n.mdc` (always on).
 
 Verify with `pnpm lint`, `pnpm i18n:check` and `pnpm build` before finishing.
 

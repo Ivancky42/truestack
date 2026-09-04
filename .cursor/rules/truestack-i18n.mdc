@@ -1,0 +1,17 @@
+---
+description: Trilingual copy is mandatory. Any new page or copy change ships en + ms + zh in the same change — do not wait to be asked.
+alwaysApply: true
+---
+
+# Trilingual copy (automatic)
+
+The site is `en` (unprefixed), `/ms`, `/zh`. **Do not ship English-only reader-facing copy** and “translate later.” If you add or change a page, section, card, CTA, metadata, FAQ, JSON-LD string, `alt`, or aria label, update all three locales in the same change.
+
+1. Read `docs/I18N.md` (and the `truestack-i18n` skill) before writing copy.
+2. English goes in `messages/en/<file>.json` (`_status: source`). Matching keys go in `messages/ms/` and `messages/zh/` (`_status: ai-draft` is fine). Same key tree, same array lengths.
+3. Never hardcode English in TSX. Structure (hrefs, icons, slugs, image `src`) stays in TS; text is `useTranslations` / `getTranslations`.
+4. New namespace: register in `lib/i18n/messages.tsx` **and** `messages/ms/index.ts` **and** `messages/zh/index.ts`. Load it with `PageMessages` / `getTranslations`.
+5. Localized pages use `localizePageMetadata` (default). JSON-LD `inLanguage` follows the page locale. Do **not** add the path to `ENGLISH_ONLY_PATHS` in `app/sitemap.ts`.
+6. English-only exceptions only: Insights body, legal pages (privacy/terms/PDPA/cybersecurity), product mock-UI chrome, office address.
+7. Formal BM **anda**; zh **您**. Keep product/regulatory Latin (TrueKredit™, KPKT, Tawarruq…). Glossary in `docs/I18N.md`. zh titles ≤ 30 code points with the keyword in the first 10; en/ms titles ≤ 60, descriptions 140–160.
+8. Finish with `pnpm i18n:check`.

@@ -23,6 +23,7 @@ import enTrueKredit from "@/messages/en/truekredit.json";
 import enTrueSSM from "@/messages/en/truessm.json";
 import enTrueSyariah from "@/messages/en/truesyariah.json";
 import enWorkChrome from "@/messages/en/workChrome.json";
+import enWorkStudies from "@/messages/en/workStudies.json";
 import msMessages from "@/messages/ms";
 import zhMessages from "@/messages/zh";
 
@@ -52,6 +53,7 @@ export type EnMessages = Omit<
 		typeof enCareers &
 		typeof enInsightsChrome &
 		typeof enWorkChrome &
+		typeof enWorkStudies &
 		typeof enLegalChrome,
 	"_status"
 >;
@@ -103,6 +105,7 @@ const englishMessages: Record<string, unknown> = {
 	...stripFileStatus(enTrueSSM),
 	...stripFileStatus(enTrueSyariah),
 	...stripFileStatus(enWorkChrome),
+	...stripFileStatus(enWorkStudies),
 };
 
 const localeOverlay: Record<string, Record<string, unknown>> = {

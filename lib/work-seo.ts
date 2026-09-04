@@ -1,61 +1,48 @@
-import { getTranslations } from "next-intl/server";
-import { siteUrl } from "@/lib/seo-defaults";
+import { getLocale, getTranslations } from "next-intl/server";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { absoluteLocalizedUrl, siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
 
 export const WORK_PAGE_PATH = "/work";
-export const WORK_PAGE_URL = `${baseUrl}${WORK_PAGE_PATH}`;
-
-export const WORK_METADATA = {
-	title: "Work | Live Lending & Fintech Platforms in Malaysia",
-	description:
-		"See live Truestack work in Malaysia — digital KPKT conversions, enterprise loan management, and regulated fintech platforms from licence to go-live.",
-	keywords: [
-		"Truestack success stories",
-		"Truestack work",
-		"fintech projects Malaysia",
-		"KPKT success stories",
-		"KPKT digital license",
-		"digital lending software Malaysia",
-		"P2P lending platform Malaysia",
-	],
-	openGraphTitle: "Work | Truestack Success Stories",
-	openGraphDescription:
-		"Selected work from Truestack — digital KPKT conversions, enterprise lending systems, and regulated fintech platforms delivered end to end.",
-} as const;
 
 export async function buildWorkJsonLd() {
+	const locale = resolveAppLocale(await getLocale());
 	const tCommon = await getTranslations("Common");
 	const t = await getTranslations("WorkChrome");
+	const tStudies = await getTranslations("WorkStudies");
+	const pageUrl = absoluteLocalizedUrl(WORK_PAGE_PATH, locale);
+	const homeUrl = absoluteLocalizedUrl("/", locale);
+
 	return {
 		"@context": "https://schema.org",
 		"@graph": [
 			{
 				"@type": ["WebPage", "CollectionPage"],
-				"@id": `${WORK_PAGE_URL}#webpage`,
-				url: WORK_PAGE_URL,
+				"@id": `${pageUrl}#webpage`,
+				url: pageUrl,
 				name: t("schema.name"),
-				description: WORK_METADATA.description,
-				inLanguage: "en-MY",
+				description: tStudies("meta.description"),
+				inLanguage: inLanguage[locale],
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${baseUrl}/#organization` },
-				breadcrumb: { "@id": `${WORK_PAGE_URL}#breadcrumb` },
+				breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "BreadcrumbList",
-				"@id": `${WORK_PAGE_URL}#breadcrumb`,
+				"@id": `${pageUrl}#breadcrumb`,
 				itemListElement: [
 					{
 						"@type": "ListItem",
 						position: 1,
 						name: tCommon("breadcrumbHome"),
-						item: baseUrl,
+						item: homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
 						name: t("nav"),
-						item: WORK_PAGE_URL,
+						item: pageUrl,
 					},
 				],
 			},

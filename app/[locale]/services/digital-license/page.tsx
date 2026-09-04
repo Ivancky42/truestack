@@ -87,7 +87,7 @@ export default async function DigitalLicensePage({
 					},
 				]}
 			/>
-			<PageMessages namespaces={["DigitalLicense"]}>
+			<PageMessages namespaces={["DigitalLicense", "WorkStudies"]}>
 				<DigitalLicensePageContent />
 			</PageMessages>
 		</>

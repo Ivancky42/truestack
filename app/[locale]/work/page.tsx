@@ -1,45 +1,53 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import { WorkPageContent } from "@/components/sections/work-page-content";
 import { WorkSchema } from "@/components/seo/work-schema";
-import {
-	WORK_METADATA,
-	WORK_PAGE_PATH,
-} from "@/lib/work-seo";
-
-const pageMetadata: Metadata = {
-	title: { absolute: WORK_METADATA.title },
-	description: WORK_METADATA.description,
-	keywords: [...WORK_METADATA.keywords],
-	alternates: { canonical: WORK_PAGE_PATH },
-	openGraph: {
-		title: WORK_METADATA.openGraphTitle,
-		description: WORK_METADATA.openGraphDescription,
-		url: WORK_PAGE_PATH,
-		type: "website",
-		locale: "en_MY",
-		siteName,
-		images: [defaultOgImage],
-	},
-	twitter: {
-		card: defaultTwitterCard,
-		title: WORK_METADATA.openGraphTitle,
-		description: WORK_METADATA.openGraphDescription,
-		images: [defaultOgImage.url],
-	},
-};
+import { WORK_PAGE_PATH } from "@/lib/work-seo";
 
 export async function generateMetadata({
 	params,
 }: {
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-	const { locale } = await params;
-	return localizePageMetadata(pageMetadata, WORK_PAGE_PATH, resolveAppLocale(locale), "english-only");
+	const { locale: raw } = await params;
+	const locale = resolveAppLocale(raw);
+	setRequestLocale(locale);
+	const t = await getTranslations({ locale, namespace: "WorkStudies" });
+	const title = t("meta.title");
+	const description = t("meta.description");
+	const ogTitle = t("meta.ogTitle");
+	const ogDescription = t("meta.ogDescription");
+	const keywords = t.raw("meta.keywords") as string[];
+
+	return localizePageMetadata(
+		{
+			title: { absolute: title },
+			description,
+			keywords,
+			alternates: { canonical: WORK_PAGE_PATH },
+			openGraph: {
+				title: ogTitle,
+				description: ogDescription,
+				url: WORK_PAGE_PATH,
+				type: "website",
+				locale: "en_MY",
+				siteName,
+				images: [defaultOgImage],
+			},
+			twitter: {
+				card: defaultTwitterCard,
+				title: ogTitle,
+				description: ogDescription,
+				images: [defaultOgImage.url],
+			},
+		},
+		WORK_PAGE_PATH,
+		locale,
+	);
 }
 
 export default async function WorkPage({
@@ -52,7 +60,7 @@ export default async function WorkPage({
 	return (
 		<>
 			<WorkSchema />
-			<PageMessages namespaces={["WorkChrome"]}>
+			<PageMessages namespaces={["WorkChrome", "WorkStudies"]}>
 				<WorkPageContent />
 			</PageMessages>
 		</>

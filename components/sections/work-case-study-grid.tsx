@@ -10,33 +10,10 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, ArrowUpRight, Ellipsis } from "lucide-react";
 import {
 	type CaseStudy,
+	localizeCaseStudy,
 	workCaseStudies,
+	workStudyCards,
 } from "@/lib/case-studies-data";
-
-const STAT_LABEL_KEYS: Record<string, string> = {
-	Launch: "stats.launch",
-	Product: "stats.product",
-	Surfaces: "stats.surfaces",
-	Engagement: "stats.engagement",
-	Focus: "stats.focus",
-	Regulator: "stats.regulator",
-	Platform: "stats.platform",
-};
-
-function localizeStatLabel(
-	t: ReturnType<typeof useTranslations>,
-	label: string,
-) {
-	const key = STAT_LABEL_KEYS[label];
-	return key ? t(key) : label;
-}
-
-function localizeStatValue(
-	t: ReturnType<typeof useTranslations>,
-	value: string,
-) {
-	return value.replace(/(\d+)\s+mo\b/g, (_, n) => `${n} ${t("stats.mo")}`);
-}
 
 function accentBorder(accent?: CaseStudy["accent"]) {
 	return accent === "kpkt"
@@ -53,7 +30,10 @@ function WorkCaseStudyCard({
 }) {
 	const t = useTranslations("WorkChrome");
 	const tCommon = useTranslations("Common");
-	const isComingSoon = study.isComingSoon;
+	const tStudies = useTranslations("WorkStudies");
+	const cards = workStudyCards(tStudies);
+	const localized = localizeCaseStudy(study, cards);
+	const isComingSoon = localized.isComingSoon;
 	const isKpkt = study.accent === "kpkt";
 	const isExternal = study.href.startsWith("http");
 
@@ -61,7 +41,7 @@ function WorkCaseStudyCard({
 		<div
 			className={cn(
 				"relative flex h-full flex-col overflow-hidden rounded-2xl border bg-linear-to-b from-muted/30 to-background shadow-sm transition-all hover:shadow-md",
-				accentBorder(study.accent),
+				accentBorder(localized.accent),
 				isKpkt && "from-kpkt/6",
 			)}
 		>
@@ -100,12 +80,12 @@ function WorkCaseStudyCard({
 					{study.title}
 				</h3>
 				<p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
-					{study.description}
+					{localized.description}
 				</p>
 
-				{study.tags.length > 0 ? (
+				{localized.tags.length > 0 ? (
 					<div className="mt-3 flex flex-wrap gap-1.5">
-						{study.tags.map((tag) => (
+						{localized.tags.map((tag) => (
 							<Badge
 								key={tag}
 								variant="secondary"
@@ -117,18 +97,18 @@ function WorkCaseStudyCard({
 					</div>
 				) : null}
 
-				{study.stats ? (
+				{localized.stats ? (
 					<div className="mt-auto grid grid-cols-2 gap-2 pt-4">
-						{study.stats.map((stat) => (
+						{localized.stats.map((stat) => (
 							<div
 								key={stat.label}
 								className="rounded-lg bg-muted/30 px-2 py-2 text-center sm:px-3"
 							>
 								<div className="text-sm font-semibold tracking-tight sm:text-base">
-									{localizeStatValue(t, stat.value)}
+									{stat.value}
 								</div>
 								<div className="text-[10px] text-muted-foreground">
-									{localizeStatLabel(t, stat.label)}
+									{stat.label}
 								</div>
 							</div>
 						))}

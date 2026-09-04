@@ -23,48 +23,8 @@ import { SectionBadge } from "@/components/shared/section-badge";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import type { WorkCaseStudyDetail } from "@/lib/work-case-studies";
-import { getRelatedWorkCaseStudies } from "@/lib/work-case-studies";
 
 const PRODUCT_LINK_RE = /\[\[([^\]|]+)\|([^\]]+)\]\]/g;
-
-const SECTION_TITLE_KEYS: Record<string, string> = {
-	"The challenge": "sections.theChallenge",
-	"What we built": "sections.whatWeBuilt",
-	"How we delivered": "sections.howWeDelivered",
-};
-
-const STAT_LABEL_KEYS: Record<string, string> = {
-	Launch: "stats.launch",
-	Product: "stats.product",
-	Surfaces: "stats.surfaces",
-	Engagement: "stats.engagement",
-	Focus: "stats.focus",
-	Regulator: "stats.regulator",
-	Platform: "stats.platform",
-};
-
-function localizeSectionTitle(
-	t: ReturnType<typeof useTranslations>,
-	title: string,
-) {
-	const key = SECTION_TITLE_KEYS[title];
-	return key ? t(key) : title;
-}
-
-function localizeStatLabel(
-	t: ReturnType<typeof useTranslations>,
-	label: string,
-) {
-	const key = STAT_LABEL_KEYS[label];
-	return key ? t(key) : label;
-}
-
-function localizeStatValue(
-	t: ReturnType<typeof useTranslations>,
-	value: string,
-) {
-	return value.replace(/(\d+)\s+mo\b/g, (_, n) => `${n} ${t("stats.mo")}`);
-}
 
 function LinkedCopy({ text }: { text: string }) {
 	const parts: ReactNode[] = [];
@@ -155,12 +115,13 @@ function Gallery({
 
 export function WorkCaseStudyDetailContent({
 	study,
+	related,
 }: {
 	study: WorkCaseStudyDetail;
+	related: WorkCaseStudyDetail[];
 }) {
 	const t = useTranslations("WorkChrome");
 	const tCommon = useTranslations("Common");
-	const related = getRelatedWorkCaseStudies(study.slug);
 
 	return (
 		<>
@@ -225,10 +186,10 @@ export function WorkCaseStudyDetailContent({
 							{study.stats.map((stat) => (
 								<div key={stat.label}>
 								<div className="type-subhead text-slate-50">
-									{localizeStatValue(t, stat.value)}
+									{stat.value}
 								</div>
 									<div className="mt-0.5 text-[11px] uppercase tracking-wider text-slate-500">
-										{localizeStatLabel(t, stat.label)}
+										{stat.label}
 									</div>
 								</div>
 							))}
@@ -340,7 +301,7 @@ export function WorkCaseStudyDetailContent({
 								{section.number}
 							</p>
 							<h2 className="type-h2">
-								{localizeSectionTitle(t, section.title)}
+								{section.title}
 							</h2>
 							<div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg md:leading-8">
 								{section.paragraphs.map((paragraph) => (

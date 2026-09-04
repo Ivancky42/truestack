@@ -8,11 +8,6 @@ const baseUrl = siteUrl;
 export const revalidate = 3600;
 
 const ENGLISH_ONLY_PATHS = new Set([
-	"/work",
-	"/work/ezdana",
-	"/work/landstore",
-	"/work/cashsouk",
-	"/work/eviebikes",
 	"/cybersecurity",
 	"/privacy",
 	"/pdpa",

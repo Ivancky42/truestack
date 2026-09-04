@@ -15,7 +15,7 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
    description 140–160 chars with the primary keyword (zh: title ≤ 30 / description 70–90
    code points, keyword in the first 10 characters), canonical + `alternates.languages`
    (`en`, `ms`, `zh-Hans`, `zh-CN`, `x-default`) built with `lib/i18n/seo.ts`. English-only
-   surfaces (Insights, Work, legal) are `noindex` under `/ms` and `/zh` with canonical →
+   surfaces (Insights, legal) are `noindex` under `/ms` and `/zh` with canonical →
    the English URL.
 2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` `/og.png`, or a page-specific image).
 3. JSON-LD component in `components/seo/` rendered by the page — Service/Product schema,

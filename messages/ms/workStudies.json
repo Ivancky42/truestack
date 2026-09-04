@@ -1,0 +1,706 @@
+{
+	"_status": "ai-draft",
+	"WorkStudies": {
+		"meta": {
+			"title": "Portfolio | Platform Pinjaman & Fintech Malaysia",
+			"description": "Lihat portfolio Truestack di Malaysia — penukaran digital KPKT, sistem pengurusan pinjaman, dan platform fintech terkawal dari lesen hingga pelancaran.",
+			"ogTitle": "Portfolio | Kisah Kejayaan Truestack",
+			"ogDescription": "Portfolio terpilih Truestack — penukaran digital KPKT, sistem pinjaman perusahaan, dan platform fintech terkawal yang dihantar dari hujung ke hujung.",
+			"keywords": [
+				"kisah kejayaan Truestack",
+				"portfolio Truestack",
+				"projek fintech Malaysia",
+				"kisah kejayaan KPKT",
+				"lesen digital KPKT",
+				"perisian pinjaman digital Malaysia",
+				"platform pinjaman P2P Malaysia"
+			]
+		},
+		"cards": {
+			"pinjocep": {
+				"description": "Pinjaman peribadi pantas untuk peminjam Malaysia — dibina atas TrueKredit dan TrueIdentity untuk e-KYC segera, kelulusan automatik, dan pencairan patuh KPKT.",
+				"blurb": "Pinjaman peribadi pantas dengan e-KYC segera dan pencairan patuh KPKT.",
+				"tags": [
+					"TrueKredit™",
+					"TrueIdentity™",
+					"E-KYC"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"proficient-premium": {
+				"description": "Operasi pinjaman wang premium dimodenkan dari hujung ke hujung dengan TrueKredit — pendaftaran peminjam, permulaan pinjaman, dan pelaporan KPKT pada satu platform.",
+				"blurb": "Pinjaman wang premium dimodenkan dari hujung ke hujung pada satu platform.",
+				"tags": [
+					"TrueKredit™",
+					"Pengurusan Pinjaman",
+					"Pelaporan"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"andas-capital": {
+				"description": "Platform pinjaman perusahaan dengan pengurusan pinjaman menyeluruh, aliran kerja automatik, dan pelaporan kawal selia.",
+				"blurb": "Pinjaman perusahaan dengan aliran kerja automatik dan pelaporan kawal selia.",
+				"tags": [
+					"TrueKredit™",
+					"Perisian Tersuai",
+					"Perusahaan"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"cashsouk": {
+				"description": "Pasaran pinjaman P2P yang menghubungkan peminjam dengan pelabur. Dibina untuk skala dengan ciri pematuhan penuh.",
+				"blurb": "Pasaran P2P yang menghubungkan peminjam dan pelabur — sedia SC.",
+				"tags": [
+					"TrueP2P™",
+					"Selaras SC",
+					"Pasaran"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "Perisian tersuai"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "9 bln"
+					}
+				]
+			},
+			"creditxpress": {
+				"description": "Ditukar daripada pinjaman tradisional kepada platform digital berlesen KPKT seluruh negara dengan aplikasi web dan mudah alih.",
+				"blurb": "Dari pinjaman tradisional kepada platform digital KPKT seluruh negara.",
+				"tags": [
+					"TrueKredit™",
+					"Lesen Digital",
+					"Web + Mudah Alih"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "6 bln"
+					}
+				]
+			},
+			"ezdana": {
+				"description": "Teras pinjaman digital berjenama untuk perjalanan peminjam dan operasi buku pinjaman — pendaftaran, permulaan pinjaman, dan servis harian di TrueKredit Pro.",
+				"blurb": "Buku pinjaman dan perjalanan peminjam di TrueKredit™ Pro.",
+				"tags": [
+					"TrueKredit™ Pro",
+					"Pengurusan Pinjaman",
+					"Pinjaman Digital"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™ Pro"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"fundle": {
+				"description": "Produk pinjaman digital dibina untuk kelajuan dan layan diri peminjam — permulaan pinjaman dan servis moden di TrueKredit untuk peminjam Malaysia.",
+				"blurb": "Pinjaman digital dibina untuk kelajuan dan layan diri peminjam.",
+				"tags": [
+					"TrueKredit™",
+					"Layan diri",
+					"Pinjaman Digital"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"ai-express": {
+				"description": "Portal pinjaman wang digital untuk peminjam Malaysia — permohonan pantas dan operasi patuh KPKT di TrueKredit.",
+				"blurb": "Portal pinjaman wang digital dengan permohonan pantas dan operasi KPKT.",
+				"tags": [
+					"TrueKredit™",
+					"Pinjaman Digital",
+					"KPKT"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"credibly": {
+				"description": "Operasi pinjaman moden di platform awan berdedikasi — perjalanan peminjam, servis pinjaman, dan operasi harian di TrueKredit.",
+				"blurb": "Operasi pinjaman moden di platform awan berdedikasi.",
+				"tags": [
+					"TrueKredit™",
+					"Pengurusan Pinjaman",
+					"Awan"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"jomdana": {
+				"description": "Pinjaman wang digital untuk peminjam Malaysia — permohonan, servis, dan operasi pinjaman harian di TrueKredit.",
+				"blurb": "Pinjaman wang digital dengan permohonan dan servis di TrueKredit.",
+				"tags": [
+					"TrueKredit™",
+					"Pinjaman Digital",
+					"KPKT"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"landstore": {
+				"description": "Pasaran tanah untuk Malaysia — penerokaan peta, senarai, senarai pendek, dan aliran kerja pertanyaan yang dibina sebagai perisian tersuai.",
+				"blurb": "Pasaran tanah dengan penerokaan peta, senarai, dan aliran kerja pertanyaan.",
+				"tags": [
+					"Perisian Tersuai",
+					"Teknologi hartanah",
+					"Pasaran"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "Perisian tersuai"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "8 bln"
+					}
+				]
+			},
+			"eviebikes": {
+				"description": "Jenama e-dagang e-basikal pintar Eropah yang menjual merentas EU — kedai Shopify, perjalanan produk, dan penceritaan jenama yang dibina sebagai perisian tersuai.",
+				"blurb": "Jenama e-basikal pintar Eropah yang menjual di Kesatuan Eropah — kedai Shopify.",
+				"tags": [
+					"Perisian Tersuai",
+					"E-dagang"
+				],
+				"stats": [
+					{
+						"label": "Penglibatan",
+						"value": "Perisian tersuai"
+					},
+					{
+						"label": "Platform",
+						"value": "Shopify"
+					}
+				]
+			},
+			"jompinjam": {
+				"description": "Pembiayaan digital patuh Syariah untuk rakyat Malaysia seharian — produk berasaskan Tawarruq di TrueSyariah, telefon dahulu dari mohon hingga pencairan.",
+				"blurb": "Pembiayaan digital Syariah untuk rakyat Malaysia seharian di TrueSyariah™.",
+				"tags": [
+					"TrueSyariah™",
+					"Tawarruq",
+					"Pembiayaan Digital"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueSyariah™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			},
+			"danakini": {
+				"description": "Pembiayaan Syariah gred institusi untuk individu dan perusahaan — kemudahan digital tertadbir di TrueSyariah dengan keuntungan dan tempoh yang jelas.",
+				"blurb": "Pembiayaan Syariah gred institusi di TrueSyariah™.",
+				"tags": [
+					"TrueSyariah™",
+					"Tawarruq",
+					"Pembiayaan Digital"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueSyariah™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					}
+				]
+			}
+		},
+		"details": {
+			"ezdana": {
+				"headline": "Teras pinjaman berjenama yang dipercayai pasukan dan peminjam anda.",
+				"lead": "Kami dirikan ezdana di TrueKredit™ Pro — layan diri peminjam di satu sisi, operasi buku pinjaman penuh di sisi lain — supaya pemberi pinjam dapat dilancarkan pantas tanpa membina semula teras.",
+				"tags": [
+					"TrueKredit™ Pro",
+					"Pinjaman Digital",
+					"Peminjam + Pentadbir"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueKredit™ Pro"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "3 bln"
+					},
+					{
+						"label": "Permukaan",
+						"value": "2 portal"
+					}
+				],
+				"productPage": {
+					"label": "TrueKredit™ Pro",
+					"blurb": "Pinjaman digital seluruh negara di TrueKredit™ Pro — aplikasi berjenama, operasi buku pinjaman, dan aliran kerja sedia KPKT."
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "Cabaran",
+						"paragraphs": [
+							"ezdana memerlukan operasi pinjaman digital yang lengkap — bukan laman risalah dengan borang. Peminjam perlu memohon, menjejak status, menandatangani perjanjian, dan mengurus bayaran balik. Pasukan pemberi pinjam memerlukan bahagian lain cerita itu: baris semakan L1/L2, kawalan pencairan, metrik portfolio, dan servis harian.",
+							"Bermula dari kosong bermakna berbulan-bulan paip pematuhan sebelum satu pinjaman bergerak. Ringkasannya jelas: hantar pengalaman berjenama yang terasa seperti produk ezdana, di [[TrueKredit™ Pro|/truekredit]] — teras yang dibina untuk pinjaman digital Malaysia."
+						]
+					},
+					{
+						"number": "02",
+						"title": "Apa yang kami bina",
+						"paragraphs": [
+							"Kami konfigurasikan [[TrueKredit™ Pro|/truekredit]] sebagai sistem operasi ezdana, kemudian membungkusnya dalam portal peminjam berjenama dan ruang kerja pentadbir. Peminjam melihat permohonan, perjalanan pinjaman, tandatangan digital, dan kemajuan bayaran balik — dengan passkey dan 2FA tersedia apabila mereka bersedia mengeraskan akses.",
+							"Di sisi pentadbir, buku pinjaman yang sama muncul sebagai baris tindakan: semakan L1 dan L2, pencairan tertunggu, mesyuarat atestasi, kelulusan bayaran, dan penyelesaian awal. KPI portfolio — dicairkan, tertunggak, diperoleh, lewat — duduk di atas kerja, supaya pemilik melihat buku manakala pengendali mengosongkan baris.",
+							"Setiap skrin ialah produk, bukan rekaan semata. Lencana status, garis masa perjalanan, dan kerja berjadual (caj lewat, peringatan) ialah corak yang sama kami jalankan untuk pemberi pinjam berlesen KPKT yang lain — ditala kepada produk dan jenama ezdana."
+						]
+					},
+					{
+						"number": "03",
+						"title": "Bagaimana kami menyampaikannya",
+						"paragraphs": [
+							"Kelajuan datang daripada penggunaan semula dengan disiplin. [[TrueKredit™ Pro|/truekredit]] sudah merangkumi permulaan pinjaman, servis, cangkuk e-KYC, dan rekod sedia audit. Tugas kami ialah konfigurasi, penjenamaan, dan UX peminjam/pentadbir — bukan mencipta enjin pinjaman kedua.",
+							"Kami hantar kedua-dua portal dalam kira-kira tiga bulan: papan pemuka peminjam dengan mohon → lulus → atestasi → tandatangan → bayar balik, dan konsol pentadbir dengan semakan berbilang peringkat serta keterlihatan portfolio. Perhatian kepada butiran kelihatan pada perkara kecil yang pembuat keputusan perasan — tindakan seterusnya yang jelas, status berkod warna, dan buku pinjaman yang kekal padu dari pertanyaan pertama hingga penyelesaian akhir."
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "Papan pemuka peminjam ezdana dengan CTA pencairan dan kad ringkasan pinjaman",
+							"caption": "Papan pemuka peminjam — tindakan seterusnya, baki, dan tugasan di satu tempat"
+						},
+						{
+							"alt": "Halaman pinjaman peminjam ezdana menunjukkan kemajuan perjalanan dan status bayaran balik",
+							"caption": "Perjalanan pinjaman — kelulusan hingga tandatangan, dengan kemajuan bayaran balik"
+						}
+					],
+					[
+						{
+							"alt": "Papan pemuka pentadbir ezdana dengan KPI portfolio dan carta pencairan",
+							"caption": "Gambaran pentadbir — dicairkan, tertunggak, diperoleh, dan lewat"
+						},
+						{
+							"alt": "Baris permohonan pinjaman pentadbir ezdana dengan penapis semakan L1 dan L2",
+							"caption": "Permohonan — baris L1/L2 yang pasukan anda boleh kosongkan tanpa mencari-cari"
+						},
+						{
+							"alt": "Jadual pinjaman pentadbir ezdana dengan penapis status dan kemajuan bayaran balik",
+							"caption": "Buku pinjaman — penapis untuk tunggakan, pencairan, dan penyiapan"
+						}
+					],
+					[
+						{
+							"alt": "Senarai permohonan peminjam ezdana dengan penapis status",
+							"caption": "Permohonan peminjam — penapis status yang peminjam fahami"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "Atas apa ezdana dibina?",
+						"answer": "ezdana berjalan di TrueKredit™ Pro, platform pinjaman digital Truestack untuk pemberi pinjam wang berlesen KPKT di Malaysia. Portal peminjam dan ruang kerja pentadbir berjenama untuk ezdana sambil berkongsi buku pinjaman langsung yang sama, baris semakan, dan aliran kerja servis. Ketahui lebih lanjut tentang TrueKredit™ di halaman produk di truestack.my/truekredit."
+					},
+					{
+						"question": "Apa yang peminjam dan pentadbir boleh lakukan dalam portal?",
+						"answer": "Peminjam boleh memohon dalam talian, menjejak status permohonan, melengkapkan atestasi dan tandatangan digital, serta mengurus pinjaman aktif dan bayaran balik. Pentadbir menyemak permohonan (termasuk baris L1/L2), mengurus pencairan, memantau KPI portfolio, dan mengendalikan servis harian dari satu konsol."
+					},
+					{
+						"question": "Berapa lama ezdana mengambil masa untuk dilancarkan?",
+						"answer": "ezdana dilancarkan dalam kira-kira tiga bulan. Penghantaran menumpukan pada mengkonfigurasi TrueKredit™ Pro, menjenamakan kedua-dua portal, dan menyambungkan perjalanan peminjam serta pentadbir — berbanding membina semula teras pinjaman dari kosong."
+					}
+				],
+				"seo": {
+					"title": "Kajian Kes ezdana | TrueKredit Pro",
+					"description": "Cara Truestack melancarkan ezdana di TrueKredit™ Pro — portal peminjam dan pentadbir berjenama, semakan L1/L2, dan buku pinjaman langsung dalam tiga bulan.",
+					"keywords": [
+						"ezdana",
+						"kajian kes TrueKredit Pro",
+						"pinjaman digital Malaysia",
+						"perisian pemberi pinjam wang",
+						"pengurusan pinjaman KPKT"
+					]
+				}
+			},
+			"landstore": {
+				"headline": "Pasaran tanah yang dibina mengikut cara Malaysia benar-benar membeli tanah.",
+				"lead": "LandStore memerlukan lebih daripada grid senarai. Kami bina pasaran perantara dengan penerokaan peta, penapis tanah Malaysia, senarai pendek, dan aliran kerja pertanyaan — perisian tersuai yang dibentuk mengikut aliran urus niaga sebenar.",
+				"tags": [
+					"Perisian Tersuai",
+					"Teknologi hartanah",
+					"Pasaran"
+				],
+				"stats": [
+					{
+						"label": "Penglibatan",
+						"value": "Perisian tersuai"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "8 bln"
+					},
+					{
+						"label": "Fokus",
+						"value": "Peta + senarai"
+					}
+				],
+				"productPage": {
+					"label": "Pembangunan perisian tersuai",
+					"blurb": "Aplikasi web, platform, dan pasaran dari ringkasan ke pelancaran — dibina mengikut cara perniagaan anda benar-benar berjalan."
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "Cabaran",
+						"paragraphs": [
+							"Membeli tanah di Malaysia tidak sama dengan meninjau pangsapuri. Pembeli menapis mengikut negeri dan daerah, jenis urus niaga, rupa bumi, penggunaan, dan kekangan seperti Tanah Rizab Melayu. Penjual dan perantara memerlukan senarai pendek serta jejak pertanyaan — bukan templat hartanah generik.",
+							"Ringkasan LandStore ialah menjadi pasaran tanah perantara: inventori boleh dicari, penemuan berasaskan peta, dan aliran kerja yang mengekalkan pembeli serius bergerak tanpa kehilangan konteks. Itu memerlukan [[pembangunan perisian tersuai|/services/software-development]], bukan tema senarai sedia ada."
+						]
+					},
+					{
+						"number": "02",
+						"title": "Apa yang kami bina",
+						"paragraphs": [
+							"Melalui amalan [[perisian tersuai|/services/software-development]] kami, kami kejuruteraan platform web berpusatkan penemuan tanah. Laman utama bermula dengan carian — negeri, kategori, jenis urus niaga, rupa bumi — di atas konteks Malaysia sepenuh skrin. Teroka Peta memasangkan panel penapis dengan kad senarai dan pin peta langsung, supaya lokasi dan inventori kekal segerak.",
+							"Butiran domain disengajakan: kategori komersial dan perindustrian, julat keluasan, keadaan penggunaan, dan togol Rizab Melayu duduk di rel penapis kerana itulah cara urus niaga ditapis. Senarai pendek dan pertanyaan memberi pengguna berdaftar laluan dari minat ke perbualan tanpa meninggalkan produk.",
+							"Terasnya ialah aplikasi web moden — muatan halaman pantas, susun atur responsif, dan sistem UI ditala untuk pelayaran bernilai tinggi. Di bawahnya, carian senarai dan keadaan peta dibina supaya kekal padu apabila inventori melebihi seribu lot."
+						]
+					},
+					{
+						"number": "03",
+						"title": "Bagaimana kami menyampaikannya",
+						"paragraphs": [
+							"Ini ialah penglibatan [[perisian tersuai|/services/software-development]] lapan bulan: penemuan bersama pengendali tanah, seni bina maklumat pasaran, carian bersepadu peta, dan gelung pertanyaan yang menukar pelayar kepada urus niaga perantara.",
+							"Pembuat keputusan mengambil berat bahawa produk terasa siap — halaman 404 berjenama, navigasi konsisten, dan penapis yang sepadan dengan perbendaharaan kata tanah Malaysia. Perhatian kepada butiran itulah yang memisahkan pasaran daripada direktori."
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "Hero laman utama LandStore dengan penapis carian tanah di atas landskap Malaysia",
+							"caption": "Laman utama — penemuan berasaskan carian untuk 1000+ senarai tanah"
+						}
+					],
+					[
+						{
+							"alt": "Teroka Peta LandStore di landstore.my/explore dengan penapis, kad senarai, dan pin peta Malaysia",
+							"caption": "Teroka Peta — penapis, kad, dan pin peta dalam satu ruang kerja"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "Apakah LandStore?",
+						"answer": "LandStore.my ialah pasaran tanah perantara untuk Malaysia. Pembeli meneroka tanah pertanian, perindustrian, dan komersial melalui carian dan pandangan peta, kemudian menyenarai pendek lot dan menghantar pertanyaan melalui platform."
+					},
+					{
+						"question": "Apa yang Truestack bina untuk LandStore?",
+						"answer": "Truestack membina LandStore sebagai pembangunan perisian tersuai: carian laman utama, Teroka Peta dengan penapis tanah Malaysia, pembentangan senarai, senarai pendek, dan aliran kerja pertanyaan. Produk dibentuk mengikut cara urus niaga tanah ditapis di Malaysia — bukan templat hartanah generik. Lihat perkhidmatan perisian tersuai kami di truestack.my/services/software-development."
+					},
+					{
+						"question": "Berapa lama LandStore mengambil masa untuk dihantar?",
+						"answer": "LandStore dihantar sebagai penglibatan perisian tersuai kira-kira lapan bulan, merangkumi penemuan, UX pasaran, carian bersepadu peta, dan aliran kerja pertanyaan hingga pelancaran."
+					}
+				],
+				"seo": {
+					"title": "Kajian Kes LandStore | Pasaran Tanah MY",
+					"description": "Cara Truestack membina LandStore.my — pasaran tanah perantara Malaysia dengan penerokaan peta, penapis domain, senarai pendek, dan aliran kerja pertanyaan.",
+					"keywords": [
+						"LandStore",
+						"pasaran tanah Malaysia",
+						"kajian kes proptech",
+						"perisian tersuai Malaysia",
+						"portfolio Truestack"
+					]
+				}
+			},
+			"cashsouk": {
+				"headline": "Pasaran P2P berhadapan SC yang dibina untuk menyambungkan modal dan pertumbuhan.",
+				"lead": "CashSouk menyambungkan pelabur dengan peluang pembiayaan yang disahkan. Kami kejuruteraan teras TrueP2P™ penuh — pasaran, perjalanan dwi, dan rel operasi yang diperlukan platform terkawal.",
+				"tags": [
+					"TrueP2P™",
+					"Selaras SC",
+					"Pasaran"
+				],
+				"stats": [
+					{
+						"label": "Produk",
+						"value": "TrueP2P™"
+					},
+					{
+						"label": "Pelancaran",
+						"value": "9 bln"
+					},
+					{
+						"label": "Pengawal selia",
+						"value": "SC Malaysia"
+					}
+				],
+				"productPage": {
+					"label": "TrueP2P™",
+					"blurb": "Platform pembiayaan rakan ke rakan selaras SC — perjalanan pelabur dan penerbit, pasaran, dan rel operasi terkawal."
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "Cabaran",
+						"paragraphs": [
+							"Pembiayaan rakan ke rakan hanya berfungsi apabila kedua-dua sisi pasaran mempercayai sistem yang sama. Pelabur memerlukan senarai yang jelas — kadar keuntungan, gred risiko, kemajuan pembiayaan. Perniagaan memerlukan laluan untuk memohon pembiayaan tanpa hamparan operasi selari.",
+							"CashSouk memerlukan platform pengeluaran yang selaras dengan jangkaan Suruhanjaya Sekuriti: perjalanan pelabur dan penerbit, ketelusan pasaran, dan kawalan operasi yang mengekalkan buku terkawal boleh diaudit apabila volum meningkat. Itulah tugas [[TrueP2P™|/services/p2p-software-development]]."
+						]
+					},
+					{
+						"number": "02",
+						"title": "Apa yang kami bina",
+						"paragraphs": [
+							"Kami hantar CashSouk di [[TrueP2P™|/services/p2p-software-development]] — kejuruteraan platform rakan ke rakan Truestack. Pelabur menjejak nota, pulangan, dan matang dalam portfolio langsung. Penerbit bergerak melalui permohonan pembiayaan berstruktur — butiran kontrak hingga pengisytiharan — tanpa kehilangan tempat.",
+							"Pengendali mendapat buku yang mereka benar-benar perlukan untuk mengendalikan: baki bakul merentas akaun pelabur, bayaran balik, operasi, Ta'widh dan Gharamah; saluran kitaran hayat dari pendaftaran ke nota; dan penyesuaian gerbang berbanding Curlec supaya pengecualian penyelesaian kekal dalam baris yang jelas.",
+							"Laman awam masih bermula dengan CTA dwi — labur atau dapatkan pembiayaan — tetapi bukti untuk pembuat keputusan ialah di sebalik log masuk: tiga permukaan, satu lejar, dan aliran kerja dibentuk untuk operasi harian selaras SC."
+						]
+					},
+					{
+						"number": "03",
+						"title": "Bagaimana kami menyampaikannya",
+						"paragraphs": [
+							"CashSouk ialah binaan platform sembilan bulan: UX pasaran, perjalanan pelabur dan penerbit, dan teras operasi [[TrueP2P™|/services/p2p-software-development]] — bakul kewangan, bayaran, pengeluaran, dan penyesuaian berjadual. Kami terus menyokong platform apabila ia berkembang.",
+							"Bagi pembuat keputusan yang menilai binaan P2P, buktinya konkrit: jenama pasaran Malaysia yang hidup, pemikiran produk dwi sisi, dan penghantaran berirama untuk pelancaran terkawal — bukan prototaip yang terhenti di pematuhan."
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "Hero laman utama CashSouk dengan seruan tindakan labur dan dapatkan pembiayaan",
+							"caption": "Laman utama — perjalanan dwi untuk pelabur dan perniagaan"
+						},
+						{
+							"alt": "Portfolio pelaburan pelabur CashSouk dengan kad nota dan metrik pulangan",
+							"caption": "Portfolio pelabur — nota, pulangan, dan matang dalam satu pandangan"
+						}
+					],
+					[
+						{
+							"alt": "Permohonan pembiayaan berbilang langkah penerbit CashSouk dengan borang butiran kontrak",
+							"caption": "Permohonan penerbit — pengambilan pembiayaan berpandu, langkah demi langkah"
+						},
+						{
+							"alt": "Papan pemuka kewangan pentadbir CashSouk dengan baki bakul dan saluran kitaran hayat",
+							"caption": "Kewangan pentadbir — baki bakul dan saluran kitaran hayat operasi"
+						}
+					],
+					[
+						{
+							"alt": "Penyesuaian gerbang pentadbir CashSouk berbanding Curlec dengan sejarah larian harian",
+							"caption": "Penyesuaian gerbang — penyelesaian Curlec harian dengan baris pengecualian"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "Apakah CashSouk?",
+						"answer": "CashSouk ialah pasaran pembiayaan rakan ke rakan Malaysia yang menyambungkan pelabur dengan peluang pembiayaan perniagaan yang disahkan. Produk awam merangkumi penemuan pasaran serta laluan berasingan untuk mula melabur atau memohon pembiayaan."
+					},
+					{
+						"question": "Teknologi apa yang menyokong CashSouk?",
+						"answer": "CashSouk dibina di TrueP2P™, teras platform rakan ke rakan Truestack untuk Malaysia. Ia merangkumi portfolio pelabur, permohonan pembiayaan penerbit, bakul kewangan pentadbir dan operasi kitaran hayat, serta penyesuaian gerbang — dengan rel operasi selaras SC. Ketahui lebih lanjut di truestack.my/services/p2p-software-development."
+					},
+					{
+						"question": "Berapa lama CashSouk mengambil masa untuk dibina?",
+						"answer": "CashSouk dihantar selama kira-kira sembilan bulan sebagai penglibatan platform TrueP2P™ penuh — UX pasaran, perjalanan dwi sisi, dan asas operasi terkawal hingga pelancaran, dengan sokongan platform berterusan."
+					}
+				],
+				"seo": {
+					"title": "Kajian Kes CashSouk | Pasaran P2P MY",
+					"description": "Cara Truestack membina CashSouk di TrueP2P™ — portfolio pelabur, permohonan penerbit, bakul kewangan pentadbir, dan penyesuaian gerbang untuk pasaran P2P SC.",
+					"keywords": [
+						"CashSouk",
+						"pinjaman P2P Malaysia",
+						"kajian kes TrueP2P",
+						"pembiayaan rakan ke rakan",
+						"pasaran SC"
+					]
+				}
+			},
+			"eviebikes": {
+				"headline": "Jenama Eropah yang dibina untuk menjual merentas Kesatuan Eropah.",
+				"lead": "EVIE Bikes ialah jenama basikal elektrik pintar Eropah yang menjual di Kesatuan Eropah. Kami bina pengalaman e-dagang mereka di Shopify — penceritaan produk, halaman produk sedia penukaran, dan kedai yang sepadan dengan perkakasan.",
+				"tags": [
+					"Perisian Tersuai",
+					"E-dagang"
+				],
+				"stats": [
+					{
+						"label": "Penglibatan",
+						"value": "Perisian tersuai"
+					},
+					{
+						"label": "Platform",
+						"value": "Shopify"
+					}
+				],
+				"productPage": {
+					"label": "Pembangunan perisian tersuai",
+					"blurb": "Aplikasi web, e-dagang, dan platform jenama dari ringkasan ke pelancaran — termasuk kedai Shopify yang dibentuk mengikut cara anda menjual."
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "Cabaran",
+						"paragraphs": [
+							"EVIE memerlukan lebih daripada tema dengan foto produk. Sebagai jenama Eropah yang menjual di Kesatuan Eropah, kedai perlu membawa penceritaan perkakasan premium, pilihan model yang jelas (S1, T1, L1), dan isyarat kepercayaan yang dijangka pembeli EU — waranti, pensijilan, penghantaran dari EU — tanpa terasa generik.",
+							"Ringkasannya ialah pengalaman perdagangan jenama penuh di Shopify: laman utama yang menjual perjalanan, halaman produk yang menukar, dan halaman sokongan untuk reka bentuk, kelestarian, dan aplikasi EVIE — semuanya padu di bawah satu sistem visual."
+						]
+					},
+					{
+						"number": "02",
+						"title": "Apa yang kami bina",
+						"paragraphs": [
+							"Melalui amalan [[pembangunan perisian tersuai|/services/software-development]] kami, kami kejuruteraan kedai EVIE di Shopify. Laman utama bermula dengan penceritaan hero gaya hidup dan laluan langsung untuk membeli atau menemui. Halaman produk membawa galeri, harga, urgensi, lencana kepercayaan, dan senarai ciri yang ditala untuk pembeli EU.",
+							"Di luar katalog, kami membentuk halaman jenama — falsafah reka bentuk, kelestarian, dan aplikasi rakan — supaya laman menjual produk dan syarikat di belakangnya. Navigasi kekal ringkas: e-basikal, teroka, ulasan, cari peniaga.",
+							"Perhatian kepada butiran kelihatan pada lapisan penukaran: kiraan ulasan, seruan pensijilan, isyarat penghantaran EU, dan laluan sembang untuk soalan sebelum pembelian. Hasilnya terbaca sebagai jenama pengguna Eropah, bukan templat stok."
+						]
+					},
+					{
+						"number": "03",
+						"title": "Bagaimana kami menyampaikannya",
+						"paragraphs": [
+							"Ini ialah penglibatan e-dagang [[perisian tersuai|/services/software-development]] di Shopify: seni bina maklumat, binaan tema dan halaman, templat produk, dan permukaan kandungan jenama hingga pelancaran di [[eviebikes.com|https://eviebikes.com]].",
+							"Bagi pembuat keputusan yang menilai kedai jenama, buktinya hidup di pasaran EU — perjalanan beli yang digilap dari kesan pertama ke halaman produk, dibina mengikut jenama berbanding disemat pada tema lalai."
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "Hero laman utama EVIE Bikes dengan fotografi e-basikal gaya hidup dan tajuk Ride Smarter",
+							"caption": "Laman utama — penceritaan jenama Eropah dengan laluan beli yang jelas"
+						},
+						{
+							"alt": "Kad ciri maklumat produk EVIE T1 untuk motor, penderia tork, dan pemindah gear",
+							"caption": "Maklumat produk EVIE T1 — penceritaan ciri ke beli"
+						}
+					],
+					[
+						{
+							"alt": "Halaman produk EVIE T1 dengan galeri, harga, dan lencana kepercayaan EU",
+							"caption": "Halaman produk — galeri, harga, dan isyarat kepercayaan EU"
+						},
+						{
+							"alt": "Halaman produk EVIE S1 di kedai Shopify",
+							"caption": "EVIE S1 — perjalanan produk khusus model"
+						}
+					],
+					[
+						{
+							"alt": "Halaman jenama reka bentuk EVIE Bikes",
+							"caption": "Reka bentuk — naratif jenama di luar katalog"
+						},
+						{
+							"alt": "Halaman aplikasi rakan EVIE Bikes",
+							"caption": "Aplikasi EVIE — cerita rakan basikal pintar"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "Apakah EVIE Bikes?",
+						"answer": "EVIE Bikes ialah jenama basikal elektrik pintar Eropah yang menjual merentas Kesatuan Eropah. Kedai awam di eviebikes.com mempersembahkan model seperti EVIE S1, T1, dan L1 dengan pembayaran e-dagang, penceritaan jenama, dan isyarat kepercayaan menghadap EU."
+					},
+					{
+						"question": "Apa yang Truestack bina untuk EVIE Bikes?",
+						"answer": "Truestack membina pengalaman e-dagang EVIE sebagai perisian tersuai di Shopify — laman utama dan katalog, halaman produk sedia penukaran, dan halaman jenama untuk reka bentuk, kelestarian, dan aplikasi rakan. Kerja ini berada di bawah amalan pembangunan perisian tersuai Truestack."
+					},
+					{
+						"question": "Di mana EVIE Bikes menjual?",
+						"answer": "EVIE Bikes ialah jenama Eropah yang menjual ke pasaran Kesatuan Eropah. Kedai dibina untuk pembeli EU, dengan mesej produk dan kepercayaan yang diselaraskan ke rantau itu."
+					}
+				],
+				"seo": {
+					"title": "Kajian Kes EVIE Bikes | E-dagang Shopify",
+					"description": "Cara Truestack membina EVIE Bikes — jenama e-basikal pintar Eropah di EU — di Shopify dengan kedai tersuai, halaman produk, dan penceritaan jenama.",
+					"keywords": [
+						"EVIE Bikes",
+						"kajian kes e-dagang Shopify",
+						"jenama e-basikal Eropah",
+						"pembangunan perisian tersuai",
+						"e-dagang EU"
+					]
+				}
+			}
+		}
+	}
+}

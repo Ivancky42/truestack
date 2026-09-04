@@ -82,7 +82,7 @@ export default async function HomePage({
 		<>
 			<HomeSchema />
 			<FaqSchema items={faq} />
-			<PageMessages namespaces={["Home"]}>
+			<PageMessages namespaces={["Home", "WorkStudies"]}>
 				<HomepageHero />
 				<HomepageLogoCloud />
 				<HomepageSolutions />

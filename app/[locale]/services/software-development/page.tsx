@@ -77,7 +77,7 @@ export default async function SoftwareDevelopmentPage({
 					},
 				]}
 			/>
-			<PageMessages namespaces={["SoftwareDevelopment"]}>
+			<PageMessages namespaces={["SoftwareDevelopment", "WorkStudies"]}>
 				<SoftwareDevelopmentPageContent />
 			</PageMessages>
 		</>
