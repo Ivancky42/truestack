@@ -1,0 +1,247 @@
+{
+	"_status": "ai-draft",
+	"TrueIdentity": {
+		"meta": {
+			"title": "TrueIdentity™ — API e-KYC & Pengesahan Identiti",
+			"description": "TrueIdentity™ API e-KYC Malaysia — OCR MyKad, pengesanan kehidupan (liveness), padanan biometrik, mematuhi PDPA, dihos di Malaysia untuk pemberi pinjam wang.",
+			"openGraphTitle": "TrueIdentity™ — API e-KYC & Pengesahan Identiti Malaysia",
+			"openGraphDescription": "e-KYC secara programatik untuk fintech dan pemberi pinjam Malaysia — pengecaman OCR MyKad, pengesanan kehidupan (liveness), biometrik, jejak audit, dan residensi data di Malaysia.",
+			"ogImageAlt": "Truestack Technologies"
+		},
+		"schema": {
+			"breadcrumbHome": "Laman Utama",
+			"breadcrumbCurrent": "TrueIdentity™",
+			"softwareName": "TrueIdentity™",
+			"alternateName": ["TrueIdentity e-KYC", "Truestack e-KYC API"],
+			"featureList": [
+				"Pengecaman OCR MyKad",
+				"Pengesanan kehidupan (liveness)",
+				"Padanan biometrik muka",
+				"Pengesanan penipuan",
+				"Pencatatan jejak audit",
+				"Pemprosesan selaras PDPA",
+				"Residensi data Malaysia"
+			]
+		},
+		"hero": {
+			"eyebrow": "TrueIdentity™ e-KYC",
+			"title": "Sahkan Pelanggan dalam Minit, Bukan Hari",
+			"body": "Platform pengesahan identiti elektronik (e-KYC) Malaysia untuk perniagaan. Automatikkan pengesahan identiti, kurangkan penipuan, dan kekal patuh — tanpa membuat pelanggan anda menunggu.",
+			"ctaSecondary": "Lihat Harga",
+			"stats": {
+				"instant": { "value": "Segera", "label": "Masa Pengesahan" },
+				"uptime": { "value": "99.9%", "label": "SLA Uptime" },
+				"hosted": { "value": "100%", "label": "Dihos Malaysia" },
+				"pdpa": { "value": "PDPA", "label": "Patuh" }
+			},
+			"chips": {
+				"verification": { "value": "<3s", "label": "Pengesahan" },
+				"uptime": { "value": "99.9%", "label": "SLA Uptime" },
+				"pdpa": { "value": "PDPA", "label": "Patuh" }
+			}
+		},
+		"features": {
+			"eyebrow": "Ciri Utama",
+			"title": "Mengapa Perniagaan Terkemuka Memilih TrueIdentity",
+			"body": "Permudahkan proses KYC anda, kurangkan kos operasi, dan sampaikan pengalaman onboarding yang lancar.",
+			"items": {
+				"quickSetup": {
+					"title": "Setup Pantas",
+					"description": "Mula dalam beberapa minit dengan integrasi API yang ringkas. Tiada konfigurasi rumit diperlukan."
+				},
+				"costEffective": {
+					"title": "Kos Berkesan",
+					"description": "Harga bayar setiap pengesahan yang berskala bersama perniagaan anda. Tiada komitmen minimum."
+				},
+				"security": {
+					"title": "Keselamatan Tahap Bank",
+					"description": "Penyulitan hujung ke hujung dengan residensi data di Malaysia. Mematuhi sepenuhnya peraturan tempatan."
+				},
+				"everythingHandled": {
+					"title": "Semua Diuruskan",
+					"description": "Pengecaman OCR MyKad, pengesanan kehidupan (liveness), padanan biometrik — semuanya dalam satu endpoint API yang disatukan."
+				}
+			}
+		},
+		"benefits": {
+			"eyebrow": "Kesan Perniagaan",
+			"title": "Ubah Proses Pengesahan Anda",
+			"items": {
+				"accelerate": {
+					"title": "Percepat Onboarding Pelanggan",
+					"description": "Kurangkan masa onboarding daripada hari kepada minit. Sahkan pelanggan serta-merta sambil mengekalkan pematuhan."
+				},
+				"fraud": {
+					"title": "Kurang Penipuan & Risiko",
+					"description": "Pengesanan penipuan berkuasa AI dengan semakan liveness menghalang peniruan identiti dan pemalsuan dokumen."
+				},
+				"compliant": {
+					"title": "Kekal Patuh",
+					"description": "Penuhi keperluan kawal selia dengan penyelesaian kami yang mematuhi PDPA. Jejak audit penuh dan residensi data di Malaysia."
+				},
+				"costs": {
+					"title": "Kurangkan Kos Operasi",
+					"description": "Automatikkan proses pengesahan manual. Berskala tanpa menambah kakitangan atau infrastruktur."
+				}
+			}
+		},
+		"howItWorks": {
+			"eyebrow": "Cara Ia Berfungsi",
+			"title": "Pengesahan Mudah dan Selamat",
+			"body": "Aliran pengesahan yang mengambil saat, bukan minit.",
+			"steps": {
+				"capture": {
+					"title": "Tangkap Dokumen",
+					"desc": "Pelanggan mengambil foto MyKad mereka. OCR kami mengekstrak semua butiran secara automatik."
+				},
+				"verify": {
+					"title": "Sahkan Identiti",
+					"desc": "Tangkapan selfie dengan pengesanan kehidupan (liveness). AI memadankan muka dengan foto dokumen."
+				},
+				"results": {
+					"title": "Dapat Keputusan",
+					"desc": "Terima keputusan pengesahan serta-merta dengan skor keyakinan dan data yang diekstrak."
+				}
+			},
+			"suiteTitle": "Suite Pengesahan Lengkap",
+			"capabilities": {
+				"ocr": "Pengecaman OCR MyKad",
+				"liveness": "Pengesanan kehidupan (liveness)",
+				"biometrics": "Padanan biometrik muka",
+				"realtime": "Pengesahan masa nyata",
+				"fraud": "Pengesanan penipuan",
+				"audit": "Pencatatan jejak audit"
+			}
+		},
+		"hostedUi": {
+			"eyebrow": "UI Terhos",
+			"title": "Kami Urus Frontend, Anda Bawa Pelanggan",
+			"body": "Tidak perlu membina UI pengesahan sendiri. Kami sediakan frontend pelanggan yang dihos sepenuhnya untuk seluruh aliran pengesahan — ubah hala pengguna anda dan terima keputusan melalui webhook.",
+			"items": {
+				"documentCapture": {
+					"title": "Tangkapan Dokumen",
+					"desc": "Akses kamera dan muat naik fail untuk foto MyKad dengan semakan kualiti terbina dalam."
+				},
+				"livenessSelfie": {
+					"title": "Liveness & Swafoto",
+					"desc": "Pengesanan kehidupan (liveness) masa nyata dengan aliran tangkapan selfie berpandu."
+				},
+				"webhookResults": {
+					"title": "Keputusan Webhook",
+					"desc": "Terima keputusan pengesahan serta-merta melalui webhook selamat ke backend anda."
+				}
+			},
+			"worksOnWeb": "Berfungsi di Web",
+			"worksOnMobile": "Berfungsi di Mobile",
+			"mock": {
+				"webBrowser": "Pelayar Web",
+				"desktopTablet": "Desktop dan tablet",
+				"mobile": "Mobile",
+				"selfie": "Selfie",
+				"documentCapture": "Tangkapan Dokumen",
+				"livenessCheck": "Semakan Liveness"
+			}
+		},
+		"useCases": {
+			"eyebrow": "Kes Penggunaan",
+			"title": "Untuk Setiap Industri",
+			"body": "Dari bank hingga syarikat pemula, perniagaan di seluruh Malaysia mempercayai TrueIdentity.",
+			"trustedBy": "Dipercayai oleh",
+			"trustedByItems": [
+				"Pemberi pinjam wang berlesen",
+				"Bank digital",
+				"Penyedia insurans",
+				"Platform e-dagang",
+				"Syarikat pemula fintech"
+			],
+			"items": {
+				"financial": {
+					"title": "Perkhidmatan Kewangan",
+					"description": "Bank, pemberi pinjam, dan fintech menggunakan TrueIdentity untuk permohonan pinjaman, pembukaan akaun, dan pematuhan kawal selia."
+				},
+				"digital": {
+					"title": "Platform Digital",
+					"description": "E-dagang, ekonomi gig, dan platform perkongsian mengesahkan penjual, pemandu, dan penyedia perkhidmatan."
+				},
+				"telecom": {
+					"title": "Telekomunikasi",
+					"description": "Telco dan perkhidmatan digital mengesahkan pelanggan untuk pendaftaran SIM dan pengaktifan akaun."
+				}
+			}
+		},
+		"pricing": {
+			"eyebrow": "Harga Telus",
+			"title": "Harga Mudah dan Boleh Dijangka",
+			"body": "Persediaan sekali sahaja, transaksi bayar mengikut penggunaan, dan yuran platform tahunan. Tiada kos tersembunyi.",
+			"setupFee": "Yuran Setup",
+			"setupFeeDesc": "Integrasi dan onboarding sekali sahaja — termasuk 100 pengesahan percuma",
+			"oneTime": "sekali",
+			"perVerification": "Setiap Pengesahan",
+			"perVerificationDesc": "Setiap transaksi e-KYC yang lengkap",
+			"perTransaction": "/ transaksi",
+			"annualFee": "Yuran Platform Tahunan",
+			"annualFeeDesc": "Akses berterusan, pengehosan dan sokongan",
+			"perYear": "/ tahun",
+			"includes": {
+				"noMinimum": {
+					"label": "Tiada volum minimum",
+					"desc": "Bayar hanya untuk pengesahan yang anda guna"
+				},
+				"hostedUi": {
+					"label": "Termasuk UI terhos",
+					"desc": "Tiada pembangunan frontend diperlukan"
+				},
+				"residency": {
+					"label": "Residensi data Malaysia",
+					"desc": "Infrastruktur mematuhi PDPA"
+				}
+			},
+			"footnote": "Semua data pengesahan disulitkan dan disimpan dengan selamat di Malaysia."
+		},
+		"developers": {
+			"eyebrow": "Untuk Pembangun",
+			"title": "Integrasi dalam Minit",
+			"body": "REST API yang ringkas dengan dokumentasi lengkap. Pasukan anda boleh mula mengesahkan pelanggan hari ini.",
+			"stats": {
+				"integrationTime": { "value": "<1 hari", "label": "Masa integrasi" },
+				"restApi": { "value": "REST API", "label": "Integrasi mudah" },
+				"sdk": { "value": "SDK", "label": "Node.js, Python, Go" }
+			}
+		},
+		"faq": {
+			"title": "Soalan lazim",
+			"body": "Keupayaan e-KYC, pematuhan, integrasi, dan harga TrueIdentity™ di Malaysia.",
+			"items": [
+				{
+					"question": "Apakah TrueIdentity™?",
+					"answer": "TrueIdentity™ ialah API pengesahan identiti elektronik (e-KYC) dan pengesahan identiti Truestack untuk Malaysia. Perniagaan mengintegrasikan satu endpoint REST untuk menjalankan pengecaman OCR MyKad, pengesanan kehidupan (liveness), padanan biometrik muka, dan semakan penipuan — dengan pengendalian selaras PDPA dan jejak audit."
+				},
+				{
+					"question": "Siapa yang menggunakan TrueIdentity™?",
+					"answer": "Bank, pemberi pinjam wang berlesen, fintech, platform digital, dan telco menggunakan TrueIdentity untuk permohonan pinjaman, pembukaan akaun, pengesahan penjual, pendaftaran SIM, dan mana-mana aliran kerja yang memerlukan pengesahan identiti yang pantas dan patuh di Malaysia."
+				},
+				{
+					"question": "Keupayaan pengesahan apa yang disertakan?",
+					"answer": "TrueIdentity merangkumi pengecaman OCR MyKad, pengesanan kehidupan (liveness), padanan biometrik muka, keputusan pengesahan masa nyata, isyarat pengesanan penipuan, dan pencatatan jejak audit — direka sebagai satu API bersatu, bukan merangkai pelbagai vendor."
+				},
+				{
+					"question": "Adakah TrueIdentity™ mematuhi PDPA dan dihos di Malaysia?",
+					"answer": "Ya. Platform ini dibina untuk jangkaan kawal selia Malaysia — pemprosesan mematuhi PDPA, penyulitan semasa transit dan semasa storan, serta residensi data di Malaysia dengan amalan keselamatan tahap bank yang sesuai untuk perkhidmatan kewangan terkawal selia."
+				},
+				{
+					"question": "Bagaimana TrueIdentity™ berintegrasi dengan produk Truestack yang lain?",
+					"answer": "TrueIdentity ialah sebahagian daripada infrastruktur Truestack Core™ dan bersambung secara natif dengan onboarding pinjaman TrueKredit™, pembangunan fintech tersuai, dan aliran kerja KYB TrueSSM™ — supaya semakan pinjaman dan daftar boleh berada dalam satu tumpukan Truestack."
+				},
+				{
+					"question": "Bagaimana harga TrueIdentity™ ditentukan?",
+					"answer": "TrueIdentity menggunakan harga bayar setiap pengesahan yang berskala mengikut volum anda — tiada komitmen minimum yang besar. Tempah konsultasi percuma dengan Truestack untuk tunjuk ajar dan harga yang selari dengan throughput pengesahan yang anda jangka."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Bersedia Mengubah Proses KYC Anda?",
+			"body": "Sertai perniagaan Malaysia yang menggunakan TrueIdentity. Tempah konsultasi percuma dan kami akan bimbing anda melalui e-KYC, harga, dan integrasi.",
+			"secondary": "Kembali ke truestack.my"
+		}
+	}
+}

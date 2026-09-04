@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import {
 	ArrowRight,
@@ -85,23 +86,20 @@ export function DigitalLicenseHeroVisual({
 	);
 }
 
-const PHASES = [
-	{ phase: "Phase 1", label: "Provisional licence" },
-	{ phase: "Phase 2–3", label: "Build & review pack" },
-	{ phase: "Phase 4", label: "Approval & go-live" },
-] as const;
+const PHASE_KEYS = ["1", "2", "4"] as const;
 
 function ReachChart() {
+	const t = useTranslations("DigitalLicense");
 	const reduceMotion = useReducedMotion();
 
 	return (
 		<div className="rounded-[20px] border bg-card/75 p-[26px] pt-[26px] pb-[22px] shadow-sm backdrop-blur-sm">
 			<div className="mb-1.5 flex items-baseline justify-between gap-3">
 				<span className="type-micro font-medium uppercase tracking-[0.08em] text-muted-foreground">
-					Addressable reach
+					{t("hero.chart.addressableReach")}
 				</span>
 				<span className="font-mono type-micro text-muted-foreground/70">
-					~3 months
+					{t("hero.chart.timeline")}
 				</span>
 			</div>
 
@@ -109,7 +107,7 @@ function ReachChart() {
 				viewBox="0 -34 420 262"
 				className="block h-auto w-full"
 				role="img"
-				aria-label="Reach growing from a single branch to nationwide digital lending"
+				aria-label={t("hero.chart.ariaLabel")}
 			>
 				<line
 					x1="30"
@@ -206,7 +204,7 @@ function ReachChart() {
 						fontSize="13"
 						fontWeight="600"
 					>
-						1 branch
+						{t("hero.chart.branch")}
 					</text>
 					<text
 						x="40"
@@ -215,7 +213,7 @@ function ReachChart() {
 						fontFamily="inherit"
 						fontSize="12"
 					>
-						Local customers only
+						{t("hero.chart.localOnly")}
 					</text>
 				</motion.g>
 				<motion.g
@@ -232,7 +230,7 @@ function ReachChart() {
 						fontSize="14"
 						fontWeight="600"
 					>
-						All of Malaysia
+						{t("hero.chart.nationwide")}
 					</text>
 					<text
 						x="388"
@@ -242,19 +240,19 @@ function ReachChart() {
 						fontFamily="inherit"
 						fontSize="12"
 					>
-						Web &amp; apps · digital licence
+						{t("hero.chart.webApps")}
 					</text>
 				</motion.g>
 			</svg>
 
 			<div className="mt-8 grid grid-cols-3 gap-3 border-t pt-5">
-				{PHASES.map((item) => (
-					<div key={item.phase}>
+				{PHASE_KEYS.map((key) => (
+					<div key={key}>
 						<div className="type-mono-label text-muted-foreground/70">
-							{item.phase}
+							{t(`hero.chart.phases.${key}.phase`)}
 						</div>
 						<div className="mt-0.5 text-sm font-semibold text-foreground">
-							{item.label}
+							{t(`hero.chart.phases.${key}.label`)}
 						</div>
 					</div>
 				))}
@@ -263,13 +261,11 @@ function ReachChart() {
 	);
 }
 
-const TRUST_CHIPS = [
-	"Licensing, platform and go-live in one contract",
-	"Signing stays on your premises",
-] as const;
-
 export function DigitalLicenseHero() {
+	const t = useTranslations("DigitalLicense");
+	const tCommon = useTranslations("Common");
 	const reduceMotion = useReducedMotion();
+	const trustChips = t.raw("hero.trustChips") as string[];
 
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
@@ -323,64 +319,66 @@ export function DigitalLicenseHero() {
 								href="/#solutions"
 								className="transition-colors hover:text-foreground"
 							>
-								Solutions
+								{t("hero.crumbSolutions")}
 							</Link>
 							<span className="text-border" aria-hidden>
 								/
 							</span>
 							<span className="font-medium text-foreground">
-								KPKT Digital Licence
+								{t("hero.crumbCurrent")}
 							</span>
 						</div>
 
 						<h1 className="type-h1 text-pretty text-foreground">
-							Go nationwide. We&apos;ll get you licensed.
+							{t("hero.title")}
 						</h1>
 
 						<p className="type-lede-hero mt-5 max-w-[34em] text-pretty text-muted-foreground">
-							End-to-end KPKT{" "}
-							<strong className="font-semibold text-foreground">
-								Online Money Lending Licence
-							</strong>{" "}
-							— pemberian pinjaman wang dalam talian, from kickoff
-							to your first nationwide disbursement in about three
-							months.
+							{t.rich("hero.lede", {
+								strong: (chunks) => (
+									<strong className="font-semibold text-foreground">
+										{chunks}
+									</strong>
+								),
+							})}
 						</p>
 						<p className="mt-3.5 max-w-[34em] text-base text-muted-foreground md:text-[17px]">
-							We run the licence path, build your platform on{" "}
-							<Link
-								href="/truekredit"
-								className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
-							>
-								TrueKredit™ Pro
-							</Link>
-							, and stay in the room through approval and go-live.
-							One team, one contract. Pursuing the{" "}
-							<Link
-								href="#shariah"
-								className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
-							>
-								Shariah digital licence
-							</Link>{" "}
-							instead? That is a separate path.
+							{t.rich("hero.body", {
+								truekredit: (chunks) => (
+									<Link
+										href="/truekredit"
+										className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+									>
+										{chunks}
+									</Link>
+								),
+								shariah: (chunks) => (
+									<Link
+										href="#shariah"
+										className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+									>
+										{chunks}
+									</Link>
+								),
+							})}
 						</p>
 
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
 							<Button asChild size="lg" className="gap-2">
 								<CtaLink href="/contact?subject=Digital%20KPKT%20Licence">
-									Book a Free Consultation
+									{tCommon("bookConsultation")}
 									<ArrowRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>
 							<Button asChild variant="outline" size="lg">
 								<CtaLink href="#qualify">
-									Check if you qualify
+									{t("hero.secondaryCta")}
 								</CtaLink>
 							</Button>
 						</div>
 
 						<div className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-sm text-muted-foreground">
-							{TRUST_CHIPS.map((label) => (
+							{trustChips.map((label) => (
 								<span
 									key={label}
 									className="inline-flex items-center gap-1.5"

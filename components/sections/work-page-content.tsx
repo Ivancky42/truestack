@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import { CtaLink } from "@/components/shared/cta-link";
@@ -18,6 +19,9 @@ import {
 } from "lucide-react";
 
 function WorkHero() {
+	const t = useTranslations("WorkChrome");
+	const tCommon = useTranslations("Common");
+
 	return (
 		<section
 			data-nav-theme="dark"
@@ -35,34 +39,35 @@ function WorkHero() {
 						className="mb-5 gap-1.5 border-primary/30 bg-primary/10 px-3 py-1 text-primary"
 					>
 						<Briefcase className="h-3.5 w-3.5" />
-						Our work
+						{t("hero.eyebrow")}
 					</Badge>
 
 					<h1 className="type-h1 text-slate-50">
-						See what{" "}
-						<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
-							live
-						</span>{" "}
-						looks like.
+						{t.rich("hero.title", {
+							accent: (chunks) => (
+								<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">
+									{chunks}
+								</span>
+							),
+						})}
 					</h1>
 
 					<p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
-						Real platforms we&apos;ve taken from idea to go-live —
-						so you can see the outcome before you commit.
+						{t("hero.lede")}
 					</p>
 
 					<div className="mt-6 flex flex-wrap justify-center gap-2">
 						{[
-							{ icon: FileCheck, label: "KPKT digital conversion" },
-							{ icon: Shield, label: "Enterprise lending" },
-							{ icon: Database, label: "AWS Malaysia" },
+							{ icon: FileCheck, key: "kpkt" as const },
+							{ icon: Shield, key: "enterprise" as const },
+							{ icon: Database, key: "aws" as const },
 						].map((pill) => (
 							<span
-								key={pill.label}
+								key={pill.key}
 								className="inline-flex items-center gap-1.5 rounded-full border border-slate-800/80 bg-slate-900/50 px-3 py-1.5 text-xs font-medium text-slate-400 backdrop-blur-sm"
 							>
 								<pill.icon className="h-3.5 w-3.5 text-primary" />
-								{pill.label}
+								{t(`hero.pills.${pill.key}`)}
 							</span>
 						))}
 					</div>
@@ -70,7 +75,7 @@ function WorkHero() {
 					<div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
 						<Button asChild size="lg" className="gap-2">
 							<CtaLink href="#success-stories">
-								View success stories
+								{t("hero.viewStories")}
 								<ArrowRight className="h-4 w-4" />
 							</CtaLink>
 						</Button>
@@ -80,7 +85,7 @@ function WorkHero() {
 							size="lg"
 							className="border-slate-700 bg-transparent text-slate-100 hover:bg-slate-800/80 hover:text-slate-50"
 						>
-							<Link href="/contact">Book a Free Consultation</Link>
+							<Link href="/contact">{tCommon("bookConsultation")}</Link>
 						</Button>
 					</div>
 				</motion.div>
@@ -90,6 +95,8 @@ function WorkHero() {
 }
 
 export function WorkPageContent() {
+	const t = useTranslations("WorkChrome");
+
 	return (
 		<>
 			<WorkHero />
@@ -103,19 +110,17 @@ export function WorkPageContent() {
 					<div className="mx-auto mb-10 max-w-3xl text-center md:mb-12">
 						<SectionBadge
 							icon={Briefcase}
-							text="Selected work"
+							text={t("grid.eyebrow")}
 							className="justify-center"
 						/>
 						<h2
 							id="success-stories-heading"
 							className="type-h2"
 						>
-							Success stories
+							{t("grid.title")}
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
-							Featured case studies and live platforms — from
-							digital KPKT conversions to ecommerce and enterprise
-							lending cores.
+							{t("grid.lede")}
 						</p>
 					</div>
 					<WorkCaseStudyGrid />
@@ -123,11 +128,11 @@ export function WorkPageContent() {
 			</section>
 
 			<ConsultationCta
-				heading="Ready for your story to be next?"
-				body="Whether you are going digital, replatforming, or starting fresh — book a free consultation and we will map the path from where you are to go-live."
+				heading={t("cta.heading")}
+				body={t("cta.body")}
 				secondary={{
 					href: "/services/digital-license",
-					label: "Explore Digital License",
+					label: t("cta.secondary"),
 				}}
 			/>
 		</>

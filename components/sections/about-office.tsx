@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
@@ -11,20 +12,15 @@ import {
 	orgRegistrationNumber,
 } from "@/lib/seo-defaults";
 
-const audiences = [
-	"Licensed money lenders",
-	"Shariah financing operators",
-	"P2P platforms",
-	"Fintechs building on our rails",
-] as const;
-
-const entityFields = [
-	{ label: "Company", value: legalName.toUpperCase() },
-	{ label: "Registration no.", value: orgRegistrationNumber },
-	{ label: "Incorporated", value: "2025 · Kuala Lumpur, Malaysia" },
-] as const;
+const audiences = ["lenders", "shariah", "p2p", "fintechs"] as const;
 
 export function AboutOffice() {
+	const t = useTranslations("About");
+	const entityFields = [
+		{ key: "company", value: legalName.toUpperCase() },
+		{ key: "registration", value: orgRegistrationNumber },
+		{ key: "incorporated", value: t("office.fields.incorporatedValue") },
+	] as const;
 	return (
 		<section
 			id="office"
@@ -38,15 +34,12 @@ export function AboutOffice() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 type-eyebrow text-primary">Where we are</p>
+					<p className="mb-3 type-eyebrow text-primary">{t("office.eyebrow")}</p>
 					<h2 id="about-office-heading" className="type-h2">
-						KL Trillion, Jalan Tun Razak.
+						{t("office.title")}
 					</h2>
 					<p className="mt-4 max-w-xl type-lede text-muted-foreground">
-						We are a Kuala Lumpur company working with Malaysian
-						lenders and fintechs, in the same time zone and the same
-						regulatory reality as our clients. Visitors are welcome —
-						most engagements start with a conversation in the room.
+						{t("office.lede")}
 					</p>
 					<address className="mt-6 not-italic text-[17px] leading-relaxed text-foreground/80">
 						<span className="block font-semibold text-foreground">
@@ -63,7 +56,7 @@ export function AboutOffice() {
 							<a href={`mailto:${orgEmail}`}>{orgEmail}</a>
 						</Button>
 						<Button asChild variant="outline" size="lg">
-							<CtaLink href={orgLinkedInUrl}>LinkedIn</CtaLink>
+							<CtaLink href={orgLinkedInUrl}>{t("office.linkedin")}</CtaLink>
 						</Button>
 					</div>
 				</motion.div>
@@ -77,13 +70,13 @@ export function AboutOffice() {
 				>
 					<div className="border-b px-7 py-7 md:px-8">
 						<p className="mb-4 type-eyebrow text-muted-foreground">
-							Registered entity
+							{t("office.registeredEntity")}
 						</p>
 						<dl className="space-y-4">
 							{entityFields.map((field) => (
-								<div key={field.label}>
+								<div key={field.key}>
 									<dt className="type-mono-label text-muted-foreground">
-										{field.label}
+										{t(`office.fields.${field.key}`)}
 									</dt>
 									<dd className="mt-0.5 font-semibold text-foreground">
 										{field.value}
@@ -94,7 +87,7 @@ export function AboutOffice() {
 					</div>
 					<div className="bg-card px-7 py-6 md:px-8">
 						<p className="mb-3 type-eyebrow text-muted-foreground">
-							Who we work with
+							{t("office.whoWeWorkWith")}
 						</p>
 						<div className="flex flex-wrap gap-2">
 							{audiences.map((audience) => (
@@ -102,7 +95,7 @@ export function AboutOffice() {
 									key={audience}
 									className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
 								>
-									{audience}
+									{t(`office.audiences.${audience}`)}
 								</span>
 							))}
 						</div>

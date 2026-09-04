@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -24,6 +27,7 @@ export function CaseStudyCard({
   className,
   logo,
 }: CaseStudyCardProps) {
+  const tCommon = useTranslations("Common");
   const isClickable = href !== undefined;
 
   const cardContent = (
@@ -50,7 +54,7 @@ export function CaseStudyCard({
             {!logo && <CardTitle>{title}</CardTitle>}
           </div>
           {isComingSoon ? (
-            <Badge variant="secondary">Coming Soon</Badge>
+            <Badge variant="secondary">{tCommon("comingSoon")}</Badge>
           ) : href ? (
             <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
           ) : null}

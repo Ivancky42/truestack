@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Mail, MapPin } from "lucide-react";
 import {
   legalName,
@@ -7,7 +8,8 @@ import {
   orgRegistrationNumber,
 } from "@/lib/seo-defaults";
 
-export function LegalContactCard() {
+export async function LegalContactCard() {
+  const t = await getTranslations("LegalChrome");
   return (
     <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
@@ -17,7 +19,7 @@ export function LegalContactCard() {
         <div className="space-y-1">
           <p className="type-subhead text-foreground">{legalName}</p>
           <p className="type-ui text-muted-foreground">
-            Registration No. {orgRegistrationNumber}
+            {t("contact.registrationNo", { number: orgRegistrationNumber })}
           </p>
           <Link
             href={`mailto:${orgEmail}`}

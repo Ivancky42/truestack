@@ -1,9 +1,16 @@
 "use client";
 
-import { useState, useEffect, useLayoutEffect, type ComponentProps } from "react";
-import Link from "next/link";
+import {
+	useState,
+	useEffect,
+	useLayoutEffect,
+	useRef,
+	type ComponentProps,
+	type RefObject,
+} from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
 	NavigationMenu,
@@ -20,6 +27,8 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { LanguageSuggestionBar } from "@/components/layout/language-suggestion-bar";
 import { brandThemeColor, darkThemeColor, siteName } from "@/lib/seo-defaults";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
@@ -33,14 +42,25 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 type ProductAccent = "primary" | "violet" | "emerald" | "kpkt";
+type SolutionBadge = "upcoming" | "new";
+type SolutionKey =
+	| "truekredit"
+	| "digitalLicense"
+	| "shariahLicense"
+	| "accountManagement"
+	| "softwareDevelopment"
+	| "truesyariah"
+	| "truep2p"
+	| "trueidentity"
+	| "truessm"
+	| "payments";
 
 type SolutionMenuItem = {
-	title: string;
+	key: SolutionKey;
 	href: string;
-	description: string;
 	/** Left icon — used on featured cards only. */
 	icon?: LucideIcon;
-	badge?: string;
+	badge?: SolutionBadge;
 	/** Brand accent — featured icon colour, or catalog active-state highlight. */
 	accent?: ProductAccent;
 };
@@ -78,127 +98,115 @@ const accentClasses: Record<
 /** Flagship destinations — featured in the Solutions menu, not repeated in the columns. */
 const featuredSolutions: SolutionMenuItem[] = [
 	{
-		title: "TrueKredit™",
+		key: "truekredit",
 		href: "/truekredit",
-		description:
-			"The loan book in one system for licensed money lenders.",
 		icon: CreditCard,
 	},
 	{
-		title: "KPKT Digital Licence",
+		key: "digitalLicense",
 		href: "/services/digital-license",
-		description:
-			"Conventional PPW or Shariah — we run both licence paths.",
 		icon: FileCheck,
 		accent: "kpkt",
 	},
 ];
 
 /** Remaining catalog after the featured pair (Services, Platforms, APIs). */
-const solutionsMenuColumns: { heading: string; items: SolutionMenuItem[] }[] = [
+const solutionsMenuColumns: {
+	key: "services" | "platforms" | "apis";
+	items: SolutionMenuItem[];
+}[] = [
 	{
-		heading: "Services",
+		key: "services",
 		items: [
 			{
-				title: "Shariah Digital Licence",
+				key: "shariahLicense",
 				href: "/services/digital-license#shariah",
-				description:
-					"Upcoming KPKT path — entity, committee and TrueSyariah™.",
-				badge: "Upcoming",
+				badge: "upcoming",
 			},
 			{
-				title: "KPKT Account Management",
+				key: "accountManagement",
 				href: "/services/account-management",
-				description:
-					"Renewals, permits and submissions — handled for you.",
 			},
 			{
-				title: "Custom Software Development",
+				key: "softwareDevelopment",
 				href: "/services/software-development",
-				description:
-					"Lending platforms and software built to your process.",
 			},
 		],
 	},
 	{
-		heading: "Platforms",
+		key: "platforms",
 		items: [
 			{
-				title: "TrueSyariah™",
+				key: "truesyariah",
 				href: "/truesyariah",
-				description:
-					"Shariah digital licence and platform — Tawarruq, Ta'widh and Gharamah.",
-				badge: "New",
+				badge: "new",
 			},
 			{
-				title: "TrueP2P™",
+				key: "truep2p",
 				href: "/services/p2p-software-development",
-				description:
-					"SC-aligned peer-to-peer platforms, built for Malaysia.",
 				accent: "violet",
 			},
 		],
 	},
 	{
-		heading: "APIs",
+		key: "apis",
 		items: [
 			{
-				title: "TrueIdentity™",
+				key: "trueidentity",
 				href: "/trueidentity",
-				description: "e-KYC for Malaysian fintechs — MyKad, selfie, match.",
 			},
 			{
-				title: "TrueSSM™",
+				key: "truessm",
 				href: "/truessm",
-				description: "SSM registry search, profiles and scanned documents.",
 			},
 			{
-				title: "Payment gateway",
+				key: "payments",
 				href: "/contact?subject=Payments",
-				description: "FPX, DuitNow, cards and reconciliation in one place.",
 			},
 		],
 	},
 ];
 
 const navLinks = [
-	{ href: "/work", label: "Work" },
-	{ href: "/insights", label: "Insights" },
-	{ href: "/about", label: "About" },
-	{ href: "/careers", label: "Careers" },
-];
+	{ href: "/work", key: "work" },
+	{ href: "/insights", key: "insights" },
+	{ href: "/about", key: "about" },
+	{ href: "/careers", key: "careers" },
+] as const;
 
 const solutionMenuItemClassName =
 	"block w-full rounded-xl p-3 transition-colors hover:bg-accent";
 
 function SolutionItemBadges({ item }: { item: SolutionMenuItem }) {
+	const t = useTranslations("Header");
 	if (!item.badge) return null;
 	return (
 		<Badge
 			variant="secondary"
 			className={cn(
 				"shrink-0 px-1.5 py-0 text-[10px] font-medium",
-				item.badge === "Upcoming"
+				item.badge === "upcoming"
 					? "bg-amber-100 text-amber-800"
 					: "bg-primary/10 text-primary",
 			)}
 		>
-			{item.badge}
+			{t(`badges.${item.badge}`)}
 		</Badge>
 	);
 }
 
 function SolutionMenuItemContent({ item }: { item: SolutionMenuItem }) {
+	const t = useTranslations("Header");
 	return (
 		<div className="min-w-0">
 			<div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
 				<span className="type-ui font-medium leading-snug text-primary">
-					{item.title}
+					{t(`solutions.${item.key}.title`)}
 				</span>
 				<SolutionItemBadges item={item} />
 			</div>
 			<p className="mt-1 text-[14px] leading-snug text-muted-foreground">
-				{item.description}
+				{t(`solutions.${item.key}.description`)}
 			</p>
 		</div>
 	);
@@ -226,6 +234,7 @@ function FeaturedSolutionCard({
 	onNavigate?: () => void;
 	compact?: boolean;
 } & Omit<ComponentProps<typeof Link>, "href">) {
+	const t = useTranslations("Header");
 	const accent = accentClasses[item.accent ?? "primary"];
 
 	return (
@@ -265,7 +274,7 @@ function FeaturedSolutionCard({
 						compact ? "type-ui" : "type-card-title",
 					)}
 				>
-					{item.title}
+					{t(`solutions.${item.key}.title`)}
 				</p>
 				<p
 					className={cn(
@@ -275,7 +284,7 @@ function FeaturedSolutionCard({
 							: "mt-1.5 type-ui leading-snug",
 					)}
 				>
-					{item.description}
+					{t(`solutions.${item.key}.description`)}
 				</p>
 			</div>
 			<ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
@@ -284,15 +293,16 @@ function FeaturedSolutionCard({
 }
 
 function DesktopFeaturedRow() {
+	const t = useTranslations("Header");
 	return (
 		<div className="border-b px-6 py-5 md:px-8 md:py-6">
 			<p className="mb-3 flex items-center gap-2 type-eyebrow text-foreground">
 				<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
-				Start here
+				{t("startHere")}
 			</p>
 			<ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
 				{featuredSolutions.map((item) => (
-					<li key={item.title}>
+					<li key={item.key}>
 						<NavigationMenuLink
 							asChild
 							className="hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent data-[active=true]:hover:bg-transparent data-[active=true]:focus:bg-transparent"
@@ -315,6 +325,7 @@ function MobileSolutionMenuItem({
 	pathname: string;
 	onNavigate: () => void;
 }) {
+	const t = useTranslations("Header");
 	const accent = accentClasses[item.accent ?? "primary"];
 
 	return (
@@ -329,34 +340,46 @@ function MobileSolutionMenuItem({
 			)}
 		>
 			<span className="flex-1 font-medium text-primary">
-				{item.title}
+				{t(`solutions.${item.key}.title`)}
 			</span>
 			<SolutionItemBadges item={item} />
 		</Link>
 	);
 }
 
-function useNavChrome(pathname: string) {
+function useNavChrome(
+	pathname: string,
+	headerRef: RefObject<HTMLElement | null>,
+	bannerVisible: boolean,
+) {
 	const [isDark, setIsDark] = useState(false);
 	const [isAtTop, setIsAtTop] = useState(true);
 
 	useLayoutEffect(() => {
 		const check = () => {
 			setIsAtTop(window.scrollY < 8);
-			// Sample just below the header so dark heroes still flip the chrome.
-			const el = document.elementFromPoint(window.innerWidth / 2, 90);
+			// Sample just below the header's real bottom edge (it grows when the
+			// language suggestion bar is visible) so dark heroes still flip the chrome.
+			const headerBottom =
+				headerRef.current?.getBoundingClientRect().bottom ?? 72;
+			const el = document.elementFromPoint(
+				window.innerWidth / 2,
+				headerBottom + 18,
+			);
 			const inDarkSection = el?.closest('[data-nav-theme="dark"]');
 			setIsDark(!!inDarkSection);
 		};
 
-		check();
+		const frame = requestAnimationFrame(check);
 		window.addEventListener("scroll", check, { passive: true });
 		window.addEventListener("resize", check);
 		return () => {
+			cancelAnimationFrame(frame);
 			window.removeEventListener("scroll", check);
 			window.removeEventListener("resize", check);
 		};
-	}, [pathname]);
+		// `bannerVisible` changes the header's height, so re-sample when it flips.
+	}, [pathname, headerRef, bannerVisible]);
 
 	useLayoutEffect(() => {
 		const meta = document.querySelector('meta[name="theme-color"]');
@@ -372,6 +395,7 @@ function useNavChrome(pathname: string) {
 }
 
 export function Header() {
+	const t = useTranslations("Header");
 	const pathname = usePathname();
 	const isSolutionsActive =
 		pathname.startsWith("/services") ||
@@ -382,12 +406,21 @@ export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [solutionsExpanded, setSolutionsExpanded] = useState(false);
 	const [solutionsMenu, setSolutionsMenu] = useState("");
-	const { isDark: isDarkSection, isAtTop } = useNavChrome(pathname);
+	const headerRef = useRef<HTMLElement>(null);
+	const [bannerVisible, setBannerVisible] = useState(false);
+	const { isDark: isDarkSection, isAtTop } = useNavChrome(
+		pathname,
+		headerRef,
+		bannerVisible,
+	);
 
 	useEffect(() => {
-		setSolutionsMenu("");
-		setMobileMenuOpen(false);
-		setSolutionsExpanded(false);
+		const frame = requestAnimationFrame(() => {
+			setSolutionsMenu("");
+			setMobileMenuOpen(false);
+			setSolutionsExpanded(false);
+		});
+		return () => cancelAnimationFrame(frame);
 	}, [pathname]);
 
 	const closeMobileMenu = () => {
@@ -397,7 +430,10 @@ export function Header() {
 
 	const headerClasses = cn(
 		"sticky top-0 z-50 w-full overflow-visible border-b transition-[background-color,border-color,backdrop-filter] duration-200",
-		isAtTop
+		// Transparent-at-top assumes a hero tucked under the 72px header. With the
+		// suggestion bar showing, the header is taller and body background would
+		// bleed through, so fall back to the solid chrome.
+		isAtTop && !bannerVisible
 			? "border-transparent bg-transparent"
 			: isDarkSection
 				? "border-slate-800 bg-slate-950/90 backdrop-blur-md"
@@ -417,7 +453,7 @@ export function Header() {
 		);
 
 	return (
-		<header className={headerClasses}>
+		<header ref={headerRef} className={headerClasses}>
 			<div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6 overflow-visible">
 				<Link href="/" className="flex items-center gap-2">
 					<Image
@@ -450,7 +486,7 @@ export function Header() {
 										navLinkClasses(isSolutionsActive),
 									)}
 								>
-									Solutions
+									{t("nav.solutions")}
 								</NavigationMenuTrigger>
 								<NavigationMenuContent
 									className={cn(
@@ -465,7 +501,7 @@ export function Header() {
 											{solutionsMenuColumns.map(
 												(column, colIndex) => (
 													<div
-														key={column.heading}
+														key={column.key}
 														className={cn(
 															colIndex > 0 &&
 																"sm:border-l sm:border-border sm:pl-8",
@@ -473,14 +509,14 @@ export function Header() {
 													>
 														<p className="mb-3 flex items-center gap-2 px-3 type-eyebrow text-foreground">
 															<span className="h-1.5 w-1.5 rounded-full bg-foreground" />
-															{column.heading}
+															{t(`columns.${column.key}`)}
 														</p>
 														<ul className="space-y-0.5">
 															{column.items.map(
 																(item) => (
 																	<li
 																		key={
-																			item.title
+																			item.key
 																		}
 																	>
 																		<DesktopSolutionMenuItem
@@ -508,13 +544,22 @@ export function Header() {
 							href={link.href}
 							className={navLinkClasses(pathname === link.href)}
 						>
-							{link.label}
+							{t(`nav.${link.key}`)}
 						</Link>
 					))}
 				</nav>
 
-				{/* Desktop Contact Button */}
+				{/* Desktop actions */}
 				<div className="hidden items-center gap-4 md:flex">
+					<LanguageSwitcher
+						variant="desktop"
+						className={cn(
+							navLinkClasses(false),
+							isDarkSection
+								? "hover:bg-slate-800 hover:text-white"
+								: undefined,
+						)}
+					/>
 					<Button
 						asChild
 						variant={isDarkSection ? "outline" : "default"}
@@ -524,7 +569,7 @@ export function Header() {
 								: ""
 						}
 					>
-						<Link href="/contact">Free Consultation</Link>
+						<Link href="/contact">{t("freeConsultation")}</Link>
 					</Button>
 				</div>
 
@@ -534,7 +579,7 @@ export function Header() {
 						<Button
 							variant="ghost"
 							size="icon"
-							aria-label="Open menu"
+							aria-label={t("openMenu")}
 							className={
 								isDarkSection
 									? "text-slate-300 hover:text-white hover:bg-slate-800"
@@ -577,7 +622,7 @@ export function Header() {
 											: "text-foreground",
 									)}
 								>
-									Solutions
+									{t("nav.solutions")}
 									<ChevronDown
 										className={cn(
 											"h-4 w-4 transition-transform",
@@ -589,12 +634,12 @@ export function Header() {
 									<div className="space-y-5 pt-2">
 										<div>
 											<p className="px-1 pb-2.5 type-eyebrow text-foreground">
-												Start here
+												{t("startHere")}
 											</p>
 											<ul className="space-y-2.5">
 												{featuredSolutions.map(
 													(item) => (
-														<li key={item.title}>
+														<li key={item.key}>
 															<FeaturedSolutionCard
 																item={item}
 																onNavigate={
@@ -607,13 +652,13 @@ export function Header() {
 											</ul>
 										</div>
 										{solutionsMenuColumns.map((column) => (
-											<div key={column.heading}>
+											<div key={column.key}>
 												<p className="px-1 py-1 type-eyebrow text-foreground">
-													{column.heading}
+													{t(`columns.${column.key}`)}
 												</p>
 												{column.items.map((item) => (
 													<MobileSolutionMenuItem
-														key={item.title}
+														key={item.key}
 														item={item}
 														pathname={pathname}
 														onNavigate={
@@ -640,24 +685,34 @@ export function Header() {
 												: "text-foreground",
 										)}
 									>
-										{link.label}
+										{t(`nav.${link.key}`)}
 									</Link>
 								))}
 							</div>
 						</nav>
 						<div className="shrink-0 border-t px-6 py-4">
+							<LanguageSwitcher
+								variant="mobile"
+								className="mb-4 w-full"
+								onSelected={closeMobileMenu}
+							/>
 							<Button asChild className="w-full" size="lg">
 								<Link
 									href="/contact"
 									onClick={closeMobileMenu}
 								>
-									Book a Free Consultation
+									{t("bookConsultation")}
 								</Link>
 							</Button>
 						</div>
 					</SheetContent>
 				</Sheet>
 			</div>
+			{/* Lives inside the sticky header so `-mt-18` heroes cannot paint over it. */}
+			<LanguageSuggestionBar
+				tone={isDarkSection ? "dark" : "light"}
+				onVisibilityChange={setBannerVisible}
+			/>
 		</header>
 	);
 }

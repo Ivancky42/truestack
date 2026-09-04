@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, FileCheck, Scale } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,36 +11,7 @@ import { CtaLink } from "@/components/shared/cta-link";
 
 type PathId = "ppw" | "shariah";
 
-const PATHS = [
-	{
-		id: "ppw" as const,
-		kicker: "Digital licence · PPW",
-		label: "Conventional e-Lending",
-		summary:
-			"Kebenaran tambahan on an existing lesen PPW — nationwide lending on TrueKredit™ Pro.",
-	},
-	{
-		id: "shariah" as const,
-		kicker: "Shariah digital licence",
-		label: "Syariah Lending",
-		summary:
-			"A separate entity, committee and book — TrueSyariah™ from the first filing.",
-	},
-] as const;
-
-const PPW_POINTS = [
-	"Existing lesen PPW, then kebenaran tambahan to lend online",
-	"TrueKredit™ Pro — branded web, apps and signing on your premises",
-	"About three months from kickoff to nationwide go-live",
-	"Licence, platform and KPKT review under one contract",
-] as const;
-
-const SHARIAH_POINTS = [
-	"Own operating company — not the same entity as a conventional PPW",
-	"Committee, Aqad and Tawarruq sequence approved before you file",
-	"TrueSyariah™ — Ta'widh and Gharamah split, books ring-fenced",
-	"We start you in the order the regulator expects, not the other way around",
-] as const;
+const PATH_IDS = ["ppw", "shariah"] as const;
 
 function pathFromHash(): PathId {
 	if (typeof window === "undefined") return "ppw";
@@ -48,7 +20,11 @@ function pathFromHash(): PathId {
 }
 
 export function DigitalLicensePaths() {
+	const t = useTranslations("DigitalLicense");
+	const tCommon = useTranslations("Common");
 	const [path, setPath] = useState<PathId>("ppw");
+	const ppwPoints = t.raw("paths.items.ppw.points") as string[];
+	const shariahPoints = t.raw("paths.items.shariah.points") as string[];
 
 	useEffect(() => {
 		const applyHash = () => setPath(pathFromHash());
@@ -93,15 +69,13 @@ export function DigitalLicensePaths() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="type-eyebrow mb-3 text-primary">
-						Choose your path
+						{t("paths.eyebrow")}
 					</p>
 					<h2 className="type-h2 text-pretty">
-						Two licences. Pick the one that matches your book.
+						{t("paths.title")}
 					</h2>
 					<p className="mt-3.5 type-lede text-muted-foreground">
-						Digital lending on a conventional lesen PPW is one
-						approval. Shariah digital lending is another — its own
-						entity, committee and book. Pick the path you are on.
+						{t("paths.body")}
 					</p>
 				</motion.div>
 
@@ -113,29 +87,29 @@ export function DigitalLicensePaths() {
 				>
 					<div
 						role="tablist"
-						aria-label="Licence paths"
+						aria-label={t("paths.tablistAria")}
 						className="grid border border-border sm:grid-cols-2"
 					>
-						{PATHS.map((item) => {
-							const selected = path === item.id;
+						{PATH_IDS.map((id) => {
+							const selected = path === id;
 							return (
 								<button
-									key={item.id}
+									key={id}
 									type="button"
 									role="tab"
 									id={
-										item.id === "shariah"
+										id === "shariah"
 											? "shariah"
-											: `license-path-${item.id}-tab`
+											: `license-path-${id}-tab`
 									}
 									aria-selected={selected}
-									aria-controls={`license-path-${item.id}-panel`}
-									onClick={() => select(item.id)}
+									aria-controls={`license-path-${id}-panel`}
+									onClick={() => select(id)}
 									className={cn(
 										"border-b p-6 text-left transition-colors sm:border-b-0",
-										item.id === "ppw" && "sm:border-r",
+										id === "ppw" && "sm:border-r",
 										selected
-											? item.id === "shariah"
+											? id === "shariah"
 												? "bg-ts-paper shadow-[inset_0_-2px_0_var(--ts-gold)]"
 												: "bg-background shadow-[inset_0_-2px_0_var(--color-kpkt)]"
 											: "bg-transparent hover:bg-background/70",
@@ -146,43 +120,43 @@ export function DigitalLicensePaths() {
 											className={cn(
 												"type-mono-label",
 												selected
-													? item.id === "shariah"
+													? id === "shariah"
 														? "text-ts-gold"
 														: "text-kpkt"
 													: "text-muted-foreground",
 											)}
 										>
-											{item.kicker}
+											{t(`paths.items.${id}.kicker`)}
 										</span>
-										{item.id === "shariah" ? (
+										{id === "shariah" ? (
 											<span className="rounded-full bg-amber-500/10 px-2 py-0.5 type-micro font-semibold text-amber-800">
-												Upcoming
+												{t("paths.upcoming")}
 											</span>
 										) : (
 											<span className="rounded-full bg-kpkt/10 px-2 py-0.5 type-micro font-semibold text-kpkt">
-												Live
+												{tCommon("live")}
 											</span>
 										)}
 									</div>
 									<p
 										className={cn(
 											"type-card-title",
-											selected && item.id === "shariah"
+											selected && id === "shariah"
 												? "text-ts-ink"
 												: "text-foreground",
 										)}
 									>
-										{item.label}
+										{t(`paths.items.${id}.label`)}
 									</p>
 									<p
 										className={cn(
 											"mt-2 type-ui",
-											selected && item.id === "shariah"
+											selected && id === "shariah"
 												? "text-ts-ink-soft"
 												: "text-muted-foreground",
 										)}
 									>
-										{item.summary}
+										{t(`paths.items.${id}.summary`)}
 									</p>
 								</button>
 							);
@@ -205,31 +179,27 @@ export function DigitalLicensePaths() {
 									/>
 								</div>
 								<h3 className="type-h2-sm">
-									Digital licence on your existing PPW.
+									{t("paths.items.ppw.title")}
 								</h3>
 								<p className="mt-3 type-ui text-muted-foreground">
-									Holding a money-lending licence does not let
-									you lend online. You apply for kebenaran
-									tambahan, show KPKT the platform, and go
-									nationwide on TrueKredit™ Pro. That is the
-									path this page walks.
+									{t("paths.items.ppw.body")}
 								</p>
 								<div className="mt-6 flex flex-wrap gap-3">
 									<Button asChild className="gap-2 bg-kpkt hover:bg-kpkt/90">
 										<CtaLink href="/contact?subject=Digital%20KPKT%20Licence">
-											Book a Free Consultation
+											{tCommon("bookConsultation")}
 											<ArrowRight className="h-4 w-4" />
 										</CtaLink>
 									</Button>
 									<Button asChild variant="outline">
 										<CtaLink href="#qualify">
-											See if you qualify
+											{t("paths.items.ppw.qualifyCta")}
 										</CtaLink>
 									</Button>
 								</div>
 							</div>
 							<ul className="space-y-3">
-								{PPW_POINTS.map((point) => (
+								{ppwPoints.map((point) => (
 									<li
 										key={point}
 										className="flex items-start gap-3 border-b border-border/70 pb-3 last:border-0 last:pb-0"
@@ -263,38 +233,32 @@ export function DigitalLicensePaths() {
 									/>
 								</div>
 								<p className="mb-3 type-ts-eyebrow text-ts-gold">
-									Lesen pinjaman digital syariah
+									{t("paths.items.shariah.eyebrow")}
 								</p>
 								<h3 className="type-ts-h3 text-ts-ink">
-									A Shariah book cannot sit on a conventional
-									licence.
+									{t("paths.items.shariah.title")}
 								</h3>
 								<p className="mt-3 type-ui text-ts-ink-soft">
-									KPKT treats Shariah digital lending as its
-									own approval. The entity, the committee and
-									the contracts have to be in place before
-									the software is much use — and the platform
-									has to evidence Tawarruq, Ta&apos;widh and
-									Gharamah from day one.
+									{t("paths.items.shariah.body")}
 								</p>
 								<div className="mt-6 flex flex-wrap gap-3">
 									<Link
 										href="/contact?subject=TrueSyariah"
 										className="inline-flex min-h-11 items-center gap-2 rounded-[2px] bg-ts-ink px-5 text-[15px] font-medium text-ts-parchment transition-colors hover:bg-ts-gold"
 									>
-										Book a Free Consultation
+										{tCommon("bookConsultation")}
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 									<Link
 										href="/truesyariah"
 										className="inline-flex min-h-11 items-center rounded-[2px] border border-ts-line px-5 text-[15px] font-medium text-ts-ink transition-colors hover:border-ts-ink"
 									>
-										See TrueSyariah™
+										{t("paths.items.shariah.seeTrueSyariah")}
 									</Link>
 								</div>
 							</div>
 							<ul className="space-y-3">
-								{SHARIAH_POINTS.map((point) => (
+								{shariahPoints.map((point) => (
 									<li
 										key={point}
 										className="flex items-start gap-3 border-b border-ts-rule-faint pb-3 last:border-0 last:pb-0"

@@ -1,0 +1,706 @@
+{
+	"_status": "ai-draft",
+	"WorkStudies": {
+		"meta": {
+			"title": "金融科技案例｜Truestack",
+			"description": "查看马来西亚已上线的金融科技案例——KPKT数字放贷转换、企业贷款管理系统与受监管融资平台，覆盖从牌照申请到正式上线的全程交付，由Truestack完成。",
+			"ogTitle": "金融科技案例｜Truestack",
+			"ogDescription": "查看马来西亚已上线的金融科技案例——KPKT数字放贷转换、企业贷款管理系统与受监管融资平台，覆盖从牌照申请到正式上线的全程交付，由Truestack完成。",
+			"keywords": [
+				"Truestack成功案例",
+				"Truestack案例",
+				"马来西亚金融科技项目",
+				"KPKT成功案例",
+				"KPKT数字牌照",
+				"马来西亚数字放贷软件",
+				"马来西亚P2P融资平台"
+			]
+		},
+		"cards": {
+			"pinjocep": {
+				"description": "面向马来西亚借款人的快速个人贷款——基于TrueKredit与TrueIdentity，实现即时e-KYC、自动审批与符合KPKT的放款。",
+				"blurb": "快速个人贷款，配备即时e-KYC与符合KPKT的放款。",
+				"tags": [
+					"TrueKredit™",
+					"TrueIdentity™",
+					"E-KYC"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"proficient-premium": {
+				"description": "高端放贷业务以TrueKredit端到端现代化——借款人入驻、贷款发起与KPKT报表集中在同一平台。",
+				"blurb": "高端放贷在同一平台完成端到端现代化。",
+				"tags": [
+					"TrueKredit™",
+					"贷款管理",
+					"报表"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"andas-capital": {
+				"description": "企业放贷平台，具备完整贷款管理、自动化工作流与监管报表。",
+				"blurb": "企业放贷，配备自动化工作流与监管报表。",
+				"tags": [
+					"TrueKredit™",
+					"定制软件",
+					"企业"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"cashsouk": {
+				"description": "连接借款人与投资者的P2P放贷市场。按规模构建，并具备完整合规能力。",
+				"blurb": "连接借款人与投资者的P2P市场——对齐SC。",
+				"tags": [
+					"TrueP2P™",
+					"对齐SC",
+					"市场"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "定制软件"
+					},
+					{
+						"label": "上线",
+						"value": "9个月"
+					}
+				]
+			},
+			"creditxpress": {
+				"description": "从传统放贷转型为持有KPKT牌照的全国数字平台，覆盖网页与移动应用。",
+				"blurb": "从传统放贷走向全国数字KPKT平台。",
+				"tags": [
+					"TrueKredit™",
+					"数字牌照",
+					"网页 + 移动"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "6个月"
+					}
+				]
+			},
+			"ezdana": {
+				"description": "面向借款人旅程与贷款账簿运营的品牌数字放贷栈——入驻、发起与日常服务运行于TrueKredit Pro。",
+				"blurb": "TrueKredit™ Pro上的贷款账簿与借款人旅程。",
+				"tags": [
+					"TrueKredit™ Pro",
+					"贷款管理",
+					"数字放贷"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™ Pro"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"fundle": {
+				"description": "为速度与借款人自助而建的数字放贷产品——面向马来西亚借款人的现代发起与服务，运行于TrueKredit。",
+				"blurb": "为速度与借款人自助而建的数字放贷。",
+				"tags": [
+					"TrueKredit™",
+					"自助",
+					"数字放贷"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"ai-express": {
+				"description": "面向马来西亚借款人的数字放贷门户——在TrueKredit上提供快速申请与符合KPKT的运营。",
+				"blurb": "数字放贷门户，配备快速申请与KPKT运营。",
+				"tags": [
+					"TrueKredit™",
+					"数字放贷",
+					"KPKT"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"credibly": {
+				"description": "运行于专用云平台的现代放贷运营——借款人旅程、贷款服务与日常运营均在TrueKredit上。",
+				"blurb": "运行于专用云平台的现代放贷运营。",
+				"tags": [
+					"TrueKredit™",
+					"贷款管理",
+					"云"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"jomdana": {
+				"description": "面向马来西亚借款人的数字放贷——申请、服务与日常贷款运营均在TrueKredit上。",
+				"blurb": "数字放贷，在TrueKredit上完成申请与服务。",
+				"tags": [
+					"TrueKredit™",
+					"数字放贷",
+					"KPKT"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"landstore": {
+				"description": "面向马来西亚的土地市场——地图探索、房源、短名单与询盘流程，以定制软件构建。",
+				"blurb": "土地市场，配备地图探索、房源与询盘流程。",
+				"tags": [
+					"定制软件",
+					"房产科技",
+					"市场"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "定制软件"
+					},
+					{
+						"label": "上线",
+						"value": "8个月"
+					}
+				]
+			},
+			"eviebikes": {
+				"description": "销往欧盟的欧洲智能电单车电商品牌——Shopify店面、商品旅程与品牌叙事，以定制软件构建。",
+				"blurb": "销往欧盟的欧洲智能电单车品牌——Shopify店面。",
+				"tags": [
+					"定制软件",
+					"电商"
+				],
+				"stats": [
+					{
+						"label": "合作",
+						"value": "定制软件"
+					},
+					{
+						"label": "平台",
+						"value": "Shopify"
+					}
+				]
+			},
+			"jompinjam": {
+				"description": "面向日常马来西亚人的符合教法数字融资——基于Tawarruq的产品运行于TrueSyariah，从申请到放款以手机为先。",
+				"blurb": "面向日常马来西亚人的教法数字融资，运行于TrueSyariah™。",
+				"tags": [
+					"TrueSyariah™",
+					"Tawarruq",
+					"数字融资"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueSyariah™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			},
+			"danakini": {
+				"description": "面向个人与企业的机构级教法融资——在TrueSyariah上提供受治理的数字额度，利润与期限清晰。",
+				"blurb": "TrueSyariah™上的机构级教法融资。",
+				"tags": [
+					"TrueSyariah™",
+					"Tawarruq",
+					"数字融资"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueSyariah™"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					}
+				]
+			}
+		},
+		"details": {
+			"ezdana": {
+				"headline": "您的团队与借款人都信任的品牌放贷栈。",
+				"lead": "我们在TrueKredit™ Pro上为ezdana落地——一侧是借款人自助，另一侧是完整贷款账簿运营——让放贷机构快速上线，而无需重建核心。",
+				"tags": [
+					"TrueKredit™ Pro",
+					"数字放贷",
+					"借款人 + 后台"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueKredit™ Pro"
+					},
+					{
+						"label": "上线",
+						"value": "3个月"
+					},
+					{
+						"label": "界面",
+						"value": "2个门户"
+					}
+				],
+				"productPage": {
+					"label": "TrueKredit™ Pro",
+					"blurb": "TrueKredit™ Pro上的全国数字放贷——品牌应用、贷款账簿运营与对齐KPKT的工作流。"
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "挑战",
+						"paragraphs": [
+							"ezdana需要完整的数字放贷运营——不是带表单的宣传站。借款人必须能申请、跟踪状态、签署协议并管理还款。放贷团队需要故事的另一半：L1/L2审核队列、放款控制、组合指标与日常服务。",
+							"从零开始意味着在第一笔贷款流转之前，先花数月铺设合规管线。简报很明确：交付一套读起来像ezdana产品的品牌体验，运行于[[TrueKredit™ Pro|/truekredit]]——专为马来西亚数字放贷而建的技术栈。"
+						]
+					},
+					{
+						"number": "02",
+						"title": "我们构建了什么",
+						"paragraphs": [
+							"我们将[[TrueKredit™ Pro|/truekredit]]配置为ezdana的操作系统，再包上一层品牌借款人门户与后台工作区。借款人看到申请、贷款旅程、电子签署与还款进度——并在准备加强访问时启用passkey与2FA。",
+							"在后台一侧，同一本贷款账簿呈现为行动队列：L1与L2审核、待放款、核证会议、付款审批与提前结清。组合KPI——已放款、未偿、已赚取、逾期——置于工作之上，让负责人看账簿，操作员清队列。",
+							"每一屏都是产品，而不是样稿。状态徽标、旅程时间线与定时任务（滞纳金、提醒）与我们为其他KPKT持牌放贷公司运行的模式相同——再按ezdana的产品与品牌调校。"
+						]
+					},
+					{
+						"number": "03",
+						"title": "我们如何交付",
+						"paragraphs": [
+							"速度来自有纪律的复用。[[TrueKredit™ Pro|/truekredit]]已覆盖发起、服务、e-KYC挂钩与可审计记录。我们的工作是配置、品牌化以及借款人/后台体验——而不是再造第二套贷款引擎。",
+							"我们大约在三个月内交付两个门户：借款人仪表盘覆盖申请→批准→核证→签署→还款，以及带多级审核与组合可见性的后台控制台。细节体现在决策者会注意到的小事上——清晰的下一步、按颜色编码的状态，以及从首次询盘到最终结清始终一致的贷款账簿。"
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "ezdana借款人仪表盘，含放款行动按钮与贷款摘要卡片",
+							"caption": "借款人仪表盘——下一步、余额与待办集中一处"
+						},
+						{
+							"alt": "ezdana借款人贷款页，显示旅程进度与还款状态",
+							"caption": "贷款旅程——从批准到签署，并显示还款进度"
+						}
+					],
+					[
+						{
+							"alt": "ezdana后台仪表盘，含组合KPI与放款图表",
+							"caption": "后台总览——已放款、未偿、已赚取与逾期"
+						},
+						{
+							"alt": "ezdana后台贷款申请队列，含L1与L2审核筛选",
+							"caption": "申请——您的团队可直接清完的L1/L2队列，无需四处查找"
+						},
+						{
+							"alt": "ezdana后台贷款表，含状态筛选与还款进度",
+							"caption": "贷款账簿——按欠款、放款与完成情况筛选"
+						}
+					],
+					[
+						{
+							"alt": "ezdana借款人申请列表，含状态筛选",
+							"caption": "借款人申请——借款人能看懂的状态筛选"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "ezdana基于什么构建？",
+						"answer": "ezdana运行于TrueKredit™ Pro，即Truestack面向马来西亚KPKT持牌放贷公司的数字放贷平台。借款人门户与后台工作区按ezdana品牌呈现，同时共享同一本活期贷款账簿、审核队列与服务工作流。了解TrueKredit™，请访问产品页truestack.my/truekredit。"
+					},
+					{
+						"question": "借款人与后台在门户中可以做什么？",
+						"answer": "借款人可在线申请、跟踪申请状态、完成核证与电子签署，并管理在贷与还款。后台审核申请（含L1/L2队列）、管理放款、监控组合KPI，并在同一控制台处理日常服务。"
+					},
+					{
+						"question": "ezdana上线用了多久？",
+						"answer": "ezdana大约三个月上线。交付重点是配置TrueKredit™ Pro、为两个门户做品牌化，并接通借款人与后台旅程——而不是从零重建放贷核心。"
+					}
+				],
+				"seo": {
+					"title": "贷款管理系统案例｜ezdana",
+					"description": "贷款管理系统案例：Truestack在TrueKredit™ Pro上为ezdana上线品牌借款人与后台门户、L1/L2审核及活期贷款账簿，约三个月交付。",
+					"keywords": [
+						"ezdana",
+						"TrueKredit Pro案例",
+						"马来西亚数字放贷",
+						"放贷公司软件",
+						"KPKT贷款管理"
+					]
+				}
+			},
+			"landstore": {
+				"headline": "按马来西亚实际买地方式构建的土地市场。",
+				"lead": "LandStore需要的不只是房源网格。我们构建了带地图探索、马来西亚土地筛选、短名单与询盘流程的中介市场——围绕真实成交路径塑造的定制软件。",
+				"tags": [
+					"定制软件",
+					"房产科技",
+					"市场"
+				],
+				"stats": [
+					{
+						"label": "合作",
+						"value": "定制软件"
+					},
+					{
+						"label": "上线",
+						"value": "8个月"
+					},
+					{
+						"label": "重点",
+						"value": "地图与房源"
+					}
+				],
+				"productPage": {
+					"label": "定制软件开发",
+					"blurb": "网页应用、平台与市场，从简报到上线——按您业务的实际运转方式构建。"
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "挑战",
+						"paragraphs": [
+							"在马来西亚买地，不同于浏览公寓。买家按negeri与daerah、交易类型、地形、用途，以及Tanah Rizab Melayu等约束筛选。卖方与中介需要短名单和询盘轨迹——而不是通用房产模板。",
+							"LandStore的简报是成为中介土地市场：可检索库存、地图优先的发现，以及让认真买家继续推进且不丢失上下文的工作流。这需要[[定制软件开发|/services/software-development]]，而不是现成的房源主题。"
+						]
+					},
+					{
+						"number": "02",
+						"title": "我们构建了什么",
+						"paragraphs": [
+							"通过我们的[[定制软件|/services/software-development]]实践，我们围绕土地发现构建网页平台。首页以搜索开场——negeri、类别、交易类型、地形——铺在全幅马来西亚语境之上。探索地图将筛选面板与房源卡片、实时地图钉配对，让位置与库存保持同步。",
+							"领域细节是刻意的：商业与工业类别、亩积区间、用途状态，以及马来保留地开关都放在筛选栏，因为成交就是这样被筛出来的。短名单与询盘为注册用户提供从兴趣到对话的路径，无需离开产品。",
+							"技术栈是现代网页应用——页面加载快、布局响应式，界面系统按高价值浏览调校。底层的房源搜索与地图状态，在库存超过一千块地时仍保持一致。"
+						]
+					},
+					{
+						"number": "03",
+						"title": "我们如何交付",
+						"paragraphs": [
+							"这是为期八个月的[[定制软件|/services/software-development]]合作：与土地运营商共同做发现、市场信息架构、地图集成搜索，以及把浏览者转为中介成交的询盘闭环。",
+							"决策者在意产品是否完整——品牌化404、一致的导航，以及匹配马来西亚土地用语的筛选。正是这些细节，把市场与目录区分开来。"
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "LandStore首页主视觉，土地搜索筛选叠在马来西亚地貌之上",
+							"caption": "首页——面向1000+土地房源的搜索优先发现"
+						}
+					],
+					[
+						{
+							"alt": "LandStore探索地图，位于landstore.my/explore，含筛选、房源卡片与马来西亚地图钉",
+							"caption": "探索地图——筛选、卡片与地图钉同处一个工作区"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "LandStore是什么？",
+						"answer": "LandStore.my是面向马来西亚的土地中介市场。买家通过搜索与地图视图浏览农业、工业与商业用地，再在平台上把地块加入短名单并发送询盘。"
+					},
+					{
+						"question": "Truestack为LandStore构建了什么？",
+						"answer": "Truestack以定制软件开发方式构建LandStore：首页搜索、带马来西亚土地筛选的探索地图、房源展示、短名单与询盘流程。产品按马来西亚土地成交的筛选方式塑造——而不是通用房产模板。了解我们的定制软件服务，请访问truestack.my/services/software-development。"
+					},
+					{
+						"question": "LandStore交付用了多久？",
+						"answer": "LandStore作为约八个月的定制软件合作交付，覆盖发现、市场体验、地图集成搜索与询盘流程，直至上线。"
+					}
+				],
+				"seo": {
+					"title": "土地交易平台｜LandStore",
+					"description": "土地交易平台案例：Truestack为LandStore.my打造马来西亚土地中介市场，含地图探索、领域筛选、短名单与询盘流程，约八个月交付。",
+					"keywords": [
+						"LandStore",
+						"马来西亚土地市场",
+						"房产科技案例",
+						"马来西亚定制软件",
+						"Truestack案例"
+					]
+				}
+			},
+			"cashsouk": {
+				"headline": "面向SC的P2P市场，用来连接资本与增长。",
+				"lead": "CashSouk把投资者与经过核验的融资机会连在一起。我们构建了完整的TrueP2P™栈——市场、双侧旅程，以及受监管平台所需的运营轨道。",
+				"tags": [
+					"TrueP2P™",
+					"对齐SC",
+					"市场"
+				],
+				"stats": [
+					{
+						"label": "产品",
+						"value": "TrueP2P™"
+					},
+					{
+						"label": "上线",
+						"value": "9个月"
+					},
+					{
+						"label": "监管机构",
+						"value": "SC Malaysia"
+					}
+				],
+				"productPage": {
+					"label": "TrueP2P™",
+					"blurb": "对齐SC的点对点融资平台——投资者与发行人旅程、市场，以及受监管的运营轨道。"
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "挑战",
+						"paragraphs": [
+							"点对点融资只有在市场两侧信任同一套系统时才成立。投资者需要清晰的挂牌——利润率、风险等级、融资进度。企业需要申请融资的路径，而不是另做一份运营表格。",
+							"CashSouk需要一套对齐证券监督委员会预期的生产平台：投资者与发行人旅程、市场透明度，以及在规模扩大时仍可审计的运营控制。这正是[[TrueP2P™|/services/p2p-software-development]]的工作。"
+						]
+					},
+					{
+						"number": "02",
+						"title": "我们构建了什么",
+						"paragraphs": [
+							"我们在[[TrueP2P™|/services/p2p-software-development]]上交付CashSouk——即Truestack的点对点平台工程。投资者在活期组合中跟踪票据、回报与到期。发行人沿结构化融资申请推进——从合同细节到声明——而不会丢失进度。",
+							"运营方得到真正需要用来运转的账簿：投资者、还款、运营、Ta'widh与Gharamah账户的分桶余额；从入驻到票据的生命周期管道；以及对照Curlec的网关对账，让结算例外留在清晰队列中。",
+							"公开站点仍以双重行动开场——投资或获得融资——但对决策者的证明在登录之后：三个界面、一本账本，以及按对齐SC的日常运营塑造的工作流。"
+						]
+					},
+					{
+						"number": "03",
+						"title": "我们如何交付",
+						"paragraphs": [
+							"CashSouk是为期九个月的平台构建：市场体验、投资者与发行人旅程，以及[[TrueP2P™|/services/p2p-software-development]]运营核心——资金分桶、付款、提现与定时对账。我们在平台扩容时继续提供支持。",
+							"对评估P2P构建的决策者而言，证据是具体的：已上线的马来西亚市场品牌、双侧产品思考，以及按受监管上线节奏交付——而不是卡在合规的原型。"
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "CashSouk首页主视觉，含投资与获得融资行动号召",
+							"caption": "首页——面向投资者与企业的双侧旅程"
+						},
+						{
+							"alt": "CashSouk投资者投资组合，含票据卡片与回报指标",
+							"caption": "投资者组合——票据、回报与到期集中一览"
+						}
+					],
+					[
+						{
+							"alt": "CashSouk发行人多步融资申请，含合同细节表单",
+							"caption": "发行人申请——分步引导的融资收件"
+						},
+						{
+							"alt": "CashSouk后台财务仪表盘，含分桶余额与生命周期管道",
+							"caption": "后台财务——分桶余额与运营生命周期管道"
+						}
+					],
+					[
+						{
+							"alt": "CashSouk后台对照Curlec的网关对账，含每日运行历史",
+							"caption": "网关对账——每日Curlec结算与例外队列"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "CashSouk是什么？",
+						"answer": "CashSouk是马来西亚点对点融资市场，把投资者与经过核验的企业融资机会连在一起。公开产品覆盖市场发现，以及开始投资或申请融资的分开路径。"
+					},
+					{
+						"question": "CashSouk的底层技术是什么？",
+						"answer": "CashSouk基于TrueP2P™构建，即Truestack面向马来西亚的点对点平台栈。它覆盖投资者组合、发行人融资申请、后台资金分桶与生命周期运营，以及网关对账——并配备对齐SC的运营轨道。了解更多，请访问truestack.my/services/p2p-software-development。"
+					},
+					{
+						"question": "CashSouk构建用了多久？",
+						"answer": "CashSouk作为完整的TrueP2P™平台合作，大约用九个月交付——市场体验、双侧旅程与受监管运营基础直至上线，并持续提供平台支持。"
+					}
+				],
+				"seo": {
+					"title": "P2P融资平台｜CashSouk",
+					"description": "P2P融资平台案例：Truestack基于TrueP2P™为CashSouk构建投资者组合、发行人申请、后台资金分桶与网关对账，面向SC马来西亚。",
+					"keywords": [
+						"CashSouk",
+						"马来西亚P2P放贷",
+						"TrueP2P案例",
+						"点对点融资",
+						"SC市场"
+					]
+				}
+			},
+			"eviebikes": {
+				"headline": "为销往欧盟而构建的欧洲品牌。",
+				"lead": "EVIE Bikes是销往欧盟的欧洲智能电动自行车品牌。我们在Shopify上构建其电商体验——商品叙事、面向转化的商品页，以及与硬件气质相符的店面。",
+				"tags": [
+					"定制软件",
+					"电商"
+				],
+				"stats": [
+					{
+						"label": "合作",
+						"value": "定制软件"
+					},
+					{
+						"label": "平台",
+						"value": "Shopify"
+					}
+				],
+				"productPage": {
+					"label": "定制软件开发",
+					"blurb": "网页应用、电商与品牌平台，从简报到上线——包括按您销售方式塑造的Shopify店面。"
+				},
+				"sections": [
+					{
+						"number": "01",
+						"title": "挑战",
+						"paragraphs": [
+							"EVIE需要的不只是带商品照片的主题。作为销往欧盟的欧洲品牌，店铺必须承载高端硬件叙事、清晰的车型选择（S1、T1、L1），以及欧盟买家期待的信任标识——保修、认证、自欧盟发货——同时避免千篇一律。",
+							"简报是Shopify上的完整品牌商务体验：能卖出行骑感受的首页、能促成下单的商品页，以及设计、可持续与EVIE应用的配套页面——全部统一在同一套视觉系统下。"
+						]
+					},
+					{
+						"number": "02",
+						"title": "我们构建了什么",
+						"paragraphs": [
+							"通过我们的[[定制软件开发|/services/software-development]]实践，我们在Shopify上构建EVIE店面。首页以生活方式主视觉叙事开场，并给出购买或探索的直接路径。商品页承载图库、价格、紧迫感、信任徽标，以及按欧盟购物者调校的功能列表。",
+							"在目录之外，我们塑造品牌页——设计理念、可持续与配套应用——让网站既卖产品，也卖背后的公司。导航保持简单：电单车、探索、评价、查找经销商。",
+							"细节体现在转化层：评价数量、认证提示、欧盟发货线索，以及购买前提问的对话路径。读起来是欧洲消费品牌，而不是库存模板。"
+						]
+					},
+					{
+						"number": "03",
+						"title": "我们如何交付",
+						"paragraphs": [
+							"这是Shopify上的[[定制软件|/services/software-development]]电商合作：信息架构、主题与页面构建、商品模板，以及品牌内容界面，直至在[[eviebikes.com|https://eviebikes.com]]上线。",
+							"对评估品牌店面的决策者而言，证据已在欧盟市场在线——从第一印象到商品页的打磨购买旅程，按品牌构建，而不是钉在默认主题上。"
+						]
+					}
+				],
+				"galleries": [
+					[
+						{
+							"alt": "EVIE Bikes首页主视觉，含生活方式电单车摄影与Ride Smarter标题",
+							"caption": "首页——欧洲品牌叙事，购买路径清晰"
+						},
+						{
+							"alt": "EVIE T1商品信息功能卡片，覆盖电机、扭矩传感器与变速器",
+							"caption": "EVIE T1商品信息——功能叙事导向购买"
+						}
+					],
+					[
+						{
+							"alt": "EVIE T1商品页，含图库、价格与欧盟信任徽标",
+							"caption": "商品页——图库、价格与欧盟信任标识"
+						},
+						{
+							"alt": "Shopify店面上的EVIE S1商品页",
+							"caption": "EVIE S1——按车型定制的商品旅程"
+						}
+					],
+					[
+						{
+							"alt": "EVIE Bikes设计品牌页",
+							"caption": "设计——目录之外的品牌叙事"
+						},
+						{
+							"alt": "EVIE Bikes配套应用页",
+							"caption": "EVIE应用——智能电单车配套故事"
+						}
+					]
+				],
+				"faq": [
+					{
+						"question": "EVIE Bikes是什么？",
+						"answer": "EVIE Bikes是销往欧盟的欧洲智能电动自行车品牌。公开店面eviebikes.com展示EVIE S1、T1与L1等车型，并提供电商结账、品牌叙事与面向欧盟的信任标识。"
+					},
+					{
+						"question": "Truestack为EVIE Bikes构建了什么？",
+						"answer": "Truestack以Shopify上的定制软件构建EVIE的电商体验——首页与目录、面向转化的商品页，以及设计、可持续与配套应用的品牌页。该工作属于Truestack的定制软件开发实践。"
+					},
+					{
+						"question": "EVIE Bikes在哪里销售？",
+						"answer": "EVIE Bikes是面向欧盟市场销售的欧洲品牌。店面为欧盟购物者而建，商品与信任信息与该地区对齐。"
+					}
+				],
+				"seo": {
+					"title": "Shopify电商｜EVIE Bikes",
+					"description": "电商Shopify案例：Truestack为EVIE Bikes在Shopify上打造销往欧盟的欧洲智能电单车品牌店面、商品页与品牌叙事，完成上线。",
+					"keywords": [
+						"EVIE Bikes",
+						"Shopify电商案例",
+						"欧洲电单车品牌",
+						"定制软件开发",
+						"欧盟电商"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,55 +1,20 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const stages = [
-	{
-		step: "1",
-		tag: "Free",
-		title: "We tell you where you stand",
-		body: "A consultation on your regulatory position, what you are actually trying to build, and roughly what it costs. If the answer is that you are not ready, we say so.",
-		highlight: false,
-	},
-	{
-		step: "2",
-		tag: "One contract",
-		title: "One plan across licence and build",
-		body: "Compliance milestones and delivery milestones on the same timeline, with named owners on both sides. You are not the integration layer between two vendors.",
-		highlight: false,
-	},
-	{
-		step: "3",
-		tag: "Proven base",
-		title: "You start from what already runs",
-		body: "Your platform is configured from systems already live with other clients, not built from zero. Custom work goes where your business is genuinely different.",
-		highlight: false,
-	},
-	{
-		step: "4",
-		tag: "Ongoing",
-		title: "We stay after go-live",
-		body: "Renewals, annual submissions, support and the next release. The same team, not a handover to an account manager who was not there.",
-		highlight: true,
-	},
+	{ key: "stand", step: "1", highlight: false },
+	{ key: "plan", step: "2", highlight: false },
+	{ key: "base", step: "3", highlight: false },
+	{ key: "stay", step: "4", highlight: true },
 ] as const;
 
-const teams = [
-	{
-		title: "Product & engineering",
-		body: "Architects, product, mobile and cloud — one delivery team, from workshop through launch.",
-	},
-	{
-		title: "Compliance & operations",
-		body: "Licensing, filings and go-live support, running alongside the build rather than after it.",
-	},
-	{
-		title: "Design & experience",
-		body: "Interfaces your counter staff, your investors and your borrowers can actually use without training.",
-	},
-] as const;
+const teams = ["engineering", "compliance", "design"] as const;
 
 export function AboutHowWeWork() {
+	const t = useTranslations("About");
 	return (
 		<section
 			id="how"
@@ -65,21 +30,19 @@ export function AboutHowWeWork() {
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5 }}
 				>
-					<p className="mb-3 type-eyebrow text-blue-400">How we work</p>
+					<p className="mb-3 type-eyebrow text-blue-400">{t("howWeWork.eyebrow")}</p>
 					<h2 id="about-how-heading" className="type-h2 text-white">
-						What working with us actually looks like.
+						{t("howWeWork.title")}
 					</h2>
 					<p className="mt-4 max-w-2xl type-lede text-slate-400">
-						No discovery phase that bills for six weeks and ends in a
-						slide deck. Four stages, whether the job is a licence
-						conversion, a platform, an integration or a custom build.
+						{t("howWeWork.lede")}
 					</p>
 				</motion.div>
 
 				<div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 					{stages.map((stage, index) => (
 						<motion.article
-							key={stage.step}
+							key={stage.key}
 							className={cn(
 								"rounded-2xl border p-6 md:p-7",
 								stage.highlight
@@ -110,12 +73,14 @@ export function AboutHowWeWork() {
 											: "text-slate-500",
 									)}
 								>
-									{stage.tag}
+									{t(`howWeWork.stages.${stage.key}.tag`)}
 								</span>
 							</div>
-							<h3 className="type-subhead text-white">{stage.title}</h3>
+							<h3 className="type-subhead text-white">
+								{t(`howWeWork.stages.${stage.key}.title`)}
+							</h3>
 							<p className="mt-2 type-ui leading-relaxed text-slate-400">
-								{stage.body}
+								{t(`howWeWork.stages.${stage.key}.body`)}
 							</p>
 						</motion.article>
 					))}
@@ -124,7 +89,7 @@ export function AboutHowWeWork() {
 				<div className="mt-5 grid gap-5 md:grid-cols-3">
 					{teams.map((team, index) => (
 						<motion.article
-							key={team.title}
+							key={team}
 							className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
 							initial={{ opacity: 0, y: 16 }}
 							whileInView={{ opacity: 1, y: 0 }}
@@ -134,9 +99,11 @@ export function AboutHowWeWork() {
 								delay: 0.24 + index * 0.08,
 							}}
 						>
-							<h3 className="type-subhead text-white">{team.title}</h3>
+							<h3 className="type-subhead text-white">
+								{t(`howWeWork.teams.${team}.title`)}
+							</h3>
 							<p className="mt-1.5 type-ui leading-relaxed text-slate-400">
-								{team.body}
+								{t(`howWeWork.teams.${team}.body`)}
 							</p>
 						</motion.article>
 					))}

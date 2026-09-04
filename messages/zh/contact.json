@@ -1,0 +1,44 @@
+{
+	"_status": "ai-draft",
+	"Contact": {
+		"meta": {
+			"title": "KPKT牌照咨询",
+			"description": "向吉隆坡Truestack预约KPKT牌照、合规或贷款管理系统免费咨询。咨询完全免费、无任何义务，我们会先帮您梳理牌照路径与放贷软件的下一步。",
+			"openGraphTitle": "KPKT牌照咨询 | Truestack",
+			"openGraphDescription": "向吉隆坡Truestack预约KPKT牌照、合规或贷款管理系统免费咨询。咨询完全免费、无任何义务，我们会先帮您梳理牌照路径与放贷软件的下一步。"
+		},
+		"schema": {
+			"breadcrumbHome": "首页",
+			"breadcrumbCurrent": "联系我们",
+			"name": "KPKT牌照咨询 | Truestack",
+			"description": "向Truestack预约KPKT牌照、合规或贷款管理系统免费咨询。吉隆坡团队，咨询免费且无义务。",
+			"serviceName": "免费咨询",
+			"serviceType": "金融科技与KPKT牌照咨询",
+			"serviceDescription": "免费、无义务的咨询，涵盖KPKT账户管理（pembaharuan lesen PPW / KK、permit iklan）、线上放贷牌照 (e-Lending)、马来西亚放贷机构软件，以及为持牌放贷公司与金融科技运营商提供的定制金融科技开发。",
+			"offerName": "免费咨询",
+			"offerDescription": "初步咨询，梳理您的KPKT牌照、合规或金融科技软件需求——免费。"
+		},
+		"hero": {
+			"title": "预约KPKT牌照与放贷软件免费咨询",
+			"subtitle": "告诉我们您的项目。我们将梳理软件开发、合规需求或KPKT牌照事宜——免费，无任何义务。"
+		},
+		"imageAlt": "一名男子在温暖的办公室桌前，用手机查看咨询",
+		"cards": {
+			"copyAria": "复制{label}",
+			"phone": {
+				"title": "电话",
+				"description": "通过WhatsApp联系我们。点按即可开始对话。",
+				"label": "电话",
+				"copyLabel": "电话号码",
+				"whatsapp": "打开WhatsApp"
+			},
+			"email": {
+				"title": "电子邮件",
+				"description": "发送电子邮件进行一般咨询或获取支持。",
+				"label": "电子邮件",
+				"copyLabel": "电子邮件",
+				"send": "发送邮件"
+			}
+		}
+	}
+}

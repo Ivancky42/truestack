@@ -1,0 +1,349 @@
+{
+	"_status": "source",
+	"TrueSyariah": {
+		"meta": {
+			"title": "TrueSyariah™ | Shariah Digital Lending Licence & Platform Malaysia",
+			"description": "Launch licensed Shariah digital lending in Malaysia — entity, committee, licence and TrueSyariah™. Tawarruq, Ta'widh and Gharamah, books ring-fenced.",
+			"openGraphTitle": "TrueSyariah™ | Shariah Digital Lending Licence & Platform Malaysia",
+			"openGraphDescription": "Launch a licensed Shariah digital lending business in Malaysia — Tawarruq financing, segregated Ta'widh and Gharamah ledgers, books ring-fenced from conventional lending.",
+			"ogImageAlt": "TrueSyariah Shariah-compliant digital lending platform — Tawarruq, Ta'widh and Gharamah modules"
+		},
+		"schema": {
+			"productName": "TrueSyariah™",
+			"alternateNames": [
+				"TrueSyariah",
+				"Shariah Digital Lending Platform",
+				"Shariah lending platform Malaysia",
+				"Islamic loan management system Malaysia",
+				"Shariah Digital Lending Malaysia"
+			],
+			"offer": {
+				"name": "TrueSyariah Dedicated Deployment",
+				"description": "Dedicated AWS Malaysia deployment for Shariah digital lending — entity and licence support, Tawarruq commodity financing, segregated Ta'widh and Gharamah ledgers, on-prem PKI signing, e-KYC, web and native mobile origination."
+			},
+			"featureList": [
+				"Tawarruq commodity financing via TrueCommodity™",
+				"Segregated Ta'widh and Gharamah late-fee ledgers",
+				"Charity disbursement workflow for Gharamah",
+				"On-premises Trustgate PKI digital signing",
+				"e-KYC with MyKad OCR, liveness and biometric match",
+				"Branded web and native iOS & Android customer apps",
+				"Dedicated AWS Malaysia account, database and secrets",
+				"Shariah digital lending regulatory compliance",
+				"Shariah committee audit pack and reporting"
+			]
+		},
+		"hero": {
+			"eyebrow": "Lesen Pinjaman Digital Syariah",
+			"title": "Start a Shariah financing business, properly, from the beginning.",
+			"lede1": "Most operators discover the hard parts late: the committee wants contracts they have not seen, the auditor wants the conventional book kept out of it, and the software was never built to tell Ta'widh from Gharamah.",
+			"lede2": "We take you from company structure through committee appointment and the licence application, and hand you a platform that was Shariah on the day it was designed.",
+			"ctaSecondary": "See the licensing path",
+			"chips": {
+				"tawarruq": "Tawarruq financing",
+				"charges": "Segregated Ta'widh & Gharamah",
+				"ringfence": "Books ring-fenced"
+			}
+		},
+		"draftRules": {
+			"ariaLabel": "Upcoming KPKT Shariah credit rules",
+			"lead": "Following the draft KPKT rules?",
+			"body": "The CCA 2025 Garis Panduan sets what a Shariah credit system has to evidence — governance, advisor, audit and iDEAL.",
+			"cta": "Read the draft requirements"
+		},
+		"journey": {
+			"eyebrow": "The licensing path",
+			"title": "Four stages, in the order the regulator expects them.",
+			"lede": "Shariah-based lending has its own approval pathway, and in practice its own entity. Most of the delay in an application is not the regulator: it is contracts drafted before anyone asked the committee.",
+			"photoAlt": "Two professionals at a Malaysian office table reviewing licensing documents together",
+			"tablistAria": "Licensing stages",
+			"stageLabel": "STAGE {n}",
+			"stages": {
+				"entity": {
+					"label": "Entity",
+					"title": "Entity & structure",
+					"summary": "A Shariah operating company incorporated separately from any conventional licence holder, with capital, directors and premises checked before anything is filed.",
+					"detail": "A Shariah operating company is incorporated separately from any conventional licence holder, because the two cannot share one entity. We check company form, paid-up capital, directors and premises before anything is filed."
+				},
+				"committee": {
+					"label": "Committee",
+					"title": "Committee & contracts",
+					"summary": "A Shariah advisor or committee appointed — yours, or one of our partner advisors — and your Aqad, Tawarruq sequence and fee structure taken through to written approval.",
+					"detail": "Your Shariah advisor or committee is onboarded — if you do not have one, we can introduce partner advisors who have worked with us before, which tends to move faster. We then take the Aqad, the Tawarruq sequence, the profit basis and the Ta'widh and Gharamah caps through to written approval. Starting this early is the single biggest thing that keeps an application on schedule."
+				},
+				"submission": {
+					"label": "Submission",
+					"title": "Licence application",
+					"summary": "The Shariah digital lending submission drafted and filed together with the approved contracts, so nothing goes back for a second look.",
+					"detail": "The Shariah digital lending submission is drafted and filed alongside your approved contracts and supporting documents, scoped against your existing group if you already hold a conventional licence, and we handle the correspondence through to approval."
+				},
+				"golive": {
+					"label": "Go-live",
+					"title": "Build & go-live",
+					"summary": "Dedicated AWS Malaysia build, integrations wired in, UAT and penetration testing, committee sign-off, then the first Tawarruq trades under supervision.",
+					"detail": "A dedicated AWS Malaysia account is stood up and TrueSyariah deployed, with TrueCommodity, Trustgate, e-KYC and payment gateways wired in. Then UAT, penetration testing, supervisory walkthrough and committee sign-off, before the first disbursement."
+				}
+			}
+		},
+		"system": {
+			"eyebrow": "Sistem pengurusan pembiayaan",
+			"title": "A complete financing management system, Shariah in the engine.",
+			"lede": "Everything a serious operator needs — origination, assessment, disbursement, schedules, collections, documents, reporting — with the Shariah mechanics built into the core rather than bolted on. Not a conventional system with Islamic labels applied to it.",
+			"lifecycleEyebrow": "Lifecycle of a facility",
+			"recordEyebrow": "On every facility record",
+			"recordLede": "The fields a conventional system has nowhere to put.",
+			"modulesEyebrow": "Modules",
+			"dedicatedTitle": "Dedicated deployment only",
+			"dedicatedBody": "There is no shared tier. Every operator gets an isolated AWS Malaysia account, its own database and its own secrets vault, because a Shariah book cannot sit on infrastructure shared with conventional lending. The separation has to be real, not a filter on a query.",
+			"lifecycle": {
+				"application": {
+					"title": "Application and e-KYC",
+					"body": "Three channels: a counter flow for branch officers, a branded web portal on your own domain, and native iOS and Android apps. MyKad OCR, liveness and biometric match verify identity; CTOS reports and SSM lookups attach to the file as evidence."
+				},
+				"assessment": {
+					"title": "Assessment and approval",
+					"body": "Affordability, exposure and policy rules run against your own criteria. Approvals record the officer, the limit and the reasoning, and exceptions are logged rather than settled in a corridor."
+				},
+				"aqad": {
+					"title": "Aqad and digital signing",
+					"body": "The agreement generates from the contract version your committee approved and is signed against MSC Trustgate PKI keys held on your own premises, under the Digital Signature Act 1997. Customers sign remotely; the signed PDF returns to the file."
+				},
+				"tawarruq": {
+					"title": "Tawarruq trade, then disbursement",
+					"body": "A real commodity transaction books through TrueCommodity™ — financier purchase, sale to customer at deferred profit, onward sale to a broker — each leg time-stamped in a tamper-evident log. Only then do the proceeds move by FPX or DuitNow."
+				},
+				"servicing": {
+					"title": "Servicing and collections",
+					"body": "Instalment schedules, receipts, reminders and notices run automatically. A late payment splits into Ta'widh and Gharamah at the journal level, under the cap-aware rules your committee set, and the customer sees the split disclosed."
+				},
+				"settlement": {
+					"title": "Settlement and discharge",
+					"body": "Early settlement follows the basis your contract sets out rather than a conventional rebate formula, discharge letters sign the same way the Aqad did, and the file closes with its full trail intact."
+				}
+			},
+			"recordFields": {
+				"contract": {
+					"title": "Contract version",
+					"body": "The Aqad in force, with its approval date"
+				},
+				"commodity": {
+					"title": "Commodity trade legs",
+					"body": "Purchase, sale, onward sale, broker reference"
+				},
+				"compensation": {
+					"title": "Compensation ledger",
+					"body": "Evidenced cost of recovery, retained within caps"
+				},
+				"penalty": {
+					"title": "Penalty ledger",
+					"body": "Segregated, with the charity disbursement schedule"
+				},
+				"profit": {
+					"title": "Profit, never interest",
+					"body": "Margin from the commodity sale; there is no interest field"
+				}
+			},
+			"modules": {
+				"customer": {
+					"title": "Customer & file",
+					"body": "One record across facilities, holding documents, identity checks, credit reports and correspondence in the same place."
+				},
+				"origination": {
+					"title": "Origination",
+					"body": "Configurable financing products, application forms, approval hierarchy and limits, with a queue your officers actually work from."
+				},
+				"commodity": {
+					"title": "Commodity trading",
+					"body": "TrueCommodity™ routes each Tawarruq trade to a live broker, reconciles the legs and archives the contracts as committee evidence."
+				},
+				"schedules": {
+					"title": "Schedules & profit",
+					"body": "Instalments generated from the deferred sale price, with restructuring, deferment and early settlement on your contracted basis."
+				},
+				"lateCharge": {
+					"title": "Late charge engine",
+					"body": "Cap-aware Ta'widh and Gharamah accumulation, posted to two ledger accounts that never combine, with the trial balance to prove it."
+				},
+				"collections": {
+					"title": "Collections",
+					"body": "Ageing buckets, reminder and notice workflows, promise-to-pay tracking and officer assignment with the full contact history."
+				},
+				"documents": {
+					"title": "Documents & signing",
+					"body": "Aqad, offer letters, receipts, statements, notices and discharge letters generated from live data, versioned and signed on-premises."
+				},
+				"reporting": {
+					"title": "Reporting & audit packs",
+					"body": "Portfolio, ageing and collection reporting for the board, and the Shariah audit pack assembled for the committee on demand."
+				}
+			}
+		},
+		"governance": {
+			"eyebrow": "Shariah governance",
+			"title": "Your committee should be able to check the system, not take your word for it.",
+			"lede1": "Shariah compliance is not a statement in a policy document. It is whether a specific disbursement, on a specific date, followed the sequence the committee approved — and whether anyone can still prove it two years later.",
+			"lede2": "TrueSyariah is built so the answer is always in the system. We work alongside your appointed advisor and can introduce partner advisors we have worked with before, but the rulings are always theirs.",
+			"cards": {
+				"contracts": {
+					"title": "Contracts held as configuration",
+					"body": "The Aqad your committee approved is what the system executes. Change the terms and it is a versioned change with a date and an approver, not a quiet edit."
+				},
+				"trades": {
+					"title": "Every trade leg recorded",
+					"body": "Each Tawarruq disbursement stores its commodity purchase, sale and onward sale with timestamps and broker references. Sampling an old file takes seconds."
+				},
+				"charity": {
+					"title": "Charity disbursement is tracked",
+					"body": "Gharamah collected, Gharamah still held, Gharamah paid out and to whom. The one number a committee always asks for, and the one nobody can find."
+				},
+				"audit": {
+					"title": "Audit packs on demand",
+					"body": "A period export with the contracts in force, trades executed, charges split and exceptions raised — assembled by the system, not by your operations team."
+				}
+			}
+		},
+		"ringfence": {
+			"eyebrow": "Ring-fencing",
+			"title": "If you also lend conventionally, the two books never touch.",
+			"lede": "Commingling is the fastest way to lose a Shariah position, and it usually happens by accident — one shared database, one shared income account, one report that adds both together.",
+			"shariahHeading": "Shariah book",
+			"conventionalHeading": "Conventional book",
+			"sep": "SEP",
+			"shariah": [
+				"Own legal entity and licence",
+				"Own database and cloud account",
+				"Tawarruq-backed disbursement only",
+				"Ta'widh income, Gharamah to charity",
+				"Reports to the Shariah committee"
+			],
+			"conventional": [
+				"Separate KPKT licence and entity",
+				"Runs on TrueKredit™, separately",
+				"Interest-bearing instruments",
+				"Late charges as ordinary income",
+				"Reports to the board only"
+			],
+			"footnote": "Group-level consolidation stays possible. What is not possible is a single record, account or report that mixes the two. Conventional books run on <truekredit>TrueKredit™</truekredit>."
+		},
+		"terms": {
+			"eyebrow": "Terminology",
+			"title": "The words your system has to understand.",
+			"lede": "Conventional lending software treats these as labels. In a Shariah platform each one changes what the system is allowed to do.",
+			"select": "Select a term",
+			"tablistAria": "Shariah terms",
+			"inPlatform": "In the platform",
+			"items": {
+				"tawarruq": {
+					"name": "Tawarruq",
+					"gloss": "Commodity monetisation",
+					"body": "A sequence of real commodity sales that puts cash in a customer's hands without a loan bearing interest. The financier buys a commodity, sells it to the customer at a deferred marked-up price, and the customer sells it on for immediate cash.",
+					"system": "Every disbursement triggers a live broker trade. The purchase, sale and onward sale are recorded with timestamps and references, so the transaction can be reconstructed years later."
+				},
+				"tawidh": {
+					"name": "Ta'widh",
+					"gloss": "Compensation for actual loss",
+					"body": "A charge that compensates the financier for loss genuinely incurred because a payment was late. Because it corresponds to real loss, it may be recognised as income, subject to the caps your committee sets.",
+					"system": "Calculated against the approved rate and cap, posted to the income ledger, and shown separately on the customer's statement so the two late charges are never confused."
+				},
+				"gharamah": {
+					"name": "Gharamah",
+					"gloss": "Penalty, not income",
+					"body": "A penalty intended to deter late payment rather than to compensate for loss. It cannot be recognised as income and must be channelled to charity, which is where most conventional systems quietly get it wrong.",
+					"system": "Held in a segregated ledger that never touches revenue, with collected, held and disbursed balances tracked and a record of which charity received what."
+				},
+				"aqad": {
+					"name": "Aqad",
+					"gloss": "The contract itself",
+					"body": "The contract between financier and customer. In Shariah financing its wording, sequence and disclosure are what make the transaction valid — not merely a document to be signed at the end.",
+					"system": "Held as versioned configuration, not as a PDF template. The terms the committee approved are the terms the system executes, and every change carries a date and an approver."
+				},
+				"riba": {
+					"name": "Riba",
+					"gloss": "What the structure exists to avoid",
+					"body": "Interest, or any unjustified increase on a debt. Avoiding it is the reason for the commodity trade, the reason late charges split in two, and the reason the books are ring-fenced.",
+					"system": "There is no interest field. Profit comes from the commodity sale margin, which means the system cannot accidentally be configured to charge interest."
+				}
+			}
+		},
+		"receive": {
+			"eyebrow": "What you receive",
+			"title": "A platform, and the parts that make it lend.",
+			"footnote": "One vendor and one contract across all of it, which is also why the integrations cost you nothing extra. Pursuing SC-regulated peer-to-peer financing instead? See <p2p>TrueP2P™</p2p>.",
+			"items": {
+				"commodity": {
+					"title": "Commodity trading",
+					"body": "Live broker routing for each Tawarruq disbursement, with the trade legs reconciled and stored against the financing record."
+				},
+				"identity": {
+					"title": "Identity & signing",
+					"body": "MyKad e-KYC with liveness and biometric match, and digital signing under the Digital Signature Act with on-premises keys."
+				},
+				"apps": {
+					"title": "Customer apps",
+					"body": "Web and native iOS and Android origination under your own brand, with the Aqad presented in the language your customer reads."
+				},
+				"payments": {
+					"title": "Payments & collections",
+					"body": "FPX and DuitNow disbursement and collection, recurring mandates, and reconciliation that posts to the right ledger automatically."
+				},
+				"credit": {
+					"title": "Credit & company data",
+					"body": "CTOS reports and SSM company lookups held in the customer file, so due diligence is evidenced rather than remembered."
+				},
+				"infrastructure": {
+					"title": "Dedicated infrastructure",
+					"body": "Your own AWS account, database and secrets in Malaysia. Nothing shared with another operator, Shariah or otherwise."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "Questions",
+			"title": "Before you commit capital",
+			"lede": "If your question is not here, ask it in the consultation. It is free and we would rather answer it early.",
+			"items": [
+				{
+					"question": "What licence do I actually need?",
+					"answer": "Shariah-based money lending in Malaysia has its own approval pathway and, in practice, requires a separate legal entity from any conventional digital lending licence holder. You will also need a Shariah committee or advisor appointed and your financing contracts approved before you lend. Truestack scopes the Shariah digital lending application alongside your existing group if you already hold a conventional licence."
+				},
+				{
+					"question": "Can I run Shariah and conventional lending in one company?",
+					"answer": "No. The two licences cannot sit in the same operating company. The Shariah entity must keep its books, Ta'widh and Gharamah accounts, committee oversight and complaint handling fully ring-fenced from any riba-based lending, on separate infrastructure. We set both up if you are running the two side by side — TrueSyariah™ on one entity, TrueKredit™ on the other."
+				},
+				{
+					"question": "Do you provide the Shariah advisor?",
+					"answer": "Not as an authority — we do not issue fatwa, and the appointment is yours. We can introduce partner Shariah advisors we have worked with before, which usually makes the process smoother because they already know how the platform evidences their rulings. The contracts and caps in TrueSyariah always follow what your appointed advisor has approved in writing."
+				},
+				{
+					"question": "Is there a cheaper shared version of TrueSyariah?",
+					"answer": "There is not, deliberately. A Shariah book cannot share infrastructure with conventional lending, so every TrueSyariah deployment is dedicated: an isolated AWS Malaysia account, its own database, its own secrets vault, and on-premises PKI signing. Separation is the architecture, not a filter on a query."
+				},
+				{
+					"question": "How is TrueSyariah different from TrueKredit?",
+					"answer": "TrueKredit™ is the conventional loan management system for KPKT-licensed money lenders. TrueSyariah shares the same lifecycle, compliance core and dedicated deployment, but the financing engine is rebuilt around Shariah contracts: commodity trades instead of loans, two segregated late-charge ledgers, and documents shaped for a Shariah committee rather than a conventional audit. If you hold a conventional money-lending licence, you want TrueKredit. If you are licensed — or applying — for Shariah digital lending, you want TrueSyariah."
+				},
+				{
+					"question": "How does Tawarruq work inside TrueSyariah?",
+					"answer": "Tawarruq is a sequence of real commodity sales that delivers financing proceeds without interest. Every disbursement books a commodity transaction through TrueCommodity™: financier purchase, sale to the customer at deferred profit, and the customer's onward sale to a broker. Each leg is time-stamped in a tamper-evident log. The customer receives clean MYR proceeds; the operator books a deferred receivable at the agreed profit rate."
+				},
+				{
+					"question": "What is the difference between Ta'widh and Gharamah?",
+					"answer": "Ta'widh (تعويض) is the portion of a late charge representing the operator's actual, evidenced cost of recovery, and may be retained within Shariah-approved caps. Gharamah (غرامة) is the residual penalty above that cost; it is posted to a separate ledger and disbursed to approved charities on a documented, committee-signed schedule. TrueSyariah splits every late payment at the journal level so the two never combine."
+				},
+				{
+					"question": "How do customers apply for financing?",
+					"answer": "TrueSyariah includes three origination channels: a counter flow for branch officers, a branded web portal on your own domain, and native iOS and Android apps published under your brand. Customers complete e-KYC (MyKad OCR and liveness), accept the Tawarruq commodity sale, sign the Aqad digitally, and track repayments, profit and Ta'widh / Gharamah disclosures from any device."
+				},
+				{
+					"question": "Which integrations come with TrueSyariah?",
+					"answer": "Out of the box: TrueCommodity™ for Tawarruq trades, TrueIdentity™ for MyKad e-KYC, MSC Trustgate for on-premises PKI signing, CTOS for credit reports, TrueSSM™ for SSM company lookups, and FPX and DuitNow for disbursement and collection. They roll into a single Truestack contract, so your Shariah operating company is not managing five vendors in parallel."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Tell us what you are trying to launch.",
+			"body": "A free consultation on your entity structure, what your committee will want to see, and what the licence and platform realistically cost. We like to start early, so engineering milestones line up with your supervisory timeline.",
+			"secondary": "Need licensing support?",
+			"photoAlt": "A financing advisor in a Kuala Lumpur office talking through documents with a client"
+		}
+	}
+}

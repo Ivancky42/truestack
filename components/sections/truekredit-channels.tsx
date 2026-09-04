@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Award, Globe, Smartphone, Store } from "lucide-react";
 import {
@@ -12,7 +13,6 @@ import { cn } from "@/lib/utils";
 
 const ADMIN_SHOT = {
 	src: "/truekredit/hero_dashboard_screenshot.png",
-	alt: "TrueKredit admin dashboard — the same loan file your counter team works from",
 	width: 3368,
 	height: 2662,
 } as const;
@@ -20,23 +20,14 @@ const ADMIN_SHOT = {
 const CHANNELS = [
 	{
 		id: "walkin",
-		label: "Walk-in",
-		title: "Counter",
-		desc: "MyKad, identity check and the same approval path.",
 		editions: ["standard", "pro"] as readonly ("standard" | "pro")[],
 	},
 	{
 		id: "website",
-		label: "Website",
-		title: "Your domain",
-		desc: "Apply, upload and sign — day or night.",
 		editions: ["pro"] as readonly ("standard" | "pro")[],
 	},
 	{
 		id: "app",
-		label: "App",
-		title: "iPhone & Android",
-		desc: "Balances, payments and signing under your brand.",
 		editions: ["pro"] as readonly ("standard" | "pro")[],
 	},
 ] as const;
@@ -86,13 +77,18 @@ function ChannelPanel({
 
 function ChannelVisual({
 	active,
+	adminAlt,
 }: {
 	active: (typeof CHANNELS)[number]["id"];
+	adminAlt: string;
 }) {
 	return (
 		<>
 			<ChannelPanel on={active === "walkin"}>
-				<ChannelShot shot={ADMIN_SHOT} priority />
+				<ChannelShot
+					shot={{ ...ADMIN_SHOT, alt: adminAlt }}
+					priority
+				/>
 			</ChannelPanel>
 			<ChannelPanel on={active === "website"}>
 				<ChannelShot shot={BORROWER_SHOTS.webDashboard} />
@@ -105,6 +101,7 @@ function ChannelVisual({
 }
 
 export function TrueKreditChannels() {
+	const t = useTranslations("TrueKredit");
 	const [active, setActive] = useState(0);
 	const channel = CHANNELS[active];
 
@@ -123,15 +120,13 @@ export function TrueKreditChannels() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="type-eyebrow mb-3 text-primary">
-						Same journey · more ways in
+						{t("channels.eyebrow")}
 					</p>
 					<h2 id="truekredit-channels-heading" className="type-h2">
-						Every channel feeds one loan file.
+						{t("channels.title")}
 					</h2>
 					<p className="mt-3.5 type-lede text-muted-foreground">
-						Start at the counter on Standard. Pro adds a branded
-						website and apps — every application lands in the same
-						queue.
+						{t("channels.lede")}
 					</p>
 				</motion.div>
 
@@ -144,12 +139,15 @@ export function TrueKreditChannels() {
 					transition={{ duration: 0.5, delay: 0.08 }}
 				>
 					<div className="relative aspect-16/10 overflow-hidden bg-muted/30">
-						<ChannelVisual active={channel.id} />
+						<ChannelVisual
+							active={channel.id}
+							adminAlt={t("channels.adminAlt")}
+						/>
 					</div>
 
 					<div
 						role="tablist"
-						aria-label="Origination channels"
+						aria-label={t("channels.tablistAria")}
 						className="grid border-t sm:grid-cols-3"
 					>
 						{CHANNELS.map((item, index) => {
@@ -188,23 +186,23 @@ export function TrueKreditChannels() {
 											aria-hidden
 										/>
 										<span className="type-ui font-semibold text-foreground">
-											{item.label}
+											{t(`channels.items.${item.id}.label`)}
 										</span>
 										{item.editions.includes("standard") ? (
 											<span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-primary">
-												Standard
+												{t("channels.standard")}
 											</span>
 										) : null}
 										{item.editions.includes("pro") ? (
 											<span className="inline-flex items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-violet-700">
 												<Award className="size-3" />
-												Pro
+												{t("channels.pro")}
 											</span>
 										) : null}
 									</div>
 									<p className="type-ui">
 										<span className="font-medium text-foreground">
-											{item.title}.
+											{t(`channels.items.${item.id}.title`)}.
 										</span>{" "}
 										<span
 											className={cn(
@@ -214,7 +212,7 @@ export function TrueKreditChannels() {
 													: "",
 											)}
 										>
-											{item.desc}
+											{t(`channels.items.${item.id}.desc`)}
 										</span>
 									</p>
 								</button>

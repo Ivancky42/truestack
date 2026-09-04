@@ -1,0 +1,537 @@
+{
+	"_status": "ai-draft",
+	"TrueKredit": {
+		"meta": {
+			"title": "贷款管理系统｜TrueKredit™",
+			"description": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
+			"openGraphTitle": "贷款管理系统｜TrueKredit™",
+			"openGraphDescription": "面向KPKT持牌放贷公司的马来西亚贷款管理系统。借款人、还款计划、Lampiran A/B/B1与iDEAL KPKT文件，集于您自己的马来西亚云。",
+			"ogImageAlt": "TrueKredit 对齐 KPKT 的贷款管理平台——申请、签署、仪表盘与合规模块"
+		},
+		"schema": {
+			"productName": "TrueKredit™",
+			"alternateNames": [
+				"TrueKredit Pro",
+				"TrueKredit Standard",
+				"贷款管理系统",
+				"马来西亚放贷软件",
+				"马来西亚 KPKT 贷款管理系统",
+				"sistem iDEAL",
+				"马来西亚数字放贷平台"
+			],
+			"offers": [
+				{
+					"name": "TrueKredit Standard",
+					"description": "面向马来西亚 KPKT PPW 及分行主导持牌放贷公司的贷款管理软件，客户数据存放在您专属的安全云环境。"
+				},
+				{
+					"name": "TrueKredit Pro",
+					"description": "面向马来西亚的全国数字放贷平台——客户网站、移动应用、电子签名，以及 KPKT 线上牌照就绪能力。"
+				}
+			],
+			"featureList": [
+				"从申请到还款的完整贷款流程",
+				"在同一份贷款档案上办理再融资、增贷与重新排期",
+				"导出 Lampiran A、B1 与 iDEAL KPKT（sistem iDEAL）",
+				"Jadual J 与 Jadual K 贷款协议",
+				"e-KYC 与 TrueSSM™ 集成",
+				"在马来西亚的安全云托管",
+				"审计轨迹与 KPKT 合规工作流",
+				"按您办公室既有方式配置贷款工作流选项",
+				"Pro：品牌借款人网站、iPhone 与 Android 应用、电子签名"
+			]
+		},
+		"hero": {
+			"title": "马来西亚贷款管理系统，<accent>一本账簿一个平台。</accent>",
+			"lede": "TrueKredit™ 是面向马来西亚房屋及地方政府部 (KPKT) 持牌放贷公司的<strong>贷款管理系统</strong>——借款人、还款计划、还款与 KPKT 文件，全集中在您全团队都信赖的同一套系统中。",
+			"ctaSecondary": "Standard 与 Pro",
+			"tablistAria": "TrueKredit 界面",
+			"slides": {
+				"admin": {
+					"label": "管理端",
+					"alt": "TrueKredit 管理仪表盘——面向马来西亚放贷机构的未偿余额、催收与组合健康状况"
+				},
+				"borrower": {
+					"label": "借款人"
+				},
+				"mobile": {
+					"label": "手机"
+				}
+			}
+		},
+		"licensed": {
+			"ariaLabel": "正在申领牌照",
+			"lead": "正在申领牌照？",
+			"body": "我们办理 KPKT 数字牌照路径——随后您的贷款账簿落在 TrueKredit Pro 上。",
+			"cta": "查看牌照路径"
+		},
+		"story": {
+			"eyebrow": "放贷的现实",
+			"title": "放贷事务繁杂。<muted>贷款管理系统不该同样麻烦。</muted>",
+			"lede": "每一份借款人档案、每一笔分期、每一次审计要求都堆得很快。记录散落在表格、文件夹和收件箱里，总会有东西漏掉——往往就在审查员面前。",
+			"today": {
+				"eyebrow": "多数团队同时应付的事",
+				"heading": "要盯的太多。太容易漏。",
+				"items": {
+					"records": {
+						"title": "借款人记录四处散落",
+						"desc": "身份证、联系人、担保人与文件分散在 Excel 和纸质档案中。"
+					},
+					"payments": {
+						"title": "付款难以对账",
+						"desc": "还款计划、凭条和滞纳金靠手改——差错往往在月末才暴露。"
+					},
+					"audits": {
+						"title": "一审计就手忙脚乱",
+						"desc": "KPKT 要轨迹；团队在翻文件夹，而不是几分钟内答复。"
+					},
+					"view": {
+						"title": "没有账簿的单一视图",
+						"desc": "未偿、逾期欠款以及谁欠多少，要从三个地方拼起来。"
+					}
+				}
+			},
+			"after": {
+				"eyebrow": "有了 TrueKredit",
+				"heading": "一套系统。一个真相来源。",
+				"cta": "了解运作方式",
+				"items": {
+					"book": {
+						"title": "整本贷款账簿尽在一览",
+						"desc": "从首次问询到最终结清，团队都在同一份实时档案上工作。"
+					},
+					"audit": {
+						"title": "每天都审计就绪",
+						"desc": "谁在何时做了什么，加上按需提供的 KPKT 附表、Lampiran 与导出。"
+					},
+					"data": {
+						"title": "数据始终归您",
+						"desc": "托管在您于马来西亚的专属安全云环境，绝不与其他放贷机构混用。"
+					},
+					"grow": {
+						"title": "扩张而无需推倒重来",
+						"desc": "先从分行做起；用 Pro 在同一本贷款账簿上解锁全国应用与电子签名。"
+					}
+				}
+			}
+		},
+		"journey": {
+			"eyebrow": "端到端",
+			"title": "从询贷到结清，一套马来西亚借贷软件。",
+			"lede": "逐步查看团队将使用的界面——整本账簿，一份贷款档案。",
+			"play": "播放",
+			"pause": "暂停",
+			"playAria": "播放流程",
+			"pauseAria": "暂停流程",
+			"tablistAria": "TrueKredit 贷款流程",
+			"steps": {
+				"pipeline": {
+					"label": "线索",
+					"phase": "01 · 线索",
+					"title": "清楚每条线索的进度。",
+					"desc": "线索、已转化、已申请、已批准、已放款——一本团队账，各步骤之间的转化率一目了然。分配信贷员，再把线索转为借款人，无需离开系统。",
+					"chips": [
+						"线索指标",
+						"团队分配",
+						"从线索到放款"
+					],
+					"alt": "TrueKredit 线索管道——转化漏斗与随时间变化的销售表现"
+				},
+				"profile": {
+					"label": "档案",
+					"phase": "02 · 档案",
+					"title": "了解借款人",
+					"desc": "工作、家庭、每月负担、担保人与文件，全集中在全团队共享的一份完整档案——不必再向借款人重复已经掌握的信息。",
+					"chips": [
+						"工作与负担",
+						"担保人",
+						"文件库"
+					],
+					"alt": "TrueKredit 公司借款人档案，含还款表现、公司信息与 TrueSSM"
+				},
+				"approve": {
+					"label": "审批",
+					"phase": "03 · 审批",
+					"title": "对着数字做审批。",
+					"desc": "负担能力评分、DSR 与完整贷款摘要同屏呈现——金额、期限、费用、月供。信审团队与董事看的是同一份档案。",
+					"chips": [
+						"负担能力评分",
+						"贷款摘要",
+						"月供"
+					],
+					"alt": "TrueKredit 贷款审批，含负担能力风险评分与贷款摘要"
+				},
+				"control": {
+					"label": "权限",
+					"phase": "04 · 权限",
+					"title": "对的人看到对的界面。",
+					"desc": "Owner、Credit、Finance、Collections——每个角色只看到岗位所需。默认不合适时再加自定义角色，而不必向所有人开放整本账簿。",
+					"chips": [
+						"按角色访问",
+						"自定义角色",
+						"按岗位授权"
+					],
+					"alt": "TrueKredit 基于角色的访问——按岗位权限创建自定义角色"
+				},
+				"documents": {
+					"label": "文件",
+					"phase": "05 · 文件",
+					"title": "协议、收据与函件，自动生成",
+					"desc": "还款计划、付款收据、催收通知与违约函从贷款档案生成，并在需要时发送邮件——包括审查员期望的 KPKT 表格。",
+					"chips": [
+						"Lampiran A, B, B1",
+						"Jadual J & K",
+						"收据与违约通知"
+					],
+					"alt": "从 TrueKredit 贷款档案生成的 Lampiran A"
+				},
+				"service": {
+					"label": "贷后",
+					"phase": "06 · 贷后",
+					"title": "每笔分期一目了然",
+					"desc": "按您既有定价方式生成还款计划——固定利率、余额递减、气球付款及其他。付款凭条、提前结清报价与财务核对都在同一本实时账簿上，借款人的问题几秒内就能答复。",
+					"chips": [
+						"固定利率",
+						"余额递减",
+						"气球付款"
+					],
+					"alt": "TrueKredit 还款计划，含分期付款与余额"
+				},
+				"collect": {
+					"label": "催收",
+					"phase": "07 · 催收",
+					"title": "催收尽在掌握",
+					"desc": "逾期欠款、承诺还款、升级阶段与到期提醒的团队视图——从首次漏还分期到违约，每一次联系尝试都有记录。",
+					"chips": [
+						"承诺还款",
+						"升级阶段",
+						"到期提醒"
+					],
+					"alt": "TrueKredit 催收工作区，含团队账、未偿、逾期与账龄"
+				},
+				"adapt": {
+					"label": "调整",
+					"phase": "08 · 调整",
+					"title": "再融资、增贷或重新排期",
+					"desc": "当借款人需要调整空间时，每条路径都在同一系统、同一份贷款档案上审批与追踪——变更内容与原因的历史保持完整。",
+					"chips": [
+						"再融资",
+						"增贷",
+						"重新排期"
+					],
+					"alt": "TrueKredit 提前结清与贷款重组视图"
+				},
+				"govern": {
+					"label": "治理",
+					"phase": "09 · 治理",
+					"title": "每天都审计就绪",
+					"desc": "每一次分配、付款与导出都落在时间线上——何人、何时、何种模式。Maker-checker 留在档案上。把 CSV 交给审查员，不必翻找文件夹。",
+					"chips": [
+						"活动时间线",
+						"Maker-checker",
+						"导出 CSV"
+					],
+					"alt": "TrueKredit 活动时间线——何人何时做了什么，贷款档案上带 maker-checker"
+				},
+				"configure": {
+					"label": "配置",
+					"phase": "10 · 配置",
+					"title": "让系统迁就您的放贷方式。",
+					"desc": "您不必为迁就一套软件而改变放贷方式。我们按团队已经熟悉的流程配置 TrueKredit——系统跟随您的工作流，而不是反过来。",
+					"chips": [
+						"您的工作流",
+						"既有做法",
+						"为您设好"
+					],
+					"alt": "TrueKredit 平台配置——按办公室运作方式开关贷款工作流选项"
+				}
+			}
+		},
+		"channels": {
+			"eyebrow": "同一流程 · 更多入口",
+			"title": "每个渠道都汇入同一份贷款档案。",
+			"lede": "Standard 从柜台做起。Pro 加上品牌网站与应用——每份申请都进入同一队列。",
+			"tablistAria": "获客渠道",
+			"adminAlt": "TrueKredit 管理仪表盘——柜台团队处理的同一份贷款档案",
+			"standard": "Standard",
+			"pro": "Pro",
+			"items": {
+				"walkin": {
+					"label": "到店",
+					"title": "柜台",
+					"desc": "MyKad、身份核查，以及同一条审批路径。"
+				},
+				"website": {
+					"label": "网站",
+					"title": "您的域名",
+					"desc": "申请、上传并签署——昼夜均可。"
+				},
+				"app": {
+					"label": "应用",
+					"title": "iPhone 与 Android",
+					"desc": "余额、付款与签署，都在您的品牌下。"
+				}
+			}
+		},
+		"checks": {
+			"eyebrow": "内嵌核查",
+			"title": "核查就在贷款档案里。",
+			"lede": "身份核查、公司查询与支付都在团队已在使用的系统内完成——不必再跨四个网站、四套登录。",
+			"items": {
+				"identity": {
+					"title": "TrueIdentity™ — e-KYC 与活体检测",
+					"desc": "扫描 MyKad、自拍，确认是同一个人。结果保存到借款人档案。",
+					"tag": "自研"
+				},
+				"ssm": {
+					"title": "TrueSSM™ 公司查询",
+					"desc": "公司借款人的公司、董事与股东资料，直接拉取进申请。",
+					"tag": "自研"
+				},
+				"payments": {
+					"title": "支付网关——催收与放款",
+					"desc": "通过 FPX 或电子钱包收款，并从团队已在处理的同一份贷款档案发放放款。",
+					"tag": "FassPay · GKash"
+				},
+				"ctos": {
+					"title": "CTOS 征信报告",
+					"desc": "征信信息就在申请旁边，信审团队可按全貌做决定。",
+					"tag": "即将推出"
+				},
+				"truesend": {
+					"title": "Truesend™ — 自动发送",
+					"desc": "收据、提醒、催收与违约函从贷款档案自动发出。",
+					"tag": "自研"
+				},
+				"truesight": {
+					"title": "TrueSight™ AI 风险评分",
+					"desc": "在现有核查之上补充风险洞察，帮助信审团队更早发现较弱档案。",
+					"tag": "即将推出"
+				},
+				"attestation": {
+					"title": "见证认证（attestation）— 现场与视频",
+					"desc": "在柜台或预约视频通话中完成——邀请与提醒都留在贷款档案上。",
+					"tag": "Pro"
+				},
+				"signing": {
+					"title": "在您场所内的电子签名",
+					"desc": "经由 MSC Trustgate 的具有法律约束力的签名——签署过程由您掌控。客户可通过网页或手机签署。",
+					"tag": "Pro"
+				}
+			}
+		},
+		"infrastructure": {
+			"eyebrow": "数据始终归您",
+			"title": "您的云。数据留在马来西亚。绝不混用。",
+			"lede": "Standard 与 Pro 都运行在您专属的安全云账户上。贷款数据留在马来西亚，绝不与其他放贷机构混存。",
+			"items": {
+				"malaysia": {
+					"title": "数据留在马来西亚",
+					"desc": "客户信息托管在马来西亚，不离境。"
+				},
+				"protected": {
+					"title": "受保护并有备份",
+					"desc": "银行级防护，每日备份，并完整记录每一项操作。"
+				},
+				"upgrade": {
+					"title": "升级而无需推倒重来",
+					"desc": "转到 Pro 后，借款人、贷款与历史仍在原处。"
+				}
+			},
+			"cardEyebrow": "您的安全云",
+			"hosted": "托管于马来西亚",
+			"lender": "您的放贷机构",
+			"dataOnly": "仅您的数据 · 不共享",
+			"backups": "每日备份",
+			"actionLog": "完整操作日志",
+			"otherLenders": "其他放贷机构",
+			"separateAccounts": "独立账户"
+		},
+		"compare": {
+			"eyebrow": "功能对比",
+			"title": "Standard 与 Pro",
+			"lede": "分行团队共用同一套核心系统。Pro 解锁全国客户渠道、电子签名与见证认证（attestation）——无需搬迁贷款账簿。",
+			"capability": "能力",
+			"standard": "Standard",
+			"standardSub": "分行与柜台",
+			"pro": "Pro",
+			"proSub": "全国",
+			"soon": "即将推出",
+			"coreHeading": "核心管理平台",
+			"addonHeading": "可选附加功能",
+			"integrationsHeading": "免费集成",
+			"integrationsLede": "身份、公司与征信核查已接入 TrueKredit。接入不收费——您只需为实际执行的每项核查付费。",
+			"proHeading": "Pro 解锁",
+			"coreRows": [
+				"完整借款人档案——工作、家庭、负担与文件",
+				"灵活贷款产品——计息方式、还款计划与滞纳金",
+				"申请与审批——柜台受理、实地访查、董事审批包",
+				"风险评分——批准前做负担能力核查",
+				"协议与财务——付款凭证、出款前双人审批",
+				"还款计划与还款——分期、凭条、提前结清、逾期欠款",
+				"KPKT 文件——Jadual J 与 K、Lampiran A/B/B1、收据、违约通知、导出",
+				"报表与员工角色——组合视图、操作记录、按岗位访问",
+				"马来西亚专属安全云环境——数据绝不与其他放贷机构混用"
+			],
+			"addonRows": [
+				"催收工作区——团队视图、承诺还款、升级处理、到期提醒",
+				"贷款弹性——再融资、增贷与重新排期，均在档案上追踪",
+				"转介与获客——销售队列、代理人、线索来源与佣金"
+			],
+			"integrations": {
+				"trueidentity": "TrueIdentity™ e-KYC — MyKad 扫描、自拍与人脸比对",
+				"truessm": "TrueSSM™ 公司查询",
+				"payments": "支付网关 — FassPay 与 GKash",
+				"ctos": "CTOS 征信调取",
+				"truesight": "TrueSight™ AI 风险评分"
+			},
+			"proRows": [
+				"品牌客户网站——在您的域名上昼夜申请",
+				"iPhone 与 Android 客户应用",
+				"在您场所内的电子签名 — MSC Trustgate",
+				"见证认证（attestation）——柜台现场或预约视频",
+				"支持 KPKT 线上放贷牌照 (e-Lending) 审查"
+			],
+			"footnote": "要用 Pro 全面数字化？我们也全程办理<license>KPKT 数字牌照</license>。符合伊斯兰教法的放贷是<syariah>TrueSyariah™</syariah>；受马来西亚证券监督委员会 (SC) 监管的 P2P 是<p2p>TrueP2P™</p2p>。"
+		},
+		"pro": {
+			"eyebrow": "TrueKredit Pro",
+			"title": "从牌照到正式放贷。",
+			"lede": "正在申办 KPKT 线上放贷牌照 (e-Lending)？我们负责牌照路径、Pro 配置、测试与上线，让您在团队已经熟悉的同一平台上向全国放贷。",
+			"ctaPrimary": "咨询 Pro",
+			"ctaSecondary": "也需要数字牌照？",
+			"photoAlt": "两位专业人士在吉隆坡办公室审阅 KPKT 牌照文件",
+			"steps": {
+				"licence": {
+					"title": "牌照申办",
+					"desc": "线上牌照路径——申请、续期以及与 KPKT 对接。"
+				},
+				"compliance": {
+					"title": "合规与咨询",
+					"desc": "数字放贷的监管咨询与审计就绪。"
+				},
+				"build": {
+					"title": "基于 TrueKredit Pro 搭建",
+					"desc": "客户网站、移动应用、签署与见证认证（attestation），都在您的安全云上。"
+				},
+				"golive": {
+					"title": "测试、安全审查与上线",
+					"desc": "先让审查员就绪，再全国放贷上线。"
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "常见问题",
+			"lede": "关于 Standard 与 Pro、KPKT 文件，以及贷款管理系统数据存放位置。",
+			"askElse": "还有其他问题",
+			"items": [
+				{
+					"question": "TrueKredit™是什么贷款管理系统？",
+					"answer": "TrueKredit™ 是面向 KPKT 持牌放贷公司打造的贷款管理系统 / 马来西亚放贷软件。它在您专属的安全云环境中，集中存放借款人档案、贷款产品、申请与审批、放款控制、还款计划、催收，以及配套的 KPKT 文件——Lampiran A、B、B1、Jadual J 与 K，以及 iDEAL（sistem iDEAL）导出。"
+				},
+				{
+					"question": "Standard 与 Pro 共同包含什么？",
+					"answer": "完整核心平台：借款人档案、灵活贷款产品、柜台申请与审批、负担能力与风险评分、带双人出款审批的付款凭证、还款计划与逾期欠款、KPKT 文件与导出、带按角色访问的组合报表，以及您在马来西亚的专属安全云环境。身份、公司与支付集成已接入，不另收接入费。Pro 不会拿掉 Standard 的任何能力。"
+				},
+				{
+					"question": "哪些能力只属于 TrueKredit Pro？",
+					"answer": "全国层：您自有域名上的品牌客户网站、iPhone 与 Android 应用、经 MSC Trustgate 验证的场所内电子签名、柜台现场或预约视频的见证认证（attestation），以及 KPKT 线上放贷牌照 (e-Lending) 审查支持。团队沿用同一套管理端工作流；新渠道都汇入同一份贷款档案。"
+				},
+				{
+					"question": "借款人在网站和应用上会看到什么？",
+					"answer": "在 TrueKredit™ Pro 上，借款人使用您域名上的品牌网站以及 iPhone 或 Android 应用。他们可以申请、上传文件、核验身份、查看余额、支付分期并签署协议。每一项操作都落在团队处理的同一份贷款档案上——无需重新录入。"
+				},
+				{
+					"question": "可以先用 Standard，之后再升级到 Pro 吗？",
+					"answer": "可以，多数放贷机构也是这样做的。今天先用 Standard 服务分行。升级是在您已运行的系统上叠加客户渠道、签署与见证认证（attestation）。借款人、贷款与历史仍在原处——无需迁移，也无需重新录入。"
+				},
+				{
+					"question": "是否支持 Lampiran A、B、B1、Jadual J 与 K，以及 iDEAL KPKT？",
+					"answer": "支持。还款计划、Lampiran A、B 与 B1、Jadual J 与 Jadual K、付款收据与违约通知，都从团队使用的同一套贷款记录生成，导出格式面向 KPKT 呈报，包括 sistem iDEAL。无需重新填写表格。"
+				},
+				{
+					"question": "贷款管理系统的数据存放在哪里？",
+					"answer": "贷款数据存放在您专属的安全云账户中，托管于马来西亚，绝不与另一家放贷机构的账簿混存。每日备份与完整操作记录是两项方案的标配。升级到 Pro 仍使用同一环境。"
+				},
+				{
+					"question": "包含哪些核查，费用如何？",
+					"answer": "TrueIdentity™ e-KYC、TrueSSM™ 公司查询以及支付网关（FassPay 与 GKash）已接入两项方案。接入不收费——您只需为实际执行的每项核查或交易付费。CTOS 征信调取与 TrueSight™ AI 风险评分即将推出。"
+				},
+				{
+					"question": "TrueKredit 能否办理再融资、增贷与重新排期？",
+					"answer": "能。每条路径都在同一份贷款档案上审批与追踪，因此变更及其原因留在历史中，而不会变成一笔脱节的新贷款。两项方案均可作为可选附加功能使用。"
+				},
+				{
+					"question": "能否按我们既有的放贷方式配置 TrueKredit？",
+					"answer": "能。L2 之前的审批上传、AML 确认、LHDN 印花证明，以及放款上的 maker-checker，均可按办公室既有做法逐项开关。团队保留自己的流程——系统跟随它。"
+				},
+				{
+					"question": "中国公司可以直接使用TrueKredit吗？",
+					"answer": "TrueKredit™ 面向马来西亚房屋及地方政府部 (KPKT) 持牌放贷公司，部署在您自己的马来西亚安全云账户上。若尚未持牌，我们可办理 KPKT 数字牌照路径，或协助收购已持牌公司，再把账簿迁入 TrueKredit。"
+				},
+				{
+					"question": "支持人民币或跨境放款吗？",
+					"answer": "TODO(ivan): TrueKredit 还款与放款是否支持人民币或跨境资金，或仅限马来西亚令吉与 FPX/DuitNow/GKash 等本地通道。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "准备好自信地管理您的贷款账簿了吗？",
+			"body": "预约免费咨询，了解 TrueKredit 如何适配您今天的分行——或在您准备向全国放贷时选择 Pro。无论哪种，贷款数据都留在您这边。",
+			"secondary": "对比 Standard 与 Pro"
+		},
+		"features": {
+			"eyebrow": "端到端",
+			"title": "从询贷到结清，一套马来西亚借贷软件",
+			"lede": "从第一条线索到最后一笔还款——团队在一处管理账簿。滚动即可走完流程。",
+			"steps": {
+				"leads": {
+					"phase": "01 · 线索",
+					"title": "抓住每一条线索",
+					"desc": "销售队列、代理人以及谁带来了线索——把线索转为借款人，无需离开系统。"
+				},
+				"profiles": {
+					"phase": "02 · 档案",
+					"title": "了解借款人",
+					"desc": "工作、家庭、负担、担保人与文件——全团队共享的一份完整档案。"
+				},
+				"approve": {
+					"phase": "03 · 审批",
+					"title": "先审批，再放款",
+					"desc": "实地访查、风险核查、董事审批包与财务控制——在柜台更快办结档案。"
+				},
+				"docs": {
+					"phase": "04 · 文件",
+					"title": "协议、收据、函件——自动生成",
+					"desc": "还款计划、付款收据、催收与违约函在需要时生成并发送邮件。"
+				},
+				"repay": {
+					"phase": "05 · 贷后",
+					"title": "每笔分期一目了然",
+					"desc": "清晰的还款计划、付款凭条、提前结清与财务核对——一本实时账簿。"
+				},
+				"collect": {
+					"phase": "06 · 催收",
+					"title": "催收尽在掌握",
+					"desc": "团队视图、承诺还款、升级处理与到期提醒——从逾期欠款到违约。"
+				},
+				"flex": {
+					"phase": "07 · 调整",
+					"title": "再融资、增贷或重新排期",
+					"desc": "当借款人需要调整空间时——每条路径都在同一系统、同一份贷款档案上审批与追踪。"
+				},
+				"audit": {
+					"phase": "08 · 治理",
+					"title": "每天都审计就绪",
+					"desc": "清楚记录何人何时做了什么——角色包括 Owner、Credit、Finance、Collections 与 Auditor。"
+				},
+				"proApp": {
+					"phase": "09 · 全国",
+					"title": "把放贷做到全国",
+					"desc": "TrueKredit Pro 加上品牌网站与移动应用——客户申请、付款并签署，每份档案仍留在同一系统中。"
+				}
+			}
+		}
+	}
+}

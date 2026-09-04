@@ -1,0 +1,202 @@
+{
+	"_status": "source",
+	"AccountManagement": {
+		"meta": {
+			"title": "KPKT Account Management | Licence Renewals & Compliance",
+			"description": "KPKT account management for licensed money lenders in Malaysia — pembaharuan lesen PPW / KK, permit iklan, and annual filings. Up to 50% faster approvals.",
+			"openGraphTitle": "KPKT Account Management | Pembaharuan Lesen PPW",
+			"openGraphDescription": "KPKT account management — pembaharuan lesen PPW / KK and permit iklan, plus annual B/B1 filings and CoSec/SSM work. Up to 50% faster approvals."
+		},
+		"schema": {
+			"serviceName": "KPKT Account Management",
+			"alternateName": [
+				"KPKT compliance management",
+				"pembaharuan lesen PPW / KK",
+				"permit iklan",
+				"Money lender licence renewals Malaysia"
+			],
+			"serviceType": "KPKT account management — pembaharuan lesen PPW / KK and permit iklan",
+			"audienceType": "KPKT-licensed money lenders"
+		},
+		"breadcrumb": {
+			"current": "KPKT Account Management"
+		},
+		"hero": {
+			"title": "KPKT Account Management, Simplified",
+			"subtitle": "We handle regulatory and administrative work so you can focus on growth and serving your customers.",
+			"secondaryCta": "View Pricing"
+		},
+		"pain": {
+			"title": "Navigate Compliance Without the Hassle",
+			"subtitle": "Running a licensed money lending business means dealing with heavy regulatory requirements. Let us handle it.",
+			"items": {
+				"compliance": {
+					"title": "Heavy Compliance Requirements",
+					"description": "KPKT regulations require frequent submissions and strict adherence to reporting standards."
+				},
+				"coordination": {
+					"title": "Time-Consuming Coordination",
+					"description": "Coordinating with CoSec, SSM, and regulators takes valuable time away from your core business."
+				},
+				"renewals": {
+					"title": "Complex Renewals",
+					"description": "License and permit renewals must be processed on time, every time — or risk penalties."
+				},
+				"admin": {
+					"title": "Administrative Burden",
+					"description": "Director changes, shareholder updates, and company modifications require careful handling."
+				}
+			}
+		},
+		"solution": {
+			"badge": "Our Solution",
+			"title": "Your Single, Trusted Partner",
+			"body": "A dedicated KPKT account management service that handles end-to-end regulatory work. We streamline every compliance touchpoint, saving you time and reducing operational stress so you can focus on what matters most: <emphasis>growing your lending business.</emphasis>",
+			"photoAlt": "Staff serving customers at a Malaysian café counter"
+		},
+		"advantage": {
+			"badge": "Our Advantage",
+			"title": "Up to <accent>50% Faster</accent> Approvals",
+			"body": "Our deep experience with KPKT processes and established relationships with regulators mean your applications move faster through the system.",
+			"items": {
+				"experience": {
+					"title": "Years of Experience",
+					"description": "We know exactly what regulators need, reducing back-and-forth and delays."
+				},
+				"network": {
+					"title": "Established Network",
+					"description": "Direct relationships with key stakeholders expedite the approval process."
+				},
+				"firstTime": {
+					"title": "First-Time Right",
+					"description": "Accurate documentation from day one means no rejection or resubmission delays."
+				}
+			},
+			"timelineTitle": "Average Approval Timeline",
+			"diyLabel": "DIY / Traditional",
+			"diyTime": "4–6 weeks",
+			"truestackLabel": "With Truestack",
+			"truestackTime": "2–3 weeks",
+			"savingsValue": "~50%",
+			"savingsCaption": "Faster than industry average"
+		},
+		"services": {
+			"title": "Comprehensive Services Covered",
+			"subtitle": "Everything you need to stay compliant, handled by our experienced team.",
+			"photoAlt": "Account managers reviewing KPKT compliance documents with a client",
+			"items": {
+				"company": {
+					"title": "Company Updates",
+					"description": "Director changes, shareholder updates, and all essential company modifications — handled for you, on time."
+				},
+				"renewals": {
+					"title": "License Renewals",
+					"description": "KPKT license and advertisement permit renewals processed on time, every time."
+				},
+				"submissions": {
+					"title": "Annual Submissions",
+					"description": "B and B1 loan transaction submissions prepared and filed accurately to meet regulatory deadlines."
+				},
+				"pdpa": {
+					"title": "PDPA Licensing",
+					"description": "Personal Data Protection Act license applications and renewals managed with full compliance."
+				},
+				"upgrade": {
+					"title": "Enterprise Upgrade",
+					"description": "Smooth transition to Sdn. Bhd. status with complete documentation and regulatory coordination."
+				},
+				"express": {
+					"title": "Express Handling",
+					"description": "Urgent requests prioritized and expedited when you need fast turnaround times."
+				}
+			},
+			"cosecTitle": "Full CoSec & SSM Coordination",
+			"cosecBody": "All document coordination handled for you — so nothing slips through the cracks."
+		},
+		"pricing": {
+			"title": "Simple, Transparent Pricing",
+			"subtitle": "Flexible options designed for your business needs. Pay only for what you use, with no hidden fees.",
+			"recommended": "Recommended",
+			"headers": {
+				"item": "Item",
+				"noSubscription": "No Subscription",
+				"monthly": "Monthly",
+				"annual": "Annual"
+			},
+			"emdash": "—",
+			"rows": {
+				"subscription": {
+					"item": "Subscription Fee",
+					"noSubscription": "—",
+					"monthly": "RM 100 / month",
+					"annual": "RM 1,000 / year"
+				},
+				"perRequest": {
+					"item": "Per Request Fee",
+					"noSubscription": "RM 1,000",
+					"monthly": "RM 600",
+					"annual": "RM 500"
+				},
+				"priority": {
+					"item": "Priority Handling"
+				},
+				"annualSubmission": {
+					"item": "Annual B & B1 Submission",
+					"noSubscription": "—",
+					"monthly": "—",
+					"annual": "Included (once per year)"
+				},
+				"savings": {
+					"item": "Annual Savings (10 requests)",
+					"noSubscription": "—",
+					"monthly": "Save RM 2,800",
+					"annual": "Save RM 4,500"
+				},
+				"bestFor": {
+					"item": "Best For",
+					"noSubscription": "Occasional / one-off needs",
+					"monthly": "Regular operators",
+					"annual": "Active & growing operators"
+				}
+			},
+			"noteLockin": "No long-term lock-in. Switch between subscription tiers or on-demand as your business evolves.",
+			"noteSavings": "Annual subscribers save 50% on per-request fees compared to no subscription.",
+			"noteConversion": "Digital KPKT License conversion is a separate service. <link>Learn more →</link>"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"items": [
+				{
+					"question": "What is KPKT account management?",
+					"answer": "KPKT account management is an ongoing compliance service for licensed money lenders in Malaysia. Truestack handles licence renewals, annual submissions, company updates, and coordination with CoSec, SSM, and regulators — so your team can focus on lending instead of paperwork."
+				},
+				{
+					"question": "Who is this service for?",
+					"answer": "It is for KPKT-licensed money lenders who need reliable day-to-day regulatory support. Whether you run a traditional branch operation or a digital licence, we keep renewals, filings, and company changes on track."
+				},
+				{
+					"question": "How much faster are approvals with Truestack?",
+					"answer": "Operators typically see up to about 50% faster turnaround on common KPKT submissions compared with handling everything in-house. Exact timing still depends on document readiness and regulator scheduling."
+				},
+				{
+					"question": "Do you handle pembaharuan lesen PPW / KK and permit iklan?",
+					"answer": "Yes. Truestack handles pembaharuan lesen PPW / KK and permit iklan (advertisement permit) renewals, plus company updates, annual submissions, and coordination with CoSec and SSM. Digital KPKT licence conversion is a separate engagement — see our Digital License service if you are going nationwide online."
+				},
+				{
+					"question": "How does pricing work?",
+					"answer": "You can work with us on-demand or on a monthly or annual subscription. Annual subscribers typically save on per-request fees. There is no long-term lock-in — switch tiers as your compliance volume changes."
+				},
+				{
+					"question": "How do I get started?",
+					"answer": "Book a free consultation at truestack.my/contact. We will map your current licence status, upcoming renewals, and filing calendar, then recommend the right support plan for your lending operation."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Let Us Handle Compliance",
+			"body": "Focus on growing your lending business while we manage the regulatory complexity. Book a free consultation and our team will scope your compliance needs.",
+			"secondary": "Explore Digital Licence"
+		}
+	}
+}

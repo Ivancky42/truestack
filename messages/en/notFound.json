@@ -1,0 +1,8 @@
+{
+	"_status": "source",
+	"NotFound": {
+		"title": "Page not found",
+		"body": "The page you're looking for doesn't exist or has moved.",
+		"cta": "Back to home"
+	}
+}

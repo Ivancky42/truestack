@@ -1,0 +1,83 @@
+{
+	"_status": "ai-draft",
+	"InsightsChrome": {
+		"nav": "Wawasan",
+		"eyebrow": "Wawasan",
+		"title": "Apa yang benar-benar berkesan dalam <accent>fintech Malaysia.</accent>",
+		"lede": "Apa yang kami lihat apabila lesen, buku pinjaman dan perisian bertemu peraturan Malaysia — soalan yang timbul, dan bahagian yang mengambil masa.",
+		"topicsLabel": "Topik yang kami tulis",
+		"latest": "Terkini",
+		"readArticle": "Baca artikel ini",
+		"allInsights": "Semua wawasan",
+		"updated": "Dikemas kini",
+		"tagsLabel": "Topik",
+		"grid": {
+			"eyebrow": "Bacaan lanjut",
+			"title": "Lagi daripada pasukan.",
+			"lede": "Nota yang sama kami berikan kepada pelanggan. Lebih ringkas daripada panggilan — dan anda boleh kongsikan kepada pasukan anda."
+		},
+		"empty": {
+			"unavailable": {
+				"eyebrow": "Tidak tersedia buat sementara",
+				"title": "Artikel ini tidak tersedia buat masa ini.",
+				"aside": "Cuba lagi sebentar lagi.",
+				"body": "Tunggu beberapa minit dan muat semula. Atau tanya soalan yang membawa anda ke sini — konsultasi tidak dikenakan bayaran."
+			},
+			"unpublished": {
+				"eyebrow": "Artikel pertama dalam persediaan",
+				"title": "Belum ada yang diterbitkan.",
+				"aside": "Tanya kami sementara itu.",
+				"body": "Rencana pertama sedang disediakan. Sementara menunggu, tanya soalan yang membawa anda ke sini — konsultasi tidak dikenakan bayaran."
+			}
+		},
+		"error": {
+			"eyebrow": "Tidak tersedia buat sementara",
+			"title": "Wawasan ini tidak tersedia buat masa ini.",
+			"body": "Cuba lagi sebentar lagi, atau kembali ke Wawasan.",
+			"retry": "Cuba lagi",
+			"back": "Kembali ke Wawasan",
+			"metaTitle": "Wawasan ini tidak tersedia buat masa ini"
+		},
+		"related": {
+			"eyebrow": "Di mana ini terpakai",
+			"title": "Amalkan ini.",
+			"explore": "Terokai {title}"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Soalan lazim",
+			"items": [
+				{
+					"question": "Apakah Truestack Insights?",
+					"answer": "Truestack Insights ialah tempat kami menulis apa yang kami pelajari daripada kerja pelanggan dalam fintech Malaysia — lesen, buku pinjaman, dan perisian di sekelilingnya. Setiap artikel menjawab soalan yang sudah ditanya kepada kami. Apabila langkah seterusnya ialah produk atau perkhidmatan yang kami tawarkan, kami nyatakan dan pautkannya."
+				},
+				{
+					"question": "Siapa yang patut membaca artikel ini?",
+					"answer": "Sesiapa yang mengendalikan pemberi pinjam wang berlesen, memohon lesen pinjaman wang dalam talian (e-Lending) KPKT, atau membina perisian kewangan terkawal di Malaysia. Pemilik, pengurus pematuhan dan ketua produk akan nampak terma yang mereka sudah guna — pelaporan Lampiran, CTOS, SSM, Tawarruq. Jika artikel menunjukkan langkah seterusnya, kami pautkan produk atau perkhidmatan yang sepadan, seperti TrueKredit™ atau nasihat lesen KPKT."
+				},
+				{
+					"question": "Berapa kerap anda menerbitkan wawasan baharu?",
+					"answer": "Biasanya satu hingga empat artikel sebulan. Kami lebih suka menunggu daripada menerbitkan sesuatu yang nipis. Rencana baharu muncul di sini sebaik ia disiarkan."
+				},
+				{
+					"question": "Bagaimana saya bertanya soalan yang belum anda tulis?",
+					"answer": "Tempah konsultasi percuma dan beritahu kami di mana anda tersekat. Kami akan susun apa yang terpakai pada situasi dan jadual anda. Tiada obligasi untuk membeli perisian atau perkhidmatan."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ada soalan yang belum kami tulis?",
+			"body": "Beritahu kami di mana anda tersekat. Kami akan bincangkannya dalam konsultasi percuma — tiada obligasi untuk membeli apa-apa.",
+			"secondary": "Lesen digital KPKT"
+		},
+		"postCta": {
+			"heading": "Bincangkan dengan seseorang yang melakukan ini setiap hari.",
+			"body": "Tempah konsultasi percuma. Beritahu kami jenis lesen anda dan di mana anda tersekat — kami akan nyatakan apa yang terpakai pada anda dan apa yang tidak.",
+			"secondaryFallback": "Lesen digital KPKT"
+		},
+		"schema": {
+			"name": "Wawasan",
+			"description": "Nota daripada Truestack Technologies tentang fintech Malaysia — pelesenan KPKT, pinjaman, pembiayaan Islam, pematuhan dan perisian yang kami bina di sekelilingnya."
+		}
+	}
+}

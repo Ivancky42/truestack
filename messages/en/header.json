@@ -1,0 +1,68 @@
+{
+	"_status": "source",
+	"Header": {
+		"nav": {
+			"solutions": "Solutions",
+			"work": "Work",
+			"insights": "Insights",
+			"about": "About",
+			"careers": "Careers"
+		},
+		"startHere": "Start here",
+		"openMenu": "Open menu",
+		"changeLanguage": "Change language",
+		"freeConsultation": "Free Consultation",
+		"bookConsultation": "Book a Free Consultation",
+		"columns": {
+			"services": "Services",
+			"platforms": "Platforms",
+			"apis": "APIs"
+		},
+		"badges": {
+			"upcoming": "Upcoming",
+			"new": "New"
+		},
+		"solutions": {
+			"truekredit": {
+				"title": "TrueKredit™",
+				"description": "The loan book in one system for licensed money lenders."
+			},
+			"digitalLicense": {
+				"title": "KPKT Digital Licence",
+				"description": "Conventional PPW or Shariah — we run both licence paths."
+			},
+			"shariahLicense": {
+				"title": "Shariah Digital Licence",
+				"description": "Upcoming KPKT path — entity, committee and TrueSyariah™."
+			},
+			"accountManagement": {
+				"title": "KPKT Account Management",
+				"description": "Renewals, permits and submissions — handled for you."
+			},
+			"softwareDevelopment": {
+				"title": "Custom Software Development",
+				"description": "Lending platforms and software built to your process."
+			},
+			"truesyariah": {
+				"title": "TrueSyariah™",
+				"description": "Shariah digital licence and platform — Tawarruq, Ta'widh and Gharamah."
+			},
+			"truep2p": {
+				"title": "TrueP2P™",
+				"description": "SC-aligned peer-to-peer platforms, built for Malaysia."
+			},
+			"trueidentity": {
+				"title": "TrueIdentity™",
+				"description": "e-KYC for Malaysian fintechs — MyKad, selfie, match."
+			},
+			"truessm": {
+				"title": "TrueSSM™",
+				"description": "SSM registry search, profiles and scanned documents."
+			},
+			"payments": {
+				"title": "Payment gateway",
+				"description": "FPX, DuitNow, cards and reconciliation in one place."
+			}
+		}
+	}
+}

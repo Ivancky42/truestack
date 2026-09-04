@@ -1,8 +1,9 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import {
 	ArrowUpRight,
@@ -32,6 +33,7 @@ function CaseStudyCard({
 	featured?: boolean;
 	dark?: boolean;
 }) {
+	const tCommon = useTranslations("Common");
 	const isComingSoon = study.isComingSoon;
 	const isExternal = study.href.startsWith("http");
 
@@ -74,7 +76,7 @@ function CaseStudyCard({
 						/>
 					</div>
 					{isComingSoon ? (
-						<Badge variant="secondary">Coming Soon</Badge>
+						<Badge variant="secondary">{tCommon("comingSoon")}</Badge>
 					) : (
 						<span
 							className={cn(
@@ -164,11 +166,12 @@ function CaseStudyCard({
 
 /** Trailing carousel tile — not linked; invitation to become a featured story. */
 function SuccessStoriesAndMoreCard({ dark = false }: { dark?: boolean }) {
+	const t = useTranslations("P2P");
 	return (
 		<div
 			data-carousel-item
 			className="block w-[340px] shrink-0 snap-start sm:w-[440px] md:w-[500px] lg:w-[540px]"
-			aria-label="Your story could appear here next"
+			aria-label={t("caseStudies.andMore.ariaLabel")}
 		>
 			<div
 				className={cn(
@@ -201,15 +204,16 @@ function SuccessStoriesAndMoreCard({ dark = false }: { dark?: boolean }) {
 				</div>
 				<div className="flex flex-1 flex-col items-center justify-center p-8 text-center">
 					<h3 className="type-h2-sm">
-						And More
+						{t("caseStudies.andMore.title")}
 					</h3>
 					<p className="mx-auto mt-4 max-w-sm text-base text-slate-600">
-						<span className="font-medium text-slate-900">
-							Your story could be here next.
-						</span>{" "}
-						If you&apos;re building or scaling a lending or fintech
-						operation in Malaysia, we&apos;d love to hear what
-						you&apos;re working toward.
+						{t.rich("caseStudies.andMore.body", {
+							lead: (chunks) => (
+								<span className="font-medium text-slate-900">
+									{chunks}
+								</span>
+							),
+						})}
 					</p>
 				</div>
 			</div>
@@ -240,13 +244,17 @@ interface CaseStudiesProps {
 
 export function CaseStudies({
 	studies = caseStudies,
-	title = "Success Stories",
-	subtitle = "See how we've helped Malaysian Fintech operators go digital and scale their businesses.",
+	title,
+	subtitle,
 	className,
 	showAndMoreCard = false,
 	featured = false,
 	variant = "light",
 }: CaseStudiesProps = {}) {
+	const t = useTranslations("P2P");
+	const tCommon = useTranslations("Common");
+	const heading = title ?? t("caseStudies.defaultTitle");
+	const lede = subtitle ?? t("caseStudies.defaultSubtitle");
 	const dark = variant === "dark";
 	const scrollerRef = useRef<HTMLDivElement>(null);
 	const [canPrev, setCanPrev] = useState(false);
@@ -343,7 +351,7 @@ export function CaseStudies({
 							dark && "text-white",
 						)}
 					>
-						{title}
+						{heading}
 					</h2>
 					<p
 						className={cn(
@@ -351,7 +359,7 @@ export function CaseStudies({
 							dark ? "text-slate-400" : "text-muted-foreground",
 						)}
 					>
-						{subtitle}
+						{lede}
 					</p>
 				</div>
 
@@ -368,7 +376,7 @@ export function CaseStudies({
 									? "border-slate-700 bg-slate-900 text-slate-300 hover:border-blue-500/40 hover:text-blue-400"
 									: "bg-background text-foreground hover:border-primary/40 hover:text-primary",
 							)}
-							aria-label="Previous"
+							aria-label={tCommon("previous")}
 						>
 							<ChevronLeft className="h-4 w-4" />
 						</button>
@@ -382,7 +390,7 @@ export function CaseStudies({
 									? "border-slate-700 bg-slate-900 text-slate-300 hover:border-blue-500/40 hover:text-blue-400"
 									: "bg-background text-foreground hover:border-primary/40 hover:text-primary",
 							)}
-							aria-label="Next"
+							aria-label={tCommon("next")}
 						>
 							<ChevronRight className="h-4 w-4" />
 						</button>

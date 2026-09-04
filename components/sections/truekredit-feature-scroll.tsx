@@ -7,6 +7,7 @@ import {
 	useState,
 	type ReactNode,
 } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import {
 	AuditTrailMock,
@@ -22,89 +23,50 @@ import {
 
 type DeviceKind = "laptop" | "phone";
 
+type FeatureStepKey =
+	| "leads"
+	| "profiles"
+	| "approve"
+	| "docs"
+	| "repay"
+	| "collect"
+	| "flex"
+	| "audit"
+	| "proApp";
+
 type FeatureStep = {
 	id: string;
-	phase: string;
-	title: string;
-	desc: string;
+	key: FeatureStepKey;
 	device: DeviceKind;
 	visual: ReactNode;
 };
 
 /** Full lending lifecycle — one system, end to end. */
 const STEPS: FeatureStep[] = [
-	{
-		id: "leads",
-		phase: "01 · Pipeline",
-		title: "Capture every lead",
-		desc: "Sales queue, agents and who brought the lead — turn a lead into a borrower without leaving the system.",
-		device: "laptop",
-		visual: <LeadsMock />,
-	},
+	{ id: "leads", key: "leads", device: "laptop", visual: <LeadsMock /> },
 	{
 		id: "profiles",
-		phase: "02 · Profile",
-		title: "Know the borrower",
-		desc: "Work, family, commitments, guarantors and documents — one complete file your whole team shares.",
+		key: "profiles",
 		device: "laptop",
 		visual: <BorrowerProfileMock />,
 	},
-	{
-		id: "approve",
-		phase: "03 · Approve",
-		title: "Approve, then disburse",
-		desc: "Field visits, risk checks, director packs and finance controls — close files faster at the counter.",
-		device: "laptop",
-		visual: <OpsChainMock />,
-	},
-	{
-		id: "docs",
-		phase: "04 · Documents",
-		title: "Agreements, receipts, letters — automatic",
-		desc: "Schedules, payment receipts, collection and default letters created and emailed when they matter.",
-		device: "laptop",
-		visual: <DocsEmailMock />,
-	},
-	{
-		id: "repay",
-		phase: "05 · Service",
-		title: "Every instalment in view",
-		desc: "Clear repayment schedules, payment slips, early settlement and finance checks — one live book.",
-		device: "laptop",
-		visual: <SchedulesMock />,
-	},
+	{ id: "approve", key: "approve", device: "laptop", visual: <OpsChainMock /> },
+	{ id: "docs", key: "docs", device: "laptop", visual: <DocsEmailMock /> },
+	{ id: "repay", key: "repay", device: "laptop", visual: <SchedulesMock /> },
 	{
 		id: "collect",
-		phase: "06 · Collect",
-		title: "Collections under control",
-		desc: "Team view, promises to pay, escalations and maturity alerts — from arrears through default.",
+		key: "collect",
 		device: "laptop",
 		visual: <CollectionsMock />,
 	},
 	{
 		id: "flex",
-		phase: "07 · Adapt",
-		title: "Refinance, top-up or reschedule",
-		desc: "When a borrower needs room to adjust — each path is approved and tracked in the same system, on the same loan file.",
+		key: "flex",
 		device: "laptop",
 		visual: <LoanFlexibilityMock />,
 	},
-	{
-		id: "audit",
-		phase: "08 · Govern",
-		title: "Audit-ready, every day",
-		desc: "A clear record of who did what, when — with roles for Owner, Credit, Finance, Collections and Auditor.",
-		device: "laptop",
-		visual: <AuditTrailMock />,
-	},
-	{
-		id: "pro-app",
-		phase: "09 · Nationwide",
-		title: "Take lending nationwide",
-		desc: "TrueKredit Pro adds a branded website and mobile apps — customers apply, pay and sign, while every file stays in the same system.",
-		device: "phone",
-		visual: <ProAppMock />,
-	},
+	{ id: "audit", key: "audit", device: "laptop", visual: <AuditTrailMock /> },
+	{ id: "pro-app", key: "proApp", device: "phone", visual: <ProAppMock /> },
 ];
 
 function LaptopFrame({
@@ -385,6 +347,7 @@ function DeviceStage({
 }
 
 export function TrueKreditFeatureScroll() {
+	const t = useTranslations("TrueKredit");
 	const [active, setActive] = useState(0);
 	const [direction, setDirection] = useState(1);
 	const stepRefs = useRef<(HTMLElement | null)[]>([]);
@@ -435,6 +398,9 @@ export function TrueKreditFeatureScroll() {
 
 	const step = STEPS[active] ?? STEPS[0];
 	const slideOffset = direction * 18;
+	const stepPhase = t(`features.steps.${step.key}.phase`);
+	const stepTitle = t(`features.steps.${step.key}.title`);
+	const stepDesc = t(`features.steps.${step.key}.desc`);
 
 	return (
 		<section id="features" className="border-t bg-muted/30 py-14 md:py-24">
@@ -442,14 +408,11 @@ export function TrueKreditFeatureScroll() {
 				{/* Section title — scrolls into view before the sticky journey starts */}
 				<div className="mx-auto max-w-3xl text-center">
 					<p className="mb-3 type-eyebrow text-primary">
-						End to end
+						{t("features.eyebrow")}
 					</p>
-					<h2 className="type-h2">
-						One system from first enquiry to final settlement
-					</h2>
+					<h2 className="type-h2">{t("features.title")}</h2>
 					<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
-						From the first lead to the last repayment — your team
-						runs the book in one place. Scroll to walk the journey.
+						{t("features.lede")}
 					</p>
 				</div>
 
@@ -489,13 +452,13 @@ export function TrueKreditFeatureScroll() {
 													: "text-primary"
 											}`}
 										>
-											{step.phase}
+											{stepPhase}
 										</p>
 										<h3 className="mt-1.5 type-card-title">
-											{step.title}
+											{stepTitle}
 										</h3>
 										<p className="mx-auto mt-2 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
-											{step.desc}
+											{stepDesc}
 										</p>
 									</motion.div>
 								</AnimatePresence>
@@ -556,7 +519,7 @@ export function TrueKreditFeatureScroll() {
 											ease: [0.22, 1, 0.36, 1],
 										}}
 									>
-										{step.phase} — {step.title}
+										{stepPhase} — {stepTitle}
 									</motion.p>
 								</AnimatePresence>
 							</div>
@@ -572,7 +535,7 @@ export function TrueKreditFeatureScroll() {
 								key={s.id}
 								ref={(el) => setStepRef(el, i)}
 								data-step-index={i}
-								aria-label={`${s.phase} — ${s.title}`}
+								aria-label={`${t(`features.steps.${s.key}.phase`)} — ${t(`features.steps.${s.key}.title`)}`}
 								className={`flex flex-col justify-center transition-colors lg:min-h-dvh lg:border-l-2 lg:py-8 lg:pl-5 xl:pl-6 ${
 									active === i
 										? s.device === "phone"
@@ -594,13 +557,13 @@ export function TrueKreditFeatureScroll() {
 												: "text-primary"
 										}`}
 									>
-										{s.phase}
+										{t(`features.steps.${s.key}.phase`)}
 									</p>
 									<h3 className="type-h2-sm">
-										{s.title}
+										{t(`features.steps.${s.key}.title`)}
 									</h3>
 									<p className="mt-3 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
-										{s.desc}
+										{t(`features.steps.${s.key}.desc`)}
 									</p>
 								</div>
 							</article>

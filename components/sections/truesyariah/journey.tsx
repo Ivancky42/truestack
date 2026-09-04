@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { truesyariahStages } from "@/lib/truesyariah-content";
 import {
@@ -11,6 +12,7 @@ import {
 } from "@/components/sections/truesyariah/primitives";
 
 export function TrueSyariahJourney() {
+	const t = useTranslations("TrueSyariah");
 	const [active, setActive] = useState(1);
 	const stage = truesyariahStages[active];
 
@@ -18,14 +20,14 @@ export function TrueSyariahJourney() {
 		<TsSection id="journey">
 			<div className="mb-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
 				<TsIntro
-					eyebrow="The licensing path"
-					title="Four stages, in the order the regulator expects them."
-					lede="Shariah-based lending has its own approval pathway, and in practice its own entity. Most of the delay in an application is not the regulator: it is contracts drafted before anyone asked the committee."
+					eyebrow={t("journey.eyebrow")}
+					title={t("journey.title")}
+					lede={t("journey.lede")}
 				/>
 				<TsReveal delay={0.08}>
 					<TsPhoto
 						src="/photos/truesyariah-licence-journey.jpg"
-						alt="Two professionals at a Malaysian office table reviewing licensing documents together"
+						alt={t("journey.photoAlt")}
 						sizes="(max-width: 1024px) 100vw, 50vw"
 						className="aspect-5/4"
 					/>
@@ -36,11 +38,11 @@ export function TrueSyariahJourney() {
 				<div
 					className="grid border-t border-ts-ink border-l border-l-ts-rule sm:grid-cols-2 lg:grid-cols-4"
 					role="tablist"
-					aria-label="Licensing stages"
+					aria-label={t("journey.tablistAria")}
 				>
 					{truesyariahStages.map((s, i) => (
 						<button
-							key={s.n}
+							key={s.key}
 							type="button"
 							role="tab"
 							aria-selected={active === i}
@@ -56,15 +58,17 @@ export function TrueSyariahJourney() {
 						>
 							<div className="mb-4 flex items-baseline justify-between">
 								<span className="font-mono text-xs tracking-[0.12em] text-ts-gold">
-									STAGE {s.n}
+									{t("journey.stageLabel", { n: s.n })}
 								</span>
 								<span className="font-mono text-xs text-ts-stone">
-									{s.label}
+									{t(`journey.stages.${s.key}.label`)}
 								</span>
 							</div>
-							<h3 className="type-ts-h3 text-ts-ink">{s.title}</h3>
+							<h3 className="type-ts-h3 text-ts-ink">
+								{t(`journey.stages.${s.key}.title`)}
+							</h3>
 							<p className="mt-2 type-ui text-ts-ink-soft">
-								{s.summary}
+								{t(`journey.stages.${s.key}.summary`)}
 							</p>
 						</button>
 					))}
@@ -85,10 +89,10 @@ export function TrueSyariahJourney() {
 					</span>
 					<div>
 						<div className="mb-1 type-ts-serif text-[19px] text-ts-ink">
-							{stage.title}
+							{t(`journey.stages.${stage.key}.title`)}
 						</div>
 						<p className="max-w-[64em] text-[16px] text-ts-ink-soft">
-							{stage.detail}
+							{t(`journey.stages.${stage.key}.detail`)}
 						</p>
 					</div>
 				</div>

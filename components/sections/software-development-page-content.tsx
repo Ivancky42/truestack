@@ -1,7 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import {
 	ArrowRight,
@@ -23,53 +24,27 @@ import { Button } from "@/components/ui/button";
 import LogoCloud1 from "@/components/logo-cloud-1";
 
 const buildAreas = [
-	{
-		icon: Smartphone,
-		title: "Web & mobile products",
-		desc: "Customer apps, portals, and branded experiences — designed, built, and shipped under your name.",
-	},
-	{
-		icon: Layers,
-		title: "Platforms & internal tools",
-		desc: "Ops dashboards, workflows, and the systems your team runs on every day.",
-	},
-	{
-		icon: Plug,
-		title: "Integrations & APIs",
-		desc: "Connect payments, identity, messaging, and the services your product depends on.",
-	},
-	{
-		icon: ShieldCheck,
-		title: "Secure, production-ready builds",
-		desc: "Solid foundations — access control, reliability, and a clear trail of who did what.",
-	},
-];
+	{ key: "webMobile", icon: Smartphone },
+	{ key: "platforms", icon: Layers },
+	{ key: "integrations", icon: Plug },
+	{ key: "secure", icon: ShieldCheck },
+] as const;
 
 const journeySteps = [
-	{
-		step: "1",
-		title: "Discover",
-		desc: "We map your idea, users, and constraints — then agree what to build first.",
-	},
-	{
-		step: "2",
-		title: "Design & build",
-		desc: "Product UI, APIs, and integrations — shipped in clear milestones you can review.",
-		highlight: true,
-	},
-	{
-		step: "3",
-		title: "Launch",
-		desc: "Go live on secure infrastructure — with the controls your business needs.",
-	},
-	{
-		step: "4",
-		title: "Grow with you",
-		desc: "Support, iterations, and new modules as your business moves — not a one-off handoff.",
-	},
-];
+	{ step: "1" },
+	{ step: "2", highlight: true },
+	{ step: "3" },
+	{ step: "4" },
+] as const;
+
+const USUAL_KEYS = ["generic", "hands", "domain"] as const;
+const WITH_KEYS = ["operate", "milestones", "oneTeam"] as const;
+const TRUST_KEYS = ["foundations", "infra", "support"] as const;
 
 export function SoftwareDevelopmentPageContent() {
+	const t = useTranslations("SoftwareDevelopment");
+	const tCommon = useTranslations("Common");
+
 	return (
 		<>
 			<SoftwareDevelopmentHero />
@@ -85,19 +60,19 @@ export function SoftwareDevelopmentPageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="mb-3 type-eyebrow text-primary">
-							Why custom
+							{t("story.eyebrow")}
 						</p>
 						<h2 className="type-h2">
-							Off-the-shelf only goes so far.{" "}
-							<span className="text-muted-foreground">
-								Your edge needs software that fits.
-							</span>
+							{t.rich("story.title", {
+								muted: (chunks) => (
+									<span className="text-muted-foreground">
+										{chunks}
+									</span>
+								),
+							})}
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
-							When your product or operating model doesn&apos;t
-							match a template, you need a team that can turn the
-							brief into something live — and stay with you after
-							launch.
+							{t("story.body")}
 						</p>
 					</motion.div>
 
@@ -115,35 +90,22 @@ export function SoftwareDevelopmentPageContent() {
 							/>
 							<span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/15 px-3 py-1 text-xs font-semibold text-red-300 ring-1 ring-red-500/30">
 								<X className="h-3.5 w-3.5" />
-								The usual path
+								{t("story.usualBadge")}
 							</span>
 							<h3 className="mt-5 type-card-title">
-								Ideas stall. Vendors fragment.
+								{t("story.usualTitle")}
 							</h3>
 							<ul className="mt-6 space-y-3.5">
-								{[
-									{
-										title: "Generic tools force workarounds",
-										desc: "Your process bends to the software — not the other way around.",
-									},
-									{
-										title: "Too many hands in the build",
-										desc: "Design here, code there, ops somewhere else — gaps show up late.",
-									},
-									{
-										title: "Domain knowledge missing",
-										desc: "Vendors ship features without understanding how your business actually works.",
-									},
-								].map((item) => (
+								{USUAL_KEYS.map((key) => (
 									<li
-										key={item.title}
+										key={key}
 										className="rounded-xl border border-white/10 bg-white/5 p-3.5"
 									>
 										<p className="text-sm font-semibold text-white">
-											{item.title}
+											{t(`story.usual.${key}.title`)}
 										</p>
 										<p className="mt-0.5 text-sm leading-snug text-slate-400">
-											{item.desc}
+											{t(`story.usual.${key}.desc`)}
 										</p>
 									</li>
 								))}
@@ -157,39 +119,25 @@ export function SoftwareDevelopmentPageContent() {
 							/>
 							<span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20">
 								<Check className="h-3.5 w-3.5" />
-								With TrueStack
+								{t("story.withBadge")}
 							</span>
 							<h3 className="mt-5 type-card-title">
-								One team. Idea to live product.
+								{t("story.withTitle")}
 							</h3>
 							<p className="mt-3 text-sm text-muted-foreground md:text-[15px]">
-								We sit with you from the brief through launch —
-								product and engineering in the same room.
+								{t("story.withBody")}
 							</p>
 							<ul className="mt-6 space-y-3.5">
-								{[
-									{
-										title: "Built around how you operate",
-										desc: "Your workflows, your brand, your constraints — not a forced template.",
-									},
-									{
-										title: "Ship in clear milestones",
-										desc: "You see progress early, decide what matters next, and stay in control.",
-									},
-									{
-										title: "One team through go-live",
-										desc: "Design, build, and launch without stitching vendors together yourself.",
-									},
-								].map((item) => (
+								{WITH_KEYS.map((key) => (
 									<li
-										key={item.title}
+										key={key}
 										className="rounded-xl border border-primary/15 bg-background/80 p-3.5 shadow-sm"
 									>
 										<p className="text-sm font-semibold text-foreground">
-											{item.title}
+											{t(`story.with.${key}.title`)}
 										</p>
 										<p className="mt-0.5 text-sm leading-snug text-muted-foreground">
-											{item.desc}
+											{t(`story.with.${key}.desc`)}
 										</p>
 									</li>
 								))}
@@ -211,22 +159,19 @@ export function SoftwareDevelopmentPageContent() {
 					>
 						<div>
 							<p className="mb-3 type-eyebrow text-primary">
-								How we build
+								{t("howWeBuild.eyebrow")}
 							</p>
 							<h2 className="type-h2">
-								Product and engineering in the same room.
+								{t("howWeBuild.title")}
 							</h2>
 							<p className="mt-4 max-w-xl type-lede text-muted-foreground">
-								You work with one team that understands the
-								brief, ships in clear milestones, and stays
-								accountable through go-live — not a chain of
-								handoffs.
+								{t("howWeBuild.body")}
 							</p>
 						</div>
 						<div className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
 							<Image
 								src="/photos/software-dev-pairing.jpg"
-								alt="Two developers pairing on a product interface in a Kuala Lumpur office"
+								alt={t("howWeBuild.photoAlt")}
 								fill
 								sizes="(max-width: 1024px) 100vw, 50vw"
 								className="object-cover"
@@ -254,14 +199,13 @@ export function SoftwareDevelopmentPageContent() {
 						transition={{ duration: 0.5 }}
 					>
 						<p className="mb-3 type-eyebrow text-primary">
-							What we build
+							{t("build.eyebrow")}
 						</p>
 						<h2 className="type-h2">
-							Products that ship.
+							{t("build.title")}
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl type-lede text-muted-foreground">
-							From customer-facing products to the tools your
-							team runs on — if you can dream it, we can build it.
+							{t("build.body")}
 						</p>
 					</motion.div>
 
@@ -274,25 +218,24 @@ export function SoftwareDevelopmentPageContent() {
 					>
 						{buildAreas.map((item) => (
 							<div
-								key={item.title}
+								key={item.key}
 								className="rounded-2xl border bg-card p-6 shadow-sm"
 							>
 								<div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
 									<item.icon className="h-5 w-5 text-primary" />
 								</div>
 								<h3 className="type-card-title">
-									{item.title}
+									{t(`build.items.${item.key}.title`)}
 								</h3>
 								<p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-									{item.desc}
+									{t(`build.items.${item.key}.desc`)}
 								</p>
 							</div>
 						))}
 					</motion.div>
 
 					<p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
-						Need something outside this list? Tell us the dream —
-						we&apos;ll tell you how we&apos;d build it.
+						{t("build.footer")}
 					</p>
 				</div>
 			</section>
@@ -312,20 +255,18 @@ export function SoftwareDevelopmentPageContent() {
 					>
 						<div>
 							<p className="mb-3 type-eyebrow text-primary">
-								How we work
+								{t("howWeWork.eyebrow")}
 							</p>
 							<h2 className="type-h2">
-								From brief to live — without the fog.
+								{t("howWeWork.title")}
 							</h2>
 							<p className="mt-4 text-lg text-muted-foreground">
-								A clear path so decision-makers always know
-								where the build stands, what ships next, and
-								what it takes to go live.
+								{t("howWeWork.body")}
 							</p>
 							<div className="relative mt-6 aspect-4/3 overflow-hidden rounded-3xl border shadow-sm">
 								<Image
 									src="/photos/software-dev-discovery.jpg"
-									alt="Team reviewing a product roadmap and sketches during discovery"
+									alt={t("howWeWork.photoAlt")}
 									fill
 									sizes="(max-width: 1024px) 100vw, 45vw"
 									className="object-cover"
@@ -338,7 +279,7 @@ export function SoftwareDevelopmentPageContent() {
 							<div className="mt-6 flex flex-wrap gap-3">
 								<Button asChild size="lg" className="gap-2">
 									<Link href="/contact?subject=Custom%20Software">
-										Start a conversation
+										{t("howWeWork.startCta")}
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -349,7 +290,7 @@ export function SoftwareDevelopmentPageContent() {
 									className="gap-2"
 								>
 									<Link href="/work">
-										See our work
+										{t("howWeWork.workCta")}
 										<ChevronRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -361,14 +302,14 @@ export function SoftwareDevelopmentPageContent() {
 								<li
 									key={s.step}
 									className={`flex gap-4 rounded-xl border bg-card p-4 ${
-										s.highlight
+										"highlight" in s && s.highlight
 											? "border-primary/35 bg-primary/5"
 											: ""
 									}`}
 								>
 									<div
 										className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${
-											s.highlight
+											"highlight" in s && s.highlight
 												? "bg-primary text-primary-foreground"
 												: "bg-muted text-foreground"
 										}`}
@@ -378,13 +319,15 @@ export function SoftwareDevelopmentPageContent() {
 									<div>
 										<p
 											className={`font-medium ${
-												s.highlight ? "text-primary" : ""
+												"highlight" in s && s.highlight
+													? "text-primary"
+													: ""
 											}`}
 										>
-											{s.title}
+											{t(`howWeWork.steps.${s.step}.title`)}
 										</p>
 										<p className="mt-0.5 text-sm text-muted-foreground">
-											{s.desc}
+											{t(`howWeWork.steps.${s.step}.desc`)}
 										</p>
 									</div>
 								</li>
@@ -410,16 +353,14 @@ export function SoftwareDevelopmentPageContent() {
 						>
 							<SectionBadge
 								icon={ShieldCheck}
-								text="Built to last"
+								text={t("trust.badge")}
 								className="[&>svg]:text-primary [&>span]:text-primary"
 							/>
 							<h2 className="type-h2">
-								Secure by default. Ready for production.
+								{t("trust.title")}
 							</h2>
 							<p className="mt-4 text-lg text-slate-400">
-								Every build gets solid foundations — so you
-								launch with confidence, not with shortcuts that
-								catch up later.
+								{t("trust.body")}
 							</p>
 						</motion.div>
 
@@ -430,29 +371,16 @@ export function SoftwareDevelopmentPageContent() {
 							viewport={{ once: true, margin: "-50px" }}
 							transition={{ duration: 0.5, delay: 0.08 }}
 						>
-							{[
-								{
-									title: "Solid product foundations",
-									desc: "Clear architecture, secure access, and a trail of who did what — built in from the start.",
-								},
-								{
-									title: "Reliable infrastructure",
-									desc: "Hosted and operated so your product stays up — with room to grow.",
-								},
-								{
-									title: "Support after launch",
-									desc: "We stay on for iterations, fixes, and the next module — not a one-off handoff.",
-								},
-							].map((item) => (
+							{TRUST_KEYS.map((key) => (
 								<li
-									key={item.title}
+									key={key}
 									className="rounded-xl border border-slate-800 bg-slate-900/50 p-4"
 								>
 									<p className="font-medium text-white">
-										{item.title}
+										{t(`trust.items.${key}.title`)}
 									</p>
 									<p className="mt-1 text-sm text-slate-400">
-										{item.desc}
+										{t(`trust.items.${key}.desc`)}
 									</p>
 								</li>
 							))}
@@ -468,19 +396,27 @@ export function SoftwareDevelopmentPageContent() {
 					product: "CustomSoftware",
 					limit: 6,
 				})}
-				title="Products we've taken live."
-				subtitle="A selection of platforms shipped with our team — from first build to go-live."
+				eyebrow={t("proof.eyebrow")}
+				title={t("proof.title")}
+				subtitle={t("proof.subtitle")}
+				viewAllLabel={t("proof.viewAll")}
 				columns={3}
 			/>
 
 			<div className="border-t bg-muted/30 pb-14 md:pb-20">
 				<div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-					<LogoCloud1 className="py-0" />
+					<LogoCloud1
+						className="py-0"
+						badge={tCommon("logoCloud.partners.badge")}
+						title={tCommon("logoCloud.partners.title")}
+						subtitle={tCommon("logoCloud.partners.subtitle")}
+						bottomText={tCommon("logoCloud.partners.bottom")}
+					/>
 				</div>
 			</div>
 
 			<p className="mx-auto max-w-2xl px-6 pb-2 text-center text-sm text-muted-foreground">
-				Looking for lending or marketplace platforms? See{" "}
+				{t("crossLinks.lead")}{" "}
 				<Link
 					href="/truekredit"
 					className="font-medium text-primary hover:underline"
@@ -513,15 +449,15 @@ export function SoftwareDevelopmentPageContent() {
 			<SoftwareDevelopmentFaq />
 
 			<ConsultationCta
-				heading="Ready to build what you've been dreaming of?"
-				body="Book a free consultation. Tell us the product you need — we'll map how we'd design, build, and launch it."
+				heading={t("cta.heading")}
+				body={t("cta.body")}
 				primary={{
 					href: "/contact?subject=Custom%20Software",
-					label: "Book a Free Consultation",
+					label: tCommon("bookConsultation"),
 				}}
 				secondary={{
 					href: "/work",
-					label: "See our work",
+					label: t("cta.secondary"),
 				}}
 			/>
 		</>

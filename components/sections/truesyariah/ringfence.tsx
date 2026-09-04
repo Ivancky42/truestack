@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { truesyariahRingfence } from "@/lib/truesyariah-content";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import {
 	TsIntro,
 	TsReveal,
@@ -9,12 +9,15 @@ import {
 } from "@/components/sections/truesyariah/primitives";
 
 export function TrueSyariahRingfence() {
+	const t = useTranslations("TrueSyariah");
+	const shariah = t.raw("ringfence.shariah") as string[];
+	const conventional = t.raw("ringfence.conventional") as string[];
 	return (
 		<TsSection id="ringfence">
 			<TsIntro
-				eyebrow="Ring-fencing"
-				title="If you also lend conventionally, the two books never touch."
-				lede="Commingling is the fastest way to lose a Shariah position, and it usually happens by accident — one shared database, one shared income account, one report that adds both together."
+				eyebrow={t("ringfence.eyebrow")}
+				title={t("ringfence.title")}
+				lede={t("ringfence.lede")}
 				className="mb-10"
 			/>
 
@@ -22,10 +25,10 @@ export function TrueSyariahRingfence() {
 				<div className="grid items-stretch border border-ts-rule bg-ts-paper lg:grid-cols-[1fr_auto_1fr]">
 					<div className="px-8 py-8 md:px-9">
 						<div className="mb-[18px] type-ts-eyebrow text-ts-stone">
-							Shariah book
+							{t("ringfence.shariahHeading")}
 						</div>
 						<ul className="flex flex-col gap-3.5">
-							{truesyariahRingfence.shariah.map((line) => (
+							{shariah.map((line) => (
 								<li
 									key={line}
 									className="text-[16px] text-ts-ink"
@@ -45,16 +48,16 @@ export function TrueSyariahRingfence() {
 							aria-hidden
 						/>
 						<span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-ts-paper px-0.5 font-mono text-[10px] tracking-[0.1em] text-ts-gold">
-							SEP
+							{t("ringfence.sep")}
 						</span>
 					</div>
 
 					<div className="px-8 py-8 md:px-9">
 						<div className="mb-[18px] type-ts-eyebrow text-ts-stone">
-							Conventional book
+							{t("ringfence.conventionalHeading")}
 						</div>
 						<ul className="flex flex-col gap-3.5">
-							{truesyariahRingfence.conventional.map((line) => (
+							{conventional.map((line) => (
 								<li
 									key={line}
 									className="text-[16px] text-ts-ink-soft"
@@ -69,16 +72,16 @@ export function TrueSyariahRingfence() {
 					</div>
 				</div>
 				<p className="mt-4 type-ui text-ts-ink-faint">
-					Group-level consolidation stays possible. What is not
-					possible is a single record, account or report that mixes
-					the two. Conventional books run on{" "}
-					<Link
-						href="/truekredit"
-						className="text-ts-gold transition-colors hover:text-ts-ink"
-					>
-						TrueKredit™
-					</Link>
-					.
+					{t.rich("ringfence.footnote", {
+						truekredit: (c) => (
+							<Link
+								href="/truekredit"
+								className="text-ts-gold transition-colors hover:text-ts-ink"
+							>
+								{c}
+							</Link>
+						),
+					})}
 				</p>
 			</TsReveal>
 		</TsSection>

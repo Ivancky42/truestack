@@ -1,0 +1,422 @@
+{
+	"_status": "ai-draft",
+	"Careers": {
+		"meta": {
+			"title": "加入我们｜Truestack吉隆坡招聘",
+			"description": "吉隆坡Truestack现招全栈工程、B2B销售、客户成功与行政岗位。软件岗为混合办公，欢迎应届毕业生投递简历。请查看在招与近期已招满的职位。",
+			"openGraphTitle": "加入我们｜Truestack吉隆坡招聘",
+			"openGraphDescription": "吉隆坡Truestack现招工程、销售、客户成功与运营岗位。工程岗混合办公。欢迎应届毕业生。"
+		},
+		"schema": {
+			"breadcrumbHome": "首页",
+			"breadcrumbCurrent": "加入我们",
+			"jobListName": "Truestack在招职位",
+			"industryEngineering": "软件开发",
+			"industryOther": "科技",
+			"workOn": "您将负责的工作：",
+			"responsibilities": "职责：",
+			"requirements": "要求：",
+			"bonus": "加分技能：",
+			"tech": "技术栈："
+		},
+		"hero": {
+			"breadcrumbAria": "面包屑",
+			"breadcrumbParent": "公司",
+			"breadcrumbCurrent": "加入我们",
+			"title": "打造支撑<accent>马来西亚信贷运转的系统。</accent>",
+			"lede": "我们打造本地放贷机构与金融科技公司每天在用的软件。它经手真金白银和真实借款人，所以工作从不抽象——您总能知道结果好不好。"
+		},
+		"jobs": {
+			"eyebrow": "在招职位",
+			"title": "我们正在招的岗位。",
+			"lede": "点开职位查看详情。",
+			"tabsAria": "职位列表",
+			"tabs": {
+				"open": "在招",
+				"closed": "已关闭"
+			},
+			"empty": {
+				"openTitle": "目前没有在招职位",
+				"openBody": "仍然可以写信给我们。接下客户后会有新职位。",
+				"closedTitle": "暂无已关闭职位可展示",
+				"closedBody": "此前招满的职位会显示在这里。"
+			},
+			"footer": {
+				"open": "这里没有合适的？仍然可以写信给我们。我们会读每一份申请，接下客户后会开放新职位。",
+				"closed": "目前已关闭。如果其中一项正是您在做的，仍然可以写信。我们会把好的简历存档。"
+			},
+			"columns": {
+				"role": "职位",
+				"team": "团队",
+				"location": "地点",
+				"type": "类型"
+			},
+			"status": {
+				"open": "在招",
+				"filled": "已招满"
+			},
+			"details": "详情",
+			"modal": {
+				"workOn": "您将负责的工作",
+				"do": "您将做什么",
+				"lookingFor": "我们在找什么",
+				"niceToHave": "加分项",
+				"whatWeUse": "我们用什么",
+				"applyHint": "把简历发邮件给我们，并注明此职位。",
+				"apply": "申请此职位",
+				"filledHint": "这个职位已招满。如果正是您在做的，仍然可以写信——我们会把好的简历存档。",
+				"write": "写信给我们"
+			},
+			"items": {
+				"full-stack-web-developer": {
+					"title": "全栈网页开发工程师 (Full-Stack Web Developer)",
+					"department": "工程",
+					"location": "吉隆坡，马来西亚 · 混合办公",
+					"type": "全职",
+					"summary": "React、Next.js、TypeScript、Node与Postgres，覆盖我们的放贷平台及其背后服务。3年以上经验。",
+					"description": "您将构建并维护客户每天运行的放贷平台——员工使用的界面、面向借款人的应用，以及背后的服务。工作横跨前端与后端，产品和运营就在同一间房。",
+					"workAreas": [
+						"面向客户的放贷与金融科技运营网页应用",
+						"内部管理工具与运营看板",
+						"后端服务及第三方对接（e-KYC、通知、支付）",
+						"须经得起合规、报送与审计的系统"
+					],
+					"responsibilities": [
+						"用React、Next.js和TypeScript构建并维护网页应用",
+						"用Node.js和Express编写后端服务",
+						"将我们的系统连接到内部工具和第三方服务",
+						"使用PostgreSQL及线上贷款账簿背后的数据模型",
+						"与产品、设计和运营一起决定下一步做什么",
+						"修复全栈问题，让系统更可靠",
+						"编写他人能读、能改、能测的代码",
+						"协助发布、CI以及我们已在运行的云环境",
+						"关注性能，以及这套系统用起来有多费劲"
+					],
+					"requirements": [
+						"3年以上全栈网页开发经验",
+						"熟悉React / Next.js和TypeScript",
+						"曾用Node.js和Express构建过后端服务",
+						"使用过PostgreSQL或其他关系型数据库",
+						"会设计简洁的REST API；懂GraphQL更佳",
+						"熟悉AWS、Docker、CI以及发布实际如何上线",
+						"能独立解决问题，不需要有人盯着",
+						"能向非工程师讲清一项技术决定",
+						"优先考虑马来西亚公民或永久居民"
+					],
+					"bonusSkills": [
+						"您曾上线过金融科技、放贷、SaaS或高合规软件",
+						"您处理过支付、身份核验或流程密集的产品",
+						"您在受监管环境中工作过",
+						"您值过班或处理过生产故障"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript",
+						"Node.js / Express",
+						"PostgreSQL",
+						"AWS",
+						"Docker & CI/CD"
+					]
+				},
+				"software-development-intern": {
+					"title": "软件开发实习生 (Software Development Intern)",
+					"department": "工程",
+					"location": "吉隆坡，马来西亚 · 混合办公",
+					"type": "实习",
+					"summary": "真正的客户工作，不是打发时间，由开发工程师审阅您的代码。可转正为全职。",
+					"description": "您将和工程团队一起做正在进行的客户与内部工作。您写真正的代码，有人审阅，然后上线。我们不是在找端咖啡或重画工单的人。",
+					"workAreas": [],
+					"responsibilities": [
+						"协助构建并维护网页应用和内部工具",
+						"做前端、后端，或两者都做——视您所长和我们所需",
+						"参与功能、缺陷修复与测试",
+						"加入团队其余人使用的同一站会和工具",
+						"编写别人在您之后能接手的代码",
+						"学习我们真正如何上线，而不只是教程怎么做"
+					],
+					"requirements": [
+						"正在攻读计算机科学、软件工程、IT或相近专业的文凭或学位",
+						"您理解编程的基本原理",
+						"您做过网站，哪怕很小",
+						"混合办公日能独立工作",
+						"卡住时能主动提问"
+					],
+					"bonusSkills": [
+						"能向我们展示的个人项目或作品集",
+						"有过React、Next.js或Node.js的接触",
+						"您已经在用Git",
+						"对UI、自动化或云感兴趣——这些都不是必须的"
+					],
+					"technologies": [
+						"React / Next.js",
+						"TypeScript / JavaScript",
+						"Node.js",
+						"Tailwind CSS",
+						"API与数据库",
+						"Git & GitHub"
+					]
+				},
+				"marketing-sales-executive": {
+					"title": "B2B市场与销售专员 (Marketing & Sales Executive)",
+					"department": "销售与市场",
+					"location": "吉隆坡，马来西亚 · 现场办公",
+					"type": "全职",
+					"summary": "拜访放贷机构与金融科技公司，展示我们做什么，并跟进到交接。需自备交通。",
+					"description": "您一周里大部分时间是在和管贷款账簿的人交谈。工作是见面、展示我们做什么，并跟进到工作交给交付团队。这不是电话工厂。",
+					"workAreas": [],
+					"responsibilities": [
+						"寻找可能需要我们的持牌放贷公司与金融科技公司",
+						"安排会议并出席",
+						"在首次交谈之后把关系延续下去",
+						"听清他们真正需要什么，并提议合适的产品或服务",
+						"撰写报价、方案以及偶尔的演示文稿",
+						"跟进仍未关闭的线索",
+						"干净利落地把工作交给将要构建的人",
+						"协助偶尔的活动、合作或品牌事务"
+					],
+					"requirements": [
+						"市场营销、商务、传播或相近专业的文凭或学位",
+						"您能与人交谈，听起来不像在念稿",
+						"能自如地当面见客户",
+						"不用被提醒两次就能把事情推进",
+						"良好的英语读写与口语",
+						"自备交通，并愿意为吉隆坡一带的会议出行",
+						"能把谈话进行下去的应届毕业生也欢迎"
+					],
+					"bonusSkills": [
+						"您曾向企业做过销售",
+						"您卖过软件或服务，而不只是实物产品",
+						"您在放贷或金融科技圈已有人脉"
+					],
+					"technologies": []
+				},
+				"client-success-executive": {
+					"title": "客户成功专员 (Client Success Executive)",
+					"department": "客户成功",
+					"location": "吉隆坡，马来西亚 · 现场办公",
+					"type": "全职",
+					"summary": "客户会找的人，从接入到交付，与工程团队并肩工作。",
+					"description": "客户会找您，从第一次接入谈话一直到交付。您在工程旁边工作——不是挡在他们前面的缓冲层。",
+					"workAreas": [],
+					"responsibilities": [
+						"在项目进行期间担任客户的具名对接人",
+						"让客户与工程团队保持互相沟通",
+						"跟踪进度，并在有人问起之前发出更新",
+						"收集客户真正需要的内容，而不是他们第一周说的那些",
+						"防止时间表、文件和交付物偏离",
+						"把人接入进来，而不是用三周启动演示文稿把人绕晕",
+						"上线后保持联系，因为真正的问题从那时才开始"
+					],
+					"requirements": [
+						"商务、传播、IT或相近专业的文凭或学位",
+						"您能写清楚的邮件并主持会议",
+						"做事有条理，日期延误了您会注意到",
+						"脑子里能同时装着不止一个项目",
+						"事情延误或不清楚时，您能保持冷静",
+						"欢迎应届毕业生"
+					],
+					"bonusSkills": [
+						"您用过Notion、Trello、ClickUp或同类工具",
+						"您在科技公司、代理机构或软件项目中工作过"
+					],
+					"technologies": []
+				},
+				"admin-executive": {
+					"title": "行政专员 (Admin Executive)",
+					"department": "运营",
+					"location": "吉隆坡，马来西亚 · 现场办公",
+					"type": "全职",
+					"summary": "发票、报价、档案与排程。让其余事情继续运转的协调工作。",
+					"description": "发票、报价、档案与排程——让小公司不至于自己绊倒自己的协调。您做得好，别人会看得到。",
+					"workAreas": [],
+					"responsibilities": [
+						"处理日常行政与运营工作",
+						"准备发票、报价及其相关文件",
+						"避免日历、会议和跟进互相撞车",
+						"把公司档案放在别人找得到的地方",
+						"协助HR文书和入职手续",
+						"有事需要催办时，与供应商、客户和团队沟通",
+						"支援管公司的人处理当周正在着急的事"
+					],
+					"requirements": [
+						"工商管理或相近专业的文凭或学位",
+						"做事有条理，文字也写得清楚",
+						"数字或名字错了，您会注意到",
+						"熟悉Microsoft Office或Google Workspace",
+						"能同时处理几件事，而不丢掉重要的那件",
+						"欢迎应届毕业生"
+					],
+					"bonusSkills": [
+						"您用过簿记或会计软件",
+						"您做过行政或办公室协调"
+					],
+					"technologies": []
+				},
+				"backend-developer": {
+					"title": "后端开发工程师 (Backend Developer)",
+					"department": "工程",
+					"location": "吉隆坡，马来西亚 · 混合办公",
+					"type": "全职",
+					"summary": "用Node、TypeScript和Postgres支撑我们的服务与审计轨迹。",
+					"description": "设计并构建放贷平台背后的后端——服务、数据模型，以及监管机构期望看到的审计轨迹。",
+					"workAreas": [],
+					"responsibilities": [
+						"设计能随贷款账簿增长的后端服务",
+						"构建我们的应用和合作方所调用的API",
+						"让PostgreSQL查询和数据模型保持诚实",
+						"从一开始就放入审计轨迹和合规功能",
+						"对接KYC、支付及其他第三方服务",
+						"让系统保持可用，并且足够快",
+						"与前端以及当周管云的人协作"
+					],
+					"requirements": [
+						"3年以上后端开发经验",
+						"扎实的Node.js和TypeScript",
+						"有Express或同类框架的经验",
+						"您理解PostgreSQL，而不只是ORM",
+						"您知道身份验证和基本安全如何运作",
+						"有一定AWS经验（ECS、EC2、S3或类似服务）",
+						"金融科技或合规经验是加分，不是门槛",
+						"须为马来西亚公民或永久居民"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Node.js / TypeScript",
+						"Express",
+						"PostgreSQL",
+						"AWS",
+						"REST APIs"
+					]
+				},
+				"qa-engineer": {
+					"title": "QA工程师 (QA Engineer)",
+					"department": "工程",
+					"location": "吉隆坡，马来西亚 · 混合办公",
+					"type": "全职",
+					"summary": "覆盖各平台的自动化与手工测试，并支援发布。",
+					"description": "确保我们上线的东西真的能用——自动化测试、偶尔的探索性过一遍，以及对发布方式有发言权。",
+					"workAreas": [],
+					"responsibilities": [
+						"决定什么值得测、怎么测",
+						"编写并维护自动化测试套件",
+						"做套件做不到的手工与探索性测试",
+						"发现小问题就修，如果这比提工单更快",
+						"不让测试环境腐烂",
+						"参与发布，让意外先于客户出现",
+						"观察生产环境坏了什么，并反馈回去"
+					],
+					"requirements": [
+						"2年以上QA经验",
+						"熟悉Jest、Cypress或Playwright",
+						"您做过自动化测试和探索性测试",
+						"您能读懂JavaScript/TypeScript和React应用",
+						"您知道如何测试API",
+						"您见过CI流水线和发布流程",
+						"熟悉Docker和云平台",
+						"须为马来西亚公民或永久居民"
+					],
+					"bonusSkills": [],
+					"technologies": [
+						"Jest / Cypress / Playwright",
+						"TypeScript",
+						"CI/CD",
+						"Docker"
+					]
+				}
+			}
+		},
+		"culture": {
+			"eyebrow": "我们怎么工作",
+			"title": "这份工作实际是什么样。",
+			"lede": "小团队、正在线上的系统，以及有规则的行业。下面大多由此而来。",
+			"imageAlt": "同事们在Truestack吉隆坡办公室的共用桌旁协作",
+			"items": {
+				"name": {
+					"title": "工作署着您的名字",
+					"body": "您自己定范围、构建、上线，并亲自听客户反馈。没有人挡在您和结果之间——这既是好处，也是难点。"
+				},
+				"together": {
+					"title": "有用时一起，没用时安静",
+					"body": "大家都在吉隆坡。工程岗混合办公，商务岗到岗。需要当面拍板时我们进一间房，其余时候让人安心做事。"
+				},
+				"audited": {
+					"title": "软件会被审计，所以我们不赶工",
+					"body": "我们的软件经手别人的钱，也会被监管机构查看。测试、评审和审计轨迹是压力下最先被牺牲的，所以我们要护住它们。"
+				},
+				"learn": {
+					"title": "您会学到放贷，而不只是工具",
+					"body": "这里每个人最终都会理解放贷及其监管如何运作。会的人不多——这让您把工作做得更好，而且带走的是您自己的。"
+				}
+			}
+		},
+		"process": {
+			"eyebrow": "招聘流程",
+			"title": "四步，没有意外。",
+			"lede": "我们阅读每一份申请，并向进入短名单的人回复。",
+			"steps": {
+				"intro": {
+					"tag": "30分钟",
+					"title": "初聊",
+					"body": "您做过什么、接下来想做什么，以及这个岗位普通一天是什么样。"
+				},
+				"discussion": {
+					"tag": "45–60分钟",
+					"title": "岗位深谈",
+					"body": "和您将来邻座的人好好谈一次，聊我们眼下正在做的工作。"
+				},
+				"case": {
+					"tag": "部分职位",
+					"title": "实践案例",
+					"body": "一件小而真实的事。我们会控制篇幅，之后和您一起过一遍。"
+				},
+				"offer": {
+					"tag": "录用",
+					"title": "录用与入职",
+					"body": "条件、入职日期，以及安排好的第一周，让您尽早交出真正的成果。"
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "常见问题",
+			"title": "投递之前。",
+			"lede": "有我们没写到的，发邮件问就好。现在问，好过面试之后才问。",
+			"aboutQuestion": "Truestack实际在做什么？",
+			"aboutAnswerDisplay": "放贷平台、身份与支付核验，以及面向马来西亚放贷机构与金融科技公司的定制软件——外加相应的KPKT合规工作。产品包括TrueKredit™、TrueSyariah™、TrueP2P™和TrueIdentity™。<link>了解我们</link>。",
+			"items": [
+				{
+					"question": "这些工作在哪里？",
+					"answer": "所有职位都在吉隆坡。销售、行政和客户成功在我们办公室现场办公。工程岗为混合办公——以吉隆坡为基地，远程天数灵活。"
+				},
+				{
+					"question": "Truestack目前在招哪些职位？",
+					"answer": "Truestack正在招聘全栈网页开发工程师、软件开发实习生、B2B市场与销售专员、客户成功专员和行政专员。在招与近期已招满的职位列于truestack.my/careers。"
+				},
+				{
+					"question": "你们招应届毕业生吗？",
+					"answer": "招。我们欢迎应届毕业生——包括软件开发——只要您愿意学、能独立工作。这适用于销售、行政、客户成功和工程。"
+				},
+				{
+					"question": "我需要金融科技经验吗？",
+					"answer": "不需要。这对工程岗有帮助，但我们会教您放贷和KPKT合规如何运作。对这个行业感兴趣，比第一天就会术语更重要。"
+				},
+				{
+					"question": "如何申请Truestack的职位？",
+					"answer": "将简历、作品集或项目链接发至hello@truestack.my，并说明您申请的职位。您也可以使用truestack.my/contact上的表单。我们阅读每一份申请，并向进入短名单的人回复。"
+				},
+				{
+					"question": "Truestack的招聘流程是什么？",
+					"answer": "初聊（约30分钟），与您将来邻座的人做岗位深谈（45至60分钟），部分职位可选实践案例，然后是录用沟通与入职。我们会向进入短名单的每个人回复。"
+				},
+				{
+					"question": "Truestack实际在做什么？",
+					"answer": "放贷平台、身份与支付核验，以及面向马来西亚放贷机构与金融科技公司的定制软件——外加相应的KPKT合规工作。产品包括TrueKredit™、TrueSyariah™、TrueP2P™和TrueIdentity™。详见truestack.my/about。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "把简历发给我们。",
+			"body": "您的简历、作品集或项目链接，以及您想申请的职位。如果在招的都不合适，告诉我们您做什么，我们会存档。",
+			"secondary": "了解公司"
+		}
+	}
+}

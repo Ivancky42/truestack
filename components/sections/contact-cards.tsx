@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Copy, Check } from "lucide-react";
@@ -29,10 +30,10 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function CopyButton({
   text,
-  label,
+  ariaLabel,
 }: {
   text: string;
-  label: string;
+  ariaLabel: string;
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -47,7 +48,7 @@ function CopyButton({
       type="button"
       onClick={handleCopy}
       className="rounded p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-      aria-label={`Copy ${label}`}
+      aria-label={ariaLabel}
     >
       {copied ? (
         <Check className="h-4 w-4 text-green-600" />
@@ -59,6 +60,7 @@ function CopyButton({
 }
 
 export function ContactCards() {
+  const t = useTranslations("Contact");
   return (
     <div className="grid h-full gap-6 sm:grid-cols-2 lg:grid-cols-1">
       {/* Phone / WhatsApp Card */}
@@ -68,16 +70,16 @@ export function ContactCards() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
               <Phone className="h-5 w-5 text-primary" />
             </div>
-            <CardTitle className="text-lg">Phone</CardTitle>
+            <CardTitle className="text-lg">{t("cards.phone.title")}</CardTitle>
           </div>
           <p className="text-sm text-muted-foreground">
-            Reach us via WhatsApp. Tap to start a conversation.
+            {t("cards.phone.description")}
           </p>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col gap-4">
           <div>
             <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
-              Phone
+              {t("cards.phone.label")}
             </label>
             <div className="flex items-center justify-between gap-2 rounded-lg border bg-background px-4 py-3">
               <div className="flex items-center gap-2">
@@ -86,7 +88,10 @@ export function ContactCards() {
                 </span>
                 <span className="font-medium">{PHONE_NUMBER}</span>
               </div>
-              <CopyButton text={PHONE_NUMBER} label="phone number" />
+              <CopyButton
+                text={PHONE_NUMBER}
+                ariaLabel={t("cards.copyAria", { label: t("cards.phone.copyLabel") })}
+              />
             </div>
           </div>
           <Button
@@ -100,7 +105,7 @@ export function ContactCards() {
               className="flex items-center justify-center gap-2"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Open WhatsApp
+              {t("cards.phone.whatsapp")}
             </a>
           </Button>
         </CardContent>
@@ -113,20 +118,23 @@ export function ContactCards() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
               <Mail className="h-5 w-5 text-primary" />
             </div>
-            <CardTitle className="text-lg">Email</CardTitle>
+            <CardTitle className="text-lg">{t("cards.email.title")}</CardTitle>
           </div>
           <p className="text-sm text-muted-foreground">
-            Send us an email for general inquiries or support.
+            {t("cards.email.description")}
           </p>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col gap-4">
           <div>
             <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
-              Email
+              {t("cards.email.label")}
             </label>
             <div className="flex items-center justify-between gap-2 rounded-lg border bg-background px-4 py-3">
               <span className="font-medium">{EMAIL}</span>
-              <CopyButton text={EMAIL} label="email" />
+              <CopyButton
+                text={EMAIL}
+                ariaLabel={t("cards.copyAria", { label: t("cards.email.copyLabel") })}
+              />
             </div>
           </div>
           <Button
@@ -139,7 +147,7 @@ export function ContactCards() {
               className="flex items-center justify-center gap-2"
             >
               <Mail className="h-5 w-5" />
-              Send Email
+              {t("cards.email.send")}
             </a>
           </Button>
         </CardContent>

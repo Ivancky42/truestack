@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,20 +31,22 @@ const ACCENT_GRADIENTS: Record<CtaAccent, string> = {
   kpkt: "from-kpkt to-cyan-600",
 };
 
-const DEFAULT_PRIMARY: CtaAction = {
-  href: "/contact",
-  label: "Book a Free Consultation",
-};
-
 export function ConsultationCta({
   eyebrow,
-  heading = "Book a free consultation",
-  body = "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation.",
-  primary = DEFAULT_PRIMARY,
+  heading,
+  body,
+  primary,
   secondary,
   accent = "brand",
   className,
 }: ConsultationCtaProps) {
+  const t = useTranslations("Common");
+  const resolvedHeading = heading ?? t("consultationHeading");
+  const resolvedBody = body ?? t("consultationBody");
+  const resolvedPrimary = primary ?? {
+    href: "/contact",
+    label: t("bookConsultation"),
+  };
   return (
     <section className={`py-20 ${className ?? ""}`}>
       <div className="mx-auto max-w-6xl px-6">
@@ -95,7 +98,7 @@ export function ConsultationCta({
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              {heading}
+              {resolvedHeading}
             </motion.h2>
             <motion.p
               className="mx-auto mt-4 max-w-2xl type-lede text-primary-foreground/80"
@@ -104,7 +107,7 @@ export function ConsultationCta({
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              {body}
+              {resolvedBody}
             </motion.p>
             <motion.div
               className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap"
@@ -114,9 +117,9 @@ export function ConsultationCta({
               transition={{ delay: 0.3 }}
             >
               <Button asChild size="lg" variant="secondary" className="gap-2">
-                <CtaLink href={primary.href}>
+                <CtaLink href={resolvedPrimary.href}>
                   <MessageSquare className="h-4 w-4" />
-                  {primary.label}
+                  {resolvedPrimary.label}
                 </CtaLink>
               </Button>
               {secondary && (

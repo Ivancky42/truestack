@@ -1,13 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase } from "lucide-react";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { type ProofStudy } from "@/lib/case-studies-data";
+import {
+	type ProofStudy,
+	localizeProofStudy,
+	workStudyCards,
+} from "@/lib/case-studies-data";
 
 type SuccessStoriesProofProps = {
 	studies: ProofStudy[];
@@ -36,7 +41,13 @@ export function SuccessStoriesProof({
 	columns = 3,
 	align = "center",
 }: SuccessStoriesProofProps) {
-	const count = studies.length;
+	const t = useTranslations("Common");
+	const tStudies = useTranslations("WorkStudies");
+	const cards = workStudyCards(tStudies);
+	const localizedStudies = studies.map((study) =>
+		localizeProofStudy(study, cards),
+	);
+	const count = localizedStudies.length;
 	const gridClass =
 		count === 1
 			? "mx-auto max-w-sm grid-cols-1"
@@ -118,7 +129,7 @@ export function SuccessStoriesProof({
 					viewport={{ once: true, margin: "-50px" }}
 					transition={{ duration: 0.5, delay: 0.08 }}
 				>
-					{studies.map((study) => (
+					{localizedStudies.map((study) => (
 						<div
 							key={study.title}
 							className="rounded-2xl border bg-card p-5 shadow-sm"
@@ -139,7 +150,7 @@ export function SuccessStoriesProof({
 										variant="secondary"
 										className="text-[10px] sm:text-xs"
 									>
-										Coming Soon
+										{t("comingSoon")}
 									</Badge>
 								) : null}
 							</div>

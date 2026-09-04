@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 import {
@@ -23,6 +24,8 @@ export function SoftwareDevelopmentHeroVisual({
 	className,
 	animateOnMount = false,
 }: SoftwareDevelopmentHeroVisualProps) {
+	const t = useTranslations("SoftwareDevelopment");
+
 	return (
 		<motion.div
 			className={cn("relative mx-auto w-full max-w-md", className)}
@@ -52,7 +55,7 @@ export function SoftwareDevelopmentHeroVisual({
 				{/* Idea — napkin / sketch brief */}
 				<div className="relative border-b bg-linear-to-br from-amber-50/80 via-muted/30 to-muted/50 px-6 py-6 dark:from-amber-950/20 dark:via-muted/20 dark:to-muted/40">
 					<p className="mb-4 type-eyebrow text-muted-foreground">
-						Your idea
+						{t("hero.ideaEyebrow")}
 					</p>
 					<div className="relative rounded-2xl border border-dashed border-amber-600/25 bg-background/70 p-4 shadow-sm">
 						{/* Corner fold */}
@@ -67,10 +70,10 @@ export function SoftwareDevelopmentHeroVisual({
 							</div>
 							<div className="min-w-0 flex-1">
 								<p className="type-pullquote italic text-foreground/80">
-									“What if we had an app that…”
+									{t("hero.quote")}
 								</p>
 								<p className="mt-1 text-[11px] text-muted-foreground">
-									Rough brief · still forming
+									{t("hero.brief")}
 								</p>
 							</div>
 						</div>
@@ -104,13 +107,13 @@ export function SoftwareDevelopmentHeroVisual({
 
 						<div className="mt-3 flex flex-wrap gap-1.5">
 							<span className="rounded-full border border-dashed border-muted-foreground/30 px-2 py-0.5 text-[10px] text-muted-foreground">
-								users?
+								{t("hero.tagUsers")}
 							</span>
 							<span className="rounded-full border border-dashed border-muted-foreground/30 px-2 py-0.5 text-[10px] text-muted-foreground">
-								flows?
+								{t("hero.tagFlows")}
 							</span>
 							<span className="rounded-full border border-dashed border-amber-600/35 bg-amber-500/10 px-2 py-0.5 text-[10px] text-amber-800/80">
-								must-haves
+								{t("hero.tagMustHaves")}
 							</span>
 						</div>
 					</div>
@@ -120,7 +123,7 @@ export function SoftwareDevelopmentHeroVisual({
 				<div className="relative bg-linear-to-br from-primary/8 via-background to-violet-500/5 px-6 py-6">
 					<p className="mb-4 flex items-center gap-1.5 type-eyebrow text-primary">
 						<Sparkles className="h-3 w-3" />
-						We build it
+						{t("hero.buildEyebrow")}
 					</p>
 					<div className="flex items-end gap-3">
 						{/* Browser mock */}
@@ -165,7 +168,7 @@ export function SoftwareDevelopmentHeroVisual({
 						</div>
 					</div>
 					<p className="mt-4 text-center text-xs text-muted-foreground">
-						Web, mobile &amp; admin — live under your brand
+						{t("hero.caption")}
 					</p>
 				</div>
 			</div>
@@ -174,6 +177,9 @@ export function SoftwareDevelopmentHeroVisual({
 }
 
 export function SoftwareDevelopmentHero() {
+	const t = useTranslations("SoftwareDevelopment");
+	const tCommon = useTranslations("Common");
+
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
 			<div className="absolute inset-0 -z-10">
@@ -211,29 +217,30 @@ export function SoftwareDevelopmentHero() {
 						transition={{ duration: 0.6 }}
 					>
 						<p className="mb-4 type-eyebrow text-primary">
-							Custom software development
+							{t("hero.eyebrow")}
 						</p>
 						<h1 className="type-h1">
-							If you can dream it,{" "}
-							<span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
-								we can build it.
-							</span>
+							{t.rich("hero.title", {
+								accent: (chunks) => (
+									<span className="bg-linear-to-r from-primary via-indigo-500 to-violet-500 bg-clip-text text-transparent">
+										{chunks}
+									</span>
+								),
+							})}
 						</h1>
 
 						<p className="mt-5 type-lede-hero font-medium text-primary">
-							Custom software from first sketch to go-live.
+							{t("hero.lede")}
 						</p>
 
 						<p className="mt-4 type-lede-hero text-muted-foreground">
-							Web apps, mobile products, internal tools, and
-							platforms under your brand — designed, built, and
-							shipped with you.
+							{t("hero.body")}
 						</p>
 
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 							<Button asChild size="lg" className="gap-2">
 								<CtaLink href="/contact?subject=Custom%20Software">
-									Book a Free Consultation
+									{tCommon("bookConsultation")}
 									<ArrowRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>
@@ -244,7 +251,7 @@ export function SoftwareDevelopmentHero() {
 								className="gap-2"
 							>
 								<CtaLink href="#what-we-build">
-									See what we build
+									{t("hero.secondaryCta")}
 									<ChevronRight className="h-4 w-4" />
 								</CtaLink>
 							</Button>

@@ -1,0 +1,529 @@
+{
+	"_status": "source",
+	"TrueKredit": {
+		"meta": {
+			"title": "TrueKredit™ | Money Lending Management System",
+			"description": "Money lending management system for KPKT-licensed money lenders. Borrowers, schedules, Lampiran A/B/B1, Jadual J & K and iDEAL KPKT paperwork in one platform.",
+			"openGraphTitle": "TrueKredit™ | Money Lender Software Malaysia",
+			"openGraphDescription": "Money lender software Malaysia / money lending management system. iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K (Schedule J & K).",
+			"ogImageAlt": "TrueKredit KPKT-aligned loan management platform — applications, signing, dashboards and compliance modules"
+		},
+		"schema": {
+			"productName": "TrueKredit™",
+			"alternateNames": [
+				"TrueKredit Pro",
+				"TrueKredit Standard",
+				"Money lending management system",
+				"Money lender software Malaysia",
+				"KPKT loan management system Malaysia",
+				"sistem iDEAL",
+				"Digital lending platform Malaysia"
+			],
+			"offers": [
+				{
+					"name": "TrueKredit Standard",
+					"description": "Loan management software for KPKT PPW and branch-led money lenders in Malaysia, with customer data on your own secure cloud."
+				},
+				{
+					"name": "TrueKredit Pro",
+					"description": "Nationwide digital lending platform for Malaysia — customer website, mobile apps, digital signing, and KPKT Online licence readiness."
+				}
+			],
+			"featureList": [
+				"Loan journey from application to repayment",
+				"Refinance, top-up and reschedule on the same loan file",
+				"Lampiran A, B1 and iDEAL KPKT (sistem iDEAL) exports",
+				"Jadual J & Jadual K (Schedule J & K) loan agreements",
+				"e-KYC and TrueSSM™ integrations",
+				"Secure cloud hosting in Malaysia",
+				"Audit trails and KPKT compliance workflows",
+				"Loan workflow options configured to how your office already works",
+				"Pro: branded borrower website, iPhone and Android apps, digital signing"
+			]
+		},
+		"hero": {
+			"title": "Run your entire lending book from <accent>one platform.</accent>",
+			"lede": "TrueKredit™ is the <strong>money lending management system</strong> for Malaysian KPKT-licensed money lenders — borrowers, schedules, repayments and KPKT paperwork in one system your whole team trusts.",
+			"ctaSecondary": "Standard vs Pro",
+			"tablistAria": "TrueKredit screens",
+			"slides": {
+				"admin": {
+					"label": "Admin",
+					"alt": "TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender"
+				},
+				"borrower": {
+					"label": "Borrower"
+				},
+				"mobile": {
+					"label": "Mobile"
+				}
+			}
+		},
+		"licensed": {
+			"ariaLabel": "Looking to get licensed",
+			"lead": "Looking to get licensed?",
+			"body": "We run the KPKT digital licence path — then your book lives on TrueKredit Pro.",
+			"cta": "See the licence path"
+		},
+		"story": {
+			"eyebrow": "The reality of lending",
+			"title": "Lending is messy. <muted>Keeping it under control shouldn't be.</muted>",
+			"lede": "Every borrower file, every instalment, every audit request piles up fast. When records live in spreadsheets, folders and inboxes, something always slips — usually in front of an examiner.",
+			"today": {
+				"eyebrow": "What most teams juggle",
+				"heading": "Too much to track. Too easy to miss.",
+				"items": {
+					"records": {
+						"title": "Borrower records everywhere",
+						"desc": "ICs, contacts, guarantors and documents scattered across Excel and paper files."
+					},
+					"payments": {
+						"title": "Payments hard to reconcile",
+						"desc": "Schedules, slips and late fees updated by hand — errors surface at month-end."
+					},
+					"audits": {
+						"title": "Audits become a scramble",
+						"desc": "KPKT asks for a trail; your team digs through folders instead of answering in minutes."
+					},
+					"view": {
+						"title": "No single view of the book",
+						"desc": "Outstanding, arrears and who owes what, pieced together from three places."
+					}
+				}
+			},
+			"after": {
+				"eyebrow": "With TrueKredit",
+				"heading": "One system. One source of truth.",
+				"cta": "See how it works",
+				"items": {
+					"book": {
+						"title": "The full loan book in one view",
+						"desc": "From first enquiry to final settlement, your team works from the same live file."
+					},
+					"audit": {
+						"title": "Audit-ready every day",
+						"desc": "Who did what and when, plus KPKT schedules, Lampiran and exports on demand."
+					},
+					"data": {
+						"title": "Your data stays with you",
+						"desc": "Hosted on your own secure cloud in Malaysia, never mixed with other lenders."
+					},
+					"grow": {
+						"title": "Grow without starting over",
+						"desc": "Start at the branch; unlock nationwide apps and signing with Pro on the same loan book."
+					}
+				}
+			}
+		},
+		"journey": {
+			"eyebrow": "End to end",
+			"title": "One system from first enquiry to final settlement.",
+			"lede": "Step through to see the screens your team would use — the whole book, one loan file.",
+			"play": "Play",
+			"pause": "Pause",
+			"playAria": "Play journey",
+			"pauseAria": "Pause journey",
+			"tablistAria": "TrueKredit loan journey",
+			"steps": {
+				"pipeline": {
+					"label": "Pipeline",
+					"phase": "01 · Pipeline",
+					"title": "Know where every lead stands.",
+					"desc": "Leads, converted, applied, approved, disbursed — one team book with the rate between each step. Assign loan officers, then turn a lead into a borrower without leaving the system.",
+					"chips": [
+						"Pipeline metrics",
+						"Team assignment",
+						"Lead to disbursed"
+					],
+					"alt": "TrueKredit leads pipeline — conversion funnel and sales performance over time"
+				},
+				"profile": {
+					"label": "Profile",
+					"phase": "02 · Profile",
+					"title": "Know the borrower",
+					"desc": "Work, family, monthly commitments, guarantors and documents in one complete file your whole team shares — so nobody re-asks the borrower what you already know.",
+					"chips": [
+						"Employment & commitments",
+						"Guarantors",
+						"Document vault"
+					],
+					"alt": "TrueKredit corporate borrower profile with payment performance, company information and TrueSSM"
+				},
+				"approve": {
+					"label": "Approve",
+					"phase": "03 · Approve",
+					"title": "Approve with the numbers in front of you.",
+					"desc": "Affordability score, DSR and the full loan summary on one screen — amount, term, fees, monthly payment. The credit team and the director look at the same file.",
+					"chips": [
+						"Affordability score",
+						"Loan summary",
+						"Monthly payment"
+					],
+					"alt": "TrueKredit loan approval with affordability risk score and loan summary"
+				},
+				"control": {
+					"label": "Control",
+					"phase": "04 · Control",
+					"title": "The right people see the right screens.",
+					"desc": "Owner, Credit, Finance, Collections — each role only gets what their job needs. Add a custom role when the defaults don't fit, without opening the whole book to everyone.",
+					"chips": [
+						"Role-based access",
+						"Custom roles",
+						"Permission by job"
+					],
+					"alt": "TrueKredit role-based access — create a custom role with permissions by job"
+				},
+				"documents": {
+					"label": "Documents",
+					"phase": "05 · Documents",
+					"title": "Agreements, receipts and letters, automatically",
+					"desc": "Repayment schedules, payment receipts, collection notices and default letters generated from the loan file and emailed when they matter — including the KPKT forms your examiner expects.",
+					"chips": [
+						"Lampiran A, B, B1",
+						"Jadual J & K",
+						"Receipts & default notices"
+					],
+					"alt": "Lampiran A generated from a TrueKredit loan file"
+				},
+				"service": {
+					"label": "Service",
+					"phase": "06 · Service",
+					"title": "Every instalment in view",
+					"desc": "Build the schedule the way you already price a loan — flat rate, reducing balance, balloon payments and the rest. Payment slips, early settlement quotes and finance checks sit on the same live book, so a borrower question takes seconds.",
+					"chips": [
+						"Flat rate",
+						"Reducing balance",
+						"Balloon payments"
+					],
+					"alt": "TrueKredit repayment schedule with instalments and balances"
+				},
+				"collect": {
+					"label": "Collect",
+					"phase": "07 · Collect",
+					"title": "Collections under control",
+					"desc": "A team view of arrears, promises to pay, escalation stages and maturity alerts — from first missed instalment through default, with every contact attempt recorded.",
+					"chips": [
+						"Promises to pay",
+						"Escalation stages",
+						"Maturity alerts"
+					],
+					"alt": "TrueKredit collections workspace with team book, outstanding, overdue and ageing"
+				},
+				"adapt": {
+					"label": "Adapt",
+					"phase": "08 · Adapt",
+					"title": "Refinance, top-up or reschedule",
+					"desc": "When a borrower needs room to adjust, each path is approved and tracked in the same system, on the same loan file — so the history of what changed and why stays intact.",
+					"chips": [
+						"Refinance",
+						"Top-up",
+						"Reschedule"
+					],
+					"alt": "TrueKredit early settlement and loan restructuring view"
+				},
+				"govern": {
+					"label": "Govern",
+					"phase": "09 · Govern",
+					"title": "Audit-ready, every day",
+					"desc": "Every assignment, payment and export sits on a timeline — who did it, when, and in what mode. Maker-checker stays on the file. Hand the CSV to an examiner without a folder hunt.",
+					"chips": [
+						"Activity timeline",
+						"Maker-checker",
+						"CSV export"
+					],
+					"alt": "TrueKredit activity timeline — who did what, when, with maker-checker on the loan file"
+				},
+				"configure": {
+					"label": "Configure",
+					"phase": "10 · Configure",
+					"title": "Fit the system to how you lend.",
+					"desc": "You shouldn't have to change how you lend to fit a piece of software. We configure TrueKredit around the process your team already knows — so the system follows your workflow, not the other way around.",
+					"chips": [
+						"Your workflow",
+						"How you already work",
+						"Set up for you"
+					],
+					"alt": "TrueKredit platform configuration — loan workflow options turned on or off to match how the office operates"
+				}
+			}
+		},
+		"channels": {
+			"eyebrow": "Same journey · more ways in",
+			"title": "Every channel feeds one loan file.",
+			"lede": "Start at the counter on Standard. Pro adds a branded website and apps — every application lands in the same queue.",
+			"tablistAria": "Origination channels",
+			"adminAlt": "TrueKredit admin dashboard — the same loan file your counter team works from",
+			"standard": "Standard",
+			"pro": "Pro",
+			"items": {
+				"walkin": {
+					"label": "Walk-in",
+					"title": "Counter",
+					"desc": "MyKad, identity check and the same approval path."
+				},
+				"website": {
+					"label": "Website",
+					"title": "Your domain",
+					"desc": "Apply, upload and sign — day or night."
+				},
+				"app": {
+					"label": "App",
+					"title": "iPhone & Android",
+					"desc": "Balances, payments and signing under your brand."
+				}
+			}
+		},
+		"checks": {
+			"eyebrow": "Connected checks",
+			"title": "Checks that live inside the loan file.",
+			"lede": "Identity checks, company lookups and payments happen in the system your team already uses — not across four separate websites with four separate logins.",
+			"items": {
+				"identity": {
+					"title": "TrueIdentity™ — e-KYC & liveness",
+					"desc": "Scan MyKad, take a selfie, confirm it is the same person. The result is saved to the borrower file.",
+					"tag": "First-party"
+				},
+				"ssm": {
+					"title": "TrueSSM™ company lookups",
+					"desc": "Company, director and shareholder details for corporate borrowers, pulled straight into the application.",
+					"tag": "First-party"
+				},
+				"payments": {
+					"title": "Payment gateway — collections and disbursements",
+					"desc": "Collect through FPX or e-wallet, and send disbursements from the same loan file your team already works from.",
+					"tag": "FassPay · GKash"
+				},
+				"ctos": {
+					"title": "CTOS credit reports",
+					"desc": "Credit information sits next to the application, so your credit team decides with the full picture.",
+					"tag": "Soon"
+				},
+				"truesend": {
+					"title": "Truesend™ — automated delivery",
+					"desc": "Receipts, reminders, collection and default letters sent automatically from the loan file.",
+					"tag": "First-party"
+				},
+				"truesight": {
+					"title": "TrueSight™ AI risk scoring",
+					"desc": "Extra risk insight on top of your existing checks, helping your credit team spot weaker files earlier.",
+					"tag": "Soon"
+				},
+				"attestation": {
+					"title": "Digital attestation — live & video",
+					"desc": "At the counter or on a scheduled video call — invites and reminders stay on the loan file.",
+					"tag": "Pro"
+				},
+				"signing": {
+					"title": "Digital signing on your premises",
+					"desc": "Legally binding signatures with MSC Trustgate — signing stays under your control. Customers sign from web or phone.",
+					"tag": "Pro"
+				}
+			}
+		},
+		"infrastructure": {
+			"eyebrow": "Your data stays yours",
+			"title": "Your cloud. Kept in Malaysia. Never mixed.",
+			"lede": "Standard and Pro both run on your own secure cloud account. Loan data stays in Malaysia and is never pooled with other lenders.",
+			"items": {
+				"malaysia": {
+					"title": "Data stays in Malaysia",
+					"desc": "Customer information is hosted in Malaysia and does not leave the country."
+				},
+				"protected": {
+					"title": "Protected and backed up",
+					"desc": "Bank-grade protection with daily backups and a full record of every action."
+				},
+				"upgrade": {
+					"title": "Upgrade without starting over",
+					"desc": "Moving to Pro keeps your borrowers, loans and history exactly where they are."
+				}
+			},
+			"cardEyebrow": "Your secure cloud",
+			"hosted": "Hosted in Malaysia",
+			"lender": "Your lender",
+			"dataOnly": "Your data only · not shared",
+			"backups": "Daily backups",
+			"actionLog": "Full action log",
+			"otherLenders": "Other lenders",
+			"separateAccounts": "Separate accounts"
+		},
+		"compare": {
+			"eyebrow": "Feature comparison",
+			"title": "Standard vs Pro",
+			"lede": "Same core system for your branch team. Pro unlocks nationwide customer channels, digital signing and attestation — without moving your loan book.",
+			"capability": "Capability",
+			"standard": "Standard",
+			"standardSub": "Branch & counter",
+			"pro": "Pro",
+			"proSub": "Nationwide",
+			"soon": "Soon",
+			"coreHeading": "Core admin platform",
+			"addonHeading": "Optional add-ons",
+			"integrationsHeading": "Free integrations",
+			"integrationsLede": "Identity, company and credit checks are already wired into TrueKredit. No fee to connect them — you pay only for each check you run.",
+			"proHeading": "Pro unlocks",
+			"coreRows": [
+				"Rich borrower profiles — work, family, commitments and documents",
+				"Flexible loan products — interest methods, schedules and late fees",
+				"Applications & approvals — counter intake, field visits, director packs",
+				"Risk scoring — affordability checks before you approve",
+				"Agreement & finance — payment vouchers, two-person approval before payout",
+				"Schedules & repayments — instalments, slips, early settlement, arrears",
+				"KPKT paperwork — Jadual J & K, Lampiran A/B/B1, receipts, default notices, exports",
+				"Reports & staff roles — portfolio view, who did what, access by job role",
+				"Your own secure cloud in Malaysia — data never mixed with other lenders"
+			],
+			"addonRows": [
+				"Collections workspace — team view, promises to pay, escalations, maturity alerts",
+				"Loan flexibility — refinance, top-up and reschedule, tracked on the file",
+				"Referral & lead generation — sales queue, agents, lead source and commission"
+			],
+			"integrations": {
+				"trueidentity": "TrueIdentity™ e-KYC — MyKad scan, selfie and face match",
+				"truessm": "TrueSSM™ company lookups",
+				"payments": "Payment gateway — FassPay and GKash",
+				"ctos": "CTOS credit pulls",
+				"truesight": "TrueSight™ AI risk scoring"
+			},
+			"proRows": [
+				"Branded customer website — apply day or night on your domain",
+				"iPhone & Android customer apps",
+				"Digital signing on your premises — MSC Trustgate",
+				"Digital attestation — live at the counter or scheduled video",
+				"Support for KPKT Online Money Lending Licence reviews"
+			],
+			"footnote": "Going digital with Pro? We also run the <license>KPKT digital licence</license> end-to-end. Shariah-compliant lending is <syariah>TrueSyariah™</syariah>; SC-regulated P2P is <p2p>TrueP2P™</p2p>."
+		},
+		"pro": {
+			"eyebrow": "TrueKredit Pro",
+			"title": "From licence to live lending.",
+			"lede": "Going for a KPKT Online Money Lending Licence? We handle the licensing path, the Pro setup, testing and go-live, so you lend nationwide on the same platform your team already knows.",
+			"ctaPrimary": "Talk to us about Pro",
+			"ctaSecondary": "Need the digital licence too?",
+			"photoAlt": "Two professionals in a Kuala Lumpur office reviewing KPKT licensing documents",
+			"steps": {
+				"licence": {
+					"title": "Licence acquisition",
+					"desc": "The online licence path — applications, renewals and liaison with KPKT."
+				},
+				"compliance": {
+					"title": "Compliance & consultancy",
+					"desc": "Regulatory advisory and audit readiness for digital lending."
+				},
+				"build": {
+					"title": "Build on TrueKredit Pro",
+					"desc": "Customer website, mobile apps, signing and attestation on your secure cloud."
+				},
+				"golive": {
+					"title": "Test, security review & go-live",
+					"desc": "Ready for examiners, then nationwide lending live."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"lede": "Straight answers on Standard vs Pro, KPKT paperwork, and where your loan data lives.",
+			"askElse": "Ask us something else",
+			"items": [
+				{
+					"question": "What is TrueKredit™?",
+					"answer": "TrueKredit™ is a money lending management system / money lender software Malaysia built for KPKT-licensed money lenders. It holds borrower profiles, loan products, applications and approvals, disbursement controls, repayment schedules, collections and the KPKT paperwork that goes with all of it — Lampiran A, B, B1, Jadual J & K, and iDEAL (sistem iDEAL) exports — in one place, on your own secure cloud."
+				},
+				{
+					"question": "What do Standard and Pro both include?",
+					"answer": "The full core platform: borrower profiles, flexible loan products, counter applications and approvals, affordability and risk scoring, payment vouchers with two-person payout approval, repayment schedules and arrears, KPKT paperwork and exports, portfolio reporting with role-based access, and your own secure cloud in Malaysia. Identity, company and payment integrations are connected at no additional connection fee. Pro does not take anything away from Standard."
+				},
+				{
+					"question": "What is exclusive to TrueKredit Pro?",
+					"answer": "The nationwide layer: a branded customer website on your own domain, iPhone and Android apps, digital signing on your premises verified with MSC Trustgate, digital attestation live at the counter or by scheduled video call, and support for KPKT Online Money Lending Licence reviews. Your team keeps the same admin workflows; new channels feed the same loan file."
+				},
+				{
+					"question": "What do borrowers see on the website and apps?",
+					"answer": "On TrueKredit™ Pro, borrowers use a branded website on your domain and iPhone or Android apps. They apply, upload documents, verify identity, track balances, pay instalments and sign agreements. Every action lands on the same loan file your team works in — nothing is re-keyed."
+				},
+				{
+					"question": "Can we start on Standard and upgrade to Pro later?",
+					"answer": "Yes, and most lenders do. Start on Standard for your branch today. Upgrading adds the customer channels, signing and attestation on top of the system you already run. Your borrowers, loans and history stay exactly where they are — nothing is migrated and nothing is re-keyed."
+				},
+				{
+					"question": "Do you support Lampiran A, B, B1, Jadual J & K, and iDEAL KPKT?",
+					"answer": "Yes. Schedules, Lampiran A, B and B1, Jadual J and Jadual K (Schedule J & K), payment receipts and default notices are generated from the same loan records your team works in, with exports shaped for KPKT submission including sistem iDEAL. Nobody retypes a form."
+				},
+				{
+					"question": "Where is our data kept, and is it shared with other lenders?",
+					"answer": "Your loan data lives on your own secure cloud account, hosted in Malaysia, and is never pooled with another lender's book. Daily backups and a complete record of every action come as standard, on both plans. Upgrading to Pro keeps that same environment."
+				},
+				{
+					"question": "Which checks are included, and what do they cost?",
+					"answer": "TrueIdentity™ e-KYC, TrueSSM™ company lookups and the payment gateway (FassPay and GKash) are already wired in, on both plans. There is no fee to connect them — you pay only for each check or transaction you run. CTOS credit pulls and TrueSight™ AI risk scoring are coming."
+				},
+				{
+					"question": "Can TrueKredit handle refinance, top-up and reschedule?",
+					"answer": "Yes. Each path is approved and tracked on the same loan file, so the change and the reason behind it stay in the history rather than becoming a new, disconnected loan. Available as an optional add-on on both plans."
+				},
+				{
+					"question": "Can we configure TrueKredit to match how we already lend?",
+					"answer": "Yes. Approval uploads before L2, AML confirmation, LHDN stamp certificates, and maker-checker on disbursements are each turned on or off to match how your office already works. Your team keeps their process — the system follows it."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ready to run your lending book with confidence?",
+			"body": "Book a free consultation to see how TrueKredit fits your branch today — or Pro when you are ready to lend nationwide. Your loan data stays with you either way.",
+			"secondary": "Compare Standard vs Pro"
+		},
+		"features": {
+			"eyebrow": "End to end",
+			"title": "One system from first enquiry to final settlement",
+			"lede": "From the first lead to the last repayment — your team runs the book in one place. Scroll to walk the journey.",
+			"steps": {
+				"leads": {
+					"phase": "01 · Pipeline",
+					"title": "Capture every lead",
+					"desc": "Sales queue, agents and who brought the lead — turn a lead into a borrower without leaving the system."
+				},
+				"profiles": {
+					"phase": "02 · Profile",
+					"title": "Know the borrower",
+					"desc": "Work, family, commitments, guarantors and documents — one complete file your whole team shares."
+				},
+				"approve": {
+					"phase": "03 · Approve",
+					"title": "Approve, then disburse",
+					"desc": "Field visits, risk checks, director packs and finance controls — close files faster at the counter."
+				},
+				"docs": {
+					"phase": "04 · Documents",
+					"title": "Agreements, receipts, letters — automatic",
+					"desc": "Schedules, payment receipts, collection and default letters created and emailed when they matter."
+				},
+				"repay": {
+					"phase": "05 · Service",
+					"title": "Every instalment in view",
+					"desc": "Clear repayment schedules, payment slips, early settlement and finance checks — one live book."
+				},
+				"collect": {
+					"phase": "06 · Collect",
+					"title": "Collections under control",
+					"desc": "Team view, promises to pay, escalations and maturity alerts — from arrears through default."
+				},
+				"flex": {
+					"phase": "07 · Adapt",
+					"title": "Refinance, top-up or reschedule",
+					"desc": "When a borrower needs room to adjust — each path is approved and tracked in the same system, on the same loan file."
+				},
+				"audit": {
+					"phase": "08 · Govern",
+					"title": "Audit-ready, every day",
+					"desc": "A clear record of who did what, when — with roles for Owner, Credit, Finance, Collections and Auditor."
+				},
+				"proApp": {
+					"phase": "09 · Nationwide",
+					"title": "Take lending nationwide",
+					"desc": "TrueKredit Pro adds a branded website and mobile apps — customers apply, pay and sign, while every file stays in the same system."
+				}
+			}
+		}
+	}
+}

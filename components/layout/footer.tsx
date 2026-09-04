@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Linkedin, Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,34 +12,34 @@ import {
   siteName,
 } from "@/lib/seo-defaults";
 
-/** Same grouping and labels as the Solutions menu in `header.tsx`. */
+/** Same grouping as the Solutions menu in `header.tsx`. Labels come from messages. */
 const solutionsColumns = [
   {
-    heading: "Services",
+    key: "services",
     links: [
-      { href: "/services/digital-license", label: "KPKT Digital Licence" },
-      { href: "/services/digital-license#shariah", label: "Shariah Digital Licence" },
-      { href: "/services/account-management", label: "KPKT Account Management" },
-      { href: "/services/software-development", label: "Custom Software Development" },
+      { href: "/services/digital-license", key: "digitalLicense" },
+      { href: "/services/digital-license#shariah", key: "shariahLicense" },
+      { href: "/services/account-management", key: "accountManagement" },
+      { href: "/services/software-development", key: "softwareDevelopment" },
     ],
   },
   {
-    heading: "Platforms",
+    key: "platforms",
     links: [
-      { href: "/truekredit", label: "TrueKredit™" },
-      { href: "/truesyariah", label: "TrueSyariah™" },
-      { href: "/services/p2p-software-development", label: "TrueP2P™" },
+      { href: "/truekredit", key: "truekredit" },
+      { href: "/truesyariah", key: "truesyariah" },
+      { href: "/services/p2p-software-development", key: "truep2p" },
     ],
   },
   {
-    heading: "APIs",
+    key: "apis",
     links: [
-      { href: "/trueidentity", label: "TrueIdentity™" },
-      { href: "/truessm", label: "TrueSSM™" },
-      { href: "/contact?subject=Payments", label: "Payment gateway" },
+      { href: "/trueidentity", key: "trueidentity" },
+      { href: "/truessm", key: "truessm" },
+      { href: "/contact?subject=Payments", key: "payments" },
       {
         href: "https://developers.truestack.my",
-        label: "Developers",
+        key: "developers",
         external: true,
       },
     ],
@@ -47,19 +48,19 @@ const solutionsColumns = [
 
 const footerLinks = {
   company: [
-    { href: "/about", label: "About" },
-    { href: "/work", label: "Work" },
-    { href: "/insights", label: "Insights" },
-    { href: "/careers", label: "Careers" },
-    { href: "/contact", label: "Contact" },
+    { href: "/about", key: "about" },
+    { href: "/work", key: "work" },
+    { href: "/insights", key: "insights" },
+    { href: "/careers", key: "careers" },
+    { href: "/contact", key: "contact" },
   ],
   legal: [
-    { href: "/cybersecurity", label: "Cybersecurity Policy" },
-    { href: "/pdpa", label: "PDPA Notice" },
-    { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms of Use" },
+    { href: "/cybersecurity", key: "cybersecurity" },
+    { href: "/pdpa", key: "pdpa" },
+    { href: "/privacy", key: "privacy" },
+    { href: "/terms", key: "terms" },
   ],
-};
+} as const;
 
 function LinkColumn({
   heading,
@@ -76,7 +77,7 @@ function LinkColumn({
       <h4 className="mb-4 type-subhead">{heading}</h4>
       <ul className="space-y-3">
         {links.map((link) => (
-          <li key={link.label}>
+          <li key={link.href}>
             {link.external ? (
               <a
                 href={link.href}
@@ -98,24 +99,41 @@ function LinkColumn({
   );
 }
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("Footer");
   const contactClassName =
     "inline-flex items-center gap-2 type-ui text-muted-foreground transition-colors hover:text-primary";
 
   return (
     <footer className="border-t bg-muted/30">
       <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
-        <nav aria-label="Footer">
+        <nav aria-label={t("navLabel")}>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
             {solutionsColumns.map((column) => (
               <LinkColumn
-                key={column.heading}
-                heading={column.heading}
-                links={column.links}
+                key={column.key}
+                heading={t(`columns.${column.key}`)}
+                links={column.links.map((link) => ({
+                  href: link.href,
+                  label: t(`solutions.${link.key}`),
+                  external: "external" in link ? link.external : undefined,
+                }))}
               />
             ))}
-            <LinkColumn heading="Company" links={footerLinks.company} />
-            <LinkColumn heading="Legal" links={footerLinks.legal} />
+            <LinkColumn
+              heading={t("columns.company")}
+              links={footerLinks.company.map((link) => ({
+                href: link.href,
+                label: t(`company.${link.key}`),
+              }))}
+            />
+            <LinkColumn
+              heading={t("columns.legal")}
+              links={footerLinks.legal.map((link) => ({
+                href: link.href,
+                label: t(`legal.${link.key}`),
+              }))}
+            />
           </div>
         </nav>
 
@@ -133,8 +151,7 @@ export function Footer() {
                 />
               </Link>
               <p className="mt-4 type-ui leading-relaxed text-muted-foreground">
-                KPKT compliance services and fintech software development for
-                licensed money lenders in Malaysia.
+                {t("tagline")}
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
                 <a href={`mailto:${orgEmail}`} className={contactClassName}>
@@ -148,13 +165,13 @@ export function Footer() {
                   className={contactClassName}
                 >
                   <Linkedin className="h-4 w-4" aria-hidden />
-                  <span>LinkedIn</span>
+                  <span>{t("linkedin")}</span>
                 </a>
               </div>
               <Button asChild size="lg" className="mt-6 gap-2">
                 <Link href="/contact">
                   <MessageSquare className="h-4 w-4" />
-                  Book a Free Consultation
+                  {t("bookConsultation")}
                 </Link>
               </Button>
             </div>
@@ -164,7 +181,7 @@ export function Footer() {
                 {legalName.toUpperCase()}
               </p>
               <p className="text-sm text-muted-foreground">
-                Registration No. {orgRegistrationNumber}
+                {t("registration", { number: orgRegistrationNumber })}
               </p>
               <address className="text-sm not-italic leading-relaxed text-muted-foreground">
                 {orgAddressLines[0]}
@@ -178,7 +195,7 @@ export function Footer() {
 
           <div className="mt-10 flex flex-col gap-5 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground/70">
-              © {new Date().getFullYear()} {siteName}. All rights reserved.
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
             <a href="https://aws.amazon.com/what-is-cloud-computing">
               {/* Official AWS embed — do not optimize or restyle the mark. */}

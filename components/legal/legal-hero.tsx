@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { FileText, Scale, Shield } from "lucide-react";
 import { GridPattern } from "@/components/sections/hero";
@@ -18,6 +19,13 @@ const HERO_ICONS = {
   "/terms": FileText,
 } as const;
 
+const TAB_KEYS: Record<LegalPolicyHref, "cybersecurity" | "pdpa" | "privacy" | "terms"> = {
+  "/cybersecurity": "cybersecurity",
+  "/pdpa": "pdpa",
+  "/privacy": "privacy",
+  "/terms": "terms",
+};
+
 type LegalHeroProps = {
   eyebrow: string;
   title: string;
@@ -33,6 +41,7 @@ export function LegalHero({
   lede,
   currentPath,
 }: LegalHeroProps) {
+  const t = useTranslations("LegalChrome");
   const Icon = HERO_ICONS[currentPath];
   return (
     <section className="hero-under-nav relative overflow-hidden border-b">
@@ -57,13 +66,13 @@ export function LegalHero({
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full border bg-background/80 px-3 py-1.5 type-micro font-medium text-muted-foreground backdrop-blur-sm">
-              Last updated {LEGAL_LAST_UPDATED}
+              {t("lastUpdated", { date: LEGAL_LAST_UPDATED })}
             </span>
           </div>
         </motion.div>
 
         <motion.nav
-          aria-label="Legal pages"
+          aria-label={t("pagesNav")}
           className="mt-10 flex flex-wrap gap-2"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,7 +92,7 @@ export function LegalHero({
                     : "bg-background/80 text-muted-foreground hover:border-primary/30 hover:text-foreground",
                 )}
               >
-                {policy.label}
+                {t(`tabs.${TAB_KEYS[policy.href]}`)}
               </Link>
             );
           })}

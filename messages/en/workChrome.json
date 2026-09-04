@@ -1,0 +1,66 @@
+{
+	"_status": "source",
+	"WorkChrome": {
+		"nav": "Work",
+		"hero": {
+			"eyebrow": "Our work",
+			"title": "See what <accent>live</accent> looks like.",
+			"lede": "Real platforms we've taken from idea to go-live — so you can see the outcome before you commit.",
+			"pills": {
+				"kpkt": "KPKT digital conversion",
+				"enterprise": "Enterprise lending",
+				"aws": "AWS Malaysia"
+			},
+			"viewStories": "View success stories"
+		},
+		"grid": {
+			"eyebrow": "Selected work",
+			"title": "Success stories",
+			"lede": "Featured case studies and live platforms — from digital KPKT conversions to ecommerce and enterprise lending cores.",
+			"featured": "Featured",
+			"andMore": "And more",
+			"andMoreLead": "<em>Your story could be here next.</em> Building or scaling a lending or fintech operation in Malaysia? Let's talk.",
+			"startConversation": "Start a conversation"
+		},
+		"detail": {
+			"allWork": "All work",
+			"builtOn": "Built on",
+			"viewProduct": "View product",
+			"visitLive": "Visit live site",
+			"moreWork": "More work",
+			"related": "Related case studies",
+			"viewAllWork": "View all work"
+		},
+		"sections": {
+			"theChallenge": "The challenge",
+			"whatWeBuilt": "What we built",
+			"howWeDelivered": "How we delivered"
+		},
+		"stats": {
+			"launch": "Launch",
+			"mo": "mo",
+			"product": "Product",
+			"surfaces": "Surfaces",
+			"engagement": "Engagement",
+			"focus": "Focus",
+			"regulator": "Regulator",
+			"platform": "Platform"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions"
+		},
+		"cta": {
+			"heading": "Ready for your story to be next?",
+			"body": "Whether you are going digital, replatforming, or starting fresh — book a free consultation and we will map the path from where you are to go-live.",
+			"secondary": "Explore Digital License"
+		},
+		"detailCta": {
+			"heading": "Want a build like this?",
+			"body": "Tell us what you are launching — digital lending, a marketplace, or a regulated platform. We will map the path from brief to go-live."
+		},
+		"schema": {
+			"name": "Work | Truestack Success Stories"
+		}
+	}
+}

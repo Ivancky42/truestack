@@ -1,0 +1,44 @@
+{
+	"_status": "ai-draft",
+	"Footer": {
+		"navLabel": "Pengaki",
+		"columns": {
+			"services": "Perkhidmatan",
+			"platforms": "Platform",
+			"apis": "API",
+			"company": "Syarikat",
+			"legal": "Undang-undang"
+		},
+		"solutions": {
+			"digitalLicense": "Lesen Digital KPKT",
+			"shariahLicense": "Lesen Digital Syariah",
+			"accountManagement": "Pengurusan Akaun KPKT",
+			"softwareDevelopment": "Pembangunan Perisian Tersuai",
+			"truekredit": "TrueKredit™",
+			"truesyariah": "TrueSyariah™",
+			"truep2p": "TrueP2P™",
+			"trueidentity": "TrueIdentity™",
+			"truessm": "TrueSSM™",
+			"payments": "Gerbang pembayaran",
+			"developers": "Pembangun"
+		},
+		"company": {
+			"about": "Tentang Kami",
+			"work": "Portfolio",
+			"insights": "Wawasan",
+			"careers": "Kerjaya",
+			"contact": "Hubungi Kami"
+		},
+		"legal": {
+			"cybersecurity": "Dasar Keselamatan Siber",
+			"pdpa": "Notis PDPA",
+			"privacy": "Privasi",
+			"terms": "Terma"
+		},
+		"tagline": "Perkhidmatan pematuhan Kementerian Perumahan dan Kerajaan Tempatan (KPKT) dan pembangunan perisian fintech untuk pemberi pinjam wang berlesen di Malaysia.",
+		"linkedin": "LinkedIn",
+		"bookConsultation": "Tempah Konsultasi Percuma",
+		"registration": "No. Pendaftaran {number}",
+		"copyright": "© {year} Truestack Technologies. Hak cipta terpelihara."
+	}
+}

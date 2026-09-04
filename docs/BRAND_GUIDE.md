@@ -322,6 +322,16 @@ Any new page or meaningful copy change must complete this checklist:
    "licensed money lender software Malaysia") belong in h1/h2/lead naturally.
 10. **Redirects** — if a URL moves, add a 301 in `next.config.ts` and update sitemap +
     llms.txt in the same commit.
+11. **Three locales, one source** — the site is trilingual (`en` unprefixed, `/ms`, `/zh`).
+    All reader-facing copy, metadata and JSON-LD text lives in `messages/{en,ms,zh}/<ns>.json`
+    and is read via `useTranslations` / `getTranslations`; never hardcode English in TSX.
+    New or changed English copy needs the `ms` and `zh` keys in the same commit (AI draft,
+    `_status: ai-draft`, is acceptable). Metadata lengths per locale: en/ms title ≤ 60 /
+    description 140–160 chars; zh title ≤ 30 / description 70–90 code points with the
+    primary keyword in the first 10 characters. Pages get `alternates.languages`
+    (`en`, `ms`, `zh-Hans`, `zh-CN`, `x-default`) via `lib/i18n/seo.ts`; English-only surfaces
+    (Insights, legal) are `noindex` under `/ms` and `/zh` with canonical → English.
+    Full contract, glossary and tone-for-translators: `docs/I18N.md`. Run `pnpm i18n:check`.
 
 ---
 
@@ -335,5 +345,6 @@ Any new page or meaningful copy change must complete this checklist:
 - [ ] Motion follows §6 and decorative elements are `aria-hidden`.
 - [ ] Photos (if any) follow §8 and are credited in `docs/IMAGE_CREDITS.md`.
 - [ ] SEO checklist §9 complete (metadata, canonical, JSON-LD, sitemap, llms.txt, FAQ).
+- [ ] i18n (§9.11): no hardcoded reader-facing English in TSX; `ms` + `zh` keys added; `pnpm i18n:check` passes; `/ms` and `/zh` render without raw keys.
 - [ ] Reused shared components instead of duplicating (§5).
 - [ ] `npm run lint` and `npm run build` pass.

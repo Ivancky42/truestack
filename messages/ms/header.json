@@ -1,0 +1,68 @@
+{
+	"_status": "ai-draft",
+	"Header": {
+		"nav": {
+			"solutions": "Penyelesaian",
+			"work": "Portfolio",
+			"insights": "Wawasan",
+			"about": "Tentang Kami",
+			"careers": "Kerjaya"
+		},
+		"startHere": "Mula di sini",
+		"openMenu": "Buka menu",
+		"changeLanguage": "Tukar bahasa",
+		"freeConsultation": "Konsultasi Percuma",
+		"bookConsultation": "Tempah Konsultasi Percuma",
+		"columns": {
+			"services": "Perkhidmatan",
+			"platforms": "Platform",
+			"apis": "API"
+		},
+		"badges": {
+			"upcoming": "Akan datang",
+			"new": "Baharu"
+		},
+		"solutions": {
+			"truekredit": {
+				"title": "TrueKredit™",
+				"description": "Buku pinjaman dalam satu sistem untuk pemberi pinjam wang berlesen."
+			},
+			"digitalLicense": {
+				"title": "Lesen Digital KPKT",
+				"description": "PPW konvensional atau Syariah — kami uruskan kedua-dua laluan lesen."
+			},
+			"shariahLicense": {
+				"title": "Lesen Digital Syariah",
+				"description": "Laluan KPKT akan datang — entiti, jawatankuasa dan TrueSyariah™."
+			},
+			"accountManagement": {
+				"title": "Pengurusan Akaun KPKT",
+				"description": "Pembaharuan, permit dan penyerahan — kami uruskan untuk anda."
+			},
+			"softwareDevelopment": {
+				"title": "Pembangunan Perisian Tersuai",
+				"description": "Platform dan perisian pinjaman yang dibina mengikut proses anda."
+			},
+			"truesyariah": {
+				"title": "TrueSyariah™",
+				"description": "Lesen digital Syariah dan platform — Tawarruq, Ta'widh dan Gharamah."
+			},
+			"truep2p": {
+				"title": "TrueP2P™",
+				"description": "Platform rakan ke rakan selaras Suruhanjaya Sekuriti Malaysia (SC), dibina untuk Malaysia."
+			},
+			"trueidentity": {
+				"title": "TrueIdentity™",
+				"description": "e-KYC untuk fintech Malaysia — MyKad, swafoto, padanan."
+			},
+			"truessm": {
+				"title": "TrueSSM™",
+				"description": "Carian daftar SSM, profil dan dokumen imbasan."
+			},
+			"payments": {
+				"title": "Gerbang pembayaran",
+				"description": "FPX, DuitNow, kad dan penyesuaian dalam satu tempat."
+			}
+		}
+	}
+}

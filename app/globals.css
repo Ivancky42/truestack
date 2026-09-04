@@ -86,6 +86,23 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+html[lang="zh-CN"] {
+  --font-sans: var(--font-noto-sc), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-noto-sc), var(--font-rethink-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+  Tailwind v4 `@theme inline` inlines `--font-sans` / `--font-display` into
+  utilities, and `type-h1`/`type-h2` reference `--font-rethink-sans` directly.
+  next/font also sets `--font-inter` / `--font-rethink-sans` on `body`, which
+  would shadow an html-only override. Retarget those variables on body so
+  `font-sans` and display headings resolve to Noto Sans SC first on /zh.
+*/
+html[lang="zh-CN"] body {
+  --font-inter: var(--font-noto-sc);
+  --font-rethink-sans: var(--font-noto-sc);
+}
+
 /* 
   Brand Color Configuration
   To change the brand color, update --primary and --ring values

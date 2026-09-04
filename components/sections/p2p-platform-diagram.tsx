@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import {
   Banknote,
@@ -57,7 +58,60 @@ const FLOW = {
   r: 8,
 } as const;
 
-function FlowDiagram({ variant }: { variant: "top" | "bottom" }) {
+type FlowLabels = {
+  investment: string;
+  funding: string;
+  repayment: string;
+  yield: string;
+};
+
+/**
+ * Approximate rendered width of an 11px semibold label so the pill fits
+ * translated text (CJK glyphs are roughly full-em, Latin roughly half).
+ */
+function flowPillWidth(label: string): number {
+  let width = 0;
+  for (const ch of label) {
+    width += /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/.test(ch) ? 11.5 : 6.4;
+  }
+  return Math.max(54, Math.round(width + 20));
+}
+
+function FlowPill({
+  cx,
+  y,
+  label,
+}: {
+  cx: number;
+  y: number;
+  label: string;
+}) {
+  const width = flowPillWidth(label);
+  return (
+    <>
+      <rect
+        x={cx - width / 2}
+        y={y}
+        width={width}
+        height="24"
+        rx="5"
+        className="fill-background stroke-border"
+        strokeWidth="1"
+      />
+      <text x={cx} y={y + 16} textAnchor="middle" className="fill-foreground">
+        {label}
+      </text>
+    </>
+  );
+}
+
+function FlowDiagram({
+  variant,
+  labels,
+}: {
+  variant: "top" | "bottom";
+  labels: FlowLabels;
+}) {
   const id = `p2p-process-arrow-${variant}`;
   const isTop = variant === "top";
   const { left, mid, right, r } = FLOW;
@@ -120,57 +174,13 @@ function FlowDiagram({ variant }: { variant: "top" | "bottom" }) {
       <g className="text-[11px] font-semibold">
         {isTop ? (
           <>
-            <rect
-              x="350"
-              y="38"
-              width="84"
-              height="24"
-              rx="5"
-              className="fill-background stroke-border"
-              strokeWidth="1"
-            />
-            <text x="392" y="54" textAnchor="middle" className="fill-foreground">
-              Investment
-            </text>
-            <rect
-              x="770"
-              y="38"
-              width="76"
-              height="24"
-              rx="5"
-              className="fill-background stroke-border"
-              strokeWidth="1"
-            />
-            <text x="808" y="54" textAnchor="middle" className="fill-foreground">
-              Funding
-            </text>
+            <FlowPill cx={392} y={38} label={labels.investment} />
+            <FlowPill cx={808} y={38} label={labels.funding} />
           </>
         ) : (
           <>
-            <rect
-              x="773"
-              y="46"
-              width="70"
-              height="24"
-              rx="5"
-              className="fill-background stroke-border"
-              strokeWidth="1"
-            />
-            <text x="808" y="62" textAnchor="middle" className="fill-foreground">
-              Repayment
-            </text>
-            <rect
-              x="365"
-              y="46"
-              width="54"
-              height="24"
-              rx="5"
-              className="fill-background stroke-border"
-              strokeWidth="1"
-            />
-            <text x="392" y="62" textAnchor="middle" className="fill-foreground">
-              Yield
-            </text>
+            <FlowPill cx={808} y={46} label={labels.repayment} />
+            <FlowPill cx={392} y={46} label={labels.yield} />
           </>
         )}
       </g>
@@ -178,27 +188,35 @@ function FlowDiagram({ variant }: { variant: "top" | "bottom" }) {
   );
 }
 
-export function P2PPlatformDiagram() {
+export async function P2PPlatformDiagram() {
+  const t = await getTranslations("P2P");
+  const investorItems = t.raw("diagram.investors.items") as string[];
+  const hubItems = t.raw("diagram.hub.items") as string[];
+  const issuerItems = t.raw("diagram.issuers.items") as string[];
+  const flowLabels: FlowLabels = {
+    investment: t("diagram.flow.investment"),
+    funding: t("diagram.flow.funding"),
+    repayment: t("diagram.flow.repayment"),
+    yield: t("diagram.flow.yield"),
+  };
   return (
     <section className="border-t bg-background py-20">
       <div className="mx-auto max-w-6xl px-6">
         <header className="mx-auto max-w-3xl text-center">
           <p className="type-eyebrow text-primary">
-            How TrueP2P™ works
+            {t("diagram.eyebrow")}
           </p>
           <h2 className="mt-3 type-h2">
-            What we engineer for you
+            {t("diagram.title")}
           </h2>
           <p className="mt-4 type-lede text-muted-foreground">
-            A regulated peer-to-peer platform connects investors directly with issuers. We
-            build every layer in between — onboarding, listings, escrow, repayments and
-            reporting — so the experience feels like a single, trusted product.
+            {t("diagram.body")}
           </p>
         </header>
 
         <div className="mt-12 lg:mt-14">
           <div className="mb-1 hidden lg:block">
-            <FlowDiagram variant="top" />
+            <FlowDiagram variant="top" labels={flowLabels} />
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.28fr)_minmax(0,1fr)] lg:items-stretch lg:gap-8">
@@ -208,22 +226,23 @@ export function P2PPlatformDiagram() {
                   <User className="h-6 w-6" aria-hidden />
                 </IconBadge>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Investors</h3>
+                  <h3 className="text-xl font-bold text-foreground">
+                    {t("diagram.investors.title")}
+                  </h3>
                   <p className="mt-2 type-lede text-muted-foreground">
-                    Retail, accredited, and institutional investors looking for transparent,
-                    asset-backed yield.
+                    {t("diagram.investors.body")}
                   </p>
                 </div>
               </div>
               <ul className="mt-8 flex flex-col gap-3" role="list">
                 <li>
-                  <SidePill icon={CircleDollarSign}>Deposit & invest in notes</SidePill>
+                  <SidePill icon={CircleDollarSign}>{investorItems[0]}</SidePill>
                 </li>
                 <li>
-                  <SidePill icon={Layers}>Diversify across issuers</SidePill>
+                  <SidePill icon={Layers}>{investorItems[1]}</SidePill>
                 </li>
                 <li>
-                  <SidePill icon={BarChart3}>Track returns in real time</SidePill>
+                  <SidePill icon={BarChart3}>{investorItems[2]}</SidePill>
                 </li>
               </ul>
             </article>
@@ -246,22 +265,21 @@ export function P2PPlatformDiagram() {
                     />
                   </div>
                   <p className="mt-5 text-xl font-bold tracking-tight md:text-2xl">
-                    TrueP2P™ — engineered by Truestack
+                    {t("diagram.hub.title")}
                   </p>
                   <p className="mt-4 max-w-md text-base leading-7 text-primary-foreground/90 md:text-lg md:leading-8">
-                    SC-aligned investor onboarding, listings, escrow, payments, e-signing
-                    and reporting — delivered as a production-ready platform for your operator.
+                    {t("diagram.hub.body")}
                   </p>
                 </div>
                 <ul className="mt-10 flex flex-col gap-3.5 md:gap-4" role="list">
                   <li>
-                    <HubPill icon={CheckCircle2}>Investor accreditation & limits</HubPill>
+                    <HubPill icon={CheckCircle2}>{hubItems[0]}</HubPill>
                   </li>
                   <li>
-                    <HubPill icon={ShieldCheck}>Escrow & trust account integration</HubPill>
+                    <HubPill icon={ShieldCheck}>{hubItems[1]}</HubPill>
                   </li>
                   <li>
-                    <HubPill icon={FileCheck2}>SC-aligned reporting & audit trail</HubPill>
+                    <HubPill icon={FileCheck2}>{hubItems[2]}</HubPill>
                   </li>
                 </ul>
               </article>
@@ -273,29 +291,30 @@ export function P2PPlatformDiagram() {
                   <Building2 className="h-6 w-6" aria-hidden />
                 </IconBadge>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Issuers</h3>
+                  <h3 className="text-xl font-bold text-foreground">
+                    {t("diagram.issuers.title")}
+                  </h3>
                   <p className="mt-2 type-lede text-muted-foreground">
-                    SMEs, project sponsors, and originators that need fast, structured access
-                    to growth capital.
+                    {t("diagram.issuers.body")}
                   </p>
                 </div>
               </div>
               <ul className="mt-8 flex flex-col gap-3" role="list">
                 <li>
-                  <SidePill icon={Banknote}>Apply for funding</SidePill>
+                  <SidePill icon={Banknote}>{issuerItems[0]}</SidePill>
                 </li>
                 <li>
-                  <SidePill icon={FileCheck2}>Submit documents & KYC</SidePill>
+                  <SidePill icon={FileCheck2}>{issuerItems[1]}</SidePill>
                 </li>
                 <li>
-                  <SidePill icon={Wallet}>Receive disbursement</SidePill>
+                  <SidePill icon={Wallet}>{issuerItems[2]}</SidePill>
                 </li>
               </ul>
             </article>
           </div>
 
           <div className="mt-1 hidden lg:block">
-            <FlowDiagram variant="bottom" />
+            <FlowDiagram variant="bottom" labels={flowLabels} />
           </div>
         </div>
       </div>

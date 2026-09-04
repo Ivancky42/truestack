@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { HelpCircle } from "lucide-react";
 import {
@@ -9,9 +10,14 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionBadge } from "@/components/shared/section-badge";
-import { accountManagementFaq } from "@/lib/account-management-faq";
+import { publishedFaqItems } from "@/lib/i18n/faq";
 
 export function AccountManagementFaq() {
+	const t = useTranslations("AccountManagement");
+	const items = publishedFaqItems(
+		t.raw("faq.items") as { question: string; answer: string }[],
+	);
+
 	return (
 		<section
 			id="faq"
@@ -28,14 +34,14 @@ export function AccountManagementFaq() {
 				>
 					<SectionBadge
 						icon={HelpCircle}
-						text="FAQ"
+						text={t("faq.eyebrow")}
 						className="justify-center"
 					/>
 					<h2
 						id="account-management-faq-heading"
 						className="type-h2"
 					>
-						Frequently asked questions
+						{t("faq.title")}
 					</h2>
 				</motion.div>
 
@@ -46,7 +52,7 @@ export function AccountManagementFaq() {
 					transition={{ duration: 0.5, delay: 0.08 }}
 				>
 					<Accordion type="single" collapsible className="w-full">
-						{accountManagementFaq.map((faq, index) => (
+						{items.map((faq, index) => (
 							<AccordionItem key={faq.question} value={`item-${index}`}>
 								<AccordionTrigger className="py-5 text-left text-base font-medium md:text-lg">
 									{faq.question}

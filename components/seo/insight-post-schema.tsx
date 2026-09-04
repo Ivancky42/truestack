@@ -25,7 +25,7 @@ function insightImageUrl(image?: SanityImage): string | undefined {
  * JSON-LD BlogPosting schema for /insights/[slug].
  * Validate at: https://validator.schema.org/
  */
-export function InsightPostSchema({ post }: { post: InsightPost }) {
+export async function InsightPostSchema({ post }: { post: InsightPost }) {
 	const pageUrl = `${siteUrl}/insights/${post.slug}`;
 	const image = insightImageUrl(post.mainImage) ?? defaultOgAbsoluteUrl();
 

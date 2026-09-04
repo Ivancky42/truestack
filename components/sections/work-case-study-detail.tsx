@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
@@ -22,7 +23,6 @@ import { SectionBadge } from "@/components/shared/section-badge";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { AboutHeroBackdrop } from "@/components/sections/about-hero-backdrop";
 import type { WorkCaseStudyDetail } from "@/lib/work-case-studies";
-import { getRelatedWorkCaseStudies } from "@/lib/work-case-studies";
 
 const PRODUCT_LINK_RE = /\[\[([^\]|]+)\|([^\]]+)\]\]/g;
 
@@ -115,10 +115,13 @@ function Gallery({
 
 export function WorkCaseStudyDetailContent({
 	study,
+	related,
 }: {
 	study: WorkCaseStudyDetail;
+	related: WorkCaseStudyDetail[];
 }) {
-	const related = getRelatedWorkCaseStudies(study.slug);
+	const t = useTranslations("WorkChrome");
+	const tCommon = useTranslations("Common");
 
 	return (
 		<>
@@ -139,7 +142,7 @@ export function WorkCaseStudyDetailContent({
 							className="mb-6 flex flex-wrap items-center gap-2 type-eyebrow text-slate-400"
 						>
 							<Link href="/" className="transition-colors hover:text-slate-200">
-								Home
+								{tCommon("breadcrumbHome")}
 							</Link>
 							<span aria-hidden className="text-slate-600">
 								›
@@ -148,7 +151,7 @@ export function WorkCaseStudyDetailContent({
 								href="/work"
 								className="transition-colors hover:text-slate-200"
 							>
-								Work
+								{t("nav")}
 							</Link>
 							<span aria-hidden className="text-slate-600">
 								›
@@ -182,9 +185,9 @@ export function WorkCaseStudyDetailContent({
 						<div className="mt-8 grid grid-cols-3 gap-3 border-t border-slate-800 pt-6 sm:max-w-lg">
 							{study.stats.map((stat) => (
 								<div key={stat.label}>
-									<div className="type-subhead text-slate-50">
-										{stat.value}
-									</div>
+								<div className="type-subhead text-slate-50">
+									{stat.value}
+								</div>
 									<div className="mt-0.5 text-[11px] uppercase tracking-wider text-slate-500">
 										{stat.label}
 									</div>
@@ -195,7 +198,7 @@ export function WorkCaseStudyDetailContent({
 						<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
 							<Button asChild size="lg" className="gap-2">
 								<Link href="/contact?subject=Work">
-									Book a Free Consultation
+									{tCommon("bookConsultation")}
 									<ArrowRight className="h-4 w-4" />
 								</Link>
 							</Button>
@@ -210,7 +213,7 @@ export function WorkCaseStudyDetailContent({
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									Visit live site
+									{t("detail.visitLive")}
 									<ArrowUpRight className="h-4 w-4" />
 								</a>
 							</Button>
@@ -237,7 +240,7 @@ export function WorkCaseStudyDetailContent({
 						className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
 					>
 						<ArrowLeft className="h-4 w-4" />
-						All work
+						{t("detail.allWork")}
 					</Link>
 					<div className="flex h-8 items-center">
 						<Image
@@ -260,7 +263,7 @@ export function WorkCaseStudyDetailContent({
 					>
 						<div className="min-w-0">
 							<p className="type-eyebrow text-primary">
-								Built on
+								{t("detail.builtOn")}
 							</p>
 							<p className="mt-1 type-card-title">
 								{study.productPage.label}
@@ -270,7 +273,7 @@ export function WorkCaseStudyDetailContent({
 							</p>
 						</div>
 						<span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary">
-							View product
+							{t("detail.viewProduct")}
 							<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
 						</span>
 					</Link>
@@ -333,14 +336,14 @@ export function WorkCaseStudyDetailContent({
 					>
 						<SectionBadge
 							icon={HelpCircle}
-							text="FAQ"
+							text={t("faq.eyebrow")}
 							className="justify-center"
 						/>
 						<h2
 							id="work-case-study-faq-heading"
 							className="type-h2"
 						>
-							Frequently asked questions
+							{t("faq.title")}
 						</h2>
 					</motion.div>
 
@@ -373,15 +376,15 @@ export function WorkCaseStudyDetailContent({
 						<div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
 							<div>
 								<p className="mb-2 type-eyebrow text-primary">
-									More work
+									{t("detail.moreWork")}
 								</p>
 								<h2 className="type-h2">
-									Related case studies
+									{t("detail.related")}
 								</h2>
 							</div>
 							<Button asChild variant="outline" className="gap-2 self-start">
 								<Link href="/work">
-									View all work
+									{t("detail.viewAllWork")}
 									<ArrowRight className="h-4 w-4" />
 								</Link>
 							</Button>
@@ -444,11 +447,11 @@ export function WorkCaseStudyDetailContent({
 			) : null}
 
 			<ConsultationCta
-				heading="Want a build like this?"
-				body="Tell us what you are launching — digital lending, a marketplace, or a regulated platform. We will map the path from brief to go-live."
+				heading={t("detailCta.heading")}
+				body={t("detailCta.body")}
 				primary={{
 					href: "/contact?subject=Work",
-					label: "Book a Free Consultation",
+					label: tCommon("bookConsultation"),
 				}}
 				secondary={{
 					href: study.productPage.href,

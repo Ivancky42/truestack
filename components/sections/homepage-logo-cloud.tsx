@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 import {
 	clientLogos,
@@ -24,7 +25,8 @@ const homepageClientLogos = clientLogos.filter((logo) =>
 	HOMEPAGE_CLIENT_NAMES.has(logo.name),
 );
 
-export function HomepageLogoCloud({ className }: { className?: string }) {
+export async function HomepageLogoCloud({ className }: { className?: string }) {
+	const t = await getTranslations("Home");
 	const displaySize = toLogoDisplaySize("large", false);
 
 	return (
@@ -32,7 +34,7 @@ export function HomepageLogoCloud({ className }: { className?: string }) {
 			className={cn("relative w-full pt-0 pb-14 md:pb-14", className)}
 		>
 			<p className="mx-auto mb-6 max-w-6xl px-6 text-center text-[13px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70 md:mb-7">
-				Lenders and fintechs we have taken live
+				{t("logoCloud.caption")}
 			</p>
 
 			<div className="hidden motion-reduce:block">

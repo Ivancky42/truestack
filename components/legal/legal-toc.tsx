@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import type { LegalTocItem } from "@/lib/legal";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +10,7 @@ type LegalTocProps = {
 };
 
 export function LegalToc({ items }: LegalTocProps) {
+  const t = useTranslations("LegalChrome");
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
@@ -35,8 +37,8 @@ export function LegalToc({ items }: LegalTocProps) {
   }, [items]);
 
   return (
-    <nav aria-label="On this page" className="lg:sticky lg:top-28">
-      <p className="mb-3 type-eyebrow text-primary">On this page</p>
+    <nav aria-label={t("onThisPage")} className="lg:sticky lg:top-28">
+      <p className="mb-3 type-eyebrow text-primary">{t("onThisPage")}</p>
       <ul className="space-y-1 border-l border-border">
         {items.map((item) => (
           <li key={item.id}>

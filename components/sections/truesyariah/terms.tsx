@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { truesyariahTerms } from "@/lib/truesyariah-content";
 import {
@@ -11,6 +12,7 @@ import {
 } from "@/components/sections/truesyariah/primitives";
 
 export function TrueSyariahTerms() {
+	const t = useTranslations("TrueSyariah");
 	const [active, setActive] = useState(0);
 	const term = truesyariahTerms[active];
 
@@ -18,18 +20,16 @@ export function TrueSyariahTerms() {
 		<TsSection id="terms">
 			<TsReveal className="mb-9 flex flex-wrap items-end justify-between gap-6">
 				<div className="max-w-[40em]">
-					<TsEyebrow>Terminology</TsEyebrow>
+					<TsEyebrow>{t("terms.eyebrow")}</TsEyebrow>
 					<h2 className="type-ts-h2 text-pretty text-ts-ink">
-						The words your system has to understand.
+						{t("terms.title")}
 					</h2>
 					<p className="mt-4 type-lede text-ts-ink-muted">
-						Conventional lending software treats these as labels. In
-						a Shariah platform each one changes what the system is
-						allowed to do.
+						{t("terms.lede")}
 					</p>
 				</div>
 				<span className="font-mono text-xs text-ts-stone">
-					Select a term
+					{t("terms.select")}
 				</span>
 			</TsReveal>
 
@@ -40,11 +40,11 @@ export function TrueSyariahTerms() {
 				<div
 					className="border-ts-rule lg:border-r"
 					role="tablist"
-					aria-label="Shariah terms"
+					aria-label={t("terms.tablistAria")}
 				>
 					{truesyariahTerms.map((item, i) => (
 						<button
-							key={item.name}
+							key={item.key}
 							type="button"
 							role="tab"
 							id={`ts-term-tab-${i}`}
@@ -61,7 +61,7 @@ export function TrueSyariahTerms() {
 							)}
 						>
 							<span className="type-ts-serif text-xl text-ts-ink">
-								{item.name}
+								{t(`terms.items.${item.key}.name`)}
 							</span>
 							<TsArabic className="text-[22px]">
 								{item.arabic}
@@ -77,22 +77,22 @@ export function TrueSyariahTerms() {
 				>
 					<div className="mb-1.5 flex flex-wrap items-baseline gap-4">
 						<h3 className="type-ts-h2 text-[32px] text-ts-ink">
-							{term.name}
+							{t(`terms.items.${term.key}.name`)}
 						</h3>
 						<TsArabic className="text-[30px]">{term.arabic}</TsArabic>
 					</div>
 					<div className="mb-5 type-ts-eyebrow text-ts-stone">
-						{term.gloss}
+						{t(`terms.items.${term.key}.gloss`)}
 					</div>
 					<p className="mb-[22px] text-[17px] leading-[1.7] text-ts-ink-muted">
-						{term.body}
+						{t(`terms.items.${term.key}.body`)}
 					</p>
 					<div className="border-t border-ts-rule-soft pt-5">
 						<div className="mb-1.5 type-ts-eyebrow text-ts-gold">
-							In the platform
+							{t("terms.inPlatform")}
 						</div>
 						<p className="text-[16px] leading-relaxed text-ts-ink-soft">
-							{term.system}
+							{t(`terms.items.${term.key}.system`)}
 						</p>
 					</div>
 				</div>

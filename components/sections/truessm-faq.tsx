@@ -1,6 +1,11 @@
-import { truessmFaq } from "@/lib/truessm-faq";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 export function TrueSsmFaq() {
+	const t = useTranslations("TrueSSM");
+	const items = t.raw("faq.items") as { question: string; answer: string }[];
+
 	return (
 		<section
 			aria-labelledby="truessm-faq-heading"
@@ -11,15 +16,14 @@ export function TrueSsmFaq() {
 					id="truessm-faq-heading"
 					className="type-h2"
 				>
-					Frequently asked questions
+					{t("faq.title")}
 				</h2>
 				<p className="mt-1 text-sm text-muted-foreground md:text-base">
-					SSM registry coverage, RM pricing, idempotency, and how
-					TrueSSM™ fits your Truestack stack.
+					{t("faq.body")}
 				</p>
 
 				<dl className="mt-8 divide-y rounded-xl border bg-background">
-					{truessmFaq.map((item) => (
+					{items.map((item) => (
 						<div key={item.question} className="px-5 py-5 md:px-6">
 							<dt className="text-base font-semibold">
 								{item.question}

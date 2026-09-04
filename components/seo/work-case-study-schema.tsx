@@ -1,12 +1,19 @@
-import { siteUrl } from "@/lib/seo-defaults";
+import { getLocale, getTranslations } from "next-intl/server";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { absoluteLocalizedUrl, siteUrl } from "@/lib/seo-defaults";
 import type { WorkCaseStudyDetail } from "@/lib/work-case-studies";
 
-export function WorkCaseStudySchema({
+export async function WorkCaseStudySchema({
 	study,
 }: {
 	study: WorkCaseStudyDetail;
 }) {
-	const pageUrl = `${siteUrl}/work/${study.slug}`;
+	const locale = resolveAppLocale(await getLocale());
+	const tCommon = await getTranslations("Common");
+	const t = await getTranslations("WorkChrome");
+	const pageUrl = absoluteLocalizedUrl(`/work/${study.slug}`, locale);
+	const workUrl = absoluteLocalizedUrl("/work", locale);
+	const homeUrl = absoluteLocalizedUrl("/", locale);
 
 	const schema = {
 		"@context": "https://schema.org",
@@ -17,7 +24,7 @@ export function WorkCaseStudySchema({
 				url: pageUrl,
 				name: study.seo.title,
 				description: study.seo.description,
-				inLanguage: "en-MY",
+				inLanguage: inLanguage[locale],
 				isPartOf: { "@id": `${siteUrl}/#website` },
 				about: { "@id": `${siteUrl}/#organization` },
 				breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
@@ -29,14 +36,14 @@ export function WorkCaseStudySchema({
 					{
 						"@type": "ListItem",
 						position: 1,
-						name: "Home",
-						item: siteUrl,
+						name: tCommon("breadcrumbHome"),
+						item: homeUrl,
 					},
 					{
 						"@type": "ListItem",
 						position: 2,
-						name: "Work",
-						item: `${siteUrl}/work`,
+						name: t("nav"),
+						item: workUrl,
 					},
 					{
 						"@type": "ListItem",
@@ -51,6 +58,7 @@ export function WorkCaseStudySchema({
 				"@id": `${pageUrl}#article`,
 				headline: study.headline,
 				description: study.lead,
+				inLanguage: inLanguage[locale],
 				author: { "@id": `${siteUrl}/#organization` },
 				publisher: { "@id": `${siteUrl}/#organization` },
 				mainEntityOfPage: { "@id": `${pageUrl}#webpage` },

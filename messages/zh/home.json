@@ -1,0 +1,211 @@
+{
+	"_status": "ai-draft",
+	"Home": {
+		"meta": {
+			"title": "马来西亚放贷牌照",
+			"description": "Truestack助您申请马来西亚放贷牌照并上线——KPKT数字放贷或伊斯兰教法路径，配备TrueKredit™与TrueSyariah™贷款系统。"
+		},
+		"hero": {
+			"title": "马来西亚放贷牌照与贷款管理系统，助您获牌上线。",
+			"titlePrefix": ["马来西亚放贷牌照与贷款管理系统，助您"],
+			"verbs": ["获牌落地", "安心放贷", "高效构建", "规模扩张", "稳定运营"],
+			"verbSuffix": "。",
+			"lede": "我们帮您申请KPKT放贷牌照，也帮您运转贷款账簿——常规PPW或符合伊斯兰教法的数字放贷、文书工作，以及底下的通道。",
+			"secondaryCta": "找到您的起点",
+			"chips": {
+				"regulators": "KPKT, SC & Bank Negara",
+				"data": "数据在马来西亚",
+				"audit": "可随时审计"
+			},
+			"alt": {
+				"lampiran": "由 TrueKredit 生成的 Lampiran A 借款人台账",
+				"dashboard": "TrueKredit 管理后台——马来西亚放贷机构的未偿余额、催收与组合健康状况",
+				"timeline": "TrueKredit 活动时间线——谁更改了贷款、导出了 Lampiran A，或记录了还款"
+			}
+		},
+		"logoCloud": {
+			"caption": "我们已助力上线的放贷机构与金融科技公司"
+		},
+		"solutions": {
+			"eyebrow": "找到您的起点",
+			"title": "申请KPKT牌照，或把现有牌照转为数字放贷。",
+			"lede": "无论您今天已持有马来西亚房屋及地方政府部 (KPKT) 常规牌照，还是仍在准备递交，通往全国数字放贷的步骤是明确的。符合伊斯兰教法的数字放贷是另一条即将推出的路径——我们也负责，依托 <truesyariah>TrueSyariah™</truesyariah>。",
+			"tablistLabel": "您的起点",
+			"tabs": {
+				"licensed": "我已持有KPKT牌照",
+				"applying": "我正在申请牌照"
+			},
+			"step": "阶段",
+			"licensed": {
+				"review": {
+					"title": "牌照核查",
+					"body": "我们审计您现有的 lesen PPW、许可证和未完成的申报，然后明确列出转为数字牌照对您的具体要求。"
+				},
+				"application": {
+					"title": "数字牌照申请",
+					"body": "我们准备申请材料与临时牌照汇报，并与 KPKT 协调直至获批。"
+				},
+				"build": {
+					"title": "平台建设",
+					"body": "您的贷款账簿迁入 TrueKredit™ Pro，网页与移动端借款人流程使用您自有品牌。"
+				},
+				"golive": {
+					"title": "上线与后续维护",
+					"body": "合规核验、员工培训，随后持续客户管理，以免有事遗漏。"
+				}
+			},
+			"applying": {
+				"structure": {
+					"title": "架构与资格",
+					"body": "在提交任何材料前，对照 KPKT 要求核查公司、董事、实缴资本与经营场所。"
+				},
+				"submission": {
+					"title": "申请与递交",
+					"body": "代您准备并递交 Lampiran A、证明文件和 SSM 资料。"
+				},
+				"readiness": {
+					"title": "系统就绪",
+					"body": "按 KPKT 要求查验的 Jadual J 和 K 文件、协议与收据配置 TrueKredit™。"
+				},
+				"disbursements": {
+					"title": "首笔放款",
+					"body": "开通 e-KYC、公司核查与支付通道，以便牌照到手之日起即可放贷。"
+				}
+			},
+			"licensedNote": "通常从启动到上线约三个月",
+			"licensedCta": "详谈您的牌照转换",
+			"acquire": {
+				"title": "不必从零开始：收购已持牌公司",
+				"body": "新申请并非唯一路径。我们也可以帮您购入一家已持有 KPKT 放贷牌照的现有公司，再处理董事、股东与 CoSec 变更，并把账簿迁入 TrueKredit™——往往是更快开始放贷的路径。"
+			},
+			"applyingNote": "获批后我们继续担任您的客户管理伙伴",
+			"applyingCta": "查看您是否符合资格"
+		},
+		"truekredit": {
+			"eyebrow": "马来西亚贷款管理系统",
+			"title": "TrueKredit™——马来西亚贷款管理系统，账簿一处可审计。",
+			"lede": "放贷很快就会乱：借款人档案在一个系统，分期付款在电子表格，KPKT 文书在抽屉里。TrueKredit 把借款人、还款计划、还款和监管文件放在同一条记录上。",
+			"features": [
+				"一个系统覆盖借款人、还款计划、还款和 KPKT 文书",
+				"您的贷款数据留在马来西亚境内、属于您自己的安全云上",
+				"记录谁在何时做了什么的审计轨迹",
+				"升级 Pro 即可使用借款人应用与电子签名——贷款账簿不变"
+			],
+			"cta": "了解 TrueKredit",
+			"alt": "TrueKredit 借款人档案，含贷款摘要以及手机上的品牌借款人应用",
+			"platforms": {
+				"truekredit": {
+					"body": "面向持牌放贷公司的 KPKT 贷款管理，Pro 提供品牌借款人应用与电子签名。",
+					"cta": "了解 TrueKredit"
+				},
+				"truesyariah": {
+					"body": "符合伊斯兰教法的数字牌照与平台：Tawarruq 大宗商品交易、隔离的 Ta'widh 与 Gharamah，账簿与常规放贷隔离。",
+					"cta": "了解 TrueSyariah"
+				},
+				"truep2p": {
+					"body": "投资人与发行人门户、托管与支付，按马来西亚证券监督委员会 (SC) 的 RMO 要求构建。",
+					"cta": "了解 TrueP2P"
+				}
+			}
+		},
+		"core": {
+			"eyebrow": "Truestack Core",
+			"title": "否则您得重复建设的集成能力。",
+			"lede": "已内置于 TrueKredit™——或通过 API，把同样的核查接到您现有系统。身份、公司数据与马来西亚支付通道——一套集成栈，把合规集中在一处。",
+			"comingSoon": "即将推出",
+			"partners": "数据、通道与认证合作伙伴",
+			"items": {
+				"trueidentity": {
+					"body": "面向马来西亚的 e-KYC：MyKad OCR、活体检测与生物特征比对，符合 PDPA。"
+				},
+				"truessm": {
+					"body": "来自 SSM 的公司资料、职员、股东与抵押负担，供可审计的尽职调查使用。"
+				},
+				"payments": {
+					"name": "支付网关",
+					"body": "FPX 与 DuitNow 通道、银行卡、循环授权、webhook 与自动对账——已对接 FassPay 和 GKash。"
+				},
+				"truescore": {
+					"body": "由 CTOS 支持的信用报告、CCRIS 数据、诉讼与破产核查。"
+				},
+				"truecommodity": {
+					"body": "Tawarruq 大宗商品交易，配合 Gharamah 与 Ta'widh 分类账，以及委员会导出。"
+				},
+				"truesight": {
+					"body": "基于人工智能的借款人风险评分，提供跨组合、可解释的信用资质信号。"
+				}
+			}
+		},
+		"trust": {
+			"eyebrow": "董事会与出海团队会问什么",
+			"title": "签署前先看：放贷牌照、数据驻留与上线。",
+			"alt": "Truestack 团队在吉隆坡办公室协作"
+		},
+		"faq": {
+			"items": [
+				{
+					"question": "贷款系统数据存放在哪里？",
+					"answer": "存放在马来西亚境内、属于您自己的安全云上，与我们服务的其他放贷机构完全分开。您的借款人档案从不进入共享租户。这是每一套 TrueKredit™ 部署的默认做法。"
+				},
+				{
+					"question": "系统能否通过KPKT审计？",
+					"answer": "每一项操作都记录操作者和时间，KPKT 文书也从团队日常使用的同一批记录生成。审计师看到的是一条轨迹，而不是一堆电子表格和文件夹。因此 TrueKredit™ 默认即可随时审计。"
+				},
+				{
+					"question": "如果我们只需要其中一项 API 呢？",
+					"answer": "可以。TrueIdentity™ e-KYC、TrueSSM™ 公司核查以及我们的支付通道，都可以分别通过 API 接到您现有系统——不必把贷款账簿迁到 TrueKredit™。可以只用一项，也可以用多项。在您作出承诺之前，我们会说明集成涉及什么、费用多少。"
+				},
+				{
+					"question": "KPKT牌照申请需要多长时间？",
+					"answer": "完整转为数字牌照大约三个月；若只是把现有贷款账簿迁到 TrueKredit™，时间更短。新的 KPKT 申请会更久，因为节奏由监管机构决定，而不是由软件决定。"
+				},
+				{
+					"question": "除了常规KPKT牌照，你们也做伊斯兰教法数字放贷吗？",
+					"answer": "做。常规数字牌照是现有 lesen PPW 上的 kebenaran tambahan，账簿运行在 TrueKredit™ Pro。符合伊斯兰教法的数字放贷是即将推出的另一项 KPKT 审批——独立实体、伊斯兰教法委员会与合同——运行在 TrueSyariah™。两本牌照不能放在同一家营运公司。两条路径我们都评估；请从 truestack.my/services/digital-license 或 truestack.my/truesyariah 开始。"
+				},
+				{
+					"question": "金融科技出海马来西亚，你们具体帮什么？",
+					"answer": "我们帮您拿牌，也帮您运转贷款账簿——常规 PPW 或符合伊斯兰教法的数字放贷、文书工作，以及底下的通道。产品包括 TrueKredit™ 贷款管理系统、TrueSyariah™、TrueP2P™，以及 TrueIdentity™ e-KYC 与 TrueSSM™。尚未持牌时，也可以协助收购已持有 KPKT 放贷牌照的公司。公司在吉隆坡，咨询免费、无义务。"
+				},
+				{
+					"question": "没有现有牌照，可以先收购已持牌公司吗？",
+					"answer": "可以。新申请并非唯一路径。我们也可以帮您购入一家已持有 KPKT 放贷牌照的现有公司，再处理董事、股东与 CoSec 变更，并把账簿迁入 TrueKredit™——往往是更快开始放贷的路径。"
+				},
+				{
+					"question": "中国公司可以在马来西亚申请放贷牌照吗？",
+					"answer": "TODO(ivan): 中国注册公司或中国股东能否直接申请 KPKT 放贷牌照，或必须先设立/收购马来西亚实体。"
+				},
+				{
+					"question": "非马来西亚股东或董事有什么要求？",
+					"answer": "TODO(ivan): 非马来西亚公民/居民担任 KPKT 放贷公司股东或董事的资格、持股比例与董事构成要求。"
+				},
+				{
+					"question": "可以用中文沟通吗？",
+					"answer": "TODO(ivan): 咨询与项目交付是否提供普通话/书面中文对接（团队语言能力）。"
+				},
+				{
+					"question": "支持人民币或跨境资金吗？",
+					"answer": "TODO(ivan): 放贷与还款是否支持人民币或跨境结算，或仅限马来西亚令吉与本地支付通道。"
+				}
+			]
+		},
+		"work": {
+			"eyebrow": "精选案例",
+			"title": "看看上线后的实际样子。",
+			"viewAll": "全部成功案例"
+		},
+		"insights": {
+			"eyebrow": "洞察",
+			"title": "马来西亚放贷牌照与账簿，我们看到的情况。",
+			"lede": "KPKT、贷款账簿，以及改变放贷方式的规则——写自实际工作，而不是宣传册。",
+			"allInsights": "全部洞察",
+			"previousArticles": "上一组文章",
+			"nextArticles": "下一组文章"
+		},
+		"cta": {
+			"heading": "准备好启动或扩大您的放贷业务了吗？",
+			"body": "预约免费咨询。我们会说明您的牌照现状允许什么、转为数字需要什么、费用多少——在您作出任何承诺之前。",
+			"secondary": "了解数字牌照"
+		}
+	}
+}

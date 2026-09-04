@@ -1,0 +1,68 @@
+{
+	"_status": "ai-draft",
+	"LegalChrome": {
+		"eyebrow": "法律",
+		"lastUpdated": "最近更新 {date}",
+		"onThisPage": "本页目录",
+		"pagesNav": "法律页面",
+		"tabs": {
+			"cybersecurity": "网络安全",
+			"pdpa": "PDPA声明",
+			"privacy": "隐私政策",
+			"terms": "使用条款"
+		},
+		"pages": {
+			"privacy": "隐私政策",
+			"terms": "使用条款",
+			"pdpa": "PDPA声明",
+			"cybersecurity": "网络安全政策"
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "常见问题"
+		},
+		"contact": {
+			"registrationNo": "注册号 {number}"
+		},
+		"privacy": {
+			"title": "我们如何处理您的信息。",
+			"titleMuted": "以及您可以要求我们如何处理。",
+			"lede": "本政策说明Truestack在您访问我们的网站或使用我们运营的相关系统时，如何收集、使用、披露并保护个人信息。",
+			"cta": {
+				"heading": "对您的数据有疑问？",
+				"body": "若您需要就客户协议或e-KYC推行解释本政策，请预约免费咨询。无任何义务。",
+				"secondary": "PDPA声明"
+			}
+		},
+		"terms": {
+			"title": "使用本网站的规则。",
+			"titleMuted": "以及我们相关的Truestack系统。",
+			"lede": "当您使用truestack.my以及我们运营的相关演示与开发者系统时，本条款适用。付费产品另行按客户协议授权。",
+			"cta": {
+				"heading": "需要把这些条款写入客户协议？",
+				"body": "网站条款不是产品许可。若您正在评估TrueKredit™或TrueIdentity™，请预约免费咨询，我们会指引正确的下一步。",
+				"secondary": "隐私政策"
+			}
+		},
+		"pdpa": {
+			"title": "我们如何处理个人数据。",
+			"titleMuted": "依据马来西亚PDPA。",
+			"lede": "依据《2010年个人数据保护法》（第709号法令）的告知与选择声明，包括我们运营的TrueIdentity™核验流程。",
+			"cta": {
+				"heading": "对我们如何处理个人数据有疑问？",
+				"body": "若您需要就KPKT牌照、e-KYC推行或客户协议解释本通知，请预约免费咨询。无任何义务。",
+				"secondary": "隐私政策"
+			}
+		},
+		"cybersecurity": {
+			"title": "我们如何保护您的系统。",
+			"titleMuted": "以及其中存储的数据。",
+			"lede": "公开概述Truestack如何设计、运营并保护用于交付放贷软件、KPKT合规服务以及马来西亚e-KYC的系统。",
+			"cta": {
+				"heading": "对我们如何保护您的数据有疑问？",
+				"body": "告诉我们您的KPKT牌照、放贷平台或安全审查需求。我们将说明Truestack如何托管并隔离您的系统——免费，无任何义务。",
+				"secondary": "PDPA声明"
+			}
+		}
+	}
+}

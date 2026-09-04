@@ -11,14 +11,19 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 
 ## On every page add/change, verify all of:
 
-1. `metadata` export: unique title ≤ 60 chars, description 140–160 chars with the primary
-   keyword, `alternates: { canonical: "/path" }`.
+1. `generateMetadata` reading `<Namespace>.meta.*` from messages: unique title ≤ 60 chars,
+   description 140–160 chars with the primary keyword (zh: title ≤ 30 / description 70–90
+   code points, keyword in the first 10 characters), canonical + `alternates.languages`
+   (`en`, `ms`, `zh-Hans`, `zh-CN`, `x-default`) built with `lib/i18n/seo.ts`. English-only
+   surfaces (Insights, legal) are `noindex` under `/ms` and `/zh` with canonical →
+   the English URL.
 2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` `/og.png`, or a page-specific image).
 3. JSON-LD component in `components/seo/` rendered by the page — Service/Product schema,
    `FAQPage` whenever the page has an FAQ, BreadcrumbList for nested pages.
 4. Route listed in `app/sitemap.ts` with priority/changeFrequency.
-5. `public/llms.txt` line added/updated — keep it factual and dense with entity names
-   (TrueKredit™, KPKT, Lampiran A/B1…). This file is what AI assistants quote.
+5. `app/llms.txt/route.ts` line added/updated (and the Chinese summary paragraph if the
+   fact is China-relevant) — keep it factual and dense with entity names (TrueKredit™,
+   KPKT, Lampiran A/B1…). This file is what AI assistants quote.
 6. FAQ answers are self-contained 2–4 sentence facts an AI can lift verbatim.
 7. One `<h1>`, ordered headings, descriptive link text, `alt` on content images.
 8. Cross-links to sibling products/services in body copy. `ConsultationCta` stays at
@@ -29,5 +34,7 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 
 ## Verification
 
-After changes: `npm run build`, then check the built page's `<head>` (title, description,
-canonical, og:*) and validate any new JSON-LD shape against schema.org expectations.
+After changes: `pnpm i18n:check` and `pnpm build`, then check the built page's `<head>` in
+all three locales (`/path`, `/ms/path`, `/zh/path`: title, description, canonical, hreflang,
+og:locale) and validate any new JSON-LD shape (`inLanguage` per locale) against schema.org
+expectations. FAQ answers starting with `TODO(ivan)` are stripped from render and JSON-LD.

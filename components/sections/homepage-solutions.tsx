@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, Building2, Check, Clock } from "lucide-react";
 import { CtaLink } from "@/components/shared/cta-link";
@@ -8,75 +9,80 @@ import { cn } from "@/lib/utils";
 
 type PathId = "licensed" | "applying";
 
-const LICENSED_STEPS = [
-	{
-		title: "Licence review",
-		body: "We audit your current lesen PPW, permits and outstanding filings, then map exactly what a digital conversion requires of you.",
-	},
-	{
-		title: "Digital licence application",
-		body: "We prepare the application and the provisional licence presentation, and coordinate with KPKT through to approval.",
-	},
-	{
-		title: "Platform build",
-		body: "Your loan book moves onto TrueKredit™ Pro, with web and mobile borrower journeys under your own brand.",
-	},
-	{
-		title: "Go-live and aftercare",
-		body: "Compliance verification, staff training, then ongoing account management so nothing slips through.",
-	},
+const LICENSED_KEYS = ["review", "application", "build", "golive"] as const;
+const APPLYING_KEYS = [
+	"structure",
+	"submission",
+	"readiness",
+	"disbursements",
 ] as const;
 
-const APPLYING_STEPS = [
-	{
-		title: "Structure and eligibility",
-		body: "Company, directors, paid-up capital and premises checked against KPKT requirements before anything is filed.",
-	},
-	{
-		title: "Application and submission",
-		body: "Lampiran A, supporting documents and SSM particulars prepared and submitted on your behalf.",
-	},
-	{
-		title: "System readiness",
-		body: "TrueKredit™ configured with the Jadual J and K documents, agreements and receipts KPKT expects to see.",
-	},
-	{
-		title: "First disbursements",
-		body: "e-KYC, company checks and payment rails switched on, so you can lend from the day your licence lands.",
-	},
-] as const;
-
-function StepGrid({
-	steps,
+function StepCard({
+	title,
+	body,
+	index,
+	stepLabel,
 }: {
-	steps: readonly { title: string; body: string }[];
+	title: string;
+	body: string;
+	index: number;
+	stepLabel: string;
 }) {
 	return (
+		<motion.div
+			className="rounded-2xl border bg-card p-5.5 shadow-sm"
+			initial={{ opacity: 0, y: 16 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.4, delay: index * 0.08 }}
+		>
+			<div className="mb-2.5 type-mono-label font-medium text-primary">
+				{stepLabel} {String(index + 1).padStart(2, "0")}
+			</div>
+			<h3 className="type-subhead">{title}</h3>
+			<p className="mt-2 type-ui leading-relaxed text-muted-foreground">
+				{body}
+			</p>
+		</motion.div>
+	);
+}
+
+function StepGrid({ path }: { path: PathId }) {
+	const t = useTranslations("Home");
+	const stepLabel = t("solutions.step");
+
+	if (path === "licensed") {
+		return (
+			<div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+				{LICENSED_KEYS.map((key, index) => (
+					<StepCard
+						key={key}
+						index={index}
+						stepLabel={stepLabel}
+						title={t(`solutions.licensed.${key}.title`)}
+						body={t(`solutions.licensed.${key}.body`)}
+					/>
+				))}
+			</div>
+		);
+	}
+
+	return (
 		<div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-			{steps.map((step, index) => (
-				<motion.div
-					key={step.title}
-					className="rounded-2xl border bg-card p-5.5 shadow-sm"
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.4, delay: index * 0.08 }}
-				>
-					<div className="mb-2.5 type-mono-label font-medium text-primary">
-						STEP {String(index + 1).padStart(2, "0")}
-					</div>
-					<h3 className="type-subhead">
-						{step.title}
-					</h3>
-					<p className="mt-2 type-ui leading-relaxed text-muted-foreground">
-						{step.body}
-					</p>
-				</motion.div>
+			{APPLYING_KEYS.map((key, index) => (
+				<StepCard
+					key={key}
+					index={index}
+					stepLabel={stepLabel}
+					title={t(`solutions.applying.${key}.title`)}
+					body={t(`solutions.applying.${key}.body`)}
+				/>
 			))}
 		</div>
 	);
 }
 
 export function HomepageSolutions() {
+	const t = useTranslations("Home");
 	const [path, setPath] = useState<PathId>("licensed");
 
 	return (
@@ -93,36 +99,34 @@ export function HomepageSolutions() {
 					transition={{ duration: 0.5 }}
 				>
 					<p className="mb-3 type-eyebrow text-primary">
-						Find your starting point
+						{t("solutions.eyebrow")}
 					</p>
 					<h2 className="type-h2">
-						Two ways in. Same destination.
+						{t("solutions.title")}
 					</h2>
 					<p className="mt-3.5 type-lede text-muted-foreground">
-						Whether you hold a conventional KPKT licence today or
-						you are still preparing to file, the route to nationwide
-						digital lending is a known sequence. Shariah digital
-						lending is a separate upcoming path — we run that too,
-						on{" "}
-						<CtaLink
-							href="/truesyariah"
-							className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
-						>
-							TrueSyariah™
-						</CtaLink>
-						.
+						{t.rich("solutions.lede", {
+							truesyariah: (chunks) => (
+								<CtaLink
+									href="/truesyariah"
+									className="font-medium text-foreground underline decoration-primary/40 underline-offset-4 hover:decoration-primary"
+								>
+									{chunks}
+								</CtaLink>
+							),
+						})}
 					</p>
 				</motion.div>
 
 				<div
 					role="tablist"
-					aria-label="Your starting point"
+					aria-label={t("solutions.tablistLabel")}
 					className="mb-7 inline-flex rounded-full border bg-background p-1 shadow-sm"
 				>
 					{(
 						[
-							{ id: "licensed", label: "I hold a KPKT licence" },
-							{ id: "applying", label: "I am applying for one" },
+							{ id: "licensed" },
+							{ id: "applying" },
 						] as const
 					).map((tab) => {
 						const isActive = path === tab.id;
@@ -143,7 +147,7 @@ export function HomepageSolutions() {
 										: "text-muted-foreground hover:text-foreground",
 								)}
 							>
-								{tab.label}
+								{t(`solutions.tabs.${tab.id}`)}
 							</button>
 						);
 					})}
@@ -155,18 +159,17 @@ export function HomepageSolutions() {
 					aria-labelledby="path-licensed-tab"
 					hidden={path !== "licensed"}
 				>
-					<StepGrid steps={LICENSED_STEPS} />
+					<StepGrid path="licensed" />
 					<div className="mt-5 flex flex-wrap items-center gap-4">
 						<div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700">
 							<Clock className="h-3.5 w-3.5" aria-hidden />
-							Typically about three months from kick-off to
-							go-live
+							{t("solutions.licensedNote")}
 						</div>
 						<CtaLink
 							href="/contact?subject=Digital%20Licence"
 							className="inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 						>
-							Talk through your conversion
+							{t("solutions.licensedCta")}
 							<ArrowRight className="h-3.5 w-3.5" />
 						</CtaLink>
 					</div>
@@ -178,7 +181,7 @@ export function HomepageSolutions() {
 					aria-labelledby="path-applying-tab"
 					hidden={path !== "applying"}
 				>
-					<StepGrid steps={APPLYING_STEPS} />
+					<StepGrid path="applying" />
 					<div className="mt-5 flex items-start gap-4 rounded-2xl border border-primary/20 bg-primary/5 px-6 py-5">
 						<div className="flex h-10.5 w-10.5 shrink-0 items-center justify-center rounded-lg bg-primary/10">
 							<Building2
@@ -188,30 +191,23 @@ export function HomepageSolutions() {
 						</div>
 						<div>
 							<h3 className="type-subhead">
-								Not starting from scratch: acquire a licensed
-								company
+								{t("solutions.acquire.title")}
 							</h3>
 							<p className="mt-1.5 max-w-3xl text-base text-muted-foreground">
-								A new application is not the only route. We can
-								also help you procure an existing company that
-								already holds a KPKT money-lending licence, then
-								handle the director, shareholder and CoSec
-								changes and move the book onto TrueKredit™ —
-								often the faster way to start lending.
+								{t("solutions.acquire.body")}
 							</p>
 						</div>
 					</div>
 					<div className="mt-5 flex flex-wrap items-center gap-4">
 						<div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-sm font-medium text-primary">
 							<Check className="h-3.5 w-3.5" aria-hidden />
-							We stay on as your account management partner after
-							approval
+							{t("solutions.applyingNote")}
 						</div>
 						<CtaLink
 							href="/contact?subject=KPKT%20Licence"
 							className="inline-flex items-center gap-1.5 text-[15px] font-medium text-primary hover:underline"
 						>
-							Check if you qualify
+							{t("solutions.applyingCta")}
 							<ArrowRight className="h-3.5 w-3.5" />
 						</CtaLink>
 					</div>

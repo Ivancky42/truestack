@@ -1,0 +1,273 @@
+{
+	"_status": "ai-draft",
+	"TrueSSM": {
+		"meta": {
+			"title": "马来西亚SSM查询｜TrueSSM™",
+			"description": "TrueSSM™马来西亚SSM公司查询API：实体搜索、ROC/ROB/LLP档案、高管与股东及扫描文件，按令吉透明计价，服务持牌放贷公司。",
+			"openGraphTitle": "马来西亚SSM查询｜TrueSSM™",
+			"openGraphDescription": "面向金融科技与放贷机构的可编程 SSM 访问——实体搜索、档案、明细、扫描备案、令吉计费，以及幂等 REST 拉取。",
+			"ogImageAlt": "Truestack Technologies"
+		},
+		"schema": {
+			"breadcrumbHome": "首页",
+			"breadcrumbCurrent": "TrueSSM™",
+			"softwareName": "TrueSSM™",
+			"alternateName": [
+				"TrueSSM Registry API",
+				"Truestack SSM API",
+				"马来西亚注册处 API"
+			],
+			"featureList": [
+				"免费实体搜索校验",
+				"ROC 公司档案",
+				"ROB 商业档案",
+				"LLP 档案",
+				"高管与股东",
+				"SSM 扫描文件",
+				"幂等 REST 拉取",
+				"令吉透明计价"
+			]
+		},
+		"hero": {
+			"eyebrow": "马来西亚SSM公司查询",
+			"title": "以程序调用马来西亚SSM公司数据",
+			"body": "实体搜索、ROC/ROB/LLP 档案、明细与扫描文件——一套 REST API 对接马来西亚注册处，以令吉透明计费。",
+			"poweredBy": "技术支持",
+			"ssmSearchAlt": "SSM Search 标志",
+			"ctaSecondary": "查看接口",
+			"stats": {
+				"endpoints": { "value": "13", "label": "接口" },
+				"entitySearch": { "value": "免费", "label": "实体搜索" },
+				"rm": { "value": "RM", "label": "按次计费" },
+				"idempotent": { "value": "幂等", "label": "设计如此" }
+			},
+			"chips": {
+				"endpoints": { "value": "13", "label": "接口" },
+				"entitySearch": { "value": "免费", "label": "实体搜索" },
+				"idempotent": { "value": "幂等", "label": "安全重试" }
+			}
+		},
+		"features": {
+			"eyebrow": "核心功能",
+			"title": "专为马来西亚从业者打造",
+			"body": "将 SSM 注册处接入您的产品所需的一切——不必从零自建。",
+			"items": {
+				"oneIntegration": {
+					"title": "一次集成",
+					"description": "ROC、ROB 与 LLP 档案、明细及扫描文件——全部来自同一套 REST API。"
+				},
+				"freeValidation": {
+					"title": "免费校验",
+					"description": "可计费拉取前自动进行免费实体搜索。未找到实体不计费。"
+				},
+				"rmPricing": {
+					"title": "令吉计价",
+					"description": "按次以马来西亚令吉透明标价；可提供定制档位。"
+				},
+				"idempotentPulls": {
+					"title": "幂等拉取",
+					"description": "使用 Idempotency-Key 安全重试。同一密钥的已交付结果不会重复计费。"
+				}
+			}
+		},
+		"benefits": {
+			"eyebrow": "业务价值",
+			"title": "告别手工查询 SSM",
+			"items": {
+				"faster": {
+					"title": "更快准入与核保",
+					"description": "数秒内拉取公司档案、高管与股东——无需手工查询 SSM。"
+				},
+				"risk": {
+					"title": "降低风险敞口",
+					"description": "用注册处的抵押登记（charges）、股本与现任高管数据核验交易对手。"
+				},
+				"costs": {
+					"title": "成本可预期",
+					"description": "仅为已交付的拉取付费。校验失败及多数无数据响应不计费。"
+				},
+				"automation": {
+					"title": "便于自动化",
+					"description": "幂等、结构化错误与供应商原生字段，便于接入您的工作流。"
+				}
+			}
+		},
+		"endpoints": {
+			"eyebrow": "接口",
+			"title": "13 个接口，一把 API 密钥",
+			"body": "所示为模板价格。可能适用定制档位——每条响应均含权威的 <code>acknowledgement.billed_rm</code>。",
+			"columns": {
+				"endpoint": "接口",
+				"description": "说明",
+				"price": "价格"
+			},
+			"free": "免费",
+			"items": {
+				"entity_search": {
+					"name": "实体搜索",
+					"description": "按注册号和/或名称匹配实体，支持分页。"
+				},
+				"company_profile": {
+					"name": "公司档案",
+					"description": "ROC 档案：名称、注册、类型、状态、地址、股份信息、高管、股东、抵押登记（charges）。"
+				},
+				"business_profile": {
+					"name": "商业档案",
+					"description": "ROB 档案：名称、所有权、地址、日期、状态、分支机构、现任与前任业主。"
+				},
+				"llp_profile": {
+					"name": "LLP 档案",
+					"description": "LLP 当前档案：实体详情、地址、业务代码、合伙人信息。"
+				},
+				"officers": {
+					"name": "高管详情",
+					"description": "现任与前任董事/高管，含任命与辞职日期。"
+				},
+				"share_capital": {
+					"name": "股本",
+					"description": "已发行股份总额、普通股与优先股、配股及明细。"
+				},
+				"shareholders": {
+					"name": "股东",
+					"description": "股东详情：姓名、证件、地址、持股、取得与处置。"
+				},
+				"registered_address": {
+					"name": "注册地址",
+					"description": "当前注册地址及变更历史。"
+				},
+				"company_secretary": {
+					"name": "公司秘书",
+					"description": "秘书详情：姓名、IC、执照、状态、住址。"
+				},
+				"charges": {
+					"name": "公司抵押登记",
+					"description": "抵押编号、文书类型、受影响财产、抵押类型与日期。"
+				},
+				"audit_firm": {
+					"name": "审计事务所",
+					"description": "事务所编号、审计师姓名、执照、起始日期与地址。"
+				},
+				"document_list": {
+					"name": "查看扫描文件",
+					"description": "扫描文件元数据：表格类型、文件日期、总页数、版本 id。"
+				},
+				"document_image": {
+					"name": "扫描文件",
+					"description": "单份备案的二进制内容（通常为 base64）。需要 regNo 和 verId。"
+				}
+			}
+		},
+		"howItWorks": {
+			"eyebrow": "运作方式",
+			"title": "可预期、幂等，仅在交付时计费",
+			"steps": {
+				"authenticate": {
+					"title": "鉴权",
+					"desc": "发送您的 TrueSSM™ API 密钥。与 TrueIdentity 密钥分开。"
+				},
+				"freeValidation": {
+					"title": "免费校验",
+					"desc": "在任何可计费拉取之前，我们先用免费实体搜索自动校验注册号。"
+				},
+				"pullReport": {
+					"title": "拉取报告",
+					"desc": "档案、明细或扫描文件——响应中为供应商原生字段。"
+				},
+				"acknowledged": {
+					"title": "回执确认",
+					"desc": "每次交付都返回带令吉计费金额的回执。"
+				}
+			},
+			"safeguardsTitle": "内置保障",
+			"safeguards": {
+				"freeValidation": {
+					"label": "免费实体校验",
+					"desc": "ENTITY_NOT_FOUND 不计费。"
+				},
+				"entityTypeRouting": {
+					"label": "实体类型路由",
+					"desc": "错误的接口族在计费前被拦截。"
+				},
+				"idempotencyKeys": {
+					"label": "幂等键",
+					"desc": "已交付结果不会重复计费。"
+				},
+				"acknowledgementReceipt": {
+					"label": "回执收据",
+					"desc": "每条响应都包含 billed_rm。"
+				},
+				"timestamps": {
+					"label": "ISO-8601 时间戳",
+					"desc": "所有交付时间均为 UTC。"
+				},
+				"providerFields": {
+					"label": "供应商原生字段",
+					"desc": "响应数据采用供应商的 JSON 形态。"
+				}
+			}
+		},
+		"useCases": {
+			"eyebrow": "适用场景",
+			"title": "面向金融科技、放贷与合规",
+			"items": {
+				"lenders": {
+					"title": "放贷与核保",
+					"description": "拉取高管、抵押登记（charges）与股本，数秒评估企业借款人。"
+				},
+				"kyb": {
+					"title": "KYB 与客户准入",
+					"description": "用 ROC/ROB 档案和实时注册地址核验企业交易对手。"
+				},
+				"compliance": {
+					"title": "合规与审计",
+					"description": "按需调取扫描备案，用于尽职调查、审计与监管报送。"
+				}
+			}
+		},
+		"developers": {
+			"eyebrow": "面向开发者",
+			"title": "REST 进入，结构化注册数据返回",
+			"body": "POST JSON，返回 JSON。幂等，供应商原生字段位于 <code>data</code> 下。",
+			"stats": {
+				"post": { "value": "POST", "label": "每个接口" },
+				"json": { "value": "JSON", "label": "输入与输出" },
+				"rest": { "value": "REST", "label": "无需 SDK" }
+			}
+		},
+		"faq": {
+			"title": "常见问题",
+			"body": "SSM 注册覆盖范围、令吉定价、幂等，以及 TrueSSM™ 如何融入您的 Truestack 体系。",
+			"items": [
+				{
+					"question": "什么是 TrueSSM™？",
+					"answer": "TrueSSM™ 是 Truestack 的 REST API，用于获取马来西亚公司委员会（SSM）注册数据。接入一套 API 即可搜索实体、拉取 ROC/ROB/LLP 档案、获取高管、股东、抵押登记（charges），并下载扫描文件——按次以令吉透明计价。"
+				},
+				{
+					"question": "用 TrueSSM™ 可以拉取哪些注册数据？",
+					"answer": "TrueSSM 支持免费实体搜索、公司档案（ROC）、商业档案（ROB）、LLP 档案、高管详情、股本、股东、注册地址、公司秘书、抵押登记（charges）、审计事务所信息，以及扫描文件列表/图像接口。"
+				},
+				{
+					"question": "TrueSSM™ 如何定价？",
+					"answer": "未匹配时，实体搜索校验免费。可计费操作按每次成功交付的拉取以马来西亚令吉透明标价——例如公司档案约 RM 15.40。校验失败及多数无数据响应不计费。高用量可申请定制档位。"
+				},
+				{
+					"question": "TrueSSM™ 上的幂等计费是什么？",
+					"answer": "在拉取请求中发送 Idempotency-Key 请求头，安全重试不会重复计费。若同一密钥已产生交付结果，您将收到缓存结果且不再扣费——这对自动化核保与客户准入流水线很重要。"
+				},
+				{
+					"question": "谁在使用 TrueSSM™？",
+					"answer": "放贷机构、核保、金融科技客户准入团队与合规职能使用 TrueSSM 核验企业借款人与交易对手——数秒内拉取高管、股本、抵押登记（charges）与备案，无需手工操作 SSM 门户。"
+				},
+				{
+					"question": "TrueSSM™ 与 TrueKredit™、TrueIdentity™ 有何关系？",
+					"answer": "TrueSSM 使用与 TrueIdentity 分开的 API 密钥，并接入 Truestack 放贷体系——包括已连接 Infomina/SSM 核查的 TrueKredit™ 工作流，覆盖马来西亚房屋及地方政府部 (KPKT) 与企业贷款业务。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "准备好把 SSM 接入您的产品？",
+			"body": "获取 API 密钥，以令吉充值，并拉取第一份档案。预约免费咨询，我们将协助您把 SSM 注册数据集成到产品中。",
+			"secondary": "返回 truestack.my"
+		}
+	}
+}

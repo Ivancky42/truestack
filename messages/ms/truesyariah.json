@@ -1,0 +1,349 @@
+{
+	"_status": "ai-draft",
+	"TrueSyariah": {
+		"meta": {
+			"title": "TrueSyariah™ | Lesen & Platform Pembiayaan Islam",
+			"description": "Lancarkan pembiayaan Islam digital berlesen di Malaysia — entiti, jawatankuasa, lesen dan TrueSyariah™. Tawarruq, Ta'widh, Gharamah; buku diasingkan sepenuhnya.",
+			"openGraphTitle": "TrueSyariah™ | Lesen & Platform Pembiayaan Islam Malaysia",
+			"openGraphDescription": "Lancarkan perniagaan pembiayaan Islam digital berlesen di Malaysia — pembiayaan Tawarruq, lejar Ta'widh dan Gharamah berasingan, buku diasingkan sepenuhnya (ring-fenced) daripada pinjaman konvensional.",
+			"ogImageAlt": "Platform pembiayaan digital patuh Syariah TrueSyariah — modul Tawarruq, Ta'widh dan Gharamah"
+		},
+		"schema": {
+			"productName": "TrueSyariah™",
+			"alternateNames": [
+				"TrueSyariah",
+				"Platform Pembiayaan Digital Syariah",
+				"Platform pembiayaan Syariah Malaysia",
+				"Sistem pengurusan pembiayaan Islam Malaysia",
+				"Pembiayaan Digital Syariah Malaysia"
+			],
+			"offer": {
+				"name": "Penyebaran Khusus TrueSyariah",
+				"description": "Penyebaran AWS Malaysia khusus untuk pembiayaan digital Syariah — sokongan entiti dan lesen, pembiayaan komoditi Tawarruq, lejar Ta'widh dan Gharamah berasingan, tandatangan PKI di premis, e-KYC, pengasalan web dan mudah alih natif."
+			},
+			"featureList": [
+				"Pembiayaan komoditi Tawarruq melalui TrueCommodity™",
+				"Lejar caj lewat Ta'widh dan Gharamah yang berasingan",
+				"Aliran kerja pengeluaran badan amal untuk Gharamah",
+				"Tandatangan digital PKI Trustgate di premis",
+				"e-KYC dengan OCR MyKad, liveness dan padanan biometrik",
+				"Aplikasi pelanggan web serta iOS & Android natif berjenama",
+				"Akaun, pangkalan data dan rahsia AWS Malaysia khusus",
+				"Pematuhan kawal selia pembiayaan digital Syariah",
+				"Pek audit dan pelaporan jawatankuasa Syariah"
+			]
+		},
+		"hero": {
+			"eyebrow": "Lesen Digital Syariah",
+			"title": "Mulakan perniagaan pembiayaan Syariah dengan betul, dari awal.",
+			"lede1": "Kebanyakan pengendali baru sedar bahagian sukar itu lewat: jawatankuasa mahu kontrak yang belum mereka lihat, juruaudit mahu buku konvensional diketepikan, dan perisian itu tidak pernah dibina untuk membezakan Ta'widh daripada Gharamah.",
+			"lede2": "Kami membawa anda dari struktur syarikat, pelantikan jawatankuasa hingga permohonan lesen, dan menyerahkan platform yang sudah patuh Syariah pada hari ia direka.",
+			"ctaSecondary": "Lihat laluan pelesenan",
+			"chips": {
+				"tawarruq": "Pembiayaan Tawarruq",
+				"charges": "Ta'widh & Gharamah berasingan",
+				"ringfence": "Buku diasingkan"
+			}
+		},
+		"draftRules": {
+			"ariaLabel": "Draf peraturan kredit Syariah Kementerian Perumahan dan Kerajaan Tempatan (KPKT) akan datang",
+			"lead": "Mengikuti draf peraturan KPKT?",
+			"body": "Garis Panduan CCA 2025 menetapkan apa yang mesti dibuktikan oleh sistem kredit Syariah — tadbir urus, penasihat, audit dan iDEAL.",
+			"cta": "Baca draf keperluan"
+		},
+		"journey": {
+			"eyebrow": "Laluan pelesenan",
+			"title": "Empat peringkat, mengikut tertib yang pengawal selia jangkakan.",
+			"lede": "Pembiayaan berasaskan Syariah ada laluan kelulusan sendiri, dan dalam amalan ada entiti sendiri. Kebanyakan kelewatan permohonan bukan dari pengawal selia: ia kontrak yang didraf sebelum sesiapa bertanya kepada jawatankuasa.",
+			"photoAlt": "Dua profesional di meja pejabat Malaysia meneliti dokumen pelesenan bersama-sama",
+			"tablistAria": "Peringkat pelesenan",
+			"stageLabel": "TAHAP {n}",
+			"stages": {
+				"entity": {
+					"label": "Entiti",
+					"title": "Entiti & struktur",
+					"summary": "Syarikat pengoperasi Syariah diperbadankan berasingan daripada mana-mana pemegang lesen konvensional, dengan modal, pengarah dan premis disemak sebelum apa-apa difailkan.",
+					"detail": "Syarikat pengoperasi Syariah diperbadankan berasingan daripada mana-mana pemegang lesen konvensional, kerana keduanya tidak boleh berkongsi satu entiti. Kami semak bentuk syarikat, modal berbayar, pengarah dan premis sebelum apa-apa difailkan."
+				},
+				"committee": {
+					"label": "Jawatankuasa",
+					"title": "Jawatankuasa & kontrak",
+					"summary": "Penasihat atau jawatankuasa Syariah dilantik — milik anda, atau salah seorang penasihat rakan kongsi kami — dan Aqad, urutan Tawarruq serta struktur fi anda dibawa hingga kelulusan bertulis.",
+					"detail": "Penasihat atau jawatankuasa Syariah anda didaftarkan — jika anda belum ada, kami boleh memperkenalkan penasihat rakan kongsi yang pernah bekerjasama dengan kami, yang biasanya lebih pantas. Kami kemudian membawa Aqad, urutan Tawarruq, asas keuntungan serta had Ta'widh dan Gharamah hingga kelulusan bertulis. Memulakan ini awal ialah perkara terbesar yang mengekalkan permohonan mengikut jadual."
+				},
+				"submission": {
+					"label": "Penyerahan",
+					"title": "Permohonan lesen",
+					"summary": "Penyerahan pembiayaan digital Syariah didraf dan difailkan bersama kontrak yang diluluskan, supaya tiada apa yang dikembalikan untuk semakan kedua.",
+					"detail": "Penyerahan pembiayaan digital Syariah didraf dan difailkan bersama kontrak diluluskan serta dokumen sokongan anda, dinyatakan skop berbanding kumpulan sedia ada jika anda sudah memegang lesen konvensional, dan kami uruskan surat-menyurat hingga kelulusan."
+				},
+				"golive": {
+					"label": "Lancaran",
+					"title": "Bina & pelancaran (go-live)",
+					"summary": "Binaan AWS Malaysia khusus, integrasi disambungkan, UAT dan ujian penembusan, pengesahan jawatankuasa, kemudian urus niaga Tawarruq pertama di bawah penyeliaan.",
+					"detail": "Akaun AWS Malaysia khusus ditubuhkan dan TrueSyariah disebarkan, dengan TrueCommodity, Trustgate, e-KYC dan gerbang pembayaran disambungkan. Kemudian UAT, ujian penembusan, sesi tunjuk ajar penyeliaan dan pengesahan jawatankuasa, sebelum pengeluaran pertama."
+				}
+			}
+		},
+		"system": {
+			"eyebrow": "Sistem pengurusan pembiayaan",
+			"title": "Sistem pengurusan pembiayaan lengkap, Syariah dalam enjinnya.",
+			"lede": "Semua yang diperlukan pengendali serius — pengasalan, penilaian, pengeluaran, jadual, kutipan, dokumen, pelaporan — dengan mekanik Syariah terbina dalam teras, bukan ditampal kemudian. Bukan sistem konvensional dengan label Islam dilekatkan padanya.",
+			"lifecycleEyebrow": "Kitaran hayat kemudahan",
+			"recordEyebrow": "Pada setiap rekod kemudahan",
+			"recordLede": "Medan yang sistem konvensional tidak ada tempat untuk meletakkannya.",
+			"modulesEyebrow": "Modul",
+			"dedicatedTitle": "Penyebaran khusus sahaja",
+			"dedicatedBody": "Tiada peringkat kongsi. Setiap pengendali mendapat akaun AWS Malaysia terasing, pangkalan data sendiri dan vault rahsia sendiri, kerana buku Syariah tidak boleh duduk di infrastruktur yang dikongsi dengan pinjaman konvensional. Pengasingan itu mesti nyata, bukan penapis pada pertanyaan.",
+			"lifecycle": {
+				"application": {
+					"title": "Permohonan dan e-KYC",
+					"body": "Tiga saluran: aliran kaunter untuk pegawai cawangan, portal web berjenama pada domain anda sendiri, dan aplikasi iOS serta Android natif. OCR MyKad, liveness dan padanan biometrik mengesahkan identiti; laporan CTOS dan carian SSM dilampirkan pada fail sebagai bukti."
+				},
+				"assessment": {
+					"title": "Penilaian dan kelulusan",
+					"body": "Keupayaan bayar, pendedahan dan peraturan polisi dijalankan mengikut kriteria anda sendiri. Kelulusan merekod pegawai, had dan justifikasi, dan pengecualian dilog, bukan diselesaikan di koridor."
+				},
+				"aqad": {
+					"title": "Aqad dan tandatangan digital",
+					"body": "Perjanjian dijana daripada versi kontrak yang diluluskan jawatankuasa anda dan ditandatangani dengan kunci PKI MSC Trustgate yang disimpan di premis anda sendiri, di bawah Akta Tandatangan Digital 1997. Pelanggan menandatangani dari jauh; PDF yang ditandatangani kembali ke fail."
+				},
+				"tawarruq": {
+					"title": "Urus niaga Tawarruq, kemudian pengeluaran",
+					"body": "Urus niaga komoditi sebenar dibukukan melalui TrueCommodity™ — belian pembiaya, jualan kepada pelanggan pada keuntungan tertunda, jualan seterusnya kepada broker — setiap kaki dicap masa dalam log tahan ubah suai. Baru selepas itu hasil dialihkan melalui FPX atau DuitNow."
+				},
+				"servicing": {
+					"title": "Perkhidmatan dan kutipan",
+					"body": "Jadual ansuran, resit, peringatan dan notis berjalan secara automatik. Bayaran lewat dipecahkan kepada Ta'widh dan Gharamah di peringkat jurnal, mengikut peraturan had yang ditetapkan jawatankuasa anda, dan pelanggan melihat pecahan itu didedahkan."
+				},
+				"settlement": {
+					"title": "Penyelesaian dan pelepasan",
+					"body": "Penyelesaian awal mengikut asas yang ditetapkan kontrak anda, bukan formula rebat konvensional; surat pelepasan ditandatangani cara yang sama seperti Aqad, dan fail ditutup dengan jejaknya utuh."
+				}
+			},
+			"recordFields": {
+				"contract": {
+					"title": "Versi kontrak",
+					"body": "Aqad yang berkuat kuasa, dengan tarikh kelulusannya"
+				},
+				"commodity": {
+					"title": "Kaki urus niaga komoditi",
+					"body": "Belian, jualan, jualan seterusnya, rujukan broker"
+				},
+				"compensation": {
+					"title": "Lejar pampasan",
+					"body": "Kos pemulihan yang dibuktikan, dikekalkan dalam had"
+				},
+				"penalty": {
+					"title": "Lejar penalti",
+					"body": "Berasingan, dengan jadual pengeluaran kepada badan amal"
+				},
+				"profit": {
+					"title": "Keuntungan, bukan faedah",
+					"body": "Margin daripada jualan komoditi; tiada medan faedah"
+				}
+			},
+			"modules": {
+				"customer": {
+					"title": "Pelanggan & fail",
+					"body": "Satu rekod merentas kemudahan, menempatkan dokumen, semakan identiti, laporan kredit dan surat-menyurat di tempat yang sama."
+				},
+				"origination": {
+					"title": "Pengasalan",
+					"body": "Produk pembiayaan boleh dikonfigurasi, borang permohonan, hierarki kelulusan dan had, dengan barisan kerja yang pegawai anda benar-benar guna."
+				},
+				"commodity": {
+					"title": "Perdagangan komoditi",
+					"body": "TrueCommodity™ merutekan setiap urus niaga Tawarruq kepada broker langsung, merekonsiliasi kaki-kaki dan mengarkibkan kontrak sebagai bukti jawatankuasa."
+				},
+				"schedules": {
+					"title": "Jadual & keuntungan",
+					"body": "Ansuran dijana daripada harga jualan tertunda, dengan penstrukturan semula, penangguhan dan penyelesaian awal mengikut asas berkontrak anda."
+				},
+				"lateCharge": {
+					"title": "Enjin caj lewat",
+					"body": "Pengumpulan Ta'widh dan Gharamah yang mematuhi had, dihantar ke dua akaun lejar yang tidak pernah bercampur, dengan imbangan duga untuk membuktikannya."
+				},
+				"collections": {
+					"title": "Kutipan",
+					"body": "Kumpulan penuaan, aliran kerja peringatan dan notis, penjejakan janji bayar dan penugasan pegawai dengan sejarah hubungan penuh."
+				},
+				"documents": {
+					"title": "Dokumen & tandatangan",
+					"body": "Aqad, surat tawaran, resit, penyata, notis dan surat pelepasan dijana daripada data langsung, berversi dan ditandatangani di premis."
+				},
+				"reporting": {
+					"title": "Pelaporan & pek audit",
+					"body": "Pelaporan portfolio, penuaan dan kutipan untuk lembaga, dan pek audit Syariah disusun untuk jawatankuasa atas permintaan."
+				}
+			}
+		},
+		"governance": {
+			"eyebrow": "Tadbir urus Syariah",
+			"title": "Jawatankuasa anda patut dapat menyemak sistem, bukan hanya percaya kata-kata anda.",
+			"lede1": "Pematuhan Syariah bukan pernyataan dalam dokumen polisi. Ia sama ada pengeluaran tertentu, pada tarikh tertentu, mengikut urutan yang diluluskan jawatankuasa — dan sama ada sesiapa masih boleh membuktikannya dua tahun kemudian.",
+			"lede2": "TrueSyariah dibina supaya jawapannya sentiasa dalam sistem. Kami bekerja bersama penasihat yang anda lantik dan boleh memperkenalkan penasihat rakan kongsi yang pernah bekerjasama dengan kami, tetapi keputusan hukum sentiasa milik mereka.",
+			"cards": {
+				"contracts": {
+					"title": "Kontrak dipegang sebagai konfigurasi",
+					"body": "Aqad yang diluluskan jawatankuasa anda ialah apa yang sistem laksanakan. Ubah terma dan ia perubahan berversi dengan tarikh dan pelulus, bukan suntingan senyap."
+				},
+				"trades": {
+					"title": "Setiap kaki urus niaga direkodkan",
+					"body": "Setiap pengeluaran Tawarruq menyimpan belian, jualan dan jualan seterusnya komoditi dengan cap masa dan rujukan broker. Menyampel fail lama mengambil beberapa saat."
+				},
+				"charity": {
+					"title": "Pengeluaran badan amal dijejak",
+					"body": "Gharamah dikutip, Gharamah masih dipegang, Gharamah diagihkan dan kepada siapa. Satu nombor yang jawatankuasa sentiasa tanya, dan yang tiada siapa dapat jumpa."
+				},
+				"audit": {
+					"title": "Pek audit atas permintaan",
+					"body": "Eksport tempoh dengan kontrak berkuat kuasa, urus niaga dilaksanakan, caj dipecahkan dan pengecualian dibangkitkan — disusun oleh sistem, bukan oleh pasukan operasi anda."
+				}
+			}
+		},
+		"ringfence": {
+			"eyebrow": "Pengasingan (ring-fencing)",
+			"title": "Jika anda juga meminjamkan secara konvensional, kedua-dua buku tidak pernah bersentuhan.",
+			"lede": "Pencampuran ialah cara terpantas kehilangan kedudukan Syariah, dan ia biasanya berlaku secara tidak sengaja — satu pangkalan data kongsi, satu akaun pendapatan kongsi, satu laporan yang menambah kedua-duanya.",
+			"shariahHeading": "Buku Syariah",
+			"conventionalHeading": "Buku konvensional",
+			"sep": "SEP",
+			"shariah": [
+				"Entiti undang-undang dan lesen sendiri",
+				"Pangkalan data dan akaun awan sendiri",
+				"Pengeluaran disokong Tawarruq sahaja",
+				"Pendapatan Ta'widh, Gharamah ke badan amal",
+				"Melapor kepada jawatankuasa Syariah"
+			],
+			"conventional": [
+				"Lesen dan entiti KPKT berasingan",
+				"Berjalan pada TrueKredit™, secara berasingan",
+				"Instrumen berfaedah",
+				"Caj lewat sebagai pendapatan biasa",
+				"Melapor kepada lembaga sahaja"
+			],
+			"footnote": "Penyatuan di peringkat kumpulan kekal boleh dilakukan. Yang tidak boleh ialah satu rekod, akaun atau laporan yang mencampur kedua-duanya. Buku konvensional berjalan pada <truekredit>TrueKredit™</truekredit>."
+		},
+		"terms": {
+			"eyebrow": "Istilah",
+			"title": "Perkataan yang sistem anda mesti fahami.",
+			"lede": "Perisian pinjaman konvensional merawat ini sebagai label. Dalam platform Syariah setiap satu mengubah apa yang sistem dibenarkan lakukan.",
+			"select": "Pilih istilah",
+			"tablistAria": "Istilah Syariah",
+			"inPlatform": "Dalam platform",
+			"items": {
+				"tawarruq": {
+					"name": "Tawarruq",
+					"gloss": "Monetisasi komoditi",
+					"body": "Urutan jualan komoditi sebenar yang meletakkan tunai di tangan pelanggan tanpa pinjaman berfaedah. Pembiaya membeli komoditi, menjualnya kepada pelanggan pada harga tertunda yang dinaikkan, dan pelanggan menjualnya semula untuk tunai segera.",
+					"system": "Setiap pengeluaran mencetuskan urus niaga broker secara langsung. Belian, jualan dan jualan seterusnya direkodkan dengan cap masa dan rujukan, supaya urus niaga itu boleh dibina semula bertahun kemudian."
+				},
+				"tawidh": {
+					"name": "Ta'widh",
+					"gloss": "Pampasan bagi kerugian sebenar",
+					"body": "Caj yang memampas pembiaya bagi kerugian yang benar-benar ditanggung kerana bayaran lewat. Kerana ia sepadan dengan kerugian sebenar, ia boleh diiktiraf sebagai pendapatan, tertakluk kepada had yang ditetapkan jawatankuasa anda.",
+					"system": "Dikira mengikut kadar dan had diluluskan, dihantar ke lejar pendapatan, dan ditunjukkan berasingan pada penyata pelanggan supaya kedua-dua caj lewat tidak dikelirukan."
+				},
+				"gharamah": {
+					"name": "Gharamah",
+					"gloss": "Penalti, bukan pendapatan",
+					"body": "Penalti yang bertujuan menghalang bayaran lewat, bukan memampas kerugian. Ia tidak boleh diiktiraf sebagai pendapatan dan mesti disalurkan ke badan amal — di situlah kebanyakan sistem konvensional tersilap secara senyap.",
+					"system": "Dipegang dalam lejar berasingan yang tidak pernah menyentuh hasil, dengan baki dikutip, dipegang dan diagihkan dijejak, serta rekod badan amal mana menerima apa."
+				},
+				"aqad": {
+					"name": "Aqad",
+					"gloss": "Kontrak itu sendiri",
+					"body": "Kontrak antara pembiaya dan pelanggan. Dalam pembiayaan Syariah, penggubalan, urutan dan pendedahannya yang menjadikan urus niaga sah — bukan sekadar dokumen untuk ditandatangani di hujung.",
+					"system": "Dipegang sebagai konfigurasi berversi, bukan templat PDF. Terma yang diluluskan jawatankuasa ialah terma yang sistem laksanakan, dan setiap perubahan membawa tarikh dan pelulus."
+				},
+				"riba": {
+					"name": "Riba",
+					"gloss": "Apa yang struktur ini wujud untuk elakkan",
+					"body": "Faedah, atau sebarang kenaikan tidak wajar ke atas hutang. Mengelakkannya ialah sebab urus niaga komoditi, sebab caj lewat dipecah dua, dan sebab buku diasingkan sepenuhnya (ring-fenced).",
+					"system": "Tiada medan faedah. Keuntungan datang daripada margin jualan komoditi, yang bermaksud sistem tidak boleh secara tidak sengaja dikonfigurasi untuk mengenakan faedah."
+				}
+			}
+		},
+		"receive": {
+			"eyebrow": "Apa yang anda terima",
+			"title": "Sebuah platform, dan bahagian yang menjadikannya boleh membiayai.",
+			"footnote": "Satu vendor dan satu kontrak untuk semuanya, sebab itu integrasi tidak dikenakan caj tambahan. Mengejar pembiayaan rakan ke rakan yang dikawal selia oleh Suruhanjaya Sekuriti Malaysia (SC) pula? Lihat <p2p>TrueP2P™</p2p>.",
+			"items": {
+				"commodity": {
+					"title": "Perdagangan komoditi",
+					"body": "Penghalaan broker langsung untuk setiap pengeluaran Tawarruq, dengan kaki urus niaga direkonsiliasi dan disimpan pada rekod pembiayaan."
+				},
+				"identity": {
+					"title": "Identiti & tandatangan",
+					"body": "e-KYC MyKad dengan liveness dan padanan biometrik, dan tandatangan digital di bawah Akta Tandatangan Digital dengan kunci di premis."
+				},
+				"apps": {
+					"title": "Aplikasi pelanggan",
+					"body": "Pengasalan web serta iOS dan Android natif di bawah jenama anda sendiri, dengan Aqad dibentangkan dalam bahasa yang pelanggan anda baca."
+				},
+				"payments": {
+					"title": "Bayaran & kutipan",
+					"body": "Pengeluaran dan kutipan FPX serta DuitNow, mandat berulang, dan rekonsiliasi yang menghantar ke lejar yang betul secara automatik."
+				},
+				"credit": {
+					"title": "Data kredit & syarikat",
+					"body": "Laporan CTOS dan carian syarikat SSM disimpan dalam fail pelanggan, supaya usaha wajar dibuktikan, bukan diingat."
+				},
+				"infrastructure": {
+					"title": "Infrastruktur khusus",
+					"body": "Akaun AWS, pangkalan data dan rahsia anda sendiri di Malaysia. Tiada yang dikongsi dengan pengendali lain, Syariah atau sebaliknya."
+				}
+			}
+		},
+		"faq": {
+			"eyebrow": "Soalan",
+			"title": "Sebelum anda komit modal",
+			"lede": "Jika soalan anda tiada di sini, tanyakan dalam konsultasi. Ia percuma dan kami lebih suka jawab awal.",
+			"items": [
+				{
+					"question": "Lesen apa yang saya sebenarnya perlukan?",
+					"answer": "Pinjaman wang berasaskan Syariah di Malaysia ada laluan kelulusan sendiri dan, dalam amalan, memerlukan entiti undang-undang berasingan daripada mana-mana pemegang lesen pinjaman digital konvensional. Anda juga perlu melantik jawatankuasa atau penasihat Syariah dan mendapatkan kontrak pembiayaan diluluskan sebelum anda membiayai. Truestack menyatakan skop permohonan pembiayaan digital Syariah berbanding kumpulan sedia ada anda jika anda sudah memegang lesen konvensional."
+				},
+				{
+					"question": "Bolehkah saya jalankan pembiayaan Syariah dan pinjaman konvensional dalam satu syarikat?",
+					"answer": "Tidak. Kedua-dua lesen tidak boleh duduk dalam syarikat pengoperasi yang sama. Entiti Syariah mesti mengekalkan buku, akaun Ta'widh dan Gharamah, pengawasan jawatankuasa dan pengendalian aduan diasingkan sepenuhnya (ring-fenced) daripada sebarang pinjaman berasaskan riba, di infrastruktur berasingan. Kami sediakan kedua-duanya jika anda menjalankan keduanya secara selari — TrueSyariah™ pada satu entiti, TrueKredit™ pada yang lain."
+				},
+				{
+					"question": "Adakah anda menyediakan penasihat Syariah?",
+					"answer": "Bukan sebagai pihak berkuasa — kami tidak mengeluarkan fatwa, dan pelantikan itu milik anda. Kami boleh memperkenalkan penasihat Syariah rakan kongsi yang pernah bekerjasama dengan kami, yang biasanya menjadikan proses lebih lancar kerana mereka sudah tahu bagaimana platform membuktikan keputusan hukum mereka. Kontrak dan had dalam TrueSyariah sentiasa mengikut apa yang penasihat dilantik anda luluskan secara bertulis."
+				},
+				{
+					"question": "Adakah terdapat versi kongsi TrueSyariah yang lebih murah?",
+					"answer": "Tiada, secara sengaja. Buku Syariah tidak boleh berkongsi infrastruktur dengan pinjaman konvensional, jadi setiap penyebaran TrueSyariah adalah khusus: akaun AWS Malaysia terasing, pangkalan data sendiri, vault rahsia sendiri, dan tandatangan PKI di premis. Pengasingan ialah senibina, bukan penapis pada pertanyaan."
+				},
+				{
+					"question": "Apa bezanya TrueSyariah dengan TrueKredit?",
+					"answer": "TrueKredit™ ialah sistem pengurusan pinjaman konvensional untuk pemberi pinjam wang berlesen KPKT. TrueSyariah berkongsi kitaran hayat, teras pematuhan dan penyebaran khusus yang sama, tetapi enjin pembiayaan dibina semula mengelilingi kontrak Syariah: urus niaga komoditi menggantikan pinjaman, dua lejar caj lewat berasingan, dan dokumen dibentuk untuk jawatankuasa Syariah, bukan audit konvensional. Jika anda memegang lesen pinjaman wang konvensional, anda mahu TrueKredit. Jika anda berlesen — atau memohon — pembiayaan digital Syariah, anda mahu TrueSyariah."
+				},
+				{
+					"question": "Bagaimana Tawarruq berfungsi dalam TrueSyariah?",
+					"answer": "Tawarruq ialah urutan jualan komoditi sebenar yang menyampaikan hasil pembiayaan tanpa faedah. Setiap pengeluaran membukukan urus niaga komoditi melalui TrueCommodity™: belian pembiaya, jualan kepada pelanggan pada keuntungan tertunda, dan jualan seterusnya pelanggan kepada broker. Setiap kaki dicap masa dalam log tahan ubah suai. Pelanggan menerima hasil MYR yang bersih; pengendali membukukan akaun belum terima tertunda pada kadar keuntungan yang dipersetujui."
+				},
+				{
+					"question": "Apa bezanya Ta'widh dengan Gharamah?",
+					"answer": "Ta'widh (تعويض) ialah bahagian caj lewat yang mewakili kos pemulihan sebenar pengendali yang dibuktikan, dan boleh dikekalkan dalam had diluluskan Syariah. Gharamah (غرامة) ialah penalti baki di atas kos itu; ia dihantar ke lejar berasingan dan diagihkan kepada badan amal diluluskan mengikut jadual bertulis yang ditandatangani jawatankuasa. TrueSyariah memecahkan setiap bayaran lewat di peringkat jurnal supaya keduanya tidak pernah bercampur."
+				},
+				{
+					"question": "Bagaimana pelanggan memohon pembiayaan?",
+					"answer": "TrueSyariah merangkumi tiga saluran pengasalan: aliran kaunter untuk pegawai cawangan, portal web berjenama pada domain anda sendiri, dan aplikasi iOS serta Android natif diterbitkan di bawah jenama anda. Pelanggan melengkapkan e-KYC (OCR MyKad dan liveness), menerima jualan komoditi Tawarruq, menandatangani Aqad secara digital, dan menjejak bayaran balik, keuntungan serta pendedahan Ta'widh / Gharamah dari mana-mana peranti."
+				},
+				{
+					"question": "Integrasi mana yang disertakan dengan TrueSyariah?",
+					"answer": "Sedia dipasang: TrueCommodity™ untuk urus niaga Tawarruq, TrueIdentity™ untuk e-KYC MyKad, MSC Trustgate untuk tandatangan PKI di premis, CTOS untuk laporan kredit, TrueSSM™ untuk carian syarikat SSM, serta FPX dan DuitNow untuk pengeluaran dan kutipan. Semuanya digabung dalam satu kontrak Truestack, jadi syarikat pengoperasi Syariah anda tidak mengurus lima vendor secara selari."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Beritahu kami apa yang anda mahu lancarkan.",
+			"body": "Konsultasi percuma tentang struktur entiti anda, apa yang jawatankuasa anda mahu lihat, dan berapa kos sebenar lesen serta platform. Kami suka bermula awal, supaya mercu tanda kejuruteraan seiring dengan garis masa penyeliaan anda.",
+			"secondary": "Perlukan sokongan pelesenan?",
+			"photoAlt": "Seorang penasihat pembiayaan di pejabat Kuala Lumpur membincangkan dokumen dengan klien"
+		}
+	}
+}

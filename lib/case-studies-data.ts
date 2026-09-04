@@ -7,6 +7,8 @@ export const PRODUCT_LABEL: Record<CaseStudyProduct, string> = {
 };
 
 export interface CaseStudy {
+	/** Stable message key under WorkStudies.cards */
+	id: string;
 	title: string;
 	description: string;
 	/** Short line for compact proof cards (homepage, product pages). */
@@ -41,6 +43,7 @@ function productStats(
 
 export const caseStudies: CaseStudy[] = [
 	{
+		id: "pinjocep",
 		title: "PinjoCep",
 		description:
 			"Fast personal loans for Malaysian borrowers — built on TrueKredit and TrueIdentity for instant e-KYC, automated approvals, and KPKT-compliant disbursement.",
@@ -53,6 +56,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "proficient-premium",
 		title: "Proficient Premium",
 		description:
 			"Premium money lending operation modernised end-to-end with TrueKredit — borrower onboarding, loan origination, and KPKT reporting on a single platform.",
@@ -65,6 +69,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "andas-capital",
 		title: "Andas Capital",
 		description:
 			"Enterprise lending platform with comprehensive loan management, automated workflows, and regulatory reporting.",
@@ -77,6 +82,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "cashsouk",
 		title: "CashSouk",
 		description:
 			"P2P lending marketplace connecting borrowers with investors. Built for scale with full compliance features.",
@@ -92,6 +98,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("CustomSoftware", "9 mo"),
 	},
 	{
+		id: "creditxpress",
 		title: "CreditXpress",
 		description:
 			"Transformed from traditional lending to a fully digital, KPKT-licensed nationwide platform with web and mobile apps.",
@@ -104,6 +111,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "6 mo"),
 	},
 	{
+		id: "ezdana",
 		title: "ezdana",
 		description:
 			"Branded digital lending stack for borrower journeys and loan-book operations — onboarding, origination, and day-to-day servicing on TrueKredit Pro.",
@@ -122,6 +130,7 @@ export const caseStudies: CaseStudy[] = [
 		],
 	},
 	{
+		id: "fundle",
 		title: "Fundle",
 		description:
 			"Digital lending product built for speed and borrower self-serve — modern origination and servicing on TrueKredit for Malaysian borrowers.",
@@ -134,6 +143,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "ai-express",
 		title: "AI Express",
 		description:
 			"Digital money lending portal for Malaysian borrowers — fast applications and KPKT-compliant operations on TrueKredit.",
@@ -146,6 +156,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "credibly",
 		title: "Credibly",
 		description:
 			"Modern lending operations on a dedicated cloud platform — borrower journeys, loan servicing, and day-to-day ops on TrueKredit.",
@@ -158,6 +169,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "jomdana",
 		title: "JomDana",
 		description:
 			"Digital money lending for Malaysian borrowers — applications, servicing, and day-to-day loan operations on TrueKredit.",
@@ -170,6 +182,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueKredit", "3 mo"),
 	},
 	{
+		id: "landstore",
 		title: "LandStore",
 		description:
 			"Land marketplace for Malaysia — map exploration, listings, shortlists, and enquiry workflows built as custom software.",
@@ -185,6 +198,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("CustomSoftware", "8 mo"),
 	},
 	{
+		id: "eviebikes",
 		title: "EVIE Bikes",
 		description:
 			"European smart e-bike ecommerce brand selling across the EU — Shopify storefront, product journeys, and brand storytelling built as custom software.",
@@ -203,6 +217,7 @@ export const caseStudies: CaseStudy[] = [
 		],
 	},
 	{
+		id: "jompinjam",
 		title: "jompinjam",
 		description:
 			"Syariah-compliant digital financing for everyday Malaysians — Tawarruq-based products on TrueSyariah, phone-first from apply to disbursement.",
@@ -215,6 +230,7 @@ export const caseStudies: CaseStudy[] = [
 		stats: productStats("TrueSyariah", "3 mo"),
 	},
 	{
+		id: "danakini",
 		title: "danakini",
 		description:
 			"Institutional-grade Syariah financing for individuals and enterprises — governed digital facilities on TrueSyariah with clear profit and tenure.",
@@ -247,21 +263,60 @@ export const workCaseStudies: CaseStudy[] = (() => {
 	return [...featured, ...rest];
 })();
 
+export type CaseStudyCardCopy = {
+	description: string;
+	blurb: string;
+	tags: string[];
+	stats?: { label: string; value: string }[];
+};
+
 export type ProofStudy = Pick<
 	CaseStudy,
-	"title" | "href" | "logo" | "isComingSoon" | "blurb"
+	"id" | "title" | "href" | "logo" | "isComingSoon" | "blurb"
 > & {
 	logoWidth?: number;
 };
 
 function toProofStudy(study: CaseStudy): ProofStudy {
 	return {
+		id: study.id,
 		title: study.title,
 		href: study.href,
 		logo: study.logo,
 		isComingSoon: study.isComingSoon,
 		blurb: study.blurb,
 	};
+}
+
+/** next-intl only types leaf keys; `cards` is a nested object. */
+export function workStudyCards(
+	t: { raw: (key: never) => unknown },
+): Record<string, CaseStudyCardCopy> {
+	return t.raw("cards" as never) as Record<string, CaseStudyCardCopy>;
+}
+
+export function localizeCaseStudy(
+	study: CaseStudy,
+	cards: Record<string, CaseStudyCardCopy>,
+): CaseStudy {
+	const copy = cards[study.id];
+	if (!copy) return study;
+	return {
+		...study,
+		description: copy.description,
+		blurb: copy.blurb,
+		tags: copy.tags,
+		stats: copy.stats ?? study.stats,
+	};
+}
+
+export function localizeProofStudy(
+	study: ProofStudy,
+	cards: Record<string, CaseStudyCardCopy>,
+): ProofStudy {
+	const copy = cards[study.id];
+	if (!copy) return study;
+	return { ...study, blurb: copy.blurb };
 }
 
 const PROOF_LIMIT = 6;

@@ -1,0 +1,38 @@
+{
+	"_status": "source",
+	"Common": {
+		"bookConsultation": "Book a Free Consultation",
+		"freeConsultation": "Free Consultation",
+		"consultationHeading": "Book a free consultation",
+		"consultationBody": "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation.",
+		"learnMore": "Learn more",
+		"readMore": "Read more",
+		"readArticle": "Read this article",
+		"viewAll": "View all",
+		"previous": "Previous",
+		"next": "Next",
+		"close": "Close",
+		"comingSoon": "Coming Soon",
+		"live": "Live",
+		"minRead": "{minutes} min read",
+		"breadcrumbHome": "Home",
+		"contactUs": "Contact us",
+		"talkToUs": "Talk to us",
+		"siteTitle": "Truestack - KPKT Services & Fintech Software",
+		"siteDescription": "KPKT account management, online money lending licence / e-Lending, and money lender software Malaysia for licensed money lenders. Book a free consultation.",
+		"logoCloud": {
+			"partners": {
+				"badge": "Partner Ecosystem",
+				"title": "Integrated with Industry Leaders",
+				"subtitle": "We work with trusted partners to deliver comprehensive fintech solutions with credit intelligence, compliance, payments, and cloud infrastructure.",
+				"bottom": "+ more integrations tailored to your specific requirements"
+			},
+			"clients": {
+				"badge": "Our Clients",
+				"title": "Trusted by Industry Leaders",
+				"subtitle": "We partner with leading companies across fintech, lending, and enterprise sectors.",
+				"bottom": "And many more across Malaysia"
+			}
+		}
+	}
+}

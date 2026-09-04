@@ -1,0 +1,38 @@
+{
+	"_status": "ai-draft",
+	"Common": {
+		"bookConsultation": "预约免费咨询",
+		"freeConsultation": "免费咨询",
+		"consultationHeading": "预约免费咨询",
+		"consultationBody": "告诉我们您的KPKT牌照、合规或放贷软件需求。我们将为您梳理可选方案——免费，无任何义务。",
+		"learnMore": "了解更多",
+		"readMore": "阅读更多",
+		"readArticle": "阅读本文",
+		"viewAll": "查看全部",
+		"previous": "上一页",
+		"next": "下一页",
+		"close": "关闭",
+		"comingSoon": "即将推出",
+		"live": "已上线",
+		"minRead": "阅读约 {minutes} 分钟",
+		"breadcrumbHome": "首页",
+		"contactUs": "联系我们",
+		"talkToUs": "与我们洽谈",
+		"siteTitle": "Truestack - 马来西亚KPKT放贷牌照服务与金融科技软件",
+		"siteDescription": "KPKT合规账户管理、线上放贷牌照 (e-Lending) 申请，以及面向马来西亚持牌放贷公司的贷款管理软件。预约免费咨询。",
+		"logoCloud": {
+			"partners": {
+				"badge": "合作伙伴生态",
+				"title": "与行业领导者集成",
+				"subtitle": "我们与可信合作伙伴协作，交付涵盖信用情报、合规、支付与云基础设施的全面金融科技方案。",
+				"bottom": "+ 更多按您具体需求定制的集成"
+			},
+			"clients": {
+				"badge": "我们的客户",
+				"title": "受行业领导者信赖",
+				"subtitle": "我们与金融科技、放贷与企业领域的领先公司合作。",
+				"bottom": "以及马来西亚各地的更多客户"
+			}
+		}
+	}
+}

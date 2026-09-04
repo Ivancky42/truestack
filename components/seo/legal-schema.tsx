@@ -11,7 +11,7 @@ type LegalSchemaProps = {
   description: string;
 };
 
-export function LegalSchema({ path, name, description }: LegalSchemaProps) {
+export async function LegalSchema({ path, name, description }: LegalSchemaProps) {
   const url = `${siteUrl}${path}`;
   const schema = {
     "@context": "https://schema.org",
@@ -37,6 +37,7 @@ export function LegalSchema({ path, name, description }: LegalSchemaProps) {
         }}
       />
       <BreadcrumbSchema
+        locale="en"
         items={[
           { name: siteName, path: "/" },
           { name, path },
