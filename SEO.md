@@ -81,3 +81,43 @@ NEXT_PUBLIC_SITE_URL=https://www.truestack.my
 ```
 
 Use your production URL. This affects sitemap, robots, metadataBase, and JSON-LD.
+
+---
+
+## Locale SEO (en / ms / zh)
+
+English is unprefixed. Bahasa Malaysia is `/ms`, Simplified Chinese is `/zh`.
+
+### hreflang
+
+Every indexable localized page emits the same alternate set from `hreflangAlternates` in `lib/i18n/config.ts` (page `<head>` and sitemap `<xhtml:link>`):
+
+| Key | URL |
+|---|---|
+| `en` | English (unprefixed) |
+| `ms` | `/ms/...` |
+| `zh-Hans` | `/zh/...` |
+| `zh-CN` | `/zh/...` (same URL; mainland-China / Baidu signal) |
+| `x-default` | English |
+
+Each locale has a **self-canonical** (`/zh/truekredit` canonicalises to `/zh/truekredit`, not the English URL). Legal pages (privacy, terms, PDPA, cybersecurity) are English-only: `noindex` on `/ms` and `/zh`, canonical to English.
+
+### Sitemap
+
+`app/sitemap.ts` lists en + ms + zh for every marketing route, including Insights index and every published insight slug. Legal pages stay English-only. Priority and `changeFrequency` match across locale variants of the same path.
+
+### `og:locale`
+
+| Locale | `og:locale` | `og:locale:alternate` |
+|---|---|---|
+| en | `en_MY` (Malaysian / British English — not `en_US`) | `ms_MY`, `zh_CN` |
+| ms | `ms_MY` | `en_MY`, `zh_CN` |
+| zh | `zh_CN` | `en_MY`, `ms_MY` |
+
+### Mandarin targeting
+
+`/zh` commercial metadata is written for China-based operators and investors expanding fintech / money lending into Malaysia (KPKT 放贷牌照 / 现金贷牌照, e-Lending, 牌照续期, 贷款管理系统). See `docs/I18N.md` § Mandarin SEO. Do not invent licence outcomes, capital rules, or timelines.
+
+### JSON-LD languages
+
+Organization `ContactPoint.availableLanguage` and WebSite `availableLanguage` list English (`en`), Malay (`ms`), and Chinese (`zh-CN`).

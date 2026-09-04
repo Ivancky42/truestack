@@ -21,7 +21,7 @@ import { WebSiteSchema } from "@/components/seo/website-schema";
 import { routing } from "@/i18n/routing";
 import { htmlLang, resolveAppLocale } from "@/lib/i18n/config";
 import { pickMessages } from "@/lib/i18n/messages";
-import { ogLocaleFor } from "@/lib/i18n/seo";
+import { ogLocaleAlternatesFor, ogLocaleFor } from "@/lib/i18n/seo";
 import {
 	brandThemeColor,
 	defaultOgImage,
@@ -171,6 +171,7 @@ export async function generateMetadata({
 		openGraph: {
 			...rootMetadata.openGraph,
 			locale: ogLocaleFor(locale),
+			alternateLocale: ogLocaleAlternatesFor(locale),
 			title,
 			description,
 		},

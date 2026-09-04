@@ -12,7 +12,6 @@ const ENGLISH_ONLY_PATHS = new Set([
 	"/privacy",
 	"/pdpa",
 	"/terms",
-	"/insights",
 ]);
 
 function absoluteUrl(path: string): string {
@@ -31,7 +30,7 @@ function localizedEntries(
 		"lastModified" | "changeFrequency" | "priority"
 	>,
 ): MetadataRoute.Sitemap {
-	if (ENGLISH_ONLY_PATHS.has(path) || path.startsWith("/insights/")) {
+	if (ENGLISH_ONLY_PATHS.has(path)) {
 		return [
 			{
 				url: absoluteUrl(path),

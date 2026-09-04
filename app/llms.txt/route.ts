@@ -13,6 +13,8 @@ function insightsSection(posts: InsightLlmsEntry[]): string {
 		"## Insights",
 		"",
 		INSIGHTS_INDEX_LINE,
+		`- ${siteUrl}/ms/insights — Same Insights index with Bahasa Malaysia chrome. Article bodies stay English; post slugs match the English URLs.`,
+		`- ${siteUrl}/zh/insights — Same Insights index with Simplified Chinese chrome. Article bodies stay English; post slugs match the English URLs.`,
 		...posts.map(
 			(post) =>
 				`- ${siteUrl}/insights/${post.slug} — ${post.title} (${post.category}). ${post.excerpt}`,

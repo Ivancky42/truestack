@@ -1,4 +1,5 @@
 import { getLocale } from "next-intl/server";
+import { availableLanguages } from "@/lib/i18n/config";
 import {
   legalName,
   orgAddress,
@@ -87,7 +88,7 @@ export async function OrganizationSchema() {
       contactType: "sales",
       url: `${baseUrl}/contact`,
       areaServed: "MY",
-      availableLanguage: ["English", "Malay", "Chinese"],
+      availableLanguage: [...availableLanguages],
     },
     identifier: {
       "@type": "PropertyValue",
