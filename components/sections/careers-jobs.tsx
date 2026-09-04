@@ -194,7 +194,7 @@ function RoleTabs({
 						className={cn(
 							"rounded-full px-4 py-2 type-ui font-medium transition-colors",
 							active
-								? "bg-linear-to-br from-primary-start to-primary-end text-primary-foreground shadow-sm"
+								? "bg-foreground text-background shadow-sm"
 								: "text-muted-foreground hover:text-foreground",
 						)}
 					>

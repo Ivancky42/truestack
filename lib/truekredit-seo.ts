@@ -122,7 +122,7 @@ export function buildTrueKreditJsonLd() {
 					"Secure cloud hosting in Malaysia",
 					"Audit trails and KPKT compliance workflows",
 					"Loan workflow options configured to how your office already works",
-					"Pro: customer website, phone apps, digital signing",
+					"Pro: branded borrower website, iPhone and Android apps, digital signing",
 				],
 				areaServed: { "@type": "Country", name: "Malaysia" },
 			},

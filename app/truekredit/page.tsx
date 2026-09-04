@@ -5,19 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
 	ArrowRight,
-	Award,
 	Check,
 	ChevronRight,
 	Lock,
-	Shield,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-	WalkInVisual,
-	WebOriginationVisual,
-	MobileAppVisual,
-} from "@/components/sections/origination-channel-visuals";
 import { TrueKreditHero } from "@/components/sections/truekredit-hero";
+import { TrueKreditChannels } from "@/components/sections/truekredit-channels";
 import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
 import { TrueKreditJourney } from "@/components/sections/truekredit-journey";
 import { TrueKreditChecks } from "@/components/sections/truekredit-checks";
@@ -249,130 +243,7 @@ export default function TrueKreditPage() {
 
 			<TrueKreditJourney />
 
-			<section
-				id="channels"
-				aria-labelledby="truekredit-channels-heading"
-				className="scroll-mt-20 border-t bg-background py-16 md:py-20"
-			>
-				<div className="mx-auto max-w-6xl px-6">
-					<motion.div
-						className="mb-9 max-w-[44em]"
-						initial={{ opacity: 0, y: 16 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5 }}
-					>
-						<p className="type-eyebrow mb-3 text-primary">
-							Same journey · more ways in
-						</p>
-						<h2 id="truekredit-channels-heading" className="type-h2">
-							Every channel feeds one loan file.
-						</h2>
-						<p className="mt-3.5 type-lede text-muted-foreground">
-							Your team works from one live file — the same
-							borrower record, the same schedules, the same audit
-							trail. Start at the counter on Standard. When you
-							go nationwide with Pro, website and mobile
-							applications land in the same queue.
-						</p>
-					</motion.div>
-
-					<motion.div
-						className="relative mb-5 aspect-video overflow-hidden rounded-2xl border shadow-sm"
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5, delay: 0.06 }}
-					>
-						<Image
-							src="/photos/truekredit-branch-counter.jpg"
-							alt="A lending officer at a Malaysian branch counter reviewing a borrower file in TrueKredit"
-							fill
-							sizes="(max-width: 1080px) 100vw, 1080px"
-							className="object-cover"
-						/>
-						<div
-							className="absolute inset-0 bg-primary/10 mix-blend-multiply"
-							aria-hidden
-						/>
-					</motion.div>
-
-					<motion.div
-						className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, margin: "-50px" }}
-						transition={{ duration: 0.5, delay: 0.1 }}
-					>
-						<article className="group flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:col-span-2 lg:col-span-1">
-							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
-								<WalkInVisual />
-							</div>
-							<div className="flex flex-col gap-3 p-5 sm:p-6">
-								<div className="flex flex-wrap gap-1.5">
-									<span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-primary">
-										<Shield className="h-3 w-3" />
-										Standard
-									</span>
-									<span className="inline-flex items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-violet-700">
-										<Award className="h-3 w-3" />
-										Pro
-									</span>
-								</div>
-								<h3 className="type-card-title">
-									Walk-in counter
-								</h3>
-								<p className="type-ui text-muted-foreground">
-									Branch officers open the file — MyKad,
-									identity check and credit details in one
-									screen — then follow the same approval path
-									as every other channel.
-								</p>
-							</div>
-						</article>
-
-						<article className="group flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-md">
-							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
-								<WebOriginationVisual />
-							</div>
-							<div className="flex flex-col gap-3 p-5 sm:p-6">
-								<span className="inline-flex w-fit items-center gap-1 rounded-full bg-linear-to-r from-indigo-600 to-violet-600 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-white">
-									<Award className="h-3 w-3" />
-									Pro
-								</span>
-								<h3 className="type-card-title">
-									Branded customer website
-								</h3>
-								<p className="type-ui text-muted-foreground">
-									Customers apply on your own domain day or
-									night, upload documents, verify identity,
-									then land straight in your approval queue.
-								</p>
-							</div>
-						</article>
-
-						<article className="group flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-md">
-							<div className="aspect-5/4 w-full shrink-0 overflow-hidden">
-								<MobileAppVisual />
-							</div>
-							<div className="flex flex-col gap-3 p-5 sm:p-6">
-								<span className="inline-flex w-fit items-center gap-1 rounded-full bg-linear-to-r from-indigo-600 to-violet-600 px-2 py-0.5 type-micro font-semibold uppercase tracking-wider text-white">
-									<Award className="h-3 w-3" />
-									Pro
-								</span>
-								<h3 className="type-card-title">
-									iPhone &amp; Android apps
-								</h3>
-								<p className="type-ui text-muted-foreground">
-									Apply, track balances, pay and sign under
-									your brand — feeding the same loan file
-									your office team already uses.
-								</p>
-							</div>
-						</article>
-					</motion.div>
-				</div>
-			</section>
+			<TrueKreditChannels />
 
 			<TrueKreditChecks />
 
@@ -757,7 +628,7 @@ export default function TrueKreditPage() {
 			<TrueKreditFaq />
 
 			<ConsultationCta
-				accent="truekredit"
+				accent="brand"
 				heading="Ready to run your lending book with confidence?"
 				body="Book a free consultation to see how TrueKredit fits your branch today — or Pro when you are ready to lend nationwide. Your loan data stays with you either way."
 				primary={{

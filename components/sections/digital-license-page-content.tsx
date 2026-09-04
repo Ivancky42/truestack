@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
 import { DigitalLicensePaths } from "@/components/sections/digital-license-paths";
+import { BorrowerPortalCollage } from "@/components/sections/truekredit-borrower-visuals";
 
 const STORY_TODAY = [
 	{
@@ -481,34 +482,8 @@ export function DigitalLicensePageContent() {
 							className="pointer-events-none absolute inset-x-4 top-4 h-4/5 rounded-2xl bg-primary/15 blur-2xl"
 							aria-hidden
 						/>
-						<div className="relative overflow-hidden rounded-[14px] border bg-card shadow-lg">
-							<div className="flex h-[34px] items-center gap-1.5 border-b bg-muted/40 px-3">
-								<span
-									className="h-2.5 w-2.5 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span
-									className="h-2.5 w-2.5 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span
-									className="h-2.5 w-2.5 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span className="ml-2.5 font-mono text-xs text-muted-foreground/70">
-									admin.truekredit
-								</span>
-							</div>
-							<Image
-								src="/truekredit/hero_dashboard_screenshot.png"
-								alt="TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender"
-								width={3368}
-								height={2662}
-								quality={100}
-								unoptimized
-								className="h-auto w-full"
-								sizes="(max-width: 1024px) 100vw, 50vw"
-							/>
+						<div className="relative">
+							<BorrowerPortalCollage className="pb-6 md:pb-8" />
 						</div>
 					</motion.div>
 				</div>

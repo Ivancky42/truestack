@@ -26,6 +26,20 @@ Every photo in `public/photos/` must be recorded here (guide §8).
 |---|---|---|
 | og.png | Composited from `truestack-logo-transparent-dark.png` | Sitewide Open Graph / Twitter card (1200×630). Not photography. |
 
+## Product UI screenshots (`public/truekredit/`)
+
+Admin captures from the TrueKredit demo. Borrower web and app frames rendered from the Pro portal redesign (Truestack blue theme) for marketing.
+
+| File | Source | Notes |
+|---|---|---|
+| truekredit/hero_dashboard_screenshot.png | TrueKredit admin demo | Admin dashboard |
+| truekredit/borrower_web_dashboard_screenshot.png | Borrower web redesign (Kredit theme) | Branded borrower dashboard |
+| truekredit/borrower_web_apply_screenshot.png | Borrower web redesign (Kredit theme) | Apply — amount and tenure |
+| truekredit/borrower_web_sign_screenshot.png | Borrower web redesign (Kredit theme) | Digital signing |
+| truekredit/borrower_app_home_screenshot.png | Borrower app redesign (Kredit theme) | iOS home |
+| truekredit/borrower_app_apply_screenshot.png | Borrower app redesign (Kredit theme) | Apply — purpose |
+| truekredit/borrower_app_pay_screenshot.png | Borrower app redesign (Kredit theme) | Make a payment |
+
 ## Work case-study screenshots (`public/work/`)
 
 Product UI captures taken for Truestack case studies (not stock photography).

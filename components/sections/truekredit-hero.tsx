@@ -1,11 +1,52 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
+import {
+	BORROWER_SHOTS,
+	BorrowerAppPhones,
+} from "@/components/sections/truekredit-borrower-visuals";
+import { cn } from "@/lib/utils";
+
+const AUTOPLAY_MS = 5000;
+
+const SLIDES = [
+	{
+		id: "admin",
+		label: "Admin",
+		kind: "web" as const,
+		chrome: "admin.truekredit",
+		src: "/truekredit/hero_dashboard_screenshot.png",
+		alt: "TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender",
+		width: 3368,
+		height: 2662,
+	},
+	{
+		id: "borrower",
+		label: "Borrower",
+		kind: "web" as const,
+		chrome: "kredit.yourcompany.com.my",
+		src: BORROWER_SHOTS.webDashboard.src,
+		alt: BORROWER_SHOTS.webDashboard.alt,
+		width: BORROWER_SHOTS.webDashboard.width,
+		height: BORROWER_SHOTS.webDashboard.height,
+	},
+	{
+		id: "mobile",
+		label: "Mobile",
+		kind: "phone" as const,
+		chrome: "iOS & Android",
+		src: BORROWER_SHOTS.appHome.src,
+		alt: BORROWER_SHOTS.appHome.alt,
+		width: BORROWER_SHOTS.appHome.width,
+		height: BORROWER_SHOTS.appHome.height,
+	},
+] as const;
 
 function GridPattern() {
 	return (
@@ -38,6 +79,37 @@ function GridPattern() {
 }
 
 export function TrueKreditHero() {
+	const reduceMotion = useReducedMotion();
+	const [active, setActive] = useState(0);
+	const [playing, setPlaying] = useState(true);
+	const slide = SLIDES[active];
+
+	useEffect(() => {
+		if (reduceMotion) setPlaying(false);
+	}, [reduceMotion]);
+
+	useEffect(() => {
+		if (!playing || reduceMotion) return;
+		const id = window.setInterval(() => {
+			setActive((index) => (index + 1) % SLIDES.length);
+		}, AUTOPLAY_MS);
+		return () => window.clearInterval(id);
+	}, [playing, reduceMotion]);
+
+	useEffect(() => {
+		const onVisibility = () => {
+			if (document.visibilityState === "hidden") setPlaying(false);
+		};
+		document.addEventListener("visibilitychange", onVisibility);
+		return () =>
+			document.removeEventListener("visibilitychange", onVisibility);
+	}, []);
+
+	const selectSlide = (index: number) => {
+		setPlaying(false);
+		setActive(index);
+	};
+
 	return (
 		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
@@ -115,20 +187,65 @@ export function TrueKreditHero() {
 							aria-hidden
 						/>
 						<span className="ml-2.5 font-mono text-xs text-muted-foreground">
-							admin.truekredit
+							{slide.chrome}
 						</span>
 					</div>
-					<Image
-						src="/truekredit/hero_dashboard_screenshot.png"
-						alt="TrueKredit admin dashboard — outstanding, collections and portfolio health for a Malaysian money lender"
-						width={3368}
-						height={2662}
-						quality={100}
-						unoptimized
-						priority
-						sizes="(max-width: 1080px) calc(100vw - 3rem), 1080px"
-						className="h-auto w-full"
-					/>
+					<div className="relative aspect-16/10 overflow-hidden bg-muted/30">
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={slide.id}
+								className="absolute inset-0"
+								initial={
+									reduceMotion ? false : { opacity: 0 }
+								}
+								animate={{ opacity: 1 }}
+								exit={reduceMotion ? undefined : { opacity: 0 }}
+								transition={{ duration: 0.25 }}
+							>
+								{slide.kind === "phone" ? (
+									<BorrowerAppPhones />
+								) : (
+									<Image
+										src={slide.src}
+										alt={slide.alt}
+										width={slide.width}
+										height={slide.height}
+										quality={100}
+										unoptimized
+										priority={slide.id === "admin"}
+										sizes="(max-width: 1080px) calc(100vw - 3rem), 1080px"
+										className="h-full w-full object-cover object-top"
+									/>
+								)}
+							</motion.div>
+						</AnimatePresence>
+					</div>
+				</div>
+				<div
+					role="tablist"
+					aria-label="TrueKredit screens"
+					className="mx-auto mt-4 mb-8 flex w-fit items-center gap-1 rounded-full border bg-card/95 p-1 shadow-sm backdrop-blur-sm md:mb-10"
+				>
+					{SLIDES.map((item, index) => {
+						const on = index === active;
+						return (
+							<button
+								key={item.id}
+								type="button"
+								role="tab"
+								aria-selected={on}
+								onClick={() => selectSlide(index)}
+								className={cn(
+									"rounded-full px-3.5 py-1.5 type-ui font-medium transition-colors",
+									on
+										? "bg-foreground text-background"
+										: "text-muted-foreground hover:text-foreground",
+								)}
+							>
+								{item.label}
+							</button>
+						);
+					})}
 				</div>
 			</motion.div>
 		</section>

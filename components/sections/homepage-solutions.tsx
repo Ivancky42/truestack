@@ -139,7 +139,7 @@ export function HomepageSolutions() {
 								className={cn(
 									"rounded-full px-4 py-2 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
 									isActive
-										? "bg-linear-to-br from-primary-start to-primary-end text-primary-foreground"
+										? "bg-foreground text-background"
 										: "text-muted-foreground hover:text-foreground",
 								)}
 							>

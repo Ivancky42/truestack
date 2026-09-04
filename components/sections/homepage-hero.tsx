@@ -172,9 +172,9 @@ function BrowserChrome({ label }: { label: string }) {
 
 function HeroCollage() {
 	return (
-		<div className="relative mx-auto w-full max-w-xl md:h-[540px] lg:max-w-none">
+		<div className="relative mx-auto h-[380px] w-full max-w-xl px-1 sm:h-[440px] sm:px-0 md:h-[540px] lg:max-w-none">
 			{/* Lampiran A — licence document, back-right */}
-			<div className="absolute top-0 right-0 z-0 hidden w-[66%] rotate-[2.4deg] overflow-hidden rounded-[10px] border bg-card shadow-md md:block">
+			<div className="absolute top-0 right-1 z-0 w-[58%] rotate-[2.4deg] overflow-hidden rounded-[10px] border bg-card shadow-md sm:right-0 md:w-[66%]">
 				<div className="flex h-6.5 items-center gap-2 border-b bg-muted/50 px-2.5">
 					<FileText
 						className="size-3 text-muted-foreground/70"
@@ -189,13 +189,13 @@ function HeroCollage() {
 					alt="Lampiran A borrower ledger generated from TrueKredit"
 					width={1716}
 					height={2384}
-					className="h-[150px] w-full object-cover object-top opacity-90"
-					sizes="280px"
+					className="h-[100px] w-full object-cover object-top opacity-90 sm:h-[120px] md:h-[150px]"
+					sizes="(max-width: 768px) 60vw, 280px"
 				/>
 			</div>
 
 			{/* Dashboard — platform, front-center */}
-			<div className="relative z-10 overflow-hidden rounded-xl border bg-card shadow-xl md:absolute md:top-[104px] md:left-0 md:w-[96%] md:-rotate-[1.2deg] md:shadow-2xl">
+			<div className="absolute top-[76px] left-1 z-10 w-[90%] -rotate-[1.2deg] overflow-hidden rounded-xl border bg-card shadow-xl sm:top-[88px] sm:left-0 md:top-[104px] md:w-[96%] md:shadow-2xl">
 				<BrowserChrome label="admin.truekredit" />
 				<Image
 					src="/truekredit/hero_dashboard_screenshot.png"
@@ -205,26 +205,26 @@ function HeroCollage() {
 					quality={100}
 					unoptimized
 					priority
-					className="h-auto w-full md:h-[360px] md:object-cover md:object-top"
+					className="h-[196px] w-full object-cover object-top sm:h-[290px] md:h-[360px]"
 					sizes="(max-width: 1024px) 100vw, 560px"
 				/>
 			</div>
 
 			{/* Activity timeline — audit trail overlay */}
-			<div className="absolute -bottom-3 -left-2 z-20 hidden w-60 -rotate-[3.6deg] overflow-hidden rounded-xl border bg-card shadow-md md:block">
+			<div className="absolute bottom-0 left-1 z-20 w-[52%] max-w-60 -rotate-[3.6deg] overflow-hidden rounded-xl border bg-card shadow-md sm:-bottom-3 sm:-left-2 md:w-60">
 				<Image
 					src="/truekredit/activity_timeline_screenshot.png"
 					alt="TrueKredit activity timeline — who changed a loan, exported Lampiran A, or recorded a payment"
 					width={1820}
 					height={1532}
-					className="h-42 w-full object-cover object-top-left"
-					sizes="240px"
+					className="h-32 w-full object-cover object-top-left sm:h-36 md:h-42"
+					sizes="(max-width: 640px) 52vw, 240px"
 				/>
 			</div>
 
 			{/* Licence / Platform / API */}
 			<div
-				className="absolute right-0 bottom-3.5 z-20 hidden flex-row items-center gap-1.5 md:flex"
+				className="absolute right-1 bottom-10 z-20 flex flex-row flex-wrap justify-end gap-1 sm:right-0 sm:bottom-3.5 sm:gap-1.5"
 				aria-hidden
 			>
 				{STACK_PILLS.map((pill) => (
@@ -232,8 +232,8 @@ function HeroCollage() {
 						key={pill.label}
 						className={
 							pill.active
-								? "inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-card/90 px-3 py-1.5 text-xs font-medium text-primary shadow-sm backdrop-blur-sm"
-								: "inline-flex items-center gap-1.5 rounded-full border bg-card/90 px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm"
+								? "inline-flex items-center gap-1 rounded-full border border-primary/30 bg-card/90 px-2 py-1 text-xs font-medium text-primary shadow-sm backdrop-blur-sm sm:gap-1.5 sm:px-3 sm:py-1.5"
+								: "inline-flex items-center gap-1 rounded-full border bg-card/90 px-2 py-1 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur-sm sm:gap-1.5 sm:px-3 sm:py-1.5"
 						}
 					>
 						<span className="size-1.5 rounded-full bg-primary" />
@@ -338,7 +338,7 @@ export function HomepageHero() {
 					</div>
 
 					<motion.div
-						className="pb-6 md:pb-2"
+						className="pb-8 md:pb-2"
 						initial={{ opacity: 0, y: 16 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.12 }}

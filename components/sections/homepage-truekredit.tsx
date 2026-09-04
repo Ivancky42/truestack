@@ -104,55 +104,26 @@ export function HomepageTrueKredit() {
 					</motion.div>
 
 					<motion.div
-						className="relative md:pb-10"
+						className="relative"
 						initial={{ opacity: 0, y: 16 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, margin: "-50px" }}
 						transition={{ duration: 0.5, delay: 0.1 }}
 					>
 						<div
-							className="pointer-events-none absolute inset-x-4 top-4 h-4/5 rounded-2xl bg-primary/15 blur-2xl"
+							className="pointer-events-none absolute inset-x-6 top-8 h-3/5 rounded-2xl bg-primary/15 blur-2xl"
 							aria-hidden
 						/>
-						<div className="relative overflow-hidden rounded-2xl border bg-card shadow-lg">
-							<div className="flex h-8 items-center gap-1.5 border-b bg-muted/40 px-3">
-								<span
-									className="h-2 w-2 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span
-									className="h-2 w-2 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span
-									className="h-2 w-2 rounded-full bg-border"
-									aria-hidden
-								/>
-								<span className="ml-2 type-mono-label text-muted-foreground/70">
-									admin.truekredit
-								</span>
-							</div>
-							<Image
-								src="/truekredit/borrower_details_screenshot.png"
-								alt="TrueKredit borrower file — payment performance, company particulars and SSM checks for a Malaysian corporate borrower"
-								width={2752}
-								height={2168}
-								quality={100}
-								unoptimized
-								className="h-auto w-full"
-								sizes="(max-width: 1024px) 100vw, 55vw"
-							/>
-						</div>
-						<div className="absolute -bottom-6 -left-6 hidden w-57.5 overflow-hidden rounded-xl border bg-card/90 shadow-md backdrop-blur-sm md:block">
-							<Image
-								src="/truekredit/loan_summary_screenshot.png"
-								alt="TrueKredit loan summary view"
-								width={460}
-								height={320}
-								className="h-auto w-full"
-								sizes="230px"
-							/>
-						</div>
+						<Image
+							src="/truekredit/homepage-borrower-collage.png"
+							alt="TrueKredit borrower file with loan summary and the branded borrower app on a phone"
+							width={2160}
+							height={1766}
+							quality={100}
+							unoptimized
+							className="relative h-auto w-full"
+							sizes="(max-width: 1024px) 100vw, 55vw"
+						/>
 					</motion.div>
 				</div>
 

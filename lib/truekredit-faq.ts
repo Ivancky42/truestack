@@ -15,6 +15,11 @@ export const truekreditFaq = [
 			"The nationwide layer: a branded customer website on your own domain, iPhone and Android apps, digital signing on your premises verified with MSC Trustgate, digital attestation live at the counter or by scheduled video call, and support for KPKT Online Money Lending Licence reviews. Your team keeps the same admin workflows; new channels feed the same loan file.",
 	},
 	{
+		question: "What do borrowers see on the website and apps?",
+		answer:
+			"On TrueKredit™ Pro, borrowers use a branded website on your domain and iPhone or Android apps. They apply, upload documents, verify identity, track balances, pay instalments and sign agreements. Every action lands on the same loan file your team works in — nothing is re-keyed.",
+	},
+	{
 		question: "Can we start on Standard and upgrade to Pro later?",
 		answer:
 			"Yes, and most lenders do. Start on Standard for your branch today. Upgrading adds the customer channels, signing and attestation on top of the system you already run. Your borrowers, loans and history stay exactly where they are — nothing is migrated and nothing is re-keyed.",
