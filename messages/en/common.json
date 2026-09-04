@@ -1,6 +1,9 @@
 {
+	"_status": "source",
 	"Common": {
 		"bookConsultation": "Book a Free Consultation",
-		"freeConsultation": "Free Consultation"
+		"freeConsultation": "Free Consultation",
+		"consultationHeading": "Book a free consultation",
+		"consultationBody": "Tell us about your KPKT licensing, compliance, or lending software needs. We'll map out your options—free, no obligation."
 	}
 }

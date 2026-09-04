@@ -1,13 +1,20 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { createElement, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { AbstractIntlMessages } from "next-intl";
+import enBanner from "@/messages/en/banner.json";
 import enCommon from "@/messages/en/common.json";
+import enFooter from "@/messages/en/footer.json";
+import enHeader from "@/messages/en/header.json";
 import enNotFound from "@/messages/en/notFound.json";
 
-export type EnMessages = typeof enCommon & typeof enNotFound;
+export type EnMessages = typeof enCommon &
+	typeof enNotFound &
+	typeof enHeader &
+	typeof enFooter &
+	typeof enBanner;
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
 	return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -42,7 +49,9 @@ function loadLocaleDirectory(locale: string): Record<string, unknown> {
 			readFileSync(join(dir, file), "utf8"),
 		);
 		if (isPlainObject(parsed)) {
-			Object.assign(messages, parsed);
+			const { _status: _fileStatus, ...rest } = parsed;
+			void _fileStatus;
+			Object.assign(messages, rest);
 		}
 	}
 	return messages;
@@ -81,8 +90,11 @@ export async function PageMessages({
 	children: ReactNode;
 }) {
 	const messages = await getMessages();
-	return createElement(NextIntlClientProvider, {
-		messages: pickMessages(messages, "Common", ...namespaces),
-		children,
-	});
+	return (
+		<NextIntlClientProvider
+			messages={pickMessages(messages, "Common", ...namespaces)}
+		>
+			{children}
+		</NextIntlClientProvider>
+	);
 }

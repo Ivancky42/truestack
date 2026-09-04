@@ -11,6 +11,7 @@ import {
 	Noto_Sans_SC,
 } from "next/font/google";
 import { Header } from "@/components/layout/header";
+import { LanguageSuggestionBar } from "@/components/layout/language-suggestion-bar";
 import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema } from "@/components/seo/organization-schema";
 import { WebSiteSchema } from "@/components/seo/website-schema";
@@ -205,6 +206,7 @@ export default async function LocaleLayout({
 					<OrganizationSchema />
 					<WebSiteSchema />
 					<Header />
+					<LanguageSuggestionBar />
 					<main className="min-h-[calc(100vh-4rem)]">{children}</main>
 					<Footer />
 				</NextIntlClientProvider>

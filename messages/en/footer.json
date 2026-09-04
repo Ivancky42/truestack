@@ -1,0 +1,44 @@
+{
+	"_status": "source",
+	"Footer": {
+		"navLabel": "Footer",
+		"columns": {
+			"services": "Services",
+			"platforms": "Platforms",
+			"apis": "APIs",
+			"company": "Company",
+			"legal": "Legal"
+		},
+		"solutions": {
+			"digitalLicense": "KPKT Digital Licence",
+			"shariahLicense": "Shariah Digital Licence",
+			"accountManagement": "KPKT Account Management",
+			"softwareDevelopment": "Custom Software Development",
+			"truekredit": "TrueKredit™",
+			"truesyariah": "TrueSyariah™",
+			"truep2p": "TrueP2P™",
+			"trueidentity": "TrueIdentity™",
+			"truessm": "TrueSSM™",
+			"payments": "Payment gateway",
+			"developers": "Developers"
+		},
+		"company": {
+			"about": "About",
+			"work": "Work",
+			"insights": "Insights",
+			"careers": "Careers",
+			"contact": "Contact"
+		},
+		"legal": {
+			"cybersecurity": "Cybersecurity Policy",
+			"pdpa": "PDPA Notice",
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Use"
+		},
+		"tagline": "KPKT compliance services and fintech software development for licensed money lenders in Malaysia.",
+		"linkedin": "LinkedIn",
+		"bookConsultation": "Book a Free Consultation",
+		"registration": "Registration No. {number}",
+		"copyright": "© {year} Truestack Technologies. All rights reserved."
+	}
+}

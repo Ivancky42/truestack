@@ -9,7 +9,6 @@ import {
   Users,
   Fingerprint,
   Clock,
-  CheckCircle2,
   Terminal,
   Copy,
   Building2,

@@ -1,0 +1,20 @@
+{
+	"_status": "source",
+	"Banner": {
+		"en": {
+			"message": "This page is available in English.",
+			"cta": "Switch to English",
+			"dismiss": "Dismiss"
+		},
+		"ms": {
+			"message": "Laman ini tersedia dalam Bahasa Malaysia.",
+			"cta": "Tukar ke Bahasa Malaysia",
+			"dismiss": "Tutup"
+		},
+		"zh": {
+			"message": "本页面提供中文版本。",
+			"cta": "切换到中文",
+			"dismiss": "关闭"
+		}
+	}
+}
