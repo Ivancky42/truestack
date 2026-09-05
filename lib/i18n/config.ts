@@ -62,12 +62,29 @@ export const ogLocale: Record<AppLocale, string> = {
 	ru: "ru_RU",
 };
 
+/** `og:locale:alternate` values for every locale except the current page. */
+export function ogAlternateLocales(locale: AppLocale): string[] {
+	return LOCALES.filter((item) => item !== locale).map((item) => ogLocale[item]);
+}
+
 export const inLanguage: Record<AppLocale, string> = {
 	en: "en-MY",
 	ms: "ms-MY",
 	zh: "zh-CN",
 	ru: "ru-RU",
 };
+
+/**
+ * schema.org `availableLanguage` for Organization / WebSite / ContactPoint.
+ * BCP-47 codes sit on `alternateName` so validators accept both a human name
+ * and `en` / `ms` / `zh-CN` / `ru`.
+ */
+export const availableLanguages = [
+	{ "@type": "Language" as const, name: "English", alternateName: "en" },
+	{ "@type": "Language" as const, name: "Malay", alternateName: "ms" },
+	{ "@type": "Language" as const, name: "Chinese", alternateName: "zh-CN" },
+	{ "@type": "Language" as const, name: "Russian", alternateName: "ru" },
+] as const;
 
 export const LOCALE_COOKIE = "ts_locale";
 export const LOCALE_HINT_COOKIE = "ts_locale_hint";

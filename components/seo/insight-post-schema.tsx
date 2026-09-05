@@ -1,6 +1,8 @@
+import type { AppLocale } from "@/i18n/routing";
 import { imageUrl } from "@/lib/insights/client";
 import type { InsightPost, SanityImage } from "@/lib/insights/types";
 import {
+	absoluteLocalizedUrl,
 	defaultOgImage,
 	legalName,
 	orgLogo,
@@ -25,8 +27,14 @@ function insightImageUrl(image?: SanityImage): string | undefined {
  * JSON-LD BlogPosting schema for /insights/[slug].
  * Validate at: https://validator.schema.org/
  */
-export async function InsightPostSchema({ post }: { post: InsightPost }) {
-	const pageUrl = `${siteUrl}/insights/${post.slug}`;
+export async function InsightPostSchema({
+	post,
+	locale,
+}: {
+	post: InsightPost;
+	locale: AppLocale;
+}) {
+	const pageUrl = absoluteLocalizedUrl(`/insights/${post.slug}`, locale);
 	const image = insightImageUrl(post.mainImage) ?? defaultOgAbsoluteUrl();
 
 	const author: {

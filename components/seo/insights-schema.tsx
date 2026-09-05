@@ -1,22 +1,26 @@
-import { getTranslations } from "next-intl/server";
-import { legalName, siteName, siteUrl } from "@/lib/seo-defaults";
+import { getLocale, getTranslations } from "next-intl/server";
+import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { absoluteLocalizedUrl, legalName, siteName, siteUrl } from "@/lib/seo-defaults";
 
-const pageUrl = `${siteUrl}/insights`;
+const INSIGHTS_PATH = "/insights";
 
 /**
- * JSON-LD Blog schema for /insights.
+ * JSON-LD Blog schema for /insights (and locale variants).
+ * `@id` stays on the English collection so locale pages share one Blog entity.
  * Validate at: https://validator.schema.org/
  */
 export async function InsightsSchema() {
+	const locale = resolveAppLocale(await getLocale());
 	const t = await getTranslations("InsightsChrome");
+	const pageUrl = absoluteLocalizedUrl(INSIGHTS_PATH, locale);
 	const schema = {
 		"@context": "https://schema.org",
 		"@type": "Blog",
-		"@id": `${pageUrl}#blog`,
+		"@id": `${siteUrl}${INSIGHTS_PATH}#blog`,
 		url: pageUrl,
 		name: t("schema.name"),
 		description: t("schema.description"),
-		inLanguage: "en-MY",
+		inLanguage: inLanguage[locale],
 		publisher: {
 			"@type": "Organization",
 			"@id": `${siteUrl}/#organization`,

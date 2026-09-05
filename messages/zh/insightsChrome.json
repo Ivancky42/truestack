@@ -1,6 +1,10 @@
 {
 	"_status": "ai-draft",
 	"InsightsChrome": {
+		"meta": {
+			"title": "马来西亚金融科技洞察",
+			"description": "Truestack关于马来西亚KPKT放贷牌照、放贷运营与金融科技软件的笔记。文章正文为英文；解答持牌放贷公司与出海展业团队常问的合规问题。"
+		},
 		"nav": "洞察",
 		"eyebrow": "洞察",
 		"title": "看看<accent>马来西亚金融科技</accent>真正行之有效的做法。",

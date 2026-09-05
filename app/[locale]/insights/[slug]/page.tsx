@@ -7,7 +7,7 @@ import {
 	siteName,
 } from "@/lib/seo-defaults";
 import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
-import { englishOnlyMetadata, ogLocaleFor } from "@/lib/i18n/seo";
+import { localizePageMetadata } from "@/lib/i18n/seo";
 import { InsightPostContent } from "@/components/sections/insight-post-content";
 import { InsightPostSchema } from "@/components/seo/insight-post-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
@@ -107,32 +107,35 @@ export async function generateMetadata({
 			]
 		: [defaultOgImage];
 
-	return {
-		title,
-		description,
-		keywords: post.tags,
-		authors: [{ name: post.author.name }],
-		...englishOnlyMetadata(path, locale),
-		openGraph: {
+	return localizePageMetadata(
+		{
 			title,
 			description,
-			url: path,
-			type: "article",
-			locale: ogLocaleFor(locale),
-			siteName,
-			images,
-			publishedTime: post.publishedAt,
-			modifiedTime: post.updatedAt,
-			authors: [post.author.name],
-			tags: post.tags,
+			keywords: post.tags,
+			authors: [{ name: post.author.name }],
+			openGraph: {
+				title,
+				description,
+				url: path,
+				type: "article",
+				locale: "en_MY",
+				siteName,
+				images,
+				publishedTime: post.publishedAt,
+				modifiedTime: post.updatedAt,
+				authors: [post.author.name],
+				tags: post.tags,
+			},
+			twitter: {
+				card: defaultTwitterCard,
+				title,
+				description,
+				images: [socialImage ?? defaultOgImage.url],
+			},
 		},
-		twitter: {
-			card: defaultTwitterCard,
-			title,
-			description,
-			images: [socialImage ?? defaultOgImage.url],
-		},
-	};
+		path,
+		locale,
+	);
 }
 
 export default async function InsightPostPage({ params }: PageProps) {
@@ -147,10 +150,9 @@ export default async function InsightPostPage({ params }: PageProps) {
 
 	return (
 		<>
-			<InsightPostSchema post={post} />
+			<InsightPostSchema post={post} locale={resolveAppLocale(locale)} />
 			{post.faq.length > 0 ? <FaqSchema items={post.faq} inLanguage={inLanguage.en} /> : null}
 			<BreadcrumbSchema
-				locale="en"
 				items={[
 					{name: tCommon("breadcrumbHome"), path: "/"},
 					{name: t("nav"), path: "/insights"},

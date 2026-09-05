@@ -1,5 +1,9 @@
 import { getLocale } from "next-intl/server";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import {
+  availableLanguages,
+  inLanguage,
+  resolveAppLocale,
+} from "@/lib/i18n/config";
 import {
   siteName,
   siteNameAlternates,
@@ -26,6 +30,7 @@ export async function WebSiteSchema() {
       "@id": `${siteUrl}/#organization`,
     },
     inLanguage: inLanguage[locale],
+    availableLanguage: [...availableLanguages],
   };
 
   return (

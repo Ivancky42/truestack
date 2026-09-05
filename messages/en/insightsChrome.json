@@ -1,6 +1,10 @@
 {
 	"_status": "source",
 	"InsightsChrome": {
+		"meta": {
+			"title": "Insights: Fintech, Software & Compliance in Malaysia",
+			"description": "Notes from the Truestack team on KPKT licensing, lending and software work in Malaysia — the questions we keep answering for owners and compliance teams."
+		},
 		"nav": "Insights",
 		"eyebrow": "Insights",
 		"title": "What actually works in <accent>Malaysian fintech.</accent>",
