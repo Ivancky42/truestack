@@ -109,7 +109,7 @@ export function TrueKreditHero() {
 	return (
 		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
-			<div className="relative mx-auto max-w-6xl px-6 pt-16 text-center md:pt-20">
+			<div className="relative hero-shell px-6 pt-16 text-center md:pt-20">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ export function TrueKreditHero() {
 			</div>
 
 			<motion.div
-				className="relative mx-auto max-w-270 px-6 pt-10"
+				className="relative hero-shell px-6 pt-10"
 				initial={{ opacity: 0, y: 16 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7, delay: 0.15 }}
@@ -226,7 +226,7 @@ export function TrueKreditHero() {
 										quality={100}
 										unoptimized
 										priority={slide.id === "admin"}
-										sizes="(max-width: 1080px) calc(100vw - 3rem), 1080px"
+										sizes="(max-width: 1440px) calc(100vw - 3rem), 1440px"
 										className="h-full w-full object-cover object-top"
 									/>
 								)}

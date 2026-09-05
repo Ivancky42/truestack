@@ -292,7 +292,7 @@ export function HomepageHero() {
 				<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-primary/10 blur-3xl" />
 			</div>
 
-			<div className="mx-auto w-full max-w-[90rem] px-6 pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-19 lg:pb-20">
+			<div className="hero-shell px-6 pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-19 lg:pb-20">
 				<div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:gap-14">
 					<div>
 						<HeroHeadline />

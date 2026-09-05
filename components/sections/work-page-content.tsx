@@ -28,8 +28,9 @@ function WorkHero() {
 			className="relative -mt-18 overflow-hidden border-b border-slate-800 bg-linear-to-br from-slate-950 via-indigo-950 to-slate-950 pt-[calc(3.5rem+4.5rem)] pb-14 text-white md:pt-[calc(5rem+4.5rem)] md:pb-20 lg:pt-[calc(6rem+4.5rem)] lg:pb-24"
 		>
 			<AboutHeroBackdrop />
-			<div className="relative mx-auto max-w-3xl px-6 text-center">
+			<div className="relative hero-shell px-6 text-center">
 				<motion.div
+					className="mx-auto max-w-3xl"
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}

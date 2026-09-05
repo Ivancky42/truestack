@@ -209,7 +209,7 @@ export function SoftwareDevelopmentHero() {
 				<div className="absolute left-1/2 top-1/3 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-primary/10 to-violet-500/5 blur-3xl" />
 			</div>
 
-			<div className="mx-auto max-w-6xl px-6 py-16 md:py-24 lg:py-28">
+			<div className="hero-shell px-6 py-16 md:py-24 lg:py-28">
 				<div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}

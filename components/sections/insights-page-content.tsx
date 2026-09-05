@@ -342,7 +342,7 @@ export function InsightsPageContent({
 					className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-linear-to-b from-primary/5 via-transparent to-transparent"
 					aria-hidden
 				/>
-				<div className="mx-auto max-w-6xl px-6">
+				<div className="hero-shell px-6">
 					<InsightsMasthead topics={publishedTopics(posts)} />
 
 					{featured ? (

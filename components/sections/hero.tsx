@@ -179,7 +179,7 @@ export function Hero({
       <section className={`${sectionClass} min-h-[600px]`}>
         {showBackground && <GridPattern variant={variant} />}
 
-        <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>
+        <div className={`hero-shell px-6 ${sectionPadding}`}>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: Text Content */}
             <motion.div
@@ -247,7 +247,7 @@ export function Hero({
     <section className={sectionClass}>
       {showBackground && <GridPattern variant={variant} />}
 
-      <div className={`mx-auto max-w-6xl px-6 ${sectionPadding}`}>
+      <div className={`hero-shell px-6 ${sectionPadding}`}>
         <motion.div
           className="mx-auto max-w-3xl text-center"
           initial={{ opacity: 0, y: 20 }}

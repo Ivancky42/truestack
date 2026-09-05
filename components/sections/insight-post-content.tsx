@@ -113,7 +113,7 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 		<>
 			<article>
 				<div className="-mt-18 bg-background pb-14 pt-[calc(2.5rem+4.5rem)] md:pb-16 md:pt-[calc(3.5rem+4.5rem)]">
-					<div className="mx-auto max-w-6xl px-6">
+					<div className="hero-shell px-6">
 						<div className="mx-auto max-w-3xl">
 							<nav
 								aria-label="Breadcrumb"

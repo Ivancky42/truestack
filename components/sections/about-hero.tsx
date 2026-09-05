@@ -81,7 +81,7 @@ export function AboutHero() {
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
-			<div className="relative mx-auto max-w-6xl px-6 pt-14 md:pt-16 lg:pt-20">
+			<div className="relative hero-shell px-6 pt-14 md:pt-16 lg:pt-20">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}

@@ -22,7 +22,7 @@ export function TrueSyariahHero() {
 				className="ts-hero-grid pointer-events-none absolute inset-0 opacity-50"
 				aria-hidden
 			/>
-			<div className="relative mx-auto max-w-6xl px-6">
+			<div className="relative hero-shell px-6">
 				<div className="grid items-stretch lg:grid-cols-[1.04fr_0.96fr]">
 					<motion.div
 						className="border-ts-rule py-16 md:py-20 lg:border-r lg:pr-14"

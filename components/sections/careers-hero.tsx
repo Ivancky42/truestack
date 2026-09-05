@@ -10,7 +10,7 @@ export function CareersHero() {
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
-			<div className="relative mx-auto max-w-6xl px-6 py-14 md:py-16 lg:py-20">
+			<div className="relative hero-shell px-6 py-14 md:py-16 lg:py-20">
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}

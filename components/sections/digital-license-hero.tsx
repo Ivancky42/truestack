@@ -307,7 +307,7 @@ export function DigitalLicenseHero() {
 				/>
 			</div>
 
-			<div className="mx-auto max-w-6xl px-6 pt-[76px] pb-[68px] md:pt-20 md:pb-16">
+			<div className="hero-shell px-6 pt-[76px] pb-[68px] md:pt-20 md:pb-16">
 				<div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
 					<motion.div
 						initial={{ opacity: 0, y: 16 }}

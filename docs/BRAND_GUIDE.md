@@ -228,6 +228,7 @@ Every marketing section follows this skeleton:
 
 - Alternate `bg-background` and `bg-muted/30` between adjacent sections; separate with `border-t`.
 - Container is always `max-w-6xl`; prose blocks cap at `max-w-3xl`/`max-w-2xl`.
+  **Exception:** page heroes use `hero-shell` (`max-w-[90rem]`) to match the homepage.
 - Cards: `rounded-2xl`/`rounded-3xl border bg-card shadow-sm`, hover
   `hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md` (accent border matches section accent).
 - Icon chips: `flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10` +

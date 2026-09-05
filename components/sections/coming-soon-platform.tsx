@@ -77,7 +77,7 @@ export function ComingSoonPlatform() {
     <section data-nav-theme="dark" className="hero-under-nav relative overflow-hidden bg-slate-950">
       <GridPattern />
 
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="hero-shell px-6 py-20 md:py-28">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -33,8 +33,10 @@ Hard rules (details in the guide):
   buttons, card body = `type-ui` (15px). Technical bits = `type-mono-label` /
   `type-mono-score`.
 - **Sections**: `border-t` + `py-16 md:py-20` + `mx-auto max-w-6xl px-6`, alternating
-  `bg-background` / `bg-muted/30`. Reuse `components/shared/*`, `components/ui/*`, and
-  `ConsultationCta` (with its `accent` prop) instead of building new variants.
+  `bg-background` / `bg-muted/30`. Page heroes use `hero-shell` (`max-w-[90rem]`) to
+  match the homepage; body sections stay `max-w-6xl`. Reuse `components/shared/*`,
+  `components/ui/*`, and `ConsultationCta` (with its `accent` prop) instead of
+  building new variants.
 - **Motion**: framer-motion scroll reveals only (`whileInView`, `once: true`,
   `margin: "-50px"`, duration 0.5). Subtle, vertical, reduced-motion safe.
 - **Photos**: sparing and human — About/Careers/Contact/case studies only, never product

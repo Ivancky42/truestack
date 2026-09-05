@@ -64,7 +64,7 @@ export function P2PHero() {
 	return (
 		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
-			<div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+			<div className="hero-shell px-6 py-20 md:py-28">
 				<div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
