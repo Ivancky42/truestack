@@ -44,7 +44,7 @@ Hard rules (details in the guide):
   `components/seo/`, entry in `app/sitemap.ts`, update `app/llms.txt/route.ts`, FAQ with
   FAQPage schema and quotable 2–4 sentence answers, cross-link sibling products.
   Guide §9.
-- **Trilingual (`en` unprefixed, `/ms`, `/zh`)**: ship all three locales in the same
+- **Four locales (`en` unprefixed, `/ms`, `/zh`, `/ru`)**: ship all four locales in the same
   change — do not wait to be asked. Follow `.cursor/rules/truestack-i18n.mdc` and
   `docs/I18N.md`. Never hardcode English in TSX. No `app/layout.tsx`; server components
   never call `headers()` / `cookies()` (routes must stay statically prerendered).

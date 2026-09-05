@@ -22,6 +22,7 @@ function matchBrowserLocale(tag: string): AppLocale | undefined {
 	const lower = tag.toLowerCase();
 	if (lower.startsWith("zh")) return "zh";
 	if (lower.startsWith("ms")) return "ms";
+	if (lower.startsWith("ru")) return "ru";
 	if (lower.startsWith("en")) return "en";
 	return undefined;
 }

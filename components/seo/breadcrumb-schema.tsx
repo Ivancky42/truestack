@@ -13,7 +13,7 @@ type BreadcrumbSchemaProps = {
 	items: readonly BreadcrumbSchemaItem[];
 	/**
 	 * Locale used to prefix item paths. Defaults to the current locale so the
-	 * breadcrumb URLs match the page's canonical (`/ms/...`, `/zh/...`). Pass
+	 * breadcrumb URLs match the page's canonical (`/ms/...`, `/zh/...`, `/ru/...`). Pass
 	 * `"en"` on English-only surfaces whose canonical is the English URL.
 	 */
 	locale?: AppLocale;

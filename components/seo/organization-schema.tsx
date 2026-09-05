@@ -87,7 +87,7 @@ export async function OrganizationSchema() {
       contactType: "sales",
       url: `${baseUrl}/contact`,
       areaServed: "MY",
-      availableLanguage: ["English", "Malay", "Chinese"],
+      availableLanguage: ["English", "Malay", "Chinese", "Russian"],
     },
     identifier: {
       "@type": "PropertyValue",

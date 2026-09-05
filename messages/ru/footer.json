@@ -1,0 +1,44 @@
+{
+	"_status": "ai-draft",
+	"Footer": {
+		"navLabel": "Подвал",
+		"columns": {
+			"services": "Услуги",
+			"platforms": "Платформы",
+			"apis": "API",
+			"company": "Компания",
+			"legal": "Правовая информация"
+		},
+		"solutions": {
+			"digitalLicense": "Цифровая лицензия KPKT",
+			"shariahLicense": "Шариатская цифровая лицензия",
+			"accountManagement": "Управление аккаунтом KPKT",
+			"softwareDevelopment": "Разработка ПО на заказ",
+			"truekredit": "TrueKredit™",
+			"truesyariah": "TrueSyariah™",
+			"truep2p": "TrueP2P™",
+			"trueidentity": "TrueIdentity™",
+			"truessm": "TrueSSM™",
+			"payments": "Платёжный шлюз",
+			"developers": "Разработчикам"
+		},
+		"company": {
+			"about": "О компании",
+			"work": "Портфолио",
+			"insights": "Аналитика",
+			"careers": "Карьера",
+			"contact": "Контакты"
+		},
+		"legal": {
+			"cybersecurity": "Политика кибербезопасности",
+			"pdpa": "Уведомление PDPA",
+			"privacy": "Политика конфиденциальности",
+			"terms": "Условия использования"
+		},
+		"tagline": "Услуги по соответствию требованиям KPKT и разработка финтех-решений для лицензированных заимодавцев в Малайзии.",
+		"linkedin": "LinkedIn",
+		"bookConsultation": "Записаться на бесплатную консультацию",
+		"registration": "Рег. № {number}",
+		"copyright": "© {year} Truestack Technologies. Все права защищены."
+	}
+}

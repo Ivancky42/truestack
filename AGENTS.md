@@ -11,10 +11,10 @@ shadcn/ui, framer-motion, next-intl). Three rules override everything else:
    metadata + canonical + `alternates.languages`, OG image, JSON-LD in `components/seo/`,
    `app/sitemap.ts`, `app/llms.txt/route.ts`, FAQ with FAQPage schema, cross-links to
    sibling products.
-3. **The site is trilingual (`en` unprefixed, `/ms`, `/zh`) — read `docs/I18N.md` before
-   touching copy.** Any new page or copy change ships English, Bahasa Malaysia, and
-   Simplified Chinese in the **same change** (do not wait to be asked). All reader-facing
-   text, metadata and JSON-LD strings live in `messages/{en,ms,zh}/<namespace>.json` and
+3. **The site is localized (`en` unprefixed, `/ms`, `/zh`, `/ru`) — read `docs/I18N.md` before
+   touching copy.** Any new page or copy change ships English, Bahasa Malaysia,
+   Simplified Chinese, and Russian in the **same change** (do not wait to be asked). All reader-facing
+   text, metadata and JSON-LD strings live in `messages/{en,ms,zh,ru}/<namespace>.json` and
    are read with `useTranslations` / `getTranslations`; never hardcode English in TSX.
    There is no `app/layout.tsx` (`app/[locale]/layout.tsx` is the root) and server
    components must never call `headers()` / `cookies()` — every marketing route stays

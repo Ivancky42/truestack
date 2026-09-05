@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import enInsights from "@/messages/en/insightsChrome.json";
 import msInsights from "@/messages/ms/insightsChrome.json";
+import ruInsights from "@/messages/ru/insightsChrome.json";
 import zhInsights from "@/messages/zh/insightsChrome.json";
 
 // Error boundaries render outside the page's PageMessages provider, so the
@@ -22,6 +23,11 @@ const ERROR_MESSAGES: Record<string, typeof enInsights.InsightsChrome> = {
 		...enInsights.InsightsChrome,
 		...zhInsights.InsightsChrome,
 		error: { ...enInsights.InsightsChrome.error, ...zhInsights.InsightsChrome.error },
+	},
+	ru: {
+		...enInsights.InsightsChrome,
+		...ruInsights.InsightsChrome,
+		error: { ...enInsights.InsightsChrome.error, ...ruInsights.InsightsChrome.error },
 	},
 };
 

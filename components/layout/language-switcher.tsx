@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import {
 	htmlLang,
+	isAppLocale,
 	label,
 	LOCALES,
 	LOCALE_COOKIE,
@@ -49,6 +50,7 @@ function LanguageSwitcherInner({
 	onSelected,
 }: LanguageSwitcherProps) {
 	const locale = useLocale();
+	const current = isAppLocale(locale) ? locale : "en";
 	const t = useTranslations("Header");
 	const pathname = usePathname();
 	const router = useRouter();
@@ -68,12 +70,12 @@ function LanguageSwitcherInner({
 		return (
 			<div
 				className={cn(
-					"grid grid-cols-3 rounded-lg border p-1",
+					"grid grid-cols-4 rounded-lg border p-1",
 					className,
 				)}
 			>
 				{LOCALES.map((loc) => {
-					const current = loc === locale;
+					const selected = loc === current;
 					return (
 						<button
 							key={loc}
@@ -81,8 +83,8 @@ function LanguageSwitcherInner({
 							lang={htmlLang[loc]}
 							onClick={() => select(loc)}
 							className={cn(
-								"type-ui rounded-md px-2 py-1.5 font-medium transition-colors",
-								current
+								"type-ui min-w-0 rounded-md px-1 py-1.5 font-medium transition-colors",
+								selected
 									? "bg-primary/10 text-primary"
 									: "text-muted-foreground",
 							)}
@@ -104,7 +106,7 @@ function LanguageSwitcherInner({
 					className={cn("type-ui gap-1.5 px-2.5", className)}
 				>
 					<Globe className="h-4 w-4 size-4" />
-					{shortLabel[locale]}
+					{shortLabel[current]}
 					<ChevronDown className="h-3.5 w-3.5 size-3.5" />
 				</Button>
 			</DropdownMenuTrigger>
@@ -117,7 +119,7 @@ function LanguageSwitcherInner({
 						className="type-ui"
 					>
 						<span className="flex-1">{label[loc]}</span>
-						{loc === locale ? (
+						{loc === current ? (
 							<Check className="h-4 w-4 size-4" />
 						) : null}
 					</DropdownMenuItem>

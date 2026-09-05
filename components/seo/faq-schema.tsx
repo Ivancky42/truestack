@@ -11,7 +11,7 @@ type FaqSchemaProps = {
 	items: readonly FaqSchemaItem[];
 	/**
 	 * BCP-47 language of the FAQ text. Defaults to the current locale; pass
-	 * `inLanguage.en` on English-only surfaces rendered under /ms or /zh.
+	 * `inLanguage.en` on English-only surfaces rendered under /ms, /zh or /ru.
 	 */
 	inLanguage?: string;
 };

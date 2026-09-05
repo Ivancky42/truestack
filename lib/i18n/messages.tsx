@@ -25,13 +25,13 @@ import enTrueSyariah from "@/messages/en/truesyariah.json";
 import enWorkChrome from "@/messages/en/workChrome.json";
 import enWorkStudies from "@/messages/en/workStudies.json";
 import msMessages from "@/messages/ms";
+import ruMessages from "@/messages/ru";
 import zhMessages from "@/messages/zh";
 
 /**
  * Every English namespace file, one per namespace. Adding a namespace =
- * add the JSON file under messages/{en,ms,zh}, import the English file here
- * (types flow from it), and add the ms/zh files to messages/ms/index.ts and
- * messages/zh/index.ts.
+ * add the JSON file under messages/{en,ms,zh,ru}, import the English file here
+ * (types flow from it), and add the overlay files to messages/{ms,zh,ru}/index.ts.
  */
 export type EnMessages = Omit<
 	typeof enCommon &
@@ -111,6 +111,7 @@ const englishMessages: Record<string, unknown> = {
 const localeOverlay: Record<string, Record<string, unknown>> = {
 	ms: msMessages,
 	zh: zhMessages,
+	ru: ruMessages,
 };
 
 function stripTodoFaqItems(value: unknown): unknown {

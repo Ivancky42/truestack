@@ -1,0 +1,68 @@
+{
+	"_status": "ai-draft",
+	"Header": {
+		"nav": {
+			"solutions": "Решения",
+			"work": "Портфолио",
+			"insights": "Аналитика",
+			"about": "О компании",
+			"careers": "Карьера"
+		},
+		"startHere": "Начните здесь",
+		"openMenu": "Открыть меню",
+		"changeLanguage": "Сменить язык",
+		"freeConsultation": "Бесплатная консультация",
+		"bookConsultation": "Записаться на бесплатную консультацию",
+		"columns": {
+			"services": "Услуги",
+			"platforms": "Платформы",
+			"apis": "API"
+		},
+		"badges": {
+			"upcoming": "Скоро",
+			"new": "Новое"
+		},
+		"solutions": {
+			"truekredit": {
+				"title": "TrueKredit™",
+				"description": "Кредитный портфель в одной системе для лицензированных заимодавцев."
+			},
+			"digitalLicense": {
+				"title": "Цифровая лицензия KPKT",
+				"description": "Конвенциональный PPW или шариатский путь — мы ведём оба маршрута лицензирования."
+			},
+			"shariahLicense": {
+				"title": "Шариатская цифровая лицензия",
+				"description": "Будущий маршрут KPKT — юридическое лицо, комитет и TrueSyariah™."
+			},
+			"accountManagement": {
+				"title": "Управление аккаунтом KPKT",
+				"description": "Продление, разрешения и подачи — мы берём это на себя."
+			},
+			"softwareDevelopment": {
+				"title": "Разработка ПО на заказ",
+				"description": "Кредитные платформы и программное обеспечение под ваш процесс."
+			},
+			"truesyariah": {
+				"title": "TrueSyariah™",
+				"description": "Шариатская цифровая лицензия и платформа — Tawarruq, Ta'widh и Gharamah."
+			},
+			"truep2p": {
+				"title": "TrueP2P™",
+				"description": "P2P-платформы в соответствии с требованиями SC, созданные для Малайзии."
+			},
+			"trueidentity": {
+				"title": "TrueIdentity™",
+				"description": "e-KYC для малайзийских финтех-компаний — MyKad, селфи, сверка."
+			},
+			"truessm": {
+				"title": "TrueSSM™",
+				"description": "Поиск в реестре SSM, профили и отсканированные документы."
+			},
+			"payments": {
+				"title": "Платёжный шлюз",
+				"description": "FPX, DuitNow, карты и сверка — в одном месте."
+			}
+		}
+	}
+}

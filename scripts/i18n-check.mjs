@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const messagesDir = join(root, "messages");
 const SOURCE = "en";
-const TARGETS = ["ms", "zh"];
+const TARGETS = ["ms", "zh", "ru"];
 const META_KEY = /\.meta\.(title|description)$/;
 
 function isPlainObject(value) {
@@ -107,7 +107,7 @@ const errors = [];
 const warnings = [];
 
 // English metadata is pre-existing, reviewed copy: report length drift as a
-// warning only. Translated locales (ms/zh) are new and are held to the limits.
+// warning only. Translated locales (ms/zh/ru) are new and are held to the limits.
 for (const [key, value] of Object.entries(source)) {
 	const issue = metaLengthError(SOURCE, key, value);
 	if (issue) warnings.push(issue);

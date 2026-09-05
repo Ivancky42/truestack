@@ -35,10 +35,10 @@ the guide, the guide wins.
 7. **Every page change re-runs the SEO checklist** — see the `truestack-seo` skill /
    guide §9 (metadata, canonical + `alternates.languages`, JSON-LD, sitemap.ts,
    `app/llms.txt/route.ts`, FAQ schema).
-8. **Trilingual copy — automatic.** Follow the `truestack-i18n` skill. Every reader-facing
-   string, metadata and JSON-LD text lives in `messages/{en,ms,zh}/<namespace>.json` and
+8. **Localized copy — automatic.** Follow the `truestack-i18n` skill. Every reader-facing
+   string, metadata and JSON-LD text lives in `messages/{en,ms,zh,ru}/<namespace>.json` and
    is read with `useTranslations` / `getTranslations` — never hardcode English in TSX.
-   New or changed English keys ship with `ms` and `zh` in the **same change** (do not wait
+   New or changed English keys ship with `ms`, `zh` and `ru` in the **same change** (do not wait
    to be asked). Contract, glossary and playbook: `docs/I18N.md`. Server components never
    call `headers()` / `cookies()`.
 9. **Before finishing:** walk the pre-merge checklist in guide §10, then run

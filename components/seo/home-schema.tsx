@@ -3,7 +3,7 @@ import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
 import { absoluteLocalizedUrl, siteUrl } from "@/lib/seo-defaults";
 
 /**
- * JSON-LD WebPage node for the homepage only (`/`, `/ms`, `/zh`). Site-wide
+ * JSON-LD WebPage node for the homepage only (`/`, `/ms`, `/zh`, `/ru`). Site-wide
  * identity (WebSite, Organization) lives in the locale layout; this node
  * carries the localized title/description and links back to it.
  */

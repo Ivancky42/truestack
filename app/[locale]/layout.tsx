@@ -40,7 +40,7 @@ const rethinkSans = Rethink_Sans({
 
 const inter = Inter({
 	variable: "--font-inter",
-	subsets: ["latin"],
+	subsets: ["latin", "cyrillic", "cyrillic-ext"],
 	display: "swap",
 });
 

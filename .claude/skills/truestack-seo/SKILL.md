@@ -14,8 +14,8 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 1. `generateMetadata` reading `<Namespace>.meta.*` from messages: unique title ≤ 60 chars,
    description 140–160 chars with the primary keyword (zh: title ≤ 30 / description 70–90
    code points, keyword in the first 10 characters), canonical + `alternates.languages`
-   (`en`, `ms`, `zh-Hans`, `zh-CN`, `x-default`) built with `lib/i18n/seo.ts`. English-only
-   surfaces (Insights, legal) are `noindex` under `/ms` and `/zh` with canonical →
+   (`en`, `ms`, `zh-Hans`, `zh-CN`, `ru`, `x-default`) built with `lib/i18n/seo.ts`. English-only
+   surfaces (Insights, legal) are `noindex` under `/ms`, `/zh` and `/ru` with canonical →
    the English URL.
 2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` `/og.png`, or a page-specific image).
 3. JSON-LD component in `components/seo/` rendered by the page — Service/Product schema,
@@ -35,6 +35,6 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 ## Verification
 
 After changes: `pnpm i18n:check` and `pnpm build`, then check the built page's `<head>` in
-all three locales (`/path`, `/ms/path`, `/zh/path`: title, description, canonical, hreflang,
+all four locales (`/path`, `/ms/path`, `/zh/path`, `/ru/path`: title, description, canonical, hreflang,
 og:locale) and validate any new JSON-LD shape (`inLanguage` per locale) against schema.org
 expectations. FAQ answers starting with `TODO(ivan)` are stripped from render and JSON-LD.

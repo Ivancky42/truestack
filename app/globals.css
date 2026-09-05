@@ -103,6 +103,20 @@ html[lang="zh-CN"] body {
   --font-rethink-sans: var(--font-noto-sc);
 }
 
+html[lang="ru"] {
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-ts-display: var(--font-inter), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/*
+  Rethink Sans and Newsreader have no Cyrillic glyphs. On /ru, retarget display
+  families to Inter (latin + cyrillic subsets) so headings do not tofu.
+*/
+html[lang="ru"] body {
+  --font-rethink-sans: var(--font-inter);
+  --font-newsreader: var(--font-inter);
+}
+
 /* 
   Brand Color Configuration
   To change the brand color, update --primary and --ring values
