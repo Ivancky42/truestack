@@ -33,6 +33,21 @@ const nextConfig: NextConfig = {
 	},
 	async redirects() {
 		return [
+			// Apex → www must be permanent (308) so link equity consolidates.
+			// Vercel project-domain redirects default to 307 and win if still
+			// set; keep www as the assigned production host and 308 here.
+			{
+				source: "/",
+				has: [{ type: "host", value: "truestack.my" }],
+				destination: "https://www.truestack.my/",
+				permanent: true,
+			},
+			{
+				source: "/:path*",
+				has: [{ type: "host", value: "truestack.my" }],
+				destination: "https://www.truestack.my/:path*",
+				permanent: true,
+			},
 			{
 				source: "/services",
 				destination: "/services/digital-license",

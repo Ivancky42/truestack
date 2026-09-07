@@ -3,8 +3,9 @@ import { localizePath } from "@/lib/i18n/config";
 
 /**
  * Canonical public origin for absolute URLs (canonical, sitemap, robots,
- * JSON-LD, og:url). Live traffic lands on www — Vercel 307s the apex there —
- * so every published URL uses www even if NEXT_PUBLIC_SITE_URL is still the apex.
+ * JSON-LD, og:url). Live traffic lands on www — apex HTTPS redirects
+ * permanently (308) to www — so every published URL uses www even if
+ * NEXT_PUBLIC_SITE_URL is still the apex.
  * Preview / non-production hosts (e.g. *.vercel.app) are left unchanged.
  */
 const PRODUCTION_CANONICAL_ORIGIN = "https://www.truestack.my";

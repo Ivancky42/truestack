@@ -36,8 +36,6 @@ export const TRUEKREDIT_KEYWORDS = [
 	"loan book software Malaysia",
 ] as const;
 
-export const TRUEKREDIT_OG_IMAGE_PATH = "/truekredit/hero.png";
-
 export type TrueKreditSchemaCopy = {
 	pageUrl: string;
 	homeUrl: string;
