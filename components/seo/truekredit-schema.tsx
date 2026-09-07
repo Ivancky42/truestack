@@ -13,7 +13,7 @@ export async function TrueKreditSchema() {
 	const schema = buildTrueKreditJsonLd({
 		pageUrl: absoluteLocalizedUrl(TRUEKREDIT_PAGE_PATH, locale),
 		homeUrl: absoluteLocalizedUrl("/", locale),
-		webpageName: t("meta.openGraphTitle"),
+		webpageName: t("meta.title"),
 		description: t("meta.description"),
 		inLanguage: inLanguage[locale],
 		breadcrumbHome: tCommon("breadcrumbHome"),

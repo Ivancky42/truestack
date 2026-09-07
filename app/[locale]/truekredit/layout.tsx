@@ -4,10 +4,9 @@ import { TrueKreditSchema } from "@/components/seo/truekredit-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { localizePageMetadata } from "@/lib/i18n/seo";
-import { siteName } from "@/lib/seo-defaults";
+import { defaultOgImage, defaultTwitterCard, siteName } from "@/lib/seo-defaults";
 import {
 	TRUEKREDIT_KEYWORDS,
-	TRUEKREDIT_OG_IMAGE_PATH,
 	TRUEKREDIT_PAGE_PATH,
 } from "@/lib/truekredit-seo";
 
@@ -23,32 +22,26 @@ export async function generateMetadata({
 		namespace: "TrueKredit",
 	});
 
+	const title = t("meta.title");
 	const pageMetadata: Metadata = {
-		title: { absolute: t("meta.title") },
+		title: { absolute: title },
 		description: t("meta.description"),
 		keywords: [...TRUEKREDIT_KEYWORDS],
 		alternates: { canonical: TRUEKREDIT_PAGE_PATH },
 		openGraph: {
-			title: t("meta.openGraphTitle"),
+			title,
 			description: t("meta.openGraphDescription"),
 			url: TRUEKREDIT_PAGE_PATH,
 			type: "website",
 			locale: "en_MY",
 			siteName,
-			images: [
-				{
-					url: TRUEKREDIT_OG_IMAGE_PATH,
-					width: 1536,
-					height: 1024,
-					alt: t("meta.ogImageAlt"),
-				},
-			],
+			images: [{ ...defaultOgImage, alt: t("meta.ogImageAlt") }],
 		},
 		twitter: {
-			card: "summary_large_image",
-			title: t("meta.openGraphTitle"),
+			card: defaultTwitterCard,
+			title,
 			description: t("meta.openGraphDescription"),
-			images: [TRUEKREDIT_OG_IMAGE_PATH],
+			images: [defaultOgImage.url],
 		},
 		robots: {
 			index: true,
