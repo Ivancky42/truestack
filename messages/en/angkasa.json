@@ -1,0 +1,189 @@
+{
+	"_status": "source",
+	"Angkasa": {
+		"meta": {
+			"title": "ANGKASA PBA Code Malaysia | Salary Deduction",
+			"description": "Get an ANGKASA PBA code with Truestack — eligibility, entity setup, application and ongoing management. Collect loan repayments from the payslip.",
+			"openGraphTitle": "ANGKASA PBA Code Malaysia | Salary Deduction",
+			"openGraphDescription": "We take your organisation from eligibility check to an approved ANGKASA PBA code — and keep it in good standing after that."
+		},
+		"schema": {
+			"serviceName": "ANGKASA PBA Code Advisory",
+			"alternateName": [
+				"kod PBA ANGKASA",
+				"Biro Perkhidmatan Angkasa",
+				"Angkatan Koperasi Kebangsaan Malaysia Berhad",
+				"salary deduction Malaysia",
+				"potongan gaji ANGKASA",
+				"payroll deduction Malaysia"
+			],
+			"serviceType": "ANGKASA PBA code application and ongoing code management",
+			"audienceType": "Cooperatives, licensed money lenders, takaful providers, foundations and associations collecting from public sector employees"
+		},
+		"breadcrumb": {
+			"current": "ANGKASA PBA Code"
+		},
+		"hero": {
+			"eyebrow": "ANGKASA Advisory",
+			"title": "Get Your ANGKASA PBA Code",
+			"subtitle": "We take your organisation from eligibility check to an approved deduction code — and keep it in good standing after that. Collect repayments and contributions straight from the payslip.",
+			"secondaryCta": "See If You Qualify",
+			"photoAlt": "Advisors preparing licence and compliance documents"
+		},
+		"basics": {
+			"badge": "The Basics",
+			"title": "What ANGKASA And A PBA Code Are",
+			"para1": "ANGKASA — Angkatan Koperasi Kebangsaan Malaysia Berhad — is the national cooperative organisation. Through its Biro Perkhidmatan Angkasa (BPA), it has run Malaysia's salary deduction system for public sector employees since 1977.",
+			"para2": "A <emphasis>PBA code</emphasis> is the identifier ANGKASA issues to an approved organisation. It is what allows your loan repayments, contributions or fees to be deducted directly from a member's monthly payslip and remitted to you — instead of you chasing payment each month.",
+			"photoAlt": "Advisors reviewing compliance documents with a client",
+			"items": {
+				"source": {
+					"title": "Deduction happens at source",
+					"description": "The amount leaves the payslip before the member sees it."
+				},
+				"channel": {
+					"title": "One channel, one reconciliation",
+					"description": "Collections arrive through ANGKASA on a monthly cycle."
+				},
+				"market": {
+					"title": "Reaches the public sector market",
+					"description": "Civil servants and staff of employers registered with BPA."
+				}
+			}
+		},
+		"uses": {
+			"title": "What You Can Do With A Code",
+			"subtitle": "A deduction code changes the economics of collection. Repayment stops depending on whether the customer remembers, and starts depending on payroll.",
+			"items": {
+				"loans": {
+					"title": "Loan repayments",
+					"description": "Monthly instalments collected from the payslip, on schedule, without follow-up calls."
+				},
+				"takaful": {
+					"title": "Takaful and insurance",
+					"description": "Recurring contributions collected without lapses caused by missed payments."
+				},
+				"fees": {
+					"title": "Fees, shares and savings",
+					"description": "Membership fees, share capital and savings plans for cooperatives and associations."
+				},
+				"donations": {
+					"title": "Contributions and donations",
+					"description": "Recurring giving to foundations, welfare funds and approved associations."
+				},
+				"default": {
+					"title": "Lower default risk",
+					"description": "Collection at source means fewer arrears, lighter recovery work and steadier cash flow."
+				},
+				"segment": {
+					"title": "A new customer segment",
+					"description": "Reach public sector employees who expect payroll deduction as the way to pay."
+				}
+			}
+		},
+		"process": {
+			"badge": "What We Do",
+			"title": "We Run The Whole Application",
+			"subtitle": "Most organisations stall on the same things: an entity that is not structured the way ANGKASA expects, incomplete documents, and no one to follow up. We handle all of it.",
+			"talkCta": "Talk to us",
+			"steps": {
+				"assess": {
+					"title": "Eligibility assessment",
+					"description": "We review your entity, licence status, financials and product against what ANGKASA looks for, and tell you plainly whether to proceed."
+				},
+				"entity": {
+					"title": "Entity setup and restructuring",
+					"description": "If the structure does not qualify yet, we fix it — incorporation, cooperative registration, director and shareholder changes, and the SSM or CoSec work behind them."
+				},
+				"submit": {
+					"title": "Application prepared and submitted",
+					"description": "We assemble the full document set, write the supporting submissions, and file the application so it is right the first time."
+				},
+				"liaison": {
+					"title": "Liaison until approval",
+					"description": "We deal with ANGKASA and BPA on your behalf — queries, clarifications, additional documents — and keep you updated as it moves."
+				},
+				"manage": {
+					"title": "Ongoing code management",
+					"description": "Once the code is live we keep it in good standing: renewals, updates to your particulars, and the reporting that comes with it."
+				}
+			},
+			"contactTitle": "One point of contact",
+			"contactBody": "The same team from first assessment to renewal. <link>Talk to us</link>"
+		},
+		"qualify": {
+			"eyebrow": "Readiness Check",
+			"title": "Are You Ready To Apply?",
+			"body": "Tick what already applies to your organisation. This is our own readiness check, not ANGKASA's official criteria — but it is what we look at before we take a case on.",
+			"missingTitle": "Missing a few? That is normal.",
+			"missingBody": "Entity setup and restructuring is part of the service. Most clients start here rather than fully ready.",
+			"groupAria": "ANGKASA PBA code readiness",
+			"confirmCta": "Confirm with our team",
+			"checks": {
+				"entity": {
+					"title": "A registered legal entity",
+					"detail": "A cooperative, Sdn. Bhd., association or foundation in good standing."
+				},
+				"licence": {
+					"title": "Any licence your activity requires",
+					"detail": "For example a KPKT money lending licence, or the relevant regulator's approval."
+				},
+				"filings": {
+					"title": "Audited accounts and clean filings",
+					"detail": "Statutory filings up to date, with no outstanding compliance issues."
+				},
+				"product": {
+					"title": "A product suited to monthly deduction",
+					"detail": "Instalment loans, contributions, fees or savings — something recurring."
+				},
+				"capacity": {
+					"title": "Capacity to reconcile monthly files",
+					"detail": "A system or team that can match deduction returns to member accounts."
+				}
+			},
+			"verdicts": [
+				"Start with a conversation — we will map what your organisation needs before applying.",
+				"Early stage. Expect some entity or filing work before an application makes sense.",
+				"Groundwork needed, but a viable path. We would scope the gaps first.",
+				"Reasonable position. A few items to tidy up and you are close.",
+				"Nearly ready. One gap left before we would submit.",
+				"Strong position. We would move straight to preparing the application."
+			]
+		},
+		"faq": {
+			"eyebrow": "FAQ",
+			"title": "Frequently asked questions",
+			"items": [
+				{
+					"question": "What is a PBA code, in one sentence?",
+					"answer": "It is the code ANGKASA issues to an approved organisation so that money owed to you — a loan instalment, a contribution, a fee — can be deducted directly from a member's monthly salary and paid across to you."
+				},
+				{
+					"question": "Who can apply for one?",
+					"answer": "Cooperatives, licensed money lenders, insurance and takaful providers, foundations, associations and other organisations that collect regular payments from public sector employees. The right route depends on your entity type and what you collect — that is the first thing we assess."
+				},
+				{
+					"question": "How long does approval take?",
+					"answer": "It depends on your starting point. An entity that already qualifies moves faster than one that needs restructuring first. We give you an honest timeline at the assessment stage rather than a headline number."
+				},
+				{
+					"question": "What if our entity does not qualify yet?",
+					"answer": "We fix it. Entity setup and restructuring is part of the engagement — incorporation or cooperative registration, director and shareholder changes, and bringing statutory filings up to date before we submit."
+				},
+				{
+					"question": "Do you stay involved after the code is issued?",
+					"answer": "Yes. We manage the code on an ongoing basis — renewals, changes to your particulars, and coordination with ANGKASA when something needs attention. The same team that ran your application handles it."
+				},
+				{
+					"question": "How do we start?",
+					"answer": "Book a free consultation. We will look at your entity, licence position and what you want to collect, then tell you whether a PBA code is realistic and what it would take to get there."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Ready To Collect From Payroll?",
+			"body": "Book a free consultation. We will assess whether your organisation can hold a PBA code, and what it takes to get one.",
+			"secondary": "Explore KPKT Services"
+		}
+	}
+}

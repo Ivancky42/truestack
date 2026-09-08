@@ -1,0 +1,189 @@
+{
+	"_status": "ai-draft",
+	"Angkasa": {
+		"meta": {
+			"title": "工资扣除码｜ANGKASA",
+			"description": "Truestack代办马来西亚ANGKASA PBA工资扣除码：评估资格、重组实体、提交申请并持续维护代码，助您从公务员工资单收回贷款还款与供款。",
+			"openGraphTitle": "工资扣除码｜ANGKASA",
+			"openGraphDescription": "Truestack代办马来西亚ANGKASA PBA工资扣除码：评估资格、重组实体、提交申请并维护代码，从工资单收回还款。"
+		},
+		"schema": {
+			"serviceName": "ANGKASA PBA代码咨询",
+			"alternateName": [
+				"kod PBA ANGKASA",
+				"Biro Perkhidmatan Angkasa",
+				"Angkatan Koperasi Kebangsaan Malaysia Berhad",
+				"马来西亚工资扣除",
+				"ANGKASA工资扣除",
+				"公务员工资扣除"
+			],
+			"serviceType": "ANGKASA PBA代码申请与持续代码管理",
+			"audienceType": "向公共部门雇员收款的合作社、持牌放贷公司、takaful机构、基金会与协会"
+		},
+		"breadcrumb": {
+			"current": "ANGKASA PBA代码"
+		},
+		"hero": {
+			"eyebrow": "ANGKASA咨询",
+			"title": "申请您的ANGKASA PBA代码",
+			"subtitle": "我们带您的机构从资格核查走到获批的扣除代码——并在获批后维持其有效。从工资单直接收回还款与供款。",
+			"secondaryCta": "查看您是否符合资格",
+			"photoAlt": "顾问正在准备牌照与合规文件"
+		},
+		"basics": {
+			"badge": "基础知识",
+			"title": "ANGKASA与PBA代码是什么",
+			"para1": "ANGKASA——Angkatan Koperasi Kebangsaan Malaysia Berhad——是马来西亚全国合作社组织。通过其Biro Perkhidmatan Angkasa（BPA），自1977年起运营公共部门雇员的工资扣除系统。",
+			"para2": "<emphasis>PBA代码</emphasis>是ANGKASA向获批机构签发的识别码。有了它，您的贷款还款、供款或费用可直接从会员月度工资单扣除并汇给您——而不必每月追讨付款。",
+			"photoAlt": "顾问与客户一起审阅合规文件",
+			"items": {
+				"source": {
+					"title": "在源头扣除",
+					"description": "金额在会员见到工资单之前已从中扣除。"
+				},
+				"channel": {
+					"title": "一个渠道，一次对账",
+					"description": "收款按月通过ANGKASA到账。"
+				},
+				"market": {
+					"title": "覆盖公共部门市场",
+					"description": "公务员以及在BPA登记雇主的员工。"
+				}
+			}
+		},
+		"uses": {
+			"title": "有了代码您可以做什么",
+			"subtitle": "扣除代码改变收款的经济逻辑。还款不再取决于客户是否记得，而取决于工资发放。",
+			"items": {
+				"loans": {
+					"title": "贷款还款",
+					"description": "按期从工资单收取每月分期，无需催收电话。"
+				},
+				"takaful": {
+					"title": "Takaful与保险",
+					"description": "定期收取供款，避免因漏缴而失效。"
+				},
+				"fees": {
+					"title": "会费、股份与储蓄",
+					"description": "合作社与协会的会费、股本与储蓄计划。"
+				},
+				"donations": {
+					"title": "供款与捐赠",
+					"description": "向基金会、福利基金及获批协会的定期捐赠。"
+				},
+				"default": {
+					"title": "更低的拖欠风险",
+					"description": "源头收款意味着更少欠款、更轻的追收工作和更稳的现金流。"
+				},
+				"segment": {
+					"title": "新的客群",
+					"description": "触达习惯以工资扣除付款的公共部门雇员。"
+				}
+			}
+		},
+		"process": {
+			"badge": "我们做什么",
+			"title": "我们承办整份申请",
+			"subtitle": "多数机构卡在同一处：实体结构不符合ANGKASA要求、文件不齐、无人跟进。这些我们都处理。",
+			"talkCta": "与我们交谈",
+			"steps": {
+				"assess": {
+					"title": "资格评估",
+					"description": "我们对照ANGKASA的要求审阅您的实体、牌照、财务与产品，并明确告知是否应当推进。"
+				},
+				"entity": {
+					"title": "实体设立与重组",
+					"description": "若结构尚不符合资格，我们来补齐——公司设立、合作社登记、董事与股东变更，以及背后的SSM或公司秘书工作。"
+				},
+				"submit": {
+					"title": "准备并提交申请",
+					"description": "我们备齐全套文件、撰写支持材料，并提交申请，争取一次做对。"
+				},
+				"liaison": {
+					"title": "跟进至获批",
+					"description": "我们代表您对接ANGKASA与BPA——问询、澄清、补件——并随时向您通报进展。"
+				},
+				"manage": {
+					"title": "持续代码管理",
+					"description": "代码生效后，我们维持其有效：续期、更新机构资料，以及随之而来的申报。"
+				}
+			},
+			"contactTitle": "一个对接人",
+			"contactBody": "从首次评估到续期，都是同一支团队。<link>与我们交谈</link>"
+		},
+		"qualify": {
+			"eyebrow": "就绪核查",
+			"title": "您准备好申请了吗？",
+			"body": "勾选已适用于您机构的项目。这是我们自己的就绪核查，并非ANGKASA官方标准——但这是我们接案前会看的内容。",
+			"missingTitle": "缺几项？很正常。",
+			"missingBody": "实体设立与重组本就是服务的一部分。多数客户从这里起步，而不是已经完全就绪。",
+			"groupAria": "ANGKASA PBA代码就绪情况",
+			"confirmCta": "与我们的团队确认",
+			"checks": {
+				"entity": {
+					"title": "已注册的合法实体",
+					"detail": "状况良好的合作社、私人有限公司、协会或基金会。"
+				},
+				"licence": {
+					"title": "业务所需的任何牌照",
+					"detail": "例如KPKT放贷牌照，或相关监管机构的批准。"
+				},
+				"filings": {
+					"title": "已审计账目与齐全申报",
+					"detail": "法定申报已更新，无未了结的合规问题。"
+				},
+				"product": {
+					"title": "适合按月扣除的产品",
+					"detail": "分期贷款、供款、会费或储蓄——需要定期收取的项目。"
+				},
+				"capacity": {
+					"title": "能对账月度文件的能力",
+					"detail": "有系统或团队可将扣除回单与会员账户匹配。"
+				}
+			},
+			"verdicts": [
+				"先从一次沟通开始——我们会在申请前梳理您的机构需要什么。",
+				"仍处早期。申请之前，预计还需要一些实体或申报工作。",
+				"需要打基础，但路径可行。我们会先摸清缺口。",
+				"位置合理。再整理几项，您就接近就绪。",
+				"几乎就绪。提交前只剩一个缺口。",
+				"条件扎实。我们可以直接着手准备申请。"
+			]
+		},
+		"faq": {
+			"eyebrow": "常见问题",
+			"title": "常见问题",
+			"items": [
+				{
+					"question": "一句话说明PBA代码是什么？",
+					"answer": "它是ANGKASA向获批机构签发的代码，使应付给您的款项——贷款分期、供款、费用——可直接从会员月薪扣除并汇给您。"
+				},
+				{
+					"question": "谁可以申请？",
+					"answer": "向公共部门雇员定期收款的合作社、持牌放贷公司、保险与takaful机构、基金会、协会及其他组织。正确路径取决于您的实体类型和收款内容——这是我们首先评估的事项。"
+				},
+				{
+					"question": "获批需要多久？",
+					"answer": "取决于您的起点。已经符合资格的实体比需要先重组的更快。我们在评估阶段给您如实的时间表，而不是一个标题数字。"
+				},
+				{
+					"question": "如果我们的实体尚不符合资格呢？",
+					"answer": "我们来补齐。实体设立与重组是服务的一部分——公司设立或合作社登记、董事与股东变更，并在提交前把法定申报更新到位。"
+				},
+				{
+					"question": "代码签发后你们还继续跟进吗？",
+					"answer": "会。我们持续管理代码——续期、变更机构资料，以及在需要时与ANGKASA协调。承办申请的同一支团队继续负责。"
+				},
+				{
+					"question": "如何开始？",
+					"answer": "预约免费咨询。我们会查看您的实体、牌照情况以及您希望收取的款项，然后告诉您PBA代码是否现实、要怎样才能拿到。"
+				}
+			]
+		},
+		"cta": {
+			"heading": "准备好从工资发放收款了吗？",
+			"body": "预约免费咨询。我们将评估您的机构能否持有PBA代码，以及取得代码需要什么。",
+			"secondary": "了解KPKT服务"
+		}
+	}
+}

@@ -7,6 +7,7 @@ const relatedProductOptions = [
 	{title: "TrueP2P™", value: "truep2p"},
 	{title: "KPKT digital licence", value: "digitalLicense"},
 	{title: "KPKT account management", value: "accountManagement"},
+	{title: "ANGKASA PBA code", value: "angkasaPba"},
 	{title: "TrueIdentity™", value: "trueidentity"},
 	{title: "TrueSSM™", value: "truessm"},
 ];

@@ -49,6 +49,12 @@ const RELATED_PRODUCTS: Record<string, RelatedProduct> = {
 		description:
 			"Stay ahead of licence renewals, permit iklan applications and annual submissions.",
 	},
+	angkasaPba: {
+		title: "ANGKASA PBA code",
+		href: "/services/angkasa-pba",
+		description:
+			"Get an ANGKASA salary deduction code and collect repayments from the payslip.",
+	},
 	trueidentity: {
 		title: "TrueIdentity™",
 		href: "/trueidentity",

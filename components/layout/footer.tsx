@@ -20,6 +20,7 @@ const solutionsColumns = [
       { href: "/services/digital-license", key: "digitalLicense" },
       { href: "/services/digital-license#shariah", key: "shariahLicense" },
       { href: "/services/account-management", key: "accountManagement" },
+      { href: "/services/angkasa-pba", key: "angkasaPba" },
       { href: "/services/software-development", key: "softwareDevelopment" },
     ],
   },

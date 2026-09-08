@@ -1,5 +1,6 @@
 import about from "./about.json";
 import accountManagement from "./accountManagement.json";
+import angkasa from "./angkasa.json";
 import banner from "./banner.json";
 import careers from "./careers.json";
 import common from "./common.json";
@@ -38,6 +39,7 @@ function namespaces(
 const messages = namespaces(
 	about,
 	accountManagement,
+	angkasa,
 	banner,
 	careers,
 	common,

@@ -1,14 +1,23 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Banknote } from "lucide-react";
 import { motion } from "framer-motion";
 import { CtaLink } from "@/components/shared/cta-link";
+
+const eyebrowIcons = {
+  banknote: Banknote,
+} as const;
+
+type EyebrowIconName = keyof typeof eyebrowIcons;
 
 interface HeroProps {
   title: string;
   subtitle: ReactNode;
+  eyebrow?: string;
+  eyebrowIcon?: EyebrowIconName;
   primaryCta?: {
     label: string;
     href: string;
@@ -18,6 +27,10 @@ interface HeroProps {
     href: string;
   };
   showCodeCard?: boolean;
+  image?: {
+    src: string;
+    alt: string;
+  };
   variant?: "primary" | "kpkt";
   compact?: boolean;
   showBackground?: boolean;
@@ -155,12 +168,41 @@ function CodeCard() {
   );
 }
 
+function HeroEyebrow({
+  eyebrow,
+  icon,
+  variant,
+  centered = false,
+}: {
+  eyebrow: string;
+  icon?: EyebrowIconName;
+  variant: "primary" | "kpkt";
+  centered?: boolean;
+}) {
+  const colorClass = variant === "kpkt" ? "text-kpkt" : "text-primary";
+  const Icon = icon ? eyebrowIcons[icon] : undefined;
+  return (
+    <motion.div
+      className={`mb-4 flex items-center gap-2 ${centered ? "justify-center" : ""}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      {Icon ? <Icon className={`h-5 w-5 ${colorClass}`} aria-hidden /> : null}
+      <span className={`type-eyebrow ${colorClass}`}>{eyebrow}</span>
+    </motion.div>
+  );
+}
+
 export function Hero({
   title,
   subtitle,
+  eyebrow,
+  eyebrowIcon,
   primaryCta,
   secondaryCta,
   showCodeCard = false,
+  image,
   variant = "primary",
   compact = false,
   showBackground = true,
@@ -173,7 +215,94 @@ export function Hero({
   const sectionClass = underNav
     ? "hero-under-nav relative overflow-hidden"
     : "relative overflow-hidden";
-  
+  const overlayClass =
+    variant === "kpkt" ? "bg-kpkt/10" : "bg-primary/10";
+
+  if (image) {
+    return (
+      <section className={sectionClass}>
+        {showBackground && <GridPattern variant={variant} />}
+
+        <div className={`hero-shell px-6 ${sectionPadding}`}>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <motion.div
+              className="max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {eyebrow ? (
+                <HeroEyebrow
+                  eyebrow={eyebrow}
+                  icon={eyebrowIcon}
+                  variant={variant}
+                />
+              ) : null}
+              <motion.h1
+                className="type-h1"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                {title}
+              </motion.h1>
+              <motion.p
+                className="mt-6 type-lede-hero text-muted-foreground"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {subtitle}
+              </motion.p>
+              {(primaryCta || secondaryCta) && (
+                <motion.div
+                  className="mt-10 flex flex-col gap-4 sm:flex-row"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  {primaryCta && (
+                    <Button asChild size="lg" className={`gap-2 ${buttonClass}`}>
+                      <CtaLink href={primaryCta.href}>
+                        {primaryCta.label}
+                        <ArrowRight className="h-4 w-4" />
+                      </CtaLink>
+                    </Button>
+                  )}
+                  {secondaryCta && (
+                    <Button asChild variant="outline" size="lg">
+                      <CtaLink href={secondaryCta.href}>{secondaryCta.label}</CtaLink>
+                    </Button>
+                  )}
+                </motion.div>
+              )}
+            </motion.div>
+
+            <motion.div
+              className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div
+                className={`absolute inset-0 mix-blend-multiply ${overlayClass}`}
+                aria-hidden
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (showCodeCard) {
     return (
       <section className={`${sectionClass} min-h-[600px]`}>
@@ -187,6 +316,13 @@ export function Hero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              {eyebrow ? (
+                <HeroEyebrow
+                  eyebrow={eyebrow}
+                  icon={eyebrowIcon}
+                  variant={variant}
+                />
+              ) : null}
               <motion.h1
                 className="type-h1"
                 initial={{ opacity: 0, y: 20 }}
@@ -254,6 +390,14 @@ export function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          {eyebrow ? (
+            <HeroEyebrow
+              eyebrow={eyebrow}
+              icon={eyebrowIcon}
+              variant={variant}
+              centered
+            />
+          ) : null}
           <motion.h1
             className="type-h1"
             initial={{ opacity: 0, y: 20 }}

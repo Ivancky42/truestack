@@ -48,6 +48,7 @@ type SolutionKey =
 	| "digitalLicense"
 	| "shariahLicense"
 	| "accountManagement"
+	| "angkasaPba"
 	| "softwareDevelopment"
 	| "truesyariah"
 	| "truep2p"
@@ -128,6 +129,12 @@ const solutionsMenuColumns: {
 				href: "/services/account-management",
 			},
 			{
+				key: "angkasaPba",
+				href: "/services/angkasa-pba",
+				badge: "new",
+				accent: "kpkt",
+			},
+			{
 				key: "softwareDevelopment",
 				href: "/services/software-development",
 			},
@@ -187,7 +194,7 @@ function SolutionItemBadges({ item }: { item: SolutionMenuItem }) {
 				"shrink-0 px-1.5 py-0 text-[10px] font-medium",
 				item.badge === "upcoming"
 					? "bg-amber-100 text-amber-800"
-					: "bg-primary/10 text-primary",
+					: "bg-emerald-500/10 text-emerald-700",
 			)}
 		>
 			{t(`badges.${item.badge}`)}

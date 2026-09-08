@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TrueSight™ — Technical Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rethink+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #2563EB;
+  --ink: #0f172a;
+  --body: #334155;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --wash: #f8fafc;
+  --ts-parchment: #faf7f0;
+  --ts-ink: #1a3a34;
+  --ts-gold: #c08b3e;
+  --ts-rule: #e4d9c4;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #e6e9f0; }
+body { font-family: Inter, system-ui, sans-serif; color: var(--body); -webkit-font-smoothing: antialiased; }
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: #fff !important; }
+  .desk { background: #fff !important; padding: 0 !important; gap: 0 !important; }
+  .sheet { box-shadow: none !important; break-after: page; page-break-after: always; }
+  .sheet:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.desk { background: #e6e9f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 28px 16px; }
+.sheet { position: relative; width: 794px; height: 1123px; background: #fff; overflow: hidden; display: flex; flex-direction: column; }
+.hd { display: flex; align-items: center; justify-content: space-between; padding: 16px 44px 14px; border-bottom: 1px solid var(--line); }
+.hd img { height: 20px; width: auto; display: block; }
+.hd-meta { font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: right; line-height: 1.45; }
+.ft { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding: 10px 44px 14px; border-top: 1px solid var(--line); font-size: 9px; color: var(--muted); }
+.body { flex: 1; padding: 20px 44px 8px; display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); }
+.h2 { font-family: "Rethink Sans", sans-serif; font-weight: 500; font-size: 24px; letter-spacing: -0.022em; line-height: 1.15; color: var(--ink); }
+.h2 .mute { color: var(--muted); }
+.lede { font-size: 13px; line-height: 1.55; color: var(--body); max-width: 660px; }
+.p { font-size: 12px; line-height: 1.55; color: var(--body); }
+.p + .p { margin-top: 8px; }
+strong { color: var(--ink); font-weight: 600; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 12px 13px; background: #fff; }
+.card h3 { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 5px; line-height: 1.3; }
+.card p { font-size: 11px; line-height: 1.5; color: var(--muted); }
+.wash { background: var(--wash); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.chip { display: inline-flex; align-items: center; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+.chip-blue { color: #1e40af; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.22); }
+.chip-gold { color: var(--ts-ink); background: rgba(192,139,62,0.12); border: 1px solid rgba(192,139,62,0.28); }
+.flow { display: flex; align-items: stretch; gap: 5px; }
+.flow-step { flex: 1; border: 1px solid var(--line); border-radius: 10px; padding: 9px 8px; background: #fff; text-align: center; }
+.flow-step b { display: block; font-family: "Rethink Sans", sans-serif; font-size: 11px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.flow-step span { font-size: 9.5px; line-height: 1.4; color: var(--muted); }
+.flow-arrow { display: flex; align-items: center; color: #cbd5e1; font-size: 14px; padding-top: 8px; }
+.note { font-size: 10.5px; line-height: 1.45; color: var(--muted); }
+.kicker { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+.shariah { background: var(--ts-parchment); border: 1px solid var(--ts-rule); border-radius: 14px; padding: 14px 16px; color: var(--ts-ink); }
+.shariah h3 { color: var(--ts-ink); }
+.shariah p { color: #3d5850; }
+.tag { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ts-gold); }
+ol.plain { padding-left: 16px; }
+ol.plain li { font-size: 12px; line-height: 1.5; margin-bottom: 5px; color: var(--body); }
+table.tech { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+table.tech th { text-align: left; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 0 8px 7px; border-bottom: 1px solid var(--line); }
+table.tech td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.45; }
+table.tech td:first-child { font-weight: 600; color: var(--ink); width: 24%; }
+table.num td, table.num th { text-align: right; }
+table.num td:first-child, table.num th:first-child { text-align: left; width: 32%; font-weight: 600; color: var(--ink); }
+.browser { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+.browser-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: #0f172a; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.browser-bar span.url { margin-left: 6px; flex: 1; text-align: center; font-size: 10px; color: #94a3b8; background: #1e293b; border-radius: 5px; padding: 3px 0; }
+.caption { font-size: 10.5px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+</style>
+</head>
+<body>
+<div class="desk">
+
+<!-- PAGE 1 COVER -->
+<section class="sheet">
+  <div style="position:relative;overflow:hidden;background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 48%,#2563eb 100%);color:#fff;padding:36px 46px 32px;min-height:400px;">
+    <div style="position:absolute;top:-120px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.16),transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:38px 38px;opacity:0.45;pointer-events:none;"></div>
+    <div style="position:relative;display:flex;justify-content:space-between;align-items:center;">
+      <img src="assets/truestack-logo-dark.png" alt="Truestack" style="height:24px;width:auto;display:block;">
+      <div style="text-align:right;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.72);line-height:1.5;">Private &amp; Confidential<br>Malaysia Digital Status</div>
+    </div>
+    <div style="position:relative;margin-top:36px;">
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        <span class="chip" style="color:#dbeafe;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);">Digital Finance</span>
+        <span class="chip" style="color:#fde68a;background:rgba(192,139,62,0.22);border:1px solid rgba(255,255,255,0.22);">Islamic Digital Economy</span>
+        <span class="chip" style="color:#ddd6fe;background:rgba(124,58,237,0.28);border:1px solid rgba(255,255,255,0.22);">Artificial Intelligence</span>
+      </div>
+      <h1 style="font-family:'Rethink Sans',sans-serif;font-weight:500;font-size:46px;letter-spacing:-0.03em;line-height:1.02;">TrueSight<span style="font-size:20px;vertical-align:super;font-weight:500;">™</span></h1>
+      <p style="font-family:'Rethink Sans',sans-serif;font-size:17px;color:#dbeafe;margin-top:10px;letter-spacing:-0.01em;max-width:580px;">AI-powered credit and financial risk assessment for conventional lending and Shariah financing.</p>
+    </div>
+    <p style="position:relative;margin-top:20px;font-size:13px;line-height:1.55;color:rgba(219,234,254,0.92);max-width:580px;">Supporting exhibit for Section B of the Malaysia Digital Status application. This document describes the proprietary software, its operating architecture, data-protection controls, model strategy and five-year planning projections. It does not constitute legal, Shariah or financial advice.</p>
+  </div>
+  <div style="flex:1;padding:24px 46px 8px;display:flex;flex-direction:column;gap:16px;">
+    <div class="grid-2">
+      <div>
+        <p class="kicker">Prepared by</p>
+        <p style="font-size:13px;font-weight:600;color:var(--ink);">Truestack Technologies Sdn. Bhd.</p>
+        <p class="note" style="margin-top:4px;">202501058714 (1660120-X)<br>C-13-01, KL Trillion, Jalan Tun Razak<br>50400 Kuala Lumpur · truestack.my</p>
+      </div>
+      <div>
+        <p class="kicker">Document control</p>
+        <p style="font-size:13px;font-weight:600;color:var(--ink);">Section B supporting exhibit</p>
+        <p class="note" style="margin-top:4px;">September 2026<br>Solution name: TrueSight™<br>First commercial use (planned): Q1 2027</p>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Contents</p>
+      <div class="grid-2" style="gap:6px 24px;">
+        <p class="p">1. Problem and proposed solution</p>
+        <p class="p">2. Modules and system architecture</p>
+        <p class="p">3. Data privacy and data sources</p>
+        <p class="p">4. Artificial intelligence and AWS Bedrock</p>
+        <p class="p">5. Interface, technology and distribution</p>
+        <p class="p">6. Intellectual property, projections and example</p>
+      </div>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>Qualifying activity.</strong> TrueSight is proprietary software for scoring, monitoring and explainability, delivered as a hosted service and API. It is not money lending, a credit bureau, Shariah advisory, training, hardware, marketing, or a social-media service. The Company does not originate or collect financing on its own book. Conventional and Shariah customer data are not held on a shared tenancy.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 1 / 16</span></div>
+</section>
+
+<!-- PAGE 2 PROBLEM -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Problem</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">1 — Problem</p>
+      <h2 class="h2" style="margin-top:6px;">Credit decisions still rely on delayed and incomplete information.</h2>
+      <p class="lede" style="margin-top:12px;">Malaysian lenders and financing operators typically assess a borrower from a bureau extract, supporting documents and records in the loan or pembiayaan system. That view is often days or weeks old by the time a credit committee sits. It also rarely shows whether the same person or company is already stretched on another book.</p>
+    </div>
+    <p class="p">The same limitation applies to Shariah financing. Affordability and cash flow remain material. What must not occur is treating deferred profit as interest, combining Ta'widh with Gharamah, or running a Shariah book through the same risk engine and infrastructure as a conventional licence. If a Shariah committee cannot see why a customer was approved, it is being asked to rely on assertion rather than evidence.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Point-in-time bureau scores</h3>
+        <p>CCRIS or CTOS extracts describe a past position. Income, utilisation and other-lender activity can change between the pull and the decision.</p>
+      </div>
+      <div class="card">
+        <h3>Thin-file customers</h3>
+        <p>SMEs, the self-employed and younger applicants often have limited bureau history. Officers then either decline or improvise, because the model only reads a credit file.</p>
+      </div>
+      <div class="card">
+        <h3>Inconsistent judgement</h3>
+        <p>Without a documented method, the same pack produces different limits depending on the officer. Subsequent audit sees the outcome, not the reasoning.</p>
+      </div>
+      <div class="card">
+        <h3>Late identification of stress</h3>
+        <p>Falling balances, rising commitments and missed instalments are often noticed in collections, not at origination or during scheduled monitoring.</p>
+      </div>
+    </div>
+    <div class="shariah">
+      <p class="tag">Islamic Digital Economy</p>
+      <h3 style="font-size:14px;font-weight:600;margin:6px 0 6px;">Why a conventional scorecard is not sufficient for a Shariah book</h3>
+      <p style="font-size:12px;line-height:1.55;">A conventional engine looks for interest, late interest and a single arrears field. A Tawarruq facility has a deferred sale price, a profit margin already approved in the Aqad, and two late-charge ledgers that must remain separate: Ta'widh (compensation, capped) and Gharamah (penalty, payable to charity). If the model cannot distinguish those fields, the operator cannot demonstrate that risk assessment remained within the approved contract. TrueSight is designed so that it can.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 2 / 16</span></div>
+</section>
+
+<!-- PAGE 3 SOLUTION -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Solution</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">1 — Proposed solution</p>
+      <h2 class="h2" style="margin-top:6px;">TrueSight is the decision layer. <span class="mute">The officer remains accountable.</span></h2>
+      <p class="lede" style="margin-top:12px;">TrueSight is Truestack’s proprietary AI service for borrower and customer creditworthiness. It consumes data the institution is entitled to use, applies rules and calibrated models, and returns a score, a probability of default, the principal reasons, and a recommended next step. After a facility is booked, the same engine re-scores the account on a schedule.</p>
+    </div>
+    <p class="p">The licensed lender or Shariah financing operator remains the decision-maker. TrueSight does not originate, disburse or collect. It does not issue a fatwa, approve an Aqad, or execute a commodity trade. Those functions remain with the operator, the committee, and TrueSyariah / TrueCommodity where they apply. Adjacent Truestack products (TrueIdentity, document extraction, AML screening) are treated here as data sources, not as separate Malaysia Digital activities.</p>
+    <div>
+      <p class="kicker">Scope of the activity</p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="chip chip-blue" style="margin-bottom:8px;">Digital Finance</span>
+          <h3>Conventional credit</h3>
+          <p>KPKT-licensed money lenders, fintech credit companies and digital lenders on TrueKredit or a third-party loan system. Interest-bearing products, debt-service ratios, utilisation, bureau and bank data.</p>
+        </div>
+        <div class="card" style="background:var(--ts-parchment);border-color:var(--ts-rule);">
+          <span class="chip chip-gold" style="margin-bottom:8px;">Islamic Digital Economy</span>
+          <h3>Shariah pembiayaan</h3>
+          <p>Operators on TrueSyariah. Tawarruq and deferred-profit facilities; affordability against the sale price; Ta'widh and Gharamah as separate features; explanations suitable for committee review. No interest field, and no invented profit rate.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Operating stages (same intellectual property; isolated deployments)</p>
+      <div class="flow">
+        <div class="flow-step"><b>1. Data</b><span>Permitted sources only, with consent and purpose recorded.</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>2. Financials</b><span>Income, cash flow and debt service — profit, not interest, on a Shariah book.</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>3. Risk engine</b><span>Score, PD and expected-loss inputs. Features are book-specific.</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>4. Decision aid</b><span>Approve, conditions, review or decline. Amount and tenure.</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><b>5. Monitor</b><span>Re-score booked accounts. Early warning. Portfolio view.</span></div>
+      </div>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>Excluded from this activity.</strong> Money lending; operating a credit bureau; hardware; marketing, advertising or social-media services; training or certification; standalone consultancy or Shariah advisory. TrueSight does not replace the Shariah committee. It is not deployed on infrastructure shared with a conventional book.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 3 / 16</span></div>
+</section>
+
+<!-- PAGE 4 MODULES -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Modules</div>
+  </div>
+  <div class="body" style="gap:11px;">
+    <div>
+      <p class="eyebrow">2 — Modules</p>
+      <h2 class="h2" style="margin-top:6px;">Nine software functions in one service.</h2>
+      <p class="lede" style="margin-top:10px;">Each item below is a software module. Officers use it in the console; other systems call it through an API. None of these items is a workshop, campaign or advisory engagement.</p>
+    </div>
+    <div class="grid-2" style="gap:9px;">
+      <div class="card"><h3>1. Data intelligence</h3><p>Normalise bureau extracts, bank and transaction files, LMS or TrueSyariah records, and statements into a feature table. Network matching uses consented hashed identifiers (NRIC or SSM). Raw loan files are not pooled.</p></div>
+      <div class="card"><h3>2. Financial health</h3><p>Income stability, expense pattern, cash-flow volatility, debt service, utilisation and recent deterioration. On a Shariah book the engine uses deferred profit and instalments on the sale price.</p></div>
+      <div class="card"><h3>3. Credit risk engine</h3><p>Supervised models (gradient-boosted trees) produce a TrueSight score, probability of default over defined horizons, and inputs to expected loss. Example output: score 78/100, PD 4.2%, suggested facility RM50,000.</p></div>
+      <div class="card"><h3>4. Explainable AI</h3><p>Ranked factors that moved the score, written so a credit officer, internal auditor or Shariah committee member can follow the result without a data-science background.</p></div>
+      <div class="card"><h3>5. Decision support</h3><p>Maps the score to approve, conditions, manual review or decline, plus amount and tenure. Conventional mode may suggest risk-based pricing. Shariah mode does not invent a profit rate; that remains inside the approved Aqad.</p></div>
+      <div class="card"><h3>6. Early-warning monitor</h3><p>Re-scores booked accounts when new permitted data arrives. On Shariah books, Ta'widh and Gharamah are separate signals, not a single late-interest flag.</p></div>
+      <div class="card"><h3>7. Portfolio intelligence</h3><p>Book-level PD and expected loss, grade mix, concentration, vintage and watchlist — produced from that book’s own tenancy.</p></div>
+      <div class="card"><h3>8. Consented network signals</h3><p>Optional. A hashed identity may be matched only against participating books of the same type. Cross-type matching between conventional and Shariah is not performed.</p></div>
+    </div>
+    <div class="card" style="background:var(--ts-parchment);border-color:var(--ts-rule);">
+      <h3>9. Shariah financing mode</h3>
+      <p style="color:#3d5850;">The same engine, deployed only on the operator’s dedicated TrueSyariah AWS Malaysia tenancy. Feature dictionary includes deferred sale price, profit margin, Ta'widh outstanding, Gharamah outstanding (charity, not income) and commodity-trade completion flags from TrueCommodity where present. TrueSight scores the customer and the facility; it does not execute Tawarruq or rule on contracts.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 4 / 16</span></div>
+</section>
+
+<!-- PAGE 5 ARCHITECTURE -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Architecture</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">2 — System architecture</p>
+      <h2 class="h2" style="margin-top:6px;">The assessment runs in the existing loan file. <span class="mute">Results are written back with a model version.</span></h2>
+    </div>
+    <div class="grid-2">
+      <div>
+        <p class="kicker">Presentation layer</p>
+        <p class="p">Credit users work in a web console (React, Next.js, TypeScript): borrower 360°, score and PD, explainability panel, recommendation, early-warning queue and portfolio boards. On TrueKredit the panel is embedded on the borrower and application screens. On TrueSyariah it sits on the facility file, with pembiayaan labels. A third-party loan system may call the API and never open the Truestack console.</p>
+      </div>
+      <div>
+        <p class="kicker">Application and data</p>
+        <p class="p">Node.js services receive HTTPS requests. Data is validated and stored in that client’s isolated PostgreSQL database on AWS Malaysia; Redis holds short-lived feature lookups. A feature pipeline builds the model table. Inference returns score, PD, explanations and a recommendation. Every call is audit-logged: requester, time, model identifier and book type.</p>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Request sequence</p>
+      <ol class="plain">
+        <li>The loan or pembiayaan system (TrueKredit, TrueSyariah, or another LMS) submits identifiers and permitted fields, or the officer works in the console.</li>
+        <li>Ingestion verifies consent flags and book type. A Shariah request directed at a conventional tenancy is refused, and the reverse.</li>
+        <li>Features are built for that book type. Hashed network lookup, if enabled, runs only against participating books of the same type.</li>
+        <li>Rules and classical models produce the score. An LLM, where used, writes the narrative from a bounded case context — it does not set the PD.</li>
+        <li>The payload is stored against the file and returned. Scheduled jobs re-score booked accounts using only data still covered by a valid purpose.</li>
+      </ol>
+    </div>
+    <div class="wash">
+      <p class="kicker" style="color:var(--blue);">Cloud hosting</p>
+      <p class="p"><strong>Amazon Web Services, Malaysia region.</strong> Truestack hosts the TrueSight inference service, including the AWS Bedrock model gateway, in Malaysia. Each client’s borrower and facility data remains on that client’s dedicated AWS Malaysia account — the same pattern used for TrueKredit and TrueSyariah. A Shariah operator is never placed on a tenancy that also holds conventional loans. Hashed network features, where used, are derived signals, not a copy of another lender’s file.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>Data residency</h3><p>Personal data is stored in Malaysia. Encryption in transit and at rest. Backups remain on the client tenancy.</p></div>
+      <div class="card"><h3>Isolation</h3><p>One AWS account, database and secrets vault per operator. The Shariah ring-fence is architectural, not a query filter.</p></div>
+      <div class="card"><h3>Audit</h3><p>Model version, feature snapshot and explanation are stored with the decision and can be reconstructed for committee or regulatory review.</p></div>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 5 / 16</span></div>
+</section>
+
+<!-- PAGE 6 DECISION FLOW -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Decision flow</div>
+  </div>
+  <div class="body" style="gap:13px;">
+    <div>
+      <p class="eyebrow">2 — Decision flow</p>
+      <h2 class="h2" style="margin-top:6px;">Capture, normalise, evaluate, decide, monitor. <span class="mute">Each stage has its own controls.</span></h2>
+      <p class="lede" style="margin-top:10px;">Separating these stages allows the operator to control cost, explainability and the information an LLM is permitted to see. Identity, documents, AML and external signals feed TrueSight; they are not presented as separate qualifying activities in this application.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><b>Capture</b><span>Applicant, documents, bureau, company and optional partner signals — only with a recorded purpose.</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Normalise</b><span>Extracted facts, entity match, validation, feature store. Lineage and confidence on every field.</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Evaluate</b><span>Rules and scorecards first. Classical ML for PD. LLM for narrative and exceptions only.</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Decide</b><span>Approve, decline or review. Evidence pack, policy version, officer override where required.</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><b>Monitor</b><span>Watchlist refresh, portfolio drift, outcomes written back for subsequent training.</span></div>
+    </div>
+    <div class="wash">
+      <p class="kicker" style="color:var(--blue);">Control plane (applies to every stage)</p>
+      <p class="p">Consent and PDPA purpose limitation · data classification · model routing (which Bedrock model, which region) · human-review thresholds · prompt and inference logs · retention and deletion. Ambiguous or high-risk external signals are routed to an officer. They are not silently absorbed into the grade.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>What is permitted to predict risk</h3>
+        <p>Probability of default, affordability and fraud flags are produced by rules, scorecards and gradient-boosted trees (XGBoost / LightGBM). Those models are measurable, calibrated and versioned. A generative model does not own the credit score.</p>
+      </div>
+      <div class="card">
+        <h3>Role of the language model</h3>
+        <p>Normalising extracted fields, drafting the reasons an officer will record, flagging inconsistencies, and assembling the evidence pack. If the language model is unavailable, scoring still runs. A narrative without a score is not a decision.</p>
+      </div>
+    </div>
+    <p class="p">On a Shariah tenancy the same five stages apply. The feature dictionary and the decision outputs change; the control plane does not. Book type is checked before any Bedrock call. A conventional prompt template cannot receive a Shariah case, and the reverse.</p>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 6 / 16</span></div>
+</section>
+
+<!-- PAGE 7 PRIVACY -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Data privacy</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">3 — Data privacy</p>
+      <h2 class="h2" style="margin-top:6px;">Personal data is processed only for a stated credit or financing purpose.</h2>
+      <p class="lede" style="margin-top:12px;">TrueSight is designed around the Personal Data Protection Act 2010 (as amended), purpose limitation, and Malaysian data residency. Additional data — including any future telco, e-commerce or BNPL feed — is not connected until a lawful basis, a processing agreement and a data-protection impact assessment are in place. Truestack does not sell personal data and does not train foundation models on borrower files.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Lawful basis and consent</h3>
+        <p>Each source is tagged with origin, timestamp, confidence, collection basis and retention rule. Sensitive or third-party data is collected only after a clear purpose statement. The applicant may access, correct or request deletion where the PDPA so requires.</p>
+      </div>
+      <div class="card">
+        <h3>Data minimisation</h3>
+        <p>The platform stores features required for the decision, not a copy of a partner’s entire customer database. Call content, precise location trails, private messages and browsing histories are not in scope. Preference is given to derived indicators (for example payment regularity) over raw event logs.</p>
+      </div>
+      <div class="card">
+        <h3>Residency and isolation</h3>
+        <p>Production personal data, extracted documents, logs and backups are held in the AWS Malaysia region on the operator’s dedicated tenancy. Conventional and Shariah books do not share a database. Cross-border model calls, if ever required, use redacted payloads and customer approval, or wait for an in-region model.</p>
+      </div>
+      <div class="card">
+        <h3>Explainability and fairness</h3>
+        <p>Every field used in a score or a decline must have a plain-language explanation path. Web, social or alternative-data signals are not used as hidden proxies for protected characteristics. Ambiguous signals default to human review.</p>
+      </div>
+      <div class="card">
+        <h3>Processors and models</h3>
+        <p>AWS is the cloud and Bedrock processor. Borrower PII is not used to fine-tune Bedrock models. Prompt and output logs are retained or deleted under the client’s retention schedule. Open-weight or private endpoints may be used for higher-sensitivity workloads.</p>
+      </div>
+      <div class="card">
+        <h3>Regulated customers</h3>
+        <p>For Bank Negara-regulated institutions, the design supports outsourcing and RMiT expectations: data-location records, access control, incident notification, audit logs and the ability to reconstruct a decision. Operational assurance (encryption, key management, vulnerability management) is part of the control plane, not an afterthought.</p>
+      </div>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>Hierarchy of sources.</strong> Official records and customer-provided evidence take precedence over partner or web content. A telco, marketplace or BNPL signal cannot override a court or SSM record, and cannot enter the score unless the operator can explain it to the applicant and to an auditor.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 7 / 16</span></div>
+</section>
+
+<!-- PAGE 8 DATA SOURCES -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Data sources</div>
+  </div>
+  <div class="body" style="gap:11px;">
+    <div>
+      <p class="eyebrow">3 — Data sources</p>
+      <h2 class="h2" style="margin-top:6px;">Current sources, and sources that may be connected later.</h2>
+      <p class="lede" style="margin-top:10px;">TrueSight does not assemble a borrower by scraping the public internet. It consumes sources the operator is entitled to use. Potential partner feeds (telecommunications, e-commerce, buy-now-pay-later) are listed as a roadmap, not as data already in production.</p>
+    </div>
+    <p class="kicker">In production or in the product design (subject to the operator’s licences and consent)</p>
+    <table class="tech">
+      <thead><tr><th>Source</th><th>Content</th><th>Use in TrueSight</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Operator’s book</td>
+          <td>Application, repayment history, fraud labels, servicing and collections events from TrueKredit or TrueSyariah.</td>
+          <td>Primary feature set. Outcomes later retrain scorecards. Does not leave that tenancy.</td>
+        </tr>
+        <tr>
+          <td>TrueIdentity</td>
+          <td>MyKad OCR, liveness, face match, KYC result, consent record.</td>
+          <td>Verified identity; fraud indicators; blocks a synthetic file before scoring.</td>
+        </tr>
+        <tr>
+          <td>Document extraction</td>
+          <td>Bank statements, payslips, contracts and forms, with tamper checks.</td>
+          <td>Income, expenses and cash-flow behaviour. LLM used only as a second pass.</td>
+        </tr>
+        <tr>
+          <td>AML screening</td>
+          <td>Sanctions, PEP, adverse-media hits, watchlist refresh, reviewer disposition.</td>
+          <td>Policy gates and monitoring. A hit is evidence, not an automatic decline without review.</td>
+        </tr>
+        <tr>
+          <td>Official and bureau</td>
+          <td>SSM, insolvency and court notices; CTOS / CCRIS-equivalent files the client is licensed to pull.</td>
+          <td>Preferred over any non-official source.</td>
+        </tr>
+        <tr>
+          <td>Network (optional)</td>
+          <td>Hashed NRIC or SSM match against participating books of the same type.</td>
+          <td>Aggregated performance bands only. Conventional never matches Shariah.</td>
+        </tr>
+        <tr>
+          <td>Public diligence</td>
+          <td>Company websites, public adverse media, public business or marketplace profiles — where consented and relevant.</td>
+          <td>Corroboration. Not social-media marketing. Default route is human review, not a silent score input.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">TrueSight does not provide social-media, advertising or campaign services. Public web and social records, if used at all, are optional diligence signals with source tags, timestamps and reviewer disposition.</p>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 8 / 16</span></div>
+</section>
+
+<!-- PAGE 9 ALTERNATIVE DATA -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Potential data sources</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">3 — Potential partner data</p>
+      <h2 class="h2" style="margin-top:6px;">Telco, e-commerce and BNPL data may be added only under contract and consent.</h2>
+      <p class="lede" style="margin-top:10px;">These sources can improve assessment of thin-file SMEs and individuals. They also raise privacy risk. They will not be switched on for an operator until a data-processing agreement, a documented purpose, applicant-facing notice and a technical minimisation design are complete. Raw partner dumps are not stored in TrueSight.</p>
+    </div>
+    <table class="tech">
+      <thead><tr><th>Potential source</th><th>Features that may be used</th><th>Explicitly out of scope</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Telecommunications</td>
+          <td>Account tenure, prepaid or postpaid status, bill-payment regularity, SIM-swap or device-change alerts supplied by the telco under contract.</td>
+          <td>Call content, SMS content, cell-tower or GPS trails, contact lists, browsing on the mobile network.</td>
+        </tr>
+        <tr>
+          <td>E-commerce / marketplace</td>
+          <td>Seller or buyer tenure, fulfilled-order volume, late-delivery or return rates, account standing — as aggregated features from the platform.</td>
+          <td>Item-level browsing, wish-lists, private messages, recommendation graphs, unrelated household purchases.</td>
+        </tr>
+        <tr>
+          <td>Buy-now-pay-later</td>
+          <td>BNPL repayment performance, outstanding BNPL exposure, recency of missed instalments, where the customer has authorised the share.</td>
+          <td>Full shopping baskets, marketing segments, or any BNPL book mixed across conventional and Shariah tenancies.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Conditions before go-live of a partner feed</h3>
+        <p>Written lawful basis · purpose limited to credit or pembiayaan risk · DPA with the source institution · encryption in transit · features not raw event stores · retention schedule · explainability path · opt-out or challenge process where applicable · DPIA recorded · conventional/Shariah isolation preserved.</p>
+      </div>
+      <div class="card">
+        <h3>What will not happen</h3>
+        <p>No purchase of unlawfully compiled lists. No silent scoring from social graphs. No use of telco or marketplace data as a proxy for ethnicity, religion or similar attributes. No training of Bedrock models on partner PII. No transfer of a Shariah customer’s alternative data onto a conventional tenancy.</p>
+      </div>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>Status.</strong> Telco, e-commerce and BNPL connectors are a planned capability of the risk data layer, not a claim that such feeds are live. Until connected, TrueSight operates on operator-owned, official, bureau and consented module data described on the previous page.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 9 / 16</span></div>
+</section>
+
+<!-- PAGE 10 AI BEDROCK -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Artificial intelligence</div>
+  </div>
+  <div class="body" style="gap:11px;">
+    <div>
+      <p class="eyebrow">4 — Artificial intelligence</p>
+      <h2 class="h2" style="margin-top:6px;">Classical models produce the score. AWS Bedrock is used for language, with cost-aware routing.</h2>
+      <p class="lede" style="margin-top:8px;">AWS Bedrock is the managed model layer. Business logic is not hard-wired to a single provider or model. A Model Gateway selects the route, logs the call and can fail over. The cheapest model that meets the quality threshold for that task is preferred.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Model Gateway</h3>
+        <p>Single interface for routing, cost controls, evaluation and audit. Malaysia-region models are preferred. If a required model is unavailable in-region, only redacted or customer-approved payloads may leave, or the job waits for an in-region alternative.</p>
+      </div>
+      <div class="card">
+        <h3>Prohibited uses</h3>
+        <p>No fine-tuning of Bedrock models on borrower PII. No generative model setting the probability of default. No Shariah case sent to a conventional prompt template, or the reverse.</p>
+      </div>
+    </div>
+    <table class="tech">
+      <thead><tr><th>Task</th><th>Typical route</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Document extraction</td>
+          <td>Specialist OCR / document AI first; LLM second pass (GLM Flash or Amazon Nova Lite class on Bedrock).</td>
+          <td>High volume. Deterministic extraction is cheaper; the LLM only normalises fields and flags contradictions.</td>
+        </tr>
+        <tr>
+          <td>Transaction classification</td>
+          <td>Nova Lite / GLM Flash class, tested on labelled Malaysian statements.</td>
+          <td>Repetitive work where cost and Bahasa Malaysia / English coverage matter.</td>
+        </tr>
+        <tr>
+          <td>Risk narrative and exceptions</td>
+          <td>Claude, GLM or Nova Pro class via Bedrock.</td>
+          <td>Requires structured output and a paragraph an officer can defend. Receives a bounded case context, not a raw document dump.</td>
+        </tr>
+        <tr>
+          <td>Public diligence (optional)</td>
+          <td>Search tools plus a research-class model only where contracted.</td>
+          <td>Adverse-media discovery is separated from the score. A reviewer must dispose the hit.</td>
+        </tr>
+        <tr>
+          <td>PD, affordability, fraud probability</td>
+          <td>Scorecards and XGBoost / LightGBM on the feature store. Not Bedrock.</td>
+          <td>Must be calibrated, monitored for drift, and replayable from a model version identifier.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Training</h3>
+        <p>Scorecards and tree models are trained, and periodically retrained, on labelled Malaysian outcomes: defaults, arrears, fraud flags and officer overrides. Labels remain on the operator’s tenancy unless a separate, de-identified pooling agreement exists. The long-term advantage is a Malaysia-specific corpus (local forms, naming, SMEs, informal income), not a particular large language model.</p>
+      </div>
+      <div class="card">
+        <h3>Memory</h3>
+        <p>There is no conversational memory that carries one borrower into another tenant. Working memory is the risk data layer: the case file, the feature store, consent evidence, and the outcome written back after the facility performs. The LLM sees only the facts assembled for that request. Prompts, model identifiers, token counts and outputs are logged, then retained or deleted under the client’s PDPA schedule.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 10 / 16</span></div>
+</section>
+
+<!-- PAGE 11 MOCK-UP -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Interface</div>
+  </div>
+  <div class="body" style="gap:11px;">
+    <div>
+      <p class="eyebrow">5 — Interface</p>
+      <h2 class="h2" style="margin-top:6px;">Working mock-up: TrueSight on the New Borrower screen.</h2>
+      <p class="lede" style="margin-top:10px;">The panel on the right is the engine output at the point the officer is still creating the record. It is not a report produced the following day.</p>
+    </div>
+    <div class="browser">
+      <div class="browser-bar">
+        <span class="dot" style="background:#f87171;"></span>
+        <span class="dot" style="background:#fbbf24;"></span>
+        <span class="dot" style="background:#34d399;"></span>
+        <span class="url">admin · New Borrower · TrueSight™ Preview</span>
+      </div>
+      <img src="assets/truesight_screenshot.png" alt="TrueSight preview on the New Borrower screen" style="display:block;width:100%;height:500px;object-fit:cover;object-position:top left;background:#fff;">
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3>Network history</h3><p>Hashed match against participating books of the same type. In this example, borrowing from one other lender; last facility 21 days ago.</p></div>
+      <div class="card"><h3>Consistency</h3><p>Name matches the other file; telephone number does not. That is a data-quality flag, not an automatic decline.</p></div>
+      <div class="card"><h3>Risk band</h3><p>Exposure shown as a range, with an on-time band and activity counts — sufficient to pause a file that would otherwise look clean on SSM alone.</p></div>
+    </div>
+    <p class="caption">Illustrative user interface. The product is not generally released. A TrueSyariah embedding uses the same panel on the facility file, with pembiayaan labels and no interest fields.</p>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 11 / 16</span></div>
+</section>
+
+<!-- PAGE 12 TECHNOLOGY + DISTINCTION -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Technology and distinction</div>
+  </div>
+  <div class="body" style="gap:12px;">
+    <div>
+      <p class="eyebrow">5 — Technology</p>
+      <h2 class="h2" style="margin-top:6px;">Stack, advanced methods, and how TrueSight differs.</h2>
+    </div>
+    <table class="tech">
+      <thead><tr><th>Layer</th><th>Tools</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Frontend</td><td>Next.js, React, TypeScript</td><td>Console and in-file panel on TrueKredit and TrueSyariah.</td></tr>
+        <tr><td>Application</td><td>Node.js, HTTPS APIs</td><td>Ingestion, consent and book-type checks, write-back, audit log.</td></tr>
+        <tr><td>Data</td><td>PostgreSQL, Redis, Docker, feature store</td><td>Client-isolated stores on the operator’s AWS Malaysia account.</td></tr>
+        <tr><td>Cloud</td><td>AWS Malaysia; AWS Bedrock (Model Gateway)</td><td>Inference and language models in-region where available; dedicated client tenancy.</td></tr>
+        <tr><td>Predictive AI</td><td>XGBoost / LightGBM, scorecards, feature attribution</td><td>Score, PD, ranked reasons. Separate dictionaries per book type.</td></tr>
+        <tr><td>Language AI</td><td>Bedrock: Nova Lite / GLM Flash; Claude / Nova Pro / GLM for narratives</td><td>Extraction second pass, classification, evidence packs. Cost-routed.</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="card"><h3>Explainable, not opaque</h3><p>International tools often stop at a grade. TrueSight lists the factors that moved the file, in language suitable for a credit memo or a Shariah committee pack.</p></div>
+      <div class="card"><h3>Continues after origination</h3><p>The same models re-score after booking. Early warning is a scheduled run of the engine, not a separate product attached later.</p></div>
+      <div class="card"><h3>Network signal without pooling files</h3><p>Where customers consent, hashed matches can show activity on another participating book of the same type. Each operator retains a dedicated AWS tenancy. Truestack does not operate a shared bureau.</p></div>
+      <div class="card"><h3>Fits the system already in use</h3><p>Embedded in TrueKredit and TrueSyariah, or called by API from another LMS. The operator is not required to replace origination in order to obtain a documented risk view.</p></div>
+    </div>
+    <div class="shariah">
+      <p class="tag">Islamic Digital Economy</p>
+      <h3 style="font-size:13.5px;font-weight:600;margin:6px 0 6px;">A Shariah book requires a Shariah feature dictionary, not a relabelled interest model</h3>
+      <p style="font-size:11.5px;line-height:1.5;">Imported scorecards are typically trained on interest-bearing products. TrueSight’s Shariah mode scores deferred profit, keeps Ta'widh and Gharamah apart, and will not recommend an interest rate. Deployment is only on the TrueSyariah tenancy. TrueSight does not replace the advisor or the committee.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 12 / 16</span></div>
+</section>
+
+<!-- PAGE 13 DISTRIBUTION -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Distribution</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">5 — How TrueSight reaches the market</p>
+      <h2 class="h2" style="margin-top:6px;">It ships inside TrueKredit, and it is also opened as an API.</h2>
+      <p class="lede" style="margin-top:12px;">A standalone scoring tool has to win a new workflow. TrueSight does not. Licensed lenders already run their books on TrueKredit — origination, schedules, collections and KPKT paperwork, on their own AWS Malaysia tenancy. TrueSight is built to sit in that file. Operators who do not use TrueKredit can call the same engine through an API and keep the system they already have.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="padding:16px 16px 14px;">
+        <span class="chip chip-blue" style="margin-bottom:10px;">Channel 1</span>
+        <h3 style="font-size:15px;margin-bottom:8px;">Native in TrueKredit</h3>
+        <p style="font-size:12px;line-height:1.55;color:var(--body);">TrueSight is embedded on the borrower and application screens of TrueKredit, which is already in production with licensed Malaysian money lenders. The officer does not open a second system. The score, PD, reasons and recommendation are written onto the same record as the loan, the repayment schedule and the Lampiran. Isolation, audit logs and Malaysia residency are the ones that tenancy already uses.</p>
+        <p style="font-size:12px;line-height:1.55;color:var(--body);margin-top:8px;">Because the LMS already holds applications, commitments, disbursements and arrears, TrueSight is not scoring from an empty payload. That is the practical advantage over a vendor who only receives a bureau extract through a new integration.</p>
+      </div>
+      <div class="card" style="padding:16px 16px 14px;">
+        <span class="chip chip-blue" style="margin-bottom:10px;">Channel 2</span>
+        <h3 style="font-size:15px;margin-bottom:8px;">Open API</h3>
+        <p style="font-size:12px;line-height:1.55;color:var(--body);">The same TrueSight engine is exposed as an HTTPS API for banks, fintechs, credit companies and operators whose loan or pembiayaan system is not TrueKredit. They submit permitted fields, receive score, PD, explanations and a recommended next step, and write the result into their own file. They do not have to move the loan book.</p>
+        <p style="font-size:12px;line-height:1.55;color:var(--body);margin-top:8px;">The control plane does not change: consent and purpose, book-type lock, dedicated AWS Malaysia tenancy, model-version logging, and the same prohibition on mixing conventional and Shariah data. The API is a delivery method, not a second product with weaker controls.</p>
+      </div>
+    </div>
+    <div class="shariah">
+      <p class="tag">Islamic Digital Economy</p>
+      <h3 style="font-size:14px;font-weight:600;margin:6px 0 6px;">TrueSyariah operators use the same two channels</h3>
+      <p style="font-size:12px;line-height:1.55;">On TrueSyariah, TrueSight is embedded on the facility file, with pembiayaan labels and no interest field. A Shariah operator on another platform may call the API in Shariah mode. In both cases the request is served only from that operator’s dedicated TrueSyariah tenancy. The API will refuse a Shariah payload pointed at a conventional endpoint.</p>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>What this means for the activity.</strong> Distribution through an LMS that is already live shortens time-to-use for existing clients. The API extends the same proprietary engine to institutions that will never replace their core system. Both paths are software licensing and usage of TrueSight — not consulting, not a bureau, and not a requirement that the customer abandon their current origination stack.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 13 / 16</span></div>
+</section>
+
+<!-- PAGE 13 IP -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Intellectual property</div>
+  </div>
+  <div class="body">
+    <div>
+      <p class="eyebrow">5 — Intellectual property</p>
+      <h2 class="h2" style="margin-top:6px;">The intellectual property is TrueSight. Trademark filing with MyIPO is intended.</h2>
+      <p class="lede" style="margin-top:12px;">The application’s “AI-Powered Credit &amp; Financial Risk Assessment” refers to this product. The Company intends to register TrueSight as a trademark with MyIPO. Filing has not yet been submitted. Copyright attaches to software and documentation authored in Malaysia. Model weights, feature dictionaries and hashed-matching methods will be held as trade secrets. Selected methods may later be reviewed for patentability; no granted patent is claimed here.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card"><h3>Trademark</h3><p>TrueSight™ — name and device, to be filed at MyIPO, replacing earlier working labels such as “CrediSense AI”.</p></div>
+      <div class="card"><h3>Copyright</h3><p>Source code, consoles, documentation, model cards and database structure, authored by Truestack’s Malaysian engineering team.</p></div>
+      <div class="card"><h3>Trade secrets</h3><p>Scoring method, training process, conventional and Shariah feature dictionaries, hashed network matching, threshold calibration and the Model Gateway routing rules.</p></div>
+      <div class="card"><h3>Not claimed</h3><p>The operator’s Aqad, committee rulings, and commodity-trade contracts executed through TrueCommodity remain the operator’s and the committee’s.</p></div>
+    </div>
+    <div class="wash">
+      <p class="kicker">Core proprietary pieces</p>
+      <p class="p">AI models and scoring method · financial-health analysis · probability-of-default models · explainable AI · early-warning monitor · data-processing and hashed matching · Shariah feature dictionary and book-isolation rules · decision-support mapping (with Aqad-safe outputs on Shariah mode) · Bedrock Model Gateway (task routing, region controls, cost caps).</p>
+      <p class="p" style="margin-top:10px;">All of the above is developed in-house in Malaysia. Third-party tools (AWS, Bedrock foundation models, open-source libraries, bureau files supplied by the client) are inputs. They are not the Company’s intellectual property.</p>
+    </div>
+    <div class="shariah">
+      <p class="tag">Shariah</p>
+      <p style="font-size:12px;line-height:1.55;margin-top:6px;">TrueSight does not own, and does not seek to own, the operator’s Aqad, the committee’s rulings, or commodity-trade contracts. The intellectual property is the software that scores a customer on a book that already has those contracts in force.</p>
+    </div>
+    <p class="p">Development commenced in <strong>Q2 2026</strong>. The product was presented on the Company website (as coming soon) in <strong>Q3 2026</strong>. First commercial use is planned for <strong>Q1 2027</strong>. No TrueSight invoice has been issued to date.</p>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 14 / 16</span></div>
+</section>
+
+<!-- PAGE 14 FIVE-YEAR PROJECTIONS -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Five-year projections</div>
+  </div>
+  <div class="body" style="gap:13px;">
+    <div>
+      <p class="eyebrow">6 — Financial projections</p>
+      <h2 class="h2" style="margin-top:6px;">Five-year planning case. Years 1–3 are canonical; Years 4–5 continue the same path.</h2>
+      <p class="lede" style="margin-top:10px;">Years 1–3 are taken from the Company’s Unified Risk Intelligence platform brief (September 2026) and are the planning numbers to use in this application. Years 4–5 extend that case on the same customer-growth, volume, blended-usage and margin trajectory so the projection matches a five-year Malaysia Digital horizon. Figures are directional planning assumptions, not a forecast. Year 1 is calendar 2027.</p>
+    </div>
+    <table class="tech num">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Y1 · 2027</th>
+          <th>Y2 · 2028</th>
+          <th>Y3 · 2029</th>
+          <th>Y4 · 2030</th>
+          <th>Y5 · 2031</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Production customers (year-end)</td><td>8</td><td>24</td><td>55</td><td>90</td><td>130</td></tr>
+        <tr><td>Module-equivalent checks</td><td>240,000</td><td>1.2 million</td><td>4.0 million</td><td>7.5 million</td><td>12.0 million</td></tr>
+        <tr><td>Subscription revenue (RM million)</td><td>0.45</td><td>1.90</td><td>6.50</td><td>13.20</td><td>22.50</td></tr>
+        <tr><td>Usage revenue (RM million)</td><td>1.08</td><td>4.56</td><td>12.80</td><td>21.75</td><td>32.40</td></tr>
+        <tr><td>Platform configuration (RM million)</td><td>0.18</td><td>0.40</td><td>0.75</td><td>1.00</td><td>1.30</td></tr>
+        <tr><td><strong>Total revenue (RM million)</strong></td><td><strong>1.71</strong></td><td><strong>6.86</strong></td><td><strong>20.05</strong></td><td><strong>35.95</strong></td><td><strong>56.20</strong></td></tr>
+        <tr><td>Gross margin</td><td>62%</td><td>70%</td><td>76%</td><td>78%</td><td>80%</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Years 1–3 (canonical)</h3>
+        <p>Unchanged from the September 2026 brief: 8 / 24 / 55 production customers; 240 thousand / 1.2 million / 4.0 million module-equivalent checks; total revenue RM1.71 million / RM6.86 million / RM20.05 million; gross margin 62% / 70% / 76%.</p>
+      </div>
+      <div class="card">
+        <h3>Years 4–5 (extension)</h3>
+        <p>Customer growth continues at a slower rate (55 → 90 → 130). Checks scale to 7.5 million then 12.0 million. Blended usage revenue per check continues to fall (about RM2.90 in Year 4, RM2.70 in Year 5). Margin steps to 78% then 80% as Bedrock routing and extraction automation compound.</p>
+      </div>
+    </div>
+    <div class="wash">
+      <p class="p" style="font-size:11.5px;"><strong>Notes for the application.</strong> Platform configuration is implementation of the Company’s own software (connectors, policy thresholds, API enablement), not standalone consulting. External bureau, registry and partner-data fees are pass-through and are excluded. Major custom-build costs are excluded. These totals should replace earlier Section B figures that summed to RM1.26 million in Year 1 and RM18.4 million in Year 5.</p>
+    </div>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 15 / 16</span></div>
+</section>
+
+<!-- PAGE 14 CASE STUDY -->
+<section class="sheet">
+  <div class="hd">
+    <img src="assets/truestack-logo-light.png" alt="Truestack">
+    <div class="hd-meta">TrueSight™ · Technical overview<br>Worked example</div>
+  </div>
+  <div class="body" style="gap:12px;">
+    <div>
+      <p class="eyebrow">6 — Example / case study</p>
+      <h2 class="h2" style="margin-top:6px;">Illustrative file: a clean SSM record with hidden concentration.</h2>
+      <p class="lede" style="margin-top:10px;">This walkthrough is illustrative. It is not a live customer and not a completed sale. Figures match the mock-up on page 11 so the method can be read against the interface.</p>
+    </div>
+    <div class="grid-2">
+      <div class="wash" style="padding:13px 15px;">
+        <p class="kicker">Conventional setting</p>
+        <p class="p" style="font-size:11.5px;"><strong>Apex Credit Sdn. Bhd.</strong> (fictional) is a KPKT-licensed money lender with approximately 1,800 live personal loans on TrueKredit. The officer opens <strong>Tech Solutions Sdn. Bhd.</strong>, SSM 202201012345, manufacturing, incorporated 2017.</p>
+      </div>
+      <div class="shariah" style="padding:13px 15px;">
+        <p class="tag">Shariah setting</p>
+        <p style="font-size:11.5px;line-height:1.5;margin-top:6px;">The same engine, on a separate tenancy, would support a TrueSyariah operator assessing a Tawarruq working-capital facility. Profit terms would already sit in the approved Aqad. TrueSight would not propose an interest rate; it would address amount, tenure and whether the file should go to review.</p>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Sequence on the conventional desk</p>
+      <ol class="plain">
+        <li>SSM lookup is in order. Papers in the file show no obvious litigation. A bureau-only read would likely support approval at a mid five-figure limit.</li>
+        <li>TrueSight Preview runs as the officer enters the SSM number. Hashed match: already borrowing from one other participating lender. Name matches; telephone number does not.</li>
+        <li>Exposure band RM500,000–RM1,000,000. On-time band 0–10%. Activity counts and recency as shown on page 11. Risk band: high.</li>
+        <li>Recommendation: manual review; cap new exposure; request current bank statements; reconcile the telephone discrepancy before disbursement. No telco, e-commerce or BNPL feed is required for this conclusion.</li>
+        <li>If a smaller facility is later booked, monitoring continues on permitted features only. A further rise in utilisation raises an early-warning item rather than waiting for a missed instalment.</li>
+      </ol>
+    </div>
+    <div class="grid-2">
+      <div class="card"><h3>Without TrueSight</h3><p>The officer sees a manufacturer with an SSM number and a complete form. Concentration at other lenders is not visible. Contact-data inconsistency is easy to miss. The committee pack contains a score without supporting reasons.</p></div>
+      <div class="card"><h3>With TrueSight</h3><p>The officer still decides. The file now carries a documented high-risk band, a network flag and a list of factors. That record is the audit trail. On a Shariah desk, it is what the committee can sample.</p></div>
+    </div>
+    <p class="note">This example does not claim a reduction in default rates. TrueSight has been in development since Q2 2026 and is not generally released. It is included so that the method is concrete for assessment of this application.</p>
+  </div>
+  <div class="ft"><span>Truestack Technologies Sdn. Bhd. · 202501058714</span><span>TrueSight™ Technical Overview · 16 / 16</span></div>
+</section>
+
+</div>
+</body>
+</html>

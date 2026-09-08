@@ -39,6 +39,10 @@
 				"title": "Pengurusan Akaun KPKT",
 				"description": "Pembaharuan, permit dan penyerahan — kami uruskan untuk anda."
 			},
+			"angkasaPba": {
+				"title": "Kod PBA ANGKASA",
+				"description": "Kod potongan gaji — dari kelayakan hingga pengurusan berterusan."
+			},
 			"softwareDevelopment": {
 				"title": "Pembangunan Perisian Tersuai",
 				"description": "Platform dan perisian pinjaman yang dibina mengikut proses anda."

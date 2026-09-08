@@ -5,6 +5,7 @@ import type { AbstractIntlMessages } from "next-intl";
 import { publishedFaqItems } from "@/lib/i18n/faq";
 import enAbout from "@/messages/en/about.json";
 import enAccountManagement from "@/messages/en/accountManagement.json";
+import enAngkasa from "@/messages/en/angkasa.json";
 import enBanner from "@/messages/en/banner.json";
 import enCareers from "@/messages/en/careers.json";
 import enCommon from "@/messages/en/common.json";
@@ -46,6 +47,7 @@ export type EnMessages = Omit<
 		typeof enTrueSSM &
 		typeof enDigitalLicense &
 		typeof enAccountManagement &
+		typeof enAngkasa &
 		typeof enSoftwareDevelopment &
 		typeof enP2P &
 		typeof enAbout &
@@ -87,6 +89,7 @@ function stripFileStatus(mod: object): Record<string, unknown> {
 const englishMessages: Record<string, unknown> = {
 	...stripFileStatus(enAbout),
 	...stripFileStatus(enAccountManagement),
+	...stripFileStatus(enAngkasa),
 	...stripFileStatus(enBanner),
 	...stripFileStatus(enCareers),
 	...stripFileStatus(enCommon),

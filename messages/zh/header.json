@@ -39,6 +39,10 @@
 				"title": "KPKT账户管理",
 				"description": "续期、许可证与呈报——由我们代办。"
 			},
+			"angkasaPba": {
+				"title": "ANGKASA PBA代码",
+				"description": "工资扣除代码——从资格评估到持续管理。"
+			},
 			"softwareDevelopment": {
 				"title": "定制软件开发",
 				"description": "按您的流程打造放贷平台与软件。"

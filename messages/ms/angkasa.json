@@ -1,0 +1,189 @@
+{
+	"_status": "ai-draft",
+	"Angkasa": {
+		"meta": {
+			"title": "Kod PBA ANGKASA | Potongan Gaji Malaysia",
+			"description": "Dapatkan kod PBA ANGKASA bersama Truestack — kelayakan, penubuhan entiti, permohonan dan pengurusan kod. Kutip bayaran balik terus daripada slip gaji.",
+			"openGraphTitle": "Kod PBA ANGKASA | Potongan Gaji Malaysia",
+			"openGraphDescription": "Kami bawa organisasi anda daripada semakan kelayakan hingga kod PBA ANGKASA diluluskan — dan kekalkannya dalam keadaan baik selepas itu."
+		},
+		"schema": {
+			"serviceName": "Nasihat Kod PBA ANGKASA",
+			"alternateName": [
+				"kod PBA ANGKASA",
+				"Biro Perkhidmatan Angkasa",
+				"Angkatan Koperasi Kebangsaan Malaysia Berhad",
+				"potongan gaji Malaysia",
+				"potongan gaji ANGKASA",
+				"potongan gaji kakitangan awam"
+			],
+			"serviceType": "Permohonan kod PBA ANGKASA dan pengurusan kod berterusan",
+			"audienceType": "Koperasi, pemberi pinjam wang berlesen, penyedia takaful, yayasan dan persatuan yang mengutip daripada kakitangan sektor awam"
+		},
+		"breadcrumb": {
+			"current": "Kod PBA ANGKASA"
+		},
+		"hero": {
+			"eyebrow": "Nasihat ANGKASA",
+			"title": "Dapatkan Kod PBA ANGKASA Anda",
+			"subtitle": "Kami bawa organisasi anda daripada semakan kelayakan hingga kod potongan diluluskan — dan kekalkannya dalam keadaan baik selepas itu. Kutip bayaran balik dan caruman terus daripada slip gaji.",
+			"secondaryCta": "Lihat Jika Anda Layak",
+			"photoAlt": "Penasihat menyediakan dokumen lesen dan pematuhan"
+		},
+		"basics": {
+			"badge": "Asas",
+			"title": "Apa Itu ANGKASA Dan Kod PBA",
+			"para1": "ANGKASA — Angkatan Koperasi Kebangsaan Malaysia Berhad — ialah organisasi koperasi kebangsaan. Melalui Biro Perkhidmatan Angkasa (BPA), ia mengendalikan sistem potongan gaji Malaysia untuk kakitangan sektor awam sejak 1977.",
+			"para2": "<emphasis>Kod PBA</emphasis> ialah pengecam yang ANGKASA keluarkan kepada organisasi yang diluluskan. Ia membolehkan bayaran balik pinjaman, caruman atau yuran anda ditolak terus daripada slip gaji bulanan ahli dan dihantar kepada anda — tanpa anda mengejar bayaran setiap bulan.",
+			"photoAlt": "Penasihat menyemak dokumen pematuhan bersama klien",
+			"items": {
+				"source": {
+					"title": "Potongan berlaku di punca",
+					"description": "Amaun keluar daripada slip gaji sebelum ahli melihatnya."
+				},
+				"channel": {
+					"title": "Satu saluran, satu penyesuaian",
+					"description": "Kutipan tiba melalui ANGKASA mengikut kitaran bulanan."
+				},
+				"market": {
+					"title": "Menjangkau pasaran sektor awam",
+					"description": "Penjawat awam dan kakitangan majikan yang berdaftar dengan BPA."
+				}
+			}
+		},
+		"uses": {
+			"title": "Apa Yang Anda Boleh Lakukan Dengan Kod",
+			"subtitle": "Kod potongan mengubah ekonomi kutipan. Bayaran balik tidak lagi bergantung pada ingatan pelanggan, tetapi pada penggajian.",
+			"items": {
+				"loans": {
+					"title": "Bayaran balik pinjaman",
+					"description": "Ansuran bulanan dikutip daripada slip gaji, mengikut jadual, tanpa panggilan susulan."
+				},
+				"takaful": {
+					"title": "Takaful dan insurans",
+					"description": "Caruman berulang dikutip tanpa terputus kerana bayaran terlepas."
+				},
+				"fees": {
+					"title": "Yuran, syer dan simpanan",
+					"description": "Yuran keahlian, modal syer dan pelan simpanan untuk koperasi dan persatuan."
+				},
+				"donations": {
+					"title": "Caruman dan derma",
+					"description": "Pemberian berulang kepada yayasan, dana kebajikan dan persatuan yang diluluskan."
+				},
+				"default": {
+					"title": "Risiko ingkar yang lebih rendah",
+					"description": "Kutipan di punca bermakna kurang tunggakan, kerja pemulihan yang lebih ringan dan aliran tunai yang lebih stabil."
+				},
+				"segment": {
+					"title": "Segmen pelanggan baharu",
+					"description": "Jangkau kakitangan sektor awam yang mengharapkan potongan gaji sebagai cara membayar."
+				}
+			}
+		},
+		"process": {
+			"badge": "Apa Yang Kami Lakukan",
+			"title": "Kami Uruskan Seluruh Permohonan",
+			"subtitle": "Kebanyakan organisasi tersekat pada perkara yang sama: entiti yang belum berstruktur seperti ANGKASA kehendaki, dokumen tidak lengkap, dan tiada siapa yang susul. Kami uruskan semuanya.",
+			"talkCta": "Bercakap dengan kami",
+			"steps": {
+				"assess": {
+					"title": "Penilaian kelayakan",
+					"description": "Kami semak entiti, status lesen, kewangan dan produk anda berbanding apa yang ANGKASA cari, dan beritahu anda secara terus sama ada perlu diteruskan."
+				},
+				"entity": {
+					"title": "Penubuhan dan penyusunan semula entiti",
+					"description": "Jika struktur belum layak, kami betulkannya — penubuhan syarikat, pendaftaran koperasi, perubahan pengarah dan pemegang saham, serta kerja SSM atau CoSec di sebaliknya."
+				},
+				"submit": {
+					"title": "Permohonan disediakan dan dikemukakan",
+					"description": "Kami kumpulkan set dokumen lengkap, tulis penyerahan sokongan, dan failkan permohonan supaya betul pada kali pertama."
+				},
+				"liaison": {
+					"title": "Perhubungan hingga kelulusan",
+					"description": "Kami berurusan dengan ANGKASA dan BPA bagi pihak anda — pertanyaan, penjelasan, dokumen tambahan — dan kekalkan anda dimaklumkan sepanjang proses."
+				},
+				"manage": {
+					"title": "Pengurusan kod berterusan",
+					"description": "Setelah kod beroperasi, kami kekalkannya dalam keadaan baik: pembaharuan, kemas kini butiran anda, dan pelaporan yang menyertainya."
+				}
+			},
+			"contactTitle": "Satu titik hubungan",
+			"contactBody": "Pasukan yang sama dari penilaian pertama hingga pembaharuan. <link>Bercakap dengan kami</link>"
+		},
+		"qualify": {
+			"eyebrow": "Semakan Kesediaan",
+			"title": "Adakah Anda Sedia Memohon?",
+			"body": "Tandakan apa yang sudah terpakai kepada organisasi anda. Ini semakan kesediaan kami sendiri, bukan kriteria rasmi ANGKASA — tetapi inilah yang kami lihat sebelum menerima kes.",
+			"missingTitle": "Tinggal beberapa? Itu biasa.",
+			"missingBody": "Penubuhan dan penyusunan semula entiti adalah sebahagian daripada perkhidmatan. Kebanyakan klien bermula di sini, bukan dalam keadaan sedia sepenuhnya.",
+			"groupAria": "Kesediaan kod PBA ANGKASA",
+			"confirmCta": "Sahkan dengan pasukan kami",
+			"checks": {
+				"entity": {
+					"title": "Entiti sah yang berdaftar",
+					"detail": "Koperasi, Sdn. Bhd., persatuan atau yayasan yang dalam keadaan baik."
+				},
+				"licence": {
+					"title": "Sebarang lesen yang aktiviti anda perlukan",
+					"detail": "Contohnya lesen pinjam wang KPKT, atau kelulusan pengawal selia yang berkenaan."
+				},
+				"filings": {
+					"title": "Akaun diaudit dan fail yang bersih",
+					"detail": "Fail statutori terkini, tanpa isu pematuhan tertunggak."
+				},
+				"product": {
+					"title": "Produk sesuai untuk potongan bulanan",
+					"detail": "Pinjaman ansuran, caruman, yuran atau simpanan — sesuatu yang berulang."
+				},
+				"capacity": {
+					"title": "Keupayaan menyesuaikan fail bulanan",
+					"detail": "Sistem atau pasukan yang boleh padankan pulangan potongan dengan akaun ahli."
+				}
+			},
+			"verdicts": [
+				"Mulakan dengan perbualan — kami akan petakan apa yang organisasi anda perlukan sebelum memohon.",
+				"Peringkat awal. Jangka kerja entiti atau fail sebelum permohonan masuk akal.",
+				"Kerja asas diperlukan, tetapi laluan wajar. Kami akan skop jurang dahulu.",
+				"Kedudukan munasabah. Beberapa perkara perlu dirapikan dan anda hampir sedia.",
+				"Hampir sedia. Tinggal satu jurang sebelum kami mengemukakan.",
+				"Kedudukan kukuh. Kami akan terus menyediakan permohonan."
+			]
+		},
+		"faq": {
+			"eyebrow": "Soalan lazim",
+			"title": "Soalan lazim",
+			"items": [
+				{
+					"question": "Apa itu kod PBA, dalam satu ayat?",
+					"answer": "Ia ialah kod yang ANGKASA keluarkan kepada organisasi yang diluluskan supaya wang yang terhutang kepada anda — ansuran pinjaman, caruman, yuran — boleh ditolak terus daripada gaji bulanan ahli dan dibayar kepada anda."
+				},
+				{
+					"question": "Siapa yang boleh memohon?",
+					"answer": "Koperasi, pemberi pinjam wang berlesen, penyedia insurans dan takaful, yayasan, persatuan dan organisasi lain yang mengutip bayaran tetap daripada kakitangan sektor awam. Laluan yang betul bergantung pada jenis entiti dan apa yang anda kutip — itu perkara pertama yang kami nilai."
+				},
+				{
+					"question": "Berapa lama kelulusan mengambil masa?",
+					"answer": "Ia bergantung pada titik permulaan anda. Entiti yang sudah layak bergerak lebih cepat berbanding yang perlu disusun semula dahulu. Kami beri anda garis masa yang jujur pada peringkat penilaian, bukan nombor tajuk."
+				},
+				{
+					"question": "Bagaimana jika entiti kami belum layak?",
+					"answer": "Kami betulkannya. Penubuhan dan penyusunan semula entiti adalah sebahagian daripada penglibatan — penubuhan syarikat atau pendaftaran koperasi, perubahan pengarah dan pemegang saham, dan mengemaskinikan fail statutori sebelum kami mengemukakan."
+				},
+				{
+					"question": "Adakah anda kekal terlibat selepas kod dikeluarkan?",
+					"answer": "Ya. Kami uruskan kod secara berterusan — pembaharuan, perubahan butiran anda, dan koordinasi dengan ANGKASA apabila sesuatu perlu perhatian. Pasukan yang sama yang mengendalikan permohonan anda menguruskannya."
+				},
+				{
+					"question": "Bagaimana kami bermula?",
+					"answer": "Tempah konsultasi percuma. Kami akan lihat entiti, kedudukan lesen dan apa yang anda mahu kutip, kemudian beritahu anda sama ada kod PBA realistik dan apa yang diperlukan untuk sampai ke situ."
+				}
+			]
+		},
+		"cta": {
+			"heading": "Sedia Mengutip Daripada Penggajian?",
+			"body": "Tempah konsultasi percuma. Kami akan nilai sama ada organisasi anda boleh memegang kod PBA, dan apa yang diperlukan untuk mendapatkannya.",
+			"secondary": "Terokai Perkhidmatan KPKT"
+		}
+	}
+}

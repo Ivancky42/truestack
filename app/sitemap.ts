@@ -63,6 +63,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.8,
 		},
 		{
+			path: "/services/angkasa-pba",
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
 			path: "/services/digital-license",
 			changeFrequency: "monthly",
 			priority: 0.8,
