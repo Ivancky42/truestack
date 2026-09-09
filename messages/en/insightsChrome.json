@@ -18,7 +18,10 @@
 		"grid": {
 			"eyebrow": "More reading",
 			"title": "More from the team.",
-			"lede": "Same notes we give clients. Shorter than a call — and you can pass them to your team."
+			"lede": "Same notes we give clients. Shorter than a call — and you can pass them to your team.",
+			"paginationAria": "Article pages",
+			"pageStatus": "Page {current} of {total}",
+			"goToPage": "Go to page {page}"
 		},
 		"empty": {
 			"unavailable": {

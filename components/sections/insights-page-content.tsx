@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { motion } from "framer-motion";
-import { ArrowRight, HelpCircle, Newspaper } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, ChevronLeft, ChevronRight, HelpCircle, Newspaper } from "lucide-react";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import {
 	InsightCard,
@@ -226,8 +227,39 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 	);
 }
 
+/** Two rows on the desktop 3-column grid; further articles paginate. */
+const GRID_PAGE_SIZE = 6;
+
+function pagerButtonClass(active = false) {
+	return active
+		? "flex h-10 min-w-10 items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-3 text-sm font-medium text-primary"
+		: "flex h-10 min-w-10 items-center justify-center rounded-full border bg-background px-3 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary disabled:cursor-not-allowed disabled:opacity-30";
+}
+
 function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 	const t = useTranslations("InsightsChrome");
+	const tCommon = useTranslations("Common");
+	const reduceMotion = useReducedMotion();
+	const [page, setPage] = useState(1);
+	const pageCount = Math.max(1, Math.ceil(posts.length / GRID_PAGE_SIZE));
+	const currentPage = Math.min(page, pageCount);
+	const visible = posts.slice(
+		(currentPage - 1) * GRID_PAGE_SIZE,
+		currentPage * GRID_PAGE_SIZE,
+	);
+
+	function goToPage(next: number) {
+		const clamped = Math.min(pageCount, Math.max(1, next));
+		if (clamped === currentPage) return;
+		setPage(clamped);
+		document.getElementById("all")?.scrollIntoView({
+			behavior: reduceMotion ? "auto" : "smooth",
+			block: "start",
+		});
+		document.getElementById("insights-all-heading")?.focus({
+			preventScroll: true,
+		});
+	}
 
 	return (
 		<section
@@ -248,7 +280,8 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 					</p>
 					<h2
 						id="insights-all-heading"
-						className="type-h2"
+						tabIndex={-1}
+						className="type-h2 outline-none"
 					>
 						{t("grid.title")}
 					</h2>
@@ -258,13 +291,12 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 				</motion.div>
 
 				<div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-					{posts.map((post, index) => (
+					{visible.map((post, index) => (
 						<motion.div
-							key={post._id}
+							key={`${currentPage}-${post._id}`}
 							className="h-full"
-							initial={{ opacity: 0, y: 16 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-40px" }}
+							initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+							animate={{ opacity: 1, y: 0 }}
 							transition={{
 								duration: 0.4,
 								delay: Math.min(index * 0.06, 0.24),
@@ -274,6 +306,57 @@ function InsightsGrid({ posts }: { posts: InsightPostSummary[] }) {
 						</motion.div>
 					))}
 				</div>
+
+				{pageCount > 1 ? (
+					<nav
+						aria-label={t("grid.paginationAria")}
+						className="mt-10 flex flex-wrap items-center justify-center gap-2"
+					>
+						<p className="sr-only" aria-live="polite">
+							{t("grid.pageStatus", {
+								current: currentPage,
+								total: pageCount,
+							})}
+						</p>
+						<button
+							type="button"
+							onClick={() => goToPage(currentPage - 1)}
+							disabled={currentPage === 1}
+							className={pagerButtonClass()}
+							aria-label={tCommon("previous")}
+						>
+							<ChevronLeft className="h-4 w-4" />
+						</button>
+						{Array.from({ length: pageCount }, (_, i) => i + 1).map(
+							(pageNumber) => {
+								const active = pageNumber === currentPage;
+								return (
+									<button
+										key={pageNumber}
+										type="button"
+										onClick={() => goToPage(pageNumber)}
+										className={pagerButtonClass(active)}
+										aria-label={t("grid.goToPage", {
+											page: pageNumber,
+										})}
+										aria-current={active ? "page" : undefined}
+									>
+										{pageNumber}
+									</button>
+								);
+							},
+						)}
+						<button
+							type="button"
+							onClick={() => goToPage(currentPage + 1)}
+							disabled={currentPage === pageCount}
+							className={pagerButtonClass()}
+							aria-label={tCommon("next")}
+						>
+							<ChevronRight className="h-4 w-4" />
+						</button>
+					</nav>
+				) : null}
 			</div>
 		</section>
 	);
@@ -337,12 +420,42 @@ export function InsightsPageContent({
 	return (
 		<>
 			{/* Masthead + featured story share one section so the story sits high on the page. */}
-			<section className="relative -mt-18 overflow-hidden bg-background pb-14 pt-[calc(2.5rem+4.5rem)] md:pb-20 md:pt-[calc(3.5rem+4.5rem)]">
-				<div
-					className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-linear-to-b from-primary/5 via-transparent to-transparent"
-					aria-hidden
-				/>
-				<div className="hero-shell px-6">
+			<section className="hero-under-nav relative overflow-hidden">
+				<div className="absolute inset-0 -z-10" aria-hidden>
+					<div className="absolute inset-0 bg-linear-to-b from-primary/10 via-primary/4 to-transparent" />
+					<div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_78%_36%,var(--primary)_0%,transparent_70%)] opacity-[0.12]" />
+					<div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-background to-transparent" />
+
+					<svg
+						className="absolute inset-0 h-full w-full text-foreground opacity-[0.045]"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<defs>
+							<pattern
+								id="insights-hero-grid"
+								width="48"
+								height="48"
+								patternUnits="userSpaceOnUse"
+							>
+								<path
+									d="M 48 0 L 0 0 0 48"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="1"
+								/>
+							</pattern>
+						</defs>
+						<rect
+							width="100%"
+							height="100%"
+							fill="url(#insights-hero-grid)"
+						/>
+					</svg>
+
+					<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-primary/20 blur-3xl motion-safe:animate-pulse" />
+					<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-primary/10 blur-3xl" />
+				</div>
+				<div className="hero-shell px-6 pt-10 pb-14 md:pt-14 md:pb-20">
 					<InsightsMasthead topics={publishedTopics(posts)} />
 
 					{featured ? (

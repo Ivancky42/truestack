@@ -18,7 +18,10 @@
 		"grid": {
 			"eyebrow": "Bacaan lanjut",
 			"title": "Lagi daripada pasukan.",
-			"lede": "Nota yang sama kami berikan kepada pelanggan. Lebih ringkas daripada panggilan — dan anda boleh kongsikan kepada pasukan anda."
+			"lede": "Nota yang sama kami berikan kepada pelanggan. Lebih ringkas daripada panggilan — dan anda boleh kongsikan kepada pasukan anda.",
+			"paginationAria": "Halaman artikel",
+			"pageStatus": "Halaman {current} daripada {total}",
+			"goToPage": "Pergi ke halaman {page}"
 		},
 		"empty": {
 			"unavailable": {

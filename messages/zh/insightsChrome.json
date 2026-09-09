@@ -18,7 +18,10 @@
 		"grid": {
 			"eyebrow": "更多阅读",
 			"title": "团队的更多文章。",
-			"lede": "与我们给客户的笔记相同。比一通电话更短——您也可以转给团队。"
+			"lede": "与我们给客户的笔记相同。比一通电话更短——您也可以转给团队。",
+			"paginationAria": "文章分页",
+			"pageStatus": "第 {current} 页，共 {total} 页",
+			"goToPage": "前往第 {page} 页"
 		},
 		"empty": {
 			"unavailable": {
