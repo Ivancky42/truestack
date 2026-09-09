@@ -28,6 +28,7 @@ export async function InsightsSchema() {
 			legalName,
 		},
 		isPartOf: { "@id": `${siteUrl}/#website` },
+		breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
 	};
 
 	return (

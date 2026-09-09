@@ -42,6 +42,7 @@ export function buildSoftwareDevelopmentJsonLd(
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${SOFTWARE_DEVELOPMENT_PAGE_URL}#service` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "Service",

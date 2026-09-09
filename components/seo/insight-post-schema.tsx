@@ -57,6 +57,7 @@ export async function InsightPostSchema({
 		mainEntityOfPage: {
 			"@type": "WebPage",
 			"@id": pageUrl,
+			breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
 		},
 		headline: post.title,
 		description: post.seoDescription?.trim() || post.excerpt,

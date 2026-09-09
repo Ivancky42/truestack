@@ -127,6 +127,7 @@ export function buildJobPostingSchema(
 		},
 		...(role.hybrid
 			? {
+					jobLocationType: "TELECOMMUTE",
 					applicantLocationRequirements: {
 						"@type": "Country",
 						name: "Malaysia",

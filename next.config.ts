@@ -65,17 +65,17 @@ const nextConfig: NextConfig = {
 				permanent: true,
 			},
 			{
-				source: "/:locale(ms|zh)/services",
+				source: "/:locale(ms|zh|ru)/services",
 				destination: "/:locale/services/digital-license",
 				permanent: true,
 			},
 			{
-				source: "/:locale(ms|zh)/digital-license",
+				source: "/:locale(ms|zh|ru)/digital-license",
 				destination: "/:locale/services/digital-license",
 				permanent: true,
 			},
 			{
-				source: "/:locale(ms|zh)/digital-licence",
+				source: "/:locale(ms|zh|ru)/digital-licence",
 				destination: "/:locale/services/digital-license",
 				permanent: true,
 			},

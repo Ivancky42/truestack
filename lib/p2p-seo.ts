@@ -54,6 +54,7 @@ export function buildP2PJsonLd(copy: P2PSchemaCopy) {
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${P2P_PAGE_URL}#service` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "Service",

@@ -23,6 +23,9 @@ type FaqSchemaProps = {
 export function FaqSchema({ items, inLanguage }: FaqSchemaProps) {
 	const locale = resolveAppLocale(useLocale());
 	const published = publishedFaqItems(items);
+	if (published.length === 0) {
+		return null;
+	}
 	const schema = {
 		"@context": "https://schema.org",
 		"@type": "FAQPage",

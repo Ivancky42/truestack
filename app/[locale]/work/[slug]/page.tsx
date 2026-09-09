@@ -28,7 +28,6 @@ function studyCopy(
 import { WorkCaseStudyDetailContent } from "@/components/sections/work-case-study-detail";
 import { WorkCaseStudySchema } from "@/components/seo/work-case-study-schema";
 import { FaqSchema } from "@/components/seo/faq-schema";
-import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 type PageProps = {
 	params: Promise<{ locale: string; slug: string }>;
@@ -84,9 +83,7 @@ export default async function WorkCaseStudyPage({ params }: PageProps) {
 	const { locale, slug } = await params;
 	const resolved = resolveAppLocale(locale);
 	setRequestLocale(resolved);
-	const t = await getTranslations("WorkChrome");
 	const tStudies = await getTranslations("WorkStudies");
-	const tCommon = await getTranslations("Common");
 	if (!isWorkCaseStudySlug(slug)) {
 		notFound();
 	}
@@ -104,13 +101,6 @@ export default async function WorkCaseStudyPage({ params }: PageProps) {
 		<>
 			<WorkCaseStudySchema study={study} />
 			<FaqSchema items={study.faq} />
-			<BreadcrumbSchema
-				items={[
-					{ name: tCommon("breadcrumbHome"), path: "/" },
-					{ name: t("nav"), path: "/work" },
-					{ name: study.client, path: `/work/${study.slug}` },
-				]}
-			/>
 			<PageMessages namespaces={["WorkChrome", "WorkStudies"]}>
 				<WorkCaseStudyDetailContent study={study} related={related} />
 			</PageMessages>

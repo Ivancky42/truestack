@@ -66,6 +66,7 @@ export function buildDigitalLicenseJsonLd(copy: DigitalLicenseSchemaCopy) {
 				inLanguage: copy.inLanguage,
 				isPartOf: { "@id": `${baseUrl}/#website` },
 				about: { "@id": `${DIGITAL_LICENSE_PAGE_URL}#service` },
+				breadcrumb: { "@id": `${copy.pageUrl}#breadcrumb` },
 			},
 			{
 				"@type": "Service",
