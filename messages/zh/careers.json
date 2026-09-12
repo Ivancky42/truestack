@@ -3,9 +3,9 @@
 	"Careers": {
 		"meta": {
 			"title": "加入我们｜Truestack吉隆坡招聘",
-			"description": "吉隆坡Truestack现招全栈工程、B2B销售、客户成功与行政岗位。软件岗为混合办公，欢迎应届毕业生投递简历。请查看在招与近期已招满的职位。",
+			"description": "吉隆坡Truestack现招全栈工程、产品设计、B2B销售、客户成功与行政岗位。软件岗为混合办公，欢迎应届毕业生投递简历。请查看目前在招职位。",
 			"openGraphTitle": "加入我们｜Truestack吉隆坡招聘",
-			"openGraphDescription": "吉隆坡Truestack现招工程、销售、客户成功与运营岗位。工程岗混合办公。欢迎应届毕业生。"
+			"openGraphDescription": "吉隆坡Truestack现招工程、产品设计、销售、客户成功与运营岗位。工程岗混合办公。欢迎应届毕业生查看在招职位。"
 		},
 		"schema": {
 			"breadcrumbHome": "首页",
@@ -154,6 +154,48 @@
 						"Tailwind CSS",
 						"API与数据库",
 						"Git & GitHub"
+					]
+				},
+				"product-designer": {
+					"title": "产品设计师 (Product Designer, UI/UX & QA)",
+					"department": "工程",
+					"location": "吉隆坡，马来西亚 · 混合办公",
+					"type": "全职",
+					"summary": "从最初想法到UI/UX，再到确认可以上线的QA，由您负责一个功能。",
+					"description": "您接手粗略需求，想清楚它该如何运作、该有怎样的感受，并跟到开发与发布。功能不会以一份Figma文件离开您的手，几周后变成别人的问题。",
+					"workAreas": [],
+					"responsibilities": [
+						"把粗略需求变成产品流程和可落地的规格",
+						"在开发开始前想清楚用户路径、状态、边界情况和界面行为",
+						"为我们的网页产品设计线框、原型和成品UI",
+						"保持产品一致，并参与设计系统",
+						"在实现过程中和开发工程师一起工作，而不是交一份文件后消失",
+						"定义何谓完成，然后在桌面和移动端做产品侧QA——行为、布局、空状态、校验和别扭的路径",
+						"写清哪里不对，跟到修好，并在功能上线前给出产品侧验收",
+						"审视我们已上线的产品，指出哪里不好用",
+						"把AI当作工作方式的一部分——探索方向、做原型、找出缺失状态。生成结果是起点；您的判断才是标准"
+					],
+					"requirements": [
+						"扎实的产品思考——您关心一件事为何存在，而不只是长什么样",
+						"扎实的UI、视觉设计、UX与交互基础",
+						"能把不清晰的需求变成有结构、可构建的东西",
+						"实现稍有偏差，您会看出来",
+						"您会去试奇怪路径和边界情况，而不只是顺利路径",
+						"能直接和开发工程师合作，并讨论实现约束",
+						"有响应式网页应用的设计经验",
+						"有真实产品作品集，最好包含最终界面背后的理由和流程"
+					],
+					"bonusSkills": [
+						"写过HTML、CSS、JavaScript、TypeScript或React，即使您不是全职开发",
+						"能在浏览器里检查实现，必要时自己做小的前端改动，而不必先开工单",
+						"用过Claude Code或类似编码助手，或能读懂pull request",
+						"写过或参与过Playwright等前端测试",
+						"金融科技、放贷或受监管产品经验——有用，但不是必须"
+					],
+					"technologies": [
+						"Figma",
+						"Claude",
+						"Claude Code"
 					]
 				},
 				"marketing-sales-executive": {
@@ -389,7 +431,7 @@
 				},
 				{
 					"question": "Truestack目前在招哪些职位？",
-					"answer": "Truestack正在招聘全栈网页开发工程师、软件开发实习生、B2B市场与销售专员、客户成功专员和行政专员。在招与近期已招满的职位列于truestack.my/careers。"
+					"answer": "Truestack正在招聘全栈网页开发工程师、软件开发实习生、产品设计师（UI/UX与QA）、B2B市场与销售专员、客户成功专员和行政专员。在招与近期已招满的职位列于truestack.my/careers。"
 				},
 				{
 					"question": "你们招应届毕业生吗？",

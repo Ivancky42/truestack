@@ -7,7 +7,7 @@ export const CAREERS_PAGE_PATH = "/careers";
 export const CAREERS_PAGE_URL = `${baseUrl}${CAREERS_PAGE_PATH}`;
 
 /** Update when open roles change — used in JobPosting datePosted */
-export const CAREERS_JOBS_DATE_POSTED = "2026-05-01";
+export const CAREERS_JOBS_DATE_POSTED = "2026-09-12";
 
 export const CAREERS_KEYWORDS = [
 	"Truestack careers",
@@ -17,6 +17,8 @@ export const CAREERS_KEYWORDS = [
 	"fintech jobs Malaysia",
 	"software developer jobs Malaysia",
 	"full-stack developer Malaysia",
+	"product designer Malaysia",
+	"UI UX jobs Kuala Lumpur",
 	"software intern Malaysia",
 	"B2B sales jobs Kuala Lumpur",
 	"client success jobs Malaysia",

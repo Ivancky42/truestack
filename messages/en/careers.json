@@ -3,9 +3,9 @@
 	"Careers": {
 		"meta": {
 			"title": "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
-			"description": "Open roles at Truestack in Kuala Lumpur — full-stack engineering, B2B sales, client success and admin. Hybrid software roles. Fresh graduates welcome.",
+			"description": "Open roles at Truestack in Kuala Lumpur — engineering, product design, B2B sales, client success and admin. Hybrid software roles. Fresh graduates welcome.",
 			"openGraphTitle": "Careers at Truestack | Jobs in Kuala Lumpur, Malaysia",
-			"openGraphDescription": "Open roles at Truestack in Kuala Lumpur across engineering, sales, client success and operations. Engineering is hybrid. Fresh graduates welcome."
+			"openGraphDescription": "Open roles at Truestack in Kuala Lumpur across engineering, product design, sales and operations. Engineering is hybrid. Fresh graduates welcome."
 		},
 		"schema": {
 			"breadcrumbHome": "Home",
@@ -154,6 +154,48 @@
 						"Tailwind CSS",
 						"APIs & databases",
 						"Git & GitHub"
+					]
+				},
+				"product-designer": {
+					"title": "Product Designer (UI/UX & QA)",
+					"department": "Engineering",
+					"location": "Kuala Lumpur, Malaysia · Hybrid",
+					"type": "Full-time",
+					"summary": "Own a feature from the first idea through UI/UX and the QA that says it is ready to ship.",
+					"description": "You take a rough requirement, work out how it should work, design how it should feel, and stay with it through development and release. A feature does not leave your hands as a Figma file and come back weeks later as somebody else's problem.",
+					"workAreas": [],
+					"responsibilities": [
+						"Turn a rough requirement into a product flow and a specification someone can build",
+						"Work out journeys, states, edge cases and how the interface should behave — before development starts",
+						"Design wireframes, prototypes and finished UI for our web products",
+						"Keep our products consistent and contribute to the design system",
+						"Sit with developers during implementation, rather than handing over a file and disappearing",
+						"Define what done looks like, then QA the feature on desktop and mobile — behaviour, layout, empty states, validation and the awkward paths",
+						"Write up what is wrong, stay with it until it is fixed, and give the product sign-off before it ships",
+						"Look at what we already ship and say what is not working",
+						"Use AI as part of the work — to explore directions, prototype and catch missing states. The output is a starting point; your judgement is the standard"
+					],
+					"requirements": [
+						"Strong product thinking — you care why something exists, not only how it looks",
+						"Solid UI, visual design, UX and interaction fundamentals",
+						"You can take an unclear requirement and turn it into something structured and buildable",
+						"You notice when an implementation is slightly wrong",
+						"You try the strange paths and edge cases, not only the happy path",
+						"Comfortable working with developers and talking through constraints",
+						"Experience designing responsive web applications",
+						"A portfolio of real product work, preferably with the reasoning and flow behind the screens"
+					],
+					"bonusSkills": [
+						"You have written HTML, CSS, JavaScript, TypeScript or React, even if you are not a full-time developer",
+						"You can inspect an implementation in the browser, and make a small frontend change when that is faster than a ticket",
+						"You have used Claude Code or a similar coding agent, or can read a pull request",
+						"You have written or worked with Playwright or other frontend tests",
+						"Fintech, lending or regulated-product experience — useful, not required"
+					],
+					"technologies": [
+						"Figma",
+						"Claude",
+						"Claude Code"
 					]
 				},
 				"marketing-sales-executive": {
@@ -389,7 +431,7 @@
 				},
 				{
 					"question": "What jobs is Truestack currently hiring for?",
-					"answer": "Truestack is hiring for Full-Stack Web Developer, Software Development Intern, Marketing & Sales Executive (B2B), Client Success Executive, and Admin Executive. Open and recently filled roles are listed at truestack.my/careers."
+					"answer": "Truestack is hiring for Full-Stack Web Developer, Software Development Intern, Product Designer (UI/UX & QA), Marketing & Sales Executive (B2B), Client Success Executive, and Admin Executive. Open and recently filled roles are listed at truestack.my/careers."
 				},
 				{
 					"question": "Do you hire fresh graduates?",

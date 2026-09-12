@@ -3,6 +3,7 @@ export type JobEmploymentType = "FULL_TIME" | "INTERN";
 export type JobId =
 	| "full-stack-web-developer"
 	| "software-development-intern"
+	| "product-designer"
 	| "marketing-sales-executive"
 	| "client-success-executive"
 	| "admin-executive"
@@ -41,6 +42,13 @@ export const jobRoles: JobRole[] = [
 		id: "software-development-intern",
 		open: true,
 		employmentType: "INTERN",
+		hybrid: true,
+		engineering: true,
+	},
+	{
+		id: "product-designer",
+		open: true,
+		employmentType: "FULL_TIME",
 		hybrid: true,
 		engineering: true,
 	},

@@ -3,9 +3,9 @@
 	"Careers": {
 		"meta": {
 			"title": "Kerjaya di Truestack | Jawatan di Kuala Lumpur, Malaysia",
-			"description": "Jawatan kosong Truestack di Kuala Lumpur — kejuruteraan full-stack, jualan B2B, kejayaan klien dan admin. Peranan perisian hibrid. Graduan baharu dialu-alukan.",
+			"description": "Jawatan kosong Truestack di KL — kejuruteraan, reka bentuk produk, jualan B2B, kejayaan klien dan admin. Peranan perisian hibrid. Graduan baharu dialu-alukan.",
 			"openGraphTitle": "Kerjaya di Truestack | Jawatan di Kuala Lumpur, Malaysia",
-			"openGraphDescription": "Jawatan kosong Truestack di Kuala Lumpur merentas kejuruteraan, jualan, kejayaan klien dan operasi. Kejuruteraan adalah hibrid. Graduan baharu dialu-alukan."
+			"openGraphDescription": "Jawatan kosong Truestack di Kuala Lumpur merentas kejuruteraan, reka bentuk produk, jualan dan operasi. Kejuruteraan adalah hibrid. Graduan baharu dialu-alukan."
 		},
 		"schema": {
 			"breadcrumbHome": "Laman Utama",
@@ -154,6 +154,48 @@
 						"Tailwind CSS",
 						"API & pangkalan data",
 						"Git & GitHub"
+					]
+				},
+				"product-designer": {
+					"title": "Pereka Produk (Product Designer, UI/UX & QA)",
+					"department": "Kejuruteraan",
+					"location": "Kuala Lumpur, Malaysia · Hibrid",
+					"type": "Sepenuh masa",
+					"summary": "Miliki sesuatu ciri dari idea pertama hingga UI/UX dan QA yang mengatakan ia sedia dihantar.",
+					"description": "Anda ambil keperluan kasar, tentukan cara ia harus berfungsi, reka rasa penggunaannya, dan kekal bersamanya hingga pembangunan dan keluaran. Sesuatu ciri tidak meninggalkan tangan anda sebagai fail Figma dan kembali minggu kemudian sebagai masalah orang lain.",
+					"workAreas": [],
+					"responsibilities": [
+						"Tukar keperluan kasar menjadi aliran produk dan spesifikasi yang boleh dibina",
+						"Fikirkan perjalanan, keadaan, kes tepi dan kelakuan antara muka — sebelum pembangunan bermula",
+						"Reka rangka wayar, prototaip dan UI siap untuk produk web kami",
+						"Pastikan produk kami konsisten dan sumbang kepada sistem reka bentuk",
+						"Duduk bersama pembangun semasa pelaksanaan, bukan serah fail kemudian hilang",
+						"Tetapkan apa erti siap, kemudian QA ciri itu pada desktop dan mudah alih — kelakuan, susun atur, keadaan kosong, pengesahan dan laluan yang janggal",
+						"Tuliskan apa yang salah, kekal bersamanya hingga dibaiki, dan beri tanda setuju produk sebelum ia dihantar",
+						"Lihat apa yang kami sudah hantar dan katakan apa yang tidak berjalan",
+						"Gunakan AI sebagai sebahagian daripada kerja — untuk teroka arah, prototaip dan tangkap keadaan yang hilang. Hasilnya titik mula; pertimbangan anda piawainya"
+					],
+					"requirements": [
+						"Pemikiran produk yang kuat — anda peduli mengapa sesuatu wujud, bukan rupa sahaja",
+						"Asas UI, reka bentuk visual, UX dan interaksi yang kukuh",
+						"Anda boleh ambil keperluan tidak jelas dan jadikannya berstruktur serta boleh dibina",
+						"Anda perasan apabila pelaksanaan sedikit tersilap",
+						"Anda cuba laluan pelik dan kes tepi, bukan laluan gembira sahaja",
+						"Selesa bekerja dengan pembangun dan membincangkan kekangan",
+						"Pengalaman mereka bentuk aplikasi web responsif",
+						"Portfolio kerja produk sebenar, lebih baik dengan penaakulan dan aliran di sebalik skrin"
+					],
+					"bonusSkills": [
+						"Anda pernah menulis HTML, CSS, JavaScript, TypeScript atau React, walaupun anda bukan pembangun sepenuh masa",
+						"Anda boleh periksa pelaksanaan dalam pelayar, dan buat perubahan frontend kecil apabila itu lebih cepat daripada tiket",
+						"Anda pernah guna Claude Code atau ejen pengekodan serupa, atau boleh baca pull request",
+						"Anda pernah menulis atau bekerja dengan Playwright atau ujian frontend lain",
+						"Pengalaman fintech, pinjaman atau produk dikawal selia — berguna, bukan wajib"
+					],
+					"technologies": [
+						"Figma",
+						"Claude",
+						"Claude Code"
 					]
 				},
 				"marketing-sales-executive": {
@@ -389,7 +431,7 @@
 				},
 				{
 					"question": "Jawatan apakah yang Truestack sedang ambil?",
-					"answer": "Truestack sedang mengambil Pembangun Web Full-Stack, Pelatih Pembangunan Perisian, Eksekutif Pemasaran & Jualan B2B, Eksekutif Kejayaan Klien, dan Eksekutif Pentadbiran. Jawatan dibuka dan yang baru diisi disenaraikan di truestack.my/careers."
+					"answer": "Truestack sedang mengambil Pembangun Web Full-Stack, Pelatih Pembangunan Perisian, Pereka Produk (UI/UX & QA), Eksekutif Pemasaran & Jualan B2B, Eksekutif Kejayaan Klien, dan Eksekutif Pentadbiran. Jawatan dibuka dan yang baru diisi disenaraikan di truestack.my/careers."
 				},
 				{
 					"question": "Adakah anda mengambil graduan baharu?",

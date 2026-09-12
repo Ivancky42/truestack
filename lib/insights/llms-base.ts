@@ -16,7 +16,7 @@ Truestack Technologies (Truestack) provides KPKT-related compliance services and
 - https://www.truestack.my/work/landstore — Case study: LandStore.my mediated land marketplace Malaysia — map exploration, Malaysian land filters, shortlists, and enquiry workflows; custom software (~8 months). Also at /ms/work/landstore, /zh/work/landstore and /ru/work/landstore.
 - https://www.truestack.my/work/cashsouk — Case study: CashSouk P2P financing marketplace on TrueP2P™ — investor and financing journeys, marketplace listings UX, SC-aligned platform (~9 months). Also at /ms/work/cashsouk, /zh/work/cashsouk and /ru/work/cashsouk.
 - https://www.truestack.my/work/eviebikes — Case study: EVIE Bikes — European smart e-bike brand selling across the EU; custom Shopify ecommerce storefront, product pages, and brand storytelling. Also at /ms/work/eviebikes, /zh/work/eviebikes and /ru/work/eviebikes.
-- https://www.truestack.my/careers — Careers at Truestack in Kuala Lumpur: open roles in full-stack engineering, software internships, B2B sales, client success and admin. Engineering is hybrid; business roles are on-site. Fresh graduates welcome, including software development, if they are keen to learn and can work independently. Four-step hiring process. Apply at hello@truestack.my.
+- https://www.truestack.my/careers — Careers at Truestack in Kuala Lumpur: open roles in full-stack engineering, product design (UI/UX & QA), software internships, B2B sales, client success and admin. Engineering is hybrid; business roles are on-site. Fresh graduates welcome, including software development, if they are keen to learn and can work independently. Four-step hiring process. Apply at hello@truestack.my.
 
 ## Services
 
