@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/sections/hero";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -564,6 +565,8 @@ export default async function AccountManagementPage({
 			<PageMessages namespaces={["AccountManagement"]}>
 				<AccountManagementFaq />
 			</PageMessages>
+
+			<RelatedKpktServices />
 
 			<ConsultationCta
 				accent="kpkt"

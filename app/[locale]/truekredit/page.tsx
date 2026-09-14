@@ -11,7 +11,7 @@ export default async function TrueKreditServerPage({
 	const { locale } = await params;
 	setRequestLocale(resolveAppLocale(locale));
 	return (
-		<PageMessages namespaces={["TrueKredit"]}>
+		<PageMessages namespaces={["TrueKredit", "Footer"]}>
 			<TrueKreditPage />
 		</PageMessages>
 	);

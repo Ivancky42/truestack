@@ -23,6 +23,7 @@ import { pickProofStudiesByTitles } from "@/lib/case-studies-data";
 import { Button } from "@/components/ui/button";
 import { CtaLink } from "@/components/shared/cta-link";
 import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { DigitalLicensePaths } from "@/components/sections/digital-license-paths";
 import { BorrowerPortalCollage } from "@/components/sections/truekredit-borrower-visuals";
 
@@ -442,6 +443,8 @@ export function DigitalLicensePageContent() {
 			/>
 
 			<DigitalLicenseFaq />
+
+			<RelatedKpktServices />
 
 			<ConsultationCta
 				accent="kpkt"

@@ -18,6 +18,7 @@ import { HomepageTrust } from "@/components/sections/homepage-trust";
 import { HomepageInsights } from "@/components/sections/homepage-insights";
 import { SuccessStoriesProof } from "@/components/sections/success-stories-proof";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 
 const LATEST_INSIGHTS = 6;
 
@@ -82,7 +83,7 @@ export default async function HomePage({
 		<>
 			<HomeSchema />
 			<FaqSchema items={faq} />
-			<PageMessages namespaces={["Home", "WorkStudies"]}>
+			<PageMessages namespaces={["Home", "WorkStudies", "Footer"]}>
 				<HomepageHero />
 				<HomepageLogoCloud />
 				<HomepageSolutions />
@@ -105,6 +106,7 @@ export default async function HomePage({
 					align="start"
 				/>
 				<HomepageInsights posts={latestInsights} />
+				<RelatedKpktServices />
 				<ConsultationCta
 					heading={t("cta.heading")}
 					body={t("cta.body")}

@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { TrueKreditHero } from "@/components/sections/truekredit-hero";
 import { TrueKreditChannels } from "@/components/sections/truekredit-channels";
 import { CrossLinkStrip } from "@/components/shared/cross-link-strip";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { TrueKreditJourney } from "@/components/sections/truekredit-journey";
 import { TrueKreditChecks } from "@/components/sections/truekredit-checks";
 import { TrueKreditFaq } from "@/components/sections/truekredit-faq";
@@ -564,6 +565,8 @@ export default function TrueKreditPage() {
 			</section>
 
 			<TrueKreditFaq />
+
+			<RelatedKpktServices />
 
 			<ConsultationCta
 				accent="brand"
