@@ -127,9 +127,9 @@ function HeroHeadline() {
 	const verbSuffix = t("hero.verbSuffix");
 
 	return (
-		<h1 className="type-h1 text-pretty">
-			<span className="sr-only">{t("hero.title")}</span>
-			<span aria-hidden>
+		<div className="type-h1 text-pretty">
+			<h1 className="sr-only">{t("hero.title")}</h1>
+			<div aria-hidden>
 				{prefix.map((word, i) => (
 					<span
 						key={word}
@@ -155,8 +155,8 @@ function HeroHeadline() {
 					verbs={verbs}
 					suffix={verbSuffix}
 				/>
-			</span>
-		</h1>
+			</div>
+		</div>
 	);
 }
 
