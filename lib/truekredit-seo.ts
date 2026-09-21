@@ -8,6 +8,7 @@ export const TRUEKREDIT_PAGE_URL = `${baseUrl}${TRUEKREDIT_PAGE_PATH}`;
 export const TRUEKREDIT_KEYWORDS = [
 	"TrueKredit",
 	"money lending management system",
+	"money lending management system Malaysia",
 	"money lender software Malaysia",
 	"loan management for KPKT-licensed money lenders",
 	"loan management system Malaysia",
@@ -100,6 +101,10 @@ export function buildTrueKreditJsonLd(copy: TrueKreditSchemaCopy) {
 				})),
 				featureList: copy.featureList,
 				areaServed: { "@type": "Country", name: "Malaysia" },
+				isRelatedTo: [
+					{ "@id": `${baseUrl}/services/digital-license#service` },
+					{ "@id": `${baseUrl}/services/account-management#service` },
+				],
 			},
 		],
 	};

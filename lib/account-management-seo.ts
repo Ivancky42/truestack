@@ -58,6 +58,11 @@ export function buildAccountManagementJsonLd(copy: AccountManagementSchemaCopy) 
 					"@type": "BusinessAudience",
 					audienceType: copy.audienceType,
 				},
+				isRelatedTo: [
+					{ "@id": `${baseUrl}/truekredit#software` },
+					{ "@id": `${baseUrl}/services/digital-license#service` },
+					{ "@id": `${baseUrl}/services/angkasa-pba#service` },
+				],
 			},
 		],
 	};

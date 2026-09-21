@@ -82,6 +82,7 @@ export function buildDigitalLicenseJsonLd(copy: DigitalLicenseSchemaCopy) {
 					"@type": "BusinessAudience",
 					audienceType: copy.audienceType,
 				},
+				isRelatedTo: { "@id": `${baseUrl}/truekredit#software` },
 				hasOfferCatalog: {
 					"@type": "OfferCatalog",
 					name: copy.catalogName,

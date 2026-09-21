@@ -5,8 +5,9 @@ import {Link, usePathname} from "@/i18n/navigation";
 import {RELATED_KPKT_SERVICES} from "@/lib/related-kpkt-services";
 
 /**
- * Compact in-body sibling-service nav (same chrome as software-dev
+ * Compact in-body sibling nav (same chrome as software-dev
  * cross-links / CrossLinkStrip). Labels are existing Footer strings.
+ * Covers TrueKredit™ plus KPKT licence / account / ANGKASA pages.
  */
 export function RelatedKpktServices() {
 	const t = useTranslations("Footer");

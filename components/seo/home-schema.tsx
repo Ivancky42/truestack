@@ -24,6 +24,10 @@ export async function HomeSchema() {
 		inLanguage: inLanguage[locale],
 		isPartOf: { "@id": `${siteUrl}/#website` },
 		about: { "@id": `${siteUrl}/#organization` },
+		significantLink: [
+			`${siteUrl}/truekredit`,
+			`${siteUrl}/services/digital-license`,
+		],
 	};
 
 	return (
