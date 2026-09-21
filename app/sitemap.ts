@@ -1,11 +1,23 @@
 import type { MetadataRoute } from "next";
+import { connection } from "next/server";
 import { getInsightSitemapEntries } from "@/lib/insights/data";
 import { LOCALES, hreflangAlternates, localizePath } from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
 
-export const revalidate = 3600;
+/**
+ * Insights URLs are not hardcoded and not allowlisted. This file asks Sanity
+ * for every published `insightPost` (`slug` set, `publishedAt` <= now) via
+ * `getInsightSitemapEntries`, then emits en (unprefixed) + /ms + /zh + /ru.
+ * Legal pages stay in ENGLISH_ONLY_PATHS (no locale variants).
+ *
+ * Next.js metadata-route sitemaps are cached by default. `revalidate = 3600`
+ * did not refresh production `/sitemap.xml` after Jadual published (Vercel HIT
+ * from 15 Sep, 100 URLs). `dynamic` + `connection()` force request-time
+ * generation so future posts appear without a redeploy.
+ */
+export const dynamic = "force-dynamic";
 
 const ENGLISH_ONLY_PATHS = new Set([
 	"/cybersecurity",
@@ -48,7 +60,19 @@ function localizedEntries(
 	}));
 }
 
+function sitemapDate(value: string | Date | undefined): Date {
+	if (value instanceof Date && !Number.isNaN(value.getTime())) return value;
+	if (typeof value === "string") {
+		const parsed = new Date(value);
+		if (!Number.isNaN(parsed.getTime())) return parsed;
+	}
+	return new Date();
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+	// Request-time API: opt this metadata route out of the default static cache.
+	await connection();
+
 	const staticPaths: Array<{
 		path: string;
 		changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
@@ -108,7 +132,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		const posts = await getInsightSitemapEntries();
 		postEntries = (Array.isArray(posts) ? posts : []).flatMap((post) =>
 			localizedEntries(`/insights/${post.slug}`, {
-				lastModified: post.updatedAt,
+				lastModified: sitemapDate(post.updatedAt),
 				changeFrequency: "monthly",
 				priority: 0.7,
 			}),

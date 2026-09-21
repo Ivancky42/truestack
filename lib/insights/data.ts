@@ -143,12 +143,18 @@ export async function getInsightPostSlugs(): Promise<string[]> {
 export async function getInsightSitemapEntries(): Promise<
 	InsightSitemapEntry[]
 > {
+	// Sitemap must not reuse the 3600s Insights fetch cache. A publish after
+	// deploy would otherwise stay missing from /sitemap.xml (as Jadual did)
+	// while the live post and llms.txt already updated.
 	const entries = await sanityClient.fetch<InsightSitemapEntry[]>(
 		INSIGHT_SITEMAP_QUERY,
 		{},
-		fetchOptions,
+		{cache: "no-store"},
 	);
-	return Array.isArray(entries) ? entries : [];
+	return (Array.isArray(entries) ? entries : []).filter(
+		(entry): entry is InsightSitemapEntry =>
+			typeof entry?.slug === "string" && entry.slug.length > 0,
+	);
 }
 
 export async function getInsightLlmsEntries(): Promise<InsightLlmsEntry[]> {

@@ -132,4 +132,4 @@ Webhook revalidation may take a moment. Then check:
 2. `https://www.truestack.my/sitemap.xml` — `/insights` and `/insights/{slug}` present, plus the same paths under `/ms`, `/zh` and `/ru`.
 3. `https://www.truestack.my/llms.txt` — Insights section lists the post (title, category, excerpt).
 
-Do **not** edit `app/sitemap.ts` or llms source for a new post. Both are generated from published Sanity documents.
+Do **not** edit `app/sitemap.ts` or llms source for a new post. Both are generated from published Sanity documents (`insightPost` with a slug and `publishedAt` ≤ now). The sitemap is request-time (`force-dynamic`) so a publish does not wait for the next deploy.
