@@ -1,5 +1,6 @@
 import {defineQuery} from "next-sanity";
 
+/** Shared by the Insights index, post pages, sitemap, and llms.txt. */
 const PUBLISHED_POST =
 	'_type == "insightPost" && defined(slug.current) && defined(publishedAt) && publishedAt <= now()';
 
