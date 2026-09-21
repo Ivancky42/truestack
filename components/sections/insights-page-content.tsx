@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, HelpCircle, Newspaper } from "lucide-react";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import {
 	InsightCard,
 	insightCategoryChip,
@@ -469,6 +470,8 @@ export function InsightsPageContent({
 			{rest.length > 0 ? <InsightsGrid posts={rest} /> : null}
 
 			<InsightsFaq muted={rest.length === 0} />
+
+			<RelatedKpktServices />
 
 			<ConsultationCta
 				heading={t("cta.heading")}

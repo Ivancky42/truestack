@@ -61,6 +61,7 @@ export function buildAngkasaJsonLd(copy: AngkasaSchemaCopy) {
 					audienceType: copy.audienceType,
 				},
 				isRelatedTo: [
+					{ "@id": `${baseUrl}/truekredit#software` },
 					{ "@id": `${baseUrl}/services/digital-license#service` },
 					{ "@id": `${baseUrl}/services/account-management#service` },
 				],

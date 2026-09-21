@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
+import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { PortableTextBody } from "@/components/shared/portable-text";
 import { SectionBadge } from "@/components/shared/section-badge";
 import { imageUrl } from "@/lib/insights/client";
@@ -328,6 +329,8 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 					</div>
 				</section>
 			) : null}
+
+			<RelatedKpktServices />
 
 			<ConsultationCta
 				accent={cta.accent}

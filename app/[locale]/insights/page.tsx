@@ -92,7 +92,7 @@ export default async function InsightsPage({
 					{ name: t("nav"), path: "/insights" },
 				]}
 			/>
-			<PageMessages namespaces={["InsightsChrome"]}>
+			<PageMessages namespaces={["InsightsChrome", "Footer"]}>
 				<InsightsPageContent posts={posts} loadFailed={loadFailed} />
 			</PageMessages>
 		</>
