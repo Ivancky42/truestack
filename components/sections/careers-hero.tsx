@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { motion } from "framer-motion";
 import { GridPattern } from "@/components/sections/hero";
 
 export function CareersHero() {
@@ -11,11 +10,7 @@ export function CareersHero() {
 		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
 			<div className="relative hero-shell px-6 py-14 md:py-16 lg:py-20">
-				<motion.div
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-				>
+				<div>
 					<nav
 						aria-label={t("hero.breadcrumbAria")}
 						className="mb-5 flex items-center gap-2 text-sm text-muted-foreground"
@@ -44,7 +39,7 @@ export function CareersHero() {
 					<p className="mt-6 max-w-[34em] type-lede-hero text-pretty text-muted-foreground">
 						{t("hero.lede")}
 					</p>
-				</motion.div>
+				</div>
 			</div>
 		</section>
 	);

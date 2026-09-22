@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { motion } from "framer-motion";
 import { ArrowRight, BookLock, HandCoins, Scale } from "lucide-react";
 import { TrueSyariahHeroVisual } from "@/components/sections/truesyariah-hero-visual";
 import { TsEyebrow } from "@/components/sections/truesyariah/primitives";
@@ -24,12 +23,7 @@ export function TrueSyariahHero() {
 			/>
 			<div className="relative hero-shell px-6">
 				<div className="grid items-stretch lg:grid-cols-[1.04fr_0.96fr]">
-					<motion.div
-						className="border-ts-rule py-16 md:py-20 lg:border-r lg:pr-14"
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-					>
+					<div className="border-ts-rule py-16 md:py-20 lg:border-r lg:pr-14">
 						<TsEyebrow>{t("hero.eyebrow")}</TsEyebrow>
 						<h1 className="type-ts-h1 text-pretty text-ts-ink">
 							{t("hero.title")}
@@ -69,7 +63,7 @@ export function TrueSyariahHero() {
 								</span>
 							))}
 						</div>
-					</motion.div>
+					</div>
 
 					<div className="flex items-center py-10 lg:py-20 lg:pl-14">
 						<TrueSyariahHeroVisual animateOnMount />

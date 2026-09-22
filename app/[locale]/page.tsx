@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { resolveAppLocale } from "@/lib/i18n/config";
 import { PageMessages } from "@/lib/i18n/messages";
@@ -21,6 +22,20 @@ import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 
 const LATEST_INSIGHTS = 6;
+
+async function HomepageLatestInsights() {
+	let latestInsights: InsightPostSummary[] = [];
+	try {
+		const posts = await getInsightPosts();
+		latestInsights = (Array.isArray(posts) ? posts : []).slice(
+			0,
+			LATEST_INSIGHTS,
+		);
+	} catch {
+		latestInsights = [];
+	}
+	return <HomepageInsights posts={latestInsights} />;
+}
 
 export async function generateMetadata({
 	params,
@@ -68,16 +83,6 @@ export default async function HomePage({
 	setRequestLocale(resolveAppLocale(locale));
 	const t = await getTranslations("Home");
 	const faq = t.raw("faq.items") as { question: string; answer: string }[];
-	let latestInsights: InsightPostSummary[] = [];
-	try {
-		const posts = await getInsightPosts();
-		latestInsights = (Array.isArray(posts) ? posts : []).slice(
-			0,
-			LATEST_INSIGHTS,
-		);
-	} catch {
-		latestInsights = [];
-	}
 
 	return (
 		<>
@@ -105,7 +110,9 @@ export default async function HomePage({
 					columns={4}
 					align="start"
 				/>
-				<HomepageInsights posts={latestInsights} />
+				<Suspense fallback={null}>
+					<HomepageLatestInsights />
+				</Suspense>
 				<RelatedKpktServices />
 				<ConsultationCta
 					heading={t("cta.heading")}

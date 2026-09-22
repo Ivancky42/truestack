@@ -18,7 +18,7 @@ export function TrueKreditHeroVisual({
 	return (
 		<motion.div
 			className={`relative mx-auto w-full max-w-[560px] ${className ?? ""}`}
-			initial={{ opacity: 0, scale: 0.96 }}
+			initial={animateOnMount ? false : { opacity: 0, scale: 0.96 }}
 			{...(animateOnMount
 				? { animate: { opacity: 1, scale: 1 } }
 				: {

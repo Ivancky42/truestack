@@ -45,10 +45,7 @@ function ChannelShot({
 			alt={shot.alt}
 			width={shot.width}
 			height={shot.height}
-			quality={100}
-			unoptimized
 			priority={priority}
-			loading={priority ? undefined : "eager"}
 			sizes="(max-width: 1080px) 100vw, 1080px"
 			className="h-full w-full object-cover object-top"
 		/>
@@ -87,7 +84,6 @@ function ChannelVisual({
 			<ChannelPanel on={active === "walkin"}>
 				<ChannelShot
 					shot={{ ...ADMIN_SHOT, alt: adminAlt }}
-					priority
 				/>
 			</ChannelPanel>
 			<ChannelPanel on={active === "website"}>

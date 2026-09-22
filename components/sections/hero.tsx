@@ -83,22 +83,13 @@ export function GridPattern({ variant = "primary" }: { variant?: "primary" | "kp
         }}
       />
       
-      {/* Animated gradient orb */}
-      <motion.div
-        className={`absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 ${
           variant === "kpkt"
-            ? "bg-linear-to-r from-kpkt/10 to-kpkt/5"
-            : "bg-linear-to-r from-primary/10 to-primary/5"
+            ? "bg-[radial-gradient(circle,var(--kpkt)_0%,transparent_70%)]"
+            : "bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)]"
         }`}
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
       />
     </div>
   );
@@ -108,7 +99,7 @@ function CodeCard() {
   return (
     <motion.div
       className="w-full"
-      initial={{ opacity: 0, x: 40 }}
+      initial={false}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
     >
@@ -184,7 +175,7 @@ function HeroEyebrow({
   return (
     <motion.div
       className={`mb-4 flex items-center gap-2 ${centered ? "justify-center" : ""}`}
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
@@ -227,7 +218,7 @@ export function Hero({
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <motion.div
               className="max-w-xl"
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -240,7 +231,7 @@ export function Hero({
               ) : null}
               <motion.h1
                 className="type-h1"
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
@@ -248,7 +239,7 @@ export function Hero({
               </motion.h1>
               <motion.p
                 className="mt-6 type-lede-hero text-muted-foreground"
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
@@ -257,7 +248,7 @@ export function Hero({
               {(primaryCta || secondaryCta) && (
                 <motion.div
                   className="mt-10 flex flex-col gap-4 sm:flex-row"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
@@ -280,7 +271,7 @@ export function Hero({
 
             <motion.div
               className="relative aspect-4/3 overflow-hidden rounded-3xl border shadow-sm"
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
@@ -312,7 +303,7 @@ export function Hero({
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: Text Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -325,7 +316,7 @@ export function Hero({
               ) : null}
               <motion.h1
                 className="type-h1"
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
@@ -333,7 +324,7 @@ export function Hero({
               </motion.h1>
               <motion.p
                 className="mt-6 type-lede-hero text-muted-foreground"
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
@@ -342,7 +333,7 @@ export function Hero({
               {(primaryCta || secondaryCta) && (
                 <motion.div
                   className="mt-10 flex flex-col gap-4 sm:flex-row"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
@@ -386,7 +377,7 @@ export function Hero({
       <div className={`hero-shell px-6 ${sectionPadding}`}>
         <motion.div
           className="mx-auto max-w-3xl text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -400,7 +391,7 @@ export function Hero({
           ) : null}
           <motion.h1
             className="type-h1"
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
@@ -408,7 +399,7 @@ export function Hero({
           </motion.h1>
           <motion.p
             className="mt-6 type-lede-hero text-muted-foreground"
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
@@ -417,7 +408,7 @@ export function Hero({
           {(primaryCta || secondaryCta) && (
             <motion.div
               className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >

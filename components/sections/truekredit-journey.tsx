@@ -287,8 +287,6 @@ export function TrueKreditJourney() {
 									alt={t(`journey.steps.${step.id}.alt`)}
 									width={step.image.width}
 									height={step.image.height}
-									quality={100}
-									unoptimized
 									sizes="(max-width: 1024px) calc(100vw - 3rem), 720px"
 									className="h-auto w-full rounded-[10px] border"
 								/>

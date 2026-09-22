@@ -107,8 +107,6 @@ export function HomepageTrueKredit() {
 							alt={t("truekredit.alt")}
 							width={2160}
 							height={1766}
-							quality={100}
-							unoptimized
 							className="relative h-auto w-full"
 							sizes="(max-width: 1024px) 100vw, 55vw"
 						/>

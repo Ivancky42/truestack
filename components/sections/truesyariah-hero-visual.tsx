@@ -157,7 +157,7 @@ export function TrueSyariahHeroVisual({
 	return (
 		<motion.div
 			className={cn("relative mx-auto w-full max-w-[520px]", className)}
-			initial={{ opacity: 0, y: 16 }}
+			initial={animateOnMount ? false : { opacity: 0, y: 16 }}
 			{...(animateOnMount
 				? { animate: { opacity: 1, y: 0 } }
 				: {

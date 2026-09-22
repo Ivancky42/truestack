@@ -56,12 +56,7 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 	const t = useTranslations("InsightsChrome");
 
 	return (
-		<motion.div
-			className="max-w-2xl"
-			initial={{ opacity: 0, y: 16 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5 }}
-		>
+		<div className="max-w-2xl">
 			<Badge
 				variant="outline"
 				className="mb-4 gap-1.5 border-primary/20 bg-primary/10 px-3 py-1 text-primary"
@@ -102,7 +97,7 @@ function InsightsMasthead({ topics }: { topics: string[] }) {
 					))}
 				</ul>
 			) : null}
-		</motion.div>
+		</div>
 	);
 }
 
@@ -115,12 +110,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 	const published = formatFeaturedDate(post.publishedAt, locale, format);
 
 	return (
-		<motion.article
-			className="mt-8 md:mt-12"
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, delay: 0.12 }}
-		>
+		<article className="mt-8 md:mt-12">
 			<Link
 				href={`/insights/${post.slug}`}
 				className="group grid gap-6 lg:grid-cols-12 lg:items-center lg:gap-10"
@@ -184,7 +174,7 @@ function FeaturedInsight({ post }: { post: InsightPostSummary }) {
 					</span>
 				</div>
 			</Link>
-		</motion.article>
+		</article>
 	);
 }
 
@@ -194,12 +184,7 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 	const state = loadFailed ? "unavailable" : "unpublished";
 
 	return (
-		<motion.div
-			className="mt-8 rounded-3xl border bg-card p-8 shadow-sm md:mt-12 md:p-12"
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, delay: 0.12 }}
-		>
+		<div className="mt-8 rounded-3xl border bg-card p-8 shadow-sm md:mt-12 md:p-12">
 			<p className="mb-3 type-eyebrow text-primary">
 				{t(`empty.${state}.eyebrow`)}
 			</p>
@@ -224,7 +209,7 @@ function InsightsStatusPanel({ loadFailed }: { loadFailed: boolean }) {
 					</Link>
 				</Button>
 			</div>
-		</motion.div>
+		</div>
 	);
 }
 
@@ -453,8 +438,8 @@ export function InsightsPageContent({
 						/>
 					</svg>
 
-					<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-primary/20 blur-3xl motion-safe:animate-pulse" />
-					<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-primary/10 blur-3xl" />
+					<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-20" />
+					<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-10" />
 				</div>
 				<div className="hero-shell px-6 pt-10 pb-14 md:pt-14 md:pb-20">
 					<InsightsMasthead topics={publishedTopics(posts)} />

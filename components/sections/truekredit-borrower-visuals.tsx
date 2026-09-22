@@ -65,9 +65,6 @@ function AppPhone({
 			alt={shot.alt}
 			width={shot.width}
 			height={shot.height}
-			quality={100}
-			unoptimized
-			loading="eager"
 			sizes={sizes}
 			className="h-auto w-full"
 		/>
@@ -86,8 +83,6 @@ export function BorrowerAppPhones({
 				alt={BORROWER_SHOTS.appPhones.alt}
 				width={BORROWER_SHOTS.appPhones.width}
 				height={BORROWER_SHOTS.appPhones.height}
-				quality={100}
-				unoptimized
 				sizes="(max-width: 1080px) calc(100vw - 3rem), 1080px"
 				className="h-full w-full object-cover object-center"
 			/>
@@ -112,8 +107,6 @@ export function BorrowerPortalCollage({
 					alt={web.alt}
 					width={web.width}
 					height={web.height}
-					quality={100}
-					unoptimized
 					sizes="(max-width: 1080px) 100vw, 1080px"
 					className="h-auto w-full"
 				/>

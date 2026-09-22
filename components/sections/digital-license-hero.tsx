@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
 	ArrowRight,
 	Building2,
@@ -29,7 +29,7 @@ export function DigitalLicenseHeroVisual({
 	return (
 		<motion.div
 			className={cn("relative mx-auto w-full max-w-md", className)}
-			initial={{ opacity: 0, y: 16 }}
+			initial={animateOnMount ? false : { opacity: 0, y: 16 }}
 			{...(animateOnMount
 				? { animate: { opacity: 1, y: 0 } }
 				: {
@@ -90,7 +90,6 @@ const PHASE_KEYS = ["1", "2", "4"] as const;
 
 function ReachChart() {
 	const t = useTranslations("DigitalLicense");
-	const reduceMotion = useReducedMotion();
 
 	return (
 		<div className="rounded-[20px] border bg-card/75 p-[26px] pt-[26px] pb-[22px] shadow-sm backdrop-blur-sm">
@@ -159,7 +158,7 @@ function ReachChart() {
 					stroke="url(#dl-reach-line)"
 					strokeWidth="3.5"
 					strokeLinecap="round"
-					initial={{ pathLength: reduceMotion ? 1 : 0 }}
+					initial={false}
 					animate={{ pathLength: 1 }}
 					transition={{ duration: 1.8, delay: 0.3, ease: "easeOut" }}
 				/>
@@ -168,7 +167,7 @@ function ReachChart() {
 					cy="178"
 					r="5"
 					className="fill-primary/50"
-					initial={{ opacity: reduceMotion ? 1 : 0 }}
+					initial={false}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.4, delay: 1 }}
 				/>
@@ -178,7 +177,7 @@ function ReachChart() {
 					r="13"
 					className="fill-primary"
 					opacity={0.18}
-					initial={{ opacity: reduceMotion ? 0.18 : 0 }}
+					initial={false}
 					animate={{ opacity: 0.18 }}
 					transition={{ duration: 0.4, delay: 2 }}
 				/>
@@ -187,12 +186,12 @@ function ReachChart() {
 					cy="26"
 					r="7"
 					className="fill-primary"
-					initial={{ opacity: reduceMotion ? 1 : 0 }}
+					initial={false}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.4, delay: 2 }}
 				/>
 				<motion.g
-					initial={{ opacity: reduceMotion ? 1 : 0 }}
+					initial={false}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 1.1 }}
 				>
@@ -217,7 +216,7 @@ function ReachChart() {
 					</text>
 				</motion.g>
 				<motion.g
-					initial={{ opacity: reduceMotion ? 1 : 0 }}
+					initial={false}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 2.1 }}
 				>
@@ -264,7 +263,6 @@ function ReachChart() {
 export function DigitalLicenseHero() {
 	const t = useTranslations("DigitalLicense");
 	const tCommon = useTranslations("Common");
-	const reduceMotion = useReducedMotion();
 	const trustChips = t.raw("hero.trustChips") as string[];
 
 	return (
@@ -292,28 +290,14 @@ export function DigitalLicenseHero() {
 					</defs>
 					<rect width="100%" height="100%" fill="url(#dl-hero-grid)" />
 				</svg>
-				<motion.div
-					className="absolute -top-[180px] -right-[140px] h-[640px] w-[640px] rounded-full bg-primary/15 blur-3xl"
-					animate={
-						reduceMotion
-							? undefined
-							: { scale: [1, 1.08, 1], opacity: [0.5, 0.8, 0.5] }
-					}
-					transition={{
-						duration: 8,
-						repeat: Infinity,
-						ease: "easeInOut",
-					}}
+				<div
+					className="absolute -top-[180px] -right-[140px] h-[640px] w-[640px] rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-20"
 				/>
 			</div>
 
 			<div className="hero-shell px-6 pt-[76px] pb-[68px] md:pt-20 md:pb-16">
 				<div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
-					<motion.div
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-					>
+					<div>
 						<div className="mb-5 flex items-center gap-2 text-sm text-muted-foreground">
 							<Link
 								href="/#solutions"
@@ -391,15 +375,11 @@ export function DigitalLicenseHero() {
 								</span>
 							))}
 						</div>
-					</motion.div>
+					</div>
 
-					<motion.div
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.12 }}
-					>
+					<div>
 						<ReachChart />
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</section>

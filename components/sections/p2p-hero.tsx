@@ -41,10 +41,9 @@ function GridPattern() {
 				</defs>
 				<rect width="100%" height="100%" fill="url(#grid-p2p-hero)" />
 			</svg>
-			<motion.div
-				className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-violet-500/10 to-indigo-500/10 blur-3xl"
-				animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-				transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+			<div
+				aria-hidden
+				className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-20"
 			/>
 		</div>
 	);
@@ -67,13 +66,13 @@ export function P2PHero() {
 			<div className="hero-shell px-6 py-20 md:py-28">
 				<div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 					<motion.div
-						initial={{ opacity: 0, y: 20 }}
+						initial={false}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 					>
 						<motion.div
 							className="mb-5 flex flex-wrap gap-2 text-sm font-medium"
-							initial={{ opacity: 0, y: 10 }}
+							initial={false}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.4 }}
 						>
@@ -93,7 +92,7 @@ export function P2PHero() {
 
 						<motion.h1
 							className="type-h1"
-							initial={{ opacity: 0, y: 20 }}
+							initial={false}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.1 }}
 						>
@@ -108,7 +107,7 @@ export function P2PHero() {
 
 						<motion.p
 							className="mt-5 text-lg font-medium text-violet-700 md:text-xl"
-							initial={{ opacity: 0, y: 20 }}
+							initial={false}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.15 }}
 						>
@@ -117,7 +116,7 @@ export function P2PHero() {
 
 						<motion.p
 							className="mt-4 type-lede-hero text-muted-foreground"
-							initial={{ opacity: 0, y: 20 }}
+							initial={false}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
 						>
@@ -126,7 +125,7 @@ export function P2PHero() {
 
 						<motion.div
 							className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap"
-							initial={{ opacity: 0, y: 20 }}
+							initial={false}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6, delay: 0.25 }}
 						>
@@ -155,7 +154,7 @@ export function P2PHero() {
 
 						<motion.div
 							className="mt-10 grid grid-cols-3 gap-4 border-t pt-6 sm:gap-6"
-							initial={{ opacity: 0 }}
+							initial={false}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.6, delay: 0.4 }}
 						>

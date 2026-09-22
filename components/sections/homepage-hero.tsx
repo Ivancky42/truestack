@@ -33,36 +33,26 @@ const VERB_ACCENT =
 
 function RotatingVerb({
 	reduceMotion,
-	enterDelay,
 	verbs,
 	suffix,
 }: {
 	reduceMotion: boolean | null;
-	enterDelay: number;
 	verbs: string[];
 	/** Locale-specific tail appended to every verb (" on." in English). */
 	suffix: string;
 }) {
 	const [index, setIndex] = useState(0);
-	const [readyToCycle, setReadyToCycle] = useState(false);
+	const [animateEnter, setAnimateEnter] = useState(false);
 	const phrase = `${verbs[index]}${suffix}`;
 
 	useEffect(() => {
 		if (reduceMotion) return;
-		const start = window.setTimeout(
-			() => setReadyToCycle(true),
-			(enterDelay + 0.55) * 1000 + 80,
-		);
-		return () => window.clearTimeout(start);
-	}, [reduceMotion, enterDelay]);
-
-	useEffect(() => {
-		if (reduceMotion || !readyToCycle) return;
 		const id = window.setInterval(() => {
+			setAnimateEnter(true);
 			setIndex((i) => (i + 1) % verbs.length);
 		}, ROTATE_MS);
 		return () => window.clearInterval(id);
-	}, [reduceMotion, readyToCycle, verbs.length]);
+	}, [reduceMotion, verbs.length]);
 
 	if (reduceMotion) {
 		return (
@@ -75,46 +65,35 @@ function RotatingVerb({
 
 	return (
 		<span className="inline-block overflow-hidden pb-[0.14em] align-bottom">
-			<motion.span
-				className="inline-block"
-				initial={{ y: "108%" }}
-				animate={{ y: 0 }}
-				transition={{
-					duration: 0.55,
-					delay: enterDelay,
-					ease: VERB_EASE,
-				}}
-			>
-				<span className="relative inline-grid">
-					{verbs.map((verb) => (
-						<span
-							key={verb}
-							className="invisible col-start-1 row-start-1 whitespace-nowrap"
-							aria-hidden
-						>
-							{verb}
-							{suffix}
-						</span>
-					))}
-					<span className="absolute inset-0 overflow-hidden">
-						<AnimatePresence initial={false}>
-							<motion.span
-								key={verbs[index]}
-								className="absolute inset-0 whitespace-nowrap"
-								initial={{ y: "108%" }}
-								animate={{ y: 0 }}
-								exit={{ y: "-108%" }}
-								transition={{
-									duration: 0.55,
-									ease: VERB_EASE,
-								}}
-							>
-								<span className={VERB_ACCENT}>{phrase}</span>
-							</motion.span>
-						</AnimatePresence>
+			<span className="relative inline-grid">
+				{verbs.map((verb) => (
+					<span
+						key={verb}
+						className="invisible col-start-1 row-start-1 whitespace-nowrap"
+						aria-hidden
+					>
+						{verb}
+						{suffix}
 					</span>
+				))}
+				<span className="absolute inset-0 overflow-hidden">
+					<AnimatePresence initial={false}>
+						<motion.span
+							key={verbs[index]}
+							className="absolute inset-0 whitespace-nowrap"
+							initial={animateEnter ? { y: "108%" } : false}
+							animate={{ y: 0 }}
+							exit={{ y: "-108%" }}
+							transition={{
+								duration: 0.55,
+								ease: VERB_EASE,
+							}}
+						>
+							<span className={VERB_ACCENT}>{phrase}</span>
+						</motion.span>
+					</AnimatePresence>
 				</span>
-			</motion.span>
+			</span>
 		</span>
 	);
 }
@@ -130,28 +109,13 @@ function HeroHeadline() {
 		<div className="type-h1 text-pretty">
 			<h1 className="sr-only">{t("hero.title")}</h1>
 			<div aria-hidden>
-				{prefix.map((word, i) => (
-					<span
-						key={word}
-						className="mr-[0.28em] inline-block overflow-hidden pb-[0.14em] align-bottom"
-					>
-						<motion.span
-							className="inline-block"
-							initial={reduceMotion ? false : { y: "108%" }}
-							animate={{ y: 0 }}
-							transition={{
-								duration: 0.55,
-								delay: reduceMotion ? 0 : 0.1 + i * 0.07,
-								ease: VERB_EASE,
-							}}
-						>
-							{word}
-						</motion.span>
+				{prefix.map((word) => (
+					<span key={word} className="mr-[0.28em] inline-block">
+						{word}
 					</span>
 				))}
 				<RotatingVerb
 					reduceMotion={reduceMotion}
-					enterDelay={0.1 + prefix.length * 0.07}
 					verbs={verbs}
 					suffix={verbSuffix}
 				/>
@@ -207,8 +171,6 @@ function HeroCollage() {
 					alt={t("hero.alt.dashboard")}
 					width={3368}
 					height={2662}
-					quality={100}
-					unoptimized
 					priority
 					className="h-[196px] w-full object-cover object-top sm:h-[290px] md:h-[360px]"
 					sizes="(max-width: 1024px) 100vw, 560px"
@@ -253,7 +215,6 @@ function HeroCollage() {
 export function HomepageHero() {
 	const t = useTranslations("Home");
 	const tCommon = useTranslations("Common");
-	const reduceMotion = useReducedMotion();
 
 	return (
 		<section className="hero-under-nav relative overflow-hidden">
@@ -288,8 +249,8 @@ export function HomepageHero() {
 					/>
 				</svg>
 
-				<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-primary/20 blur-3xl motion-safe:animate-pulse" />
-				<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-primary/10 blur-3xl" />
+				<div className="absolute -top-40 -right-28 h-152 w-152 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-20" />
+				<div className="absolute top-28 -left-32 h-104 w-104 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-10" />
 			</div>
 
 			<div className="hero-shell px-6 pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-19 lg:pb-20">
@@ -297,16 +258,7 @@ export function HomepageHero() {
 					<div>
 						<HeroHeadline />
 
-						<motion.div
-							initial={
-								reduceMotion ? false : { opacity: 0, y: 16 }
-							}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{
-								duration: 0.5,
-								delay: reduceMotion ? 0 : 0.62,
-							}}
-						>
+						<div>
 							<p className="mt-5 max-w-[30em] type-lede-hero text-pretty text-muted-foreground">
 								{t("hero.lede")}
 							</p>
@@ -339,17 +291,12 @@ export function HomepageHero() {
 									</span>
 								))}
 							</div>
-						</motion.div>
+						</div>
 					</div>
 
-					<motion.div
-						className="pb-8 md:pb-2"
-						initial={{ opacity: 0, y: 16 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.12 }}
-					>
+					<div className="pb-8 md:pb-2">
 						<HeroCollage />
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</section>

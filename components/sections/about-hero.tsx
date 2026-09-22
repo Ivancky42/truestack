@@ -82,11 +82,7 @@ export function AboutHero() {
 		<section className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
 			<div className="relative hero-shell px-6 pt-14 md:pt-16 lg:pt-20">
-				<motion.div
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-				>
+				<div>
 					<nav
 						aria-label={t("hero.breadcrumbAria")}
 						className="mb-5 flex items-center gap-2 text-sm text-muted-foreground"
@@ -127,13 +123,10 @@ export function AboutHero() {
 							))}
 						</div>
 					</div>
-				</motion.div>
+				</div>
 
-				<motion.div
+				<div
 					className="grid overflow-hidden rounded-t-2xl border border-b-0 bg-card shadow-[0_-2px_30px_-12px_rgb(15_23_42/0.18)] sm:grid-cols-3"
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5, delay: 0.12 }}
 				>
 					{stats.map((stat, index) => (
 						<div
@@ -166,7 +159,7 @@ export function AboutHero() {
 							</p>
 						</div>
 					))}
-				</motion.div>
+				</div>
 			</div>
 		</section>
 	);

@@ -70,7 +70,7 @@ function GridPattern() {
 				</defs>
 				<rect width="100%" height="100%" fill="url(#grid-truekredit-hero)" />
 			</svg>
-			<div className="absolute -top-32 left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl motion-safe:animate-pulse" />
+			<div className="absolute -top-32 left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,var(--primary)_0%,transparent_70%)] opacity-20" />
 		</div>
 	);
 }
@@ -81,12 +81,14 @@ export function TrueKreditHero() {
 	const reduceMotion = useReducedMotion();
 	const [active, setActive] = useState(0);
 	const [playing, setPlaying] = useState(true);
+	const [hasSlid, setHasSlid] = useState(false);
 	const slide = SLIDES[active];
 
 	useEffect(() => {
 		// Autoplay is suppressed entirely under prefers-reduced-motion.
 		if (!playing || reduceMotion) return;
 		const id = window.setInterval(() => {
+			setHasSlid(true);
 			setActive((index) => (index + 1) % SLIDES.length);
 		}, AUTOPLAY_MS);
 		return () => window.clearInterval(id);
@@ -103,6 +105,7 @@ export function TrueKreditHero() {
 
 	const selectSlide = (index: number) => {
 		setPlaying(false);
+		setHasSlid(true);
 		setActive(index);
 	};
 
@@ -110,11 +113,7 @@ export function TrueKreditHero() {
 		<section id="hero" className="hero-under-nav relative overflow-hidden">
 			<GridPattern />
 			<div className="relative hero-shell px-6 pt-16 text-center md:pt-20">
-				<motion.div
-					initial={{ opacity: 0, y: 16 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-				>
+				<div>
 					<h1 className="mx-auto max-w-[20em] type-h1 text-pretty">
 						{t.rich("hero.title", {
 							accent: (c) => (
@@ -146,15 +145,10 @@ export function TrueKreditHero() {
 							</CtaLink>
 						</Button>
 					</div>
-				</motion.div>
+				</div>
 			</div>
 
-			<motion.div
-				className="relative hero-shell px-6 pt-10"
-				initial={{ opacity: 0, y: 16 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.7, delay: 0.15 }}
-			>
+			<div className="relative hero-shell px-6 pt-10">
 				<div
 					role="tablist"
 					aria-label={t("hero.tablistAria")}
@@ -205,7 +199,7 @@ export function TrueKreditHero() {
 								key={slide.id}
 								className="absolute inset-0"
 								initial={
-									reduceMotion ? false : { opacity: 0 }
+									hasSlid && !reduceMotion ? { opacity: 0 } : false
 								}
 								animate={{ opacity: 1 }}
 								exit={reduceMotion ? undefined : { opacity: 0 }}
@@ -223,8 +217,6 @@ export function TrueKreditHero() {
 										}
 										width={slide.width}
 										height={slide.height}
-										quality={100}
-										unoptimized
 										priority={slide.id === "admin"}
 										sizes="(max-width: 1440px) calc(100vw - 3rem), 1440px"
 										className="h-full w-full object-cover object-top"
@@ -234,7 +226,7 @@ export function TrueKreditHero() {
 						</AnimatePresence>
 					</div>
 				</div>
-			</motion.div>
+			</div>
 		</section>
 	);
 }

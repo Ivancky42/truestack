@@ -132,7 +132,7 @@ export function WorkCaseStudyDetailContent({
 				<AboutHeroBackdrop />
 				<div className="relative hero-shell px-6">
 					<motion.div
-						initial={{ opacity: 0, y: 16 }}
+						initial={false}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.55 }}
 						className="max-w-3xl"

@@ -51,13 +51,13 @@ export function KycFlowDiagram() {
 	return (
 		<motion.div
 			className="relative"
-			initial={{ opacity: 0 }}
+			initial={false}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 0.6, delay: 0.2 }}
 		>
 			<motion.div
 				className="mx-auto w-full max-w-[320px]"
-				initial={{ opacity: 0, y: 30 }}
+				initial={false}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.7, delay: 0.3 }}
 			>
@@ -66,7 +66,7 @@ export function KycFlowDiagram() {
 
 			<motion.div
 				className="absolute -left-4 top-12 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-				initial={{ opacity: 0, x: -20 }}
+				initial={false}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 1.8, duration: 0.5 }}
 			>
@@ -76,7 +76,7 @@ export function KycFlowDiagram() {
 
 			<motion.div
 				className="absolute -right-4 top-32 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-				initial={{ opacity: 0, x: 20 }}
+				initial={false}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 2.0, duration: 0.5 }}
 			>
@@ -86,7 +86,7 @@ export function KycFlowDiagram() {
 
 			<motion.div
 				className="absolute -left-8 bottom-24 hidden rounded-lg border bg-white px-3 py-2 shadow-md lg:block"
-				initial={{ opacity: 0, x: -20 }}
+				initial={false}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ delay: 2.2, duration: 0.5 }}
 			>

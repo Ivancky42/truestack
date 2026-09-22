@@ -29,7 +29,7 @@ export function SoftwareDevelopmentHeroVisual({
 	return (
 		<motion.div
 			className={cn("relative mx-auto w-full max-w-md", className)}
-			initial={{ opacity: 0, y: 16 }}
+			initial={animateOnMount ? false : { opacity: 0, y: 16 }}
 			{...(animateOnMount
 				? { animate: { opacity: 1, y: 0 } }
 				: {
@@ -211,11 +211,7 @@ export function SoftwareDevelopmentHero() {
 
 			<div className="hero-shell px-6 py-16 md:py-24 lg:py-28">
 				<div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-					>
+					<div>
 						<p className="mb-4 type-eyebrow text-primary">
 							{t("hero.eyebrow")}
 						</p>
@@ -256,7 +252,7 @@ export function SoftwareDevelopmentHero() {
 								</CtaLink>
 							</Button>
 						</div>
-					</motion.div>
+					</div>
 
 					<SoftwareDevelopmentHeroVisual animateOnMount />
 				</div>

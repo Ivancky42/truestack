@@ -48,7 +48,7 @@ export function LegalHero({
       <GridPattern />
       <div className="relative hero-shell px-6 py-14 md:py-16 lg:py-20">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
@@ -74,7 +74,7 @@ export function LegalHero({
         <motion.nav
           aria-label={t("pagesNav")}
           className="mt-10 flex flex-wrap gap-2"
-          initial={{ opacity: 0, y: 12 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.12 }}
         >
