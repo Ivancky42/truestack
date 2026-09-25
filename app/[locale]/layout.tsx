@@ -55,6 +55,8 @@ const newsreader = Newsreader({
 	subsets: ["latin"],
 	weight: ["400", "500", "600"],
 	display: "swap",
+	// Display face for /truesyariah only; do not preload it on every page.
+	preload: false,
 });
 
 const notoNaskh = Noto_Naskh_Arabic({
@@ -62,6 +64,9 @@ const notoNaskh = Noto_Naskh_Arabic({
 	subsets: ["arabic"],
 	weight: ["400", "500", "600"],
 	display: "swap",
+	// Arabic terms on /truesyariah and TrueP2P only; do not preload it on
+	// every page.
+	preload: false,
 });
 
 const notoSansSc = Noto_Sans_SC({

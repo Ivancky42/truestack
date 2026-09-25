@@ -107,6 +107,10 @@ Each locale has a **self-canonical** (`/zh/truekredit` canonicalises to `/zh/tru
 
 `app/sitemap.ts` lists en + ms + zh + ru for every marketing route, including Insights index and every published insight slug. Legal pages stay English-only. Priority and `changeFrequency` match across locale variants of the same path.
 
+`lastModified` is the date the page's content last changed, set per path in `staticPaths` (Insights posts use Sanity `_updatedAt`; the Insights index uses the newest post). Never stamp request time: Google ignores lastmod site-wide when every URL claims "now". Bump the date in the same commit that changes a page.
+
+`/en` and `/en/*` redirect permanently (308) to the unprefixed English URL in `next.config.ts`.
+
 ### `og:locale`
 
 | Locale | `og:locale` | `og:locale:alternate` |

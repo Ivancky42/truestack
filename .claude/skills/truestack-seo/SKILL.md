@@ -20,7 +20,8 @@ Full rules live in [docs/BRAND_GUIDE.md](../../../docs/BRAND_GUIDE.md) §9; back
 2. Open Graph image present (inherits `lib/seo-defaults.ts` `defaultOgImage` `/og.png`, or a page-specific image).
 3. JSON-LD component in `components/seo/` rendered by the page — Service/Product schema,
    `FAQPage` whenever the page has an FAQ, BreadcrumbList for nested pages.
-4. Route listed in `app/sitemap.ts` with priority/changeFrequency.
+4. Route listed in `app/sitemap.ts` with priority/changeFrequency and a real `lastModified`
+   date (bump it whenever the page's content changes; never request time).
 5. `app/llms.txt/route.ts` line added/updated (and the Chinese summary paragraph if the
    fact is China-relevant) — keep it factual and dense with entity names (TrueKredit™,
    KPKT, Lampiran A/B1…). This file is what AI assistants quote.

@@ -2,6 +2,7 @@
 	"_status": "ai-draft",
 	"Footer": {
 		"navLabel": "Подвал",
+		"languagesLabel": "Языки",
 		"columns": {
 			"services": "Услуги",
 			"platforms": "Платформы",

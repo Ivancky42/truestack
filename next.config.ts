@@ -48,6 +48,18 @@ const nextConfig: NextConfig = {
 				destination: "https://www.truestack.my/:path*",
 				permanent: true,
 			},
+			// English is unprefixed. next-intl would answer /en/* with a 307,
+			// which keeps the duplicate URL alive; make it permanent.
+			{
+				source: "/en",
+				destination: "/",
+				permanent: true,
+			},
+			{
+				source: "/en/:path*",
+				destination: "/:path*",
+				permanent: true,
+			},
 			{
 				source: "/services",
 				destination: "/services/digital-license",
