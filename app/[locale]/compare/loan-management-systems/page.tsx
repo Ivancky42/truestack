@@ -5,11 +5,13 @@ import { Hero } from "@/components/sections/hero";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { FaqSchema } from "@/components/seo/faq-schema";
-import { inLanguage, resolveAppLocale } from "@/lib/i18n/config";
+import { TrueKreditCompareSchema } from "@/components/seo/truekredit-compare-schema";
+import { TrueKreditCompareFaq } from "@/components/sections/truekredit-compare-faq";
+import { resolveAppLocale } from "@/lib/i18n/config";
 import { publishedFaqItems } from "@/lib/i18n/faq";
+import { PageMessages } from "@/lib/i18n/messages";
 import { localizePageMetadata } from "@/lib/i18n/seo";
 import {
-	absoluteLocalizedUrl,
 	defaultOgImage,
 	defaultTwitterCard,
 	siteName,
@@ -18,7 +20,6 @@ import {
 	COMPARE_KEYWORDS,
 	COMPARE_PAGE_PATH,
 	COMPARE_ROWS,
-	buildCompareJsonLd,
 } from "@/lib/truekredit-compare-seo";
 import { TRUEKREDIT_PAGE_PATH } from "@/lib/truekredit-seo";
 
@@ -73,26 +74,10 @@ export default async function CompareLoanManagementSystemsPage({
 	const faqItems = publishedFaqItems(
 		t.raw("faq.items") as { question: string; answer: string }[],
 	);
-	const schema = buildCompareJsonLd({
-		pageUrl: absoluteLocalizedUrl(COMPARE_PAGE_PATH, locale),
-		homeUrl: absoluteLocalizedUrl("/", locale),
-		truekreditUrl: absoluteLocalizedUrl(TRUEKREDIT_PAGE_PATH, locale),
-		webpageName: t("meta.title"),
-		description: t("meta.description"),
-		inLanguage: inLanguage[locale],
-		breadcrumbHome: tCommon("breadcrumbHome"),
-		breadcrumbTrueKredit: t("breadcrumb.truekredit"),
-		breadcrumbCurrent: t("breadcrumb.current"),
-	});
 
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(schema).replace(/</g, "\\u003c"),
-				}}
-			/>
+			<TrueKreditCompareSchema />
 			<FaqSchema items={faqItems} />
 
 			<Hero
@@ -194,29 +179,9 @@ export default async function CompareLoanManagementSystemsPage({
 				</div>
 			</section>
 
-			{faqItems.length > 0 ? (
-				<section
-					id="faq"
-					aria-labelledby="compare-faq-heading"
-					className="scroll-mt-20 border-t bg-muted/30 py-16 md:py-20"
-				>
-					<div className="mx-auto max-w-3xl px-6">
-						<h2 id="compare-faq-heading" className="type-h2">
-							{t("faq.title")}
-						</h2>
-						<div className="mt-8 divide-y rounded-2xl border bg-card shadow-sm">
-							{faqItems.map((item) => (
-								<div key={item.question} className="p-6">
-									<h3 className="type-subhead">{item.question}</h3>
-									<p className="mt-2 type-ui text-muted-foreground">
-										{item.answer}
-									</p>
-								</div>
-							))}
-						</div>
-					</div>
-				</section>
-			) : null}
+			<PageMessages namespaces={["TrueKreditCompare"]}>
+				<TrueKreditCompareFaq />
+			</PageMessages>
 
 			<RelatedKpktServices />
 
