@@ -2,6 +2,7 @@
 	"_status": "source",
 	"Footer": {
 		"navLabel": "Footer",
+		"languagesLabel": "Languages",
 		"columns": {
 			"services": "Services",
 			"platforms": "Platforms",

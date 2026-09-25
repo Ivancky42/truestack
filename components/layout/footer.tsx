@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Linkedin, Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FooterLanguageLinks } from "@/components/layout/footer-language-links";
 import {
   legalName,
   orgAddressLines,
@@ -195,15 +196,20 @@ export async function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col gap-5 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-muted-foreground/70">
-              {t("copyright", { year: new Date().getFullYear() })}
-            </p>
+            <div className="flex flex-col gap-3">
+              <FooterLanguageLinks ariaLabel={t("languagesLabel")} />
+              <p className="text-sm text-muted-foreground/70">
+                {t("copyright", { year: new Date().getFullYear() })}
+              </p>
+            </div>
             <a href="https://aws.amazon.com/what-is-cloud-computing">
               {/* Official AWS embed — do not optimize or restyle the mark. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://d0.awsstatic.com/logos/powered-by-aws.png"
                 alt="Powered by AWS Cloud Computing"
+                loading="lazy"
+                decoding="async"
                 className="h-9 w-auto"
               />
             </a>

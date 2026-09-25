@@ -12,6 +12,7 @@ import {
   siteNameShort,
   siteUrl,
 } from "@/lib/seo-defaults";
+import { TRUEKREDIT_BRAND } from "@/lib/truekredit-seo";
 
 const baseUrl = siteUrl;
 
@@ -96,6 +97,7 @@ export async function OrganizationSchema() {
       value: orgRegistrationNumber,
     },
     sameAs: resolveOrgSameAs(),
+    brand: TRUEKREDIT_BRAND,
     knowsAbout: [
       "KPKT license management",
       "online money lending licence",

@@ -25,9 +25,11 @@ export async function HomeSchema() {
 		isPartOf: { "@id": `${siteUrl}/#website` },
 		about: { "@id": `${siteUrl}/#organization` },
 		significantLink: [
-			`${siteUrl}/truekredit`,
-			`${siteUrl}/services/digital-license`,
-		],
+			"/truekredit",
+			"/services/digital-license",
+			"/services/account-management",
+			"/services/angkasa-pba",
+		].map((path) => absoluteLocalizedUrl(path, locale)),
 	};
 
 	return (

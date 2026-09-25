@@ -2,6 +2,7 @@
 	"_status": "ai-draft",
 	"Footer": {
 		"navLabel": "Pengaki",
+		"languagesLabel": "Bahasa",
 		"columns": {
 			"services": "Perkhidmatan",
 			"platforms": "Platform",

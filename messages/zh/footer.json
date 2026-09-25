@@ -2,6 +2,7 @@
 	"_status": "ai-draft",
 	"Footer": {
 		"navLabel": "页脚",
+		"languagesLabel": "语言",
 		"columns": {
 			"services": "服务",
 			"platforms": "平台",
