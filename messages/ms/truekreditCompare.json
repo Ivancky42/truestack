@@ -1,0 +1,103 @@
+{
+	"_status": "ai-draft",
+	"TrueKreditCompare": {
+		"meta": {
+			"title": "TrueKredit™ lwn LMS Lain | Sistem Pengurusan Pinjaman Wang",
+			"description": "Membandingkan sistem pengurusan pinjaman wang (LMS) untuk pemberi pinjam wang KPKT? Sembilan soalan untuk vendor dan jawapan TrueKredit™ bagi setiap satu.",
+			"openGraphTitle": "Memilih sistem pengurusan pinjaman wang di Malaysia",
+			"openGraphDescription": "Sembilan soalan untuk setiap vendor sistem pengurusan pinjaman (LMS) — kertas kerja KPKT, lesen digital, hos data — dan jawapan TrueKredit™ bagi setiap satu."
+		},
+		"breadcrumb": {
+			"truekredit": "TrueKredit™",
+			"current": "Bandingkan sistem pengurusan pinjaman"
+		},
+		"hero": {
+			"eyebrow": "TrueKredit™ dibandingkan",
+			"title": "Memilih sistem pengurusan pinjaman wang di Malaysia.",
+			"lede": "Kebanyakan pemberi pinjam wang berlesen KPKT membandingkan beberapa sistem pengurusan pinjaman (LMS) sebelum membuat keputusan. Inilah soalan yang membezakannya — dan jawapan TrueKredit bagi setiap satu.",
+			"secondaryCta": "Lihat TrueKredit"
+		},
+		"checklist": {
+			"eyebrow": "Senarai semak",
+			"title": "Sembilan soalan untuk setiap vendor LMS.",
+			"lede": "Tanya soalan yang sama kepada setiap vendor dalam senarai pendek anda dan bandingkan jawapannya secara bersebelahan.",
+			"headers": {
+				"question": "Soalan",
+				"check": "Apa yang perlu dilihat",
+				"truekredit": "TrueKredit"
+			},
+			"rows": {
+				"paperwork": {
+					"question": "Adakah ia menghasilkan kertas kerja KPKT anda?",
+					"check": "Lampiran A, B dan B1, perjanjian Jadual J dan K serta eksport iDEAL KPKT daripada rekod pinjaman — bukan hamparan berasingan.",
+					"truekredit": "Ya. Dijana daripada fail pinjaman yang sama yang digunakan pasukan anda."
+				},
+				"licence": {
+					"question": "Adakah ia sedia untuk lesen digital KPKT?",
+					"check": "Laman web pelanggan, aplikasi mudah alih dan tandatangan digital untuk pinjaman wang dalam talian.",
+					"truekredit": "TrueKredit Pro: laman web berjenama pada domain anda, aplikasi iPhone dan Android, tandatangan digital yang disahkan oleh MSC Trustgate, dan sokongan untuk semakan lesen pinjaman wang dalam talian KPKT."
+				},
+				"data": {
+					"question": "Di manakah data peminjam disimpan?",
+					"check": "Hos di Malaysia, dan sama ada data anda disimpan bersama data pemberi pinjam wang lain.",
+					"truekredit": "Awan selamat anda sendiri di Malaysia. Tidak pernah dicampur dengan data pemberi pinjam wang lain."
+				},
+				"changes": {
+					"question": "Bolehkah ia mengendalikan pembiayaan semula, tambahan dan penjadualan semula?",
+					"check": "Perubahan dijejaki pada pinjaman asal, dengan sejarahnya kekal utuh.",
+					"truekredit": "Ya. Ketiga-tiganya kekal pada fail pinjaman yang sama."
+				},
+				"checks": {
+					"question": "Semakan apakah yang sudah terbina?",
+					"check": "Semakan identiti, syarikat, pembayaran dan kredit di dalam fail pinjaman.",
+					"truekredit": "e-KYC TrueIdentity™, carian syarikat TrueSSM™ dan kutipan melalui gerbang pembayaran. Laporan kredit CTOS akan datang."
+				},
+				"controls": {
+					"question": "Apakah yang menghalang kesilapan yang mahal?",
+					"check": "Kelulusan, kawalan pembayaran keluar, akses berasaskan peranan dan jejak audit.",
+					"truekredit": "Kelulusan, baucar pembayaran dengan kelulusan pembayaran keluar oleh dua orang, akses berasaskan peranan dan jejak audit."
+				},
+				"fit": {
+					"question": "Adakah ia sesuai dengan cara anda memberi pinjaman sekarang?",
+					"check": "Sama ada aliran kerja boleh dipadankan dengan produk pinjaman dan langkah kelulusan anda.",
+					"truekredit": "Pilihan aliran kerja pinjaman dikonfigurasi mengikut cara pejabat anda sudah beroperasi."
+				},
+				"growth": {
+					"question": "Bolehkah anda bermula kecil dan berkembang?",
+					"check": "Laluan dari operasi cawangan ke pinjaman dalam talian tanpa memindahkan data anda.",
+					"truekredit": "Mula dengan Standard dan naik taraf ke Pro. Peminjam, pinjaman dan sejarah kekal di tempatnya."
+				},
+				"licensing": {
+					"question": "Bolehkah vendor membantu dengan urusan KPKT itu sendiri?",
+					"check": "Bantuan untuk lesen, pembaharuan dan penyerahan — bukan sekadar perisian.",
+					"truekredit": "Truestack menguruskan laluan lesen digital KPKT, pengurusan akaun KPKT dan permohonan kod PBA ANGKASA."
+				}
+			}
+		},
+		"alternatives": {
+			"title": "Sistem lain yang turut dinilai.",
+			"body": "Pemberi pinjam wang di Malaysia turut menyenarai pendek sistem seperti Multi Credit, MERP, Bizbott, Arkmind dan HES FinTech. Kami tidak menerbitkan dakwaan tentang produk vendor lain. Tanya setiap satu sembilan soalan di atas dan bandingkan jawapan mereka dengan jawapan kami."
+		},
+		"faq": {
+			"title": "Soalan lazim",
+			"items": [
+				{
+					"question": "Apakah sistem pengurusan pinjaman terbaik untuk pemberi pinjam wang KPKT di Malaysia?",
+					"answer": "Pilihan terbaik ialah sistem yang menghasilkan kertas kerja KPKT anda, menyimpan data peminjam di Malaysia dan boleh berkembang bersama lesen anda. TrueKredit™ ialah sistem pengurusan pinjaman wang yang dibina untuk pemberi pinjam wang berlesen KPKT: Lampiran A, B dan B1, Jadual J dan K, serta eksport iDEAL KPKT dijana daripada fail pinjaman, pada awan selamat anda sendiri di Malaysia."
+				},
+				{
+					"question": "Apakah perbezaan TrueKredit berbanding LMS lain di Malaysia?",
+					"answer": "TrueKredit dibina untuk pemberi pinjam wang berlesen KPKT. Setiap pemberi pinjam wang beroperasi pada awannya sendiri di Malaysia, kertas kerja KPKT dijana daripada rekod pinjaman, dan TrueKredit Pro menambah laman web peminjam, aplikasi dan tandatangan digital yang digunakan untuk lesen pinjaman wang dalam talian KPKT. Truestack juga menguruskan lesen dan pengurusan akaun KPKT, jadi perisian dan pematuhan berada di bawah satu pasukan."
+				},
+				{
+					"question": "Adakah TrueKredit perisian pinjaman wang dalam talian KPKT?",
+					"answer": "Ya. TrueKredit Pro memberikan pemberi pinjam wang laman web pelanggan berjenama, aplikasi iPhone dan Android serta tandatangan digital, dengan sokongan untuk semakan Lesen Pinjaman Wang Dalam Talian KPKT. Truestack juga boleh menguruskan permohonan lesen itu sendiri melalui perkhidmatan lesen digital KPKT."
+				},
+				{
+					"question": "Bolehkah kami melihat TrueKredit sebelum membuat keputusan?",
+					"answer": "Boleh. Tempah konsultasi percuma tanpa obligasi. Kami akan menunjukkan TrueKredit dan menjawab sembilan soalan ini untuk perniagaan anda, termasuk sama ada Standard atau Pro yang sesuai."
+				}
+			]
+		}
+	}
+}

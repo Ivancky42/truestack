@@ -57,9 +57,20 @@ export type InsightPostSummary = {
 	estimatedReadingMinutes: number;
 };
 
+/** Optional search title/description for one non-English locale URL. */
+export type InsightLocalizedSeo = {
+	title?: string;
+	description?: string;
+};
+
 export type InsightPost = InsightPostSummary & {
 	seoTitle?: string;
 	seoDescription: string;
+	/**
+	 * Per-locale `<title>` / meta description for /ms, /zh and /ru post URLs.
+	 * Article bodies stay English; missing values fall back to the English SEO.
+	 */
+	localizedSeo?: Partial<Record<"ms" | "zh" | "ru", InsightLocalizedSeo>>;
 	body: PortableTextValue;
 	faq: InsightFaq[];
 	relatedProducts: RelatedProduct[];

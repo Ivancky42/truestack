@@ -1,0 +1,103 @@
+{
+	"_status": "ai-draft",
+	"TrueKreditCompare": {
+		"meta": {
+			"title": "KPKT贷款管理系统怎么选｜TrueKredit™",
+			"description": "正在比较马来西亚KPKT贷款管理系统（LMS）？这里列出应向每家供应商提出的九个问题，以及TrueKredit™针对每个问题的回答，助您出海展业前选对系统。",
+			"openGraphTitle": "如何选择马来西亚贷款管理系统",
+			"openGraphDescription": "应向每家贷款管理系统（LMS）供应商提出的九个问题——KPKT 文件、数字牌照、数据托管——以及 TrueKredit™ 的逐项回答。"
+		},
+		"breadcrumb": {
+			"truekredit": "TrueKredit™",
+			"current": "贷款管理系统对比"
+		},
+		"hero": {
+			"eyebrow": "TrueKredit™ 对比",
+			"title": "如何选择马来西亚贷款管理系统。",
+			"lede": "大多数 KPKT 持牌放贷公司在决定前，都会比较几套贷款管理系统（LMS）。以下是真正拉开差距的问题——以及 TrueKredit 的逐项回答。",
+			"secondaryCta": "了解 TrueKredit"
+		},
+		"checklist": {
+			"eyebrow": "选型清单",
+			"title": "向每家 LMS 供应商提出的九个问题。",
+			"lede": "向候选名单上的每家供应商提出同样的问题，并把答案并排比较。",
+			"headers": {
+				"question": "问题",
+				"check": "关注要点",
+				"truekredit": "TrueKredit"
+			},
+			"rows": {
+				"paperwork": {
+					"question": "能否生成您的 KPKT 文件？",
+					"check": "Lampiran A、B 与 B1，Jadual J 与 K 贷款协议，以及 iDEAL KPKT 导出，均来自贷款记录——而不是另一份电子表格。",
+					"truekredit": "可以。由您团队日常使用的同一份贷款档案生成。"
+				},
+				"licence": {
+					"question": "是否已为 KPKT 数字牌照做好准备？",
+					"check": "用于线上放贷的客户网站、移动应用与电子签名。",
+					"truekredit": "TrueKredit Pro：您自有域名上的品牌网站、iPhone 与 Android 应用、经 MSC Trustgate 验证的电子签名，并支持 KPKT 线上放贷牌照审核。"
+				},
+				"data": {
+					"question": "借款人数据存放在哪里？",
+					"check": "是否托管在马来西亚，以及您的数据是否与其他放贷公司的数据放在一起。",
+					"truekredit": "存放在您位于马来西亚的专属安全云，绝不与其他放贷公司的数据混用。"
+				},
+				"changes": {
+					"question": "能否处理再融资、增贷与重新排期？",
+					"check": "变更记录在原贷款上，历史完整保留。",
+					"truekredit": "可以。三者都保留在同一份贷款档案上。"
+				},
+				"checks": {
+					"question": "内置了哪些核查？",
+					"check": "在贷款档案内完成身份、公司、支付与信用核查。",
+					"truekredit": "TrueIdentity™ e-KYC、TrueSSM™ 公司查询与支付网关收款。CTOS 信用报告即将推出。"
+				},
+				"controls": {
+					"question": "如何避免代价高昂的错误？",
+					"check": "审批、放款控制、基于角色的权限与审计轨迹。",
+					"truekredit": "审批、双人放款审批的付款凭单、基于角色的权限与审计轨迹。"
+				},
+				"fit": {
+					"question": "是否契合您现有的放贷方式？",
+					"check": "工作流能否匹配您的贷款产品与审批步骤。",
+					"truekredit": "贷款工作流选项按您办公室既有的方式配置。"
+				},
+				"growth": {
+					"question": "能否从小规模起步再扩展？",
+					"check": "从分行运营走向线上放贷，而无需迁移数据。",
+					"truekredit": "先用 Standard，再升级到 Pro。借款人、贷款与历史记录原地保留。"
+				},
+				"licensing": {
+					"question": "供应商能否协助 KPKT 事务本身？",
+					"check": "协助牌照申请、续期与呈报——而不只是提供软件。",
+					"truekredit": "Truestack 办理 KPKT 数字牌照、KPKT 账户管理与 ANGKASA PBA 代码申请。"
+				}
+			}
+		},
+		"alternatives": {
+			"title": "放贷公司还会考虑的其他系统。",
+			"body": "马来西亚的放贷公司也会把 Multi Credit、MERP、Bizbott、Arkmind 与 HES FinTech 等系统列入候选名单。我们不发布关于其他供应商产品的说法。请向每家供应商提出上述九个问题，并把他们的答案与我们的答案对比。"
+		},
+		"faq": {
+			"title": "常见问题",
+			"items": [
+				{
+					"question": "马来西亚 KPKT 放贷公司最适合用哪套贷款管理系统？",
+					"answer": "最合适的系统，是能生成您的 KPKT 文件、把借款人数据留在马来西亚、并能随牌照一起成长的系统。TrueKredit™ 是为 KPKT 持牌放贷公司打造的贷款管理系统：Lampiran A、B 与 B1，Jadual J 与 K，以及 iDEAL KPKT 导出都由贷款档案生成，运行在您位于马来西亚的专属安全云上。"
+				},
+				{
+					"question": "TrueKredit 与马来西亚其他 LMS 有什么不同？",
+					"answer": "TrueKredit 为 KPKT 持牌放贷公司打造。每家放贷公司运行在自己位于马来西亚的云上，KPKT 文件由贷款记录生成，TrueKredit Pro 还增加了用于 KPKT 线上放贷牌照的借款人网站、应用与电子签名。Truestack 同时办理牌照与 KPKT 账户管理，软件与合规由同一团队负责。"
+				},
+				{
+					"question": "TrueKredit 是 KPKT 线上放贷软件吗？",
+					"answer": "是的。TrueKredit Pro 为放贷公司提供品牌客户网站、iPhone 与 Android 应用以及电子签名，并支持 KPKT 线上放贷牌照审核。Truestack 也可以通过 KPKT 数字牌照服务为您办理牌照申请。"
+				},
+				{
+					"question": "决定之前能先看看 TrueKredit 吗？",
+					"answer": "可以。预约免费、无义务的咨询。我们会为您演示 TrueKredit，并结合您的业务回答这九个问题，包括 Standard 与 Pro 哪个更合适。"
+				}
+			]
+		}
+	}
+}

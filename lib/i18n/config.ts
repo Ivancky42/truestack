@@ -86,6 +86,18 @@ export const availableLanguages = [
 	{ "@type": "Language" as const, name: "Russian", alternateName: "ru" },
 ] as const;
 
+/**
+ * English-only surfaces (legal pages). Their /ms, /zh and /ru URLs render the
+ * English text as `noindex` with canonical → English, stay out of the sitemap's
+ * locale variants, and get no footer language links.
+ */
+export const ENGLISH_ONLY_PATHS: ReadonlySet<string> = new Set([
+	"/cybersecurity",
+	"/privacy",
+	"/pdpa",
+	"/terms",
+]);
+
 export const LOCALE_COOKIE = "ts_locale";
 export const LOCALE_HINT_COOKIE = "ts_locale_hint";
 

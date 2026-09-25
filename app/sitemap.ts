@@ -1,7 +1,12 @@
 import type { MetadataRoute } from "next";
 import { connection } from "next/server";
 import { getInsightSitemapEntries } from "@/lib/insights/data";
-import { LOCALES, hreflangAlternates, localizePath } from "@/lib/i18n/config";
+import {
+	ENGLISH_ONLY_PATHS,
+	LOCALES,
+	hreflangAlternates,
+	localizePath,
+} from "@/lib/i18n/config";
 import { siteUrl } from "@/lib/seo-defaults";
 
 const baseUrl = siteUrl;
@@ -21,13 +26,6 @@ export const dynamic = "force-dynamic";
 
 /** Last change to the Insights index chrome itself (route + InsightsChrome messages). */
 const INSIGHTS_INDEX_LAST_MODIFIED = "2026-09-21";
-
-const ENGLISH_ONLY_PATHS = new Set([
-	"/cybersecurity",
-	"/privacy",
-	"/pdpa",
-	"/terms",
-]);
 
 function absoluteUrl(path: string): string {
 	if (path === "/") return baseUrl;
@@ -122,6 +120,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		{ path: "/trueidentity", lastModified: "2026-09-22", changeFrequency: "monthly", priority: 0.9 },
 		{ path: "/truessm", lastModified: "2026-09-22", changeFrequency: "monthly", priority: 0.9 },
 		{ path: "/truekredit", lastModified: "2026-09-25", changeFrequency: "monthly", priority: 0.9 },
+		{
+			path: "/compare/loan-management-systems",
+			lastModified: "2026-09-25",
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
 		{ path: "/truesyariah", lastModified: "2026-09-22", changeFrequency: "monthly", priority: 0.9 },
 		{ path: "/work", lastModified: "2026-09-09", changeFrequency: "monthly", priority: 0.7 },
 		{ path: "/work/ezdana", lastModified: "2026-09-09", changeFrequency: "monthly", priority: 0.7 },

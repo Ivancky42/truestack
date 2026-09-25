@@ -2,9 +2,9 @@
 	"_status": "source",
 	"TrueKredit": {
 		"meta": {
-			"title": "TrueKredit™ | Money Lending Management System",
-			"description": "Money lending management system Malaysia for KPKT-licensed money lenders. Borrowers, schedules, Lampiran A/B/B1, Jadual J & K and iDEAL KPKT paperwork.",
-			"openGraphTitle": "TrueKredit™ | Money Lending Management System",
+			"title": "TrueKredit™ | Money Lending Management System Malaysia",
+			"description": "TrueKredit™ is KPKT online money lending software and a money lending management system for licensed money lenders in Malaysia: Lampiran, Jadual J & K, iDEAL.",
+			"openGraphTitle": "TrueKredit™ | Money Lending Management System Malaysia",
 			"openGraphDescription": "TrueKredit™ money lender software Malaysia / money lending management system. iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K.",
 			"ogImageAlt": "TrueKredit KPKT-aligned loan management platform — applications, signing, dashboards and compliance modules"
 		},
@@ -14,6 +14,7 @@
 				"TrueKredit Pro",
 				"TrueKredit Standard",
 				"Money lending management system",
+				"KPKT online money lending software",
 				"Money lender software Malaysia",
 				"KPKT loan management system Malaysia",
 				"sistem iDEAL",
@@ -42,6 +43,7 @@
 			]
 		},
 		"hero": {
+			"eyebrow": "TrueKredit™ money lending management system",
 			"title": "Run your entire lending book from <accent>one platform.</accent>",
 			"lede": "TrueKredit™ is the <strong>money lending management system</strong> for Malaysian KPKT-licensed money lenders — borrowers, schedules, repayments and KPKT paperwork in one system your whole team trusts.",
 			"ctaSecondary": "Standard vs Pro",
@@ -467,6 +469,26 @@
 					"answer": "Yes. Approval uploads before L2, AML confirmation, LHDN stamp certificates, and maker-checker on disbursements are each turned on or off to match how your office already works. Your team keeps their process — the system follows it."
 				}
 			]
+		},
+		"kpktSystem": {
+			"eyebrow": "Built for KPKT lenders",
+			"title": "A money lending management system built around KPKT.",
+			"lede": "Licensed money lenders answer to KPKT, not to a generic loan template. TrueKredit keeps the paperwork, the licence path and your data rules in the same system your team works in every day.",
+			"items": {
+				"paperwork": {
+					"title": "KPKT paperwork from the loan file.",
+					"desc": "Lampiran A, B and B1, Jadual J and K agreements and iDEAL KPKT exports come from the records your team already keeps — nothing is re-typed before a submission."
+				},
+				"licence": {
+					"title": "Ready for the KPKT digital licence.",
+					"desc": "TrueKredit Pro adds a branded customer website, iPhone and Android apps and digital signing, with support for KPKT online money lending licence reviews. <link>See the licence path</link>"
+				},
+				"cloud": {
+					"title": "Your own cloud, kept in Malaysia.",
+					"desc": "Each lender runs on its own secure cloud in Malaysia. Your borrower data is never mixed with another lender's."
+				}
+			},
+			"compare": "Comparing loan management systems? <link>See the questions to ask every vendor</link> — and how TrueKredit answers each one."
 		},
 		"cta": {
 			"heading": "Ready to run your lending book with confidence?",

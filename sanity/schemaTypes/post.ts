@@ -225,6 +225,80 @@ export const insightPostType = defineType({
 			validation: (rule) => rule.required().min(140).max(160),
 		}),
 		defineField({
+			name: "localizedSeo",
+			title: "Localized SEO (optional)",
+			description:
+				"Search title and description for the /ms, /zh and /ru URLs of this post. The article body stays English. Leave empty to use the English SEO title and description.",
+			type: "object",
+			group: "seo",
+			options: {collapsible: true, collapsed: true},
+			fields: [
+				defineField({
+					name: "ms",
+					title: "Bahasa Malaysia",
+					type: "object",
+					fields: [
+						defineField({
+							name: "title",
+							title: "SEO title",
+							type: "string",
+							validation: (rule) => rule.max(60),
+						}),
+						defineField({
+							name: "description",
+							title: "SEO description",
+							description: "140–160 characters.",
+							type: "text",
+							rows: 3,
+							validation: (rule) => rule.min(140).max(160),
+						}),
+					],
+				}),
+				defineField({
+					name: "zh",
+					title: "中文 (Simplified Chinese)",
+					type: "object",
+					fields: [
+						defineField({
+							name: "title",
+							title: "SEO title",
+							type: "string",
+							validation: (rule) => rule.max(30),
+						}),
+						defineField({
+							name: "description",
+							title: "SEO description",
+							description: "70–90 characters, primary keyword in the first 10.",
+							type: "text",
+							rows: 3,
+							validation: (rule) => rule.min(70).max(90),
+						}),
+					],
+				}),
+				defineField({
+					name: "ru",
+					title: "Русский",
+					type: "object",
+					fields: [
+						defineField({
+							name: "title",
+							title: "SEO title",
+							type: "string",
+							validation: (rule) => rule.max(60),
+						}),
+						defineField({
+							name: "description",
+							title: "SEO description",
+							description: "140–160 characters.",
+							type: "text",
+							rows: 3,
+							validation: (rule) => rule.min(140).max(160),
+						}),
+					],
+				}),
+			],
+		}),
+		defineField({
 			name: "relatedProducts",
 			title: "Related products and services",
 			description:

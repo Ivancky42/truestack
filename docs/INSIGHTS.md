@@ -66,6 +66,7 @@ Primary CTA is **Book a Free Consultation** → `/contact?subject=<Product>`. Ne
 | Field | Rules |
 |---|---|
 | `seoTitle` | ≤ 60 chars. Defaults to `title`. Site template appends “- Truestack”. |
+| `localizedSeo` | `{ ms?, zh?, ru? }`, each `{ title?, description? }`. Search title and description for the `/ms`, `/zh` and `/ru` URLs of the post (bodies stay English). ms/ru: title ≤ 60, description 140–160 chars. zh: title ≤ 30, description 70–90 code points, primary keyword in the first 10. Empty → the English `seoTitle` / `seoDescription`. Needs human-approved copy; do not machine-fill. |
 | `author` | `{ name` (2–80), `role?` (≤ 80) `}`. Omit to default to **Truestack team**. |
 | `faq` | 0–8 items. Strongly recommended for AI-SEO. See FAQ rules. |
 | `tags` | 0–8 unique strings. |

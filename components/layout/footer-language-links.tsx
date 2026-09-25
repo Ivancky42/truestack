@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import { useLocale } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import {
+	ENGLISH_ONLY_PATHS,
 	hreflang,
 	htmlLang,
 	isAppLocale,
@@ -26,11 +27,14 @@ const HINT_MAX_AGE = 2_592_000;
  * hreflang and the sitemap. Rendered in the footer on every page.
  * Hrefs are built with `localizePath` (English unprefixed): next-intl's Link
  * with an explicit `locale` would emit `/en/...`, which only redirects.
+ * English-only surfaces (legal pages) have no translations, so no links.
  */
 export function FooterLanguageLinks({ ariaLabel }: { ariaLabel: string }) {
 	const raw = useLocale();
 	const current = isAppLocale(raw) ? raw : "en";
 	const pathname = usePathname();
+
+	if (ENGLISH_ONLY_PATHS.has(pathname)) return null;
 
 	return (
 		<nav aria-label={ariaLabel}>
