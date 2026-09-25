@@ -2,9 +2,9 @@
 	"_status": "ai-draft",
 	"TrueKredit": {
 		"meta": {
-			"title": "TrueKredit™ | Sistem Pengurusan Pinjaman KPKT",
-			"description": "Sistem pengurusan pinjaman Malaysia untuk pemberi pinjam wang berlesen KPKT. Peminjam, jadual, Lampiran A/B/B1, Jadual J & K dan dokumen iDEAL KPKT.",
-			"openGraphTitle": "TrueKredit™ | Perisian Pemberi Pinjam Wang Malaysia",
+			"title": "TrueKredit™ | Sistem Pengurusan Pinjaman Wang KPKT",
+			"description": "TrueKredit™ ialah sistem pengurusan pinjaman wang KPKT dan perisian lesen digital KPKT untuk pemberi pinjam wang berlesen. Lampiran A/B/B1, Jadual J & K, iDEAL.",
+			"openGraphTitle": "TrueKredit™ | Sistem Pengurusan Pinjaman Wang KPKT",
 			"openGraphDescription": "Perisian pemberi pinjam wang Malaysia / sistem pengurusan pinjaman wang. iDEAL KPKT (sistem iDEAL), Lampiran A, B, B1, Jadual J & K.",
 			"ogImageAlt": "Platform pengurusan pinjaman TrueKredit selaras KPKT — permohonan, tandatangan, papan pemuka dan modul pematuhan"
 		},
@@ -14,6 +14,7 @@
 				"TrueKredit Pro",
 				"TrueKredit Standard",
 				"Sistem pengurusan pinjaman wang",
+				"Perisian lesen digital KPKT",
 				"Perisian pemberi pinjam wang Malaysia",
 				"Sistem pengurusan pinjaman KPKT Malaysia",
 				"sistem iDEAL",
@@ -42,6 +43,7 @@
 			]
 		},
 		"hero": {
+			"eyebrow": "TrueKredit™ sistem pengurusan pinjaman wang KPKT",
 			"title": "Urus seluruh buku pinjaman anda dari <accent>satu platform.</accent>",
 			"lede": "TrueKredit™ ialah <strong>sistem pengurusan pinjaman wang</strong> untuk pemberi pinjam wang berlesen Kementerian Perumahan dan Kerajaan Tempatan (KPKT) di Malaysia — peminjam, jadual, bayaran balik dan kertas kerja KPKT dalam satu sistem yang dipercayai seluruh pasukan anda.",
 			"ctaSecondary": "Standard lwn Pro",
@@ -467,6 +469,26 @@
 					"answer": "Ya. Muat naik kelulusan sebelum L2, pengesahan AML, sijil setem LHDN, dan maker-checker pada pengeluaran pinjaman masing-masing dihidupkan atau dimatikan mengikut cara pejabat anda sudah beroperasi. Pasukan anda mengekalkan proses mereka — sistem mengikutinya."
 				}
 			]
+		},
+		"kpktSystem": {
+			"eyebrow": "Dibina untuk pemberi pinjam wang KPKT",
+			"title": "Sistem pengurusan pinjaman wang KPKT, dari lesen hingga laporan.",
+			"lede": "Pemberi pinjam wang berlesen bertanggungjawab kepada KPKT, bukan kepada templat pinjaman umum. TrueKredit menyimpan kertas kerja, laluan lesen dan peraturan data anda dalam sistem yang sama yang digunakan pasukan anda setiap hari.",
+			"items": {
+				"paperwork": {
+					"title": "Kertas kerja KPKT terus dari fail pinjaman.",
+					"desc": "Lampiran A, B dan B1, perjanjian Jadual J dan K serta eksport iDEAL KPKT dijana daripada rekod yang sudah disimpan pasukan anda — tiada apa yang perlu ditaip semula sebelum penyerahan."
+				},
+				"licence": {
+					"title": "Perisian sedia untuk lesen digital KPKT.",
+					"desc": "TrueKredit Pro menambah laman web pelanggan berjenama, aplikasi iPhone dan Android serta tandatangan digital, dengan sokongan untuk semakan lesen pinjaman wang dalam talian KPKT. <link>Lihat laluan lesen</link>"
+				},
+				"cloud": {
+					"title": "Awan anda sendiri, kekal di Malaysia.",
+					"desc": "Setiap pemberi pinjam wang beroperasi pada awan selamatnya sendiri di Malaysia. Data peminjam anda tidak pernah dicampur dengan data pemberi pinjam wang lain."
+				}
+			},
+			"compare": "Sedang membandingkan sistem pengurusan pinjaman? <link>Lihat soalan untuk setiap vendor</link> — dan jawapan TrueKredit bagi setiap satu."
 		},
 		"cta": {
 			"heading": "Bersedia mengurus buku pinjaman anda dengan yakin?",

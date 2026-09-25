@@ -140,6 +140,7 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 								</span>
 								<span
 									aria-current="page"
+									lang="en"
 									className="normal-case tracking-normal text-foreground"
 								>
 									{post.title}
@@ -154,12 +155,18 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 								</span>
 							</div>
 
-							<h1 className="mt-4 type-h2">
+							{/* Article text comes from Sanity in English on every locale URL;
+							    mark it so search engines and screen readers do not read it
+							    as the page's chrome language. */}
+							<h1 lang="en" className="mt-4 type-h2">
 								{post.title}
 							</h1>
 
 							{post.excerpt ? (
-								<p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">
+								<p
+									lang="en"
+									className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl"
+								>
 									{post.excerpt}
 								</p>
 							) : null}
@@ -212,7 +219,7 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 								</div>
 							) : null}
 
-							<div className="mt-10">
+							<div lang="en" className="mt-10">
 								<PortableTextBody value={post.body} />
 							</div>
 
@@ -270,7 +277,7 @@ export async function InsightPostContent({ post }: { post: InsightPost }) {
 							</h2>
 						</div>
 
-						<div className="mx-auto max-w-3xl">
+						<div lang="en" className="mx-auto max-w-3xl">
 							<Accordion type="single" collapsible className="w-full">
 								{post.faq.map((item, index) => (
 									<AccordionItem

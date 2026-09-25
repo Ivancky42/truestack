@@ -44,6 +44,7 @@ export const INSIGHT_POST_QUERY = defineQuery(
 		"bodyTextLength": length(pt::text(body)),
 		seoTitle,
 		seoDescription,
+		localizedSeo,
 		body,
 		"faq": coalesce(faq, []),
 		"relatedProductKeys": coalesce(relatedProducts, [])

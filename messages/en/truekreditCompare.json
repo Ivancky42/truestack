@@ -1,0 +1,103 @@
+{
+	"_status": "source",
+	"TrueKreditCompare": {
+		"meta": {
+			"title": "TrueKredit™ vs Other LMS | Money Lending Software Malaysia",
+			"description": "Comparing loan management systems (LMS) for KPKT money lenders in Malaysia? Nine questions to ask every vendor, and how TrueKredit™ answers each one.",
+			"openGraphTitle": "Choosing a money lending management system in Malaysia",
+			"openGraphDescription": "Nine questions to ask every loan management system (LMS) vendor — KPKT paperwork, digital licence, data hosting — and how TrueKredit™ answers each one."
+		},
+		"breadcrumb": {
+			"truekredit": "TrueKredit™",
+			"current": "Compare loan management systems"
+		},
+		"hero": {
+			"eyebrow": "TrueKredit™ compared",
+			"title": "Choosing a money lending management system in Malaysia.",
+			"lede": "Most KPKT-licensed lenders compare a few loan management systems (LMS) before they commit. These are the questions that separate them — and how TrueKredit answers each one.",
+			"secondaryCta": "See TrueKredit"
+		},
+		"checklist": {
+			"eyebrow": "The checklist",
+			"title": "Nine questions to ask every LMS vendor.",
+			"lede": "Put the same questions to every vendor on your shortlist and compare the answers side by side.",
+			"headers": {
+				"question": "Question",
+				"check": "What to look for",
+				"truekredit": "TrueKredit"
+			},
+			"rows": {
+				"paperwork": {
+					"question": "Does it produce your KPKT paperwork?",
+					"check": "Lampiran A, B and B1, Jadual J and K agreements and iDEAL KPKT exports from the loan records — not a separate spreadsheet.",
+					"truekredit": "Yes. Generated from the same loan file your team works in."
+				},
+				"licence": {
+					"question": "Is it ready for a KPKT digital licence?",
+					"check": "A customer website, mobile apps and digital signing for online money lending.",
+					"truekredit": "TrueKredit Pro: a branded website on your domain, iPhone and Android apps, digital signing verified with MSC Trustgate, and support for KPKT online money lending licence reviews."
+				},
+				"data": {
+					"question": "Where does borrower data live?",
+					"check": "Hosting in Malaysia, and whether your data sits alongside other lenders' data.",
+					"truekredit": "Your own secure cloud in Malaysia. Never mixed with another lender's data."
+				},
+				"changes": {
+					"question": "Can it handle refinance, top-up and reschedule?",
+					"check": "Changes tracked on the original loan, with its history intact.",
+					"truekredit": "Yes. All three stay on the same loan file."
+				},
+				"checks": {
+					"question": "Which checks are built in?",
+					"check": "Identity, company, payment and credit checks inside the loan file.",
+					"truekredit": "TrueIdentity™ e-KYC, TrueSSM™ company lookups and payment gateway collections. CTOS credit reports are coming soon."
+				},
+				"controls": {
+					"question": "What stops costly mistakes?",
+					"check": "Approvals, payout controls, role-based access and an audit trail.",
+					"truekredit": "Approvals, payment vouchers with two-person payout approval, role-based access and audit trails."
+				},
+				"fit": {
+					"question": "Does it fit how you already lend?",
+					"check": "Whether the workflow can match your loan products and approval steps.",
+					"truekredit": "Loan workflow options are configured to how your office already works."
+				},
+				"growth": {
+					"question": "Can you start small and grow?",
+					"check": "A path from branch operations to online lending without moving your data.",
+					"truekredit": "Start on Standard and upgrade to Pro. Borrowers, loans and history stay where they are."
+				},
+				"licensing": {
+					"question": "Can the vendor help with KPKT itself?",
+					"check": "Help with the licence, renewals and submissions — not just software.",
+					"truekredit": "Truestack runs the KPKT digital licence path, KPKT account management and ANGKASA PBA code applications."
+				}
+			}
+		},
+		"alternatives": {
+			"title": "Other systems lenders look at.",
+			"body": "Lenders in Malaysia also shortlist systems such as Multi Credit, MERP, Bizbott, Arkmind and HES FinTech. We don't publish claims about other vendors' products. Ask each of them the nine questions above and compare their answers with ours."
+		},
+		"faq": {
+			"title": "Frequently asked questions",
+			"items": [
+				{
+					"question": "What is the best loan management system for KPKT money lenders in Malaysia?",
+					"answer": "The best fit is the system that produces your KPKT paperwork, keeps borrower data in Malaysia and can grow with your licence. TrueKredit™ is a money lending management system built for KPKT-licensed money lenders: Lampiran A, B and B1, Jadual J and K, and iDEAL KPKT exports come from the loan file, on your own secure cloud in Malaysia."
+				},
+				{
+					"question": "How is TrueKredit different from other LMS in Malaysia?",
+					"answer": "TrueKredit is built for KPKT-licensed money lenders. Each lender runs on its own cloud in Malaysia, KPKT paperwork comes from the loan records, and TrueKredit Pro adds the borrower website, apps and digital signing used for a KPKT online money lending licence. Truestack also handles the licence and KPKT account management, so software and compliance sit with one team."
+				},
+				{
+					"question": "Is TrueKredit KPKT online money lending software?",
+					"answer": "Yes. TrueKredit Pro gives lenders a branded customer website, iPhone and Android apps and digital signing, with support for KPKT Online Money Lending Licence reviews. Truestack can also run the licence application itself through its KPKT digital licence service."
+				},
+				{
+					"question": "Can we see TrueKredit before we decide?",
+					"answer": "Yes. Book a free, no-obligation consultation. We will show you TrueKredit and answer these nine questions for your business, including whether Standard or Pro fits."
+				}
+			]
+		}
+	}
+}

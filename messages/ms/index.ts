@@ -16,6 +16,7 @@ import p2p from "./p2p.json";
 import softwareDevelopment from "./softwareDevelopment.json";
 import trueidentity from "./trueidentity.json";
 import truekredit from "./truekredit.json";
+import truekreditCompare from "./truekreditCompare.json";
 import truessm from "./truessm.json";
 import truesyariah from "./truesyariah.json";
 import workChrome from "./workChrome.json";
@@ -55,6 +56,7 @@ const messages = namespaces(
 	softwareDevelopment,
 	trueidentity,
 	truekredit,
+	truekreditCompare,
 	truessm,
 	truesyariah,
 	workChrome,

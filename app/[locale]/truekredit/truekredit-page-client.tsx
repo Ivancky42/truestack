@@ -18,6 +18,7 @@ import { RelatedKpktServices } from "@/components/shared/related-kpkt-services";
 import { TrueKreditJourney } from "@/components/sections/truekredit-journey";
 import { TrueKreditChecks } from "@/components/sections/truekredit-checks";
 import { TrueKreditFaq } from "@/components/sections/truekredit-faq";
+import { TrueKreditKpkt } from "@/components/sections/truekredit-kpkt";
 import { ConsultationCta } from "@/components/sections/consultation-cta";
 
 const STORY_TODAY = ["records", "payments", "audits", "view"] as const;
@@ -565,6 +566,8 @@ export default function TrueKreditPage() {
 			</section>
 
 			<TrueKreditFaq />
+
+			<TrueKreditKpkt />
 
 			<RelatedKpktServices />
 

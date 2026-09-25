@@ -21,6 +21,7 @@ import enP2P from "@/messages/en/p2p.json";
 import enSoftwareDevelopment from "@/messages/en/softwareDevelopment.json";
 import enTrueIdentity from "@/messages/en/trueidentity.json";
 import enTrueKredit from "@/messages/en/truekredit.json";
+import enTrueKreditCompare from "@/messages/en/truekreditCompare.json";
 import enTrueSSM from "@/messages/en/truessm.json";
 import enTrueSyariah from "@/messages/en/truesyariah.json";
 import enWorkChrome from "@/messages/en/workChrome.json";
@@ -42,6 +43,7 @@ export type EnMessages = Omit<
 		typeof enBanner &
 		typeof enHome &
 		typeof enTrueKredit &
+		typeof enTrueKreditCompare &
 		typeof enTrueSyariah &
 		typeof enTrueIdentity &
 		typeof enTrueSSM &
@@ -105,6 +107,7 @@ const englishMessages: Record<string, unknown> = {
 	...stripFileStatus(enSoftwareDevelopment),
 	...stripFileStatus(enTrueIdentity),
 	...stripFileStatus(enTrueKredit),
+	...stripFileStatus(enTrueKreditCompare),
 	...stripFileStatus(enTrueSSM),
 	...stripFileStatus(enTrueSyariah),
 	...stripFileStatus(enWorkChrome),

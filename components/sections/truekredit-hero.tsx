@@ -115,6 +115,10 @@ export function TrueKreditHero() {
 			<div className="relative hero-shell px-6 pt-16 text-center md:pt-20">
 				<div>
 					<h1 className="mx-auto max-w-[20em] type-h1 text-pretty">
+						{/* Brand + category lead-in: part of the H1 so search engines read "TrueKredit money lending management system". */}
+						<span className="mb-4 block type-eyebrow text-primary">
+							{t("hero.eyebrow")}
+						</span>{" "}
 						{t.rich("hero.title", {
 							accent: (c) => (
 								<span className="bg-linear-to-r from-primary-start to-primary-end bg-clip-text text-transparent">

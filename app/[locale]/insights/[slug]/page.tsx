@@ -90,8 +90,16 @@ export async function generateMetadata({
 	}
 
 	const path = `/insights/${post.slug}`;
-	const title = post.seoTitle?.trim() || post.title;
-	const description = post.seoDescription?.trim() || post.excerpt;
+	// /ms, /zh and /ru URLs use the post's localized SEO when an editor set it;
+	// the article body stays English either way.
+	const localizedSeo =
+		locale === "en" ? undefined : post.localizedSeo?.[locale];
+	const title =
+		localizedSeo?.title?.trim() || post.seoTitle?.trim() || post.title;
+	const description =
+		localizedSeo?.description?.trim() ||
+		post.seoDescription?.trim() ||
+		post.excerpt;
 	const socialImage = insightSocialImageUrl(post.mainImage, {
 		width: 1200,
 		height: 630,
